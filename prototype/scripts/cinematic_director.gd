@@ -69,15 +69,36 @@ func camera_sample(reduced_motion: bool = false, landing: Vector3 = Vector3(7,43
 	var p: float = 0.5 if reduced_motion else smoothstep(0.0, 1.0, local)
 	match shot:
 		0:
-			return {"position": Vector3(132,55,154).lerp(Vector3(91,62,106), p), "target": Vector3(14,-20,-3), "fov": 58.0}
+			return {"position": Vector3(128,78,152).lerp(Vector3(98,70,118), p), "target": Vector3(12,1,0), "fov": 56.0}
 		1:
-			return {"position": Vector3(89,67,65).lerp(Vector3(64,57,46), p), "target": Vector3(24,38,-5), "fov": 49.0}
+			return {"position": Vector3(80,62,54).lerp(Vector3(40,54,46), p), "target": Vector3(16,45,0), "fov": 53.0}
 		2:
-			return {"position": Vector3(35,55,20).lerp(Vector3(19,50,21), p), "target": Vector3(18,43,-5), "fov": 59.0}
+			return {"position": Vector3(34,53,30).lerp(Vector3(27,51,30), p), "target": Vector3(16,43,-5), "fov": 64.0}
 		_:
 			if reduced_motion:
 				return {"position": Vector3(6,48,16), "target": Vector3(5,43.7,0), "fov": 62.0}
 			return {"position": Vector3(6,49,18).lerp(landing, p), "target": Vector3(4,43.7,0).lerp(landing + facing * 10.0, p), "fov": lerpf(62.0, 76.0, p)}
+
+static func staging_sample(time: float) -> Dictionary:
+	# Absolute poses make pausing, large frames and skipping converge on one state.
+	# Flights remain above the roof until the final vertical descent; Bravo lands first.
+	var t: float = clampf(time, 0.0, ARRIVAL_DURATION)
+	var aircraft: Array[Dictionary] = []
+	for index in range(2):
+		var touchdown: float = 13.4 if index == 0 else 10.8
+		var approach_end: float = 8.0 if index == 0 else 6.5
+		var start: Vector3 = Vector3(-34,28,110) if index == 0 else Vector3(65,36,130)
+		var hover: Vector3 = Vector3(0,5.6,8.0)
+		var cruise: float = smoothstep(0.0, approach_end, t)
+		var descent: float = smoothstep(approach_end, touchdown, t)
+		var offset: Vector3 = start.lerp(hover, cruise) if t < approach_end else hover.lerp(Vector3.ZERO, descent)
+		var banking: float = sin(cruise * PI) * (1.0 - descent)
+		var rotation: Vector3 = Vector3(-0.075 * (1.0 - descent), 0.12 * banking * (-1.0 if index == 0 else 1.0), 0.06 * banking)
+		var door_open: float = smoothstep(touchdown + 0.4, touchdown + 2.6, t)
+		var door_close: float = smoothstep(24.0, 26.0, t)
+		var wash: float = smoothstep(approach_end - 1.0, touchdown, t) * (1.0 - smoothstep(23.0, 28.0, t))
+		aircraft.append({"offset":offset, "rotation":rotation, "door":door_open * (1.0 - door_close), "wash":wash})
+	return {"aircraft":aircraft, "crew":smoothstep(16.0,23.0,t), "time":t}
 
 static func menu_context(data: Dictionary) -> Dictionary:
 	if data.is_empty():

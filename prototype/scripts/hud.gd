@@ -8,6 +8,7 @@ signal return_requested
 signal journal_requested
 signal replay_intro_requested
 signal cinematic_skip_requested
+signal inspection_closed
 signal setting_changed(setting: String, enabled: bool)
 
 const INK: Color = Color(0.035, 0.065, 0.08, 0.94)
@@ -46,6 +47,7 @@ var floor_map: Label
 var audio_toggle: CheckButton
 var end_journal_button: Button
 var cinematic: Control
+var inspection_panel: Control
 var pause_toggles: Dictionary = {}
 
 func _ready() -> void:
@@ -66,6 +68,7 @@ func _ready() -> void:
 	_build_end()
 	_build_help()
 	_build_cinematic()
+	_build_inspection()
 	game.hide()
 	pause_panel.hide()
 	journal_panel.hide()
@@ -128,6 +131,20 @@ func _build_cinematic() -> void:
 	cinematic = preload("res://scripts/cinematic_overlay.gd").new()
 	root.add_child(cinematic)
 	cinematic.skip_requested.connect(func(): cinematic_skip_requested.emit())
+
+func _build_inspection() -> void:
+	inspection_panel = preload("res://scripts/inspection_panel.gd").new()
+	root.add_child(inspection_panel)
+	inspection_panel.close_requested.connect(func(): inspection_closed.emit())
+
+func show_inspection(entry: Dictionary) -> void:
+	pause_panel.hide()
+	journal_panel.hide()
+	help_panel.hide()
+	inspection_panel.present(entry)
+
+func hide_inspection() -> void:
+	inspection_panel.hide()
 
 func set_menu_context(context: Dictionary, valid_save: bool, seed_value: int) -> void:
 	menu.set_context(context,valid_save,seed_value)
@@ -308,6 +325,7 @@ func _build_help() -> void:
 	text.custom_minimum_size = Vector2(900, 485)
 	text.add_theme_font_size_override("normal_font_size", 20)
 	text.text = "MISSION\nRejoignez la balise orange près du puits central. E vous attache à la corde.\nRetrouvez les trois rescapés aux étages 30, 28 et 26. Sécurisez-les avec E,\npuis rapportez-les à la balise du même étage pour les évacuer au treuil.\nAprès les trois évacuations, rejoignez le refuge de l’étage 25.\n\nÀ PIED\nZQSD ou WASD : marcher   •   Souris : regarder   •   Flèches : regarder\nMaj : courir   •   Ctrl : s’accroupir   •   Espace : sauter   •   E : interagir\n\nSUR LA CORDE\nS : descendre   •   Z / W : remonter   •   Q / A et D : balancement\nE à hauteur d’un étage : se poser   •   X : ancrage secondaire (consommable)\n\nMATÉRIEL\nF : lampe   •   G : fusée lumineuse   •   R : appeler le commandement\nJ : indices et mission   •   Échap : pause et confort visuel\n\nL’air de réserve diminue seulement dans les zones enfumées.\nLa silhouette du spa recule devant une fusée. Le refuge reste sûr."
+	text.text += "\n\nLECTURE DU TERRAIN\nApprochez un objet et regardez-le : E ouvre sa fiche quand « Examiner » apparaît.\nLa lecture met l’intervention en pause. Molette ou Page ↑↓ : défiler.\nFermer ou Échap : reprendre. Ces observations restent facultatives."
 	col.add_child(text)
 	col.add_child(_button("Compris", func(): help_panel.hide(), true))
 
@@ -320,6 +338,7 @@ func show_game() -> void:
 	journal_panel.hide()
 	end_panel.hide()
 	help_panel.hide()
+	hide_inspection()
 
 func show_menu() -> void:
 	menu.reveal()
@@ -329,12 +348,14 @@ func show_menu() -> void:
 	journal_panel.hide()
 	end_panel.hide()
 	help_panel.hide()
+	hide_inspection()
 
 func set_paused(paused: bool) -> void:
 	pause_panel.visible = paused
 	if not paused:
 		journal_panel.hide()
 		help_panel.hide()
+		hide_inspection()
 
 func set_radio(speaker: String, message: String) -> void:
 	radio_source.text = speaker

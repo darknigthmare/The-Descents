@@ -34,9 +34,8 @@ def main():
                 if file.suffix in {".log", ".tmp"}:
                     continue
                 z.write(file, "The-Tower-Descent/" + str(rel))
-        workflow = ROOT / ".github/workflows/cinematic-review.yml"
-        if workflow.exists():
-            z.write(workflow, "The-Tower-Descent/.github/workflows/cinematic-review.yml")
+        for workflow in sorted((ROOT / ".github/workflows").glob("*.yml")):
+            z.write(workflow, "The-Tower-Descent/" + workflow.relative_to(ROOT).as_posix())
         for name in ["README.md", "JOUER_WINDOWS.cmd", "jouer.sh", ".gitignore"]:
             z.write(ROOT / name, "The-Tower-Descent/" + name)
     hashes = []

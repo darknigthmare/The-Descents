@@ -9,6 +9,7 @@ const Incident = preload("res://scripts/collapse_director.gd")
 const Radio = preload("res://scripts/radio_director.gd")
 const Cinematics = preload("res://scripts/cinematic_director.gd")
 const Preferences = preload("res://scripts/preferences_store.gd")
+const FieldProps = preload("res://scripts/field_props.gd")
 
 var world: Node3D
 var player: CharacterBody3D
@@ -91,6 +92,7 @@ func _ready() -> void:
 	hud.setting_changed.connect(_setting_changed)
 	hud.replay_intro_requested.connect(_start_studio_intro)
 	hud.cinematic_skip_requested.connect(_skip_cinematic)
+	hud.inspection_closed.connect(_resume)
 	hud.apply_settings(preferences)
 	_prepare_menu()
 	if DisplayServer.get_name() != "headless" and bool(preferences["startup_intro"]):
@@ -198,6 +200,7 @@ func _build_world(seed_value: int) -> void:
 	world = World.new()
 	add_child(world)
 	world_data = world.build(seed_value, floor_specs)
+	world_data["interactables"].append_array(FieldProps.new().build(world))
 	world.set_rescued_people(rescued)
 	world.apply_incident(incident.phase, incident.phase_elapsed)
 	world.set_lightning_enabled(flashes_enabled)
@@ -410,9 +413,7 @@ func _process(delta: float) -> void:
 		return
 	menu_time += delta
 	_update_soundscape(delta)
-	for rotor: Node3D in world_data.get("rotors", [world_data.get("rotor")]):
-		if is_instance_valid(rotor):
-			rotor.rotate_y(delta * 28)
+	world.sample_aircraft_rotors(menu_time)
 	if boot_playing:
 		cinematic.advance(delta)
 		_render_cinematic()
@@ -458,6 +459,7 @@ func _process_arrival(delta: float) -> void:
 	for cue: Dictionary in cinematic.advance(delta):
 		_say(str(cue["speaker"]),str(cue["message"]),float(cue["duration"]),true)
 	arrival_time = cinematic.elapsed
+	world.apply_arrival_staging(Cinematics.staging_sample(arrival_time))
 	_render_cinematic()
 	if not cinematic.active:
 		_finish_arrival()
@@ -467,6 +469,7 @@ func _finish_arrival() -> void:
 		return
 	arrival_playing = false
 	cinematic.finish()
+	world.restore_arrival_staging()
 	hud.cinematic.hide()
 	hud.game.show()
 	player.active = not paused and not completed
@@ -484,6 +487,7 @@ func _position_helicopters(mission_time: float) -> void:
 		var departure: float = clampf((mission_time - 10.0 - index * 3.0) / 23.0,0,1)
 		var origin: Vector3 = origins[index]
 		heli.global_position = origin + Vector3((100 + index * 20) * departure * departure,25 * departure,-110 * departure)
+		heli.rotation = Vector3(-sin(departure * PI) * 0.08, sin(departure * PI) * 0.18, -sin(departure * PI) * 0.035)
 		heli.visible = departure < 1 and incident.phase != "aftermath"
 
 func _process_departure() -> void:
@@ -659,18 +663,59 @@ func _find_nearest() -> void:
 	if player.on_rope:
 		return
 	var best: float = 3.0
+	var inspection: Node3D
+	var inspection_distance: float = 2.4
 	for object: Node3D in world_data.get("interactables", []):
-		if not is_instance_valid(object) or object.get_meta("used", false):
+		if not is_instance_valid(object) or object.get_meta("used", false) or not object.is_visible_in_tree():
 			continue
 		var floor_number: int = int(object.get_meta("floor", 0))
 		if floor_number != player.nearest_floor():
 			continue
 		var distance: float = Vector2(player.position.x - object.global_position.x, player.position.z - object.global_position.z).length()
+		if str(object.get_meta("kind", "")) == "inspect":
+			if distance < inspection_distance and _can_inspect() and _interaction_visible(object):
+				inspection_distance = distance
+				inspection = object
+			continue
 		if distance < best:
 			best = distance
 			nearest = object
+	# Rescue controls retain their close-range priority; optional reading requires aim.
+	if is_instance_valid(inspection) and best >= 1.5:
+		nearest = inspection
+
+func _can_inspect() -> bool:
+	return started and not paused and not completed and not arrival_playing and not player.on_rope and not incident.is_active() and not is_instance_valid(carried) and not is_instance_valid(hoisting)
+
+func _interaction_visible(object: Node3D) -> bool:
+	if not is_instance_valid(object) or not object.is_visible_in_tree():
+		return false
+	if int(object.get_meta("floor", 0)) != player.nearest_floor():
+		return false
+	var distance: float = Vector2(player.global_position.x - object.global_position.x, player.global_position.z - object.global_position.z).length()
+	if distance > float(object.get_meta("range", 2.4)):
+		return false
+	var focus: Vector3 = object.global_position + (object.get_meta("focus_offset", Vector3(0,0.8,0)) as Vector3)
+	var origin: Vector3 = player.camera.global_position
+	var toward: Vector3 = focus - origin
+	if toward.length_squared() < 0.001 or (-player.camera.global_basis.z).dot(toward.normalized()) < 0.82:
+		return false
+	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(origin,focus)
+	query.exclude = [player.get_rid()]
+	return get_world_3d().direct_space_state.intersect_ray(query).is_empty()
+
+func _open_inspection(object: Node3D) -> void:
+	if not _can_inspect() or not _interaction_visible(object) or str(object.get_meta("kind", "")) != "inspect":
+		return
+	var entry: Dictionary = FieldProps.read(str(object.get_meta("id", "")), {"incident_state":incident.phase, "rescued":rescued, "supplies_used":supplies_used})
+	if entry.is_empty():
+		return
+	_pause(false)
+	hud.show_inspection(entry)
 
 func _key(object: Node3D) -> String:
+	if str(object.get_meta("kind", "")) == "inspect":
+		return str(object.get_meta("id", ""))
 	return "%s_%d" % [str(object.get_meta("kind", "unknown")), int(object.get_meta("floor", 0))]
 
 func _interact() -> void:
@@ -692,6 +737,8 @@ func _interact_node(object: Node3D) -> void:
 		_notify("La secousse continue. Restez près du rescapé ; le portage reprend dès la stabilisation.")
 		return
 	match kind:
+		"inspect":
+			_open_inspection(object)
 		"observation":
 			if incident.is_active():
 				_notify("Éloignez-vous des vitres. Rejoignez le noyau intérieur ; la ligne de rappel tient.")
@@ -900,6 +947,8 @@ func _update_hud() -> void:
 			hud.prompt_label.text = "Attendez la fin de la secousse avant de déplacer le rescapé" if incident.is_active() else "E  Sécuriser %s au harnais" % nearest.get_meta("title", "le rescapé")
 		elif kind == "refuge":
 			hud.prompt_label.text = "E  Activer le relais du refuge et enregistrer"
+		elif kind == "inspect":
+			hud.prompt_label.text = "E  Examiner · " + str(nearest.get_meta("title", "Objet d’intervention"))
 		elif kind == "observation":
 			if incident.is_active():
 				hud.prompt_label.text = "Éloignez-vous des vitres  ·  Rejoignez le noyau intérieur"
@@ -939,6 +988,7 @@ func _journal_content() -> String:
 		var stamp: int = int(transmission["elapsed"])
 		text += "[%02d:%02d] %s\n%s\n\n" % [stamp / 60, stamp % 60, transmission["speaker"], transmission["message"]]
 	text += "\nMATÉRIEL\nLa lampe ne consomme pas de pile dans ce prototype. L’air diminue dans la fumée. Une fusée éclaire et repousse la silhouette pendant 20 secondes. X stabilise le balancement sur corde sans couper votre ligne principale.\n\nPOINTS SÛRS\nUn rescapé treuillé crée un point de reprise. Le refuge 25 enregistre également votre progression."
+	text += "\n\nOBSERVATIONS DE TERRAIN\nDouze objets peuvent être examinés du toit au refuge. Approchez-vous et regardez-les pour afficher E. Leur fiche distingue usage, constat et consigne, selon la situation actuelle. La lecture met l’intervention en pause ; Fermer ou Échap reprend le jeu. Ces observations restent facultatives et ne consomment aucun matériel."
 	return text
 
 func _complete_game() -> void:
@@ -967,6 +1017,7 @@ func _open_journal() -> void:
 	if not started:
 		return
 	_pause(false)
+	hud.hide_inspection()
 	# The ending is a later sibling modal and would otherwise cover the journal.
 	hud.end_panel.hide()
 	hud.journal_text.text = _journal_content()
@@ -991,6 +1042,7 @@ func _resume() -> void:
 			channel.stream_paused = false
 	player.active = not arrival_playing and not completed
 	world.set_process(not completed)
+	hud.hide_inspection()
 	hud.set_paused(false)
 	if completed:
 		hud.end_panel.show()

@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS cinematic director: 109 checks; four boot cards, four arrival shots/cues, skip, frozen sampling, long frames and spoiler-safe saved menu contexts.

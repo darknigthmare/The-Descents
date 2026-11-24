@@ -1,6 +1,8 @@
 extends Node3D
 class_name DescentWorld
 
+const Presentation = preload("res://scripts/presentation_geometry.gd")
+
 ## Self-contained, modular 3D greybox. Metres are the world unit.
 ## All gameplay corridors and interaction sockets remain outside prop jitter.
 
@@ -22,6 +24,9 @@ var twin_origin: Vector3 = Vector3(46, -144, -6)
 var helicopters: Array[Node3D] = []
 var rotors: Array[Node3D] = []
 var helicopter_origins: Array[Vector3] = []
+var alpha_roof_members: Array[Node3D] = []
+var alpha_roof_origins: Array[Vector3] = []
+var arrival_wash: Array[MeshInstance3D] = []
 var incident_damage: Array[Node3D] = []
 var breakable_glass: Array[MeshInstance3D] = []
 var crack_group: Node3D
@@ -67,6 +72,7 @@ func build(seed_value: int, floor_specs: Array) -> Dictionary:
 		floor_heights[number] = float(number - 24) * 6.0
 		_build_floor(number, specs_by_floor.get(number, {}))
 	var roof: Dictionary = _build_roof()
+	_build_arrival_wash()
 	_build_rain()
 	_build_incident_effects()
 	apply_incident("intact", 0.0)
@@ -107,7 +113,11 @@ func set_lightning_enabled(enabled: bool) -> void:
 	lightning_enabled = enabled
 
 func _make_materials() -> void:
-	materials["concrete"] = _mat(Color("37454b"), 0.94)
+	var concrete: ShaderMaterial = ShaderMaterial.new()
+	concrete.shader = load("res://shaders/weathered_surface.gdshader")
+	concrete.set_shader_parameter("surface_color", Color("37454b"))
+	concrete.set_shader_parameter("surface_roughness", 0.94)
+	materials["concrete"] = concrete
 	materials["edge"] = _mat(Color("687273"), 0.85)
 	materials["dark"] = _mat(Color("121d25"), 0.75)
 	materials["metal"] = _mat(Color("597580"), 0.34, 0.65)
@@ -225,6 +235,7 @@ func _build_city() -> void:
 	_box(city, Vector3(-45, -131, 35), Vector3(25, 0.6, 6), materials["wood"])
 	var bridge: MeshInstance3D = _box(city, Vector3(44, -128, 22), Vector3(46, 2, 7), materials["concrete"])
 	bridge.rotation.z = -0.22
+	Presentation.city_landmarks(self, city)
 
 func _build_twin_tower() -> void:
 	twin_tower = Node3D.new()
@@ -255,6 +266,7 @@ func _build_twin_tower() -> void:
 	twin_tower.add_child(bravo_roof_team)
 	for origin in [Vector3(-8.5, 186, 7), Vector3(-6.5, 186, 8.5), Vector3(-3.5, 186, 8)]:
 		var member: Node3D = _human(bravo_roof_team, origin, materials["orange"] if bravo_roof_members.size() < 2 else materials["blue"], true)
+		member.name = "BravoRoofMember%d" % bravo_roof_members.size()
 		bravo_roof_members.append(member)
 		bravo_roof_origins.append(origin)
 	_label(bravo_roof_team, Vector3(-7.5, 189.2, 7.5), "BRAVO / TOIT", 39, Color("f4c389"), 0.017)
@@ -267,6 +279,7 @@ func _build_twin_tower() -> void:
 	_box(bravo_gallery, Vector3(-0.35, -0.12, 0), Vector3(2.5, 0.24, 7), materials["edge"])
 	for zz in [-2.0, 2.0]:
 		var member: Node3D = _human(bravo_gallery, Vector3(-0.4, 0, zz), materials["orange"], true)
+		member.name = "BravoGalleryMember%d" % bravo_members.size()
 		member.rotation.y = -PI / 2
 		bravo_members.append(member)
 		bravo_member_origins.append(member.position)
@@ -558,10 +571,12 @@ func _build_roof() -> Dictionary:
 	helicopters.push_front(helicopter)
 	rotors.push_front(rotor)
 	helicopter_origins.push_front(helicopter.global_position)
-	_human(roof,Vector3(6.6,42,-7),materials["orange"],true)
-	_human(roof,Vector3(9,42,-6),materials["blue"],true)
+	for origin in [Vector3(6.6,42,-7), Vector3(9,42,-6), Vector3(7,42,4.7)]:
+		var member: Node3D = _human(roof, origin, materials["blue"] if alpha_roof_members.size() == 1 else materials["orange"], true)
+		member.name = "AlphaRoofMember%d" % alpha_roof_members.size()
+		alpha_roof_members.append(member)
+		alpha_roof_origins.append(origin)
 	_build_roof_reception(roof)
-	_human(roof,Vector3(7,42,4.7),materials["orange"],true)
 	_label(roof,Vector3(7,44.3,4.7),"CPT. VARGA",30,Color("eab686"),0.004)
 	_supply_crate(roof,Vector3(-7,42,7))
 	_supply_crate(roof,Vector3(-9,42,7))
@@ -579,6 +594,7 @@ func _build_roof() -> Dictionary:
 	_label(roof,Vector3(0,44.0,11.3),"ORPHÉE\nPOSTE DE SECOURS",66,Color("cedbd6"),0.014,false)
 	for pos in [Vector3(8,45,-6),Vector3(-7,45,7)]:
 		_light(roof,pos,Color("eabb83"),1.6,13)
+	Presentation.roof_dressing(self, roof)
 	return {"helicopter":helicopter,"rotor":rotor}
 
 func _build_roof_reception(roof: Node3D) -> void:
@@ -627,29 +643,137 @@ func set_rescued_people(rescued: Array) -> void:
 		roof_medical_sign.text = "MÉDICAL\n%d SUR 3 À L’ABRI" % confirmed
 
 func _make_helicopter(parent: Node3D, pos: Vector3, aircraft_name: String) -> Dictionary:
-	var helicopter: Node3D = Node3D.new()
-	helicopter.name = aircraft_name
-	parent.add_child(helicopter)
-	helicopter.position = pos
-	_sphere(helicopter,Vector3(0,0.9,0),Vector3(1.3,1.25,2.4),materials["orange"])
-	_sphere(helicopter,Vector3(0,1.1,-1.5),Vector3(1.15,0.8,1.2),materials["window"])
-	_box(helicopter,Vector3(0,1.1,3.0),Vector3(0.38,0.45,4.2),materials["orange"])
-	_box(helicopter,Vector3(0,1.6,4.7),Vector3(0.12,1.8,1.4),materials["orange"])
-	for xx in [-1.2,1.2]:
-		_box(helicopter,Vector3(xx,-0.35,0),Vector3(0.15,0.18,4.5),materials["metal"])
-		for zz in [-1,1]:
-			_box(helicopter,Vector3(xx,-0.1,zz),Vector3(0.14,0.8,0.14),materials["metal"])
-	_cylinder(helicopter,Vector3(0,2.0,0),0.14,1.0,materials["metal"])
-	var rotor: Node3D = Node3D.new()
-	rotor.name = "Rotor"
-	helicopter.add_child(rotor)
-	rotor.position.y = 2.6
-	_box(rotor,Vector3.ZERO,Vector3(11,0.08,0.3),materials["dark"])
-	_box(rotor,Vector3.ZERO,Vector3(0.3,0.08,11),materials["dark"])
-	_sphere(helicopter,Vector3(0,1.8,4.6),Vector3(0.12,0.12,0.12),materials["lit_red"])
-	_light(helicopter,Vector3(0,-0.4,-1.5),Color("ffbe7c"),1.5,8)
-	_label(helicopter,Vector3(1.33,1.0,0),"SECOURS",28,Color.WHITE,0.007,true)
-	return {"helicopter": helicopter, "rotor": rotor}
+	return Presentation.aircraft(self, parent, pos, aircraft_name)
+
+func _build_arrival_wash() -> void:
+	for index in range(helicopter_origins.size()):
+		var wash: MeshInstance3D = MeshInstance3D.new()
+		wash.name = "RotorWashAlpha" if index == 0 else "RotorWashBravo"
+		var plane: PlaneMesh = PlaneMesh.new()
+		plane.size = Vector2(14, 14)
+		wash.mesh = plane
+		var material: ShaderMaterial = ShaderMaterial.new()
+		material.shader = load("res://shaders/rotor_wash.gdshader")
+		wash.material_override = material
+		wash.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		add_child(wash)
+		wash.global_position = Vector3(helicopter_origins[index].x, 42.075, helicopter_origins[index].z)
+		wash.visible = false
+		arrival_wash.append(wash)
+
+func apply_arrival_staging(sample: Dictionary) -> void:
+	# Pure presentation of the director's clock. Absolute samples also support
+	# scrubbing, skipping and resuming without adding a second mission state.
+	if incident_stage != "intact":
+		return
+	var aircraft_samples: Array = sample.get("aircraft", [])
+	var clock: float = float(sample.get("time", 0.0))
+	for index in range(mini(helicopters.size(), aircraft_samples.size())):
+		var pose: Dictionary = aircraft_samples[index]
+		var helicopter: Node3D = helicopters[index]
+		helicopter.global_position = helicopter_origins[index] + (pose.get("offset", Vector3.ZERO) as Vector3)
+		helicopter.rotation = pose.get("rotation", Vector3.ZERO)
+		helicopter.visible = true
+		_set_aircraft_door(helicopter, clampf(float(pose.get("door", 0.0)), 0.0, 1.0))
+		var strength: float = clampf(float(pose.get("wash", 0.0)), 0.0, 1.0)
+		var wash: MeshInstance3D = arrival_wash[index]
+		wash.visible = strength > 0.001
+		(wash.material_override as ShaderMaterial).set_shader_parameter("strength", strength)
+		(wash.material_override as ShaderMaterial).set_shader_parameter("clock", clock)
+	var crew: float = clampf(float(sample.get("crew", 0.0)), 0.0, 1.0)
+	for index in range(alpha_roof_members.size()):
+		_pose_arrival_member(alpha_roof_members[index], alpha_roof_origins[index], 0, index, crew)
+	for index in range(bravo_roof_members.size()):
+		_pose_arrival_member(bravo_roof_members[index], bravo_roof_origins[index], 1, index, crew)
+	# The already assigned gallery pair is revealed at handoff, independently of
+	# the three roof members disembarking here. No figures are duplicated.
+	for member: Node3D in bravo_members:
+		member.visible = false
+
+func restore_arrival_staging() -> void:
+	for helicopter: Node3D in helicopters:
+		_set_aircraft_door(helicopter, 0.0)
+	for wash: MeshInstance3D in arrival_wash:
+		wash.visible = false
+		(wash.material_override as ShaderMaterial).set_shader_parameter("strength", 0.0)
+		(wash.material_override as ShaderMaterial).set_shader_parameter("clock", 0.0)
+	# A late call must never resurrect a sheltered Bravo or rewind a departure.
+	if incident_stage != "intact":
+		return
+	for index in range(helicopters.size()):
+		helicopters[index].global_position = helicopter_origins[index]
+		helicopters[index].rotation = Vector3.ZERO
+		helicopters[index].visible = true
+	for index in range(alpha_roof_members.size()):
+		var member: Node3D = alpha_roof_members[index]
+		member.position = alpha_roof_origins[index]
+		member.rotation = Vector3.ZERO
+		member.visible = true
+		_pose_human_walk(member, 0.0, 0.0)
+	_sample_bravo_retreat("intact", 0.0)
+
+func sample_aircraft_rotors(time: float) -> void:
+	for index in range(helicopters.size()):
+		rotors[index].rotation = Vector3(0, fposmod(time * 28.0 + index * 0.75, TAU), 0)
+		var tail: Node3D = helicopters[index].get_node("TailRotor")
+		tail.rotation = Vector3(fposmod(time * 41.0 + index * 0.5, TAU), 0, 0)
+
+func _set_aircraft_door(helicopter: Node3D, openness: float) -> void:
+	for name_value in ["DoorLeft", "DoorRight"]:
+		var door: Node3D = helicopter.get_node(name_value)
+		door.position = (door.get_meta("closed_position") as Vector3) + Vector3(0, 0, openness * 1.84)
+		door.rotation = Vector3.ZERO
+
+func _pose_arrival_member(member: Node3D, origin: Vector3, aircraft_index: int, member_index: int, crew: float) -> void:
+	var phase: float = clampf((crew - member_index * 0.075) / (1.0 - member_index * 0.075), 0.0, 1.0)
+	member.visible = phase > 0.0
+	if phase >= 1.0:
+		member.position = origin
+		member.rotation = Vector3.ZERO
+		_pose_human_walk(member, 0.0, 0.0)
+		return
+	var parent: Node3D = member.get_parent() as Node3D
+	var helicopter: Node3D = helicopters[aircraft_index]
+	var cabin: Vector3 = helicopter.to_global(Vector3(1.52, 0.09, 0.35))
+	var step: Vector3 = helicopter.to_global(Vector3(1.62, -0.57, 0.35))
+	var ground: Vector3 = helicopter_origins[aircraft_index] + Vector3(2.15, 0, 0.35)
+	ground.y = 42.0
+	var finish: Vector3 = parent.to_global(origin)
+	# Alpha walks along the north edge before turning east of the shaft. The
+	# route never cuts across the open descent hole or medical beds.
+	var bend: Vector3 = Vector3(5.9, 42.0, -5.4) if aircraft_index == 0 else ground.lerp(finish, 0.48)
+	var points: Array[Vector3] = [cabin, step, ground, bend, finish]
+	var boundaries: Array[float] = [0.0, 0.08, 0.18, 0.68, 1.0]
+	var segment: int = 0
+	while segment < 3 and phase > boundaries[segment + 1]:
+		segment += 1
+	var fraction: float = inverse_lerp(boundaries[segment], boundaries[segment + 1], phase)
+	var position_world: Vector3 = points[segment].lerp(points[segment + 1], fraction)
+	var distance_walked: float = points[segment].distance_to(points[segment + 1]) * fraction
+	for previous in range(segment):
+		distance_walked += points[previous].distance_to(points[previous + 1])
+	var stride_clock: float = distance_walked * TAU / 1.4 + member_index * 0.65
+	var movement: float = smoothstep(0.0, 0.035, phase) * (1.0 - smoothstep(0.93, 1.0, phase))
+	position_world.y += absf(sin(stride_clock)) * 0.027 * movement
+	member.position = parent.to_local(position_world)
+	var direction: Vector3 = parent.to_local(points[segment + 1]) - parent.to_local(points[segment])
+	var yaw: float = atan2(-direction.x, -direction.z)
+	if segment < 3:
+		var next_direction: Vector3 = parent.to_local(points[segment + 2]) - parent.to_local(points[segment + 1])
+		yaw = lerp_angle(yaw, atan2(-next_direction.x, -next_direction.z), smoothstep(0.72, 1.0, fraction))
+	member.rotation = Vector3(0, lerp_angle(yaw, 0.0, smoothstep(0.91, 1.0, phase)), 0)
+	_pose_human_walk(member, stride_clock, movement)
+
+func _pose_human_walk(member: Node3D, clock: float, movement: float) -> void:
+	var swing: float = sin(clock) * clampf(movement, 0.0, 1.0)
+	var left_leg: Node3D = member.get_node("LeftLeg")
+	var right_leg: Node3D = member.get_node("RightLeg")
+	var left_arm: Node3D = member.get_node("LeftArm")
+	var right_arm: Node3D = member.get_node("RightArm")
+	left_leg.rotation = Vector3(swing * 0.58, 0, 0)
+	right_leg.rotation = Vector3(-swing * 0.58, 0, 0)
+	left_arm.rotation = (left_arm.get_meta("rest_rotation") as Vector3) + Vector3(-swing * 0.43, 0, 0)
+	right_arm.rotation = (right_arm.get_meta("rest_rotation") as Vector3) + Vector3(swing * 0.43, 0, 0)
 
 func _build_incident_effects() -> void:
 	crack_group = Node3D.new()
@@ -810,6 +934,7 @@ func _pose_retreat_member(member: Node3D, origin: Vector3, shelter: Vector3, ini
 	member.rotation = Vector3(0, lerp_angle(initial_yaw, atan2(-direction.x, -direction.z), turn), stride)
 	# Disappearance happens inside the authored shelter and says nothing about fate.
 	member.visible = retreat < 0.985
+	_pose_human_walk(member, clock * 8.5 + index, sin(retreat * PI))
 
 func _update_incident_dust(stage: String, sample_time: float) -> void:
 	if not is_instance_valid(dust_group):
@@ -873,26 +998,7 @@ func _interaction(parent: Node3D, pos: Vector3, kind: String, id_value: String, 
 	return node
 
 func _human(parent: Node3D, pos: Vector3, clothing: Material, helmet: bool) -> Node3D:
-	var person: Node3D = Node3D.new()
-	parent.add_child(person)
-	person.position = pos
-	_box(person,Vector3(0,1.05,0),Vector3(0.48,0.58,0.3),clothing)
-	for xx in [-0.14,0.14]:
-		_box(person,Vector3(xx,0.43,0),Vector3(0.17,0.72,0.22),materials["dark"])
-		_box(person,Vector3(xx,0.08,-0.08),Vector3(0.22,0.16,0.38),materials["black_metal"])
-	for xx in [-0.33,0.33]:
-		var arm: MeshInstance3D = _box(person,Vector3(xx,0.98,0),Vector3(0.14,0.6,0.18),clothing)
-		arm.rotation.z = 0.08 if xx < 0 else -0.08
-		_sphere(person,Vector3(xx,0.65,-0.01),Vector3(0.09,0.11,0.08),materials["skin"])
-	_sphere(person,Vector3(0,1.61,0),Vector3(0.21,0.27,0.21),materials["skin"])
-	if helmet:
-		_sphere(person,Vector3(0,1.79,0),Vector3(0.25,0.15,0.25),materials["white"])
-		_box(person,Vector3(0,1.0,-0.16),Vector3(0.44,0.08,0.02),materials["yellow"])
-		_box(person,Vector3(0,1.2,-0.16),Vector3(0.44,0.08,0.02),materials["yellow"])
-		_box(person,Vector3(0,1.25,0.24),Vector3(0.38,0.65,0.25),materials["orange"])
-	else:
-		_sphere(person,Vector3(0,1.76,0.05),Vector3(0.215,0.12,0.21),materials["wood"])
-	return person
+	return Presentation.human(self, parent, pos, clothing, helmet)
 
 func _supply_crate(parent: Node3D, pos: Vector3) -> void:
 	_box(parent,pos+Vector3(0,0.38,0),Vector3(1.5,0.76,1.0),materials["orange"],true)
