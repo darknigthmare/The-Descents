@@ -1,19 +1,19 @@
 {
   "version": "0.6.0",
-  "source_commit": "780c59e2867a93ee69ba86477d90441f33684134",
-  "built_utc": "2026-11-24T21:50:26.742742+00:00",
+  "source_commit": "a17aa103f5daa350e2f2c2c09dc6e1a047bc2110",
+  "built_utc": "2026-11-24T22:02:40.029085+00:00",
   "source_count": 13,
-  "source_words": 67187,
+  "source_words": 67188,
   "sources": [
     {
       "file": "docs/BIBLE_DU_JEU.md",
-      "bytes": 89548,
-      "sha256": "462dc636ef75c0123804dfc02d51d3c8e9dd41974d723ff79af9cf79616b2cdb"
+      "bytes": 89563,
+      "sha256": "63bfd440f543bdaa57fba7ae99b2e71d19dc75b67e5174c4dca8ce1c98a85cac"
     },
     {
       "file": "docs/CATALOGUE_ETAGES.md",
-      "bytes": 83177,
-      "sha256": "3981a5efc7ad1e0a951c631deedfc2fe2947878302a46d8d6507f824f0762755"
+      "bytes": 83173,
+      "sha256": "d584b360ba50c957661d521f50af8c7978b988c1717059ddeff26645e332bd4a"
     },
     {
       "file": "docs/SYSTEMES_PROCEDURAUX.md",
@@ -23,12 +23,12 @@
     {
       "file": "docs/ARCHITECTURE_ET_PORTAGE_UE5.md",
       "bytes": 26212,
-      "sha256": "064075b5e9ca4f1836771bd4d8778f407114912f9ee413acf44ade2896f144fc"
+      "sha256": "2bb230d025ddc766824083e7d395fa0cd35878f95a673bcde8f6a810052fd347"
     },
     {
       "file": "docs/EFFONDREMENT_EN_DIRECT.md",
       "bytes": 23208,
-      "sha256": "3c79e78ff2c800ef2f5893ad3acdf5fb564405fc3f2c4c13268a3a639010d8e6"
+      "sha256": "47d556a0c72f36d01a6b2c21eeca50845ee83ed6ddb0ecc5fae1f6c8b9add4f1"
     },
     {
       "file": "docs/COMMUNICATIONS_ET_EQUIPES.md",
@@ -48,12 +48,12 @@
     {
       "file": "docs/SCENES_CINEMATIQUES.md",
       "bytes": 32170,
-      "sha256": "98e8c652f0e0e54303ad2f88cf44b458abfd65bee4ea084d0cd9783d0ba03a59"
+      "sha256": "cb9a3e008eea116d51aed7f23f4c2fe97fdf8f6b9493518bb075906dc3e6deca"
     },
     {
       "file": "docs/GAMEPLAY_DETAILLE.md",
       "bytes": 33131,
-      "sha256": "076723c3b0f9da2c5f5fb098d969895f36ba515cc55762400c3be80348ad9dac"
+      "sha256": "4c4aab51f0b865a6fcd1f7c850d2d15b5f0de52901a56ea1ce2834fba9a9074c"
     },
     {
       "file": "docs/SAUVETAGE_V0.6.md",
@@ -74,13 +74,13 @@
   "artifacts": [
     {
       "file": "docs/The-Tower-Descent-Bible-v0.6.docx",
-      "bytes": 242911,
-      "sha256": "6e2e7966798ca7a6a018e62efc57ef607c5124b1f7c30e03f589fef887332e88"
+      "bytes": 242906,
+      "sha256": "e6065c2b99b56ade3732f4cc91ae65d2a86f0fdac76c170d3b2c8329d1e21ffc"
     },
     {
       "file": "docs/The-Tower-Descent-Bible-v0.6.pdf",
-      "bytes": 2143317,
-      "sha256": "6c9df52794a0b15b7c7d09eff9d53c387544af8db6199eaa1d5394d2bb200278"
+      "bytes": 2143367,
+      "sha256": "822973bf2d27382e5a8747b01fa72f2ee14f9f6bc37ddfc5e1b574024ee70232"
     }
   ],
   "page_count": 139,
@@ -241,8 +241,8 @@
     {
       "page": 18,
       "file": "docs/validation/v0.6/rendered/page-018.png",
-      "bytes": 415968,
-      "sha256": "a48b490db72e56fa8a1e68690de550b6a0d3024d88ef88c01518c00f1f99a1b0",
+      "bytes": 415989,
+      "sha256": "d385f58cb198a9faaf0e656dbbf0f7dd20acedfba2aae7f68b0bbc43a40b28c0",
       "width": 1415,
       "height": 2000,
       "text_characters": 3879
@@ -304,8 +304,8 @@
     {
       "page": 25,
       "file": "docs/validation/v0.6/rendered/page-025.png",
-      "bytes": 404094,
-      "sha256": "3ccfdf1531a1906956256f0cb1aaeba1f9335b8bc08959c9ee08009475619de2",
+      "bytes": 404148,
+      "sha256": "68afd65d74a58c050b83417c1164ee9a670eb26a284e99991cb3b7016035e9a8",
       "width": 1415,
       "height": 2000,
       "text_characters": 4132
@@ -340,11 +340,11 @@
     {
       "page": 29,
       "file": "docs/validation/v0.6/rendered/page-029.png",
-      "bytes": 515515,
-      "sha256": "ef03ad61d6ce2179f8678502bbdb805edcf7d3410dd1d0aa5bf16d22e293633c",
+      "bytes": 516976,
+      "sha256": "d0f07f3ff011a1ede69d8aa45fbdba8634ea76a62111ea6066850c1414d08fce",
       "width": 1415,
       "height": 2000,
-      "text_characters": 3736
+      "text_characters": 3747
     },
     {
       "page": 30,
@@ -358,8 +358,8 @@
     {
       "page": 31,
       "file": "docs/validation/v0.6/rendered/page-031.png",
-      "bytes": 439990,
-      "sha256": "94f24887a18610972a9b673d0a6fb433e532ca7f7fa74e3ab9282ab7fbe45e3f",
+      "bytes": 440103,
+      "sha256": "8a4fb12993701043b62f5b7755b8dd0e57647a006e072ce5bbc077768d5a571c",
       "width": 1415,
       "height": 2000,
       "text_characters": 3432
@@ -367,17 +367,17 @@
     {
       "page": 32,
       "file": "docs/validation/v0.6/rendered/page-032.png",
-      "bytes": 329062,
-      "sha256": "75f860e2d2658f96361a1dfef253ddbf77334322d7757009f62d06c2d703ed01",
+      "bytes": 328246,
+      "sha256": "e3f625f0d1e4411c72a07b6c7dc222a66fd521950ffa14ebe86656851b48c230",
       "width": 1415,
       "height": 2000,
-      "text_characters": 4111
+      "text_characters": 4105
     },
     {
       "page": 33,
       "file": "docs/validation/v0.6/rendered/page-033.png",
-      "bytes": 386499,
-      "sha256": "a60bf8966ad02ff9297db91e512c3d7422fa33fcde2f7b024a4cd657579be7da",
+      "bytes": 386542,
+      "sha256": "cdc46532d50860a87d052ad13f1c7cd707b84eb6e3735262c04809d69a6d4a28",
       "width": 1415,
       "height": 2000,
       "text_characters": 4245
@@ -403,11 +403,11 @@
     {
       "page": 36,
       "file": "docs/validation/v0.6/rendered/page-036.png",
-      "bytes": 479155,
-      "sha256": "1bf714c2d3da061fb16e0d409f7037f47b1c19b5b8ee8ef8d9882d0203f1769b",
+      "bytes": 480240,
+      "sha256": "25ce310aaeed9d5fd4d372f5a9cfc4453706d956f70ab7c4bce61cf3368b8ea5",
       "width": 1415,
       "height": 2000,
-      "text_characters": 3529
+      "text_characters": 3531
     },
     {
       "page": 37,
@@ -646,8 +646,8 @@
     {
       "page": 63,
       "file": "docs/validation/v0.6/rendered/page-063.png",
-      "bytes": 413229,
-      "sha256": "1a8fdbe07aa34bb985e4be0f8c7b75e5a19b24036d303c67dd0e68fe0c5aacfb",
+      "bytes": 413255,
+      "sha256": "831546d97a25903bb80fa156fef9677723d9edeb33dfb7c51d6a3ffd553885fe",
       "width": 1415,
       "height": 2000,
       "text_characters": 3529
@@ -691,8 +691,8 @@
     {
       "page": 68,
       "file": "docs/validation/v0.6/rendered/page-068.png",
-      "bytes": 530119,
-      "sha256": "e40ed7debbc739e55a0e5b51ff54c388575a88de9aca978c2be28439705ade4b",
+      "bytes": 530141,
+      "sha256": "dc7bffb0d814c0d76b22ac2dbb87f48008e13eb1816d62f7470bca2185195da0",
       "width": 1415,
       "height": 2000,
       "text_characters": 4084
@@ -718,8 +718,8 @@
     {
       "page": 71,
       "file": "docs/validation/v0.6/rendered/page-071.png",
-      "bytes": 363710,
-      "sha256": "6e3954f4806f1c54c5fba55126d890654e6a7b7713ae0f87d5f2b6ad2d3f54bd",
+      "bytes": 363762,
+      "sha256": "2f9dd2bc43493482d542215999e55c4ec2a2f32663dafe0f714a4e4f1384ce4e",
       "width": 1415,
       "height": 2000,
       "text_characters": 2940
@@ -1114,8 +1114,8 @@
     {
       "page": 115,
       "file": "docs/validation/v0.6/rendered/page-115.png",
-      "bytes": 485443,
-      "sha256": "05413ef5de2af43eac38032a943f3a6e1183fea5092d9808349c17212523b9d3",
+      "bytes": 485582,
+      "sha256": "8b0e3ee9e251c3603b7dca787bb9469cc212e5847ec09365253e19eceb0747b2",
       "width": 1415,
       "height": 2000,
       "text_characters": 3638
@@ -1204,8 +1204,8 @@
     {
       "page": 125,
       "file": "docs/validation/v0.6/rendered/page-125.png",
-      "bytes": 495633,
-      "sha256": "c2325a21406be9c91ec7d85888fa3e091c3443a97ddec4198019da7eb19acf1e",
+      "bytes": 495853,
+      "sha256": "f44c795ccb357a8afe99868f2484dceac410c92afbe55701dc30a610f6e98681",
       "width": 1415,
       "height": 2000,
       "text_characters": 3773

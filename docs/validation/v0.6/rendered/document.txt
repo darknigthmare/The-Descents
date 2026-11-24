@@ -1105,7 +1105,7 @@ procédurale complète.
 15 Catalogue d’événements
 La plupart de ces événements sont des modules de campagne proposés. Une entrée est
 sélectionnée selon son contexte, ses prérequis et le temps de récupération disponible.
-L’effondrement observé au 29, introduit en 0.2 et conservé en 0.5.0, constitue l’événement fixe du
+L’effondrement observé au 29, introduit en 0.2 et conservé en 0.6.0, constitue l’événement fixe du
 prototype ; sa présence ne dépend pas d’un tirage aléatoire. Le dossier de séquence distingue son
 implémentation en maquette des enrichissements cinématiques futurs.
 
@@ -1512,7 +1512,7 @@ Darknigthmare · 24 novembre 2026              24 / 139
 
 Périmètre de la tranche
 
-    Zone                     Fonction                              Périmètre du prototype 0.5.0
+    Zone                     Fonction                              Périmètre du prototype 0.6.0
 
                                                                    Approche temps réel, deux tours
                                                                    intactes, deux appareils, équipes en
@@ -1785,7 +1785,7 @@ jouable de Malik, les durées de ressources, la taille finale des étages et le 
 explicite devront être confirmés après la première tranche. Le catalogue propose des situations et
 non un engagement à produire toutes leurs variantes simultanément.
 
-28 Dossier de production 0.5.0
+28 Historique dossier de production 0.5.0
 La révision ajoute des spécifications transversales assez précises pour préparer une nouvelle
 tranche sans confondre conception et livraison. Le catalogue fournit trente fiches d’assemblage :
 volumes proposés, circulation, accessoires, rythme, sauvegarde et contrôle du retour. Les étages
@@ -1841,7 +1841,7 @@ Ce catalogue développe les lieux de la Bible du jeu. Chaque étage possède une
 scène reconnaissable et un objectif de rythme. La génération fait varier des passages, des objets,
 des personnes secondaires et des détails compatibles ; elle ne déplace pas les révélations
 principales au hasard.
-Périmètre du prototype Godot 0.5.0 : toit jouable d’Aube, Hespérie visible à distance, deux
+Périmètre du prototype Godot 0.6.0 : toit jouable d’Aube, Hespérie visible à distance, deux
 hélicoptères et équipes en maquette, étages 30 à 25, trois rescapés aux 30, 28 et 26, indices aux
 29, 27 et 26, ravitaillement aux 29 et 25, anomalie au 26 et balise de fin au refuge 25. Les tours
 commencent intactes. La baie Est du 29 accueille l’effondrement en temps réel et les
@@ -1898,7 +1898,7 @@ Darknigthmare · 24 novembre 2026             31 / 139
                          panoramique
 
                                                    Observation de Bravo,
- A29     29              Suites de l’hôtel         effondrement vécu, indice     Dans le périmètre 0.5.0
+ A29     29              Suites de l’hôtel         effondrement vécu, indice     Dans le périmètre
                                                    et détour
 
                                                    Sauvetage de Samuel
@@ -2028,7 +2028,7 @@ simplification ne fixe pas définitivement l’architecture de la campagne.
 3 Toit et premiers étages
 A TOIT Le poste qui attend le retour
 Fonction et image. Hélisurface, groupes techniques et terrasse de maintenance. Deux appareils
-et des groupes de secours sont visibles dans la maquette 0.5.0, répartis sur les deux tours. Aube
+et des groupes de secours sont visibles dans la maquette 0.6.0, répartis sur les deux tours. Aube
 et Hespérie sont droites, séparées et visiblement intactes. Le poste de commandement et le treuil
 principal sont sur Aube ; Bravo est déposé sur Hespérie. La campagne enrichira les gestes des
 équipiers, la tente médicale et les transferts de matériel.
@@ -2154,7 +2154,7 @@ Darknigthmare · 24 novembre 2026              35 / 139
 THE TOWER DESCENT | Bible de conception | Version 0.6.0
 
 
-Dans la 0.5.0, le retour facultatif d’une phrase de Bravo peut suivre six secondes de calme radio
+Depuis la 0.5.0, le retour facultatif d’une phrase de Bravo peut suivre six secondes de calme radio
 au 27, après Samuel confirmé et l’incident stabilisé. Le message attend hors rappel, portage et
 treuillage. Sa réception demande un checkpoint ; quitter l’étage sans l’entendre ne bloque aucun
 objectif. Varga peut ensuite vérifier le signal en zone calme.
@@ -3682,7 +3682,7 @@ Darknigthmare · 24 novembre 2026                  62 / 139
 Annexe B Architecture et portage vers Unreal Engine 5
 Version de conception 0.6.0 — Présentation cinématique et continuité de mission — 24 novembre
 2026
-Ce document décrit le prototype Godot 0.5.0 et propose une trajectoire vers Unreal Engine 5. La
+Ce document décrit le prototype Godot 0.6.0 et propose une trajectoire vers Unreal Engine 5. La
 tranche solo en vue subjective comprend un toit, six étages de 30 à 25, trois sauvetages, trois
 indices et un refuge. Les deux tours commencent intactes, deux hélicoptères et des groupes de
 secours sont visibles en maquette, puis un effondrement partiel se déroule pendant l’observation
@@ -4009,7 +4009,7 @@ Le framework PCG d'Unreal constitue une option pour distribuer végétation, gra
 à partir de règles. Il ne doit pas remplacer les invariants de sauvetage ou décider seul de la
 progression narrative. Cette utilisation est une proposition adaptée au rôle de génération
 procédurale décrit par Epic. Documentation Epic PCG
-Dans le prototype 0.5.0, Hespérie passe d’un état vertical intact à un état partiellement effondré
+Dans le prototype 0.6.0, Hespérie passe d’un état vertical intact à un état partiellement effondré
 pendant le jeu. Son état final, le détour et les communications sont persistants. Le portage UE5
 proposé doit d’abord reproduire ce contrat, avec trajectoires préparées, zone d’observation,
 commandes libres, pause réelle et reprises avant/après. Des débris et effets plus détaillés pourront
@@ -4139,7 +4139,7 @@ l’accompagner.
 La scène est un événement réel du récit. Les incertitudes sur les hallucinations apparaissent dans
 ce qui suit ; elles n’effacent ni l’effondrement, ni les sauvetages confirmés.
 
-2 Périmètre de la version 0.5.0
+2 Périmètre de la version 0.6.0
  Élément                   Périmètre retenu
 
  Moteur jouable            Prototype Godot ; toit d’Aube et étages 30 à 25
@@ -6725,7 +6725,7 @@ sans attaque déclenchée par l’ouverture du bilan.
 Le menu peut ensuite proposer de consulter cette intervention terminée. Son décor correspond au
 refuge et son texte à la partie achevée. Le résultat n’autorise pas la présentation d’un bunker,
 d’Alma retrouvée ou d’une fin de campagne : ces chapitres sont conçus mais ne sont pas jouables
-dans la version 0.5.0.
+dans la version 0.6.0.
 
 9 Storyboards de campagne à produire
 SC07 Retrouver Alma au socle
@@ -7296,7 +7296,7 @@ difficultés doivent exister même lorsqu’Alex ne le regarde pas.
 Peur et tension. Il craint de devenir une charge pour l’autre équipe, ce qui peut le pousser à
 retarder une demande d’aide. Le joueur peut lui fournir un relais ou une route ; l’écriture doit
 montrer la conséquence avant une éventuelle séparation.
-Fonction et cible. Allié de mission, pas compagnon autonome livré en 0.5.0. Une première
+Fonction et cible. Allié de mission, pas compagnon autonome livré en 0.6.0. Une première
 version pourrait utiliser des postes préparés et des transitions contrôlées, puis une navigation
 locale. Les états utiles sont engagé, contact établi, route partagée, isolé et pris en charge. Sa
 survie future dépend de décisions documentées, jamais d’un silence aléatoire destiné à

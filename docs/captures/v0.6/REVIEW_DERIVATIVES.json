@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "version": "0.6.0",
+  "source_commit": "a17aa103f5daa350e2f2c2c09dc6e1a047bc2110",
+  "source_provenance": "CI_PROVENANCE.json",
+  "source_provenance_sha256": "afa60331be23267415f53ae54f4eb2e7d02f648614cb859e9788f3088e1baab8",
+  "built_utc": "2026-11-24T22:01:39.272214+00:00",
+  "selection": {
+    "native_png_bytes_strictly_greater_than": 900000
+  },
+  "conversion": {
+    "format": "JPEG",
+    "quality": 95,
+    "chroma_subsampling": "4:4:4",
+    "resize": false,
+    "crop": false,
+    "lossy": true
+  },
+  "derivatives": [
+    {
+      "source_file": "04_signature_studio.png",
+      "source_bytes": 1098864,
+      "source_sha256": "e21841a29a7abc056f952ddfcb4535bdd9b121767f8e544151028eac97ea2409",
+      "file": "review_jpeg/04_signature_studio.jpg",
+      "bytes": 188206,
+      "sha256": "4c456c9a02be7bbb43b1c5336a459aefc84f4fef8cdba0be57dc910f98b00c92",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "source_file": "05_titre.png",
+      "source_bytes": 1099267,
+      "source_sha256": "e720143900179ba36a337ca69dc06945ee0e6457c6df7d286d07fed86a6ab918",
+      "file": "review_jpeg/05_titre.jpg",
+      "bytes": 203397,
+      "sha256": "fc62d2607e7838990533ce74c10de9458d6e44979f7a051b69f0618b1d736a26",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "source_file": "06_approche_17.png",
+      "source_bytes": 925765,
+      "source_sha256": "5b2da0c565eb0ab1f450f4ca856aa6fe802fb648c3c48f87fb09929dbf303232",
+      "file": "review_jpeg/06_approche_17.jpg",
+      "bytes": 220446,
+      "sha256": "7641f103f9988db78d7e531d55ab596d3d48b8acd26006461a0330a5a78286d2",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "source_file": "06_approche_25.png",
+      "source_bytes": 927349,
+      "source_sha256": "c7c467a9a577116b8a9960b8d7618cf3cda4ecf1b04bad64c5b23b99f349f0ad",
+      "file": "review_jpeg/06_approche_25.jpg",
+      "bytes": 255515,
+      "sha256": "64cc990ed57049dee495d4219563fb4832f0a142aea232927ab5dda3c1bc1ac5",
+      "width": 1440,
+      "height": 900
+    }
+  ],
+  "manual_visual_review": false,
+  "limitations": [
+    "These full-size JPEG derivatives support visual inspection in file readers that cannot return PNGs above 1 MiB.",
+    "JPEG is lossy. The original PNGs and CI_PROVENANCE.json remain the authoritative capture evidence.",
+    "Derivative generation does not approve a visual review or change any PNG release gate."
+  ]
+}

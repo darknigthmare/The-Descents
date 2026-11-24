@@ -1,8 +1,8 @@
 {
   "format": 1,
   "version": "0.6.0",
-  "requested_utc": "2026-11-24T21:48:27.045282+00:00",
-  "local_freeze_commit": "780c59e2867a93ee69ba86477d90441f33684134",
+  "requested_utc": "2026-11-24T22:00:36.997450+00:00",
+  "local_freeze_commit": "a17aa103f5daa350e2f2c2c09dc6e1a047bc2110",
   "runtime_sha256": {
     "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
     "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
@@ -33,7 +33,7 @@
     "prototype/scripts/frontend_menu.gd": "99c9b895740c30ee6fcd4cad42eb67f392bc227894cc93feba20f1e61d93813a",
     "prototype/scripts/hud.gd": "325390fb37e39042676bd1e77dc651cc9cb8fcb7bd4209d54e427da26233ff29",
     "prototype/scripts/inspection_panel.gd": "37c8c06327a8e97f955381bd36564eddabb686bd053e0af1b99c2b7895d49cbd",
-    "prototype/scripts/main.gd": "17d117a8836a9522c36efa2e487b6895aad50fa7c7ce6d99eca91e683b4af80a",
+    "prototype/scripts/main.gd": "18211533137797722c0f7325c4fc67ad1808556fec7467414507380d0abe2d2b",
     "prototype/scripts/maritime_atmosphere.gd": "ccce77223a8aea0888ae660fb5a32facc89440afb4edbaf57f68834da84d33a5",
     "prototype/scripts/player_controller.gd": "92617ae5337e7f74c809a4f516cecf0df561bca676bb990ffb913f70b9a25394",
     "prototype/scripts/preferences_store.gd": "31c0a2dee0287b17fc41f1ebd13dd8060986ed431174625d6c304bdd431f5420",
@@ -52,7 +52,7 @@
     "prototype/web_shell.html": "2153408b1c07a7cdac170f9f87fdb99617fd61f82c523902a11658e17d2e54fd"
   },
   "fixture_sha256": "0dc91dd9d0e58a59f6f09b579a649ea56f28f7816fe2f819160657cfb9181f5b",
-  "verification_sha256": "172664c4b7c8c6f78556db2acba51cef3ac1723fe4cd99b06155ae86a4223045",
+  "verification_sha256": "fc1ee1740a8a6a1914f7bbef85cde0839eea36b0dd8d78288b9ee589c962f1bd",
   "expected_captures": [
     "01_menu_arrivee.png",
     "02_options.png",

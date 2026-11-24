@@ -1,11 +1,11 @@
 {
   "version": "0.6.0",
   "phase": "review",
-  "request_id": "v06-review-03",
-  "source_commit": "780c59e2867a93ee69ba86477d90441f33684134",
-  "source_parent_commit": "d94c6cc32515a7ca589cdeac565fd70a004325cc",
-  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45494554865",
-  "completed_utc": "2026-11-24T21:50:26.828740+00:00",
+  "request_id": "v06-review-04",
+  "source_commit": "a17aa103f5daa350e2f2c2c09dc6e1a047bc2110",
+  "source_parent_commit": "9a476e88f03cc8ebb28c3d6fb5556c2dc33925ac",
+  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45496447511",
+  "completed_utc": "2026-11-24T22:02:40.116180+00:00",
   "runtime_sha256": {
     "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
     "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
@@ -36,7 +36,7 @@
     "prototype/scripts/frontend_menu.gd": "99c9b895740c30ee6fcd4cad42eb67f392bc227894cc93feba20f1e61d93813a",
     "prototype/scripts/hud.gd": "325390fb37e39042676bd1e77dc651cc9cb8fcb7bd4209d54e427da26233ff29",
     "prototype/scripts/inspection_panel.gd": "37c8c06327a8e97f955381bd36564eddabb686bd053e0af1b99c2b7895d49cbd",
-    "prototype/scripts/main.gd": "17d117a8836a9522c36efa2e487b6895aad50fa7c7ce6d99eca91e683b4af80a",
+    "prototype/scripts/main.gd": "18211533137797722c0f7325c4fc67ad1808556fec7467414507380d0abe2d2b",
     "prototype/scripts/maritime_atmosphere.gd": "ccce77223a8aea0888ae660fb5a32facc89440afb4edbaf57f68834da84d33a5",
     "prototype/scripts/player_controller.gd": "92617ae5337e7f74c809a4f516cecf0df561bca676bb990ffb913f70b9a25394",
     "prototype/scripts/preferences_store.gd": "31c0a2dee0287b17fc41f1ebd13dd8060986ed431174625d6c304bdd431f5420",
@@ -57,5 +57,5 @@
   "automated_steps_passed": true,
   "manual_visual_review_required": true,
   "archive_verification_report": null,
-  "pipeline_sha256": "8b2ccb7965d2fdafbc56726f568a477ca83d95ce69a8f044a278690d04f809ba"
+  "pipeline_sha256": "7b779cd1fd92565bb052258a272b7ed505ce2ebdc856b3f6ecf2d177cc98905f"
 }
