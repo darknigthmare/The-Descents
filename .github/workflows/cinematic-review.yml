@@ -145,3 +145,4 @@ jobs:
             echo 'Capture publication failed while the reviewed branch remained unchanged.' >&2
             exit 1
           fi
+
