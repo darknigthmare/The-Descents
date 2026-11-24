@@ -2,13 +2,13 @@
 
 ## Bible de conception du jeu
 
-**Version 0.4.0 — Mise en scène du prototype et dossier de production détaillé — 24 novembre 2026**
+**Version 0.5.0 — Mise en scène du prototype et dossier de production détaillé — 24 novembre 2026**
 
 **Création et direction du projet : Darknigthmare. Dépôt : The-Descents.**
 
 Cette bible développe les notes fondatrices en une campagne de sauvetage et d’horreur à la première personne. Elle décrit l’univers, les personnages, les systèmes, les possibilités du joueur, la progression des étages et les règles de génération. Les noms propres, la chronologie, les révélations et les fins ci-dessous constituent une proposition de canon originale que la direction du projet peut faire évoluer.
 
-Le prototype 3D Godot 0.4.0 conserve un toit jouable et six étages, du 30 au 25, avec rappel, exploration, trois rescapés et un refuge. Les deux tours commencent intactes ; l’effondrement d’Hespérie est observé depuis la baie Est du 29. Bravo se replie vers l’intérieur et les personnes confirmées apparaissent au poste médical du toit. La radio ordonne ses sous-titres, conserve les trente-deux dernières transmissions et peut faire revenir un fragment de Bravo après Samuel. Cette révision ajoute une ouverture de marque, un menu situé dans le monde de la partie et une approche aérienne en temps réel avec les volumes de la maquette. La campagne complète, les personnages et voix définitifs, les souterrains, la coopération et le portage Unreal Engine 5 restent à produire. Le [rapport de livraison](ETAT_DE_LIVRAISON.md) distingue les fonctions vérifiées, les exports et les limites des essais.
+Le prototype 3D Godot 0.5.0 conserve un toit jouable et six étages, du 30 au 25, avec rappel, exploration, trois rescapés et un refuge. Les deux tours commencent intactes ; l’effondrement d’Hespérie est observé depuis la baie Est du 29. Bravo se replie vers l’intérieur et les personnes confirmées apparaissent au poste médical du toit. La radio ordonne ses sous-titres, conserve les trente-deux dernières transmissions et peut faire revenir un fragment de Bravo après Samuel. L’ouverture de marque et l’accueil contextuel de la 0.4 sont conservés. La 0.5 anime l’approche des deux appareils, leurs portes et le débarquement des six membres de toit ; elle enrichit les volumes des hélicoptères, des sauveteurs et du littoral. Douze objets examinables donnent une lecture des lieux qui évolue avec l’incident et les réceptions médicales confirmées. La campagne complète, les personnages et voix définitifs, les souterrains, la coopération et le portage Unreal Engine 5 restent à produire. Le [rapport de livraison](ETAT_DE_LIVRAISON.md) distingue les fonctions vérifiées, les exports et les limites des essais.
 
 Le [Catalogue des étages](CATALOGUE_ETAGES.md) précise les trente niveaux de campagne et leur périmètre jouable. Les dossiers [Effondrement en direct](EFFONDREMENT_EN_DIRECT.md), [Communications et équipes](COMMUNICATIONS_ET_EQUIPES.md), [Props et interactions](PROPS_INTERACTIONS.md), [Ennemis et statistiques](ENNEMIS_STATISTIQUES.md), [Scènes cinématiques](SCENES_CINEMATIQUES.md) et [Gameplay détaillé](GAMEPLAY_DETAILLE.md) complètent cette bible. Les fiches d’objets, rencontres et scènes constituent des spécifications de production, avec des valeurs initiales à éprouver ; leur présence dans le document ne signifie pas qu’elles existent dans le moteur.
 
@@ -176,7 +176,7 @@ Elle peut aider concrètement à ouvrir un sas ou à stabiliser un relais. Cette
 
 ### Les autres équipes
 
-Les groupes de secours possèdent des indicatifs simples : **Corde**, **Médical**, **Échelle** et **Relais**. Corde et Médical s’installent sur Aube, sous le commandement de Varga. Le détachement **Bravo**, qui réunit Échelle et Relais, est déposé sur Hespérie pour localiser les personnels techniques et vérifier les signaux. Deux hélicoptères et des groupes visibles sur chaque toit matérialisent cette répartition dans la maquette 0.4.0 ; Bravo se replie à couvert et les sauvés sont visibles au poste médical. Les rencontres détaillées, le portage des caisses et les animations de travail appartiennent à la production de campagne.
+Les groupes de secours possèdent des indicatifs simples : **Corde**, **Médical**, **Échelle** et **Relais**. Corde et Médical s’installent sur Aube, sous le commandement de Varga. Le détachement **Bravo**, qui réunit Échelle et Relais, est déposé sur Hespérie pour localiser les personnels techniques et vérifier les signaux. Deux hélicoptères et des groupes visibles sur chaque toit matérialisent cette répartition dans la maquette 0.5.0 ; Bravo se replie à couvert et les sauvés sont visibles au poste médical. Les rencontres détaillées, le portage des caisses et les animations de travail appartiennent à la production de campagne.
 
 Bravo cesse de répondre lors de l’impact. Le journal porte « liaison perdue », sans déclarer les équipiers morts. Une reprise ambiguë de son indicatif plus bas pourra préparer les phénomènes d’imitation ; elle doit être distinguée d’une confirmation humaine vérifiée. Varga demeure joignable par intermittence et les victimes prises en charge restent au registre. La police sécurisera les zones d’arrivée et les archives dans la campagne lorsqu’elle le pourra.
 
@@ -413,7 +413,7 @@ Pour le prototype, un sous-ensemble de ce contrat suffit. Les six fonctions d’
 
 ## 15 Catalogue d’événements
 
-La plupart de ces événements sont des modules de campagne proposés. Une entrée est sélectionnée selon son contexte, ses prérequis et le temps de récupération disponible. L’effondrement observé au 29, introduit en 0.2 et conservé en 0.4.0, constitue l’événement fixe du prototype ; sa présence ne dépend pas d’un tirage aléatoire. Le [dossier de séquence](EFFONDREMENT_EN_DIRECT.md) distingue son implémentation en maquette des enrichissements cinématiques futurs.
+La plupart de ces événements sont des modules de campagne proposés. Une entrée est sélectionnée selon son contexte, ses prérequis et le temps de récupération disponible. L’effondrement observé au 29, introduit en 0.2 et conservé en 0.5.0, constitue l’événement fixe du prototype ; sa présence ne dépend pas d’un tirage aléatoire. Le [dossier de séquence](EFFONDREMENT_EN_DIRECT.md) distingue son implémentation en maquette des enrichissements cinématiques futurs.
 
 | Événement | Conditions | Action et information offertes au joueur |
 |---|---|---|
@@ -530,7 +530,7 @@ Le joueur distingue une partie nouvelle d’une reprise. Le prototype utilise de
 
 ## 20 Ouverture détaillée de la campagne
 
-L’ouverture possède deux niveaux de finition distincts. La 0.4.0 met en scène la mer, les deux tours, les appareils et les équipes géométriques dans une approche temps réel d’environ vingt-huit secondes, passable. Le détail des gestes, l’intérieur de cabine et le doublage décrits ci-dessous restent une cible de campagne. Le [découpage cinématique](SCENES_CINEMATIQUES.md) donne les durées, les caméras, les textes, les transitions et les règles de reprise de la présentation actuelle.
+L’ouverture possède deux niveaux de finition distincts. La 0.5.0 met en scène la mer, les deux tours, l’atterrissage des appareils et le débarquement des équipes géométriques dans une approche temps réel de vingt-huit secondes, passable. Les volumes intérieurs de cabine, portes coulissantes et poses de marche sont présents. Le jeu d’acteurs, les gestes de prise en charge et le doublage décrits ci-dessous restent une cible de campagne. Le [découpage cinématique](SCENES_CINEMATIQUES.md) donne les durées, les caméras, les textes, les transitions et les règles de reprise de la présentation actuelle.
 
 ### Approche
 
@@ -568,7 +568,7 @@ Le prototype doit répondre à des questions concrètes. Le rappel donne-t-il en
 
 ### Périmètre de la tranche
 
-| Zone | Fonction | Périmètre du prototype 0.4.0 |
+| Zone | Fonction | Périmètre du prototype 0.5.0 |
 |---|---|---|
 | Toit | Arrivée et briefing | Approche temps réel, deux tours intactes, deux appareils, équipes en maquette, réception nominative des rescapés et première ligne |
 | 30 | Restaurant panoramique | Ana Rios, maître d’hôtel, première rescapée et apprentissage de l’exploration |
@@ -703,15 +703,15 @@ Le nom public peut rester **The Tower Descent**, avec **The-Descents** comme nom
 
 La personnalisation complète d’Alex, le nombre exact de survivants de la campagne, la présence jouable de Malik, les durées de ressources, la taille finale des étages et le degré de violence explicite devront être confirmés après la première tranche. Le catalogue propose des situations et non un engagement à produire toutes leurs variantes simultanément.
 
-## 28 Dossier de production 0.4.0
+## 28 Dossier de production 0.5.0
 
 La révision ajoute des spécifications transversales assez précises pour préparer une nouvelle tranche sans confondre conception et livraison. Le catalogue fournit trente fiches d’assemblage : volumes proposés, circulation, accessoires, rythme, sauvegarde et contrôle du retour. Les étages 24 à 1 restent à construire ; la fiche d’un étage déjà représenté décrit aussi des enrichissements non intégrés.
 
 Le dossier de props comporte **52 entrées P01 à P52**. Chaque fiche donne fonction, dimensions, état actuel, interaction cible, états, retour sonore, placement et points de validation. Le dossier de menaces sépare **E00**, silhouette réellement programmée au spa, de **dix archétypes de campagne E01 à E10**, avec comportements, valeurs initiales, signaux, contre-jeu, limites de génération et persistance. L’absence de points de vie sur une voix ou une empreinte est un choix fonctionnel, pas une fiche incomplète.
 
-Le gameplay détaillé consigne les paramètres actuels de déplacement, corde, ressources, portée d’interaction, treuillage et dangers. Il expose leurs simplifications : pas de capsule basse, sélection par proximité sans rayon de visibilité, portage abstrait, menace au mouvement direct, fusée à effet global. Les plages proposées pour l’accompagnement et les nouvelles interactions restent à essayer. Les motivations, objectifs et peurs des personnages relient leur rôle mécanique à leurs décisions narratives, sans leur inventer des statistiques psychologiques déjà simulées.
+Le gameplay détaillé consigne les paramètres actuels de déplacement, corde, ressources, portée d’interaction, treuillage et dangers. Il expose leurs simplifications : pas de capsule basse, interactions de mission sélectionnées par proximité, inspections soumises à la visée et à la visibilité, portage abstrait, menace au mouvement direct, fusée à effet global. Les plages proposées pour l’accompagnement et les nouvelles interactions restent à essayer. Les motivations, objectifs et peurs des personnages relient leur rôle mécanique à leurs décisions narratives, sans leur inventer des statistiques psychologiques déjà simulées.
 
-La présentation livrée comprend un prologue de marque de **15 secondes**, un accueil contextuel issu d’une sauvegarde validée et une arrivée de **28 secondes**, en quatre plans et quatre communications sous-titrées. Les préférences sont chargées avant le prologue, les séquences peuvent être passées et leur horloge ne consomme pas le temps de mission. Les scènes de retrouvailles avec Alma, de rupture du socle et de seuil disposent de storyboards textuels de production ; elles ne sont pas des cinématiques jouables supplémentaires de la 0.4.0.
+La présentation livrée comprend un prologue de marque de **15 secondes**, un accueil contextuel issu d’une sauvegarde validée et une arrivée de **28 secondes**, en quatre plans et quatre communications sous-titrées. Les préférences sont chargées avant le prologue, les séquences peuvent être passées et leur horloge ne consomme pas le temps de mission. Les scènes de retrouvailles avec Alma, de rupture du socle et de seuil disposent de storyboards textuels de production ; elles ne sont pas des cinématiques jouables supplémentaires de la 0.5.0.
 
 La priorité suivante est d’éprouver la compréhension des gestes et des personnes, puis de remplacer progressivement les silhouettes et matériaux de maquette. Les objectifs de finition ne doivent pas masquer les contrats déjà établis : toute vie confirmée reste sauvée, tout refuge certifié tient sa promesse et toute reprise reconstruit une intervention cohérente.
 

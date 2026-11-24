@@ -1,6 +1,6 @@
 # Systèmes procéduraux de The Tower Descent
 
-**Version 0.4.0 — 24 novembre 2026**
+**Version 0.5.0 — 24 novembre 2026**
 
 ## Objet et périmètre
 
@@ -10,7 +10,7 @@ La révision 0.2 conserve ce générateur et ajoute un événement de mission in
 
 Ce document distingue ce mécanisme livré de la génération plus ambitieuse de la campagne, décrite dans la bible. Il ne faut pas interpréter les trente étages de la bible comme trente niveaux déjà jouables. La géométrie du prototype est construite par `world_builder.gd`; `floor_generator.gd` ne prétend pas, à lui seul, prouver la traversabilité des collisions produites.
 
-La 0.4.0 rétablit le repli de Bravo, la réception nominative au toit et les communications persistantes conçus pendant la continuation 0.3. Elle ajoute une présentation cinématique et un menu contextualisé. Ces systèmes utilisent la progression de mission et des horloges de présentation, sans modifier le tirage des six étages.
+La 0.4.0 rétablit le repli de Bravo, la réception nominative au toit et les communications persistantes conçus pendant la continuation 0.3. Elle ajoute une présentation cinématique et un menu contextualisé. Ces systèmes utilisent la progression de mission et des horloges de présentation, sans modifier le tirage des six étages. La 0.5 ajoute des poses d’arrivée échantillonnées et douze observations fixes. Leur construction ne consomme pas le générateur aléatoire ; leurs textes sont projetés depuis l’incident stable et les réceptions confirmées, sans nouvel état persistant.
 
 ## Contrat d’extension du contenu
 

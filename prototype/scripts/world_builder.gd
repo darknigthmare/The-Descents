@@ -202,7 +202,8 @@ func _build_environment() -> void:
 	moon.directional_shadow_max_distance = 80.0
 	add_child(moon)
 	var sea_mesh: PlaneMesh = PlaneMesh.new()
-	sea_mesh.size = Vector2(1600, 1600)
+	# Keep the finite water boundary beyond the aerial shots and their fog horizon.
+	sea_mesh.size = Vector2(6400, 6400)
 	sea_mesh.subdivide_width = 100
 	sea_mesh.subdivide_depth = 100
 	var sea: MeshInstance3D = MeshInstance3D.new()

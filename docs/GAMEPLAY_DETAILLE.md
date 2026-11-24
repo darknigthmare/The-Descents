@@ -1,6 +1,6 @@
 # Gameplay détaillé, réglages et personnages
 
-**The Tower Descent — version 0.4.0.** Les valeurs désignées « actuelles » proviennent du prototype. Les valeurs « cibles » sont des propositions de réglage pour une prochaine tranche et doivent être éprouvées en jeu. Une fiche de conception ne signifie pas que la fonction correspondante est déjà programmée. Cette annexe complète la bible avec des contrats utilisables par la conception, l’animation, le son et les essais.
+**The Tower Descent — version 0.5.0.** Les valeurs désignées « actuelles » proviennent du prototype. Les valeurs « cibles » sont des propositions de réglage pour une prochaine tranche et doivent être éprouvées en jeu. Une fiche de conception ne signifie pas que la fonction correspondante est déjà programmée. Cette annexe complète la bible avec des contrats utilisables par la conception, l’animation, le son et les essais.
 
 ## 1 Expérience recherchée et boucles
 
@@ -9,6 +9,10 @@ La boucle courte est **lire un espace, rejoindre une personne, sécuriser son re
 Sur trente à quatre-vingt-dix secondes, le joueur alterne déplacement, observation et interaction. Sur quelques minutes, il réalise une boucle aller-retour avec une personne ou un objectif. À l’échelle d’un secteur, il rejoint un refuge, relit les faits puis choisit la prochaine descente. Ces durées sont des intentions de rythme ; elles ne sont pas des chronomètres imposés au prototype.
 
 La version actuelle permet trois transferts nommés, un incident structurel et un bilan au 25. Le trajet de référence est toit, Ana au 30, observation de Bravo au 29, Samuel au 28, respiration au 27, Nora au 26 et refuge au 25. Un retour au toit reste possible. Les preuves secondaires et l’écho de Bravo enrichissent la lecture sans devenir des conditions cachées de survie.
+
+La 0.5 ajoute douze observations facultatives réparties sur ce même parcours. Pour les lire, Alex se place à moins de 2,4 m, vise l’objet à travers un espace libre et utilise E. Le panneau suspend l’intervention jusqu’à sa fermeture ou Échap. Le registre médical et les observations de restaurant, archives et spa tiennent compte des personnes réellement reçues ; les constats distinguent les états avant et après le choc. Ces objets ne donnent ni points, ni bonus, ni collecte supplémentaire et ne modifient pas les conditions de victoire. Leur catalogue et leurs critères figurent dans [Props et interactions](PROPS_INTERACTIONS.md).
+
+La lecture ne s’ouvre pas pendant un portage, un treuillage, le rappel ou la phase active de l’incident. Une commande de secours à moins de 1,5 m garde la priorité sur une observation voisine. Cette règle évite d’afficher une page de récit à la place d’un geste nécessaire pour ramener une personne ou reprendre la corde. Elle ne retire pas la possibilité générale de mettre le jeu en pause.
 
 La campagne étend cette boucle avec des personnes mobiles, des points de transfert locaux, des routes de retour à préparer et une enquête sur SILLAGE. Elle doit conserver la même grammaire : signaler ce qui est certain, rendre les coûts visibles et offrir une réponse à l’action du joueur. Une nouvelle mécanique doit expliquer quel choix elle ajoute, avant d’ajouter une jauge.
 
@@ -50,11 +54,11 @@ La cible de campagne introduit des segments de rappel préparés, des points d�
 
 ## 4 Interaction et lisibilité
 
-Actuellement, le jeu cherche l’objet utilisable le plus proche au même étage, à moins de **trois mètres en distance horizontale**. Un objet consommé est ignoré. La sélection ne vérifie pas encore une ligne de vue par rayon : un objet peut donc être proposé à travers une cloison si son placement est trop proche. Le catalogue de props doit tenir compte de cette limite et réserver des volumes sans concurrence autour des interactions essentielles.
+Pour les interactions de mission, le jeu cherche l’objet utilisable le plus proche au même étage, à moins de **trois mètres en distance horizontale**. Un objet consommé est ignoré. La sélection de ces commandes de mission ne vérifie pas encore une ligne de vue par rayon : un objet peut donc être proposé à travers une cloison si son placement est trop proche. Le catalogue de props doit tenir compte de cette limite et réserver des volumes sans concurrence autour des interactions essentielles.
 
 E déclenche l’action contextuelle : corde, rescapé, balise, preuve, ravitaillement ou terminal. Le texte doit nommer la conséquence : « sécuriser », « confirmer le treuillage », « lire » ou « transmettre ». Un verbe générique identique pour tous les objets réduit la capacité du joueur à anticiper ce qui va se passer.
 
-La cible prévoit une distance de manipulation adaptée à l’objet, de 1,4 à 2,2 m pour une action manuelle ordinaire, avec vérification de visibilité et priorité au regard. Il s’agit d’une plage de prototypage, pas d’un changement déjà appliqué. Les grandes balises peuvent conserver une portée plus généreuse. Toute nouvelle durée d’appui doit être testée avec annulation, clavier et options de maintien simplifié.
+Pour les actions de secours, la cible prévoit une distance de manipulation adaptée à l’objet, de 1,4 à 2,2 m pour une action manuelle ordinaire, avec vérification de visibilité et priorité au regard. Il s’agit d’une plage de prototypage, pas d’un changement déjà appliqué. Les grandes balises peuvent conserver une portée plus généreuse. Toute nouvelle durée d’appui doit être testée avec annulation, clavier et options de maintien simplifié.
 
 Un objet essentiel doit fournir au moins deux indices parmi forme, position, texte, mouvement et son. La couleur seule ne suffit pas. À l’inverse, une radio ou un corps ne doit pas être entouré d’un halo si une bonne composition permet de le trouver. Les marqueurs 3D de la maquette sont des aides de gameplay ; ils sont masqués dans les caméras de présentation.
 
@@ -183,7 +187,7 @@ Les fiches suivantes servent à écrire les comportements et dialogues. Leurs mo
 
 **Peur et tension.** Il craint de devenir une charge pour l’autre équipe, ce qui peut le pousser à retarder une demande d’aide. Le joueur peut lui fournir un relais ou une route ; l’écriture doit montrer la conséquence avant une éventuelle séparation.
 
-**Fonction et cible.** Allié de mission, pas compagnon autonome livré en 0.4.0. Une première version pourrait utiliser des postes préparés et des transitions contrôlées, puis une navigation locale. Les états utiles sont engagé, contact établi, route partagée, isolé et pris en charge. Sa survie future dépend de décisions documentées, jamais d’un silence aléatoire destiné à surprendre.
+**Fonction et cible.** Allié de mission, pas compagnon autonome livré en 0.5.0. Une première version pourrait utiliser des postes préparés et des transitions contrôlées, puis une navigation locale. Les états utiles sont engagé, contact établi, route partagée, isolé et pris en charge. Sa survie future dépend de décisions documentées, jamais d’un silence aléatoire destiné à surprendre.
 
 ### Inès Valen — distinguer une estimation d’un fait
 

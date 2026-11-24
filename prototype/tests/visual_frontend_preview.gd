@@ -63,9 +63,9 @@ func _capture() -> void:
 	# Prepared close view of the real parked aircraft and roof staging.
 	mission.hud.game.hide()
 	mission.menu_camera.current = true
-	var parked_origin: Vector3 = mission.world_data["helicopter_origins"][0]
-	mission.menu_camera.global_position = parked_origin + Vector3(9, 5, 12)
-	mission.menu_camera.look_at(parked_origin + Vector3(0, 0.9, 0))
+	mission.menu_camera.fov = 64.0
+	mission.menu_camera.global_position = Vector3(13, 52.35, 16)
+	mission.menu_camera.look_at(Vector3(1, 43.75, -3.5))
 	await _shot("14_toit_equipe", "Détail du toit : Alpha posé, porte et équipe dans leur état final")
 	mission.player.camera.current = true
 	mission.hud.show_game()
@@ -155,6 +155,7 @@ func _open_field(identifier: String) -> bool:
 		push_error("Visual fixture has no clear standing position beside " + identifier)
 		get_tree().quit(1)
 		return false
+	mission._update_hud()
 	mission._open_inspection(selected)
 	if not mission.paused or not mission.hud.inspection_panel.visible:
 		push_error("Visual fixture could not open the field inspection through the real gameplay gate: " + identifier)

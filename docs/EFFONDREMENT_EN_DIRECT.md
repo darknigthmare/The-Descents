@@ -1,6 +1,6 @@
 # The Tower Descent — Effondrement en direct
 
-**Version 0.4.0 — Incident, équipes et continuité cinématique — 24 novembre 2026**
+**Version 0.5.0 — Incident, équipes et continuité cinématique — 24 novembre 2026**
 
 ## 1. Décision de direction
 
@@ -10,7 +10,7 @@ L’événement doit transformer un lieu que le joueur vient de comprendre. Il a
 
 La scène est un événement réel du récit. Les incertitudes sur les hallucinations apparaissent dans ce qui suit ; elles n’effacent ni l’effondrement, ni les sauvetages confirmés.
 
-## 2. Périmètre de la version 0.4.0
+## 2. Périmètre de la version 0.5.0
 
 | Élément | Périmètre retenu |
 | --- | --- |

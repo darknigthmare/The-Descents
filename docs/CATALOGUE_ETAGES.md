@@ -2,11 +2,11 @@
 
 ## Catalogue des étages et des espaces de campagne
 
-**Version 0.4.0 — Assemblage des niveaux et dossier de production — 24 novembre 2026**
+**Version 0.5.0 — Assemblage des niveaux et dossier de production — 24 novembre 2026**
 
 Ce catalogue développe les lieux de la [Bible du jeu](BIBLE_DU_JEU.md). Chaque étage possède une fonction fixe, une scène reconnaissable et un objectif de rythme. La génération fait varier des passages, des objets, des personnes secondaires et des détails compatibles ; elle ne déplace pas les révélations principales au hasard.
 
-**Périmètre du prototype Godot 0.4.0 :** toit jouable d’Aube, Hespérie visible à distance, deux hélicoptères et équipes en maquette, étages 30 à 25, trois rescapés aux 30, 28 et 26, indices aux 29, 27 et 26, ravitaillement aux 29 et 25, anomalie au 26 et balise de fin au refuge 25. Les tours commencent intactes. La baie Est du 29 accueille l’effondrement en temps réel et les conséquences persistantes décrits dans [Effondrement en direct](EFFONDREMENT_EN_DIRECT.md). L’approche temps réel de la 0.4.0 utilise les volumes de maquette ; la cabine, le jeu d’acteurs et le doublage détaillés restent des cibles de campagne. Le README et le rapport de validation établissent l’état logiciel et les vérifications.
+**Périmètre du prototype Godot 0.5.0 :** toit jouable d’Aube, Hespérie visible à distance, deux hélicoptères et équipes en maquette, étages 30 à 25, trois rescapés aux 30, 28 et 26, indices aux 29, 27 et 26, ravitaillement aux 29 et 25, anomalie au 26 et balise de fin au refuge 25. Les tours commencent intactes. La baie Est du 29 accueille l’effondrement en temps réel et les conséquences persistantes décrits dans [Effondrement en direct](EFFONDREMENT_EN_DIRECT.md). L’approche temps réel de la 0.5.0 anime les posés, les portes latérales et le déploiement des six membres de toit. Douze observations facultatives sont réparties sur les niveaux jouables. Le jeu d’acteurs et le doublage détaillés restent des cibles de campagne. Le README et le rapport de validation établissent l’état logiciel et les vérifications.
 
 Les étages 24 à 1, la traversée d’Hespérie, les sous-sols, le seuil 666 et Mountain Hole sont conçus ici mais ne font pas partie de cette première tranche jouable. Les personnes et les incidents supplémentaires restent des propositions de contenu, pas des acteurs déjà intégrés au prototype.
 
@@ -26,7 +26,7 @@ Les variantes présentées dans les entrées détaillées doivent être produite
 |---|---|---|---|---|
 | A-TOIT | Toit | Hélisurface et maintenance | Arrivée, commandement, évacuation différée | Dans le périmètre |
 | A30 | 30 | Restaurant panoramique | Premier sauvetage | Dans le périmètre |
-| A29 | 29 | Suites de l’hôtel | Observation de Bravo, effondrement vécu, indice et détour | Dans le périmètre 0.4.0 |
+| A29 | 29 | Suites de l’hôtel | Observation de Bravo, effondrement vécu, indice et détour | Dans le périmètre 0.5.0 |
 | A28 | 28 | Bureaux et archives | Sauvetage de Samuel après impact, chronologie | Dans le périmètre |
 | A27 | 27 | Jardin d’enfants | Silence et trace d’Alma | Dans le périmètre |
 | A26 | 26 | Spa et piscine technique | Sauvetage et anomalie | Dans le périmètre |
@@ -63,7 +63,7 @@ Les numéros décrivent les espaces de la tour, pas une équidistance obligatoir
 
 ### A TOIT Le poste qui attend le retour
 
-**Fonction et image.** Hélisurface, groupes techniques et terrasse de maintenance. Deux appareils et des groupes de secours sont visibles dans la maquette 0.4.0, répartis sur les deux tours. Aube et Hespérie sont droites, séparées et visiblement intactes. Le poste de commandement et le treuil principal sont sur Aube ; Bravo est déposé sur Hespérie. La campagne enrichira les gestes des équipiers, la tente médicale et les transferts de matériel.
+**Fonction et image.** Hélisurface, groupes techniques et terrasse de maintenance. Deux appareils et des groupes de secours sont visibles dans la maquette 0.5.0, répartis sur les deux tours. Aube et Hespérie sont droites, séparées et visiblement intactes. Le poste de commandement et le treuil principal sont sur Aube ; Bravo est déposé sur Hespérie. La campagne enrichira les gestes des équipiers, la tente médicale et les transferts de matériel.
 
 **Traversée et action.** Le joueur reçoit son objectif, consulte le repérage du bâtiment et rejoint l’ancrage marqué du puits de service. L’ouverture constitue un accès de travail identifié. Le passage enseigne l’observation et l’interaction sans présenter le toit comme déjà effondré.
 
@@ -129,7 +129,7 @@ Les deux silhouettes de la galerie Bravo se tournent et rentrent à couvert. Les
 
 **Invariant.** Aucun enfant n’est tiré au hasard comme victime d’une attaque. Le dessin et l’information d’évacuation demeurent accessibles. Le niveau offre une respiration après l’effondrement et le sauvetage de Samuel, avant l’anomalie du spa. Aucun second effondrement ne vient annuler ce temps calme.
 
-Dans la 0.4.0, le retour facultatif d’une phrase de Bravo peut suivre six secondes de calme radio au 27, après Samuel confirmé et l’incident stabilisé. Le message attend hors rappel, portage et treuillage. Sa réception demande un checkpoint ; quitter l’étage sans l’entendre ne bloque aucun objectif. Varga peut ensuite vérifier le signal en zone calme.
+Dans la 0.5.0, le retour facultatif d’une phrase de Bravo peut suivre six secondes de calme radio au 27, après Samuel confirmé et l’incident stabilisé. Le message attend hors rappel, portage et treuillage. Sa réception demande un checkpoint ; quitter l’étage sans l’entendre ne bloque aucun objectif. Varga peut ensuite vérifier le signal en zone calme.
 
 ### A26 Spa et piscine technique
 

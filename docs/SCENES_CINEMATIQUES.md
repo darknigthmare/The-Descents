@@ -1,6 +1,6 @@
 # Scènes, cinématiques et accueil
 
-**The Tower Descent — version 0.4.0.** Cette annexe fournit le découpage de l’ouverture livrée, les contrats de transition avec le jeu et les scènes à produire pour la campagne. La direction recherche la précision d’une présentation cinématographique : composition, rythme, lisibilité des équipes et continuité du son. Le résultat actuel reste une maquette en temps réel dans Godot, avec personnages et décors procéduraux. Il ne constitue pas une livraison de personnages, d’animations faciales ou d’assets « AAA » définitifs.
+**The Tower Descent — version 0.5.0.** Cette annexe fournit le découpage de l’ouverture livrée, les contrats de transition avec le jeu et les scènes à produire pour la campagne. La direction recherche la précision d’une présentation cinématographique : composition, rythme, lisibilité des équipes et continuité du son. Le résultat actuel reste une maquette en temps réel dans Godot, avec personnages et décors procéduraux. Il ne constitue pas une livraison de personnages, d’animations faciales ou d’assets « AAA » définitifs.
 
 ## 1 Intentions et langage visuel
 
@@ -78,16 +78,40 @@ Les mouvements réduits donnent un plan fixe. Le mode animé ajoute un déplacem
 
 Une nouvelle intervention commence par **28 secondes**, divisées en quatre plans de sept secondes. La reprise d’un point sûr ne rejoue pas cette arrivée. Le passage volontaire conduit au joueur sur le toit avec une mission prête à commencer ; il ne saute aucun sauvetage et ne déclenche pas l’incident. La pause suspend le directeur et les communications de cette séquence.
 
-La caméra met en scène l’approche du site. Le prototype ne contient pas une cabine d’hélicoptère complète avec équipage animé, dialogue labial et dépose capturée. Les appareils, équipes et tours sont les représentations procédurales de la scène. Le montage doit être jugé comme une intention de cadrage et de continuité à reprendre avec les assets finaux.
+La caméra accompagne désormais une arrivée animée des deux appareils. Leurs trajectoires, inclinaisons, portes coulissantes et déplacements des équipes sont calculés à partir du temps de la séquence. La cabine possède des volumes intérieurs, une ouverture latérale et des sièges de maquette. Les membres existants des équipes sortent et gagnent leurs postes ; les jambes et les bras prennent des poses de marche. Ce dispositif n’utilise ni capture de mouvement, ni animation faciale, ni personnage équipé d’un squelette de production. Les appareils, équipes et tours restent des représentations procédurales.
 
 | Plan | Image, objectif et champ de vision | Carton |
 | --- | --- | --- |
-| 1, 0–7 s | Vue large sur la mer et la ville submergée ; faire comprendre l’isolement, 58° | ÎLE DE NACRE ; 04:17 / PREMIÈRE ROTATION DE SECOURS |
-| 2, 7–14 s | Rapprochement sur les deux volumes debout ; nommer la géographie, 49° | LES TOURS ORPHÉE ; AUBE / HESPÉRIE |
-| 3, 14–21 s | Vue des deux toits et des équipes ; rendre leur relation spatiale concrète, 59° | DEUX ÉQUIPES ; ALPHA SUR AUBE / BRAVO SUR HESPÉRIE |
+| 1, 0–7 s | Vue large sur la mer, la ville et les appareils en approche ; faire comprendre l’isolement, 56° | ÎLE DE NACRE ; 04:17 / PREMIÈRE ROTATION DE SECOURS |
+| 2, 7–14 s | Rapprochement sur les deux toits pendant les posés successifs ; nommer la géographie, 53° | LES TOURS ORPHÉE ; AUBE / HESPÉRIE |
+| 3, 14–21 s | Vue des cabines ouvertes et du déploiement des équipes ; rendre leur relation spatiale concrète, 64° | DEUX ÉQUIPES ; ALPHA SUR AUBE / BRAVO SUR HESPÉRIE |
 | 4, 21–28 s | Arrivée vers le poste d’Aube et le point de prise en main ; cadrage dégagé de l’antenne, 62° vers 76° en mode animé | VOTRE LIGNE TIENT ; AUBE / POSTE DE COMMANDEMENT |
 
 En caméra animée, chaque plan interpole une position et un regard avec accélération et décélération progressives. Les mouvements réduits conservent des cadrages fixes ; le dernier plan reste une vue stable du poste avant la remise du contrôle. Les bandes et sous-titres sont identiques dans les deux modes. Le champ de vision de la caméra jouable, 77 degrés, reprend à l’issue de la transition.
+
+### Dépose et déplacements de la version 0.5
+
+Le premier plan établit une distance à parcourir : Alpha commence à 28 m au-dessus de son point de stationnement et Bravo à 36 m. Chaque appareil rejoint une approche à faible altitude puis son repère au toit. L’altitude des modèles reste supérieure ou égale à leur stationnement final ; ils ne traversent pas une dalle pour rejoindre une position imposée. Ces trajectoires de mise en scène ne représentent pas un modèle de vol pilotable.
+
+| Événement | Temps de séquence | Résultat visible |
+| --- | --- | --- |
+| Fin d’approche de Bravo | 6,5 s | Transition vers la descente finale au-dessus d’Hespérie |
+| Fin d’approche d’Alpha | 8,0 s | Transition vers la descente finale au-dessus d’Aube |
+| Toucher de Bravo | 10,8 s | Appareil posé et inclinaison annulée |
+| Ouverture de Bravo | 11,2 à 13,4 s | Portes latérales coulissantes |
+| Toucher d’Alpha | 13,4 s | Appareil posé sur l’hélisurface d’Aube |
+| Ouverture d’Alpha | 13,8 à 16,0 s | Cabine accessible visuellement avant le déploiement |
+| Déploiement des équipes | 16 à 23 s | Sortie échelonnée et marche vers les postes préparés |
+| Fermeture des cabines | 24 à 26 s | Appareils prêts pour leur futur départ |
+| Remise de la caméra au joueur | 28 s | Équipes en place et début de l’horloge de mission |
+
+La poussière et les embruns du rotor sont des effets de présentation proches des toits. Leur intensité augmente pendant l’approche basse et diminue avant la remise du contrôle. Ils n’exercent aucune force sur le personnage et ne constituent pas un danger. Les pales principales et de queue tournent selon l’horloge de présentation ; la pause les fige avec le son. Les mouvements réduits stabilisent les caméras tout en conservant les déplacements des appareils et des équipes nécessaires à la compréhension de la scène.
+
+La fin naturelle, le passage à n’importe quel instant et la reprise du point sûr initial doivent donner les mêmes portes fermées, appareils posés et membres en poste. Ces poses sont absolues et peuvent être appliquées plusieurs fois sans déplacement supplémentaire. L’état d’arrivée n’est pas enregistré. Le point sûr du toit contient une intervention prête à jouer ; il ne stocke ni une caméra intermédiaire ni un équipier à mi-chemin de la cabine. Les quatre transmissions continuent à respecter leurs repères : passer la séquence ne crée pas celles qui n’ont pas encore été entendues.
+
+Le départ opérationnel conserve une autre horloge. Il commence après dix secondes de mission pour Alpha et treize pour Bravo ; chacun suit un éloignement de vingt-trois secondes. La durée passée dans l’introduction ne réduit donc pas la présence des appareils après la prise en main. Un menu construit depuis un point sûr à un temps plus avancé replace directement les appareils selon ce temps, sans rejouer la dépose.
+
+L’équipe Bravo possède ensuite ses propres poses de repli lors de l’incident. Restaurer ou réappliquer la fin de l’arrivée après cet incident ne doit pas faire réapparaître ses membres sur le toit. La séparation entre arrivée et repli protège la continuité du récit et évite de transformer une opération visuelle en réinitialisation des conséquences.
 
 ### Texte exact des quatre communications
 
@@ -139,7 +163,7 @@ La cible d’habillage utilise une différence discrète de couleur sonore et un
 
 Le relais du 25 termine le périmètre de démonstration. L’écran récapitule les sauvetages et expose le journal des communications conservées. La présentation distingue personnes confirmées au treuil, informations recueillies et incertitude sur Bravo. La dernière image jouée reste un lieu sûr, sans attaque déclenchée par l’ouverture du bilan.
 
-Le menu peut ensuite proposer de consulter cette intervention terminée. Son décor correspond au refuge et son texte à la partie achevée. Le résultat n’autorise pas la présentation d’un bunker, d’Alma retrouvée ou d’une fin de campagne : ces chapitres sont conçus mais ne sont pas jouables dans la version 0.4.0.
+Le menu peut ensuite proposer de consulter cette intervention terminée. Son décor correspond au refuge et son texte à la partie achevée. Le résultat n’autorise pas la présentation d’un bunker, d’Alma retrouvée ou d’une fin de campagne : ces chapitres sont conçus mais ne sont pas jouables dans la version 0.5.0.
 
 ## 9 Storyboards de campagne à produire
 

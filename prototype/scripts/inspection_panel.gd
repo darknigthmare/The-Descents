@@ -104,6 +104,7 @@ func _ready() -> void:
 	close_button.add_theme_color_override("font_color", Color(0.035, 0.085, 0.09))
 	close_button.add_theme_color_override("font_hover_color", Color(0.035, 0.085, 0.09))
 	close_button.add_theme_color_override("font_pressed_color", Color(0.035, 0.085, 0.09))
+	close_button.add_theme_color_override("font_focus_color", Color(0.035, 0.085, 0.09))
 	close_button.add_theme_stylebox_override("normal", _style(TEAL, TEAL))
 	close_button.add_theme_stylebox_override("hover", _style(Color(0.57, 0.95, 0.88), TEAL))
 	close_button.add_theme_stylebox_override("pressed", _style(Color(0.29, 0.67, 0.64), TEAL))

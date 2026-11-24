@@ -1,6 +1,6 @@
 # Props et interactions de production
 
-**Version 0.4.0 — 52 fiches de référence — 24 novembre 2026**
+**Version 0.5.0 — 52 fiches de référence et 12 observations jouables — 24 novembre 2026**
 
 Ce catalogue donne aux équipes de niveau, d’art, de son et de gameplay des objets qui ont une fonction dans l’intervention. Il décrit les accessoires du prototype lorsqu’ils existent, puis les objets à produire pour la campagne. Une fiche de campagne n’est pas un inventaire d’assets déjà livrés. Les dimensions proposées servent au blocage et à la recette de circulation ; elles ne constituent ni des normes de construction ni des instructions de secours réels.
 
@@ -194,6 +194,8 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 
 ### P22 Relais radio de palier
 
+**Consultation présente depuis la 0.5.** Un boîtier au 28 expose une fiche sur le réseau et le contact des équipes. Il ne rétablit aucun canal, ne recharge pas la radio et ne possède pas de commande de réparation. Le comportement décrit ci-dessous reste une cible de campagne.
+
 **Campagne. Fonction et gabarit cible.** Boîtier de 0,38 × 0,22 × 0,55 m, antenne et câble vers un réseau identifiable. Il matérialise l’amélioration du contact et sert au Répondant ou aux Veilleurs sans transformer tous les appels en pièges.
 
 **Interaction et états.** Hors service, inspecté, alimenté, destination vérifiée, émission. L’activation cible dure 2 s après une vérification contextuelle. Une erreur se corrige depuis un appui sûr ; elle ne ferme pas définitivement l’unique liaison d’évacuation.
@@ -203,6 +205,8 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 ## Mobilier et traces de vie
 
 ### P23 Table de restaurant
+
+**Consultation présente depuis la 0.5.** Un couvert et un bon de préparation du restaurant peuvent être examinés. Leur fiche évolue avec le choc et la réception d’Ana ; les objets ne sont pas déplacés ni collectés.
 
 **Présent. Fonction et gabarit.** Table de maquette de 2,8 m de diamètre, plateau à environ 1 m du sol. Le premier groupe encadre Ana sans couper le trajet depuis le puits. Cible artistique : nappes, couverts et préparation interrompue.
 
@@ -244,6 +248,8 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 
 ### P28 Valise ouverte
 
+**Consultation présente depuis la 0.5.** Une étiquette de valise des suites peut être examinée. Elle donne un constat sur des affaires laissées sur place, sans créer une mission de recherche ni confirmer le sort de leur propriétaire.
+
 **Présent comme volume. Fonction et gabarit.** Petite valise de maquette d’environ 1,1 × 0,8 × 0,7 m. Cible : modèle plus fin, vêtements et étiquette nominative qui racontent une personne, sans créer une collection de butin.
 
 **Interaction et états.** Décor, ou examen de campagne avec une information courte. Les objets personnels ne prennent pas la place des outils dans un inventaire. Si une identité est utile, le journal conserve son texte même quand la valise n’est plus dans le champ.
@@ -251,6 +257,8 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 **Son et implantation.** Fermeture ou tissu uniquement en examen ; silence sinon. Une à trois valises aux suites, aucune au centre de la route de transfert. Recette : ne pas confondre le contour avec une caisse de secours, garder le nom lisible et ne pas cacher un indice sous un effet de poussière.
 
 ### P29 Bureau et poste informatique
+
+**Consultation présente depuis la 0.5.** Le dossier papier voisin du poste peut être examiné ; l’écran demeure décoratif. La fiche distingue le plan antérieur au choc et le détour intérieur actuellement praticable.
 
 **Présent. Fonction et gabarit.** Plateau de maquette 2,3 × 1,5 m à environ 0,83 m ; écran de 1 × 0,08 × 0,65 m. Il organise les bureaux d’archives et la ligne de vue sur Samuel.
 
@@ -275,6 +283,8 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 **Son et implantation.** Froissement ou clic d’enregistrement, texte complet sans voix obligatoire. Points fixes au 29, 27 et 26 dans la tranche. Recette : interaction répétée, lecture interrompue par alerte, reprise après collecte et version localisée longue.
 
 ### P32 Casier d’enfant
+
+**Consultation présente depuis la 0.5.** Une étiquette de casier du jardin peut être examinée. Le texte distingue trace matérielle et présence confirmée, sans déclencher de nouvelle rencontre.
 
 **Présent. Fonction et gabarit.** Bloc de maquette de 0,95 × 0,7 × 1,6 m ; série colorée au Jardin des Marées. La hauteur doit évoquer l’usage du lieu sans réduire toute la circulation à une échelle enfantine.
 
@@ -326,6 +336,8 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 
 ### P38 Pompe de filtration
 
+**Consultation présente depuis la 0.5.** Le manomètre et la plaque de filtration du spa peuvent être examinés. Leur fiche rappelle l’état du sol et la route de secours ; aucune pompe jouable ne change le niveau d’eau dans cette tranche.
+
 **Campagne, décoration technique partielle présente. Fonction et gabarit cible.** Groupe de 1,2 × 1,8 × 1,1 m avec tuyaux et voyant de fonctionnement. Il peut déplacer un danger de niveau d’eau ou fournir un bruit continu exploité par le Noyé sec.
 
 **Interaction et états.** Arrêtée, alimentée, amorcée dans l’abstraction de jeu, fonctionnement, défaut annoncé. Une action de 2 s lance une variation lente et visible, avec possibilité de couper. Une pompe ne vide pas instantanément un étage entier.
@@ -358,6 +370,8 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 
 ### P42 Détecteur d’atmosphère
 
+**Consultation présente depuis la 0.5.** Un indicateur fixe au refuge possède une fiche de lecture qui distingue atmosphère du lieu et réserve d’air. Il ne fournit pas un détecteur portable ni une nouvelle mesure simulée.
+
 **Campagne. Fonction et gabarit cible.** Boîtier de 0,09 × 0,04 × 0,16 m, écran à trois états textuels : sûr, incertain, danger. Il informe sur le volume actuel, indépendamment de la réserve d’air du joueur.
 
 **Interaction et états.** Mesure en cours pendant 1 s, lecture stable, changement de zone. Le détecteur n’identifie pas automatiquement un phénomène surnaturel. Les informations critiques sont consultables sans maintenir une animation de main devant le visage.
@@ -365,6 +379,8 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 **Son et implantation.** Alerte réglable, mot et symbole persistants ; la fréquence seule ne porte pas l’information. Objet permanent de campagne, enseigné dans un local sans menace. Recette : frontière de volumes, mesure pendant portage, daltonisme, son désactivé et absence de confusion avec la jauge de bouteille.
 
 ### P43 Extincteur
+
+**Consultation présente depuis la 0.5.** Un extincteur identifiable au refuge peut être examiné. Il ne se ramasse pas, ne consomme pas de charge et n’éteint pas de foyer dans le prototype.
 
 **Campagne. Fonction et gabarit cible.** Cylindre de 0,18 m de diamètre sur 0,55 m, silhouette distincte d’une bouteille respiratoire. Il agit sur de petits foyers préparés et sur la visibilité, selon des abstractions de jeu.
 
@@ -440,11 +456,54 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 
 ### P52 Hélicoptère de secours
 
-**Présent comme maquette. Fonction et gabarit.** Fuselage géométrique d’environ 2,6 m de large et 7 m de long, rotor de 11 m d’envergure. Deux appareils distincts servent à la dépose et à la lecture des deux opérations. Les toits conservent leurs marques d’hélisurface.
+**Présent comme maquette détaillée. Fonction et gabarit.** Deux appareils distincts servent à la dépose et à la lecture des deux opérations. La version 0.5 donne au fuselage un nez, une cabine ouverte latéralement, des sièges, des portes coulissantes, un train posé au toit, des attaches et deux ensembles de pales animées. Les marquages de secours et les hélisurfaces les relient à leur mission. Leur géométrie reste procédurale et ne correspond pas à la reproduction certifiée d’un appareil réel.
 
-**Interaction et états.** Présentation d’approche, appareil au toit, départ opérationnel, éloigné. Le joueur ne le pilote pas. La cinématique d’arrivée possède son horloge ; la passer ne doit pas accélérer le départ de mission ni remettre un appareil au mauvais endroit. Aucun appareil n’est enfant de la tour qui bascule pendant son vol.
+**Interaction et états.** Approche, descente finale, toucher, ouverture, sortie des équipes, fermeture, appareil au toit, départ opérationnel, éloigné. Le joueur ne le pilote pas. La cinématique d’arrivée possède son horloge ; la passer ne doit pas accélérer le départ de mission ni remettre un appareil au mauvais endroit. Aucun appareil n’est enfant de la tour qui bascule pendant son vol. Le souffle visible des rotors est un effet sans collision et sans coût de ressource.
 
 **Son et implantation.** Couches de rotor, moteur et vent, atténuées sous les sous-titres. Points fixes de dépose sur Aube et Hespérie, pas de spawn aléatoire. Recette : caméra finale, pale sans collider, reprise au menu, mouvement réduit et cohérence du départ après une introduction passée.
+
+## Les douze observations de terrain de la version 0.5
+
+Ces objets donnent une fonction de lecture au décor déjà parcouru. Le joueur s’approche, oriente son regard vers la surface utile puis appuie sur E. Une fiche présente le rôle de l’objet, un constat lié à l’état du monde, une consigne de déplacement ou de secours et une note de l’équipe. La fiche ne demande pas de collecter l’objet. Elle peut être relue et n’ajoute ni quête secondaire, ni ressource, ni condition de fin.
+
+Le registre médical répond à une question précise : qui a réellement été reçu au toit ? Les objets des étages donnent des informations complémentaires : ce qu’un couvert abandonné permet de constater, pourquoi un plan d’avant l’impact doit être confronté à la route actuelle, ou pourquoi un indicateur de réseau ne confirme pas la survie d’une équipe. Cette écriture garde la distinction entre trace matérielle, hypothèse et confirmation de mission. Le silence de Bravo n’est jamais présenté comme la preuve de sa mort.
+
+| Niveau | Objet examinable | Rôle dans la lecture du lieu | Référence |
+| --- | --- | --- | --- |
+| Toit | Registre du poste médical | Noms reçus et réceptions encore attendues | P11 |
+| Toit | Carnet de la ligne principale | Route de rappel et maintien du treuil | P02 et P04 |
+| 30 | Couvert resté prêt | Service interrompu avant le choc observé | P23 |
+| 30 | Registre de service | Séparer réservation, présence et évacuation | P25 |
+| 29 | Valise des suites | Trace personnelle sans localisation inventée | P28 |
+| 29 | Témoin de la baie Est | Constater le vitrage et garder la limite intérieure | P19 |
+| 28 | Dossier de maintenance | Lire le plan puis le détour devenu nécessaire | P29 et P30 |
+| 28 | Boîtier radio de palier | Identifier les équipes et la liaison dégradée | P22 |
+| 27 | L’étiquette du jardin | Lire les traces d’un lieu de vie sans déduire une présence | P32 |
+| 26 | Le manomètre de filtration | Comprendre le spa et le trajet vers Nora | P38 |
+| 25 | Le contrôle du refuge | Distinguer état du lieu et réserve respiratoire | P42 |
+| 25 | Le poste incendie | Reconnaître le matériel et la limite de son usage actuel | P43 |
+
+### Conditions de lecture et priorité des secours
+
+La portée est de **2,4 m dans le plan du sol**, sur le même étage. La caméra doit viser la zone d’examen avec un produit scalaire d’au moins **0,82**, soit un cône d’environ 35 degrés autour de la direction du regard. Un rayon physique entre la caméra et cette zone doit être libre. La capsule du joueur est exclue du rayon ; une cloison ou un meuble conservant une collision empêche la consultation à travers lui. Les points visés sont légèrement au-dessus de leur support pour que l’objet puisse être lu depuis le passage.
+
+Une interaction de mission située à moins de **1,5 m** conserve la priorité. L’examen est disponible pendant l’intervention jouable, hors introduction et bilan final. Il ne peut pas prendre la place d’une commande pendant le rappel, le portage d’une personne, un treuillage ou l’incident structurel actif. Cela permet à la même touche E de rester prévisible dans l’urgence. En dehors de ces situations, le texte d’interaction annonce « Examiner » et le titre de l’objet ; une fiche sans conséquence de jeu ne se présente pas comme une activation de mécanisme.
+
+L’ouverture suspend la mission, le monde et les canaux sonores. Le personnage reste immobile ; l’oxygène, les dangers, le temps de treuillage, l’historique radio et les conditions de progression ne changent pas pendant la lecture. Le bouton de fermeture reste accessible hors de la zone de défilement. Échap referme également la fiche et rend le contrôle. La lecture est disponible avec le son désactivé et les caméras réduites.
+
+### Continuité des observations
+
+Le texte est recalculé à chaque ouverture depuis l’état stable de l’incident et les identifiants de rescapés confirmés. Le registre ne confirme à l’abri que les personnes dont la réception est validée ; il affiche séparément les réceptions encore attendues parmi Ana, Samuel et Nora. Porter une personne ou la voir monter ne suffit pas à compléter sa ligne. Les observations au restaurant, aux archives et au spa changent leur consigne après la réception correspondante.
+
+L’avant et l’après du choc possèdent des observations différentes. Le dossier de maintenance précise que le plan est antérieur aux dégâts ; il guide vers le détour intérieur sans réécrire le document lui-même. La fiche de la baie distingue les vitrages perdus des éléments de bord restés en place. Le poste du toit confirme que les personnes reçues demeurent à l’abri. Ces textes n’effacent aucun message historique et n’ajoutent pas un appel radio jamais entendu.
+
+Les identifiants `inspect_roof_register` à `inspect_25_extinguisher` appartiennent au catalogue des observations. Ils n’entrent pas dans `clues`, `supplies_used` ou `rescued`. Le schéma de sauvegarde reste la version 3 ; aucun état « déjà lu » n’est ajouté. Une reprise reconstruit les douze objets puis recalcule leur fiche à la prochaine consultation. Le contenu peut donc rester cohérent sans écrire une sauvegarde à chaque lecture.
+
+### Présentation et recette
+
+Les accessoires ajoutés sont des modèles natifs : porte-documents, papiers, couvert, étiquette, plaquette, boîtier, tuyaux et extincteur. Les textes visibles dans le monde sont fixés à leur support. Les observations n’ajoutent pas de panneau flottant orienté en permanence vers la caméra. Leurs volumes ne possèdent pas de collision supplémentaire ; les routes de secours continuent à être définies par le niveau existant.
+
+La recette vérifie une position debout libre près de chacune des douze fiches, la visée, la portée et l’occlusion. Elle ouvre le panneau depuis l’interaction réelle, ferme par son bouton et par Échap, puis compare temps, ressources et fichier de sauvegarde. Elle doit également confirmer qu’une balise proche reste prioritaire, qu’un objet peut être relu et qu’un changement d’incident ou de réception se reflète dans son texte. Les variantes de génération restent soumises aux vérifications de parcours ; un élément de présentation ne valide pas à lui seul l’accès à un rescapé.
 
 ## Priorité de production et recette commune
 

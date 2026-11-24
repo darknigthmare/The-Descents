@@ -152,7 +152,7 @@ func _build_main() -> void:
 	context_detail = _label("",16,MUTED)
 	context_detail.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	_place(context_detail,Vector2(700,808),Vector2(660,32))
-	_place(_label("THE TOWER DESCENT  /  0.4",12,MUTED),Vector2(89,860),Vector2(400,24))
+	_place(_label("THE TOWER DESCENT  /  %s" % ProjectSettings.get_setting("application/config/version", "0.5.0"),12,MUTED),Vector2(89,860),Vector2(400,24))
 	var bottom: Label = _label("↑ ↓  NAVIGUER     ENTRÉE  SÉLECTIONNER",12,MUTED)
 	bottom.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	_place(bottom,Vector2(950,862),Vector2(410,24))

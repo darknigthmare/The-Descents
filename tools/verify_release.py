@@ -68,6 +68,7 @@ def main() -> None:
         f"docs/captures/v{SHORT}/CI_PROVENANCE.json", f"docs/CAPTURES_V{SHORT}.md",
         f"docs/The-Tower-Descent-Bible-v{SHORT}.docx", f"docs/The-Tower-Descent-Bible-v{SHORT}.pdf",
         ".github/workflows/cinematic-review.yml", ".github/workflows/materialize-v" + SHORT.replace(".", "") + ".yml",
+        f".review/v{SHORT}/request.json",
         "tools/package_release.py", "tools/verify_release.py", "tools/qa_common.py",
         "tools/run_validation.py", "tools/verify_exported_packs.py", "tools/capture_evidence.py"
     }
@@ -136,6 +137,7 @@ def main() -> None:
     require(provenance["runtime_sha256"] == validation["sha256_after"], "Native captures do not show the final tested runtime")
     require(provenance["fixture_sha256"] == digest((ROOT / "prototype/tests/visual_frontend_preview.gd").read_bytes()), "Visual fixture changed after capture")
     require(provenance["verification_sha256"] == digest((VALIDATION / "VERIFICATION.json").read_bytes()), "Native captures refer to different source validation")
+    require(provenance["request_sha256"] == digest((ROOT / f".review/v{SHORT}/request.json").read_bytes()), "Capture request differs from the reviewed request")
     require({row["file"] for row in provenance["captures"]} == {row["file"] for row in capture_manifest["captures"]}, "Capture manifest disagrees with provenance")
     for row in provenance["captures"]:
         capture = (CAPTURES / row["file"]).read_bytes()

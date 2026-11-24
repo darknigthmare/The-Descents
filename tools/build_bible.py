@@ -6,7 +6,7 @@ Run with the primary document runtime:
 
 Rendering is a separate, mandatory delivery check:
     "$CODEX_PRIMARY_RUNTIME_PYTHON" /home/agent/.codex/skills/builtins/documents/render_docx.py \
-        docs/The-Tower-Descent-Bible-v0.4.docx --output_dir docs/rendered --emit_pdf
+        docs/The-Tower-Descent-Bible-v0.5.docx --output_dir docs/rendered --emit_pdf
 """
 
 from __future__ import annotations
@@ -28,7 +28,7 @@ from docx.opc.constants import RELATIONSHIP_TYPE as RT
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
-DEFAULT_OUTPUT = DOCS / "The-Tower-Descent-Bible-v0.4.docx"
+DEFAULT_OUTPUT = DOCS / "The-Tower-Descent-Bible-v0.5.docx"
 REPO_DOCS = "https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/"
 BODY_FONT = "Arial"
 MONO_FONT = "Consolas"
@@ -194,7 +194,7 @@ def configure(document: Document):
         pf.line_spacing = 1.04
     header = section.header.paragraphs[0]
     header.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    set_font(header.add_run("THE TOWER DESCENT   |   Bible de conception   |   Version 0.4.0"), 9)
+    set_font(header.add_run("THE TOWER DESCENT   |   Bible de conception   |   Version 0.5.0"), 9)
     footer = section.footer.paragraphs[0]
     footer.paragraph_format.tab_stops.add_tab_stop(Cm(BODY_WIDTH_CM), WD_TAB_ALIGNMENT.RIGHT)
     set_font(footer.add_run("Darknigthmare  ·  24 novembre 2026\t"), 9)
@@ -215,6 +215,10 @@ def configure(document: Document):
 
 def widths_for(rows: list[list[str]]) -> list[float]:
     columns = len(rows[0])
+    if rows[0] == ["Niveau", "Objet examinable", "Rôle dans la lecture du lieu", "Référence"]:
+        return [1.9, 4.9, 7.9, 2.3]
+    if rows[0] == ["Événement", "Temps de séquence", "Résultat visible"]:
+        return [5.0, 3.0, 9.0]
     if columns == 5 and rows[0][0] == "Temps relatif":
         return [2.0, 2.3, 2.1, 5.9, 4.7]
     if columns == 4 and rows[0][0] == "Repère":
@@ -425,7 +429,7 @@ def cover(document: Document):
     title.paragraph_format.space_after = Pt(15)
     subtitle = document.add_paragraph("Bible de conception et catalogue des niveaux", style="Subtitle")
     subtitle.paragraph_format.space_after = Pt(18)
-    inline(document.add_paragraph(), "**Version 0.4.0 — 24 novembre 2026**")
+    inline(document.add_paragraph(), "**Version 0.5.0 — 24 novembre 2026**")
     inline(document.add_paragraph(), "**Création et direction du projet : Darknigthmare**")
     p = document.add_paragraph()
     hyperlink(p, "Dépôt The-Descents sur GitHub", "https://github.com/darknigthmare/The-Descents")
@@ -445,7 +449,7 @@ def cover(document: Document):
     document.add_paragraph("Périmètre de cette version", style="Heading 2")
     add_table(document, [
         ["État", "Contenu"],
-        ["Prototype Godot 0.4.0", "Toit et six étages de 30 à 25, effondrement vécu, trois sauvetages avec réception visible, radio persistante et sauvegarde 3. Prologue de 15 s, accueil contextuel et arrivée de 28 s. Représentations de maquette."],
+        ["Prototype Godot 0.5.0", "Toit et six étages de 30 à 25, effondrement vécu, trois sauvetages avec réception visible, radio persistante et sauvegarde 3. Prologue de 15 s, accueil contextuel, dépose animée de 28 s et 12 observations facultatives. Modèles procéduraux."],
         ["Conception de campagne", "Trente étages principaux, seconde tour, socle, souterrains, bunker et profondeur 666; personnages, révélation, fins et extension Mountain Hole. Contenu à produire."],
         ["Référence de production", "Le contrat de jeu, les critères de revue et la mise en scène sont décrits ici. Le rapport de livraison du dépôt présente séparément les exécutables et les résultats de vérification."],
     ])
@@ -456,7 +460,7 @@ def cover(document: Document):
         p.paragraph_format.space_after = Pt(5)
         hyperlink(p, title_text, anchor, internal=True)
     document.add_paragraph(
-        "Les noms, révélations et fins constituent la proposition de canon 0.4.0. "
+        "Les noms, révélations et fins constituent la proposition de canon 0.5.0. "
         "L’état des fonctionnalités jouables est distinct des objectifs de campagne."
     )
     document.add_paragraph("Lecture et usage", style="Heading 2")

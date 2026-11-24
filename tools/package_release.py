@@ -36,6 +36,8 @@ def main():
                 z.write(file, "The-Tower-Descent/" + str(rel))
         for workflow in sorted((ROOT / ".github/workflows").glob("*.yml")):
             z.write(workflow, "The-Tower-Descent/" + workflow.relative_to(ROOT).as_posix())
+        for request in sorted((ROOT / ".review").rglob("*.json")):
+            z.write(request, "The-Tower-Descent/" + request.relative_to(ROOT).as_posix())
         for name in ["README.md", "JOUER_WINDOWS.cmd", "jouer.sh", ".gitignore"]:
             z.write(ROOT / name, "The-Tower-Descent/" + name)
     hashes = []

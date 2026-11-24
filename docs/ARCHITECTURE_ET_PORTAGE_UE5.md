@@ -1,8 +1,8 @@
 # Architecture du prototype et portage vers Unreal Engine 5
 
-Version de conception 0.4.0 — Présentation cinématique et continuité de mission — 24 novembre 2026
+Version de conception 0.5.0 — Présentation cinématique et continuité de mission — 24 novembre 2026
 
-Ce document décrit le prototype Godot 0.4.0 et propose une trajectoire vers Unreal Engine 5. La tranche solo en vue subjective comprend un toit, six étages de 30 à 25, trois sauvetages, trois indices et un refuge. Les deux tours commencent intactes, deux hélicoptères et des groupes de secours sont visibles en maquette, puis un effondrement partiel se déroule pendant l’observation depuis le 29. La campagne complète et le portage UE5 restent à produire.
+Ce document décrit le prototype Godot 0.5.0 et propose une trajectoire vers Unreal Engine 5. La tranche solo en vue subjective comprend un toit, six étages de 30 à 25, trois sauvetages, trois indices et un refuge. Les deux tours commencent intactes, deux hélicoptères et des groupes de secours sont visibles en maquette, puis un effondrement partiel se déroule pendant l’observation depuis le 29. La campagne complète et le portage UE5 restent à produire.
 
 Le projet déclare une base de fonctionnalités Godot 4.7. Les exécutables, versions de moteur effectivement utilisées et résultats de vérification sont décrits dans le rapport de livraison du dépôt. Ce document ne constitue pas un rapport d’exécution d’Unreal Engine. La coopération en réseau n’est pas implémentée.
 
@@ -24,6 +24,9 @@ La scène d'entrée `prototype/scenes/main.tscn` instancie le contrôleur princi
 | `cinematic_overlay.gd` | Cartons, bandes, sous-titres et commande de passage des séquences |
 | `preferences_store.gd` | Préférences booléennes validées, indépendantes de la mission et chargées avant le prologue |
 | `hud.gd` | Jauges, objectifs, commandes contextuelles, radio, journal, pause et bilan |
+| `presentation_geometry.gd` | Géométrie native des hélicoptères, sauveteurs, équipement du toit et repères littoraux, sans modifier les collisions de mission |
+| `field_props.gd` | Catalogue de douze observations, construction des accessoires et projection de leur texte depuis le contexte de mission |
+| `inspection_panel.gd` | Fiche de lecture défilante et fermeture, dont la pause et la reprise sont coordonnées par la mission |
 
 Le personnage utilise `move_and_slide()` pour la marche. Godot décrit `CharacterBody3D` comme un corps contrôlé par script disposant notamment de détection des murs et des pentes ; la gravité et les règles de déplacement restent ici écrites dans le contrôleur. [Documentation Godot CharacterBody3D](https://docs.godotengine.org/en/stable/classes/class_characterbody3d.html)
 
@@ -32,6 +35,10 @@ Le personnage utilise `move_and_slide()` pour la marche. Godot décrit `Characte
 ## Présentation, horloges et vérité de la progression
 
 Le prologue et l’arrivée possèdent leur temps de séquence ; le menu dispose d’un temps d’animation distinct. Le temps de mission ne progresse ni pendant l’accueil ni pendant les 28 secondes d’arrivée. Les départs d’hélicoptères, dangers et treuillages restent ainsi liés à l’intervention jouée. La pause suspend les séquences. Passer l’arrivée applique une sortie unique : fin du directeur, caméra du joueur courante, HUD visible et contrôle rendu seulement si l’état de pause le permet.
+
+Depuis la 0.5, `Cinematics.staging_sample(time)` fournit les décalages des deux appareils, leurs rotations, l’ouverture des portes, l’intensité des embruns et la progression des équipes. `world.apply_arrival_staging(sample)` applique ces valeurs absolues. `restore_arrival_staging()` remet les poses finales sans supprimer un repli déjà appliqué pendant l’incident. Aucun Tween ne détient la progression, aucun état de cabine ou de vol transitoire n’est sérialisé. La fin naturelle, le passage et le chargement du point sûr du toit font l’objet d’une comparaison dans une scène réelle.
+
+Le constructeur d’observations retourne douze nœuds `kind = inspect` ajoutés au tableau des interactions. Leur identifiant stable sert au catalogue, pas au calcul de fin de mission. La sélection exige proximité, même étage, orientation et rayon physique libre. Les commandes de mission conservent leur priorité à moins de 1,5 m. L’ouverture de la fiche réutilise la pause de mission ; le signal de fermeture reprend le jeu. Le panneau reçoit des données textuelles et ne peut ni consommer un objet ni écrire une sauvegarde.
 
 L’accueil reçoit uniquement le résultat validé de `save_store.gd`. Le contexte utilise le dernier étage sûr, le registre des sauvés, l’état stable d’incident et le temps enregistré. Il restaure un décor de présentation sans lancer de nouvelle mission. Sans sauvegarde valide, les tours sont intactes et le bouton Reprendre n’apparaît pas. Après une intervention terminée, le menu propose sa consultation au refuge. Les contrôles et textes sont détaillés dans [Scènes cinématiques](SCENES_CINEMATIQUES.md).
 
@@ -123,7 +130,7 @@ Le générateur de campagne doit d'abord assembler un graphe praticable : entré
 
 Le framework PCG d'Unreal constitue une option pour distribuer végétation, gravats et accessoires à partir de règles. Il ne doit pas remplacer les invariants de sauvetage ou décider seul de la progression narrative. Cette utilisation est une proposition adaptée au rôle de génération procédurale décrit par Epic. [Documentation Epic PCG](https://dev.epicgames.com/documentation/en-us/unreal-engine/procedural-content-generation-framework-in-unreal-engine)
 
-Dans le prototype 0.4.0, Hespérie passe d’un état vertical intact à un état partiellement effondré pendant le jeu. Son état final, le détour et les communications sont persistants. Le portage UE5 proposé doit d’abord reproduire ce contrat, avec trajectoires préparées, zone d’observation, commandes libres, pause réelle et reprises avant/après. Des débris et effets plus détaillés pourront ensuite enrichir la scène sans décider de la praticabilité du trajet de secours.
+Dans le prototype 0.5.0, Hespérie passe d’un état vertical intact à un état partiellement effondré pendant le jeu. Son état final, le détour et les communications sont persistants. Le portage UE5 proposé doit d’abord reproduire ce contrat, avec trajectoires préparées, zone d’observation, commandes libres, pause réelle et reprises avant/après. Des débris et effets plus détaillés pourront ensuite enrichir la scène sans décider de la praticabilité du trajet de secours.
 
 Pour la production UE5, prévoir des groupes distincts : structure intacte, volume mobile de rupture, façade haute endommagée, débris décoratifs et collisions finales. Le contrôleur narratif resterait responsable du passage d’état ; une éventuelle simulation de débris ne serait pas la source de vérité des routes. L’approche en hélicoptère et le jeu d’acteurs de l’équipe opposée constituent des séquences supplémentaires à produire. Ces choix sont des propositions d’architecture, pas du code UE5 livré.
 
@@ -161,6 +168,6 @@ Les objectifs suivants sont des critères proposés, pas des mesures de performa
 | Produire le chapitre souterrain | Chute préparée, reprise cohérente, Alma et première créature intégrées à une séquence terminable |
 | Évaluer la coopération | Prototype réseau séparé ; attribution exclusive des secours, retour après déconnexion et scénarios à deux joueurs vérifiés |
 
-Les risques immédiats sont le couplage du contrôleur principal, l'absence de navigation de PNJ, la capsule d'accroupissement inchangée, les interactions encore fondées sur proximité et les limites des identifiants actuels. Les traiter avant de multiplier les étages évitera de transporter ces simplifications dans toute la campagne.
+Les risques immédiats sont le couplage du contrôleur principal, l'absence de navigation de PNJ, la capsule d'accroupissement inchangée, les interactions de mission encore fondées sur proximité et les limites des identifiants actuels. Les traiter avant de multiplier les étages évitera de transporter ces simplifications dans toute la campagne.
 
 Le portage doit préserver une intervention compréhensible, terminable et reprenable. Les personnages, animations et effets seront ensuite enrichis selon un budget graphique mesuré.

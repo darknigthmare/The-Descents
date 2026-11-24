@@ -42,6 +42,8 @@ func _run() -> void:
 		# These imported streams are muted, but must be playing to test stream_paused.
 		mission.audio_wind.play()
 		mission.audio_radio.play()
+		# Let the audio thread establish these voices before testing their pause.
+		await physics_frame
 		mission._interact()
 		_check(mission.paused and mission.hud.inspection_panel.visible and not mission.hud.pause_panel.visible, "Examining %s did not open an exclusive reading modal." % object.get_meta("id"))
 		_check(not mission.player.active and not mission.world.is_processing() and mission.audio_wind.stream_paused and mission.audio_radio.stream_paused, "Inspection left movement, world effects or audio running.")
@@ -61,6 +63,10 @@ func _run() -> void:
 		mission.audio_radio.stop()
 		_check(not object.get_meta("used",false) and object.visible, "Reading consumed a reusable field prop.")
 		_disable_ticks()
+		# Do not stack twelve start/stop pairs in one mixer cycle. The audio
+		# driver runs on wall time, separately from the sampled mission clock.
+		await physics_frame
+		await create_timer(0.04).timeout
 	if not props.is_empty():
 		await _test_guards(props[0])
 		_test_context_and_resume(props[0])

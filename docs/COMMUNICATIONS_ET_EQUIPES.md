@@ -1,10 +1,14 @@
 # Communications et continuité des équipes
 
-**Version 0.4.0 — 24 novembre 2026**
+**Version 0.5.0 — 24 novembre 2026**
 
 Ce dossier fixe ce que le joueur peut conclure à partir des personnes visibles, d’un appel radio et du journal. Le poste d’Aube confirme les prises en charge. Bravo devient difficile à joindre après l’effondrement, sans que son silence prouve sa mort. Les communications peuvent être ambiguës ; le registre des personnes effectivement sauvées reste fiable.
 
 La 0.4.0 rétablit les comportements développés pendant la continuation 0.3 interrompue. Elle les intègre à une nouvelle présentation d’accueil et d’approche. Les résultats d’essai de l’ancienne session ne valent pas validation de cette reconstruction : les vérifications courantes figurent dans [État de livraison](ETAT_DE_LIVRAISON.md).
+
+La 0.5 réutilise les six membres des deux toits pour le débarquement des appareils. Les portes s’ouvrent après chaque posé, les figures sortent puis rejoignent leurs emplacements préparés. Le binôme d’observation du 29 est distinct ; il devient visible à la remise du contrôle. Pendant la réplique, les poses de repli reprennent la priorité sur les poses d’arrivée. Le poste médical conserve les trois identités de rescapés, indépendamment du nombre de figures décoratives visibles.
+
+Les nouvelles fiches d’observation n’ajoutent aucune transmission à l’historique. Leur « note de l’équipe » est une information de lecture présentée dans la fiche, sans émission vocale ni événement radio supplémentaire. Le registre médical affiche les réceptions confirmées, tandis que les fiches de baie et de réseau maintiennent l’incertitude sur Bravo après la perte de liaison. Lire une fiche suspend la transmission en cours ; fermer la fiche la reprend avec le temps restant.
 
 ## Répartition des responsabilités
 
