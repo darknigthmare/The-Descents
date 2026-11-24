@@ -3,9 +3,12 @@ from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 import hashlib
 import shutil
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "releases"
+VERSION = re.search(r'config/version="([^"]+)"', (ROOT / "prototype/project.godot").read_text()).group(1)
+SHORT_VERSION = ".".join(VERSION.split(".")[:2])
 
 
 def main():
@@ -13,13 +16,15 @@ def main():
     exe = ROOT / "builds/windows/TheTowerDescent.exe"
     if not exe.exists():
         raise SystemExit("Export Windows Desktop in Godot first.")
-    windows = OUT / "The-Tower-Descent-v0.2-Windows-x64.zip"
+    windows = OUT / f"The-Tower-Descent-v{SHORT_VERSION}-Windows-x64.zip"
     with ZipFile(windows, "w", ZIP_DEFLATED, compresslevel=9) as z:
         z.write(exe, "The-Tower-Descent/TheTowerDescent.exe")
         z.write(ROOT / "docs/DEMARRAGE_WINDOWS.md", "The-Tower-Descent/README.md")
         for file in [ROOT / "docs/GODOT_LICENSES.txt", ROOT / "docs/EXPORTS.md"]:
             z.write(file, "The-Tower-Descent/" + file.name)
-    source = OUT / "The-Tower-Descent-v0.2-Sources.zip"
+        for name in ["LICENSE.txt", "NOTICE.txt"]:
+            z.write(ROOT / "prototype/assets/fonts" / name, "The-Tower-Descent/fonts/" + name)
+    source = OUT / f"The-Tower-Descent-v{SHORT_VERSION}-Sources.zip"
     with ZipFile(source, "w", ZIP_DEFLATED, compresslevel=9) as z:
         for directory in ["prototype", "docs", "tools"]:
             for file in sorted((ROOT / directory).rglob("*")):
@@ -29,6 +34,9 @@ def main():
                 if file.suffix in {".log", ".tmp"}:
                     continue
                 z.write(file, "The-Tower-Descent/" + str(rel))
+        workflow = ROOT / ".github/workflows/cinematic-review.yml"
+        if workflow.exists():
+            z.write(workflow, "The-Tower-Descent/.github/workflows/cinematic-review.yml")
         for name in ["README.md", "JOUER_WINDOWS.cmd", "jouer.sh", ".gitignore"]:
             z.write(ROOT / name, "The-Tower-Descent/" + name)
     hashes = []
@@ -39,6 +47,8 @@ def main():
     (OUT / "SHA256SUMS.txt").write_text("\n".join(hashes) + "\n", encoding="utf-8")
     # Runtime notices must accompany the web distribution too.
     shutil.copy2(ROOT / "docs/GODOT_LICENSES.txt", ROOT / "dist/GODOT_LICENSES.txt")
+    for name in ["LICENSE", "NOTICE"]:
+        shutil.copy2(ROOT / "prototype/assets/fonts" / (name + ".txt"), ROOT / "dist" / ("OPEN_SANS_" + name + ".txt"))
 
 
 if __name__ == "__main__":

@@ -247,6 +247,9 @@ def add_table(document: Document, rows: list[list[str]]):
     if not rows:
         return
     cols = len(rows[0])
+    # This transition matrix closes Annex A. Modest cell padding keeps its
+    # explanation and final production paragraph together without smaller type.
+    compact = rows[0] == ["Moment", "Valeur persistante", "Comportement de reprise"]
     rows = [row + [""] * (cols - len(row)) for row in rows]
     table = document.add_table(rows=0, cols=cols)
     table.autofit = False
@@ -261,7 +264,8 @@ def add_table(document: Document, rows: list[list[str]]):
         borders.append(node(f"w:{border}", **{"w:val": "single", "w:sz": 4, "w:color": "D9D9D9"}))
     props.append(borders)
     margins = OxmlElement("w:tblCellMar")
-    for side, size in [("top", 90), ("bottom", 90), ("left", 100), ("right", 100)]:
+    vertical_padding = 45 if compact else 90
+    for side, size in [("top", vertical_padding), ("bottom", vertical_padding), ("left", 100), ("right", 100)]:
         margins.append(node(f"w:{side}", **{"w:w": size, "w:type": "dxa"}))
     props.append(margins)
     for index, values in enumerate(rows):
@@ -275,8 +279,8 @@ def add_table(document: Document, rows: list[list[str]]):
             fill = "24424E" if index == 0 else "F2F5F6" if index % 2 == 0 else "FFFFFF"
             cell._tc.get_or_add_tcPr().append(node("w:shd", **{"w:fill": fill, "w:val": "clear"}))
             p = cell.paragraphs[0]
-            p.paragraph_format.space_after = Pt(2)
-            p.paragraph_format.space_before = Pt(2)
+            p.paragraph_format.space_after = Pt(0 if compact else 2)
+            p.paragraph_format.space_before = Pt(0 if compact else 2)
             p.paragraph_format.line_spacing = 1.0
             p.paragraph_format.keep_with_next = False
             inline(p, text, size=TABLE_SIZE, white=index == 0)
@@ -328,6 +332,7 @@ def add_markdown(document: Document, markdown: str, part_number: int):
     lines = markdown.splitlines()
     index = 0
     active_numbering = None
+    tables_seen = 0
     while index < len(lines):
         line = lines[index].strip()
         if not line:
@@ -341,6 +346,8 @@ def add_markdown(document: Document, markdown: str, part_number: int):
                 index += 1
                 continue
             p = document.add_paragraph(clean_heading(text), style=f"Heading {min(depth, 4)}")
+            if part_number == 8 and tables_seen == 0:
+                p.paragraph_format.space_before = Pt(10 if depth == 2 else 7)
             index += 1
             continue
         if line.startswith("```"):
@@ -366,6 +373,7 @@ def add_markdown(document: Document, markdown: str, part_number: int):
                     rows.append(table_cells(lines[index]))
                 index += 1
             add_table(document, rows)
+            tables_seen += 1
             continue
         if re.fullmatch(r"[-*_]{3,}", line):
             index += 1
@@ -404,6 +412,10 @@ def add_markdown(document: Document, markdown: str, part_number: int):
             paragraph_lines.append(candidate)
             index += 1
         p = document.add_paragraph()
+        # Annex G needs a little room to keep its four launch cards together;
+        # retain the existing font and leading throughout the introduction.
+        if part_number == 8 and tables_seen == 0:
+            p.paragraph_format.space_after = Pt(3)
         inline(p, " ".join(paragraph_lines))
 
 

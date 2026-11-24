@@ -37,9 +37,10 @@ def matches(path, record):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--manifest", default=str(MANIFEST.relative_to(ROOT)), help="Repository-relative manifest path (defaults to the original v0.2 publication)")
     parser.add_argument("--clean-pieces", action="store_true", help="Remove transport pieces after every reconstructed binary passes verification")
     args = parser.parse_args()
-    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    manifest = json.loads(safe_path(args.manifest).read_text(encoding="utf-8"))
     if manifest.get("format") != 1:
         raise ValueError("Unknown publication manifest format")
     for record in manifest["files"]:

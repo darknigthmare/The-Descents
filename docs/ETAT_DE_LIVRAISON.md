@@ -1,77 +1,69 @@
-# État de livraison — version 0.2
+# État de livraison — version 0.4
 
-**Date : 24 novembre 2026.** Cette livraison fournit un prototype jouable et une proposition de campagne complète. Les documents de conception décrivent volontairement davantage de contenu que ce qui est codé.
+**24 novembre 2026 — version 0.4.0.** Cette livraison poursuit le prototype jouable avec une direction cinématique pour le démarrage, un accueil lié à la progression et une bible de production développée. Le jeu livré fonctionne sous Godot ; les assets restent des volumes de prototype. La campagne complète et le portage Unreal Engine 5 sont documentés comme travail à produire.
 
-## Ce qui est livré
+## Contenu effectivement livré
 
-| Élément | État réel |
+| Élément | État réel de la version 0.4 |
 | --- | --- |
-| Bible et catalogue | Univers original, personnages, intrigue, quatre fins, trente étages, tour Hespérie, souterrains, bunker, niveau 666 et extension Mountain Hole décrits |
-| Document Word | Bible, catalogue et spécifications techniques réunis ; fabrication reproductible avec `tools/build_bible.py` |
-| Prototype | Godot 4.7.2, solo, vue subjective, toit et étages 30 à 25 |
-| Arrivée | Approche de six secondes, passage avec E, deux tours droites, deux hélicoptères et équipes Alpha/Bravo visibles sur leurs toits |
-| Effondrement | Déclenchement à la baie Est du 29 après Ana treuillée et départ des appareils ; regard continu de 0,8 s ou interaction explicite ; alerte 8 s, secousse 6 s, chute 7 s, impact 4 s |
-| Conséquences | Inclinaison d’Hespérie contre Aube, vitres détruites, débris, éclairage d’urgence, détour au noyau du 28, silence de Bravo et signal d’Aube dégradé |
-| Boucle de mission | Trois victimes à retrouver, transport abstrait au harnais, treuillage visible et confirmation, refuge final |
-| Exploration | Trois indices, deux caisses, radio, journal, dangers et dispositions variant selon la graine |
-| Rappel | Déplacement guidé dans le puits, balancement amorti, remontée, sortie aux paliers et ancrage secondaire consommable |
-| Horreur | Silhouette au spa, dialogue radio ambigu, stress, lampe pour ralentir la silhouette et fusées pour la repousser |
-| Persistance | Schéma JSON v2, migration stricte des sauvegardes v1, points sûrs avant/après l’incident, remplacement atomique et refus des données corrompues |
-| Confort | Pause, sous-titres, mouvement de caméra réduit par défaut, éclairages intermittents facultatifs, son désactivable |
-| Windows | Export 0.2 reconstruit, exécutable x64 avec ressources embarquées ; lancement sur Windows restant à vérifier |
-| Web | Export 0.2 reconstruit sans threads, rendu Compatibility, distribution `dist/` actualisée ; rendu navigateur restant à vérifier |
+| Signature du studio | Séquence de 15 s : couronne, « Darknigthmare Kingdoms Games Productions », « présente », « un jeu de Darknigthmare », puis titre. Les références sont relevées dans quatre autres dépôts de l’auteur. |
+| Accueil | Décor 3D reconstruit à partir du dernier checkpoint validé : approche, toit, étages 30–25 ou refuge terminé. Les dégâts correspondent à l’état déjà enregistré. Aucun temps de mission ni nouvelle sauvegarde n’est consommé par l’attente au menu. |
+| Navigation | Reprendre, nouvelle intervention avec préparation de la graine, dossier de mission adapté, commandes, options, revoir l’introduction et quitter sur ordinateur. Souris, focus clavier et fermeture des modales avec Échap. |
+| Introduction en jeu | 28 s, quatre plans de 7 s : Nacre, les tours, les équipes et le poste d’Aube ; quatre transmissions sous-titrées. Passage par E, Entrée ou bouton ; pause et reprise sans avancer les événements. La caméra donne ensuite le contrôle au joueur. |
+| Cohérence du décor | Deux tours droites et façades fermées avant l’incident. Les aides flottantes de gameplay sont absentes des vues du menu et de la cinématique ; elles restent disponibles dans la caméra du joueur. |
+| Confort | Audio, caméra réduite, éclairs et intro au lancement mémorisés dans un fichier de préférences distinct. Plans fixes avec caméra réduite, éclairs désactivés par défaut, sous-titres permanents. |
+| Audio | Onze sons procéduraux originaux, dont thème du menu, rotors et ponctuation de signature. Gestion de l’arrêt, de la pause et des changements de volume ; aucun doublage enregistré. |
+| Tranche jouable | Solo, vue subjective, toit et six étages 30–25. Trois victimes, trois archives, deux réserves, rappel guidé, balises, treuillage et refuge final. |
+| Incident | Déclenchement à la baie Est du 29 après Ana treuillée et départ des appareils ; regard continu de 0,8 s ou interaction. Alerte 8 s, secousse 6 s, basculement 7 s et impact 4 s. Le joueur conserve son contrôle. |
+| Conséquences | Hespérie inclinée contre Aube, vitres détruites au contact, poussière dissipée, éclairage d’urgence et détour au 28. L’obstacle attend que sa zone soit libre avant d’activer sa collision. |
+| Équipes et sauvetages | Retrait visuel de Bravo durant la crise ; Ana, Samuel et Nora apparaissent nominativement à la réception médicale du toit après confirmation de leur treuillage. |
+| Communications | File radio avec priorités, historique, dédoublonnage, écho au 27 et vérifications de liaison. Journal des transmissions et bilan des sauvetages accessibles pendant l’intervention et après sa fin. |
+| Persistance | Schéma JSON 3, migrations des versions 1 et 2, validation stricte et remplacement atomique. Les étapes transitoires reviennent au point sûr précédent ; un impact stabilisé reste acquis. |
+| Bible | 119 pages A4 réunissant dix sources Markdown et près de 59 000 mots. Univers, intrigue, personnages et motivations, trente étages, régions annexes, gameplay détaillé, scènes, communications, 52 props, E00 et dix archétypes de campagne, statistiques, états, contre-jeux et critères de validation. Markdown modifiable, Word et PDF. |
+| Distribution | Exports Windows x64 et Web reconstruits ; ZIP Windows et sources ; scripts de fabrication, captures et preuves de vérification conservés dans le dépôt. |
 
-Pendant l’incident, le joueur conserve le contrôle et aucune mort automatique n’est imposée. Les sauvetages déjà confirmés restent acquis. Le passage du 28 attend que le joueur quitte sa zone de chute avant d’activer son obstacle ; une fois posé, cet obstacle reste solide. Le noyau intérieur, le puits et le refuge demeurent accessibles.
+La reprise 0.3 avait perdu ses fichiers temporaires avant publication. Ses fonctions ont été reconstruites depuis la base 0.2 et les preuves conservées, puis testées à nouveau. La 0.4 ne prétend pas restituer les octets de cet ancien travail ; [REPRISE_V0.3.md](REPRISE_V0.3.md) reste le relevé historique.
 
-Une interruption pendant une phase transitoire revient au checkpoint précédant la scène. Une reprise après stabilisation conserve les dégâts. Le fichier reste nommé `save_v1.json` pour permettre la migration : les parties v1 non terminées reprennent en état `intact`, les parties terminées en état `aftermath`.
+La sauvegarde garde le nom `save_v1.json` pour retrouver les anciennes installations, mais son contenu utilise le schéma 3. Revoir la signature du studio conserve la partie et restaure son contexte à la sortie. Une nouvelle partie ne remplace le point sûr qu’après le déploiement confirmé.
 
-## Vérifications exécutées
+## Vérification automatisée des sources
 
-Les huit suites suivantes ont été exécutées avec succès sur les sources de cette livraison, sous Godot 4.7.2 : **1 452 contrôles au total**. Il s’agit de contrôles automatisés, pas de parties humaines.
+**2 037 contrôles réussis dans quatorze suites**, exécutées sur l’arbre figé avec Godot 4.7.2. Le [rapport VERIFICATION.json](validation/v0.4/VERIFICATION.json) contient les empreintes des sources, le résultat de chaque suite et les journaux associés. Les contrôles des paquets exportés sont rapportés séparément pour ne pas gonfler ce total.
 
-| Suite | Contrôles | Ce qu’elle vérifie |
+| Suite | Contrôles | Portée |
 | --- | ---: | --- |
-| Génération | 820 | 200 graines, déterminisme, indépendance des tirages, invariants, couverture des variantes et rejet de définitions invalides |
-| Sauvegarde | 107 | Aller-retour v2, migration stricte v1, conservation des fichiers lors des erreurs, état stable de l’incident, bornes, doublons et corruption |
-| Mission | 83 | Rappel, trois indices, trois sauvetages confirmés, caisses utilisables une fois, pause, checkpoints et condition de fin |
-| Trajets physiques | 205 | 150 segments avec `move_and_slide`, 27 approches d’objectifs et retours, trois graines couvrant les trois dispositions de chaque étage |
-| Directeur d’effondrement | 27 | Déclenchement unique, durées, transition lors des grandes frames, conservation du temps restant et restaurations stables |
-| Intégration de l’incident | 63 | Deux appareils, arrivée, conditions de progression et de regard, protection des transports, pause, reprise, géométrie persistante et fin de mission |
-| Trajets de l’incident | 130 | 81 segments physiques, baie 29 avant/après, détour 28 avec retour en portant, six blocages attendus et trois sorties depuis une zone de chute occupée |
-| Effets après impact | 17 | Dissipation de la poussière, pause/reprise sur de vraies frames, chargement d’un décor stabilisé et retrait de l’enseigne au contact |
+| Génération | 820 | 200 graines, déterminisme, invariants et couverture des dispositions. |
+| Sauvegarde | 269 | Schéma 3, migrations strictes depuis 1 et 2, historique radio, atomicité et refus des données corrompues. |
+| Mission | 83 | Rappel, archives, trois sauvetages confirmés, caisses, checkpoints et condition de fin. |
+| Trajets physiques | 205 | 150 segments au contrôleur réel et 27 approches d’objectifs sur trois graines. |
+| Directeur de l’incident | 27 | Déclenchement unique, durées, grandes frames et restauration stable. |
+| Intégration de l’incident | 63 | Conditions d’observation, appareils, transports, pause, reprise et géométrie persistante. |
+| Trajets après incident | 130 | 81 segments, baie du 29, détour du 28, retour en portant, blocages attendus et zone de chute occupée. |
+| Effets et façade | 29 | Poussière, pause, enseigne, vitrage extérieur intact, orientation et retrait au contact. |
+| Réactions des équipes | 27 | Retrait déterministe de Bravo, réception nominative des victimes et absence de nouvelles collisions. |
+| Directeur radio | 33 | Priorités, file bornée, dédoublonnage et historique. |
+| Intégration radio | 59 | Silences, écho au 27, confirmations, pause, journal et persistance. |
+| Directeur des cinématiques | 109 | Durées de 15 et 28 secondes, cartons, quatre plans, quatre transmissions, caméra et contexte des points sûrs. |
+| Préférences | 80 | Types stricts, valeurs de confort par défaut, écriture atomique et restauration. |
+| Accueil et introduction | 103 | Boutons réels, clavier, modales, reprise, options, passage, pause, temps de mission et transfert au joueur. |
 
-Les deux suites physiques représentent **231 segments au total** : 150 sur les parcours existants et 81 ciblant les changements. Les six blocages attendus font partie des essais du détour ; ils ne constituent pas six segments supplémentaires à ajouter. Les graines 3, 47 et 69 couvrent les trois dispositions des étages 28 et 29.
+Les deux suites de déplacement représentent 231 segments physiques : 150 sur les parcours initiaux et 81 sur l’incident. Les six blocages attendus font partie des essais de détour, sans être ajoutés au nombre de segments. Les autres tests de mission peuvent téléporter le personnage pour isoler une règle. Ces essais ne constituent ni une partie humaine complète ni une mesure de difficulté.
 
-Les tests de mission et d’intégration déplacent directement le joueur pour isoler les règles. Les tests de trajets utilisent la capsule et les collisions, avec placement direct uniquement au début de chaque scénario. Ils ne démontrent pas toutes les trajectoires libres possibles ni l’équilibre du jeu.
+## Vérification des livrables
 
-## Contrôles de livraison
+- **Captures natives** : treize vues du rendu Godot Compatibility, produites dans GitHub Actions via Xvfb/Mesa à 1440 × 900, avec sauvegarde et préférences d’essai isolées. Les cadrages et interfaces sont revus visuellement ; le protocole et les limites sont dans [CAPTURES_V0.4.md](CAPTURES_V0.4.md).
+- **Paquets** : le script externe charge les ressources embarquées dans l’exécutable Windows et le paquet Web depuis un répertoire vide. Les deux paquets passent chacun 18 contrôles, soit **36 contrôles séparés**. Ils vérifient la version, les séquences, les ressources nécessaires et le cycle de sauvegarde, avec Godot sous Linux. Le [rapport des paquets](validation/v0.4/EXPORTED_PACK_VERIFICATION.json) enregistre leurs empreintes et les journaux.
+- **Archives** : intégrité ZIP, absence de doublons et de chemins dangereux, correspondance de chaque fichier source, en-tête PE x64, tailles Web et SHA256. La commande reproductible est `python tools/verify_release.py`.
+- **Documents** : Word et PDF de 119 pages produits depuis les dix mêmes sources de conception. Toutes les pages ont été inspectées dans le rendu initial ; après corrections, les 108 corps identiques ont été comparés pixel par pixel et les onze pages modifiées ont été relues. Le [rapport documentaire](validation/v0.4/DOCUMENT_REVIEW.json) conserve la couverture, les corrections et les empreintes des formats finaux.
 
-| Contrôle | État de la version 0.2 |
-| --- | --- |
-| Vue native | Menu, début d’intervention, toit et pause inspectés dans Godot. Sept vues supplémentaires de la vraie scène et de son HUD ont été capturées avec des états préparés : arrivée, baie intacte, réplique, basculement, impact, après-choc et détour. Ce contrôle ne constitue pas une partie humaine complète. |
-| Export Windows | Export Godot terminé avec succès ; exécutable PE32+ x86-64 et ressources embarquées. Exécution sur Windows non testée. |
-| Export Web | Export sans threads terminé avec succès ; fichiers recopiés dans `dist/`. Rendu 3D navigateur de cette version non testé. |
-| Archives | ZIP Windows et sources 0.2 reconstruits, intégrité ZIP et contenu vérifiés ; sommes SHA256 enregistrées dans `releases/SHA256SUMS.txt`. |
-| Documents | Word et PDF v0.2 générés ; les 65 pages A4 ont toutes été inspectées visuellement. |
+Les exports et leur provenance sont détaillés dans [EXPORTS.md](EXPORTS.md). L’exécutable Windows n’a pas été exécuté sous Windows dans cet environnement ; le rendu de l’export Web dans un navigateur n’a pas été vérifié. Les captures montrent le moteur natif Linux, avec des états préparés.
 
-Les [captures natives de la séquence](CAPTURES_V0.2.md) sont conservées avec leur protocole. Les vues préparées utilisent une sauvegarde de contrôle isolée et n’écrasent pas la partie du joueur.
+## Limites de production et suites prévues
 
-L’environnement de fabrication est Linux. L’exécutable Windows 0.2 n’y a pas été lancé sous Windows. Les archives 0.1 sont conservées comme historique ; la distribution recommandée est la 0.2. Les détails de construction figurent dans [EXPORTS.md](EXPORTS.md).
+La présentation pose une direction cinématique, avec interfaces, rythmes et transitions implémentés. Les personnages, bâtiments et hélicoptères restent géométriques ; aucune qualité visuelle finale AAA, performance minimale ou durée commerciale n’est certifiée. Les appareils sont montrés sur leurs toits pendant l’approche, puis décollent dans la mission ; il n’existe pas encore de scène complète d’atterrissage avec animations de débarquement.
 
-## Limites connues
+La campagne des trente étages, Alma, la piscine, l’exploration intérieure d’Hespérie, les cavernes, le bunker, le niveau 666, les fins et Mountain Hole sont conçus mais ne sont pas jouables dans la tranche actuelle. Les dix archétypes E01–E10 ont des fiches de production ; seule l’entité locale du spa E00 possède une logique implémentée. Les valeurs proposées doivent être équilibrées par des tests joueurs.
 
-- La campagne complète, Alma, la chute dans la piscine, l’exploration intérieure d’Hespérie, les cavernes, le bunker et les fins sont conçus, mais non jouables dans cette version.
-- Aucun multijoueur ni portage Unreal Engine 5 n’est inclus. Le document de portage est une proposition d’architecture.
-- Le rappel est un contrôleur guidé ; il ne simule pas une corde articulée, les frottements ou une chaîne d’assurage réaliste.
-- Les victimes utilisent des silhouettes géométriques. Le portage est abstrait ; l’animation complète et l’IA d’escorte restent à développer.
-- S’accroupir réduit la caméra et la vitesse, sans raccourcir la capsule de collision.
-- L’effondrement est animé en temps réel à partir de géométries et d’états préparés. Il ne simule pas intégralement la résistance structurelle, les débris ou les fluides.
-- Les mouvements de l’entité sont locaux au spa ; le jeu ne possède pas encore le directeur d’horreur complet décrit dans la bible.
-- Les interfaces sont françaises. Il n’y a pas de doublage, de manette configurée ni de remappage complet des commandes.
-- Les durées proposées dans la bible sont des objectifs de conception. Aucun test joueur ne confirme encore la durée, la difficulté ou la performance sur une configuration minimale.
+Le rappel est guidé, sans simulation complète de corde ; le transport des victimes est abstrait, sans IA d’escorte ni animation de portage finalisée. L’accroupissement réduit la caméra et la vitesse mais pas la capsule. L’effondrement est une séquence de géométries préparées, pas un calcul de résistance structurelle. Aucun multijoueur, doublage, remappage complet ou portage UE5 n’est inclus.
 
-## Prochain jalon recommandé
-
-Faire essayer cette intervention de six étages, vérifier que la baie attire naturellement le regard et que le détour reste lisible après l’impact, puis renforcer la tranche avec les assets, animations et sons définitifs. Le document UE5 décrit une proposition de portage ; aucun portage n’est livré ici.
-
-Les commandes de vérification se trouvent dans le README. Les détails de distribution et de provenance des modèles d’export se trouvent dans `EXPORTS.md`.
+Le prochain jalon de production consiste à faire essayer cette intervention, vérifier la lecture de la baie et du détour, puis remplacer les volumes de référence par des assets et animations définitifs. Les fiches de props, d’ennemis, de scènes et d’étages définissent le travail et ses critères d’acceptation.

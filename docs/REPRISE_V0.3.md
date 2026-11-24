@@ -1,3 +1,5 @@
+> **Archive de l’interruption.** La continuation a ensuite été reconstruite et intégrée à la version 0.4, avec une nouvelle validation. Ce document décrit l’état historique avant cette reprise ; les octets locaux v0.3 d’origine n’ont pas été récupérés. Voir [l’état actuel](ETAT_DE_LIVRAISON.md).
+
 # Point de reprise — continuation v0.3 interrompue
 
 **24 novembre 2026.** La version disponible dans cette branche reste la **v0.2**. Ce document conserve l'état exact du travail v0.3 effectué localement avant que l'environnement soit déclaré indisponible. Les sources et exports v0.3 n'ont pas été transférés dans le dépôt ; ce point de reprise ne constitue pas une livraison v0.3.

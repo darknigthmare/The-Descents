@@ -1,12 +1,12 @@
-# The Tower Descent — prototype 0.2
+# The Tower Descent — prototype 0.4
 
 ## Lancer l’intervention
 
-1. Extraire tout le ZIP **The-Tower-Descent-v0.2-Windows-x64.zip** dans un dossier.
+1. Extraire tout le ZIP **The-Tower-Descent-v0.4-Windows-x64.zip** dans un dossier.
 2. Ouvrir **TheTowerDescent.exe**. Aucune installation de Godot n’est nécessaire.
-3. Cliquer sur **Commencer l’intervention**. La graine proposée convient pour une première partie.
+3. Passer ou regarder la signature du studio, ouvrir **Commencer l’intervention**, puis confirmer **Déployer Alpha**. La disposition proposée convient pour une première partie.
 
-L’approche de six secondes montre les deux tours encore droites et les deux équipes de secours. **E** permet de la passer. Vous prenez ensuite le contrôle sur le toit d’Aube ; Bravo se déploie sur Hespérie.
+La signature de 15 secondes précède un accueil lié à votre dernier point sûr. L’approche en jeu de 28 secondes montre la ville, les deux tours encore droites et les équipes de secours en quatre plans. **E**, **Entrée** ou le bouton **Passer** permettent de passer la séquence. **Échap** met l’approche en pause. Le chronomètre de mission démarre après le raccord au joueur. Vous prenez ensuite le contrôle sur le toit d’Aube ; Bravo se déploie sur Hespérie.
 
 Rejoignez la balise orange au bord du puits, appuyez sur **E**, puis descendez avec **S**. À hauteur d’une dalle, **E** vous fait quitter le rappel.
 
@@ -34,9 +34,9 @@ Les lueurs bleues signalent les indices ; les caisses fournissent du matériel. 
 | Courir / s’accroupir / sauter | Maj / Ctrl / Espace |
 | Pause et options | Échap |
 
-La pause fige l’effondrement. Les mouvements de caméra sont réduits par défaut ; les éclairs lumineux sont facultatifs.
+La pause fige l’effondrement. Les mouvements de caméra sont réduits par défaut ; les éclairs lumineux sont facultatifs. Les réglages sont accessibles avant la partie et conservés sur cet appareil. **Revoir l’introduction** relance la signature sans modifier la sauvegarde.
 
-Une sauvegarde locale est créée au départ, après les treuillages, au refuge et avant/après l’incident. Si vous quittez pendant l’effondrement, la reprise revient au point sûr qui le précède. Après stabilisation, les dégâts sont conservés. **Commencer l’intervention** crée un nouveau checkpoint ; **Reprendre le dernier point sûr** poursuit le précédent. Les anciennes sauvegardes 0.1 valides sont migrées automatiquement. Les données ne sont pas envoyées en ligne.
+Une sauvegarde locale est créée au départ, après les treuillages, au refuge et avant/après l’incident. Si vous quittez pendant l’effondrement, la reprise revient au point sûr qui le précède. Après stabilisation, les dégâts sont conservés. **Déployer Alpha** confirme une nouvelle intervention et crée un point sûr ; **Reprendre l’intervention** poursuit le précédent. Les anciennes sauvegardes de schémas 1 et 2 valides sont migrées automatiquement vers le schéma 3. Le journal conserve les 32 dernières transmissions et reste accessible dans le bilan final. Les données ne sont pas envoyées en ligne.
 
 ## Portée de cette version
 
@@ -44,6 +44,6 @@ Prototype solo de six étages en géométrie simplifiée, réalisé avec **Godot
 
 [Projet, sources et bible sur GitHub](https://github.com/darknigthmare/The-Descents/tree/feat/live-tower-collapse)
 
-Les archives 0.1 présentes dans le dépôt sont historiques. Utilisez la **0.2** pour cette nouvelle séquence.
+Les archives 0.1 et 0.2 présentes dans le dépôt sont historiques. Utilisez la **0.4** pour les nouveaux menus et cinématiques.
 
-Les licences du moteur et de ses composants sont jointes dans `GODOT_LICENSES.txt`.
+Les licences du moteur et de ses composants sont jointes dans `GODOT_LICENSES.txt`. La notice et la licence des polices Open Sans accompagnent également cette archive.

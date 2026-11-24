@@ -51,3 +51,4 @@ Les préférences de mouvements réduits, le passage volontaire et une protectio
 ## Portée de cette vérification
 
 Cet audit repose sur le code et les descriptions de PR, pas sur une comparaison visuelle exécutée des quatre jeux. Il confirme les libellés, dessins natifs, durées et règles d’entrée observables dans leurs sources. Il ne certifie ni une qualité « AAA », ni une sortie sonore, ni une validation sur appareil physique.
+
