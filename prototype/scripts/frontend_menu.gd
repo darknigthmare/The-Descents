@@ -5,8 +5,10 @@ signal start_requested(seed_value: int)
 signal continue_requested
 signal replay_requested
 signal help_requested
-signal setting_changed(setting: String, enabled: bool)
+signal setting_changed(setting: String, value: Variant)
+signal settings_closed
 
+const Preferences = preload("res://scripts/preferences_store.gd")
 const TITLE_FONT = preload("res://assets/fonts/OpenSans-CondBold.ttf")
 const BODY_FONT = preload("res://assets/fonts/OpenSans-Regular.ttf")
 const LIGHT_FONT = preload("res://assets/fonts/OpenSans-Light.ttf")
@@ -27,6 +29,10 @@ var progress_label: Label
 var mission_text: RichTextLabel
 var replacement_note: Label
 var toggles: Dictionary = {}
+var sliders: Dictionary = {}
+var value_labels: Dictionary = {}
+var settings_scroll: ScrollContainer
+var standalone_settings: bool = false
 var modal_stack: Array[Control] = []
 var has_save: bool = false
 var reduced_motion: bool = true
@@ -206,21 +212,129 @@ func _build_options() -> void:
 	var built: Array = _modal("OPTIONS ET CONFORT")
 	options = built[0]
 	var col: VBoxContainer = built[1]
-	var settings: Array = [["audio","Ambiance sonore"],["reduced_motion","Réduire les mouvements de caméra"],["flashes","Activer les éclairs lumineux"],["startup_intro","Afficher l’introduction au lancement"]]
-	for record: Array in settings:
-		var toggle: CheckButton = CheckButton.new()
-		toggle.text = record[1]
-		toggle.custom_minimum_size.y = 46
-		toggle.add_theme_font_size_override("font_size",20)
-		var key: String = record[0]
-		toggle.toggled.connect(func(value: bool): setting_changed.emit(key,value))
-		col.add_child(toggle)
-		toggles[key] = toggle
-	var detail: Label = _label("Les sous-titres sont toujours affichés. Toutes les séquences peuvent être passées.\nLa caméra réduite utilise des plans fixes et des fondus.\nLes éclairs sont facultatifs et désactivés par défaut.",17,MUTED)
-	detail.add_theme_constant_override("line_spacing",8)
-	col.add_child(detail)
-	col.add_child(_button("COMMANDES",func(): help_requested.emit()))
-	col.add_child(_button("RETOUR",close_modals,true))
+	col.custom_minimum_size.x = 900
+	settings_scroll = ScrollContainer.new()
+	settings_scroll.custom_minimum_size = Vector2(900, 438)
+	settings_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	settings_scroll.follow_focus = true
+	col.add_child(settings_scroll)
+	var settings_col: VBoxContainer = VBoxContainer.new()
+	settings_col.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	settings_col.add_theme_constant_override("separation", 10)
+	settings_scroll.add_child(settings_col)
+	settings_col.add_child(_label("SON", 14, TEAL))
+	_add_toggle(settings_col, "audio", "Activer le son")
+	_add_slider(settings_col, "master_volume", "Volume général")
+	settings_col.add_child(_label("REGARD", 14, TEAL))
+	_add_slider(settings_col, "mouse_sensitivity", "Sensibilité de la souris")
+	_add_slider(settings_col, "field_of_view", "Champ de vision en jeu")
+	_add_toggle(settings_col, "invert_y", "Inverser le regard vertical")
+	settings_col.add_child(_label("MISE EN SCÈNE", 14, TEAL))
+	_add_toggle(settings_col, "reduced_motion", "Réduire les mouvements de caméra")
+	_add_toggle(settings_col, "flashes", "Activer les éclairs lumineux")
+	_add_toggle(settings_col, "startup_intro", "Afficher l’introduction au lancement")
+	var detail: Label = _label("Les sous-titres restent affichés. Toutes les introductions peuvent être passées.\nLe champ de vision change votre regard en jeu ; les plans de cinéma gardent leur cadrage.\nMouvements réduits : plans fixes et pluie en voile, sans traînées mobiles.\nLe regard inversé s’applique à la souris et aux flèches. Les éclairs sont facultatifs.", 16, MUTED)
+	detail.add_theme_constant_override("line_spacing", 5)
+	settings_col.add_child(detail)
+	col.add_child(_label("Appliqué immédiatement  ·  Tab : parcourir  ·  ← → : ajuster  ·  Molette : défiler", 15, MUTED))
+	var actions: HBoxContainer = HBoxContainer.new()
+	actions.add_theme_constant_override("separation", 14)
+	var commands: Button = _button("COMMANDES", func(): help_requested.emit())
+	commands.custom_minimum_size.x = 0
+	commands.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	actions.add_child(commands)
+	var reset: Button = _button("RÉTABLIR LES VALEURS PAR DÉFAUT", _reset_settings)
+	reset.custom_minimum_size.x = 0
+	reset.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	reset.add_theme_font_size_override("font_size", 21)
+	actions.add_child(reset)
+	col.add_child(actions)
+	col.add_child(_button("RETOUR", close_modals, true))
+
+func _add_toggle(parent: VBoxContainer, key: String, title: String) -> void:
+	var toggle: CheckButton = CheckButton.new()
+	toggle.name = "Setting_" + key
+	toggle.text = title
+	toggle.custom_minimum_size.y = 42
+	toggle.add_theme_font_size_override("font_size", 20)
+	toggle.toggled.connect(func(value: bool): setting_changed.emit(key, value))
+	parent.add_child(toggle)
+	toggles[key] = toggle
+
+func _add_slider(parent: VBoxContainer, key: String, title: String) -> void:
+	var group: VBoxContainer = VBoxContainer.new()
+	group.add_theme_constant_override("separation", 2)
+	var header: HBoxContainer = HBoxContainer.new()
+	var label: Label = _label(title, 19, WHITE)
+	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	header.add_child(label)
+	var value: Label = _label("", 19, GOLD)
+	value.custom_minimum_size.x = 110
+	value.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	header.add_child(value)
+	group.add_child(header)
+	var slider: HSlider = HSlider.new()
+	slider.name = "Setting_" + key
+	var limits: Vector2 = Preferences.LIMITS[key]
+	slider.min_value = limits.x
+	slider.max_value = limits.y
+	slider.step = 1.0 if key == "field_of_view" else 0.05
+	slider.custom_minimum_size = Vector2(0, 30)
+	slider.focus_mode = Control.FOCUS_ALL
+	slider.scrollable = false
+	slider.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	slider.tooltip_text = title + "  ·  Flèches gauche et droite pour ajuster"
+	var track: StyleBoxFlat = StyleBoxFlat.new()
+	track.bg_color = Color(0.15, 0.25, 0.28)
+	track.set_corner_radius_all(3)
+	track.content_margin_top = 3
+	track.content_margin_bottom = 3
+	slider.add_theme_stylebox_override("slider", track)
+	var fill: StyleBoxFlat = track.duplicate()
+	fill.bg_color = GOLD
+	slider.add_theme_stylebox_override("grabber_area", fill)
+	var highlight: StyleBoxFlat = fill.duplicate()
+	highlight.bg_color = WHITE
+	slider.add_theme_stylebox_override("grabber_area_highlight", highlight)
+	var focus: StyleBoxFlat = StyleBoxFlat.new()
+	focus.bg_color = Color(0, 0, 0, 0)
+	focus.border_color = TEAL
+	focus.set_border_width_all(1)
+	focus.set_corner_radius_all(3)
+	slider.add_theme_stylebox_override("focus", focus)
+	slider.value_changed.connect(func(number: float):
+		_update_value_label(key, number)
+		setting_changed.emit(key, number)
+	)
+	group.add_child(slider)
+	parent.add_child(group)
+	sliders[key] = slider
+	value_labels[key] = value
+
+func _update_value_label(key: String, value: float) -> void:
+	match key:
+		"master_volume":
+			value_labels[key].text = "%d %%" % roundi(value * 100.0)
+		"mouse_sensitivity":
+			value_labels[key].text = "× %.2f" % value
+		"field_of_view":
+			value_labels[key].text = "%d°" % roundi(value)
+
+func _reset_settings() -> void:
+	for key: String in Preferences.DEFAULTS:
+		setting_changed.emit(key, Preferences.DEFAULTS[key])
+	apply_settings(Preferences.DEFAULTS)
+
+func open_settings_from_pause() -> void:
+	close_modals(false)
+	standalone_settings = true
+	z_index = 20
+	enter_time = 1.0
+	modulate.a = 1.0
+	show()
+	options.show()
+	settings_scroll.scroll_vertical = 0
+	toggles["audio"].grab_focus()
 
 func _build_dossier() -> void:
 	var built: Array = _modal("DOSSIER DE MISSION")
@@ -258,20 +372,35 @@ func set_context(value: Dictionary, valid_save: bool, seed_value: int = 271104) 
 		focus_primary()
 
 func apply_settings(settings: Dictionary) -> void:
+	var clean: Dictionary = Preferences.normalize(settings)
 	for key: String in toggles:
-		toggles[key].set_pressed_no_signal(bool(settings.get(key,false)))
-	reduced_motion = bool(settings.get("reduced_motion",true))
+		toggles[key].set_pressed_no_signal(bool(clean[key]))
+	for key: String in sliders:
+		sliders[key].set_value_no_signal(float(clean[key]))
+		_update_value_label(key, float(clean[key]))
+	reduced_motion = bool(clean["reduced_motion"])
 
 func _open_modal(panel: Control) -> void:
 	close_modals(false)
 	panel.show()
-	var buttons: Array[Node] = panel.find_children("*","Button",true,false)
+	if panel == options:
+		settings_scroll.scroll_vertical = 0
+		toggles["audio"].grab_focus()
+		return
+	var buttons: Array[Node] = panel.find_children("*", "Button", true, false)
 	if not buttons.is_empty():
 		buttons[0].grab_focus()
 
 func close_modals(focus: bool = true) -> void:
 	for panel: Control in modal_stack:
 		panel.hide()
+	if standalone_settings:
+		standalone_settings = false
+		z_index = 0
+		hide()
+		if focus:
+			settings_closed.emit()
+		return
 	if focus:
 		focus_primary()
 

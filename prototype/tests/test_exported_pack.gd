@@ -7,8 +7,8 @@ const Store = preload("res://scripts/save_store.gd")
 const Preferences = preload("res://scripts/preferences_store.gd")
 const Director = preload("res://scripts/cinematic_director.gd")
 const FieldProps = preload("res://scripts/field_props.gd")
-const TEST_PATH: String = "user://qa_v05_external_pack.json"
-const PREFS_PATH: String = "user://qa_v05_external_pack.cfg"
+const TEST_PATH: String = "user://qa_v06_external_pack.json"
+const PREFS_PATH: String = "user://qa_v06_external_pack.cfg"
 var failures: Array[String] = []
 var checks: int = 0
 
@@ -19,7 +19,7 @@ func _initialize() -> void:
 
 func _run() -> void:
 	_cleanup()
-	_check(ProjectSettings.get_setting("application/config/version", "") == "0.5.0", "Packed project has the wrong application version.")
+	_check(ProjectSettings.get_setting("application/config/version", "") == "0.6.0", "Packed project has the wrong application version.")
 	_check(not ResourceLoader.exists("res://tests/test_save.gd") and not ResourceLoader.exists("res://tests/test_cinematic_integration.gd"), "Developer tests unexpectedly shipped inside the pack.")
 	var scene: PackedScene = load("res://scenes/main.tscn")
 	_check(scene != null, "The mounted pack has no loadable main scene.")
@@ -37,6 +37,8 @@ func _run() -> void:
 	await process_frame
 	_check(not mission.started and mission.hud.menu.visible and not mission.hud.cinematic.visible and mission.menu_context["id"] == "approach", "Packed scene failed to enter its accessible initial menu.")
 	_check(mission.world_data.get("helicopters", []).size() == 2 and mission.world_data.get("rotors", []).size() == 2, "Mounted resources lost one of the two rescue helicopters.")
+	_check(ResourceLoader.exists("res://scripts/rescue_presentation.gd") and ResourceLoader.exists("res://scripts/maritime_atmosphere.gd"), "The mounted pack lost the v0.6 rescue or atmosphere module.")
+	_check(mission.rescue_visuals != null and mission.rescue_visuals.is_inside_tree(), "The exported main scene did not instantiate its rescue presentation.")
 	var director = Director.new()
 	director.start("boot")
 	_check(director.duration() == 15.0 and director.presentation()["card"] == "studio", "Packed studio director is missing or outdated.")

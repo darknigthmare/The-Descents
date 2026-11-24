@@ -10,7 +10,9 @@ const Radio = preload("res://scripts/radio_director.gd")
 const Cinematics = preload("res://scripts/cinematic_director.gd")
 const Preferences = preload("res://scripts/preferences_store.gd")
 const FieldProps = preload("res://scripts/field_props.gd")
+const RescuePresentation = preload("res://scripts/rescue_presentation.gd")
 
+var rescue_visuals: Node3D
 var world: Node3D
 var player: CharacterBody3D
 var hud: CanvasLayer
@@ -80,6 +82,7 @@ func _ready() -> void:
 	flashes_enabled = bool(preferences["flashes"])
 	sound_enabled = sound_enabled and bool(preferences["audio"])
 	AudioServer.set_bus_mute(0,not sound_enabled)
+	_apply_master_volume()
 	_make_audio()
 	hud = HUD.new()
 	add_child(hud)
@@ -185,6 +188,7 @@ func _bind_inputs() -> void:
 			InputMap.action_add_event(action, event)
 
 func _build_world(seed_value: int) -> void:
+	rescue_visuals = null
 	if is_instance_valid(world):
 		world.free()
 	if is_instance_valid(player):
@@ -204,11 +208,15 @@ func _build_world(seed_value: int) -> void:
 	world.set_rescued_people(rescued)
 	world.apply_incident(incident.phase, incident.phase_elapsed)
 	world.set_lightning_enabled(flashes_enabled)
+	world.set_reduced_motion(reduced_motion)
 	player = Player.new()
 	add_child(player)
 	player.position = world_data.get("roof_spawn", Vector3(7,42.2,7))
 	player.rotation.y = 0.75
-	player.reduced_motion = reduced_motion
+	player.apply_comfort(preferences)
+	rescue_visuals = RescuePresentation.new()
+	world.add_child(rescue_visuals)
+	rescue_visuals.build(world, player.camera)
 	player.lost_footing.connect(_fall_recovery)
 	menu_camera = Camera3D.new()
 	menu_camera.cull_mask = 1
@@ -374,6 +382,11 @@ func _unhandled_input(event: InputEvent) -> void:
 				_open_journal()
 			get_viewport().set_input_as_handled()
 		return
+	if hud.menu.standalone_settings:
+		if event.is_action_pressed("pause_game"):
+			hud.menu.close_modals()
+			get_viewport().set_input_as_handled()
+		return
 	if event.is_action_pressed("pause_game"):
 		if paused:
 			_resume()
@@ -442,6 +455,7 @@ func _process(delta: float) -> void:
 		_update_hud()
 		return
 	_process_departure()
+	rescue_visuals.advance(delta, reduced_motion)
 	_process_hoist(delta)
 	var floor_number: int = player.nearest_floor()
 	if not player.on_rope and floor_number != last_floor:
@@ -769,6 +783,7 @@ func _interact_node(object: Node3D) -> void:
 			object.set_meta("used", true)
 			object.hide()
 			player.carrying = true
+			rescue_visuals.set_carried(object)
 			_notify("%s sécurisé·e au harnais. Retournez à la balise orange du puits." % object.get_meta("title", "Rescapé"))
 			_say("VARGA  /  POSTE DU TOIT", "Harnais reçu. Revenez au point orange du même étage : nous préparons le treuil.", 7)
 		"evidence":
@@ -806,15 +821,15 @@ func _start_hoist(survivor: Node3D, floor_number: int) -> void:
 	survivor.global_position = Vector3(1.8, (floor_number - 24) * 6 + 0.6, 0)
 	carried = null
 	player.carrying = false
+	rescue_visuals.begin_hoist(survivor)
 	_say("VARGA  /  TREUIL", "Le harnais est verrouillé. On remonte votre rescapé au poste de secours. Gardez le puits dégagé.", 7)
 
 func _process_hoist(delta: float) -> void:
 	if not is_instance_valid(hoisting):
 		return
-	hoist_progress += delta
-	var initial_y: float = (hoist_floor - 24) * 6 + 0.6
-	hoisting.position.y = lerpf(initial_y, 44.0, clampf(hoist_progress / 5.0, 0, 1))
-	if hoist_progress >= 5:
+	hoist_progress += maxf(delta, 0.0)
+	rescue_visuals.sample_hoist(hoisting, hoist_progress, hoist_floor)
+	if hoist_progress >= RescuePresentation.HOIST_DURATION:
 		var key: String = _key(hoisting)
 		if not key in rescued:
 			rescued.append(key)
@@ -823,6 +838,7 @@ func _process_hoist(delta: float) -> void:
 		_play_effect("rescue")
 		stress = maxf(0, stress - 15)
 		world.set_rescued_people(rescued)
+		rescue_visuals.finish_hoist(key)
 		var person_name: String = {"survivor_30": "Ana Rios", "survivor_28": "Samuel Breton", "survivor_26": "Nora Haddad"}.get(key, "Rescapé")
 		_say("VARGA  /  POSTE DU TOIT", "%s : réception confirmée au poste de secours. %d sur 3 à l’abri." % [person_name, rescued.size()], 8, true)
 		_save_checkpoint(hoist_floor)
@@ -926,9 +942,10 @@ func _update_hud() -> void:
 	elif incident.is_active():
 		hud.mission_label.text = "Éloignez-vous des vitres. Le noyau et la ligne de rappel tiennent."
 	elif is_instance_valid(carried):
-		hud.mission_label.text = "Ramener le rescapé à la balise orange de cet étage."
+		hud.mission_label.text = "Ramener %s à la balise orange de cet étage." % str(carried.get_meta("title", "le rescapé"))
 	elif is_instance_valid(hoisting):
-		hud.mission_label.text = "Treuillage en cours. Attendre la confirmation du toit."
+		var phase_text: String = "Verrouillage du harnais" if hoist_progress < 0.45 else ("Dépose au toit" if hoist_progress >= 4.2 else "Remontée vers le toit")
+		hud.mission_label.text = "%s  ·  %d %%\nAttendre la réception confirmée." % [phase_text, int(clampf(hoist_progress / RescuePresentation.HOIST_DURATION, 0.0, 1.0) * 100)]
 	elif incident.phase == "intact" and "survivor_30" in rescued:
 		hud.mission_label.text = "Rejoindre la baie Est du 29 et regarder l’équipe Bravo."
 	elif rescued.size() >= 3:
@@ -942,7 +959,7 @@ func _update_hud() -> void:
 	elif is_instance_valid(nearest):
 		var kind: String = nearest.get_meta("kind", "")
 		if kind == "beacon":
-			hud.prompt_label.text = "E  Confirmer le treuillage du rescapé" if is_instance_valid(carried) else "E  S’attacher à la corde de rappel"
+			hud.prompt_label.text = "Treuillage en cours  ·  Attendre la réception" if is_instance_valid(hoisting) else ("E  Confirmer le treuillage du rescapé" if is_instance_valid(carried) else "E  S’attacher à la corde de rappel")
 		elif kind == "survivor":
 			hud.prompt_label.text = "Attendez la fin de la secousse avant de déplacer le rescapé" if incident.is_active() else "E  Sécuriser %s au harnais" % nearest.get_meta("title", "le rescapé")
 		elif kind == "refuge":
@@ -992,6 +1009,7 @@ func _journal_content() -> String:
 	return text
 
 func _complete_game() -> void:
+	rescue_visuals.finish_reception()
 	completed = true
 	for channel: AudioStreamPlayer in [audio_score,audio_rotors]:
 		if is_instance_valid(channel):
@@ -1081,18 +1099,20 @@ func _sync_radio(play_chirp: bool = false) -> void:
 	if play_chirp and radio.is_busy() and sound_enabled and is_instance_valid(audio_radio):
 		audio_radio.play()
 
-func _setting_changed(setting: String, enabled: bool) -> void:
-	if not Preferences.DEFAULTS.has(setting):
+func _setting_changed(setting: String, value: Variant) -> void:
+	if not Preferences.valid_value(setting, value):
 		return
-	preferences[setting] = enabled
+	preferences[setting] = value
 	reduced_motion = bool(preferences["reduced_motion"])
 	flashes_enabled = bool(preferences["flashes"])
 	sound_enabled = bool(preferences["audio"])
 	if is_instance_valid(player):
-		player.reduced_motion = reduced_motion
+		player.apply_comfort(preferences)
 	if is_instance_valid(world):
 		world.set_lightning_enabled(flashes_enabled)
+		world.set_reduced_motion(reduced_motion)
 	AudioServer.set_bus_mute(0,not sound_enabled)
+	_apply_master_volume()
 	if DisplayServer.get_name() != "headless" and sound_enabled and is_instance_valid(audio_wind) and not audio_wind.playing:
 		audio_wind.play()
 	if not sound_enabled:
@@ -1103,6 +1123,10 @@ func _setting_changed(setting: String, enabled: bool) -> void:
 	var error: Error = Preferences.save_settings(preferences,preferences_path)
 	if error != OK:
 		_notify("Réglages appliqués pour cette session, mais non enregistrés sur le disque.")
+
+func _apply_master_volume() -> void:
+	var volume: float = clampf(float(preferences.get("master_volume", 1.0)), 0.0, 1.0)
+	AudioServer.set_bus_volume_db(0, -80.0 if volume <= 0.0 else linear_to_db(volume))
 
 func _make_audio() -> void:
 	audio_wind = AudioStreamPlayer.new()

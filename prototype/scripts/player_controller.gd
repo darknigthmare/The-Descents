@@ -3,12 +3,16 @@ class_name DescentPlayer
 
 signal lost_footing
 
+const Preferences = preload("res://scripts/preferences_store.gd")
+
 var active: bool = false
 var on_rope: bool = false
 var reduced_motion: bool = true
 var carrying: bool = false
 var lamp_enabled: bool = true
 var sensitivity: float = 0.0024
+var invert_y: bool = false
+var field_of_view: float = 77.0
 var rope_anchor: Vector3 = Vector3(0, 45, 0)
 var sway: float = 0.0
 var sway_speed: float = 0.0
@@ -39,7 +43,7 @@ func _ready() -> void:
 	head.position.y = 1.62
 	add_child(head)
 	camera = Camera3D.new()
-	camera.fov = 77
+	camera.fov = field_of_view
 	camera.near = 0.07
 	camera.far = 1300
 	head.add_child(camera)
@@ -76,12 +80,24 @@ func _ready() -> void:
 	rope_mesh.material_override = rope_material
 	add_child(rope_mesh)
 
+func apply_comfort(settings: Dictionary) -> void:
+	var clean: Dictionary = Preferences.normalize(settings)
+	reduced_motion = bool(clean["reduced_motion"])
+	sensitivity = 0.0024 * float(clean["mouse_sensitivity"])
+	invert_y = bool(clean["invert_y"])
+	field_of_view = float(clean["field_of_view"])
+	if is_instance_valid(camera):
+		camera.fov = field_of_view
+
 func _unhandled_input(event: InputEvent) -> void:
 	if not active:
 		return
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		rotate_y(-event.relative.x * sensitivity)
-		head.rotation.x = clampf(head.rotation.x - event.relative.y * sensitivity, -1.35, 1.35)
+		_apply_mouse_look(event.relative)
+
+func _apply_mouse_look(relative: Vector2) -> void:
+	rotate_y(-relative.x * sensitivity)
+	head.rotation.x = clampf(head.rotation.x - relative.y * sensitivity * (-1.0 if invert_y else 1.0), -1.35, 1.35)
 
 func _physics_process(delta: float) -> void:
 	if not active:
@@ -89,7 +105,7 @@ func _physics_process(delta: float) -> void:
 	var look_x: float = Input.get_axis("look_left", "look_right")
 	var look_y: float = Input.get_axis("look_up", "look_down")
 	rotate_y(-look_x * delta * 1.5)
-	head.rotation.x = clampf(head.rotation.x - look_y * delta * 1.2, -1.35, 1.35)
+	head.rotation.x = clampf(head.rotation.x - look_y * delta * 1.2 * (-1.0 if invert_y else 1.0), -1.35, 1.35)
 	if on_rope:
 		_process_rope(delta)
 	else:

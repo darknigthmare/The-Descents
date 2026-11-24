@@ -24,7 +24,7 @@ func _run() -> void:
 		_cleanup()
 		quit(1)
 	)
-	var comfortable: Dictionary = {"audio": false, "reduced_motion": true, "flashes": false, "startup_intro": false}
+	var comfortable: Dictionary = Preferences.normalize({"audio": false, "reduced_motion": true, "flashes": false, "startup_intro": false})
 	_check(Preferences.save_settings(comfortable, PREFS_PATH) == OK, "Could not prepare isolated comfort settings.")
 	mission = MainScene.instantiate()
 	mission.save_path = TEST_PATH

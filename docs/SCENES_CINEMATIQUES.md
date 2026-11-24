@@ -1,6 +1,6 @@
 # Scènes, cinématiques et accueil
 
-**The Tower Descent — version 0.5.0.** Cette annexe fournit le découpage de l’ouverture livrée, les contrats de transition avec le jeu et les scènes à produire pour la campagne. La direction recherche la précision d’une présentation cinématographique : composition, rythme, lisibilité des équipes et continuité du son. Le résultat actuel reste une maquette en temps réel dans Godot, avec personnages et décors procéduraux. Il ne constitue pas une livraison de personnages, d’animations faciales ou d’assets « AAA » définitifs.
+**The Tower Descent — version 0.6.0.** Cette annexe fournit le découpage de l’ouverture livrée, les contrats de transition avec le jeu et les scènes à produire pour la campagne. La direction recherche la précision d’une présentation cinématographique : composition, rythme, lisibilité des équipes et continuité du son. Le résultat actuel reste une maquette en temps réel dans Godot, avec personnages et décors procéduraux. Il ne constitue pas une livraison de personnages, d’animations faciales ou d’assets « AAA » définitifs.
 
 ## 1 Intentions et langage visuel
 
@@ -64,7 +64,7 @@ Nouvelle intervention ouvre un panneau consacré au déploiement. Le joueur y ch
 
 Le dossier présente la situation et le parcours des six étages. Avant l’effondrement, les deux tours sont décrites comme debout. Après un point sûr enregistrant l’impact, il indique la liaison coupée, le noyau praticable et l’absence de réponse de Bravo. Cette information doit toujours correspondre à la sauvegarde utilisée pour le décor.
 
-Les options sont accessibles avant une nouvelle partie. Elles comportent ambiance sonore, réduction des mouvements de caméra, activation des éclairs lumineux et introduction au lancement. Les valeurs par défaut sont audio actif, mouvements réduits actifs, éclairs désactivés et introduction active. Les sous-titres sont toujours affichés. Ces préférences sont enregistrées séparément de la mission et chargées avant le choix d’afficher le prologue.
+Les options sont accessibles avant une nouvelle partie. Elles comportent activation du son, volume général de 0 à 100 %, sensibilité de souris de ×0,25 à ×2,5, champ de vision jouable de 65 à 100 degrés, regard vertical inversé, réduction des mouvements, activation des éclairs lumineux et introduction au lancement. Le même panneau est accessible depuis la pause ; sa fermeture retourne à la pause sans reprendre automatiquement le jeu. Les valeurs par défaut sont audio actif, mouvements réduits actifs, éclairs désactivés et introduction active. Les sous-titres sont toujours affichés. Ces préférences sont enregistrées séparément de la mission et chargées avant le choix d’afficher le prologue.
 
 ### Composition et comportement
 
@@ -87,7 +87,7 @@ La caméra accompagne désormais une arrivée animée des deux appareils. Leurs 
 | 3, 14–21 s | Vue des cabines ouvertes et du déploiement des équipes ; rendre leur relation spatiale concrète, 64° | DEUX ÉQUIPES ; ALPHA SUR AUBE / BRAVO SUR HESPÉRIE |
 | 4, 21–28 s | Arrivée vers le poste d’Aube et le point de prise en main ; cadrage dégagé de l’antenne, 62° vers 76° en mode animé | VOTRE LIGNE TIENT ; AUBE / POSTE DE COMMANDEMENT |
 
-En caméra animée, chaque plan interpole une position et un regard avec accélération et décélération progressives. Les mouvements réduits conservent des cadrages fixes ; le dernier plan reste une vue stable du poste avant la remise du contrôle. Les bandes et sous-titres sont identiques dans les deux modes. Le champ de vision de la caméra jouable, 77 degrés, reprend à l’issue de la transition.
+En caméra animée, chaque plan interpole une position et un regard avec accélération et décélération progressives. Les mouvements réduits conservent des cadrages fixes ; le dernier plan reste une vue stable du poste avant la remise du contrôle. Les bandes et sous-titres sont identiques dans les deux modes. Le champ de vision choisi pour la caméra jouable, 77 degrés par défaut, reprend à l’issue de la transition. Les plans cinématiques conservent leur cadrage propre.
 
 ### Dépose et déplacements de la version 0.5
 
@@ -135,7 +135,7 @@ L’horloge de mission demeure suspendue pendant l’arrivée. La caméra de cin
 
 Cette scène est jouée. L’ouverture s’achève au poste, le joueur apprend la corde puis atteint le restaurant du 30. Les accessoires P01, P02, P04 et P11 forment une chaîne visuelle : ligne, balise, treuil et réception médicale. Aucun plan forcé ne doit cacher la commande au moment de sortir de la corde.
 
-Le prototype permet de sécuriser Ana avec E, de la transporter jusqu’à la balise et d’observer une montée de cinq secondes. La confirmation au treuil inscrit `survivor_30` parmi les personnes sauvées. La silhouette d’Ana apparaît ensuite au poste médical du toit. Le dispositif fonctionne aussi avec Samuel et Nora, chacun avec un nom, une pose ou une couverture distincte.
+La 0.6 permet de sécuriser Ana avec E, puis montre le harnais et les mains d’Alex pendant le retour à la balise. La remontée de cinq secondes comprend verrouillage, montée et dépose sur le toit ; le panier, les sangles, le câble et l’opérateur matérialisent ce transfert. La fin du treuil inscrit `survivor_30` parmi les personnes sauvées et crée le point sûr. Un accompagnement cosmétique de 4,2 secondes rejoint ensuite la place médicale d’Ana. Samuel et Nora utilisent la même chaîne, avec leur nom, leur pose ou leur couverture. La caméra du joueur n’est pas déplacée vers le toit. Le chapitre [Sauvetage visible](SAUVETAGE_V0.6.md) décrit les coordonnées, les durées, les props, la pause et la reprise.
 
 La cible de production ajoute un regard d’Alex vers la ligne tendue, un geste d’accueil de l’équipier et une réponse courte de la personne recueillie. Ces inserts doivent pouvoir être désactivés et ne jamais masquer une sortie. Ils ne demandent pas une caméra externe obligatoire : le mouvement de la corde et l’équipe au-dessus peuvent suffire. La priorité demeure la certitude qu’une personne a été prise en charge.
 

@@ -17,6 +17,7 @@ REQUIRED = {
     "generation", "save", "mission", "routes", "collapse", "incident_integration", "incident_routes",
     "incident_effects", "team_reactions", "radio", "radio_integration", "cinematics", "preferences",
     "cinematic_integration", "field_props", "world_presentation", "arrival_staging", "field_integration",
+    "rescue_presentation", "comfort", "atmosphere",
 }
 
 
@@ -32,6 +33,8 @@ def main() -> None:
     imported = run([binary, "--headless", "--path", str(ROOT / "prototype"), "--editor", "--import", "--quit"],
                    cwd=ROOT, timeout=180, log=output / "final-import.txt")
     imported["pass"] = imported["returncode"] == 0 and not imported["error_lines"]
+    if not imported["pass"]:
+        print((output / imported["log"]).read_text(errors="replace")[-20000:], flush=True)
     before = runtime_hashes()
     scripts = sorted((ROOT / "prototype/tests").glob("test_*.gd"))
     scripts = [script for script in scripts if script.name != "test_exported_pack.gd"]
@@ -48,10 +51,12 @@ def main() -> None:
             entry.update({"suite": name, "script": script.relative_to(ROOT).as_posix(), "script_sha256": sha256(script)})
             suites.append(entry)
             print(f'{"PASS" if entry["pass"] else "FAIL"} {name}: {entry["checks"]} checks', flush=True)
+            if not entry["pass"]:
+                print((output / entry["log"]).read_text(errors="replace")[-20000:], flush=True)
     after = runtime_hashes()
     report = {
         "version": version(),
-        "label": "v0.5 animated arrival, contextual field inspection and procedural world presentation",
+        "label": "v0.6 visible rescue, maritime atmosphere and accessible comfort settings",
         "validated_utc": datetime.now(timezone.utc).isoformat(),
         "engine": engine,
         "runtime_freeze_commit": git_head(),

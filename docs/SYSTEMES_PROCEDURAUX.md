@@ -1,6 +1,6 @@
 # Systèmes procéduraux de The Tower Descent
 
-**Version 0.5.0 — 24 novembre 2026**
+**Version 0.6.0 — 24 novembre 2026**
 
 ## Objet et périmètre
 

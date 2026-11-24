@@ -1,6 +1,6 @@
 # The Tower Descent — Effondrement en direct
 
-**Version 0.5.0 — Incident, équipes et continuité cinématique — 24 novembre 2026**
+**Version 0.6.0 — Incident, équipes et continuité cinématique — 24 novembre 2026**
 
 ## 1. Décision de direction
 

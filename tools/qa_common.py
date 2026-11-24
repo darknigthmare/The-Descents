@@ -10,6 +10,21 @@ import subprocess
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
+DOCUMENT_SOURCES = (
+    "docs/BIBLE_DU_JEU.md",
+    "docs/CATALOGUE_ETAGES.md",
+    "docs/SYSTEMES_PROCEDURAUX.md",
+    "docs/ARCHITECTURE_ET_PORTAGE_UE5.md",
+    "docs/EFFONDREMENT_EN_DIRECT.md",
+    "docs/COMMUNICATIONS_ET_EQUIPES.md",
+    "docs/PROPS_INTERACTIONS.md",
+    "docs/ENNEMIS_STATISTIQUES.md",
+    "docs/SCENES_CINEMATIQUES.md",
+    "docs/GAMEPLAY_DETAILLE.md",
+    "docs/SAUVETAGE_V0.6.md",
+    "docs/AMBIANCE_V0.6.md",
+    "docs/CONFORT_V0.6.md",
+)
 ANSI = re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
 ERROR = re.compile(r"(?:^|\s)(?:SCRIPT ERROR:|ERROR:|Parse Error:|FAIL\b)")
 PASS = re.compile(r"^PASS[^\n]*?:\s*(\d+)\s+checks\b", re.M)

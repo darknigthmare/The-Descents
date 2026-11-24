@@ -2,7 +2,7 @@
 
 ## Catalogue des étages et des espaces de campagne
 
-**Version 0.5.0 — Assemblage des niveaux et dossier de production — 24 novembre 2026**
+**Version 0.6.0 — Assemblage des niveaux et dossier de production — 24 novembre 2026**
 
 Ce catalogue développe les lieux de la [Bible du jeu](BIBLE_DU_JEU.md). Chaque étage possède une fonction fixe, une scène reconnaissable et un objectif de rythme. La génération fait varier des passages, des objets, des personnes secondaires et des détails compatibles ; elle ne déplace pas les révélations principales au hasard.
 

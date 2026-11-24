@@ -17,6 +17,7 @@ EXPECTED_CAPTURES = {
     "06_approche_03.png", "06_approche_10.png", "06_approche_17.png", "06_approche_25.png",
     "07_pause_intro.png", "08_menu_archives.png", "09_dossier_apres.png", "10_menu_refuge.png",
     "11_inspection_toit.png", "12_inspection_archives.png", "13_inspection_apres.png", "14_toit_equipe.png",
+    "15_portage.png", "16_treuillage.png", "17_reception.png", "18_meteo_toit.png", "19_options_pause.png",
 }
 
 
@@ -41,7 +42,7 @@ def read_request(path: Path) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=["request", "check-request", "verify"])
-    parser.add_argument("--request", type=Path, default=ROOT / ".review/v0.5/request.json")
+    parser.add_argument("--request", type=Path, default=ROOT / ".review" / ("v" + ".".join(version().split(".")[:2])) / "request.json")
     parser.add_argument("--capture-root", type=Path)
     parser.add_argument("--log", type=Path)
     args = parser.parse_args()
@@ -54,7 +55,7 @@ def main() -> None:
             "local_freeze_commit": git_head(), "runtime_sha256": runtime_hashes(),
             "fixture_sha256": sha256(FIXTURE), "verification_sha256": sha256(validation),
             "expected_captures": sorted(EXPECTED_CAPTURES),
-            "purpose": "Explicitly render the frozen v0.5 source using Godot Compatibility, Xvfb and Mesa; prepared states, not a human playthrough.",
+            "purpose": "Explicitly render the frozen source using Godot Compatibility, Xvfb and Mesa; prepared states, not a human playthrough.",
         }
         args.request.parent.mkdir(parents=True, exist_ok=True)
         args.request.write_text(json.dumps(request, indent=2, ensure_ascii=False) + "\n")

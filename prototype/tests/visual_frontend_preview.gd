@@ -3,10 +3,10 @@ extends Node
 ## Capture the actual Godot renderer at prepared states. This is not a human playthrough.
 const MainScene = preload("res://scenes/main.tscn")
 const Preferences = preload("res://scripts/preferences_store.gd")
-const SAVE: String = "user://qa_visual_frontend_v05.json"
-const PREFS: String = "user://qa_visual_frontend_v05.cfg"
+const SAVE: String = "user://qa_visual_frontend_v06.json"
+const PREFS: String = "user://qa_visual_frontend_v06.cfg"
 var mission: Node3D
-var output: String = "res://../docs/captures/v0.5"
+var output: String = "res://../docs/captures/v0.6"
 var shots: Array[Dictionary] = []
 
 func _ready() -> void:
@@ -69,6 +69,46 @@ func _capture() -> void:
 	await _shot("14_toit_equipe", "Détail du toit : Alpha posé, porte et équipe dans leur état final")
 	mission.player.camera.current = true
 	mission.hud.show_game()
+	# Prepared rescue states use the same interaction and timing paths as gameplay.
+	var casualty: Node3D = _mission_object("survivor", 30)
+	mission.player.teleport_to_floor(30)
+	_disable_ticks()
+	mission.player.position = Vector3(7, 36.1, -4.7)
+	mission.player.camera.look_at(Vector3(3.6, 37.1, 0))
+	mission._interact_node(casualty)
+	mission.rescue_visuals.advance(0.0, true)
+	mission._update_hud()
+	await _shot("15_portage", "Portage d’Ana : harnais, personne et mains visibles, objectif dégagé")
+	mission.player.position = Vector3(4.8, 36.1, 1.4)
+	mission.player.camera.look_at(Vector3(1.8, 39.3, 0))
+	mission._start_hoist(casualty, 30)
+	mission._process_hoist(1.8)
+	mission._update_hud()
+	await _shot("16_treuillage", "Remontée d’Ana dans le puits : harnais et câble sous tension")
+	mission._process_hoist(3.2)
+	mission.rescue_visuals.advance(1.8, true)
+	mission.hud.game.hide()
+	mission.menu_camera.current = true
+	mission.menu_camera.fov = 60.0
+	mission.menu_camera.global_position = Vector3(13, 49.5, 4.5)
+	mission.menu_camera.look_at(Vector3(6, 43, -5.5))
+	await _shot("17_reception", "Réception confirmée, transfert d’Ana vers l’abri avec l’équipe médicale")
+	mission.rescue_visuals.advance(10.0, true)
+	mission.world.atmosphere.sample_world(13.0, "intact", false)
+	mission.menu_camera.fov = 66.0
+	mission.menu_camera.global_position = Vector3(13, 48, 17)
+	mission.menu_camera.look_at(Vector3(26, 46, -30))
+	await _shot("18_meteo_toit", "Atmosphère maritime : plafond nuageux, pluie extérieure et horizon de Nacre")
+	mission.player.camera.current = true
+	mission.hud.show_game()
+	mission._pause()
+	mission.hud.show_comfort_settings()
+	await _shot("19_options_pause", "Réglages complets accessibles pendant une intervention suspendue")
+	mission.hud.menu.close_modals()
+	mission._resume()
+	mission._start_new(271104)
+	mission._finish_arrival()
+	_disable_ticks()
 	if not await _open_field("inspect_roof_register"):
 		return
 	await _shot("11_inspection_toit", "Fiche du registre de réception, avant les sauvetages")
@@ -185,3 +225,10 @@ func _face_field(object: Node3D) -> bool:
 		if mission._interaction_visible(object):
 			return true
 	return false
+
+func _mission_object(kind: String, floor_number: int) -> Node3D:
+	for object: Node3D in mission.world_data.get("interactables", []):
+		if object.get_meta("kind", "") == kind and int(object.get_meta("floor", 0)) == floor_number:
+			return object
+	push_error("Visual fixture missing mission object: %s %d" % [kind, floor_number])
+	return null

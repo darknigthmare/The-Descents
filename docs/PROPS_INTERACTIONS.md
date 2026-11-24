@@ -1,6 +1,6 @@
 # Props et interactions de production
 
-**Version 0.5.0 — 52 fiches de référence et 12 observations jouables — 24 novembre 2026**
+**Version 0.6.0 — 52 fiches de référence et 12 observations jouables — 24 novembre 2026**
 
 Ce catalogue donne aux équipes de niveau, d’art, de son et de gameplay des objets qui ont une fonction dans l’intervention. Il décrit les accessoires du prototype lorsqu’ils existent, puis les objets à produire pour la campagne. Une fiche de campagne n’est pas un inventaire d’assets déjà livrés. Les dimensions proposées servent au blocage et à la recette de circulation ; elles ne constituent ni des normes de construction ni des instructions de secours réels.
 

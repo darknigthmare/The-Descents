@@ -1,6 +1,6 @@
 # Gameplay détaillé, réglages et personnages
 
-**The Tower Descent — version 0.5.0.** Les valeurs désignées « actuelles » proviennent du prototype. Les valeurs « cibles » sont des propositions de réglage pour une prochaine tranche et doivent être éprouvées en jeu. Une fiche de conception ne signifie pas que la fonction correspondante est déjà programmée. Cette annexe complète la bible avec des contrats utilisables par la conception, l’animation, le son et les essais.
+**The Tower Descent — version 0.6.0.** Les valeurs désignées « actuelles » proviennent du prototype. Les valeurs « cibles » sont des propositions de réglage pour une prochaine tranche et doivent être éprouvées en jeu. Une fiche de conception ne signifie pas que la fonction correspondante est déjà programmée. Cette annexe complète la bible avec des contrats utilisables par la conception, l’animation, le son et les essais.
 
 ## 1 Expérience recherchée et boucles
 
@@ -30,11 +30,11 @@ La campagne étend cette boucle avec des personnes mobiles, des points de transf
 | Récupération | 11 points/s hors course ; 8 points/s sur corde | Le rappel ne consomme pas encore d’endurance |
 | Capsule | Rayon 0,34 m, hauteur 1,72 m | Enveloppe réelle à utiliser pour les collisions du prototype |
 | Regard | Caméra à 1,62 m, abaissée vers 1,12 m | Ne pas produire un tunnel bas en supposant une capsule accroupie |
-| Caméra jouable | Champ de vision 77° | Référence des vues de lecture et de la transition depuis l’arrivée |
+| Caméra jouable | Champ de vision 77° par défaut, réglable de 65 à 100° | Référence des vues de lecture et de la transition depuis l’arrivée |
 
 Le déplacement se fait dans un volume physique, mais plusieurs interactions de la maquette restent abstraites. S’accroupir baisse le regard et ralentit sans rétrécir le corps de collision. Il n’existe pas encore de franchissement animé d’une fenêtre, d’escalade libre ou de système de prise de main. Les passages de production ne doivent pas être validés sur la seule hauteur de caméra.
 
-La sensibilité de souris est fixée à 0,0024 dans le contrôleur. Le regard au clavier tourne à 1,5 radian/s horizontalement et 1,2 radian/s verticalement, avec inclinaison limitée à environ ±77 degrés. Une future option de sensibilité et un remappage complet doivent préserver les actions d’urgence et le passage des cinématiques. Ces options ne sont pas décrites comme déjà exposées dans le menu actuel.
+La sensibilité de souris utilise une base de 0,0024, multipliée par un réglage de ×0,25 à ×2,5, soit 0,0006 à 0,006. Le regard au clavier tourne à 1,5 radian/s horizontalement et 1,2 radian/s verticalement, avec inclinaison limitée à environ ±77 degrés. L’inversion verticale affecte la souris et les flèches. Sensibilité, champ de vision et volume sont appliqués immédiatement, enregistrés séparément de la mission et accessibles depuis l’accueil comme depuis la pause. Le remappage complet reste à produire ; les plages et la migration figurent dans [Confort v0.6](CONFORT_V0.6.md).
 
 ### Cibles de sensation à éprouver
 
@@ -66,9 +66,9 @@ Un objet essentiel doit fournir au moins deux indices parmi forme, position, tex
 
 ### Chaîne livrée
 
-Le prototype suit une personne dans les états **présente, portée, au treuil, reçue**. L’interaction de sécurisation est instantanée. La représentation au sol disparaît pendant le portage et la vitesse d’Alex est limitée ; il n’existe pas encore de corps porté animé devant la caméra. Une seule personne peut être prise en charge à la fois.
+Le prototype suit une personne dans les états **présente, portée, au treuil, reçue**. L’interaction de sécurisation est instantanée. La représentation au sol disparaît pendant le portage et la vitesse d’Alex est limitée. La 0.6 affiche une représentation dédiée de la personne dans un harnais, avec sangles, poignée et mains d’Alex ; elle suit la caméra et désactive son léger balancement lorsque les mouvements sont réduits. Une seule personne peut être prise en charge à la fois.
 
-À la balise du même étage, E commence une montée de **cinq secondes**. La représentation suit une interpolation jusqu’au haut de la ligne ; ce mouvement est une visualisation du transfert, pas une simulation de câble. Seule la fin de la montée ajoute l’identifiant au registre des sauvés, diminue le stress de quinze points et crée un point sûr. La réception médicale au toit reconstruit ensuite la présence nommée.
+À la balise du même étage, E commence une montée de **cinq secondes**. Le panier et la personne suivent une trajectoire absolue dans le puits, puis une dépose latérale sur la dalle du toit. La longueur du câble relie le support à la poutre ; elle reste une représentation calculée, sans simulation physique de corde. Seule la fin de la montée ajoute l’identifiant au registre des sauvés, diminue le stress de quinze points et crée un point sûr. La réception médicale au toit reconstruit ensuite la présence nommée. En partie, un équipier accompagne pendant 4,2 secondes cette personne déjà confirmée jusqu’à sa place ; une reprise de sauvegarde l’installe directement à sa pose finale. Aucun état cosmétique n’est ajouté au schéma 3.
 
 | Personne | Identifiant | Point de départ | Réception confirmée |
 | --- | --- | --- | --- |

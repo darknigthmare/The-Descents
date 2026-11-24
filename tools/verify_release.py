@@ -12,7 +12,7 @@ import struct
 from zipfile import ZipFile
 
 from capture_evidence import EXPECTED_CAPTURES
-from qa_common import runtime_hashes
+from qa_common import DOCUMENT_SOURCES, runtime_hashes
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = re.search(r'config/version="([^"]+)"', (ROOT / "prototype/project.godot").read_text()).group(1)
@@ -68,11 +68,16 @@ def main() -> None:
         f"docs/validation/v{SHORT}/DOCUMENT_REVIEW.json",
         f"docs/captures/v{SHORT}/CI_PROVENANCE.json", f"docs/CAPTURES_V{SHORT}.md",
         f"docs/The-Tower-Descent-Bible-v{SHORT}.docx", f"docs/The-Tower-Descent-Bible-v{SHORT}.pdf",
-        ".github/workflows/cinematic-review.yml", ".github/workflows/materialize-v" + SHORT.replace(".", "") + ".yml",
+        ".github/workflows/release-v" + SHORT.replace(".", "") + ".yml",
+        "tools/build_release_ci.py", f".review/v{SHORT}/build-request.json",
+        f"docs/validation/v{SHORT}/DOCUMENT_BUILD.json",
+        "prototype/scripts/rescue_presentation.gd", "prototype/scripts/maritime_atmosphere.gd",
+        "prototype/tests/test_rescue_presentation.gd", "prototype/tests/test_atmosphere.gd", "prototype/tests/test_comfort.gd",
         f".review/v{SHORT}/request.json",
         "tools/package_release.py", "tools/verify_release.py", "tools/qa_common.py",
         "tools/run_validation.py", "tools/verify_exported_packs.py", "tools/capture_evidence.py"
     }
+    required.update(DOCUMENT_SOURCES)
     members = set()
     with ZipFile(source) as zipped:
         for member in zipped.namelist():
@@ -110,6 +115,8 @@ def main() -> None:
     validation = json.loads((VALIDATION / "VERIFICATION.json").read_text())
     require(validation["all_pass"] and validation["version"] == VERSION, "Runtime validation is not clean or has the wrong version")
     require(validation["sha256_after"] == runtime_hashes(), "Runtime file set differs from the tested frozen source")
+    require(set(validation["sha256_after"]) <= members, "Source archive omits an authored runtime file")
+    require({row["script"] for row in validation["suites"]} <= members, "Source archive omits a verified test script")
     require(validation["total_checks"] == sum(row["checks"] for row in validation["suites"]), "Runtime count does not match its suites")
     require(set(validation["required_suites"]) <= {row["suite"] for row in validation["suites"]}, "A required source suite is missing")
     require(all(row["pass"] and row["checks"] > 0 and not row["error_lines"] for row in validation["suites"]), "A source suite has unresolved errors")
@@ -161,7 +168,8 @@ def main() -> None:
     require({row["file"]: row["sha256"] for row in visual_review["captures"]} == {row["file"]: row["sha256"] for row in provenance["captures"]}, "Visual review does not cover every final capture")
     document_review = json.loads((VALIDATION / "DOCUMENT_REVIEW.json").read_text())
     require(document_review["all_pass"], "Document review has unresolved findings")
-    require(document_review["source_count"] == 10 and len(document_review["sources"]) == 10, "Bible review does not include all ten sources")
+    require(document_review["source_count"] == len(DOCUMENT_SOURCES) and len(document_review["sources"]) == len(DOCUMENT_SOURCES), "Bible review does not include all required sources")
+    require({row["file"] for row in document_review["sources"]} == set(DOCUMENT_SOURCES), "Bible review source names differ from the full document contract")
     for row in document_review["artifacts"] + document_review["sources"]:
         require(digest((ROOT / row["file"]).read_bytes()) == row["sha256"], "Document changed after review: " + row["file"])
     require({row["file"] for row in document_review["artifacts"]} == {
@@ -169,6 +177,21 @@ def main() -> None:
     }, "Document review does not cover both final formats")
     require([row["page"] for row in document_review["pages"]] == list(range(1, document_review["page_count"] + 1)), "Document review has missing or duplicate pages")
     require(all(row["status"] == "pass" for row in document_review["pages"]), "Document contains an unapproved page")
+    document_build = json.loads((VALIDATION / "DOCUMENT_BUILD.json").read_text())
+    require(document_build["version"] == VERSION and document_build["source_count"] == len(DOCUMENT_SOURCES), "Wrong document build version or source count")
+    require(document_build["page_count"] == document_review["page_count"], "Document review page count differs from its rendered document")
+    require({row["page"]: row["sha256"] for row in document_review["pages"]} ==
+            {row["page"]: row["sha256"] for row in document_build["pages"]},
+            "Document review does not approve the exact rendered pages")
+    for category in ["artifacts", "sources"]:
+        require({row["file"]: row["sha256"] for row in document_build[category]} ==
+                {row["file"]: row["sha256"] for row in document_review[category]},
+                "Document review differs from its build: " + category)
+    for row in document_build["pages"]:
+        image_path = ROOT / row["file"]
+        if image_path.is_file():
+            require(digest(image_path.read_bytes()) == row["sha256"], "Rendered document page changed after review")
+
     for name in ["LICENSE", "NOTICE"]:
         require((ROOT / "dist" / ("OPEN_SANS_" + name + ".txt")).read_bytes() == (ROOT / "prototype/assets/fonts" / (name + ".txt")).read_bytes(), "Web font notices are missing or stale")
 

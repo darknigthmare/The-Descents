@@ -2,6 +2,9 @@ extends Node3D
 class_name DescentWorld
 
 const Presentation = preload("res://scripts/presentation_geometry.gd")
+const Atmosphere = preload("res://scripts/maritime_atmosphere.gd")
+var atmosphere: Node3D
+var reduced_motion: bool = true
 
 ## Self-contained, modular 3D greybox. Metres are the world unit.
 ## All gameplay corridors and interaction sockets remain outside prop jitter.
@@ -74,6 +77,10 @@ func build(seed_value: int, floor_specs: Array) -> Dictionary:
 	var roof: Dictionary = _build_roof()
 	_build_arrival_wash()
 	_build_rain()
+	atmosphere = Atmosphere.new()
+	add_child(atmosphere)
+	atmosphere.build(self)
+	atmosphere.sample_world(elapsed, incident_stage, reduced_motion)
 	_build_incident_effects()
 	apply_incident("intact", 0.0)
 	set_rescued_people([])
@@ -108,6 +115,13 @@ func _process(delta: float) -> void:
 		var phase: float = fmod(elapsed, 24.0)
 		var pulse: float = sin(phase * PI / 0.9) * 0.8 if lightning_enabled and phase < 0.9 else 0.0
 		moon.light_energy = 0.60 + pulse
+	if is_instance_valid(atmosphere):
+		atmosphere.sample_world(elapsed, incident_stage, reduced_motion)
+
+func set_reduced_motion(enabled: bool) -> void:
+	reduced_motion = enabled
+	if is_instance_valid(atmosphere):
+		atmosphere.sample_world(elapsed, incident_stage, reduced_motion)
 
 func set_lightning_enabled(enabled: bool) -> void:
 	lightning_enabled = enabled
@@ -619,10 +633,17 @@ func _build_roof_reception(roof: Node3D) -> void:
 			for xx in [-0.52, 0.52]:
 				_box(reception, Vector3(xx, 0.55, 0), Vector3(0.07, 0.08, 2.6), materials["metal"])
 			var patient: Node3D = _human(reception, Vector3(0, 0.79, -0.88), materials["cream"], false)
+			patient.name = "Patient"
 			patient.rotation.x = PI / 2
+			for wheel_x: float in [-0.41, 0.41]:
+				for wheel_z: float in [-0.82, 0.82]:
+					_box(reception, Vector3(wheel_x, 0.30, wheel_z), Vector3(0.045, 0.48, 0.045), materials["metal"])
+					var wheel: MeshInstance3D = _cylinder(reception, Vector3(wheel_x, 0.13, wheel_z), 0.12, 0.06, materials["black_metal"])
+					wheel.rotation.z = PI / 2
 			_box(reception, Vector3(0, 0.9, -0.16), Vector3(0.69, 0.13, 1.12), materials["white"])
 		else:
 			var patient: Node3D = _human(reception, Vector3.ZERO, materials["blue"] if index == 1 else materials["cream"], false)
+			patient.name = "Patient"
 			if index == 2:
 				patient.scale.y = 0.78
 				_box(reception, Vector3(0, 0.34, 0.09), Vector3(0.85, 0.12, 0.7), materials["green"])

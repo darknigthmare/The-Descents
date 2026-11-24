@@ -1,6 +1,6 @@
 # Architecture du prototype et portage vers Unreal Engine 5
 
-Version de conception 0.5.0 — Présentation cinématique et continuité de mission — 24 novembre 2026
+Version de conception 0.6.0 — Présentation cinématique et continuité de mission — 24 novembre 2026
 
 Ce document décrit le prototype Godot 0.5.0 et propose une trajectoire vers Unreal Engine 5. La tranche solo en vue subjective comprend un toit, six étages de 30 à 25, trois sauvetages, trois indices et un refuge. Les deux tours commencent intactes, deux hélicoptères et des groupes de secours sont visibles en maquette, puis un effondrement partiel se déroule pendant l’observation depuis le 29. La campagne complète et le portage UE5 restent à produire.
 

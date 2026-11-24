@@ -9,7 +9,7 @@ signal journal_requested
 signal replay_intro_requested
 signal cinematic_skip_requested
 signal inspection_closed
-signal setting_changed(setting: String, enabled: bool)
+signal setting_changed(setting: String, value: Variant)
 
 const INK: Color = Color(0.035, 0.065, 0.08, 0.94)
 const PALE: Color = Color(0.86, 0.92, 0.92)
@@ -122,7 +122,8 @@ func _build_menu() -> void:
 	menu.continue_requested.connect(func(): continue_requested.emit())
 	menu.replay_requested.connect(func(): replay_intro_requested.emit())
 	menu.help_requested.connect(func(): help_panel.show())
-	menu.setting_changed.connect(func(key: String, value: bool): setting_changed.emit(key,value))
+	menu.setting_changed.connect(func(key: String, value: Variant): setting_changed.emit(key,value))
+	menu.settings_closed.connect(_comfort_settings_closed)
 	start_button = menu.start_button
 	continue_button = menu.continue_button
 	seed_input = menu.seed_input
@@ -271,6 +272,7 @@ func _build_pause() -> void:
 	var col: VBoxContainer = result[1]
 	col.add_child(_button("Reprendre", func(): resume_requested.emit(), true))
 	col.add_child(_button("Commandes et mission", func(): help_panel.show()))
+	col.add_child(_button("Options et confort", show_comfort_settings))
 	var motion: CheckButton = CheckButton.new()
 	motion.text = "Réduire les mouvements de caméra"
 	motion.button_pressed = true
@@ -290,6 +292,16 @@ func _build_pause() -> void:
 	pause_toggles["audio"] = audio_toggle
 	col.add_child(_label("Sauvegarde aux treuils, au refuge et avant/après l’effondrement.\nUne interruption pendant la secousse reprend avant celle-ci.", 17, MUTED))
 	col.add_child(_button("Retour au menu", func(): return_requested.emit()))
+
+func show_comfort_settings() -> void:
+	pause_panel.hide()
+	menu.open_settings_from_pause()
+
+func _comfort_settings_closed() -> void:
+	pause_panel.show()
+	var buttons: Array[Node] = pause_panel.find_children("*", "Button", true, false)
+	if not buttons.is_empty():
+		(buttons[0] as Button).grab_focus()
 
 func _build_journal() -> void:
 	var result: Array = _modal("JOURNAL D’INTERVENTION", 880)
@@ -320,6 +332,7 @@ func _build_end() -> void:
 func _build_help() -> void:
 	var result: Array = _modal("DESCENDRE. SECOURIR. REMONTER.", 900)
 	help_panel = result[0]
+	help_panel.z_index = 30
 	var col: VBoxContainer = result[1]
 	var text: RichTextLabel = RichTextLabel.new()
 	text.custom_minimum_size = Vector2(900, 485)
@@ -351,6 +364,8 @@ func show_menu() -> void:
 	hide_inspection()
 
 func set_paused(paused: bool) -> void:
+	if not paused and menu.standalone_settings:
+		menu.close_modals(false)
 	pause_panel.visible = paused
 	if not paused:
 		journal_panel.hide()

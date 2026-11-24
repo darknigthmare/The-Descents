@@ -1,8 +1,8 @@
-# The Tower Descent — prototype 0.5
+# The Tower Descent — prototype 0.6
 
 ## Lancer l’intervention
 
-1. Extraire tout le ZIP **The-Tower-Descent-v0.5-Windows-x64.zip** dans un dossier.
+1. Extraire tout le ZIP **The-Tower-Descent-v0.6-Windows-x64.zip** dans un dossier.
 2. Ouvrir **TheTowerDescent.exe**. Aucune installation de Godot n’est nécessaire.
 3. Passer ou regarder la signature du studio, ouvrir **Commencer l’intervention**, puis confirmer **Déployer Alpha**. La disposition proposée convient pour une première partie.
 
@@ -54,6 +54,12 @@ Prototype solo avec un toit et six étages jouables, des hélicoptères et perso
 
 [Projet, sources et bible sur GitHub](https://github.com/darknigthmare/The-Descents/tree/feat/live-tower-collapse)
 
-Les archives 0.1, 0.2 et 0.4 présentes dans le dépôt sont historiques. Utilisez la **0.5** pour l’arrivée animée, les modèles enrichis et les observations de terrain, en plus des menus et cinématiques.
+Les archives 0.1, 0.2 et 0.4 présentes dans le dépôt sont historiques. Utilisez la **0.6** pour l’arrivée animée, les modèles enrichis et les observations de terrain, en plus des menus et cinématiques.
 
 Les licences du moteur et de ses composants sont jointes dans `GODOT_LICENSES.txt`. La notice et la licence des polices Open Sans accompagnent également cette archive.
+
+## Réglages ajoutés en 0.6
+
+Accueil → Options et confort, ou Échap → Options et confort pendant l’intervention. Volume 0–100 %, sensibilité ×0,25–×2,5, champ de vision 65–100° et regard vertical inversé sont appliqués immédiatement. Fermer ce panneau en partie retourne à la pause ; Reprendre rend le contrôle. Les réglages restent distincts du point sûr.
+
+Le portage montre le harnais et les mains d’Alex. Le treuil conserve ses cinq secondes, puis l’équipe prend la personne en charge au toit. La pluie et la mer suivent la pause ; les mouvements réduits conservent une ambiance fixe.

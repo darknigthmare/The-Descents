@@ -1,6 +1,6 @@
 # Communications et continuité des équipes
 
-**Version 0.5.0 — 24 novembre 2026**
+**Version 0.6.0 — 24 novembre 2026**
 
 Ce dossier fixe ce que le joueur peut conclure à partir des personnes visibles, d’un appel radio et du journal. Le poste d’Aube confirme les prises en charge. Bravo devient difficile à joindre après l’effondrement, sans que son silence prouve sa mort. Les communications peuvent être ambiguës ; le registre des personnes effectivement sauvées reste fiable.
 

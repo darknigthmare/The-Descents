@@ -1,6 +1,6 @@
 # Présences ennemis et statistiques de rencontre
 
-**Version 0.5.0 — Une figure jouable et dix archétypes de campagne — 24 novembre 2026**
+**Version 0.6.0 — Une figure jouable et dix archétypes de campagne — 24 novembre 2026**
 
 Le joueur affronte des situations qu’il peut lire, vérifier et modifier. Le bestiaire sert la mission de sauvetage : il ne transforme pas chaque étage en arène à nettoyer. Une routine ancienne, une voix imitée et un animal territorial n’utilisent pas les mêmes règles, même si tous peuvent créer de la tension.
 
