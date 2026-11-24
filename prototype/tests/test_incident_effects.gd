@@ -11,6 +11,7 @@ func _initialize() -> void:
 func _run() -> void:
 	var mission: Node3D = MainScene.instantiate()
 	mission.save_path = "user://qa_cosmetic_settling_unused.json"
+	mission.preferences_path = "user://qa_cosmetic_settling_preferences.cfg"
 	mission.sound_enabled = false
 	root.add_child(mission)
 	mission.set_process(false)

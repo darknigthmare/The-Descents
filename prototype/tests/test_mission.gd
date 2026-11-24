@@ -7,6 +7,7 @@ const MainScene = preload("res://scenes/main.tscn")
 const Store = preload("res://scripts/save_store.gd")
 const TEST_PATH: String = "user://qa_test_mission.json"
 const TEST_SEED: int = 271104
+const PREFS_PATH: String = TEST_PATH + ".preferences.cfg"
 var mission: Node3D
 var failures: Array[String] = []
 var checks: int = 0
@@ -26,6 +27,7 @@ func _run() -> void:
 	)
 	mission = MainScene.instantiate()
 	mission.save_path = TEST_PATH
+	mission.preferences_path = PREFS_PATH
 	mission.sound_enabled = false
 	root.add_child(mission)
 	mission.set_process(false)
@@ -260,5 +262,6 @@ func _check(condition: bool, message: String) -> void:
 
 
 func _cleanup_save() -> void:
-	if FileAccess.file_exists(TEST_PATH):
-		DirAccess.remove_absolute(ProjectSettings.globalize_path(TEST_PATH))
+	for path: String in [TEST_PATH, PREFS_PATH, PREFS_PATH + ".tmp"]:
+		if FileAccess.file_exists(path):
+			DirAccess.remove_absolute(ProjectSettings.globalize_path(path))

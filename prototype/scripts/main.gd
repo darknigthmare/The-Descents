@@ -50,6 +50,8 @@ var reduced_motion: bool = true
 var audio_wind: AudioStreamPlayer
 var audio_radio: AudioStreamPlayer
 var audio_effect: AudioStreamPlayer
+var audio_score: AudioStreamPlayer
+var audio_rotors: AudioStreamPlayer
 var flare_light: OmniLight3D
 var intro_stage: int = 0
 var helicopter_origin: Vector3
@@ -135,6 +137,7 @@ func _start_studio_intro() -> void:
 	hud.game.hide()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	_render_cinematic()
+	_play_effect("intro_sting")
 
 func _finish_studio_intro() -> void:
 	boot_playing = false
@@ -405,6 +408,7 @@ func _process(delta: float) -> void:
 	if paused or completed:
 		return
 	menu_time += delta
+	_update_soundscape(delta)
 	for rotor: Node3D in world_data.get("rotors", [world_data.get("rotor")]):
 		if is_instance_valid(rotor):
 			rotor.rotate_y(delta * 28)
@@ -938,6 +942,9 @@ func _journal_content() -> String:
 
 func _complete_game() -> void:
 	completed = true
+	for channel: AudioStreamPlayer in [audio_score,audio_rotors]:
+		if is_instance_valid(channel):
+			channel.stop()
 	_save_checkpoint(25)
 	player.active = false
 	world.set_process(false)
@@ -966,6 +973,9 @@ func _open_journal() -> void:
 
 func _pause(show_panel: bool = true) -> void:
 	paused = true
+	for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect,audio_score,audio_rotors]:
+		if is_instance_valid(channel):
+			channel.stream_paused = true
 	player.active = false
 	world.set_process(false)
 	hud.pause_panel.visible = show_panel
@@ -975,6 +985,9 @@ func _pause(show_panel: bool = true) -> void:
 
 func _resume() -> void:
 	paused = false
+	for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect,audio_score,audio_rotors]:
+		if is_instance_valid(channel):
+			channel.stream_paused = false
 	player.active = not arrival_playing and not completed
 	world.set_process(not completed)
 	hud.set_paused(false)
@@ -985,6 +998,9 @@ func _resume() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if completed or arrival_playing else Input.MOUSE_MODE_CAPTURED
 
 func _return_to_menu() -> void:
+	for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect,audio_score,audio_rotors]:
+		if is_instance_valid(channel):
+			channel.stream_paused = false
 	boot_playing = false
 	cinematic.finish()
 	radio.reset()
@@ -1024,8 +1040,12 @@ func _setting_changed(setting: String, enabled: bool) -> void:
 	if is_instance_valid(world):
 		world.set_lightning_enabled(flashes_enabled)
 	AudioServer.set_bus_mute(0,not sound_enabled)
-	if sound_enabled and is_instance_valid(audio_wind) and not audio_wind.playing:
+	if DisplayServer.get_name() != "headless" and sound_enabled and is_instance_valid(audio_wind) and not audio_wind.playing:
 		audio_wind.play()
+	if not sound_enabled:
+		for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect,audio_score,audio_rotors]:
+			if is_instance_valid(channel):
+				channel.stop()
 	hud.apply_settings(preferences)
 	var error: Error = Preferences.save_settings(preferences,preferences_path)
 	if error != OK:
@@ -1048,6 +1068,38 @@ func _make_audio() -> void:
 	audio_effect = AudioStreamPlayer.new()
 	add_child(audio_effect)
 	audio_effect.volume_db = -15
+	audio_score = _make_loop("menu_theme",-26)
+	audio_rotors = _make_loop("rotors",-29)
+
+func _make_loop(asset: String, volume: float) -> AudioStreamPlayer:
+	var channel: AudioStreamPlayer = AudioStreamPlayer.new()
+	add_child(channel)
+	var path: String = "res://assets/audio/%s.wav" % asset
+	if ResourceLoader.exists(path):
+		var stream: AudioStreamWAV = load(path)
+		stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
+		stream.loop_end = int(stream.get_length() * stream.mix_rate)
+		channel.stream = stream
+	channel.volume_db = volume
+	return channel
+
+func _update_soundscape(delta: float) -> void:
+	if DisplayServer.get_name() == "headless":
+		return
+	var score_on: bool = sound_enabled and (not started or arrival_playing)
+	var rotors_on: bool = sound_enabled and (arrival_playing or (started and elapsed < 36.0 and incident.phase == "intact"))
+	for record: Array in [[audio_score,score_on,-23.0 if arrival_playing else -26.0],[audio_rotors,rotors_on,-29.0]]:
+		var channel: AudioStreamPlayer = record[0]
+		if not is_instance_valid(channel) or channel.stream == null:
+			continue
+		var enabled: bool = record[1]
+		var target: float = float(record[2]) if enabled else -60.0
+		if enabled and not channel.playing:
+			channel.volume_db = -60.0
+			channel.play()
+		channel.volume_db = move_toward(channel.volume_db,target,maxf(0.0,delta) * 28.0)
+		if not enabled and channel.volume_db <= -59.9:
+			channel.stop()
 
 func _play_effect(effect: String) -> void:
 	if sound_enabled and ResourceLoader.exists("res://assets/audio/%s.wav" % effect):
@@ -1055,6 +1107,6 @@ func _play_effect(effect: String) -> void:
 		audio_effect.play()
 
 func _exit_tree() -> void:
-	for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect]:
+	for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect,audio_score,audio_rotors]:
 		if is_instance_valid(channel):
 			channel.stop()

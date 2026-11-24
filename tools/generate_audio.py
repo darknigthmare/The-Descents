@@ -52,6 +52,25 @@ def structure(duration, intensity, impacts=False):
     return synth
 
 
+def menu_theme(t, rng):
+    """An original, restrained four-note rescue motif over a maritime drone."""
+    envelope = max(0.0, math.sin(math.pi * t / 16.0)) ** 0.45
+    drone = 0.10 * math.sin(2 * math.pi * 55 * t) + 0.06 * math.sin(2 * math.pi * 82.5 * t)
+    melody = 0.0
+    for onset, frequency in ((0.6, 110.0), (4.2, 164.81), (8.0, 116.54), (11.7, 146.83)):
+        age = t - onset
+        if age > 0:
+            note = math.exp(-age * 0.68) * min(1.0, age * 1.8)
+            melody += note * (0.13 * math.sin(2 * math.pi * frequency * age) + 0.035 * math.sin(2 * math.pi * frequency * 2 * age))
+    return envelope * (drone + melody + rng.uniform(-0.008, 0.008))
+
+
+def rotor(t, rng):
+    # Original synthesis of a blade pulse. This is a prototype, not a field recording.
+    pulse = (0.5 + 0.5 * math.sin(2 * math.pi * 12 * t)) ** 5
+    return 0.14 * math.sin(2 * math.pi * 48 * t) + pulse * (0.13 * math.sin(2 * math.pi * 96 * t) + rng.uniform(-0.12, 0.12))
+
+
 if __name__ == "__main__":
     write("wind", 8, wind)
     write("radio", 0.28, lambda t, r: (0.14 * math.sin(t * 2 * math.pi * 1150) + r.uniform(-0.08, 0.08)) * math.sin(math.pi * t / 0.28) ** 2)
@@ -61,4 +80,7 @@ if __name__ == "__main__":
     write("quake", 6, structure(6, 0.6))
     write("collapse", 7, structure(7, 0.8, impacts=True))
     write("impact", 4, structure(4, 1.0, impacts=True))
-    print("Created eight original WAV assets in prototype/assets/audio")
+    write("menu_theme", 16, menu_theme)
+    write("rotors", 8, rotor)
+    write("intro_sting", 3.6, lambda t, r: min(1.0, t * 2) * math.exp(-t * 0.8) * (0.22 * math.sin(2 * math.pi * 55 * t) + 0.09 * math.sin(2 * math.pi * 82.5 * t) + 0.025 * math.sin(2 * math.pi * 660 * t)))
+    print("Created eleven original WAV assets in prototype/assets/audio")
