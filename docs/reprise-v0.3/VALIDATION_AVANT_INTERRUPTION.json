@@ -1,0 +1,117 @@
+{
+  "recorded_on": "2026-11-24",
+  "status": "LOCAL_VALIDATION_COMPLETED_BEFORE_ENVIRONMENT_BECAME_UNAVAILABLE",
+  "warning": "The v0.3 sources and exports are not published in this commit. This records results and file fingerprints observed before loss of filesystem access. It is not a v0.3 release.",
+  "published_baseline_commit": "1357eb2ee8bf59373721fa78c7b6ce6dd751e90c",
+  "version": "0.3.0",
+  "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
+  "tests": [
+    {
+      "suite": "generation",
+      "checks": 820,
+      "exit_code": 0
+    },
+    {
+      "suite": "save",
+      "checks": 199,
+      "exit_code": 0
+    },
+    {
+      "suite": "mission",
+      "checks": 83,
+      "exit_code": 0
+    },
+    {
+      "suite": "routes",
+      "checks": 205,
+      "exit_code": 0
+    },
+    {
+      "suite": "collapse",
+      "checks": 27,
+      "exit_code": 0
+    },
+    {
+      "suite": "incident_integration",
+      "checks": 63,
+      "exit_code": 0
+    },
+    {
+      "suite": "incident_routes",
+      "checks": 130,
+      "exit_code": 0
+    },
+    {
+      "suite": "incident_effects",
+      "checks": 17,
+      "exit_code": 0
+    },
+    {
+      "suite": "team_reactions",
+      "checks": 27,
+      "exit_code": 0
+    },
+    {
+      "suite": "radio",
+      "checks": 28,
+      "exit_code": 0
+    },
+    {
+      "suite": "radio_integration",
+      "checks": 53,
+      "exit_code": 0
+    }
+  ],
+  "total": 1652,
+  "all_pass": true,
+  "godot_errors_in_final_test_logs": 0,
+  "source_sha256": {
+    "scripts/collapse_director.gd": "3d9dce62a1b99c68aba41dc7f447a1ced40041ab64f2fb07f16802af5cdd8ee7",
+    "scripts/floor_generator.gd": "0ae0f3e796e0e219fb505ba688488661848434c5fc4e46278b030a257f399779",
+    "scripts/hud.gd": "8a83c2a9d14169e1dde8e58627a43eb11a57c9809f3056b20dc15455706ccdd3",
+    "scripts/main.gd": "dce826a16b140212ace13645aa0a22cc072deb1f5df4b3553d26ce5b17eb69ce",
+    "scripts/player_controller.gd": "01aac4987d886947fb015d931e2cb5d38c70b82cac11a9ab74abe4ee42f9b226",
+    "scripts/radio_director.gd": "50129207ed55e10634d5ff3f5c752bf40a0c11a0bb976e2a941bf777bcc8e669",
+    "scripts/save_store.gd": "89ccb7c7d9885bbf5ed7974078fceb553b4b796af790b49efb7576ac201de366",
+    "scripts/world_builder.gd": "9038cc6458ddc23344fe5aedfc9ca98a18baaa52f0a591fd99c66eeca2020f9d"
+  },
+  "exported_resource_checks": {
+    "windows": 10,
+    "web": 10,
+    "host": "Linux with Godot 4.7.2",
+    "windows_os_execution": false,
+    "browser_rendering": false,
+    "checks": "Packed version 0.3.0, mission start, radio presence and schema-3 save/load; not a visual or target-OS execution test."
+  },
+  "export_files": {
+    "builds/windows/TheTowerDescent.exe": {
+      "bytes": 109707416,
+      "sha256": "d98872646eb506abcbb5dbb61ca6dbf183527762ab4d3a81b2895ded0d1d378e"
+    },
+    "dist/index.pck": {
+      "bytes": 438924,
+      "sha256": "d1800772cfd083df5915374cd831ed338969be9a0c1193a67f4d64f92481410a"
+    },
+    "dist/index.wasm": {
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    }
+  },
+  "local_paths_before_interruption": {
+    "source": "/tmp/tower_descent_resume_20261124",
+    "full_test_evidence": "/tmp/tower_descent_qa_resume/FINAL_VERIFIED.json",
+    "release_evidence": "/tmp/tower_descent_resume_20261124/docs/validation/v0.3/VERIFICATION.json",
+    "previous_document_render": "/tmp/tower-descent-v03-doc-qa-delivery",
+    "latest_document_render": "/tmp/tower-descent-v03-doc-qa-release"
+  },
+  "document_validation": {
+    "completed_previous_render_pages": 72,
+    "latest_render_finished": false,
+    "expected_latest_pages_unconfirmed": 71,
+    "previous_render_visually_reviewed": "1–8, 21–60, 62, 71–72",
+    "previous_render_pending": "9–20, 63–70; page 61 had two isolated lines and was corrected in source, final rendering not verified",
+    "final_pdf_copied_to_repository": false
+  },
+  "archives_v03_created": false,
+  "v03_published": false
+}
