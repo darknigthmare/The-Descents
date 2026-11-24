@@ -1,0 +1,102 @@
+{
+  "format": 1,
+  "source_version": "0.2",
+  "files": [
+    {
+      "path": "dist/index.wasm",
+      "size": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0",
+      "pieces": [
+        {
+          "path": ".publication/v0.2/chunks/file-01.part-001",
+          "size": 9000000,
+          "sha256": "3ded291feb70c314c5d5c10a56cfeec5c074d3a36433d090d196347dc58c5e6c"
+        },
+        {
+          "path": ".publication/v0.2/chunks/file-01.part-002",
+          "size": 9000000,
+          "sha256": "6427c9ad1c63ab37ca93666faa23afb4568bcc2606456308e5a6f24677851e23"
+        },
+        {
+          "path": ".publication/v0.2/chunks/file-01.part-003",
+          "size": 9000000,
+          "sha256": "e206137b8316925fc8bcedfb6e3a76c86bfcf6e3a043e19aeaffdb1d7e5413f0"
+        },
+        {
+          "path": ".publication/v0.2/chunks/file-01.part-004",
+          "size": 9000000,
+          "sha256": "d949fc848e4305fc09597f3768051bad8c029087a4fb743fca4b2f94be39b0c3"
+        },
+        {
+          "path": ".publication/v0.2/chunks/file-01.part-005",
+          "size": 3514754,
+          "sha256": "b98c299ca20384d197e54630aa5f3b74f7a5020f5e847b847d5e84fdaab5359f"
+        }
+      ]
+    },
+    {
+      "path": "releases/The-Tower-Descent-v0.1-Windows-x64.zip",
+      "size": 38099707,
+      "sha256": "0785be434cc2c2fa1227c07ee316b8b37d915d848d058df2d148b7875dc2cdbe",
+      "pieces": [
+        {
+          "path": ".publication/v0.2/chunks/file-02.part-001",
+          "size": 9000000,
+          "sha256": "d3e893285157250728bb79882dd58499aa503a01a7f475312096073541e200bc"
+        },
+        {
+          "path": ".publication/v0.2/chunks/file-02.part-002",
+          "size": 9000000,
+          "sha256": "ac37bc6d57241eb1f5b3ef8bc5a41e168d25dc6fb7e361f0cc1efe24480264b7"
+        },
+        {
+          "path": ".publication/v0.2/chunks/file-02.part-003",
+          "size": 9000000,
+          "sha256": "837f06cbde0a55914d7f1721bc5d141db800459bc80dc22516c4be1e0d71ffd3"
+        },
+        {
+          "path": ".publication/v0.2/chunks/file-02.part-004",
+          "size": 9000000,
+          "sha256": "ca5d5cad1a73bac3755cfe224c1f7259b5b75f637172d0add428e4562400f3f3"
+        },
+        {
+          "path": ".publication/v0.2/chunks/file-02.part-005",
+          "size": 2099707,
+          "sha256": "f6a499ee17c5ba8406cac195172d51da21bef92c2c5e4b5509db87eaaef9506a"
+        }
+      ]
+    },
+    {
+      "path": "releases/The-Tower-Descent-v0.2-Windows-x64.zip",
+      "size": 38342455,
+      "sha256": "913d439b9261c8c3318786afc46110d6d1678d1b47bc7611f23d4bc30cd3764b",
+      "pieces": [
+        {
+          "path": ".publication/v0.2/chunks/file-03.part-001",
+          "size": 9000000,
+          "sha256": "0fa35e1992e34cf7421e4643050ca4aac88c146fc7d5511ed6516c577020292d"
+        },
+        {
+          "path": ".publication/v0.2/chunks/file-03.part-002",
+          "size": 9000000,
+          "sha256": "cba0878f7397fcba5f0e4147230cc71d8b652dd85381e5bbb642c0d08094aae0"
+        },
+        {
+          "path": ".publication/v0.2/chunks/file-03.part-003",
+          "size": 9000000,
+          "sha256": "4d28c0effd78ef237fd2212a1aa642ba09d37779b35502d5a1585a5e90c878f5"
+        },
+        {
+          "path": ".publication/v0.2/chunks/file-03.part-004",
+          "size": 9000000,
+          "sha256": "b6319c527a74a7f3a262d2a20e981d01c4345feb130fea230880fa1a4670a955"
+        },
+        {
+          "path": ".publication/v0.2/chunks/file-03.part-005",
+          "size": 2342455,
+          "sha256": "9d2bb3bceaaeb234600136c21ed8428d48a91642868a780678e43b860d32bda2"
+        }
+      ]
+    }
+  ]
+}

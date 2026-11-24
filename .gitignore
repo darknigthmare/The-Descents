@@ -1,0 +1,9 @@
+.DS_Store
+prototype/.godot/
+builds/
+*.tmp
+__pycache__/
+docs/rendered/
+prototype/tests/visual_output/
+*.log
+
