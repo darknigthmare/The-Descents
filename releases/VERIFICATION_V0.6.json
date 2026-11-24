@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "version": "0.6.0",
+  "archives": [
+    {
+      "file": "The-Tower-Descent-v0.1-Sources.zip",
+      "bytes": 1097571,
+      "sha256": "bd268620ebf4d1f7720f0c6a00329c95b3654d0a1d2a588781eb138601465c1a"
+    },
+    {
+      "file": "The-Tower-Descent-v0.1-Windows-x64.zip",
+      "bytes": 38099707,
+      "sha256": "0785be434cc2c2fa1227c07ee316b8b37d915d848d058df2d148b7875dc2cdbe"
+    },
+    {
+      "file": "The-Tower-Descent-v0.2-Sources.zip",
+      "bytes": 5409124,
+      "sha256": "51c59beac740c60f82e48800fad74e2e8cd7a8f3b9380107758daf566b929872"
+    },
+    {
+      "file": "The-Tower-Descent-v0.2-Windows-x64.zip",
+      "bytes": 38342455,
+      "sha256": "913d439b9261c8c3318786afc46110d6d1678d1b47bc7611f23d4bc30cd3764b"
+    },
+    {
+      "file": "The-Tower-Descent-v0.4-Sources.zip",
+      "bytes": 16741479,
+      "sha256": "50d1f376e439e6975d9c6f12437fa59837a3f2f12c4dc8346afd843eea3c3504"
+    },
+    {
+      "file": "The-Tower-Descent-v0.4-Windows-x64.zip",
+      "bytes": 38956689,
+      "sha256": "9aa432f6ee5bf60de8489c43b666887d5a3cd91ae658acf04068f0959d0b377d"
+    },
+    {
+      "file": "The-Tower-Descent-v0.5-Sources.zip",
+      "bytes": 28567093,
+      "sha256": "06df9a6cba21c5ac71ba1b478c60212e01ad6e1d12ed4e8120f5e45c48f10866"
+    },
+    {
+      "file": "The-Tower-Descent-v0.5-Windows-x64.zip",
+      "bytes": 39005598,
+      "sha256": "93d4ee8fd3b2b9ba16133507ed3adb06211fa35508bd04d8b9a7217ab867c6cc"
+    },
+    {
+      "file": "The-Tower-Descent-v0.6-Sources.zip",
+      "bytes": 42730953,
+      "sha256": "9654e435aeeb173aa6588d8ef943a46882c3aec920a0199563b0752513930917"
+    },
+    {
+      "file": "The-Tower-Descent-v0.6-Windows-x64.zip",
+      "bytes": 39027573,
+      "sha256": "bfd389451d7285661b944110fcf81710327263fc15acfff792228799b5fc4483"
+    }
+  ],
+  "source_members_verified": 357,
+  "runtime_checks": 4500,
+  "exported_pack_checks": 60,
+  "document_pages_reviewed": 139,
+  "document_sources_verified": 13,
+  "checks": [
+    "ZIP integrity",
+    "SHA256 manifest",
+    "every source member equals local source",
+    "required deliverables",
+    "PE x64 and embedded executable bytes",
+    "Windows guide and font license",
+    "Web sizes and distribution equality",
+    "frozen runtime hashes and test logs",
+    "22 native captures against CI provenance and runtime hashes",
+    "complete document review and final Word/PDF/source hashes",
+    "Web font notices"
+  ]
+}

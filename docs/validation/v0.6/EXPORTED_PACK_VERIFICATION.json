@@ -1,8 +1,8 @@
 {
   "version": "0.6.0",
   "runtime_freeze_commit": "a17aa103f5daa350e2f2c2c09dc6e1a047bc2110",
-  "git_head": "a17aa103f5daa350e2f2c2c09dc6e1a047bc2110",
-  "verified_utc": "2026-11-24T22:00:36.928263+00:00",
+  "git_head": "c5379ffd378371e94d33f50f72026d8a02c87a2e",
+  "verified_utc": "2026-11-24T22:08:09.842266+00:00",
   "engine": "4.7.2.stable.official.ed1daf0bf",
   "test_script": "prototype/tests/test_exported_pack.gd",
   "test_script_sha256": "f484301d3b6f0cb3ee0e711e9b719088631775960aaf25f582efa6e4e179490d",
@@ -65,7 +65,7 @@
         "/home/runner/work/The-Descents/The-Descents/prototype/tests/test_exported_pack.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.43,
+      "duration_seconds": 0.522,
       "error_lines": [],
       "checks": 30,
       "pass_markers": 1,
@@ -74,7 +74,7 @@
       "platform": "windows",
       "pack": "builds/windows/TheTowerDescent.exe",
       "pack_bytes": 110419008,
-      "pack_sha256": "37678333a7cf726d23bbd9962dbb6e525f1a30f85ddb461af6f1550aad01c7f3",
+      "pack_sha256": "0593433756f3398fa4896973989dd4f94a0ea8737cefcc0470d3aa48c19624a8",
       "pack_unchanged_during_test": true,
       "execution_directory_was_empty": true,
       "log_sha256": "1dc870e8fd3462e5e7e2760308688e7167811d7887caaead65a19ea62b1ea200"
@@ -89,7 +89,7 @@
         "/home/runner/work/The-Descents/The-Descents/prototype/tests/test_exported_pack.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.43,
+      "duration_seconds": 0.429,
       "error_lines": [],
       "checks": 30,
       "pass_markers": 1,
@@ -98,7 +98,7 @@
       "platform": "web",
       "pack": "builds/web/index.pck",
       "pack_bytes": 1150516,
-      "pack_sha256": "5917a444bb5524fc0f1c01c573c6ff5768270b123d33701626dd78b7e89543c8",
+      "pack_sha256": "abecdb5a0e363cd042e7b27eabe6ed81ba1d3f925ad6cb3b8ee25c5f38130061",
       "pack_unchanged_during_test": true,
       "execution_directory_was_empty": true,
       "log_sha256": "1dc870e8fd3462e5e7e2760308688e7167811d7887caaead65a19ea62b1ea200"
