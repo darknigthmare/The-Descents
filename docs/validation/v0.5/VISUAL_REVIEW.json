@@ -1,0 +1,568 @@
+{
+  "schema_version": 1,
+  "project": "The Tower Descent",
+  "version": "0.5.0",
+  "reviewed_at_utc": "2026-11-24T20:24:02.249004+00:00",
+  "all_pass": true,
+  "human_review": false,
+  "human_playthrough": false,
+  "review_type": "Assistant visual review of all native captures, with independent image assignments and root verification of three corrected views.",
+  "source_commit": "08e8cb998194921f93a6e34fd54b898f14427533",
+  "capture_commit": "5441f527b72c3e7bc01b095afd7fd87d8e513c48",
+  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45479382645",
+  "capture_count": 17,
+  "engine": "4.7.2-stable (official)",
+  "rendering_method": "gl_compatibility",
+  "resolution": [
+    1440,
+    900
+  ],
+  "runtime_matches_validated_sources": true,
+  "ci_provenance": {
+    "file": "docs/captures/v0.5/CI_PROVENANCE.json",
+    "sha256": "25f11931dbd878ec43f39db5ff18d8a68af2ec8a3f608f67bb4763dcd37eb541"
+  },
+  "manifest": {
+    "file": "docs/captures/v0.5/MANIFEST.json",
+    "sha256": "02d46e740f6c2e1b6e4401e17d1d2bdc776dd7bbee00e34086a5ef7b28094735"
+  },
+  "source_verification": {
+    "file": "docs/validation/v0.5/VERIFICATION.json",
+    "sha256": "aa580148d90e21b47c540e1648fb4eb84a5af9076cd703967fda7d7499abe7ad"
+  },
+  "corrections_resolved": [
+    "Menu footer reads actual project version0.5.0.",
+    "Focused inspection close button uses dark readable text on cyan with visible border.",
+    "Capture fixture updates HUD after placing player at floor28.",
+    "Sea surface extended to remove V-shaped boundary from wide approach views without changing spatial wave scale.",
+    "Roof-detail fixture includes aircraft, medical post and all three Alpha members."
+  ],
+  "accepted_minor_observations": [
+    "Alpha briefly overlaps the left-hand title area in the prepared3-second frame; the title and operational text remain readable.",
+    "A mast partly obscures the foreground crew member in roof-detail14; all three members and their relation to the post remain identifiable."
+  ],
+  "images": [
+    {
+      "file": "docs/captures/v0.5/01_menu_arrivee.png",
+      "sha256": "6b1f42ea22b6c6e6237ce8d9ed681032e2bb67a983be82800192727d55348d67",
+      "bytes": 923959,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_world",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "Les deux tours et leurs appareils sont identifiables derrière le menu ; actions, titre et état avant intervention sont lisibles.",
+            "Le pied affiche 0.5.0. La découpe maritime en V du rendu initial a disparu."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/02_options.png",
+      "sha256": "0179ea9cf72067a223eb372a0423f052c02ee803cf77feda92de5a54149feb79",
+      "bytes": 146669,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_field",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "Titre Options et confort, quatre réglages et textes d’aide intégralement lisibles dans le panneau central.",
+            "Le réglage Ambiance sonore reçoit un contour de focus clair ; son libellé reste lisible sur le fond sombre.",
+            "Commandes et Retour sont dégagés. Le menu sous-jacent est assombri sans gêner la lecture du panneau.",
+            "Aucun chevauchement ni texte tronqué constaté à 1440×900."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/03_nouvelle_intervention.png",
+      "sha256": "7778e1364b6df5561f7ebc870e5f4c2df1978112083117319e64cab75c35e445",
+      "bytes": 142565,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_field",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "Titre, briefing et trois destinations de secours lisibles ; la séparation des groupes Alpha / Bravo est claire.",
+            "Le champ Disposition de l’intervention, la valeur 271104 et les flèches restent entièrement visibles.",
+            "Déployer Alpha présente un fond sombre distinct et un repère latéral doré ; Retour reste séparé sous le bouton.",
+            "Aucun débordement ou croisement entre le champ, son aide et les actions."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/04_signature_studio.png",
+      "sha256": "c22cf57d5432a798acabc0647cc40b71f22d1c02269c5cb5ba430fa45db705c0",
+      "bytes": 1136687,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_world",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "Emblème et signature studio centrés et lisibles ; les tours restent perceptibles dans le fond assombri.",
+            "Aucun élément du monde ne masque la signature."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/05_titre.png",
+      "sha256": "5d10ff5f5b801ba035293a4ba77817ebb3053577cafb65b5ad0bdba999d39b20",
+      "bytes": 1123991,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_world",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "Titre et sous-titre complets et lisibles ; les toits et les deux appareils restent identifiables.",
+            "Le fond maritime ne présente plus la découpe en V observée dans le premier rendu."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/06_approche_03.png",
+      "sha256": "48dc1cbc9d56a6444c49addf949efb4a69162d9c47da9d758e04192f433b1393",
+      "bytes": 954005,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_world",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "La découpe maritime en V est remplacée par une ligne horizontale continue ; les tours, le phare et les repères urbains restent lisibles.",
+            "La composition de l’approche et les sous-titres ne présentent aucun défaut bloquant."
+          ]
+        },
+        {
+          "reviewer": "/root",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": "Les deux appareils et les tours sont lisibles ; la limite en V du premier rendu a disparu. Horizon uniforme ; léger chevauchement Alpha/carton sans perte du titre, accepté pour la maquette."
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/06_approche_10.png",
+      "sha256": "e506bd802cbbf8c26d40221bd463125fac3033ce2722b2fbb13a04241a5fddc0",
+      "bytes": 978818,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_world",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "Alpha en approche et Bravo près de son toit sont distincts ; silhouettes, rotors et trains sont reconnaissables.",
+            "La limite maritime oblique du premier rendu a disparu. Aucun défaut bloquant de cadrage ou de texte."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/06_approche_17.png",
+      "sha256": "9f477ee7151f58a599df1caea436155be74c1afad347ca60cf6690fd4a93046e",
+      "bytes": 1022479,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_world",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "Les deux appareils sont posés dans ce plan ; l’ouverture de cabine Alpha et un équipier au seuil sont perceptibles.",
+            "Les volumes visibles des appareils restent cohérents ; aucune géométrie détachée ou pénétration manifeste dans cette image.",
+            "L’ancien V maritime est absent ; le souffle rotor ne gêne pas la lecture de la scène."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/06_approche_25.png",
+      "sha256": "82c6e93db17add146d7e1bc724e1e4ea1d18f792acc076052f56f3bc7bbb8d53",
+      "bytes": 1012016,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_world",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "Trois secouristes déployés, poste médical, hélicoptère et ligne de rappel sont identifiables.",
+            "Les patins et les pieds visibles paraissent cohérents avec la dalle ; la structure de rappel masque seulement une partie de l’appareil.",
+            "La porte en fin de fermeture reste cohérente avec ce moment de la séquence ; texte de transition complet et lisible."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/07_pause_intro.png",
+      "sha256": "bd44a55d8fa7eb8d69fb621900eeada739f3dc8738056a069dfe96fd3c982f04",
+      "bytes": 202041,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_field",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "Le titre Intervention en pause et les trois actions sont lisibles au-dessus du décor de toit assombri.",
+            "Reprendre utilise un texte sombre sur fond cyan ; le libellé reste net dans l’état sélectionné.",
+            "Les options de caméra, éclairs et ambiance tiennent chacune sur une ligne ; les interrupteurs restent dans leur colonne.",
+            "Les deux lignes d’aide à la sauvegarde et le bouton Retour au menu ne se chevauchent pas."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/08_menu_archives.png",
+      "sha256": "370b95853be594d67bc771c95bb1aea71b2c9b648316e89b5cdace6433942a89",
+      "bytes": 765750,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_world",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "Décor des archives et état de reprise à l’étage28 cohérents ; actions du menu et état de sauvegarde lisibles.",
+            "Le pied affiche 0.5.0. Aucun défaut bloquant de cadrage, matériau ou chevauchement d’interface."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/09_dossier_apres.png",
+      "sha256": "f213985a83acf52655005cbb19c2bc99b4c28b650f457a70964e1f53c1d304f5",
+      "bytes": 167107,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_world",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "Le dossier après incident présente une situation lisible, un parcours dans une zone défilante et des actions distinctes.",
+            "L’assombrissement du décor maintient le contraste des textes ; aucun défaut visuel bloquant."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/10_menu_refuge.png",
+      "sha256": "8b1f0f742f02cc870c297f0622d18177f33a64bb24a4cc6b20ec23d456b5307d",
+      "bytes": 817512,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_world",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "Le refuge et son secouriste sont identifiables ; état intervention terminée, étage25 et bilan de trois vies sauvées sont lisibles.",
+            "Le pied affiche 0.5.0. Aucun défaut bloquant de composition ou de contraste."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/11_inspection_toit.png",
+      "sha256": "b7e3ab7c5ddc5153351154ac0a35241832e13d4f79cfe1200f49be8114d55ac0",
+      "bytes": 209312,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_field",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "Le registre du poste médical présente un titre net, la localisation Toit d’Aube et le statut Réceptions confirmées : 0 / 3.",
+            "Le constat indique trois emplacements de réception, aucune réception confirmée et les trois personnes encore attendues ; la formulation ne confond pas personne repérée et transfert terminé.",
+            "La fiche longue occupe une zone interne défilable avec barre visible. Les indications Molette / Page et Échap restent dans le pied fixe, séparées du contenu.",
+            "Fermer et reprendre est lisible en texte sombre sur cyan ; le liseré doré matérialise le focus sans effacer le texte.",
+            "Les titres, le statut et les commandes du pied restent dans les limites du panneau."
+          ]
+        },
+        {
+          "reviewer": "/root",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": "Texte du bouton focalisé sombre sur fond turquoise et contour visible. Quatre sections lisibles avec défilement prévu ; bouton hors zone de lecture et état0/3 cohérent."
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/12_inspection_archives.png",
+      "sha256": "5b33ebf14f6e8e15c326a7419c5af21f539cfd74fd113668ded60e11b5ed48b0",
+      "bytes": 155845,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_field",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "Le dossier de maintenance affiche Étage 28 / Archives : Bureau et Avant le choc ; la hiérarchie des quatre rubriques est claire.",
+            "Le HUD visible derrière le panneau indique bien ÉTAGE 28 et ALT.156 m ; la liste des niveaux pointe aussi 28 Archives.",
+            "Le constat décrit le noyau central, la voie Est intacte et Samuel en attente. La consigne demande de le rejoindre depuis le noyau puis de revenir à la balise du même étage.",
+            "La note d’Alex, les paragraphes et le bouton de fermeture tiennent intégralement dans la présentation.",
+            "Le bouton Fermer et reprendre conserve le texte sombre sur cyan et le liseré de focus."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/13_inspection_apres.png",
+      "sha256": "f431df02a6abd81b81ddd5b86d094df2cd93699a4bc0e367865b0208ec3ef78d",
+      "bytes": 160363,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_field",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "La même fiche conserve son titre et sa localisation, avec le statut actualisé Après le choc.",
+            "Le HUD conserve ÉTAGE 28 / ALT.156 m et le repère 28 Archives ; le repère du restaurant indique la réception préalable visible dans cet état préparé.",
+            "Le constat décrit la voie Est coupée et le passage intérieur. La consigne donne le contournement par le nord et le retour par la même voie ; la note d’équipe rappelle que le noyau reste ouvert.",
+            "Le contenu avant/après reste cohérent sans présenter le plan antérieur au choc comme une description actuelle du passage Est.",
+            "Le bouton de fermeture garde un texte sombre lisible sur cyan avec focus doré ; aucune ligne de la fiche n’est tronquée."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/captures/v0.5/14_toit_equipe.png",
+      "sha256": "362b60f1b0810004820d69abec1fbe882537cf7d33acf0413618ca513f91e393",
+      "bytes": 798703,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "all_pass": true,
+      "reviews": [
+        {
+          "reviewer": "/root/v05_world",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": [
+            "Le recadrage inclut maintenant l’appareil Alpha, le poste médical et les trois membres de l’équipe dans l’image.",
+            "Les deux membres du poste médical sont entièrement dans le cadre ; Varga reste identifiable à proximité du mât et du poste de commande.",
+            "Porte fermée, patins, rotors, queue, ombres et surfaces du toit sont cohérents ; aucun défaut bloquant observé.",
+            "L’horizon maritime ne présente plus la découpe en V."
+          ]
+        },
+        {
+          "reviewer": "/root",
+          "method": "Complete native image inspected at 1440×900.",
+          "notes": "Appareil, poste médical et trois équipiers en cadre. Patins au toit, géométrie et ombres cohérentes ; Varga reste partiellement masquée par le mât, sans gêner la lecture de l’équipe."
+        }
+      ]
+    }
+  ],
+  "unresolved_blocking_findings": [],
+  "limitations": [
+    "Prepared states, not a human playthrough.",
+    "Still-image review does not measure temporal smoothness, frame rate or audible mixing.",
+    "Native Linux Compatibility rendering does not certify Windows execution or WebGL browser rendering.",
+    "Procedural prototype geometry; production assets, rigs and facial animation remain future work."
+  ],
+  "captures": [
+    {
+      "file": "01_menu_arrivee.png",
+      "sha256": "6b1f42ea22b6c6e6237ce8d9ed681032e2bb67a983be82800192727d55348d67",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_world"
+      ]
+    },
+    {
+      "file": "02_options.png",
+      "sha256": "0179ea9cf72067a223eb372a0423f052c02ee803cf77feda92de5a54149feb79",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_field"
+      ]
+    },
+    {
+      "file": "03_nouvelle_intervention.png",
+      "sha256": "7778e1364b6df5561f7ebc870e5f4c2df1978112083117319e64cab75c35e445",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_field"
+      ]
+    },
+    {
+      "file": "04_signature_studio.png",
+      "sha256": "c22cf57d5432a798acabc0647cc40b71f22d1c02269c5cb5ba430fa45db705c0",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_world"
+      ]
+    },
+    {
+      "file": "05_titre.png",
+      "sha256": "5d10ff5f5b801ba035293a4ba77817ebb3053577cafb65b5ad0bdba999d39b20",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_world"
+      ]
+    },
+    {
+      "file": "06_approche_03.png",
+      "sha256": "48dc1cbc9d56a6444c49addf949efb4a69162d9c47da9d758e04192f433b1393",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_world",
+        "/root"
+      ]
+    },
+    {
+      "file": "06_approche_10.png",
+      "sha256": "e506bd802cbbf8c26d40221bd463125fac3033ce2722b2fbb13a04241a5fddc0",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_world"
+      ]
+    },
+    {
+      "file": "06_approche_17.png",
+      "sha256": "9f477ee7151f58a599df1caea436155be74c1afad347ca60cf6690fd4a93046e",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_world"
+      ]
+    },
+    {
+      "file": "06_approche_25.png",
+      "sha256": "82c6e93db17add146d7e1bc724e1e4ea1d18f792acc076052f56f3bc7bbb8d53",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_world"
+      ]
+    },
+    {
+      "file": "07_pause_intro.png",
+      "sha256": "bd44a55d8fa7eb8d69fb621900eeada739f3dc8738056a069dfe96fd3c982f04",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_field"
+      ]
+    },
+    {
+      "file": "08_menu_archives.png",
+      "sha256": "370b95853be594d67bc771c95bb1aea71b2c9b648316e89b5cdace6433942a89",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_world"
+      ]
+    },
+    {
+      "file": "09_dossier_apres.png",
+      "sha256": "f213985a83acf52655005cbb19c2bc99b4c28b650f457a70964e1f53c1d304f5",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_world"
+      ]
+    },
+    {
+      "file": "10_menu_refuge.png",
+      "sha256": "8b1f0f742f02cc870c297f0622d18177f33a64bb24a4cc6b20ec23d456b5307d",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_world"
+      ]
+    },
+    {
+      "file": "11_inspection_toit.png",
+      "sha256": "b7e3ab7c5ddc5153351154ac0a35241832e13d4f79cfe1200f49be8114d55ac0",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_field",
+        "/root"
+      ]
+    },
+    {
+      "file": "12_inspection_archives.png",
+      "sha256": "5b33ebf14f6e8e15c326a7419c5af21f539cfd74fd113668ded60e11b5ed48b0",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_field"
+      ]
+    },
+    {
+      "file": "13_inspection_apres.png",
+      "sha256": "f431df02a6abd81b81ddd5b86d094df2cd93699a4bc0e367865b0208ec3ef78d",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_field"
+      ]
+    },
+    {
+      "file": "14_toit_equipe.png",
+      "sha256": "362b60f1b0810004820d69abec1fbe882537cf7d33acf0413618ca513f91e393",
+      "status": "pass",
+      "reviewers": [
+        "/root/v05_world",
+        "/root"
+      ]
+    }
+  ]
+}

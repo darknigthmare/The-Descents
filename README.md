@@ -1,6 +1,6 @@
 # The Tower Descent
 
-**Version 0.4 — accueil cinématique, introduction en jeu et prototype de sauvetage et d’horreur en vue subjective, accompagné de sa bible de jeu.**
+**Version 0.5 — arrivée animée des secours, douze observations contextuelles et présentation cinématique pour le prototype de sauvetage et d’horreur en vue subjective.**
 
 Sur l’île de Nacre, la ville est submergée mais les deux tours Orphée sont encore droites et intactes. Deux hélicoptères déposent Alpha sur Aube et Bravo sur Hespérie, puis repartent devant le retour de la tempête. Pendant votre descente, une réplique fait basculer Hespérie contre votre tour. Vous gardez le contrôle tandis que le décor se transforme, puis poursuivez les sauvetages avec une liaison radio dégradée et Bravo devenu silencieux.
 
@@ -10,13 +10,13 @@ Le titre du jeu est **The Tower Descent**. Le dépôt conserve le nom **The-Desc
 
 ### Version Windows
 
-Télécharger [The-Tower-Descent-v0.4-Windows-x64.zip](releases/The-Tower-Descent-v0.4-Windows-x64.zip), extraire le ZIP, puis lancer **TheTowerDescent.exe**. Godot n’a pas besoin d’être installé. L’exécutable n’a pas été lancé sur un PC Windows dans cet environnement ; le détail des contrôles figure dans l’[état de livraison](docs/ETAT_DE_LIVRAISON.md).
+Télécharger [The-Tower-Descent-v0.5-Windows-x64.zip](releases/The-Tower-Descent-v0.5-Windows-x64.zip), extraire le ZIP, puis lancer **TheTowerDescent.exe**. Godot n’a pas besoin d’être installé. L’exécutable n’a pas été lancé sur un PC Windows dans cet environnement ; le détail des contrôles figure dans l’[état de livraison](docs/ETAT_DE_LIVRAISON.md).
 
-**La version recommandée est la 0.4.** Les archives 0.1 et 0.2 sont conservées comme historique. La continuation 0.3 interrompue a été reconstruite et testée dans cette 0.4 ; aucune archive 0.3 n’est présentée comme une livraison validée.
+**La version recommandée est la 0.5.** Les archives 0.1, 0.2 et 0.4 sont conservées comme historique. La continuation 0.3 interrompue a été reconstruite dans la 0.4 ; la 0.5 poursuit cette base publiée.
 
 ### Projet modifiable dans Godot
 
-Le [ZIP des sources 0.4](releases/The-Tower-Descent-v0.4-Sources.zip) contient le projet modifiable et la documentation. Pour l’ouvrir :
+Le [ZIP des sources 0.5](releases/The-Tower-Descent-v0.5-Sources.zip) contient le projet modifiable et la documentation. Pour l’ouvrir :
 
 1. Télécharger ce dépôt ou le cloner.
 2. Installer [Godot 4.7.2 standard](https://github.com/godotengine/godot-builds/releases/tag/4.7.2-stable), sans .NET. C’est la version utilisée pour les essais de cette livraison.
@@ -33,9 +33,9 @@ Sous Windows, `JOUER_WINDOWS.cmd` lance le même projet si `godot.exe` est dans 
 
 Le projet ne demande aucun compte, service distant, clé API ou achat d’asset. Il utilise des modèles et matériaux procéduraux et des sons originaux synthétisés. Le moteur jouable est **Godot 4.7.2** ; l’adaptation à Unreal Engine 5 est décrite dans les documents, mais n’est pas réalisée.
 
-## Accueil et mise en scène de la version 0.4
+## Accueil et mise en scène de la version 0.5
 
-![Accueil cinématique — deux tours intactes](docs/captures/v0.4/01_menu_arrivee.png)
+![Accueil cinématique — deux tours intactes](docs/captures/v0.5/01_menu_arrivee.png)
 
 La signature de **Darknigthmare Kingdoms Games Productions** reprend les cartons et la couronne vérifiés dans les autres jeux de l’auteur, avec une adaptation maritime. Les [références précises](docs/REFERENCES_INTRO.md) identifient les fichiers et commits consultés.
 
@@ -44,9 +44,11 @@ La signature de **Darknigthmare Kingdoms Games Productions** reprend les cartons
 - Reprise, préparation d’une nouvelle intervention avec confirmation du remplacement, dossier de mission, options, replay et sortie sur ordinateur.
 - Approche de **28 secondes** en quatre plans, avec transmissions sous-titrées, bandes cinéma et raccord vers la caméra du joueur. Son horloge est indépendante du temps de mission ; la pause et le passage ne déplacent pas les conditions de progression.
 - Musique originale synthétisée, signature sonore et nappe de rotors, réglages de confort persistants et mode caméra réduite avec plans fixes.
+- Deux appareils réellement animés en approche : posés successifs, portes coulissantes, souffle de rotor puis débarquement des six membres de toit. Passer la scène et la regarder jusqu’au bout conduisent au même état de mission.
+- Hélicoptères avec cabine et train au contact du toit, sauveteurs articulés, abri médical, matériel de treuil, phare et repères littoraux ; matériaux procéduraux de mer et béton enrichis.
 - Repli visible de Bravo, accueil nominatif des trois rescapés sur le toit, radio séquentielle et journal consultable depuis le bilan final.
 
-La mise en scène est réalisée en temps réel dans la maquette Godot. Les modèles, animations et enregistrements définitifs d’une production AAA restent à produire. Voir les [scènes et cinématiques](docs/SCENES_CINEMATIQUES.md) et les [captures de contrôle](docs/CAPTURES_V0.4.md).
+La mise en scène est réalisée en temps réel dans la maquette Godot. Les modèles, animations et enregistrements définitifs d’une production AAA restent à produire. Voir les [scènes et cinématiques](docs/SCENES_CINEMATIQUES.md) et les [captures de contrôle](docs/CAPTURES_V0.5.md).
 
 ## Contenu effectivement jouable
 
@@ -54,13 +56,23 @@ Le toit et **six étages distincts**, du 30 au 25, forment une intervention comp
 
 | Niveau | Lieu | Objectifs et événements |
 |---|---|---|
-| Toits | Alpha sur Aube, Bravo sur Hespérie | Approche cinématique de 28 secondes en quatre plans, deux hélicoptères, équipes visibles, départ des appareils et consignes radio |
+| Toits | Alpha sur Aube, Bravo sur Hespérie | Approche cinématique de 28 secondes, posés, ouverture des portes et débarquement des équipes, puis départ des appareils et consignes radio |
 | 30 | Restaurant panoramique | Secourir Ana Rios ; apprendre le retour au treuil |
 | 29 | Suites et baie Est | Observer Bravo après le sauvetage d’Ana ; vivre la réplique et l’impact ; collecter Chambre 2908 et récupérer une caisse |
 | 28 | Bureaux et archives | Contourner le couloir Est condamné par le noyau ; secourir Samuel Breton et le ramener au treuil |
 | 27 | Jardin d’enfants évacué | Découvrir le dessin des deux tours ; respiration sans danger |
 | 26 | Spa | Secourir Nora Haddad ; relever SILLAGE 06 ; repousser la silhouette |
 | 25 | Refuge technique | Se réapprovisionner et activer le relais après les trois sauvetages et l’effondrement |
+
+### Examiner les lieux
+
+**Douze observations facultatives** donnent une fonction aux détails du décor : registre médical et carnet de treuil au toit, couvert et service au restaurant, bagage et témoin de baie aux suites, dossier et boîtier radio aux archives, casier du jardin, manomètre du spa, contrôle du refuge et poste incendie.
+
+Approchez-vous à moins de **2,4 m**, regardez l’objet et appuyez sur **E**. Sa fiche présente fonction, constat, conseil de progression et note de l’équipe. Les textes tiennent compte du choc et des personnes effectivement reçues au toit. La lecture suspend l’intervention ; **Fermer et reprendre** ou **Échap** rend le contrôle. Les fiches restent consultables, sans consommation ni collecte obligatoire.
+
+Les commandes de secours gardent la priorité à proximité d’une balise. L’examen ne s’ouvre pas pendant le rappel, un portage, un treuillage ou la réplique active. Une paroi bloque la lecture à travers elle.
+
+![Lecture contextuelle du poste médical](docs/captures/v0.5/11_inspection_toit.png)
 
 ### Vivre l’effondrement
 
@@ -82,7 +94,7 @@ Les personnes sécurisées sont transportées au harnais de façon abstraite : v
 | Courir | Maj |
 | S’accroupir | Ctrl |
 | Sauter | Espace |
-| Interagir, attacher la corde, quitter le rappel à hauteur d’un étage | E |
+| Interagir, examiner un objet, attacher la corde, quitter le rappel à hauteur d’un étage | E |
 | Passer l’approche ou confirmer l’observation à la baie Est | E |
 | Descendre en rappel | S |
 | Remonter en rappel | Z ou W |
@@ -106,10 +118,10 @@ Le schéma de progression est en **version 3**, en conservant le nom local `save
 
 ## Lire la bible et préparer la suite
 
-La bible Word/PDF compte **119 pages A4**, issues de **dix sources Markdown et près de 59 000 mots**. Elle réunit **52 fiches de props**, **30 fiches d’assemblage d’étages**, les motivations des personnages, les valeurs actuelles du gameplay et les scènes de production. Le bestiaire distingue **E00, l’entité du spa implémentée**, de **dix archétypes conçus pour la campagne**. Chaque système sépare ses règles actuelles, ses propositions d’enrichissement et ses critères de validation.
+La bible Word/PDF compte **127 pages A4**, issues de **dix sources Markdown et près de 62 000 mots**. Elle réunit **52 fiches de props**, **30 fiches d’assemblage d’étages**, les motivations des personnages, les valeurs actuelles du gameplay et les scènes de production. Le bestiaire distingue **E00, l’entité du spa implémentée**, de **dix archétypes conçus pour la campagne**. Chaque système sépare ses règles actuelles, ses propositions d’enrichissement et ses critères de validation. La 0.5 détaille également les douze observations jouables, les chronologies d’atterrissage et de débarquement, les priorités d’interaction et la continuité des textes après sauvetage.
 
-- [Bible 0.4 au format Word](docs/The-Tower-Descent-Bible-v0.4.docx) : document réuni et modifiable.
-- [Bible 0.4 au format PDF](docs/The-Tower-Descent-Bible-v0.4.pdf) : document de lecture.
+- [Bible 0.5 au format Word](docs/The-Tower-Descent-Bible-v0.5.docx) : document réuni et modifiable.
+- [Bible 0.5 au format PDF](docs/The-Tower-Descent-Bible-v0.5.pdf) : document de lecture.
 - [Effondrement en direct](docs/EFFONDREMENT_EN_DIRECT.md) : déroulé de la séquence, conséquences et intentions pour la campagne.
 - [Bible complète](docs/BIBLE_DU_JEU.md) : univers, personnages, récit, systèmes, horreur, fins et production.
 - [Catalogue des étages](docs/CATALOGUE_ETAGES.md) : les trente étages, la tour condamnée, les souterrains, le bunker, le niveau 666 et Mountain Hole.
@@ -121,7 +133,7 @@ La bible Word/PDF compte **119 pages A4**, issues de **dix sources Markdown et p
 - [Scènes et cinématiques](docs/SCENES_CINEMATIQUES.md) : plans, déclencheurs, transitions, son et raccords.
 - [Communications et équipes](docs/COMMUNICATIONS_ET_EQUIPES.md) : radio, reprise, rescapés et mise en scène des équipes.
 - [État de livraison et vérifications](docs/ETAT_DE_LIVRAISON.md) : portée des essais et fonctions restantes.
-- [Relecture des documents](docs/validation/v0.4/DOCUMENT_REVIEW.json) : couverture des pages rendues, corrections résolues et empreintes des deux formats et de leurs dix sources.
+- [Relecture des documents](docs/validation/v0.5/DOCUMENT_REVIEW.json) : couverture des pages rendues, corrections résolues et empreintes des deux formats et de leurs dix sources.
 
 **La campagne de trente étages, Alma, la chute dans la piscine, les cavernes, le bunker, les fins et Mountain Hole sont conçus dans les documents. Ils ne sont pas implémentés dans cette version.** Le prototype est solo. Ni Unreal Engine 5 ni Unity n’ont été utilisés pour le compiler.
 
@@ -132,7 +144,7 @@ prototype/
   project.godot
   scenes/main.tscn
   scripts/           contrôleur, monde, rappel, interface, génération et sauvegarde
-  shaders/           eau procédurale
+  shaders/           eau, matières et souffle des rotors
   assets/audio/      sons originaux du prototype
   tests/             génération, persistance, mission et collisions
 docs/                bible, catalogue et conception technique
@@ -159,11 +171,15 @@ godot --headless --path prototype --script tests/test_radio_integration.gd
 godot --headless --path prototype --script tests/test_cinematics.gd
 godot --headless --path prototype --script tests/test_preferences.gd
 godot --headless --path prototype --script tests/test_cinematic_integration.gd
+godot --headless --path prototype --script tests/test_arrival_staging.gd
+godot --headless --path prototype --script tests/test_field_integration.gd
+godot --headless --path prototype --script tests/test_field_props.gd
+godot --headless --path prototype --script tests/test_world_presentation.gd
 ```
 
-**Les quatorze suites totalisent 2 037 contrôles réussis**, consignés avec leurs empreintes dans le [rapport de validation](docs/validation/v0.4/VERIFICATION.json). Les tests de mission et d’intégration utilisent des téléportations pour isoler les règles et la persistance. Les deux suites de trajets vérifient **231 segments physiques**, dont l’accès à la baie et le détour du 28 ; elles confirment également six blocages attendus. Ces essais ne certifient pas le rendu ou les performances sur toutes les machines.
+**Les dix-huit suites totalisent 3 299 contrôles réussis**, consignés avec leurs empreintes dans le [rapport de validation](docs/validation/v0.5/VERIFICATION.json). `python tools/run_validation.py --godot godot` exécute le même ensemble et conserve les journaux ; une erreur du moteur fait échouer le contrôle même si le processus renvoie zéro. Les tests de mission et d’intégration utilisent des téléportations pour isoler les règles et la persistance. Les deux suites de trajets vérifient **231 segments physiques**, dont l’accès à la baie et le détour du 28 ; elles confirment également six blocages attendus. Ces essais ne certifient pas le rendu ou les performances sur toutes les machines.
 
-Les paquets Windows et Web exportés passent aussi **18 contrôles chacun**, depuis deux répertoires vides avec Godot sous Linux. Ces **36 contrôles distincts** vérifient les ressources réellement embarquées et le cycle de sauvegarde ; ils ne remplacent pas un lancement sous Windows ou une partie dans un navigateur. Le [rapport des paquets](docs/validation/v0.4/EXPORTED_PACK_VERIFICATION.json) précise les empreintes et les limites de cet essai.
+Les paquets Windows et Web passent chacun **28 contrôles supplémentaires**, soit **56 contrôles distincts**, depuis deux répertoires vides avec Godot sous Linux. Ils vérifient les ressources réellement embarquées, la dépose, les observations et le cycle de sauvegarde ; ils ne remplacent pas un lancement sous Windows ou une partie dans un navigateur. Le [rapport des paquets](docs/validation/v0.5/EXPORTED_PACK_VERIFICATION.json) précise les résultats, les empreintes et les limites de cet essai.
 
 ## Références et créations
 

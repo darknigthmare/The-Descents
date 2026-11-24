@@ -178,7 +178,8 @@
       "png_sha256": "b51c81b410d7ac15d014378ee225564592ede10af6c94dfcf3da913cd5830e66",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Couverture lisible : titre, sous-titre, version, auteur, lien et tableau de périmètre. Absence volontaire d’en-tête et de pied sur la couverture."
+      "notes": "Couverture lisible : titre, sous-titre, version, auteur, lien et tableau de périmètre. Absence volontaire d’en-tête et de pied sur la couverture.",
+      "status": "pass"
     },
     {
       "page": 2,
@@ -186,7 +187,8 @@
       "png_sha256": "bd9f0aae51dbf4bf9b2a5482c78340c87d2e035ab0a26179ba30e23de04c5596",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Organisation et navigation du dossier lisibles ; portée actuelle et conception future distinguées."
+      "notes": "Organisation et navigation du dossier lisibles ; portée actuelle et conception future distinguées.",
+      "status": "pass"
     },
     {
       "page": 3,
@@ -194,7 +196,8 @@
       "png_sha256": "d9111cf7291ab7de977af7ddc82c0e95cf357560b9a03c8a189f275c02cf9ae8",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Ouverture de la Partie 1 et intention : page dense, marges et bas de page respectés."
+      "notes": "Ouverture de la Partie 1 et intention : page dense, marges et bas de page respectés.",
+      "status": "pass"
     },
     {
       "page": 4,
@@ -202,7 +205,8 @@
       "png_sha256": "222f3989c68df7db3f4fe4a4093744afae3aacc1d551096af5b304c0d795ca5a",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Tableau de direction lisible ; le titre de section en bas de page conserve son texte introductif."
+      "notes": "Tableau de direction lisible ; le titre de section en bas de page conserve son texte introductif.",
+      "status": "pass"
     },
     {
       "page": 5,
@@ -210,7 +214,8 @@
       "png_sha256": "63ddb50bf51a102ee3436b54d7302d1c2519215fd1d9121f895e6992025fd834",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Principes, refuge et univers : paragraphes bien séparés ; continuation normale en page 6."
+      "notes": "Principes, refuge et univers : paragraphes bien séparés ; continuation normale en page 6.",
+      "status": "pass"
     },
     {
       "page": 6,
@@ -218,7 +223,8 @@
       "png_sha256": "f7cf5609f2a570609a9e005d1b756878aac6ea7d3f56967e8882fb1f2191bdd1",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Histoire et début du tableau chronologique : en-tête et trois lignes conservés avant la coupure."
+      "notes": "Histoire et début du tableau chronologique : en-tête et trois lignes conservés avant la coupure.",
+      "status": "pass"
     },
     {
       "page": 7,
@@ -226,7 +232,8 @@
       "png_sha256": "a5c17e2455808e2083dc514258a4e6d7c2e1d50ab36c3f77f9a966059d610fc1",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Chronologie poursuivie avec en-tête répété ; début du tableau des vérités avec sa première ligne."
+      "notes": "Chronologie poursuivie avec en-tête répété ; début du tableau des vérités avec sa première ligne.",
+      "status": "pass"
     },
     {
       "page": 8,
@@ -234,7 +241,8 @@
       "png_sha256": "47d5f13da7ff33b55c64e025e55c5e82a29ba1884882f763d4e117f5b322d4f0",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Tableau poursuivi avec en-tête répété ; fiches Alex et Varga propres."
+      "notes": "Tableau poursuivi avec en-tête répété ; fiches Alex et Varga propres.",
+      "status": "pass"
     },
     {
       "page": 9,
@@ -242,7 +250,8 @@
       "png_sha256": "f6ad72322fba22cc3436d531b343076d240b718f01c66fe02fc8be631dd93a36",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Fiches des personnages et équipes lisibles ; continuation de paragraphe normale en page 10."
+      "notes": "Fiches des personnages et équipes lisibles ; continuation de paragraphe normale en page 10.",
+      "status": "pass"
     },
     {
       "page": 10,
@@ -250,7 +259,8 @@
       "png_sha256": "54aa913458595df26f42877c93d01d4130a49826397b1a7c0fa84b59c4f2e91e",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Équipes et premiers actes : hiérarchie et espacements réguliers."
+      "notes": "Équipes et premiers actes : hiérarchie et espacements réguliers.",
+      "status": "pass"
     },
     {
       "page": 11,
@@ -258,7 +268,8 @@
       "png_sha256": "4afaaef2a18f6ea1ca59afd5181d2d73172d6ee510bcce889b9e17a8ff0abc7b",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Acte 4, épilogue et tableau des quatre fins lisibles ; aucune ligne de tableau amputée."
+      "notes": "Acte 4, épilogue et tableau des quatre fins lisibles ; aucune ligne de tableau amputée.",
+      "status": "pass"
     },
     {
       "page": 12,
@@ -266,7 +277,8 @@
       "png_sha256": "fab119e5397e7373c010f803ad030b4dbe8fd77a8b88f6ea982db45be53f8a4f",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Fins, boucle et corde : espace inférieur acceptable avant le tableau de la page suivante."
+      "notes": "Fins, boucle et corde : espace inférieur acceptable avant le tableau de la page suivante.",
+      "status": "pass"
     },
     {
       "page": 13,
@@ -274,7 +286,8 @@
       "png_sha256": "b2c3567c1add0e9921d739fada1e2c50621aa58d972e6752786e95a1a7033a83",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Tableau des mouvements et début du matériel : colonnes et premières lignes lisibles."
+      "notes": "Tableau des mouvements et début du matériel : colonnes et premières lignes lisibles.",
+      "status": "pass"
     },
     {
       "page": 14,
@@ -282,7 +295,8 @@
       "png_sha256": "1cc49719d5219c0f1adb254b1a0988751f856265e1efda7a540866aab1864ec9",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Matériel poursuivi avec en-tête répété ; la section 11 conserve son paragraphe sous le titre."
+      "notes": "Matériel poursuivi avec en-tête répété ; la section 11 conserve son paragraphe sous le titre.",
+      "status": "pass"
     },
     {
       "page": 15,
@@ -290,7 +304,8 @@
       "png_sha256": "cc317964b617c502191f6df19d36790c2a1a3da498f66837e58bd96f45200cf2",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "États du sauvetage et perception : listes et sous-titres sans chevauchement."
+      "notes": "États du sauvetage et perception : listes et sous-titres sans chevauchement.",
+      "status": "pass"
     },
     {
       "page": 16,
@@ -298,7 +313,8 @@
       "png_sha256": "b0e412ee043fb0ab4c71213b642d2deb7dca38981d98a07733854aec2408e722",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Bestiaire à cinq colonnes et dix archétypes : toutes les cellules restent lisibles et dans les marges."
+      "notes": "Bestiaire à cinq colonnes et dix archétypes : toutes les cellules restent lisibles et dans les marges.",
+      "status": "pass"
     },
     {
       "page": 17,
@@ -306,7 +322,8 @@
       "png_sha256": "ed0af5209f559a36fa7a0c94b88967db09ba2dba21afe326bef90069f7a7303b",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Échec, génération et liste d’ordre : numérotation et hiérarchie propres."
+      "notes": "Échec, génération et liste d’ordre : numérotation et hiérarchie propres.",
+      "status": "pass"
     },
     {
       "page": 18,
@@ -314,7 +331,8 @@
       "png_sha256": "80d3a58bf32eb25d276b32fd108e708a8a1ed921bbbab7d804c1f68aefd1f04f",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Rythme, contrat de données et introduction des événements : aucun débordement."
+      "notes": "Rythme, contrat de données et introduction des événements : aucun débordement.",
+      "status": "pass"
     },
     {
       "page": 19,
@@ -322,7 +340,8 @@
       "png_sha256": "b0d9af1ee13816e8f06ce0c0c9007dafe2ec549a9eb796d2d413514d936ed1a1",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Tableau des événements : lignes conservées entières avant sa continuation."
+      "notes": "Tableau des événements : lignes conservées entières avant sa continuation.",
+      "status": "pass"
     },
     {
       "page": 20,
@@ -330,7 +349,8 @@
       "png_sha256": "b2c102bfbaadc23fb06d8c9ae97b583a2df0cdc45fc4d5829435cfd4cfb5856b",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Suite du tableau des événements avec en-tête répété ; début des familles modulaires propre."
+      "notes": "Suite du tableau des événements avec en-tête répété ; début des familles modulaires propre.",
+      "status": "pass"
     },
     {
       "page": 21,
@@ -338,7 +358,8 @@
       "png_sha256": "b4d2cc90c8fcdebd285450630d1deffb2918b0ec1cc569d7fac8fb5c9572ab83",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Familles modulaires, mer, image et son : le titre Son garde du texte sous lui."
+      "notes": "Familles modulaires, mer, image et son : le titre Son garde du texte sous lui.",
+      "status": "pass"
     },
     {
       "page": 22,
@@ -346,7 +367,8 @@
       "png_sha256": "7e70206bb49fe968a6c04b9615c7bc0f54727dcdaa103f4381cf7ce11d88aeb9",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Son, musique et accessibilité : texte et puces lisibles."
+      "notes": "Son, musique et accessibilité : texte et puces lisibles.",
+      "status": "pass"
     },
     {
       "page": 23,
@@ -354,7 +376,8 @@
       "png_sha256": "af735f68391555a565950ac3355215c9f9c03736a611d8bf2ddb52cafa4e108e",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Sauvegarde et ouverture : termes techniques lisibles ; le titre Toit reste accompagné de son paragraphe."
+      "notes": "Sauvegarde et ouverture : termes techniques lisibles ; le titre Toit reste accompagné de son paragraphe.",
+      "status": "pass"
     },
     {
       "page": 24,
@@ -362,7 +385,8 @@
       "png_sha256": "7d63623f6bddf82a9b2fb2d043ab8fd0403934777f069d286ef55fa9605033f2",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Première descente, choc et validation : paragraphes et titres correctement répartis."
+      "notes": "Première descente, choc et validation : paragraphes et titres correctement répartis.",
+      "status": "pass"
     },
     {
       "page": 25,
@@ -370,7 +394,8 @@
       "png_sha256": "4914fd638e055f9eb2db22dd31731759a574e329dcfccb7a43fca021882879a1",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Tableau de périmètre, limites et début des critères : tout est lisible. Première colonne généreuse mais sans défaut de lecture."
+      "notes": "Tableau de périmètre, limites et début des critères : tout est lisible. Première colonne généreuse mais sans défaut de lecture.",
+      "status": "pass"
     },
     {
       "page": 26,
@@ -378,7 +403,8 @@
       "png_sha256": "04091c687f10dbba60990e9fe6e465a43cc733ca7ef348bcccd9ad5d3bd2ef31",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Critères et architecture : tableau dans les marges, corps des cellules lisible."
+      "notes": "Critères et architecture : tableau dans les marges, corps des cellules lisible.",
+      "status": "pass"
     },
     {
       "page": 27,
@@ -386,7 +412,8 @@
       "png_sha256": "67b2fafe96ed234fc2648e8eae6aabf7f329f1363961f923d3ec7fee5385ea89",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Feuille de route : hiérarchie régulière et aucune coupure gênante."
+      "notes": "Feuille de route : hiérarchie régulière et aucune coupure gênante.",
+      "status": "pass"
     },
     {
       "page": 28,
@@ -394,7 +421,8 @@
       "png_sha256": "14f924e93874fd699dadc154953db487871edc90fae9ebfef6f97ce76b41c1d5",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Risques, expansion et guide des dialogues : tableau et prose propres."
+      "notes": "Risques, expansion et guide des dialogues : tableau et prose propres.",
+      "status": "pass"
     },
     {
       "page": 29,
@@ -402,7 +430,8 @@
       "png_sha256": "7c5924e036561393302bff6b7d4cc587d02fdbe9b7b4a2ab1dad5355fabf05f5",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Rendu final revu. La phrase distingue désormais les interactions de mission par proximité des inspections soumises à la visée et à la visibilité. Fin de page propre malgré la ligne de présentation poursuivie en page 30."
+      "notes": "Rendu final revu. La phrase distingue désormais les interactions de mission par proximité des inspections soumises à la visée et à la visibilité. Fin de page propre malgré la ligne de présentation poursuivie en page 30.",
+      "status": "pass"
     },
     {
       "page": 30,
@@ -410,7 +439,8 @@
       "png_sha256": "cfdd89e2e3f63c966f380913e1d29a62f955bb99517125f32090049d74c62944",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Rendu final revu. Fin de la Partie 1 avec trois paragraphes ; grand blanc intentionnel avant le début de Partie 2 en page 31, sans page vide accidentelle."
+      "notes": "Rendu final revu. Fin de la Partie 1 avec trois paragraphes ; grand blanc intentionnel avant le début de Partie 2 en page 31, sans page vide accidentelle.",
+      "status": "pass"
     },
     {
       "page": 31,
@@ -418,7 +448,8 @@
       "png_sha256": "9efde18abbbf5e4675932a02cd878e252f9c04e19e930c5cbc21f98a94e0c10f",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Ouverture de la Partie 2 et tableau des étages : premier en-tête et ligne du toit lisibles ; retour de A-TOIT à son trait d’union acceptable."
+      "notes": "Ouverture de la Partie 2 et tableau des étages : premier en-tête et ligne du toit lisibles ; retour de A-TOIT à son trait d’union acceptable.",
+      "status": "pass"
     },
     {
       "page": 32,
@@ -426,7 +457,8 @@
       "png_sha256": "ae9ccbebe954d67f75dcf5ce9fc895faaa5a381ed0d45de82e5f7536690d8eed",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Tableau des étages A30 à A12 : en-tête répété, cinq colonnes lisibles, aucune ligne coupée ou débordante."
+      "notes": "Tableau des étages A30 à A12 : en-tête répété, cinq colonnes lisibles, aucune ligne coupée ou débordante.",
+      "status": "pass"
     },
     {
       "page": 33,
@@ -434,7 +466,8 @@
       "png_sha256": "4d191099fe714fa644cacbe28610fd57989980a7bb964d65288dca3742225b82",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Fin du tableau des étages puis titre Toit et premiers étages : en-tête répété, marges respectées et deux paragraphes sous la fiche du toit."
+      "notes": "Fin du tableau des étages puis titre Toit et premiers étages : en-tête répété, marges respectées et deux paragraphes sous la fiche du toit.",
+      "status": "pass"
     },
     {
       "page": 34,
@@ -442,7 +475,8 @@
       "png_sha256": "8de2eeca8ccfe8a8d86325a16ebb5b1e194fc5a0f4df6f058a0b25b7ea5373b0",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Fiches toit, restaurant et suites : paragraphes denses mais lisibles, dernier texte au-dessus du pied de page."
+      "notes": "Fiches toit, restaurant et suites : paragraphes denses mais lisibles, dernier texte au-dessus du pied de page.",
+      "status": "pass"
     },
     {
       "page": 35,
@@ -450,7 +484,8 @@
       "png_sha256": "096a13b9809c97cec8983951bb1a182959ce1407be46ca0a50ceed1fe6cfa47c",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Suites, archives et jardin d’enfants : sous-titres accompagnés, texte intégralement visible. Passage Samuel avant/après incident cohérent avec les deux états décrits."
+      "notes": "Suites, archives et jardin d’enfants : sous-titres accompagnés, texte intégralement visible. Passage Samuel avant/après incident cohérent avec les deux états décrits.",
+      "status": "pass"
     },
     {
       "page": 36,
@@ -458,7 +493,8 @@
       "png_sha256": "a150cd6c9fa461d8faaf872395c3145c2b558520eeca479f778eff71667344e0",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Écho de Bravo, spa et refuge : hiérarchie lisible. La section suivante et sa fiche A24 conservent un paragraphe complet avant la coupure."
+      "notes": "Écho de Bravo, spa et refuge : hiérarchie lisible. La section suivante et sa fiche A24 conservent un paragraphe complet avant la coupure.",
+      "status": "pass"
     },
     {
       "page": 37,
@@ -466,7 +502,8 @@
       "png_sha256": "1d8e41a937c9f9bd3e421811aef0fafb060a74383b023b7968945e7f36e97714",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Centre de congrès, exposition, boutiques et cuisine : espacements réguliers, aucune ligne ou glyphe tronqué."
+      "notes": "Centre de congrès, exposition, boutiques et cuisine : espacements réguliers, aucune ligne ou glyphe tronqué.",
+      "status": "pass"
     },
     {
       "page": 38,
@@ -474,7 +511,8 @@
       "png_sha256": "fc303a5e2d9d4cd8067e9bc7f145f7449828bec2933028d9246881f0b6770a56",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Cuisine, refuge logistique et résidences : bas de page respecté ; les variables du dernier étage restent sur la page."
+      "notes": "Cuisine, refuge logistique et résidences : bas de page respecté ; les variables du dernier étage restent sur la page.",
+      "status": "pass"
     },
     {
       "page": 39,
@@ -482,7 +520,8 @@
       "png_sha256": "83bed4c20c1eda981f43db73fd0b6cba08d6b23d73ac52478b47cb8c569f98e8",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Télécommunications, sport et refuge médical : sous-titres, paragraphes et marges propres."
+      "notes": "Télécommunications, sport et refuge médical : sous-titres, paragraphes et marges propres.",
+      "status": "pass"
     },
     {
       "page": 40,
@@ -490,7 +529,8 @@
       "png_sha256": "2f8687d955431f6ae4af28b060fe954911d0868f5ee6e19299166f567c5aee64",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Niveaux du secret : la fiche A11 en bas de page conserve son premier paragraphe ; aucun titre isolé."
+      "notes": "Niveaux du secret : la fiche A11 en bas de page conserve son premier paragraphe ; aucun titre isolé.",
+      "status": "pass"
     },
     {
       "page": 41,
@@ -498,7 +538,8 @@
       "png_sha256": "7f9d108720da9096b225c887c9c42f737ed9d307ee459d7dcf8f187378e1a557",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Salons, refuge technique, clinique et laboratoires : texte dense, coupures de paragraphes propres, aucune collision avec le pied."
+      "notes": "Salons, refuge technique, clinique et laboratoires : texte dense, coupures de paragraphes propres, aucune collision avec le pied.",
+      "status": "pass"
     },
     {
       "page": 42,
@@ -506,7 +547,8 @@
       "png_sha256": "5e554f79fda506f19b4bcf3165b5230674ac41aa65dd347c9047a63ded11d9d4",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Laboratoires, direction, liaison et refuge incendie : largeur de ligne régulière, ponctuation et accents corrects."
+      "notes": "Laboratoires, direction, liaison et refuge incendie : largeur de ligne régulière, ponctuation et accents corrects.",
+      "status": "pass"
     },
     {
       "page": 43,
@@ -514,7 +556,8 @@
       "png_sha256": "d6301c5493f0b0bd082dbc9bb64b92a7c573574c7295993f8b4d7abecb776b33",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Socle, musée, parking et hall : titres et paragraphes complets, dernière ligne éloignée du pied."
+      "notes": "Socle, musée, parking et hall : titres et paragraphes complets, dernière ligne éloignée du pied.",
+      "status": "pass"
     },
     {
       "page": 44,
@@ -522,7 +565,8 @@
       "png_sha256": "765ace7d438d77c2b2022923a4e4d6e7f4b04631a216fc5e7a415ea3c46f014c",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Accueil, terrasse et début de la traversée d’Hespérie : tous les titres sont suivis de texte ; dernière fiche et sa fin de paragraphe tiennent dans la page."
+      "notes": "Accueil, terrasse et début de la traversée d’Hespérie : tous les titres sont suivis de texte ; dernière fiche et sa fin de paragraphe tiennent dans la page.",
+      "status": "pass"
     },
     {
       "page": 45,
@@ -530,7 +574,8 @@
       "png_sha256": "f81100a1202ff1a4792f470deab762d88bfc852af1006b7f359042e5e37d3a98",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Fiches Hespérie et début des souterrains : titre de section, fiches S01/S02 et paragraphes lisibles, sans débordement."
+      "notes": "Fiches Hespérie et début des souterrains : titre de section, fiches S01/S02 et paragraphes lisibles, sans débordement.",
+      "status": "pass"
     },
     {
       "page": 46,
@@ -538,7 +583,8 @@
       "png_sha256": "a02eb3f4222d8cf60ab9ea68d92d6930b32a31abbcf7c09c27596a47a66c3978",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Sections S03–S07 et B01 lisibles ; titres accompagnés de texte, marges et pied de page nets."
+      "notes": "Sections S03–S07 et B01 lisibles ; titres accompagnés de texte, marges et pied de page nets.",
+      "status": "pass"
     },
     {
       "page": 47,
@@ -546,7 +592,8 @@
       "png_sha256": "7096bc93ad07b95036d97d1b5fef7acb451305ba6c8f95576966ae02396b836d",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Sections B02–B06 et entrée du seuil 666 ; caractères accentués corrects, aucun recouvrement."
+      "notes": "Sections B02–B06 et entrée du seuil 666 ; caractères accentués corrects, aucun recouvrement.",
+      "status": "pass"
     },
     {
       "page": 48,
@@ -554,7 +601,8 @@
       "png_sha256": "a13f6447873498d8b79a9a073f5c7b54096300b94f6b1b6f3d08c1c80bdb1ad9",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Tableau Mountain Hole de six lignes entièrement visible ; section 12 commence avec deux lignes avant continuation page 49."
+      "notes": "Tableau Mountain Hole de six lignes entièrement visible ; section 12 commence avec deux lignes avant continuation page 49.",
+      "status": "pass"
     },
     {
       "page": 49,
@@ -562,7 +610,8 @@
       "png_sha256": "7ad3a0b8ea0f4eea0e73cfb28188723365cf825b2c35c07706ab35815a15a681",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Continuation cohérente de la section 12 ; titres et liens internes lisibles, assemblages A30–A28 sans débordement."
+      "notes": "Continuation cohérente de la section 12 ; titres et liens internes lisibles, assemblages A30–A28 sans débordement.",
+      "status": "pass"
     },
     {
       "page": 50,
@@ -570,7 +619,8 @@
       "png_sha256": "7b614fa8a55a79c8f737d4b7d87a753ae61c29c9d2b4703831017e9cb4f033fb",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Assemblages A28–A23 ; séparation des paragraphes et titres régulière, fin de paragraphe poursuivie page suivante."
+      "notes": "Assemblages A28–A23 ; séparation des paragraphes et titres régulière, fin de paragraphe poursuivie page suivante.",
+      "status": "pass"
     },
     {
       "page": 51,
@@ -578,7 +628,8 @@
       "png_sha256": "fa5b5fe2c8e1867b416b0e08d9fde59158bab4515bad9d4092b95149fe2d26ed",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Continuation A23 puis A22–A18 ; paragraphes entiers ou continuation cohérente, marges régulières."
+      "notes": "Continuation A23 puis A22–A18 ; paragraphes entiers ou continuation cohérente, marges régulières.",
+      "status": "pass"
     },
     {
       "page": 52,
@@ -586,7 +637,8 @@
       "png_sha256": "6b180eae4bb8a6652b0bc8d39aa881cbaa054acd15fa4960afb7ce23aecf97fd",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Assemblages A17–A12 ; aucun titre isolé, accents et dimensions lisibles."
+      "notes": "Assemblages A17–A12 ; aucun titre isolé, accents et dimensions lisibles.",
+      "status": "pass"
     },
     {
       "page": 53,
@@ -594,7 +646,8 @@
       "png_sha256": "899f5e95570bdfb24b23fb0195038e4d0a52ad6471668a104621750f686e0d9c",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Continuation A12 puis A11–A07 ; aucune coupure de mot, collision de texte ou intrusion dans le pied."
+      "notes": "Continuation A12 puis A11–A07 ; aucune coupure de mot, collision de texte ou intrusion dans le pied.",
+      "status": "pass"
     },
     {
       "page": 54,
@@ -602,7 +655,8 @@
       "png_sha256": "b89ab1bf87cf12759da675d965f9d01e6df83727cca54c0f64f077235bdddde9",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Assemblages A06–A01 ; A01 conserve son premier paragraphe avec le titre."
+      "notes": "Assemblages A06–A01 ; A01 conserve son premier paragraphe avec le titre.",
+      "status": "pass"
     },
     {
       "page": 55,
@@ -610,7 +664,8 @@
       "png_sha256": "83a4aa7a3f0b2e98b174a53ebde43e30da19d8fb527a541b27da98e3f978e72b",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Fin du catalogue et ordre de production ; espace libre de fin de chapitre, pas de contenu tronqué."
+      "notes": "Fin du catalogue et ordre de production ; espace libre de fin de chapitre, pas de contenu tronqué.",
+      "status": "pass"
     },
     {
       "page": 56,
@@ -618,7 +673,8 @@
       "png_sha256": "939ef14edf872564e3ae348ffcf254075426df867480ce88548d16d8ac178589",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Ouverture Annexe A nette ; texte technique et liens lisibles, dernière ligne dégagée du pied."
+      "notes": "Ouverture Annexe A nette ; texte technique et liens lisibles, dernière ligne dégagée du pied.",
+      "status": "pass"
     },
     {
       "page": 57,
@@ -626,7 +682,8 @@
       "png_sha256": "0757928548fbafbbaf5621998f94a8fc4d8977abf2f5280ca68d383630ed119e",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Tableau complet des champs de génération ; colonnes et quatorze lignes entièrement visibles, pas de clipping."
+      "notes": "Tableau complet des champs de génération ; colonnes et quatorze lignes entièrement visibles, pas de clipping.",
+      "status": "pass"
     },
     {
       "page": 58,
@@ -634,7 +691,8 @@
       "png_sha256": "8363122937d4b93a2e872901b257bed5b13a2ef4dc16e0e265bce0f8a202ccfc",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Grand tableau des invariants à six colonnes ; retours à la ligne conservés dans les cellules et bas du tableau net."
+      "notes": "Grand tableau des invariants à six colonnes ; retours à la ligne conservés dans les cellules et bas du tableau net.",
+      "status": "pass"
     },
     {
       "page": 59,
@@ -642,7 +700,8 @@
       "png_sha256": "bb3bab7f22cc60d76420c24ebc6f517b078e7882c9e41f15962c5dbcb794acfa",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Événement et reproductibilité ; signatures de code et lien long lisibles dans les marges."
+      "notes": "Événement et reproductibilité ; signatures de code et lien long lisibles dans les marges.",
+      "status": "pass"
     },
     {
       "page": 60,
@@ -650,7 +709,8 @@
       "png_sha256": "1b10dcea4df76717486231491db61357b6479c27824d7fc3f23fc5cec9d976b6",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Commandes de test et liste numérotée en cinq passes lisibles ; paragraphes et retraits cohérents."
+      "notes": "Commandes de test et liste numérotée en cinq passes lisibles ; paragraphes et retraits cohérents.",
+      "status": "pass"
     },
     {
       "page": 61,
@@ -658,7 +718,8 @@
       "png_sha256": "74964b09a19ed4f8f7e1544b65c772c852a8354ec6dcf1ca7f1ba9c89ac0d094",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Contraintes et stockage des checkpoints ; nombreux identifiants techniques lisibles, liens et pieds dégagés."
+      "notes": "Contraintes et stockage des checkpoints ; nombreux identifiants techniques lisibles, liens et pieds dégagés.",
+      "status": "pass"
     },
     {
       "page": 62,
@@ -666,7 +727,8 @@
       "png_sha256": "5cfc3db3a556a5a9f2b5f0ee7797e182e36ea08da66b05d4c1002c4e853b0c73",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Tableau des migrations complet et non tronqué ; transitions vers sauvegarde de campagne correctes."
+      "notes": "Tableau des migrations complet et non tronqué ; transitions vers sauvegarde de campagne correctes.",
+      "status": "pass"
     },
     {
       "page": 63,
@@ -674,7 +736,8 @@
       "png_sha256": "e147db7d46ba5b000eafb6d1cd8557bda8e6628afa94a13b07b69982b0e0f1dc",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Annexe B ; titre long dans les marges, tableau d’architecture interrompu entre deux lignes entières."
+      "notes": "Annexe B ; titre long dans les marges, tableau d’architecture interrompu entre deux lignes entières.",
+      "status": "pass"
     },
     {
       "page": 64,
@@ -682,7 +745,8 @@
       "png_sha256": "c643424d4f7c8bba121e7dde6de13ec6c4193e9e45566356db534280fab1745e",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Suite du tableau avec en-tête répété ; texte d’architecture et API d’arrivée entièrement lisibles."
+      "notes": "Suite du tableau avec en-tête répété ; texte d’architecture et API d’arrivée entièrement lisibles.",
+      "status": "pass"
     },
     {
       "page": 65,
@@ -690,7 +754,8 @@
       "png_sha256": "9c26c3476346c4efc893e86ba2b6ce52ea3dccf0d8c7247628bb4d9e86e9e3dd",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Suite cohérente de page 64 ; équation de hauteur, identifiants et liens bien rendus."
+      "notes": "Suite cohérente de page 64 ; équation de hauteur, identifiants et liens bien rendus.",
+      "status": "pass"
     },
     {
       "page": 66,
@@ -698,7 +763,8 @@
       "png_sha256": "3bbaf2e844ba40f3dbc177f95f7510c1ced7e3fdd78572913d68de99cf11b82e",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Incident, air et perception ; titre Unreal de fin de page suivi de son paragraphe introductif."
+      "notes": "Incident, air et perception ; titre Unreal de fin de page suivi de son paragraphe introductif.",
+      "status": "pass"
     },
     {
       "page": 67,
@@ -706,7 +772,8 @@
       "png_sha256": "d6cf5da81e87227123d5dfda2ca69fe80de84114f8485e9aaab74ff2268284b4",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Tableau des classes UE5 lisible, identifiants longs dans leur colonne ; liens et portage du rappel bien espacés."
+      "notes": "Tableau des classes UE5 lisible, identifiants longs dans leur colonne ; liens et portage du rappel bien espacés.",
+      "status": "pass"
     },
     {
       "page": 68,
@@ -714,7 +781,8 @@
       "png_sha256": "cacd811cd23f39d90aba29f6cfd16d48e0194c50f54a1b4f822f535a52663d36",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Sections streaming, procédural et sauvegarde ; aucun chevauchement malgré une page dense."
+      "notes": "Sections streaming, procédural et sauvegarde ; aucun chevauchement malgré une page dense.",
+      "status": "pass"
     },
     {
       "page": 69,
@@ -722,7 +790,8 @@
       "png_sha256": "98fa957c06d811398f086aa067b28d763041423d386a0f9c247a2984541878eb",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Tableau des jalons entièrement visible, avec lignes non coupées et marge au-dessus du pied."
+      "notes": "Tableau des jalons entièrement visible, avec lignes non coupées et marge au-dessus du pied.",
+      "status": "pass"
     },
     {
       "page": 70,
@@ -730,7 +799,8 @@
       "png_sha256": "7a3930ef5b06c8dcab18cfd33b7bb170794836e49f362ca60a11cb33f011250e",
       "result": "pass",
       "method": "Final modified page individually reinspected by /root/v05_world after interaction clarification; byte-identical to approved render.",
-      "notes": "Mission interaction clarification is readable on four lines; no clipping, correct folio70/127; expected chapter-end whitespace."
+      "notes": "Mission interaction clarification is readable on four lines; no clipping, correct folio70/127; expected chapter-end whitespace.",
+      "status": "pass"
     },
     {
       "page": 71,
@@ -738,7 +808,8 @@
       "png_sha256": "8c2af6359fef2df951d75d415233314a315d0cb4ccdf3a1dc3b0fcab7063a32a",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Ouverture Annexe C et tableau de périmètre lisibles ; titre et version dans les marges."
+      "notes": "Ouverture Annexe C et tableau de périmètre lisibles ; titre et version dans les marges.",
+      "status": "pass"
     },
     {
       "page": 72,
@@ -746,7 +817,8 @@
       "png_sha256": "c7faa9d7139c71f66bff1cfeca4e583a16b82f6892694b04e63dda036252aa9f",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Géographie et étapes 1–6 ; hiérarchie et retraits de liste corrects, étape 7 renvoyée entière."
+      "notes": "Géographie et étapes 1–6 ; hiérarchie et retraits de liste corrects, étape 7 renvoyée entière.",
+      "status": "pass"
     },
     {
       "page": 73,
@@ -754,7 +826,8 @@
       "png_sha256": "f30b6f615be6651243259760006258af92e68f9a54d6238b5b55fe667a3eef3b",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Suite de liste puis tableau des cinq phases ; colonnes lisibles et tableau complet."
+      "notes": "Suite de liste puis tableau des cinq phases ; colonnes lisibles et tableau complet.",
+      "status": "pass"
     },
     {
       "page": 74,
@@ -762,7 +835,8 @@
       "png_sha256": "a0f02ed5171f66268a041749e2fa54edc6ff1358f0b58b1b6e77d2c673aa8637",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Tableau d’acting complet ; tableau radio commence avec son en-tête et deux lignes entières."
+      "notes": "Tableau d’acting complet ; tableau radio commence avec son en-tête et deux lignes entières.",
+      "status": "pass"
     },
     {
       "page": 75,
@@ -770,7 +844,8 @@
       "png_sha256": "471cf9f2c0c95b86edba812972d4be0b4f52fe53edc281e96b68b421a6ca1b0d",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Suite radio avec en-tête répété ; toutes les lignes et guillemets français lisibles, paragraphe final continué proprement."
+      "notes": "Suite radio avec en-tête répété ; toutes les lignes et guillemets français lisibles, paragraphe final continué proprement.",
+      "status": "pass"
     },
     {
       "page": 76,
@@ -778,7 +853,8 @@
       "png_sha256": "a6321e41982485b60d9311e19853f6e809f3f2ceaf77c47ececb3af23fa6677c",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Tableau des conséquences complet ; tableau de sauvegarde commence avec deux lignes et conserve ses cellules."
+      "notes": "Tableau des conséquences complet ; tableau de sauvegarde commence avec deux lignes et conserve ses cellules.",
+      "status": "pass"
     },
     {
       "page": 77,
@@ -786,7 +862,8 @@
       "png_sha256": "60b8d12f7277f1164081c290f2b7567d324f52fb19924c5b4e3aaab1f0a3fc79",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Suite du tableau de sauvegarde avec en-tête répété ; sections 10 et 11 accompagnées de texte."
+      "notes": "Suite du tableau de sauvegarde avec en-tête répété ; sections 10 et 11 accompagnées de texte.",
+      "status": "pass"
     },
     {
       "page": 78,
@@ -794,7 +871,8 @@
       "png_sha256": "cf0661726f9388407daa12a9c4686f16fa25a92c8376a69d04586cff2e428416",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Fin Annexe C et liste des critères ; puces alignées et retours corrects, aucun caractère manquant."
+      "notes": "Fin Annexe C et liste des critères ; puces alignées et retours corrects, aucun caractère manquant.",
+      "status": "pass"
     },
     {
       "page": 79,
@@ -802,7 +880,8 @@
       "png_sha256": "03b70db5a21b9766e545d2ddf482c6965b709761cb5f1274f7252aa656b8a442",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Ouverture Annexe D ; long titre dans la largeur, tableau des responsabilités complet."
+      "notes": "Ouverture Annexe D ; long titre dans la largeur, tableau des responsabilités complet.",
+      "status": "pass"
     },
     {
       "page": 80,
@@ -810,7 +889,8 @@
       "png_sha256": "07f93c9bfa015792c16d797f5d002beb3a480d5bb2b70465e7fef0b32af0044e",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Repli de Bravo, réception et sous-titres ; tableau nominatif complet et API lisible."
+      "notes": "Repli de Bravo, réception et sous-titres ; tableau nominatif complet et API lisible.",
+      "status": "pass"
     },
     {
       "page": 81,
@@ -818,7 +898,8 @@
       "png_sha256": "eb14964297a2c4315bfb0d2663ec2d0a690a29f3a4ec4424244ba6233126acb4",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Tableau radio et journal lisibles ; titre Écho facultatif suivi de son premier paragraphe."
+      "notes": "Tableau radio et journal lisibles ; titre Écho facultatif suivi de son premier paragraphe.",
+      "status": "pass"
     },
     {
       "page": 82,
@@ -826,7 +907,8 @@
       "png_sha256": "c9953251a007be66f0bd60dbf3ba63f445361e6cb023073c590697508fa35624",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Deux tableaux complets ; titre Direction de doublage reste avec trois lignes de texte avant la page suivante."
+      "notes": "Deux tableaux complets ; titre Direction de doublage reste avec trois lignes de texte avant la page suivante.",
+      "status": "pass"
     },
     {
       "page": 83,
@@ -834,7 +916,8 @@
       "png_sha256": "5042f575694416aaf02a23976b3a48d5d3b3179491db4795b402516c57191e45",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Fin Annexe D avec références lisibles ; espace libre de fin d’annexe sans contenu manquant."
+      "notes": "Fin Annexe D avec références lisibles ; espace libre de fin d’annexe sans contenu manquant.",
+      "status": "pass"
     },
     {
       "page": 84,
@@ -842,7 +925,8 @@
       "png_sha256": "60aca90bde5113c152dda3ce06e0df3900b9683e49de003dec5d1d0e1fd2da6f",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Annexe E ; titre, ligne de version longue et conventions des fiches entièrement lisibles."
+      "notes": "Annexe E ; titre, ligne de version longue et conventions des fiches entièrement lisibles.",
+      "status": "pass"
     },
     {
       "page": 85,
@@ -850,7 +934,8 @@
       "png_sha256": "f601a235ca5dad3652a25cf6071708638458163d79b0d8cf099c37841b566b0e",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Fiches P01–P04 ; niveaux de gras cohérents, chiffres et dimensions corrects, aucun clipping."
+      "notes": "Fiches P01–P04 ; niveaux de gras cohérents, chiffres et dimensions corrects, aucun clipping.",
+      "status": "pass"
     },
     {
       "page": 86,
@@ -858,7 +943,8 @@
       "png_sha256": "2095708e308d069802f851de9ed5020448f10ef942b4ba0ef255fba5d29bc5cd",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Fiches P05–P08 ; titres avec contenu, signe degré et valeurs numériques lisibles."
+      "notes": "Fiches P05–P08 ; titres avec contenu, signe degré et valeurs numériques lisibles.",
+      "status": "pass"
     },
     {
       "page": 87,
@@ -866,7 +952,8 @@
       "png_sha256": "024d77beaaae3b8821d630b85a0fccf864645b4ab2d9a9ea8d38e25a6dc780fc",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Fiches P09–P12 complètes ; espacements, graisse et accents cohérents."
+      "notes": "Fiches P09–P12 complètes ; espacements, graisse et accents cohérents.",
+      "status": "pass"
     },
     {
       "page": 88,
@@ -874,7 +961,8 @@
       "png_sha256": "2a6c55f54f3172f5f81d510b6b0a6dc40f417cd620f1006767825aff4a404688",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Fiches P13–P16 ; rubriques et dimensions sans chevauchement, dernier paragraphe complet."
+      "notes": "Fiches P13–P16 ; rubriques et dimensions sans chevauchement, dernier paragraphe complet.",
+      "status": "pass"
     },
     {
       "page": 89,
@@ -882,7 +970,8 @@
       "png_sha256": "880113f97a537dbd27f8dac6684596113765f60373e4c90139ea6071342075c6",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Fiches P17–P21 ; P21 commence avec son premier paragraphe, sans titre isolé."
+      "notes": "Fiches P17–P21 ; P21 commence avec son premier paragraphe, sans titre isolé.",
+      "status": "pass"
     },
     {
       "page": 90,
@@ -890,7 +979,8 @@
       "png_sha256": "4f446bcd7ff46a18d9e09e2f7cd63406cd2f7e934dfc9857a1d3ff6745cfc12e",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Suite P21 puis P22–P24 ; transition Mobilier et traces de vie nette, textes et pieds sans clipping."
+      "notes": "Suite P21 puis P22–P24 ; transition Mobilier et traces de vie nette, textes et pieds sans clipping.",
+      "status": "pass"
     },
     {
       "page": 91,
@@ -898,7 +988,8 @@
       "png_sha256": "b3c846684458256bd39638086c126b47bdf76dd8875b3ec7610c3fc167062b12",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 92,
@@ -906,7 +997,8 @@
       "png_sha256": "1537650e0dd73f18ec36d04cac6c801296f8fbdd341bc0fc5f9c9e374888d3c6",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 93,
@@ -914,7 +1006,8 @@
       "png_sha256": "4291c558ef9537e319dc9c204dca8623f44bbf4bfda8c5c89ad359fd2148bb54",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 94,
@@ -922,7 +1015,8 @@
       "png_sha256": "ea7b621ec6d9a37bffc8241348f65ebf08a22444b2985c6b994fee07f4e51dc4",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "P38 consultation précisée ; dimensions, paragraphes et pied de page propres."
+      "notes": "P38 consultation précisée ; dimensions, paragraphes et pied de page propres.",
+      "status": "pass"
     },
     {
       "page": 95,
@@ -930,7 +1024,8 @@
       "png_sha256": "92d43e0256dec3140b14391db088281aaf545b9722343cfd41523d0d676d014f",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 96,
@@ -938,7 +1033,8 @@
       "png_sha256": "e46d4d9e1ceceff35e92aa90cd413149c65207ebf47d6b06b51c282d6a40f601",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 97,
@@ -946,7 +1042,8 @@
       "png_sha256": "2907c936bb18e46d42bbf1a63ea53b18178aef8f29e41da9d5230dda4d9aa7bc",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 98,
@@ -954,7 +1051,8 @@
       "png_sha256": "35a0584dc0ad3e4f60a4ad7265d587939c3b9421b05dae1687f899e8d2fddbbb",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Table des douze observations : colonnes rééquilibrées, Niveau entier, toutes les lignes lisibles."
+      "notes": "Table des douze observations : colonnes rééquilibrées, Niveau entier, toutes les lignes lisibles.",
+      "status": "pass"
     },
     {
       "page": 99,
@@ -962,7 +1060,8 @@
       "png_sha256": "3cb026d5327bd0e31b9c71f94070333952b382fc75c6637916c92a83b7e8617c",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Conditions de consultation, pauses et continuité ; paragraphes sans clipping et pied dégagé."
+      "notes": "Conditions de consultation, pauses et continuité ; paragraphes sans clipping et pied dégagé.",
+      "status": "pass"
     },
     {
       "page": 100,
@@ -970,7 +1069,8 @@
       "png_sha256": "2074fdf4afb26cae5d055f96903afdfb2ff72047fbb74819e9a4fde39fd21c7e",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Fin de l’annexe props ; liens et références visibles, blanc de fin de chapitre attendu."
+      "notes": "Fin de l’annexe props ; liens et références visibles, blanc de fin de chapitre attendu.",
+      "status": "pass"
     },
     {
       "page": 101,
@@ -978,7 +1078,8 @@
       "png_sha256": "d73c65a406dcd50219bf0798dd8836a99003784d91bf84ea96365ea6f9cbfee0",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 102,
@@ -986,7 +1087,8 @@
       "png_sha256": "b716c792d4822911ce7d935a4654e3e8c1f9ee714266fb4856b794a561ccce9b",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 103,
@@ -994,7 +1096,8 @@
       "png_sha256": "6cb002754ac50f032eccaa68a0ce7316c4c850e9549067849bec04720c287e62",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 104,
@@ -1002,7 +1105,8 @@
       "png_sha256": "d49c2de25e1195b8a20327de9b6abe0eb577e677001cc41d312a5a9acb863a91",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 105,
@@ -1010,7 +1114,8 @@
       "png_sha256": "0009ed93b2f199485d6c1fa91ca2af23ba9d0450c827bcfa313d0799f15f15fd",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 106,
@@ -1018,7 +1123,8 @@
       "png_sha256": "ef3b5b19f14240e4f2cf51036178116788e741dcea3286f430cbf4d8500e3ede",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 107,
@@ -1026,7 +1132,8 @@
       "png_sha256": "b921b0ae90687a2146fa23a9cc6810cf0c76c96fe791ec25c99a8e09ca868613",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 108,
@@ -1034,7 +1141,8 @@
       "png_sha256": "975ce17291fa4158cbd1c09119f7267f5e931c0b120f5638f4382fca67c57d86",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 109,
@@ -1042,7 +1150,8 @@
       "png_sha256": "6241db55f9bc5aa8500130c8a0086d283bcee932a3447fcba382c92c219e2db7",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 110,
@@ -1050,7 +1159,8 @@
       "png_sha256": "06f1998af1ba1402a9d4fee0350344d11afad695429f3791cd6bd058f3a430be",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 111,
@@ -1058,7 +1168,8 @@
       "png_sha256": "ef97b4cdeaa2831dd686f70540357e04754bade15bd5cc03b7644c3fcdfc1f90",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 112,
@@ -1066,7 +1177,8 @@
       "png_sha256": "9a2f6db56dbb5bc2303e2d9e836e4d3ad57536ae552c7d6f01a5924f01a5c6ae",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Tableaux des quatre plans et des événements de la dépose ; textes et durées lisibles."
+      "notes": "Tableaux des quatre plans et des événements de la dépose ; textes et durées lisibles.",
+      "status": "pass"
     },
     {
       "page": 113,
@@ -1074,7 +1186,8 @@
       "png_sha256": "6b81c6fa50745e070fcb80b5c3e7f960b75048a9479ba4de067fd09026d601f9",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "En-tête de table répété et chronologie ; paragraphes et transmissions exactes lisibles."
+      "notes": "En-tête de table répété et chronologie ; paragraphes et transmissions exactes lisibles.",
+      "status": "pass"
     },
     {
       "page": 114,
@@ -1082,7 +1195,8 @@
       "png_sha256": "41302c27b93d7359d10e31ce242df0881b873e0fc214451264ce5563aee00ebf",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Sauvetage et effondrement ; titres accompagnés de texte, marges propres."
+      "notes": "Sauvetage et effondrement ; titres accompagnés de texte, marges propres.",
+      "status": "pass"
     },
     {
       "page": 115,
@@ -1090,7 +1204,8 @@
       "png_sha256": "ceb8095d7d1d49277c894ebec8a9bb3d9a4b8fca817b11a4d79090b44f3bb15a",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Écho, refuge et campagne ; séparation des états livrés et cibles claire."
+      "notes": "Écho, refuge et campagne ; séparation des états livrés et cibles claire.",
+      "status": "pass"
     },
     {
       "page": 116,
@@ -1098,7 +1213,8 @@
       "png_sha256": "76984d533ab032f8c990390d34ad3e4b17e1c6ae71abf9e41cca8a08bffe4a61",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Scènes futures ; titres et blocs sans débordement."
+      "notes": "Scènes futures ; titres et blocs sans débordement.",
+      "status": "pass"
     },
     {
       "page": 117,
@@ -1106,7 +1222,8 @@
       "png_sha256": "692dc22ca2c709d1412be8a46fb1e9af44572a383ffd76fefe0cd3017dda67ab",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 118,
@@ -1114,7 +1231,8 @@
       "png_sha256": "e051084704d7c912afdb67956630623c5a7955d6b188555bd87359048cb80dc8",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 119,
@@ -1122,7 +1240,8 @@
       "png_sha256": "de57889836f602442595e79650baf7bac32f073cc22f6c191d9908f049af7da2",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 120,
@@ -1130,7 +1249,8 @@
       "png_sha256": "fe22febbc56ec529743122fa79be341b75a09b1146def34ae69e2a27d8cc2675",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Interaction de mission précisée ; tableau absent, paragraphes lisibles."
+      "notes": "Interaction de mission précisée ; tableau absent, paragraphes lisibles.",
+      "status": "pass"
     },
     {
       "page": 121,
@@ -1138,7 +1258,8 @@
       "png_sha256": "72a50e0e8a7124224435df1547c7f2d0afb850ed79814c22949e24879e0294e8",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 122,
@@ -1146,7 +1267,8 @@
       "png_sha256": "6646662ec5e0cdd526232e4ac84b8e877c802cd13c36a23d3684cd882efb6378",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 123,
@@ -1154,7 +1276,8 @@
       "png_sha256": "ddceada0bed2e115b89f1054deddd3b099f28cfc18b5cecb3d734bab5c07f06f",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 124,
@@ -1162,7 +1285,8 @@
       "png_sha256": "51ef78663c1070e8efe07c9770d110528c058685e28f7f66cebdfcd1311f14e0",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 125,
@@ -1170,7 +1294,8 @@
       "png_sha256": "e5dc92de76bb9228efe07d8dd1fdcb8b0ac63b6b336c823752554fb6bae8c0e6",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 126,
@@ -1178,7 +1303,8 @@
       "png_sha256": "97582d566a0b8a5837df8a30eb06c6c6bfdb821125f0f3d80c6b1ef867ec311d",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté."
+      "notes": "Page complète inspectée : titres, paragraphes, tableaux éventuels, marges et pied lisibles ; aucun débordement constaté.",
+      "status": "pass"
     },
     {
       "page": 127,
@@ -1186,7 +1312,8 @@
       "png_sha256": "6f1784f6b547f4d45d5049431783e24faa55da20350622c05712a02b9c72b840",
       "result": "pass",
       "method": "Native PNG individually inspected; final PNG byte-identical to inspected image.",
-      "notes": "Références finales ; espace libre de fin d’annexe attendu, folio127/127."
+      "notes": "Références finales ; espace libre de fin d’annexe attendu, folio127/127.",
+      "status": "pass"
     }
   ],
   "unresolved_findings": []

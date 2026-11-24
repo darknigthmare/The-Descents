@@ -1,0 +1,191 @@
+{
+  "version": "0.5.0",
+  "exported_utc": "2026-11-24T20:22:33.384342+00:00",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "captured_source_commit": "08e8cb998194921f93a6e34fd54b898f14427533",
+  "source_verification_sha256": "aa580148d90e21b47c540e1648fb4eb84a5af9076cd703967fda7d7499abe7ad",
+  "runtime_sha256_before": {
+    "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
+    "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
+    "prototype/assets/audio/impact.wav": "e831204acdc889fa5b57a95b21edc8044748415342018720969cd6a589d58050",
+    "prototype/assets/audio/intro_sting.wav": "7920665fc873ca41cba6417e327d99f7229606634b64f2efd729b617a8c48571",
+    "prototype/assets/audio/menu_theme.wav": "42708f055e4aae61a48b07b9f6e67a3e02c7f82aade78f0907a15781478bb4a6",
+    "prototype/assets/audio/quake.wav": "869aaff278eaa264f9dfbe19801a09000d987cb9b316691876e52114f6e497b1",
+    "prototype/assets/audio/radio.wav": "7b5e25100bbd0738037ce091772325ece3ec9326c528d8e7593ee3d4ef7ade38",
+    "prototype/assets/audio/rescue.wav": "404c60cefad1f258166211024dfdbf402a0051d168efc906268afe3867bdae98",
+    "prototype/assets/audio/rotors.wav": "77fb4dcdf4248efd884ffe45c5ffad6315806f911577d51c3b9522dd38bcc78a",
+    "prototype/assets/audio/rumble.wav": "bc0e349c7dbda51573308c738b8e15c49c35d7ea4bcd2b91f07b19a81b91ebd2",
+    "prototype/assets/audio/wind.wav": "e552edccc315de23a83114a6d43dfdc6ab347b925d05fa8839d0cdfda179511e",
+    "prototype/assets/fonts/LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "prototype/assets/fonts/NOTICE.txt": "94d4b78643f99d7cfa872145b38da578299f401405ca5cba66a5c95bf13933b0",
+    "prototype/assets/fonts/OpenSans-CondBold.ttf": "a859a438018739aee16c306586d91a453c208ee500c827d9e9aa063155c8a6e8",
+    "prototype/assets/fonts/OpenSans-Light.ttf": "cf5f5184c1441a1660aa52526328e9d5c2793e77b6d8d3a3ad654bdb07ab8424",
+    "prototype/assets/fonts/OpenSans-Regular.ttf": "e64e508b2aa2880f907e470c4550980ec4c0694d103a43f36150ac3f93189bee",
+    "prototype/assets/icon.svg": "6d3e2c2f34057f8c2d0c0381ba25a1a288a7145b28f17f4d4cbcdeba31c7351e",
+    "prototype/assets/ui/studio_mark.svg": "c452e38192adda61ef9cebfefe9759ef850e35f9b248a09a17ad818dd4e20835",
+    "prototype/export_presets.cfg": "7f3bdbfde7ff38421077283b9ee723f423b612feaf54f932dcdc648f5dea113b",
+    "prototype/project.godot": "a0a0d60e5edf52eedbeac208fa01abc087334560ca9ddab30cc762da4e60f845",
+    "prototype/scenes/main.tscn": "db52bbe7b5a1df4d839ec4f721a1f09faa8272e35c387b097fa2c5b1b4ac6937",
+    "prototype/scripts/cinematic_director.gd": "f36d2115a0461a2993954f3e8ce9090f57ef39fdc0b2e3c6cc2a5c40a4dad3be",
+    "prototype/scripts/cinematic_overlay.gd": "e787a4271fcdf60f2f52aa97ba6ebf50e185dec25fe8565fbc770b6069b3856f",
+    "prototype/scripts/collapse_director.gd": "3d9dce62a1b99c68aba41dc7f447a1ced40041ab64f2fb07f16802af5cdd8ee7",
+    "prototype/scripts/field_props.gd": "9770895f7dc598b6c1fd70c9185df9900f974d64fcbe2fb7bb1804009224932b",
+    "prototype/scripts/floor_generator.gd": "0ae0f3e796e0e219fb505ba688488661848434c5fc4e46278b030a257f399779",
+    "prototype/scripts/frontend_menu.gd": "db6c7a114c439a62a1eef73698d133e8132a7bae315add92bb9e456687a63ca7",
+    "prototype/scripts/hud.gd": "312fbc5e590a52e72ed3dedcd1d8df368c988ce8d41a9e47f476c2193a575f2c",
+    "prototype/scripts/inspection_panel.gd": "37c8c06327a8e97f955381bd36564eddabb686bd053e0af1b99c2b7895d49cbd",
+    "prototype/scripts/main.gd": "94b8acba59a52893206b8763e367f6ecc32a0c65a2186b60c721a0a2cb5768e8",
+    "prototype/scripts/player_controller.gd": "01aac4987d886947fb015d931e2cb5d38c70b82cac11a9ab74abe4ee42f9b226",
+    "prototype/scripts/preferences_store.gd": "e94ee2d775d4ccb62654cc8ca0535506d05547eae713c1eadfcac7f3fb8eb6f4",
+    "prototype/scripts/presentation_geometry.gd": "1d1b52a483221eb98b477fd9e90b3aeaf42fe6a87af26abf8730cf9ccfa890db",
+    "prototype/scripts/radio_director.gd": "0c3d64be528a11db8df32ca9f6afcc5ed1bd228744f28740c56ef377b9b07dab",
+    "prototype/scripts/save_store.gd": "ed87d04c40e67798f3962aa96dd5da66d0d52c18f3d301924028c67e5732e6dc",
+    "prototype/scripts/world_builder.gd": "37f8d6a2f6cf820500d8ab6a2fef20a3e02671ac1bdd8db63ac03ddfc2c8a5c2",
+    "prototype/shaders/cinematic_veil.gdshader": "1aa18255935f3c9ab0d3ebb2ee49dea18d32828d21eac67eeaaf0f22a8cdfb0e",
+    "prototype/shaders/rotor_wash.gdshader": "8a59b620e99331970aef867ec4c847d27094eda1e7fed6a7b6bdcfe9b8ce8866",
+    "prototype/shaders/water.gdshader": "ae0c484fc306f439d97e08a9b3d26db4894751bb96f0dbbe40f2e6336788aff6",
+    "prototype/shaders/weathered_surface.gdshader": "e71f62962863bc3e3fe64e73c1b2b53098ec2c354eb46464a32eba0db0a62d3d",
+    "prototype/web_shell.html": "2153408b1c07a7cdac170f9f87fdb99617fd61f82c523902a11658e17d2e54fd"
+  },
+  "runtime_sha256_after": {
+    "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
+    "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
+    "prototype/assets/audio/impact.wav": "e831204acdc889fa5b57a95b21edc8044748415342018720969cd6a589d58050",
+    "prototype/assets/audio/intro_sting.wav": "7920665fc873ca41cba6417e327d99f7229606634b64f2efd729b617a8c48571",
+    "prototype/assets/audio/menu_theme.wav": "42708f055e4aae61a48b07b9f6e67a3e02c7f82aade78f0907a15781478bb4a6",
+    "prototype/assets/audio/quake.wav": "869aaff278eaa264f9dfbe19801a09000d987cb9b316691876e52114f6e497b1",
+    "prototype/assets/audio/radio.wav": "7b5e25100bbd0738037ce091772325ece3ec9326c528d8e7593ee3d4ef7ade38",
+    "prototype/assets/audio/rescue.wav": "404c60cefad1f258166211024dfdbf402a0051d168efc906268afe3867bdae98",
+    "prototype/assets/audio/rotors.wav": "77fb4dcdf4248efd884ffe45c5ffad6315806f911577d51c3b9522dd38bcc78a",
+    "prototype/assets/audio/rumble.wav": "bc0e349c7dbda51573308c738b8e15c49c35d7ea4bcd2b91f07b19a81b91ebd2",
+    "prototype/assets/audio/wind.wav": "e552edccc315de23a83114a6d43dfdc6ab347b925d05fa8839d0cdfda179511e",
+    "prototype/assets/fonts/LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "prototype/assets/fonts/NOTICE.txt": "94d4b78643f99d7cfa872145b38da578299f401405ca5cba66a5c95bf13933b0",
+    "prototype/assets/fonts/OpenSans-CondBold.ttf": "a859a438018739aee16c306586d91a453c208ee500c827d9e9aa063155c8a6e8",
+    "prototype/assets/fonts/OpenSans-Light.ttf": "cf5f5184c1441a1660aa52526328e9d5c2793e77b6d8d3a3ad654bdb07ab8424",
+    "prototype/assets/fonts/OpenSans-Regular.ttf": "e64e508b2aa2880f907e470c4550980ec4c0694d103a43f36150ac3f93189bee",
+    "prototype/assets/icon.svg": "6d3e2c2f34057f8c2d0c0381ba25a1a288a7145b28f17f4d4cbcdeba31c7351e",
+    "prototype/assets/ui/studio_mark.svg": "c452e38192adda61ef9cebfefe9759ef850e35f9b248a09a17ad818dd4e20835",
+    "prototype/export_presets.cfg": "7f3bdbfde7ff38421077283b9ee723f423b612feaf54f932dcdc648f5dea113b",
+    "prototype/project.godot": "a0a0d60e5edf52eedbeac208fa01abc087334560ca9ddab30cc762da4e60f845",
+    "prototype/scenes/main.tscn": "db52bbe7b5a1df4d839ec4f721a1f09faa8272e35c387b097fa2c5b1b4ac6937",
+    "prototype/scripts/cinematic_director.gd": "f36d2115a0461a2993954f3e8ce9090f57ef39fdc0b2e3c6cc2a5c40a4dad3be",
+    "prototype/scripts/cinematic_overlay.gd": "e787a4271fcdf60f2f52aa97ba6ebf50e185dec25fe8565fbc770b6069b3856f",
+    "prototype/scripts/collapse_director.gd": "3d9dce62a1b99c68aba41dc7f447a1ced40041ab64f2fb07f16802af5cdd8ee7",
+    "prototype/scripts/field_props.gd": "9770895f7dc598b6c1fd70c9185df9900f974d64fcbe2fb7bb1804009224932b",
+    "prototype/scripts/floor_generator.gd": "0ae0f3e796e0e219fb505ba688488661848434c5fc4e46278b030a257f399779",
+    "prototype/scripts/frontend_menu.gd": "db6c7a114c439a62a1eef73698d133e8132a7bae315add92bb9e456687a63ca7",
+    "prototype/scripts/hud.gd": "312fbc5e590a52e72ed3dedcd1d8df368c988ce8d41a9e47f476c2193a575f2c",
+    "prototype/scripts/inspection_panel.gd": "37c8c06327a8e97f955381bd36564eddabb686bd053e0af1b99c2b7895d49cbd",
+    "prototype/scripts/main.gd": "94b8acba59a52893206b8763e367f6ecc32a0c65a2186b60c721a0a2cb5768e8",
+    "prototype/scripts/player_controller.gd": "01aac4987d886947fb015d931e2cb5d38c70b82cac11a9ab74abe4ee42f9b226",
+    "prototype/scripts/preferences_store.gd": "e94ee2d775d4ccb62654cc8ca0535506d05547eae713c1eadfcac7f3fb8eb6f4",
+    "prototype/scripts/presentation_geometry.gd": "1d1b52a483221eb98b477fd9e90b3aeaf42fe6a87af26abf8730cf9ccfa890db",
+    "prototype/scripts/radio_director.gd": "0c3d64be528a11db8df32ca9f6afcc5ed1bd228744f28740c56ef377b9b07dab",
+    "prototype/scripts/save_store.gd": "ed87d04c40e67798f3962aa96dd5da66d0d52c18f3d301924028c67e5732e6dc",
+    "prototype/scripts/world_builder.gd": "37f8d6a2f6cf820500d8ab6a2fef20a3e02671ac1bdd8db63ac03ddfc2c8a5c2",
+    "prototype/shaders/cinematic_veil.gdshader": "1aa18255935f3c9ab0d3ebb2ee49dea18d32828d21eac67eeaaf0f22a8cdfb0e",
+    "prototype/shaders/rotor_wash.gdshader": "8a59b620e99331970aef867ec4c847d27094eda1e7fed6a7b6bdcfe9b8ce8866",
+    "prototype/shaders/water.gdshader": "ae0c484fc306f439d97e08a9b3d26db4894751bb96f0dbbe40f2e6336788aff6",
+    "prototype/shaders/weathered_surface.gdshader": "e71f62962863bc3e3fe64e73c1b2b53098ec2c354eb46464a32eba0db0a62d3d",
+    "prototype/web_shell.html": "2153408b1c07a7cdac170f9f87fdb99617fd61f82c523902a11658e17d2e54fd"
+  },
+  "runtime_unchanged": true,
+  "exports": [
+    {
+      "command": [
+        "/usr/local/bin/godot4",
+        "--headless",
+        "--path",
+        "/tmp/tower_descent_v05_20261124/prototype",
+        "--export-release",
+        "Windows Desktop",
+        "/tmp/tower_descent_v05_20261124/builds/windows/TheTowerDescent.exe"
+      ],
+      "returncode": 0,
+      "duration_seconds": 4.575,
+      "error_lines": [],
+      "checks": 0,
+      "pass_markers": 0,
+      "log": "export-windows.txt",
+      "sha256": "dbfac818c627de4b3b17cab27ba9335579356e1e2f4a2b5135a53d7eec3afe80",
+      "pass": true,
+      "platform": "windows",
+      "preset": "Windows Desktop"
+    },
+    {
+      "command": [
+        "/usr/local/bin/godot4",
+        "--headless",
+        "--path",
+        "/tmp/tower_descent_v05_20261124/prototype",
+        "--export-release",
+        "Web",
+        "/tmp/tower_descent_v05_20261124/builds/web/index.html"
+      ],
+      "returncode": 0,
+      "duration_seconds": 2.767,
+      "error_lines": [],
+      "checks": 0,
+      "pass_markers": 0,
+      "log": "export-web.txt",
+      "sha256": "dbfac818c627de4b3b17cab27ba9335579356e1e2f4a2b5135a53d7eec3afe80",
+      "pass": true,
+      "platform": "web",
+      "preset": "Web"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "builds/windows/TheTowerDescent.exe",
+      "bytes": 110390840,
+      "sha256": "43ff1e457ead7d1b7dbfd43f0dba9f9f3fc01f170ef97ba7b10467250980cc03"
+    },
+    {
+      "file": "builds/web/index.apple-touch-icon.png",
+      "bytes": 7731,
+      "sha256": "39c2de97090bef95bb749e0f627b921495000820a28681084e5099f0275a53e3"
+    },
+    {
+      "file": "builds/web/index.audio.position.worklet.js",
+      "bytes": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    {
+      "file": "builds/web/index.audio.worklet.js",
+      "bytes": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    {
+      "file": "builds/web/index.html",
+      "bytes": 6472,
+      "sha256": "19e3a4b8ecadf9568d108e180391e8a775aba72f83ed2d8a3105766edc091ae0"
+    },
+    {
+      "file": "builds/web/index.icon.png",
+      "bytes": 7715,
+      "sha256": "c132987c1adc75a6eb63363fe2781281c7ca209abb5000ad539d219708a239e2"
+    },
+    {
+      "file": "builds/web/index.js",
+      "bytes": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    {
+      "file": "builds/web/index.pck",
+      "bytes": 1122344,
+      "sha256": "9a9206529759cfd454f85984d43819bb3ccaa85c27078a0103438bb043a75392"
+    },
+    {
+      "file": "builds/web/index.png",
+      "bytes": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    {
+      "file": "builds/web/index.wasm",
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    }
+  ],
+  "all_pass": true
+}

@@ -63,6 +63,7 @@ def main() -> None:
         "docs/GAMEPLAY_DETAILLE.md", "docs/COMMUNICATIONS_ET_EQUIPES.md",
         f"docs/validation/v{SHORT}/VERIFICATION.json", f"docs/captures/v{SHORT}/MANIFEST.json",
         f"docs/validation/v{SHORT}/EXPORTED_PACK_VERIFICATION.json",
+        f"docs/validation/v{SHORT}/EXPORTS.json",
         f"docs/validation/v{SHORT}/VISUAL_REVIEW.json",
         f"docs/validation/v{SHORT}/DOCUMENT_REVIEW.json",
         f"docs/captures/v{SHORT}/CI_PROVENANCE.json", f"docs/CAPTURES_V{SHORT}.md",
@@ -138,6 +139,17 @@ def main() -> None:
     require(provenance["fixture_sha256"] == digest((ROOT / "prototype/tests/visual_frontend_preview.gd").read_bytes()), "Visual fixture changed after capture")
     require(provenance["verification_sha256"] == digest((VALIDATION / "VERIFICATION.json").read_bytes()), "Native captures refer to different source validation")
     require(provenance["request_sha256"] == digest((ROOT / f".review/v{SHORT}/request.json").read_bytes()), "Capture request differs from the reviewed request")
+    export_build = json.loads((VALIDATION / "EXPORTS.json").read_text())
+    require(export_build["all_pass"] and export_build["version"] == VERSION, "Release export commands did not pass")
+    require(export_build["runtime_sha256_before"] == export_build["runtime_sha256_after"] == validation["sha256_after"], "Runtime changed between source verification and export")
+    require(export_build["captured_source_commit"] == provenance["source_commit"], "Export and visual review refer to different source revisions")
+    require(export_build["source_verification_sha256"] == digest((VALIDATION / "VERIFICATION.json").read_bytes()), "Export refers to a different source verification report")
+    require({row["platform"] for row in export_build["exports"]} == {"windows", "web"}, "Both export commands must be recorded")
+    for row in export_build["exports"]:
+        require(row["pass"] and not row["error_lines"] and digest((VALIDATION / row["log"]).read_bytes()) == row["sha256"], "Export command log is missing, changed or contains errors")
+    for row in export_build["outputs"]:
+        artifact = ROOT / row["file"]
+        require(artifact.stat().st_size == row["bytes"] and digest(artifact.read_bytes()) == row["sha256"], "Export output changed after construction: " + row["file"])
     require({row["file"] for row in provenance["captures"]} == {row["file"] for row in capture_manifest["captures"]}, "Capture manifest disagrees with provenance")
     for row in provenance["captures"]:
         capture = (CAPTURES / row["file"]).read_bytes()
