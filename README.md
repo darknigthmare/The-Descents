@@ -15,7 +15,11 @@ Le dépôt contient une tranche jouable sous **Godot 4.7.2**, du toit au refuge 
 - [Exports, moteur et licences](docs/EXPORTS.md)
 - [Empreintes des archives](releases/SHA256SUMS.txt)
 
-Le candidat v0.6 passe par une construction automatisée, une revue des captures et des pages de la bible, puis une vérification des archives. Les fichiers de preuve indiquent les étapes effectuées. Les versions précédentes restent disponibles dans releases.
+La source v0.6 a passé **21 suites et 4 500 contrôles**, avec **60 contrôles supplémentaires** sur les ressources des deux exports. Les **22 captures natives** et les **139 pages de bible** sont couvertes par les revues de leurs fichiers exacts. Le [rapport final des archives](releases/VERIFICATION_V0.6.json) vérifie l’intégrité et la cohérence des livrables. Les versions précédentes restent disponibles dans releases.
+
+![Accueil contextuel de The Tower Descent](docs/captures/v0.6/01_menu_arrivee.png)
+
+[Voir les vingt-deux captures natives et leur provenance](docs/CAPTURES_V0.6.md).
 
 ## Ouverture et accueil
 
