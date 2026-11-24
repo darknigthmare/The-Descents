@@ -1,0 +1,179 @@
+{
+  "version": "0.5.0",
+  "source_commit": "a723abbfd596cbf32198df6e021e555cb5ff2914",
+  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45476972426",
+  "godot_archive_sha256": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4",
+  "engine": "4.7.2-stable (official)",
+  "display": "X11",
+  "rendering_method": "gl_compatibility",
+  "capture_protocol": "Native Godot Compatibility renderer via Xvfb and Mesa software rendering; prepared game states.",
+  "human_playthrough": false,
+  "manual_visual_review": false,
+  "request_sha256": "897bfe409606025a6d1d610a841ff3f480a8fefc5b1952524643257f89e2ec31",
+  "fixture_sha256": "fc4e5ce564048f041e2073d93c6a76e547804f5da969723512292ba3538bdf4e",
+  "runtime_sha256": {
+    "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
+    "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
+    "prototype/assets/audio/impact.wav": "e831204acdc889fa5b57a95b21edc8044748415342018720969cd6a589d58050",
+    "prototype/assets/audio/intro_sting.wav": "7920665fc873ca41cba6417e327d99f7229606634b64f2efd729b617a8c48571",
+    "prototype/assets/audio/menu_theme.wav": "42708f055e4aae61a48b07b9f6e67a3e02c7f82aade78f0907a15781478bb4a6",
+    "prototype/assets/audio/quake.wav": "869aaff278eaa264f9dfbe19801a09000d987cb9b316691876e52114f6e497b1",
+    "prototype/assets/audio/radio.wav": "7b5e25100bbd0738037ce091772325ece3ec9326c528d8e7593ee3d4ef7ade38",
+    "prototype/assets/audio/rescue.wav": "404c60cefad1f258166211024dfdbf402a0051d168efc906268afe3867bdae98",
+    "prototype/assets/audio/rotors.wav": "77fb4dcdf4248efd884ffe45c5ffad6315806f911577d51c3b9522dd38bcc78a",
+    "prototype/assets/audio/rumble.wav": "bc0e349c7dbda51573308c738b8e15c49c35d7ea4bcd2b91f07b19a81b91ebd2",
+    "prototype/assets/audio/wind.wav": "e552edccc315de23a83114a6d43dfdc6ab347b925d05fa8839d0cdfda179511e",
+    "prototype/assets/fonts/LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "prototype/assets/fonts/NOTICE.txt": "94d4b78643f99d7cfa872145b38da578299f401405ca5cba66a5c95bf13933b0",
+    "prototype/assets/fonts/OpenSans-CondBold.ttf": "a859a438018739aee16c306586d91a453c208ee500c827d9e9aa063155c8a6e8",
+    "prototype/assets/fonts/OpenSans-Light.ttf": "cf5f5184c1441a1660aa52526328e9d5c2793e77b6d8d3a3ad654bdb07ab8424",
+    "prototype/assets/fonts/OpenSans-Regular.ttf": "e64e508b2aa2880f907e470c4550980ec4c0694d103a43f36150ac3f93189bee",
+    "prototype/assets/icon.svg": "6d3e2c2f34057f8c2d0c0381ba25a1a288a7145b28f17f4d4cbcdeba31c7351e",
+    "prototype/assets/ui/studio_mark.svg": "c452e38192adda61ef9cebfefe9759ef850e35f9b248a09a17ad818dd4e20835",
+    "prototype/export_presets.cfg": "7f3bdbfde7ff38421077283b9ee723f423b612feaf54f932dcdc648f5dea113b",
+    "prototype/project.godot": "a0a0d60e5edf52eedbeac208fa01abc087334560ca9ddab30cc762da4e60f845",
+    "prototype/scenes/main.tscn": "db52bbe7b5a1df4d839ec4f721a1f09faa8272e35c387b097fa2c5b1b4ac6937",
+    "prototype/scripts/cinematic_director.gd": "f36d2115a0461a2993954f3e8ce9090f57ef39fdc0b2e3c6cc2a5c40a4dad3be",
+    "prototype/scripts/cinematic_overlay.gd": "e787a4271fcdf60f2f52aa97ba6ebf50e185dec25fe8565fbc770b6069b3856f",
+    "prototype/scripts/collapse_director.gd": "3d9dce62a1b99c68aba41dc7f447a1ced40041ab64f2fb07f16802af5cdd8ee7",
+    "prototype/scripts/field_props.gd": "9770895f7dc598b6c1fd70c9185df9900f974d64fcbe2fb7bb1804009224932b",
+    "prototype/scripts/floor_generator.gd": "0ae0f3e796e0e219fb505ba688488661848434c5fc4e46278b030a257f399779",
+    "prototype/scripts/frontend_menu.gd": "c6a7b1b1d74b801f5501656ffb46fa1719f72642b8358ec79ea17aa58852f49e",
+    "prototype/scripts/hud.gd": "312fbc5e590a52e72ed3dedcd1d8df368c988ce8d41a9e47f476c2193a575f2c",
+    "prototype/scripts/inspection_panel.gd": "7e8c2f7ff5d98140edca41f0f622d6b783fdc95a3595230eed6f2b8ea2bad2de",
+    "prototype/scripts/main.gd": "94b8acba59a52893206b8763e367f6ecc32a0c65a2186b60c721a0a2cb5768e8",
+    "prototype/scripts/player_controller.gd": "01aac4987d886947fb015d931e2cb5d38c70b82cac11a9ab74abe4ee42f9b226",
+    "prototype/scripts/preferences_store.gd": "e94ee2d775d4ccb62654cc8ca0535506d05547eae713c1eadfcac7f3fb8eb6f4",
+    "prototype/scripts/presentation_geometry.gd": "1d1b52a483221eb98b477fd9e90b3aeaf42fe6a87af26abf8730cf9ccfa890db",
+    "prototype/scripts/radio_director.gd": "0c3d64be528a11db8df32ca9f6afcc5ed1bd228744f28740c56ef377b9b07dab",
+    "prototype/scripts/save_store.gd": "ed87d04c40e67798f3962aa96dd5da66d0d52c18f3d301924028c67e5732e6dc",
+    "prototype/scripts/world_builder.gd": "f6cc4d2e109312b922dff7a4e6a3021f3445cafdfe700a31f1c8685380840cb6",
+    "prototype/shaders/cinematic_veil.gdshader": "1aa18255935f3c9ab0d3ebb2ee49dea18d32828d21eac67eeaaf0f22a8cdfb0e",
+    "prototype/shaders/rotor_wash.gdshader": "8a59b620e99331970aef867ec4c847d27094eda1e7fed6a7b6bdcfe9b8ce8866",
+    "prototype/shaders/water.gdshader": "ae0c484fc306f439d97e08a9b3d26db4894751bb96f0dbbe40f2e6336788aff6",
+    "prototype/shaders/weathered_surface.gdshader": "e71f62962863bc3e3fe64e73c1b2b53098ec2c354eb46464a32eba0db0a62d3d",
+    "prototype/web_shell.html": "2153408b1c07a7cdac170f9f87fdb99617fd61f82c523902a11658e17d2e54fd"
+  },
+  "verification_sha256": "46f1d2a3be2122d7a9445956b0ef79f571a468bb3f6c929db12e780f43a5e9be",
+  "captures": [
+    {
+      "file": "01_menu_arrivee.png",
+      "bytes": 937378,
+      "sha256": "3ed35df1440dea5d2eda42aad71f248ca7faff91dcc1c1d5a2e22a9d6dbaf360",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "02_options.png",
+      "bytes": 144974,
+      "sha256": "9fc55caf8334196dbefc1bb78400c812242ca4665fcd2a85cd55e86195ddb960",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "03_nouvelle_intervention.png",
+      "bytes": 140855,
+      "sha256": "3e052b2b4005894c27de3d4aa134cde49457110b259b0ffced9f2c08ad48452e",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "04_signature_studio.png",
+      "bytes": 1136428,
+      "sha256": "5cd826b8dd0c3f6cc76d596e9b86d7654e778dcf95153c2612aba0544e23c96d",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "05_titre.png",
+      "bytes": 1134772,
+      "sha256": "e536c2ca31bc518410649996221b7dd8e329475cedac64164def47a9c38f3221",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_03.png",
+      "bytes": 973630,
+      "sha256": "8847a3a6cd8413322986b6f64ac72c269e1e36468453f86e4015238ef235a566",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_10.png",
+      "bytes": 992827,
+      "sha256": "48e05f1b38b9cd06409a06128beaee0935e0f8229b9e5a38634f28465aacdb1f",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_17.png",
+      "bytes": 1030813,
+      "sha256": "69f8daa2c7a3f7177a4e8ce970e1178dcc24228e41dce156d9a974b2c4e19434",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_25.png",
+      "bytes": 1018910,
+      "sha256": "8738a5c5f72c1ee9437612acbc42741f96d07cd42df5403bdc3dcf511d71eab1",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "07_pause_intro.png",
+      "bytes": 205875,
+      "sha256": "e991c2775e70999db5055bf70c7dc8e2d6e2f0f6e729fb4c83a179eb2357140a",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "14_toit_equipe.png",
+      "bytes": 701593,
+      "sha256": "da52722603b3a1ee5d16941dca36cccf50635b5596b63d6b59f7baa318df9247",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "11_inspection_toit.png",
+      "bytes": 210153,
+      "sha256": "ca83fe2ccaaea3d83a573806281b50fa8d4ec0f2dec98630c110d714e885f4a1",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "12_inspection_archives.png",
+      "bytes": 155762,
+      "sha256": "0295fd8e21a00e15e24f586ac1fa56f8a8354f240c8e89656199111f6f51686e",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "13_inspection_apres.png",
+      "bytes": 160300,
+      "sha256": "ea7b5ab5325ad1efdef400de3f84193f40289cae590a72e536163ba18fd33f40",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "08_menu_archives.png",
+      "bytes": 765510,
+      "sha256": "30b82efe5ae11a15c710a8c1433becb08387f81158f7404dc10249cabf4ee248",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "09_dossier_apres.png",
+      "bytes": 167062,
+      "sha256": "5568b5a64934072327b5800fb4c24216c7c1138818b69174c9d0f93d34d66ca3",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "10_menu_refuge.png",
+      "bytes": 817317,
+      "sha256": "ef3d112e9aa5604f3f793fb5428e4ce8b8e042996b0f2566bb14eb8456fa0782",
+      "width": 1440,
+      "height": 900
+    }
+  ]
+}

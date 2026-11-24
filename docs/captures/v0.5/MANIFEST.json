@@ -1,0 +1,113 @@
+{
+  "captures": [
+    {
+      "description": "Menu initial, deux tours intactes, aucune sauvegarde",
+      "file": "01_menu_arrivee.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Options avant la partie",
+      "file": "02_options.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Préparation de la première intervention",
+      "file": "03_nouvelle_intervention.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Signature du studio, carton à deux secondes",
+      "file": "04_signature_studio.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Révélation du titre à onze secondes",
+      "file": "05_titre.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Approche en jeu, état préparé à 3 secondes",
+      "file": "06_approche_03.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Approche en jeu, état préparé à 10 secondes",
+      "file": "06_approche_10.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Approche en jeu, état préparé à 17 secondes",
+      "file": "06_approche_17.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Approche en jeu, état préparé à 25 secondes",
+      "file": "06_approche_25.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Pause pendant l’approche",
+      "file": "07_pause_intro.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Détail du toit : Alpha posé, porte et équipe dans leur état final",
+      "file": "14_toit_equipe.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Fiche du registre de réception, avant les sauvetages",
+      "file": "11_inspection_toit.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Fiche des archives, avant l’incident structurel",
+      "file": "12_inspection_archives.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Même fiche des archives après l’impact confirmé, consigne actualisée",
+      "file": "13_inspection_apres.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Accueil au point sûr du 28 après la réplique",
+      "file": "08_menu_archives.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Dossier actualisé après l’impact confirmé",
+      "file": "09_dossier_apres.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Accueil après une intervention terminée, point sûr du refuge",
+      "file": "10_menu_refuge.png",
+      "height": 900,
+      "width": 1440
+    }
+  ],
+  "display": "X11",
+  "engine": "4.7.2-stable (official)",
+  "human_playthrough": false,
+  "prepared_states": true,
+  "rendering_method": "gl_compatibility",
+  "version": "0.5.0",
+  "viewport": "(1440.0, 900.0)"
+}
