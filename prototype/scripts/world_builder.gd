@@ -36,6 +36,12 @@ var broken_connection: Node3D
 var bravo_gallery: Node3D
 var bravo_members: Array[Node3D] = []
 var bravo_member_origins: Array[Vector3] = []
+var bravo_roof_team: Node3D
+var bravo_roof_members: Array[Node3D] = []
+var bravo_roof_origins: Array[Vector3] = []
+var roof_rescued_people: Dictionary = {}
+var roof_medical_group: Node3D
+var roof_medical_sign: Label3D
 var route_obstacle: MeshInstance3D
 var route_obstacle_body: StaticBody3D
 var route_obstacle_activated: bool = false
@@ -64,6 +70,7 @@ func build(seed_value: int, floor_specs: Array) -> Dictionary:
 	_build_rain()
 	_build_incident_effects()
 	apply_incident("intact", 0.0)
+	set_rescued_people([])
 	return {
 		"interactables": interactables,
 		"helicopter": roof["helicopter"],
@@ -243,14 +250,15 @@ func _build_twin_tower() -> void:
 		_box(twin_tower, Vector3(xx, 186.04, 1.5), Vector3(0.23, 0.05, 4.5), materials["white"])
 	_box(twin_tower, Vector3(-5.4, 186.04, 1.5), Vector3(3.8, 0.05, 0.23), materials["white"])
 	hesperie_sign = _label(twin_tower, Vector3(-12.08, 177, 0), "HESPÉRIE", 86, Color("e4cc9c"), 0.019, true)
-	var roof_team: Node3D = Node3D.new()
-	roof_team.name = "BravoRoofTeam"
-	twin_tower.add_child(roof_team)
-	_human(roof_team, Vector3(-8.5, 186, 7), materials["orange"], true)
-	_human(roof_team, Vector3(-6.5, 186, 8.5), materials["orange"], true)
-	_human(roof_team, Vector3(-3.5, 186, 8), materials["blue"], true)
-	_label(roof_team, Vector3(-7.5, 189.2, 7.5), "BRAVO / TOIT", 39, Color("f4c389"), 0.017)
-	_light(roof_team, Vector3(-8, 190, 7), Color("ffca8d"), 1.8, 15)
+	bravo_roof_team = Node3D.new()
+	bravo_roof_team.name = "BravoRoofTeam"
+	twin_tower.add_child(bravo_roof_team)
+	for origin in [Vector3(-8.5, 186, 7), Vector3(-6.5, 186, 8.5), Vector3(-3.5, 186, 8)]:
+		var member: Node3D = _human(bravo_roof_team, origin, materials["orange"] if bravo_roof_members.size() < 2 else materials["blue"], true)
+		bravo_roof_members.append(member)
+		bravo_roof_origins.append(origin)
+	_label(bravo_roof_team, Vector3(-7.5, 189.2, 7.5), "BRAVO / TOIT", 39, Color("f4c389"), 0.017)
+	_light(bravo_roof_team, Vector3(-8, 190, 7), Color("ffca8d"), 1.8, 15)
 	# A separate pair is already surveying the 29th-floor balcony as Alpha descends.
 	bravo_gallery = Node3D.new()
 	bravo_gallery.name = "BravoObservationGallery"
@@ -262,6 +270,12 @@ func _build_twin_tower() -> void:
 		member.rotation.y = -PI / 2
 		bravo_members.append(member)
 		bravo_member_origins.append(member.position)
+	# A visible doorway gives the retreat a readable destination. All parts are
+	# cosmetic: the opposite tower is not a playable navigation surface.
+	_box(bravo_gallery, Vector3(0.93, 1.35, 0), Vector3(0.08, 2.7, 2.2), materials["dark"])
+	for zz in [-1.15, 1.15]:
+		_box(bravo_gallery, Vector3(0.87, 1.4, zz), Vector3(0.12, 2.8, 0.12), materials["metal"])
+	_box(bravo_gallery, Vector3(0.87, 2.8, 0), Vector3(0.12, 0.12, 2.4), materials["lit_green"])
 	_box(bravo_gallery, Vector3(-1.5, 0.95, 0), Vector3(0.08, 0.1, 7), materials["metal"])
 	_light(bravo_gallery, Vector3(-1.5, 3.5, 0), Color("9de9d6"), 1.7, 10)
 	_label(bravo_gallery, Vector3(-1, 3.8, 0), "BRAVO / 29", 34, Color("a8e9d7"), 0.015)
@@ -529,6 +543,7 @@ func _build_roof() -> Dictionary:
 	helicopter_origins.push_front(helicopter.global_position)
 	_human(roof,Vector3(6.6,42,-7),materials["orange"],true)
 	_human(roof,Vector3(9,42,-6),materials["blue"],true)
+	_build_roof_reception(roof)
 	_human(roof,Vector3(7,42,4.7),materials["orange"],true)
 	_label(roof,Vector3(7,44.3,4.7),"CPT. VARGA",30,Color("eab686"),0.004)
 	_supply_crate(roof,Vector3(-7,42,7))
@@ -548,6 +563,51 @@ func _build_roof() -> Dictionary:
 	for pos in [Vector3(8,45,-6),Vector3(-7,45,7)]:
 		_light(roof,pos,Color("eabb83"),1.6,13)
 	return {"helicopter":helicopter,"rotor":rotor}
+
+func _build_roof_reception(roof: Node3D) -> void:
+	roof_medical_group = Node3D.new()
+	roof_medical_group.name = "RoofMedicalReception"
+	roof.add_child(roof_medical_group)
+	var roster: Array = [
+		["survivor_30", "ANA RIOS", Vector3(6, 42, -9.3)],
+		["survivor_28", "SAMUEL BRETON", Vector3(8, 42, -9.3)],
+		["survivor_26", "NORA HADDAD", Vector3(10, 42, -9.3)]
+	]
+	for index in range(roster.size()):
+		var record: Array = roster[index]
+		var reception: Node3D = Node3D.new()
+		reception.name = "Reception_" + str(record[0])
+		reception.set_meta("rescued_id", record[0])
+		reception.position = record[2]
+		roof_medical_group.add_child(reception)
+		if index == 0:
+			_box(reception, Vector3(0, 0.58, 0), Vector3(0.95, 0.13, 2.25), materials["green"])
+			for xx in [-0.52, 0.52]:
+				_box(reception, Vector3(xx, 0.55, 0), Vector3(0.07, 0.08, 2.6), materials["metal"])
+			var patient: Node3D = _human(reception, Vector3(0, 0.79, -0.88), materials["cream"], false)
+			patient.rotation.x = PI / 2
+			_box(reception, Vector3(0, 0.9, -0.16), Vector3(0.69, 0.13, 1.12), materials["white"])
+		else:
+			var patient: Node3D = _human(reception, Vector3.ZERO, materials["blue"] if index == 1 else materials["cream"], false)
+			if index == 2:
+				patient.scale.y = 0.78
+				_box(reception, Vector3(0, 0.34, 0.09), Vector3(0.85, 0.12, 0.7), materials["green"])
+			_box(reception, Vector3(0, 0.88 if index == 1 else 0.68, 0.02), Vector3(0.78, 0.78, 0.43), materials["yellow"] if index == 1 else materials["white"])
+		_label(reception, Vector3(0, 2.42, 0), "%s\nÀ L’ABRI" % str(record[1]), 25, Color("a8e9d7"), 0.007)
+		roof_rescued_people[str(record[0])] = reception
+	roof_medical_sign = _label(roof_medical_group, Vector3(8, 45.5, -9.6), "MÉDICAL\n0 SUR 3 À L’ABRI", 37, Color("a8e9d7"), 0.010)
+
+func set_rescued_people(rescued: Array) -> void:
+	# Projection of the saved registry, not another source of mission truth.
+	# Prebuilt figures make repeat calls, restores and new-game resets idempotent.
+	var confirmed: int = 0
+	for id_value in roof_rescued_people:
+		var person: Node3D = roof_rescued_people[id_value]
+		person.visible = rescued.has(id_value)
+		if person.visible:
+			confirmed += 1
+	if is_instance_valid(roof_medical_sign):
+		roof_medical_sign.text = "MÉDICAL\n%d SUR 3 À L’ABRI" % confirmed
 
 func _make_helicopter(parent: Node3D, pos: Vector3, aircraft_name: String) -> Dictionary:
 	var helicopter: Node3D = Node3D.new()
@@ -658,13 +718,7 @@ func apply_incident(stage: String, stage_time: float) -> void:
 	if is_instance_valid(twin_tower):
 		twin_tower.position = twin_origin + FINAL_SETTLEMENT * collapse_fraction
 		twin_tower.rotation_degrees = Vector3(0, 0, FINAL_LEAN * collapse_fraction + quake_sway)
-	# Bravo goes behind cover as the facade starts moving. Their outcome remains
-	# a radio question; the scene never labels a rescuer dead or erases a rescue.
-	if is_instance_valid(bravo_gallery):
-		bravo_gallery.visible = not after_contact and (stage != "collapse" or t < 2.2)
-		var retreat: float = clampf(t / 2.2, 0, 1) if stage == "collapse" else 0.0
-		for index in range(bravo_members.size()):
-			bravo_members[index].position = bravo_member_origins[index] + Vector3(3.2 * retreat, 0, 0)
+	_sample_bravo_retreat(stage, t)
 	for damage: Node3D in incident_damage:
 		damage.visible = after_contact
 	for pane: MeshInstance3D in breakable_glass:
@@ -703,6 +757,42 @@ func apply_incident(stage: String, stage_time: float) -> void:
 		if route_obstacle_body.collision_layer != new_layer:
 			route_obstacle_body.set_deferred("collision_layer", new_layer)
 			route_obstacle_body.set_deferred("collision_mask", new_layer)
+
+func _sample_bravo_retreat(stage: String, sample_time: float) -> void:
+	# A single continuous prepared action follows the incident clock. Loading a
+	# phase directly yields the same pose; no Tween, pathfinding or collider is used.
+	var retreat: float = 0.0
+	var clock: float = 0.0
+	match stage:
+		"warning":
+			clock = clampf(sample_time, 0.0, 8.0)
+			retreat = smoothstep(1.0, 8.0, clock) * 0.08
+		"quake":
+			clock = 8.0 + clampf(sample_time, 0.0, 6.0)
+			retreat = 0.08 + smoothstep(0.0, 6.0, sample_time) * 0.76
+		"collapse":
+			clock = 14.0 + clampf(sample_time, 0.0, 2.2)
+			retreat = 0.84 + smoothstep(0.0, 2.2, sample_time) * 0.16
+		"impact", "aftermath":
+			clock = 16.2
+			retreat = 1.0
+	var turn: float = smoothstep(1.0, 4.0, clock)
+	if is_instance_valid(bravo_gallery):
+		bravo_gallery.visible = stage != "impact" and stage != "aftermath"
+		for index in range(bravo_members.size()):
+			_pose_retreat_member(bravo_members[index], bravo_member_origins[index], Vector3(3.2, 0, -0.35 + index * 0.7), -PI / 2, retreat, turn, clock, index)
+	if is_instance_valid(bravo_roof_team):
+		bravo_roof_team.visible = stage != "impact" and stage != "aftermath"
+		for index in range(bravo_roof_members.size()):
+			_pose_retreat_member(bravo_roof_members[index], bravo_roof_origins[index], Vector3(5.0 + index * 0.6, 186, -5.8), 0.0, retreat, turn, clock, index + 2)
+
+func _pose_retreat_member(member: Node3D, origin: Vector3, shelter: Vector3, initial_yaw: float, retreat: float, turn: float, clock: float, index: int) -> void:
+	var direction: Vector3 = shelter - origin
+	var stride: float = sin(clock * 8.5 + index) * 0.025 * sin(retreat * PI)
+	member.position = origin.lerp(shelter, retreat) + Vector3(0, absf(stride), 0)
+	member.rotation = Vector3(0, lerp_angle(initial_yaw, atan2(-direction.x, -direction.z), turn), stride)
+	# Disappearance happens inside the authored shelter and says nothing about fate.
+	member.visible = retreat < 0.985
 
 func _update_incident_dust(stage: String, sample_time: float) -> void:
 	if not is_instance_valid(dust_group):

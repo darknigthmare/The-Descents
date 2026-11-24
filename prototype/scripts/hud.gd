@@ -5,6 +5,9 @@ signal start_requested(seed_value: int)
 signal continue_requested
 signal resume_requested
 signal return_requested
+signal journal_requested
+signal replay_intro_requested
+signal cinematic_skip_requested
 signal setting_changed(setting: String, enabled: bool)
 
 const INK: Color = Color(0.035, 0.065, 0.08, 0.94)
@@ -41,6 +44,9 @@ var stress_bar: ProgressBar
 var overlay: ColorRect
 var floor_map: Label
 var audio_toggle: CheckButton
+var end_journal_button: Button
+var cinematic: Control
+var pause_toggles: Dictionary = {}
 
 func _ready() -> void:
 	layer = 10
@@ -50,6 +56,7 @@ func _ready() -> void:
 	add_child(root)
 	var theme: Theme = Theme.new()
 	theme.default_font_size = 18
+	theme.default_font = preload("res://assets/fonts/OpenSans-Regular.ttf")
 	theme.set_color("font_color", "Label", PALE)
 	root.theme = theme
 	_build_menu()
@@ -58,6 +65,7 @@ func _ready() -> void:
 	_build_journal()
 	_build_end()
 	_build_help()
+	_build_cinematic()
 	game.hide()
 	pause_panel.hide()
 	journal_panel.hide()
@@ -105,56 +113,29 @@ func _full_control() -> Control:
 	return control
 
 func _build_menu() -> void:
-	menu = _full_control()
-	var shade: ColorRect = ColorRect.new()
-	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	shade.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var shader: Shader = Shader.new()
-	shader.code = "shader_type canvas_item; void fragment(){float a=mix(0.97,0.12,smoothstep(0.12,0.95,UV.x)); COLOR=vec4(0.018,0.04,0.055,a);}"
-	var material: ShaderMaterial = ShaderMaterial.new()
-	material.shader = shader
-	shade.material = material
-	menu.add_child(shade)
-	var column: VBoxContainer = VBoxContainer.new()
-	column.position = Vector2(82, 95)
-	column.size = Vector2(510, 670)
-	column.add_theme_constant_override("separation", 15)
-	menu.add_child(column)
-	column.add_child(_label("OPÉRATION SILLAGE  /  ÎLE DE NACRE", 16, TEAL))
-	var title: Label = _label("THE TOWER\nDESCENT", 68)
-	title.add_theme_constant_override("line_spacing", -12)
-	column.add_child(title)
-	column.add_child(_label("Le dernier refuge est au-dessus de vous.", 21, AMBER))
-	var intro: Label = _label("Deux tours debout. Deux équipes de secours.\nDescendez, retrouvez les survivants et remontez-les\nau treuil. La structure ne tiendra pas toujours.", 18, MUTED)
-	intro.add_theme_constant_override("line_spacing", 8)
-	column.add_child(intro)
-	var spacer: Control = Control.new()
-	spacer.custom_minimum_size.y = 12
-	column.add_child(spacer)
-	var seed_row: HBoxContainer = HBoxContainer.new()
-	seed_row.add_theme_constant_override("separation", 18)
-	seed_row.add_child(_label("Graine de l’intervention", 17, MUTED))
-	seed_input = SpinBox.new()
-	seed_input.min_value = 1
-	seed_input.max_value = 999999
-	seed_input.value = 271104
-	seed_input.custom_minimum_size.x = 155
-	seed_row.add_child(seed_input)
-	column.add_child(seed_row)
-	start_button = _button("Commencer l’intervention", func(): start_requested.emit(int(seed_input.value)), true)
-	column.add_child(start_button)
-	continue_button = _button("Reprendre le dernier point sûr", func(): continue_requested.emit())
-	continue_button.disabled = not FileAccess.file_exists("user://save_v1.json")
-	column.add_child(continue_button)
-	column.add_child(_button("Commandes et mission", func(): help_panel.show()))
-	var footer: Label = _label("PROTOTYPE 0.2     •     SOLO     •     6 ÉTAGES EXPLORABLES", 14, MUTED)
-	footer.position = Vector2(82, 846)
-	menu.add_child(footer)
-	var coord: Label = _label("NACRE\nTOURS ORPHÉE\n04:17  /  MER MONTANTE", 16, PALE)
-	coord.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	coord.position = Vector2(1010, 72)
-	coord.size.x = 350
-	menu.add_child(coord)
+	menu = preload("res://scripts/frontend_menu.gd").new()
+	root.add_child(menu)
+	menu.start_requested.connect(func(seed_value: int): start_requested.emit(seed_value))
+	menu.continue_requested.connect(func(): continue_requested.emit())
+	menu.replay_requested.connect(func(): replay_intro_requested.emit())
+	menu.help_requested.connect(func(): help_panel.show())
+	menu.setting_changed.connect(func(key: String, value: bool): setting_changed.emit(key,value))
+	start_button = menu.start_button
+	continue_button = menu.continue_button
+	seed_input = menu.seed_input
+
+func _build_cinematic() -> void:
+	cinematic = preload("res://scripts/cinematic_overlay.gd").new()
+	root.add_child(cinematic)
+	cinematic.skip_requested.connect(func(): cinematic_skip_requested.emit())
+
+func set_menu_context(context: Dictionary, valid_save: bool, seed_value: int) -> void:
+	menu.set_context(context,valid_save,seed_value)
+
+func apply_settings(settings: Dictionary) -> void:
+	menu.apply_settings(settings)
+	for key: String in pause_toggles:
+		pause_toggles[key].set_pressed_no_signal(bool(settings.get(key,false)))
 
 func _build_game() -> void:
 	game = _full_control()
@@ -278,15 +259,18 @@ func _build_pause() -> void:
 	motion.button_pressed = true
 	motion.toggled.connect(func(v: bool): setting_changed.emit("reduced_motion", v))
 	col.add_child(motion)
+	pause_toggles["reduced_motion"] = motion
 	var flashes: CheckButton = CheckButton.new()
 	flashes.text = "Éclairs lumineux (désactivés par défaut)"
 	flashes.toggled.connect(func(v: bool): setting_changed.emit("flashes", v))
 	col.add_child(flashes)
+	pause_toggles["flashes"] = flashes
 	audio_toggle = CheckButton.new()
 	audio_toggle.text = "Ambiance sonore"
 	audio_toggle.button_pressed = true
 	audio_toggle.toggled.connect(func(v: bool): setting_changed.emit("audio", v))
 	col.add_child(audio_toggle)
+	pause_toggles["audio"] = audio_toggle
 	col.add_child(_label("Sauvegarde aux treuils, au refuge et avant/après l’effondrement.\nUne interruption pendant la secousse reprend avant celle-ci.", 17, MUTED))
 	col.add_child(_button("Retour au menu", func(): return_requested.emit()))
 
@@ -312,6 +296,8 @@ func _build_end() -> void:
 	completion_text.add_theme_font_size_override("normal_font_size", 21)
 	col.add_child(completion_text)
 	col.add_child(_label("Fin du prototype jouable. La campagne continue dans la bible du jeu.", 17, MUTED))
+	end_journal_button = _button("Consulter le compte rendu et les transmissions", func(): journal_requested.emit())
+	col.add_child(end_journal_button)
 	col.add_child(_button("Revenir au menu", func(): return_requested.emit(), true))
 
 func _build_help() -> void:
@@ -326,7 +312,9 @@ func _build_help() -> void:
 	col.add_child(_button("Compris", func(): help_panel.hide(), true))
 
 func show_game() -> void:
+	menu.close_modals(false)
 	menu.hide()
+	cinematic.hide()
 	game.show()
 	pause_panel.hide()
 	journal_panel.hide()
@@ -334,13 +322,13 @@ func show_game() -> void:
 	help_panel.hide()
 
 func show_menu() -> void:
-	menu.show()
+	menu.reveal()
+	cinematic.hide()
 	game.hide()
 	pause_panel.hide()
 	journal_panel.hide()
 	end_panel.hide()
 	help_panel.hide()
-	continue_button.disabled = not FileAccess.file_exists("user://save_v1.json")
 
 func set_paused(paused: bool) -> void:
 	pause_panel.visible = paused

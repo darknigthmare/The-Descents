@@ -6,6 +6,9 @@ const Player = preload("res://scripts/player_controller.gd")
 const HUD = preload("res://scripts/hud.gd")
 const Save = preload("res://scripts/save_store.gd")
 const Incident = preload("res://scripts/collapse_director.gd")
+const Radio = preload("res://scripts/radio_director.gd")
+const Cinematics = preload("res://scripts/cinematic_director.gd")
+const Preferences = preload("res://scripts/preferences_store.gd")
 
 var world: Node3D
 var player: CharacterBody3D
@@ -53,13 +56,27 @@ var helicopter_origin: Vector3
 var menu_time: float = 0
 var save_path: String = "user://save_v1.json"
 var incident = Incident.new()
+var radio = Radio.new()
+var radio_events: Array = []
+var radio_quiet_time: float = 0.0
 var observation_hold: float = 0.0
 var arrival_playing: bool = false
 var arrival_time: float = 0.0
-const ARRIVAL_DURATION: float = 6.0
+const ARRIVAL_DURATION: float = Cinematics.ARRIVAL_DURATION
+var cinematic = Cinematics.new()
+var boot_playing: bool = false
+var menu_context: Dictionary = {}
+var menu_snapshot: Dictionary = {}
+var preferences_path: String = Preferences.FILE
+var preferences: Dictionary = Preferences.DEFAULTS.duplicate()
 
 func _ready() -> void:
 	_bind_inputs()
+	preferences = Preferences.load_settings(preferences_path)
+	reduced_motion = bool(preferences["reduced_motion"])
+	flashes_enabled = bool(preferences["flashes"])
+	sound_enabled = sound_enabled and bool(preferences["audio"])
+	AudioServer.set_bus_mute(0,not sound_enabled)
 	_make_audio()
 	hud = HUD.new()
 	add_child(hud)
@@ -67,10 +84,82 @@ func _ready() -> void:
 	hud.continue_requested.connect(_continue_game)
 	hud.resume_requested.connect(_resume)
 	hud.return_requested.connect(_return_to_menu)
+	if hud.has_signal("journal_requested"):
+		hud.journal_requested.connect(_open_journal)
 	hud.setting_changed.connect(_setting_changed)
-	_build_world(current_seed)
+	hud.replay_intro_requested.connect(_start_studio_intro)
+	hud.cinematic_skip_requested.connect(_skip_cinematic)
+	hud.apply_settings(preferences)
+	_prepare_menu()
+	if DisplayServer.get_name() != "headless" and bool(preferences["startup_intro"]):
+		_start_studio_intro()
+
+func _prepare_menu() -> void:
+	# A menu is a preview of the last validated checkpoint, never a new save.
+	menu_snapshot = Save.load_data(save_path)
+	menu_context = Cinematics.menu_context(menu_snapshot)
+	started = false
+	paused = false
+	completed = false
+	arrival_playing = false
+	rescued = menu_snapshot.get("rescued",[]).duplicate()
+	incident.restore(str(menu_context["incident"]))
+	_build_world(int(menu_snapshot.get("seed",271104)))
+	for target: Node3D in world_data.get("interactables",[]):
+		var key: String = _key(target)
+		if key in rescued or key in menu_snapshot.get("clues",[]) or key in menu_snapshot.get("supplies_used",[]):
+			target.hide()
+			target.set_meta("used",true)
+	if not menu_snapshot.is_empty():
+		_position_helicopters(float(menu_snapshot.get("elapsed",0)))
 	_show_menu_camera()
+	_apply_camera_sample(Cinematics.menu_camera(menu_context,menu_time,reduced_motion))
+	hud.show_menu()
+	hud.set_menu_context(menu_context,not menu_snapshot.is_empty(),current_seed)
+	hud.apply_settings(preferences)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if DisplayServer.get_name() != "headless" and sound_enabled and is_instance_valid(audio_wind) and not audio_wind.playing:
+		audio_wind.play()
+
+func _start_studio_intro() -> void:
+	if started:
+		return
+	# Replaying the signature does not erase or reveal saved progress.
+	incident.restore("intact")
+	rescued = []
+	_build_world(271104)
+	_show_menu_camera()
+	boot_playing = true
+	cinematic.start("boot")
+	hud.menu.hide()
+	hud.game.hide()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	_render_cinematic()
+
+func _finish_studio_intro() -> void:
+	boot_playing = false
+	cinematic.finish()
+	hud.cinematic.hide()
+	_prepare_menu()
+
+func _skip_cinematic() -> void:
+	if paused:
+		return
+	if boot_playing:
+		_finish_studio_intro()
+	elif arrival_playing:
+		_finish_arrival()
+
+func _apply_camera_sample(sample: Dictionary) -> void:
+	menu_camera.position = sample["position"]
+	menu_camera.fov = float(sample["fov"])
+	menu_camera.look_at(sample["target"])
+
+func _render_cinematic() -> void:
+	_apply_camera_sample(cinematic.camera_sample(reduced_motion,player.camera.global_position,-player.camera.global_basis.z))
+	hud.cinematic.set_frame(cinematic.presentation(),cinematic.mode)
+	if arrival_playing:
+		hud.cinematic.set_transmission(str(radio.current.get("speaker","")),str(radio.current.get("message","")))
 
 func _bind_inputs() -> void:
 	var keys: Dictionary = {
@@ -106,6 +195,7 @@ func _build_world(seed_value: int) -> void:
 	world = World.new()
 	add_child(world)
 	world_data = world.build(seed_value, floor_specs)
+	world.set_rescued_people(rescued)
 	world.apply_incident(incident.phase, incident.phase_elapsed)
 	world.set_lightning_enabled(flashes_enabled)
 	player = Player.new()
@@ -150,6 +240,11 @@ func _start_new(seed_value: int) -> void:
 	checkpoint_floor = 31
 	intro_stage = 0
 	incident.restore("intact")
+	radio.reset()
+	radio_events.clear()
+	radio_quiet_time = 0.0
+	radio_time = 0.0
+	hud.radio_panel.hide()
 	observation_hold = 0
 	arrival_time = 0
 	shadow_time = 0
@@ -161,10 +256,13 @@ func _start_new(seed_value: int) -> void:
 	_begin_game()
 	_save_checkpoint(31)
 	arrival_playing = true
+	boot_playing = false
 	player.active = false
 	menu_camera.current = true
+	cinematic.start("arrival")
+	hud.game.hide()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	_process_arrival(0.0)
-	_say("VARGA  /  APPROCHE ORPHÉE", "Les deux tours sont debout. Alpha sur Aube, Bravo sur Hespérie : des personnels techniques y sont signalés. Alex, votre première victime est au 30.", 11)
 
 func _begin_game() -> void:
 	started = true
@@ -186,7 +284,8 @@ func _continue_game() -> void:
 		hud.continue_button.disabled = true
 		return
 	_restore(data)
-	_say("VARGA  /  POSTE DU TOIT", "Point sûr rétabli. Votre compte rendu est à jour. Vérifiez votre matériel avant de continuer.", 8)
+	if not completed:
+		_say("VARGA  /  POSTE DU TOIT", "Point sûr rétabli. Votre compte rendu est à jour. Vérifiez votre matériel avant de continuer.", 8)
 
 func _restore(data: Dictionary) -> void:
 	incident.restore(str(data["incident_state"]))
@@ -204,7 +303,17 @@ func _restore(data: Dictionary) -> void:
 	elapsed = float(data["elapsed"])
 	completed = bool(data["completed"])
 	checkpoint_floor = int(data["floor"])
-	intro_stage = 3 if elapsed >= 36.0 or incident.phase == "aftermath" else 0
+	radio.reset(data["transmissions"])
+	radio_events = data["radio_events"].duplicate()
+	radio_quiet_time = 0.0
+	radio_time = 0.0
+	radio_cooldown = 0.0
+	notify_time = 0.0
+	damage_cooldown = 0.0
+	hoist_progress = 0.0
+	world.set_rescued_people(rescued)
+	_sync_radio()
+	intro_stage = 3 if elapsed > 34.0 or incident.phase == "aftermath" else (2 if elapsed > 22.0 else (1 if elapsed > 11.0 else 0))
 	shadow_time = 0
 	flare_time = 0
 	for target: Node3D in world_data.get("interactables", []):
@@ -225,12 +334,13 @@ func _save_checkpoint(floor_number: int) -> bool:
 		_notify("La structure bouge. Le point sûr précédent est conservé jusqu’à la stabilisation.")
 		return false
 	var data: Dictionary = {
-		"version": 2, "seed": current_seed, "floor": floor_number,
+		"version": 3, "seed": current_seed, "floor": floor_number,
 		"health": health, "oxygen": oxygen, "stress": stress,
 		"anchors": anchors, "flares": flares, "rescued": rescued.duplicate(),
 		"clues": clues.duplicate(), "supplies_used": supplies_used.duplicate(),
 		"elapsed": elapsed, "seen_floors": seen_floors.duplicate(), "completed": completed,
-		"incident_state": incident.stable_state()
+		"incident_state": incident.stable_state(),
+		"transmissions": radio.history_snapshot(), "radio_events": radio_events.duplicate()
 	}
 	var error: Error = Save.save_data(data, save_path)
 	if error == OK:
@@ -242,7 +352,20 @@ func _save_checkpoint(floor_number: int) -> bool:
 	return false
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not started or completed:
+	if boot_playing:
+		if event.is_action_pressed("ui_accept") or event.is_action_pressed("pause_game") or event.is_action_pressed("interact"):
+			_skip_cinematic()
+			get_viewport().set_input_as_handled()
+		return
+	if not started:
+		return
+	if completed:
+		if event.is_action_pressed("journal") or event.is_action_pressed("pause_game"):
+			if hud.journal_panel.visible:
+				_resume()
+			else:
+				_open_journal()
+			get_viewport().set_input_as_handled()
 		return
 	if event.is_action_pressed("pause_game"):
 		if paused:
@@ -254,8 +377,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if paused:
 		return
 	if arrival_playing:
-		if event.is_action_pressed("interact"):
+		if event.is_action_pressed("interact") or event.is_action_pressed("ui_accept"):
 			_finish_arrival()
+			get_viewport().set_input_as_handled()
 		return
 	if event.is_action_pressed("interact"):
 		_interact()
@@ -275,9 +399,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("radio"):
 		_call_radio()
 	elif event.is_action_pressed("journal"):
-		_pause(false)
-		hud.journal_text.text = _journal_content()
-		hud.journal_panel.show()
+		_open_journal()
 
 func _process(delta: float) -> void:
 	if paused or completed:
@@ -286,12 +408,22 @@ func _process(delta: float) -> void:
 	for rotor: Node3D in world_data.get("rotors", [world_data.get("rotor")]):
 		if is_instance_valid(rotor):
 			rotor.rotate_y(delta * 28)
-	if not started:
-		menu_camera.position.x = 95 + sin(menu_time * 0.05) * 5
-		menu_camera.look_at(Vector3(6,-8,0))
+	if boot_playing:
+		cinematic.advance(delta)
+		_render_cinematic()
+		if not cinematic.active:
+			_finish_studio_intro()
 		return
-	elapsed += delta
-	radio_time = maxf(0, radio_time - delta)
+	if not started:
+		_apply_camera_sample(Cinematics.menu_camera(menu_context,menu_time,reduced_motion))
+		return
+	# The 28-second approach has its own clock. Skipping never changes mission timing.
+	if not arrival_playing:
+		elapsed += delta
+	# Count only the silent tail if a long frame finishes an active subtitle.
+	var quiet_radio_delta: float = maxf(0.0, delta - radio.remaining) if radio.is_busy() else delta
+	var radio_changed: bool = radio.advance(delta)
+	_sync_radio(radio_changed)
 	notify_time = maxf(0, notify_time - delta)
 	radio_cooldown = maxf(0, radio_cooldown - delta)
 	damage_cooldown = maxf(0, damage_cooldown - delta)
@@ -299,11 +431,11 @@ func _process(delta: float) -> void:
 	hud.radio_panel.visible = radio_time > 0
 	hud.notify_label.visible = notify_time > 0
 	flare_light.visible = flare_time > 0
-	_process_departure()
 	if arrival_playing:
 		_process_arrival(delta)
 		_update_hud()
 		return
+	_process_departure()
 	_process_hoist(delta)
 	var floor_number: int = player.nearest_floor()
 	if not player.on_rope and floor_number != last_floor:
@@ -311,36 +443,46 @@ func _process(delta: float) -> void:
 		_enter_floor(floor_number)
 	_process_incident(delta)
 	_process_hazards(delta, floor_number)
+	_process_story_radio(quiet_radio_delta)
 	_find_nearest()
 	_update_hud()
 	if health <= 0:
 		_fall_recovery()
 
 func _process_arrival(delta: float) -> void:
-	arrival_time += delta
-	var progress: float = clampf(arrival_time / ARRIVAL_DURATION, 0, 1)
-	menu_camera.position = Vector3(77, 64, 68).lerp(Vector3(43, 57, 46), smoothstep(0, 1, progress))
-	menu_camera.look_at(Vector3(20, 42, -3))
-	if arrival_time >= ARRIVAL_DURATION:
+	for cue: Dictionary in cinematic.advance(delta):
+		_say(str(cue["speaker"]),str(cue["message"]),float(cue["duration"]),true)
+	arrival_time = cinematic.elapsed
+	_render_cinematic()
+	if not cinematic.active:
 		_finish_arrival()
 
 func _finish_arrival() -> void:
+	if not arrival_playing:
+		return
 	arrival_playing = false
+	cinematic.finish()
+	hud.cinematic.hide()
+	hud.game.show()
 	player.active = not paused and not completed
 	player.camera.current = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if paused else Input.MOUSE_MODE_CAPTURED
 	_notify("AUBE  /  Équipe Alpha  ·  Secourez Ana au restaurant 30. Bravo se déploie sur Hespérie.")
 
-func _process_departure() -> void:
-	var helicopters: Array = world_data.get("helicopters", [world_data.get("helicopter")])
-	var origins: Array = world_data.get("helicopter_origins", [helicopter_origin])
+func _position_helicopters(mission_time: float) -> void:
+	var helicopters: Array = world_data.get("helicopters",[world_data.get("helicopter")])
+	var origins: Array = world_data.get("helicopter_origins",[helicopter_origin])
 	for index in range(helicopters.size()):
 		var heli: Node3D = helicopters[index]
 		if not is_instance_valid(heli):
 			continue
-		var departure: float = clampf((elapsed - 10.0 - index * 3.0) / 23.0, 0, 1)
+		var departure: float = clampf((mission_time - 10.0 - index * 3.0) / 23.0,0,1)
 		var origin: Vector3 = origins[index]
-		heli.global_position = origin + Vector3((100 + index * 20) * departure * departure, 25 * departure, -110 * departure)
+		heli.global_position = origin + Vector3((100 + index * 20) * departure * departure,25 * departure,-110 * departure)
 		heli.visible = departure < 1 and incident.phase != "aftermath"
+
+func _process_departure() -> void:
+	_position_helicopters(elapsed)
 	# A resumed checkpoint starts with the correct flight state, not a replayed arrival.
 	if incident.phase != "intact":
 		return
@@ -628,8 +770,10 @@ func _process_hoist(delta: float) -> void:
 		hoisting = null
 		_play_effect("rescue")
 		stress = maxf(0, stress - 15)
+		world.set_rescued_people(rescued)
+		var person_name: String = {"survivor_30": "Ana Rios", "survivor_28": "Samuel Breton", "survivor_26": "Nora Haddad"}.get(key, "Rescapé")
+		_say("VARGA  /  POSTE DU TOIT", "%s : réception confirmée au poste de secours. %d sur 3 à l’abri." % [person_name, rescued.size()], 8, true)
 		_save_checkpoint(hoist_floor)
-		_say("VARGA  /  POSTE DU TOIT", "Rescapé réceptionné. Il est en sécurité avec nous. %d sur 3." % rescued.size(), 8)
 
 func _use_flare() -> void:
 	if flares <= 0:
@@ -650,22 +794,51 @@ func _call_radio() -> void:
 		return
 	radio_cooldown = 8
 	stress = maxf(0, stress - 5)
-	if player.nearest_floor() == 26 and clues.size() > 1:
-		_say("CANAL SECOURS  /  SOURCE NON IDENTIFIÉE", "Ne remontez pas. Le toit est déjà sous l’eau. ... Alex ? Ne remontez pas.", 8)
-		stress = minf(100, stress + 12)
-	elif is_instance_valid(carried):
-		_say("VARGA  /  POSTE DU TOIT", "Vous avez quelqu’un au harnais. Rejoignez la balise orange du même étage et confirmez le treuillage.", 8)
+	# Operational requests take precedence over both ambient fiction and queued
+	# normal messages. Received lines remain available in the journal.
+	if is_instance_valid(carried):
+		_say("VARGA  /  POSTE DU TOIT", "Vous avez quelqu’un au harnais. Rejoignez la balise orange du même étage et confirmez le treuillage.", 8, true)
+	elif is_instance_valid(hoisting):
+		_say("VARGA  /  TREUIL", "Le treuil est en mouvement. Gardez le puits dégagé et attendez la confirmation de réception au toit.", 8, true)
 	elif rescued.size() >= 3:
 		if incident.phase == "intact":
-			_say("VARGA  /  POSTE D’AUBE", "Les trois rescapés sont ici. Bravo attend votre contact visuel à la baie Est du 29 avant le rapport final.", 8)
+			_say("VARGA  /  POSTE D’AUBE", "Les trois rescapés sont ici. Bravo attend votre contact visuel à la baie Est du 29 avant le rapport final.", 8, true)
 		else:
-			_say("VARGA  /  POSTE D’AUBE — SIGNAL DÉGRADÉ", "Les trois rescapés sont à l’abri. Rejoignez le refuge 25 et son relais ; il faut retrouver Bravo.", 8)
+			_say("VARGA  /  POSTE D’AUBE — SIGNAL DÉGRADÉ", "Les trois rescapés sont à l’abri. Rejoignez le refuge 25 et son relais ; il faut retrouver Bravo.", 8, true)
+	elif player.nearest_floor() == 26 and clues.size() > 1:
+		_say("CANAL SECOURS  /  SOURCE NON IDENTIFIÉE", "Ne remontez pas. Le toit est déjà sous l’eau. ... Alex ? Ne remontez pas.", 8)
+		stress = minf(100, stress + 12)
 	elif incident.phase == "aftermath":
 		_say("VARGA  /  POSTE D’AUBE — SIGNAL DÉGRADÉ", "... Aube vous reçoit. Le treuil est opérationnel. Contournez les débris Est au 28 par le noyau. Bravo, ici Aube... répondez.", 9)
 	elif "survivor_30" in rescued:
 		_say("BRAVO  /  HESPÉRIE", "Bravo à Alpha. Ana est à l’abri ? On vous attend à la baie Est du 29. Regardez vers nos lumières.", 9)
 	else:
 		_say("VARGA  /  POSTE DU TOIT", "Signaux confirmés au restaurant 30, aux archives 28 et au spa 26. La balise orange vous ramène à la corde.", 9)
+
+func _process_story_radio(quiet_delta: float) -> void:
+	if not started or paused or completed or arrival_playing or incident.phase != "aftermath" or "survivor_28" not in rescued:
+		radio_quiet_time = 0.0
+		return
+	if player.on_rope or is_instance_valid(carried) or is_instance_valid(hoisting) or radio.is_busy():
+		radio_quiet_time = 0.0
+		return
+	var floor_number: int = player.nearest_floor()
+	var awaiting_echo: bool = "bravo_echo" not in radio_events
+	if (awaiting_echo and floor_number != 27) or (not awaiting_echo and ("bravo_verification" in radio_events or floor_number not in [27, 25, 31])):
+		radio_quiet_time = 0.0
+		return
+	radio_quiet_time += maxf(0.0, quiet_delta)
+	var required_silence: float = 6.0 if awaiting_echo else 2.0
+	if radio_quiet_time < required_silence:
+		return
+	radio_quiet_time = 0.0
+	if awaiting_echo:
+		radio_events.append("bravo_echo")
+		_say("BRAVO  /  ÉCHO NON VÉRIFIÉ", "Bravo à Aube. On vous voit à la baie Est... Notre toit tient. Vous nous recevez ?", 8)
+	else:
+		radio_events.append("bravo_verification")
+		_say("VARGA  /  VÉRIFICATION DU SIGNAL", "J’ai reçu le même fragment. Aucun contact confirmé avec Bravo. Gardez les consignes du poste d’Aube ; nous vérifions la liaison.", 9)
+	_save_checkpoint(floor_number)
 
 func _update_hud() -> void:
 	var floor_number: int = player.nearest_floor()
@@ -739,9 +912,12 @@ func _update_hud() -> void:
 	hud.floor_map.text = "\n".join(rows)
 
 func _journal_content() -> String:
-	var text: String = "OPÉRATION SILLAGE — GRAINE %d\n\n" % current_seed
+	var text: String = "OPÉRATION ORPHÉE — GRAINE %d\n\n" % current_seed
 	text += "Votre mission : secourir les personnes des étages 30, 28 et 26, puis rejoindre le refuge 25. Les treuils évacuent les rescapés au toit ; les hélicoptères attendent une accalmie.\n\n"
-	text += "RESCAPÉS AU POSTE DE SECOURS : %d / 3\n\n" % rescued.size()
+	text += "RESCAPÉS AU POSTE DE SECOURS : %d / 3\n" % rescued.size()
+	for record: Array in [["survivor_30", "Ana Rios", 30], ["survivor_28", "Samuel Breton", 28], ["survivor_26", "Nora Haddad", 26]]:
+		text += "%s — %s\n" % [record[1], "réception confirmée, à l’abri au toit" if record[0] in rescued else "à secourir, étage %d" % record[2]]
+	text += "\n"
 	if incident.phase == "aftermath":
 		text += "SITUATION STRUCTURELLE\nUne réplique a fait basculer Hespérie contre la façade Est d’Aube. Bravo ne répond plus ; son sort n’est pas confirmé. Le noyau, le treuil et le poste d’Aube restent opérationnels. Le passage Est du 28 est condamné : suivre le détour intérieur. Les victimes déjà réceptionnées restent à l’abri.\n\n"
 	else:
@@ -751,13 +927,22 @@ func _journal_content() -> String:
 			text += "%s — ÉTAGE %d\n%s\n\n" % [spec["evidence_title"], spec["number"], spec["evidence_text"]]
 	if clues.is_empty():
 		text += "Aucun indice collecté. Les documents sont éclairés d’une lueur bleue.\n\n"
-	text += "MATÉRIEL\nLa lampe ne consomme pas de pile dans ce prototype. L’air diminue dans la fumée. Une fusée éclaire et repousse la silhouette pendant 20 secondes. X stabilise le balancement sur corde sans couper votre ligne principale.\n\nPOINTS SÛRS\nUn rescapé treuillé crée un point de reprise. Le refuge25 enregistre également votre progression."
+	text += "TRANSMISSIONS REÇUES\n"
+	if radio.history.is_empty():
+		text += "Aucune transmission enregistrée dans ce point de reprise.\n"
+	for transmission: Dictionary in radio.history:
+		var stamp: int = int(transmission["elapsed"])
+		text += "[%02d:%02d] %s\n%s\n\n" % [stamp / 60, stamp % 60, transmission["speaker"], transmission["message"]]
+	text += "\nMATÉRIEL\nLa lampe ne consomme pas de pile dans ce prototype. L’air diminue dans la fumée. Une fusée éclaire et repousse la silhouette pendant 20 secondes. X stabilise le balancement sur corde sans couper votre ligne principale.\n\nPOINTS SÛRS\nUn rescapé treuillé crée un point de reprise. Le refuge 25 enregistre également votre progression."
 	return text
 
 func _complete_game() -> void:
 	completed = true
 	_save_checkpoint(25)
 	player.active = false
+	world.set_process(false)
+	paused = false
+	hud.set_paused(false)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	hud.end_panel.show()
 	hud.completion_text.text = "Intervention terminée en %02d min %02d s.\nTrois vies sauvées. %d indices récupérés sur trois.\n\nHespérie reste appuyée contre Aube. Le relais accroche\nune voix disparue au moment de l’impact :\n« Bravo à Aube. On vous voit à la baie Est... »\nPuis : « Nous sommes au 24. Il y a de la lumière dessous. »\n\nLe message est-il en direct ? Un enfant appelle\nà son tour depuis Hespérie." % [int(elapsed) / 60, int(elapsed) % 60, clues.size()]
@@ -770,32 +955,41 @@ func _fall_recovery() -> void:
 		_restore(data)
 	_say("VARGA  /  REPRISE AU POINT SÛR", "Intervention reprise au dernier point enregistré. Attachez-vous à la balise avant d’entrer dans le puits.", 10)
 
+func _open_journal() -> void:
+	if not started:
+		return
+	_pause(false)
+	# The ending is a later sibling modal and would otherwise cover the journal.
+	hud.end_panel.hide()
+	hud.journal_text.text = _journal_content()
+	hud.journal_panel.show()
+
 func _pause(show_panel: bool = true) -> void:
 	paused = true
 	player.active = false
 	world.set_process(false)
 	hud.pause_panel.visible = show_panel
+	if arrival_playing:
+		hud.cinematic.hide()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _resume() -> void:
 	paused = false
 	player.active = not arrival_playing and not completed
-	world.set_process(true)
+	world.set_process(not completed)
 	hud.set_paused(false)
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if completed:
+		hud.end_panel.show()
+	if arrival_playing:
+		_render_cinematic()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if completed or arrival_playing else Input.MOUSE_MODE_CAPTURED
 
 func _return_to_menu() -> void:
-	started = false
-	paused = false
-	completed = false
-	arrival_playing = false
-	incident.restore("intact")
-	hud.show_menu()
-	_build_world(current_seed)
-	_show_menu_camera()
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	if is_instance_valid(audio_wind):
-		audio_wind.stop()
+	boot_playing = false
+	cinematic.finish()
+	radio.reset()
+	radio_quiet_time = 0.0
+	_prepare_menu()
 
 func _notify(message: String) -> void:
 	hud.notify_label.text = message
@@ -803,28 +997,39 @@ func _notify(message: String) -> void:
 	hud.notify_label.show()
 
 func _say(speaker: String, message: String, seconds: float = 8.0, priority: bool = false) -> void:
-	if incident.is_active() and not priority:
-		return
-	hud.set_radio(speaker, message)
-	radio_time = seconds
-	if sound_enabled and is_instance_valid(audio_radio):
+	var before: Dictionary = radio.current.duplicate(true)
+	var accepted: bool = radio.submit(speaker, message, seconds, elapsed, priority, incident.is_active() and not priority)
+	if accepted:
+		radio_quiet_time = 0.0
+	_sync_radio(accepted and before != radio.current)
+
+func _sync_radio(play_chirp: bool = false) -> void:
+	radio_time = radio.remaining
+	if radio.is_busy():
+		hud.set_radio(str(radio.current["speaker"]), str(radio.current["message"]))
+	else:
+		hud.radio_panel.hide()
+	if play_chirp and radio.is_busy() and sound_enabled and is_instance_valid(audio_radio):
 		audio_radio.play()
 
 func _setting_changed(setting: String, enabled: bool) -> void:
-	match setting:
-		"reduced_motion":
-			reduced_motion = enabled
-			player.reduced_motion = enabled
-		"flashes":
-			flashes_enabled = enabled
-			# World lightning is optional; no flashes are required for progression.
-			if world.has_method("set_lightning_enabled"):
-				world.set_lightning_enabled(enabled)
-		"audio":
-			sound_enabled = enabled
-			AudioServer.set_bus_mute(0, not enabled)
-			if enabled and started:
-				audio_wind.play()
+	if not Preferences.DEFAULTS.has(setting):
+		return
+	preferences[setting] = enabled
+	reduced_motion = bool(preferences["reduced_motion"])
+	flashes_enabled = bool(preferences["flashes"])
+	sound_enabled = bool(preferences["audio"])
+	if is_instance_valid(player):
+		player.reduced_motion = reduced_motion
+	if is_instance_valid(world):
+		world.set_lightning_enabled(flashes_enabled)
+	AudioServer.set_bus_mute(0,not sound_enabled)
+	if sound_enabled and is_instance_valid(audio_wind) and not audio_wind.playing:
+		audio_wind.play()
+	hud.apply_settings(preferences)
+	var error: Error = Preferences.save_settings(preferences,preferences_path)
+	if error != OK:
+		_notify("Réglages appliqués pour cette session, mais non enregistrés sur le disque.")
 
 func _make_audio() -> void:
 	audio_wind = AudioStreamPlayer.new()
@@ -848,3 +1053,8 @@ func _play_effect(effect: String) -> void:
 	if sound_enabled and ResourceLoader.exists("res://assets/audio/%s.wav" % effect):
 		audio_effect.stream = load("res://assets/audio/%s.wav" % effect)
 		audio_effect.play()
+
+func _exit_tree() -> void:
+	for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect]:
+		if is_instance_valid(channel):
+			channel.stop()

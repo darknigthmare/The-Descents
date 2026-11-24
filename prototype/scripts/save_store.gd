@@ -2,12 +2,16 @@ class_name DescentSave
 extends RefCounted
 ## Versioned local checkpoint storage. Invalid input never overwrites a valid save.
 
-const SAVE_VERSION: int = 2
+const SAVE_VERSION: int = 3
 # Keep the original filename so a 0.1 installation can find its checkpoint.
 const DEFAULT_PATH: String = "user://save_v1.json"
 const MAX_BYTES: int = 65536
 const MAX_IDS: int = 64
 const MAX_ID_LENGTH: int = 80
+const MAX_TRANSMISSIONS: int = 32
+const MAX_SPEAKER_LENGTH: int = 120
+const MAX_MESSAGE_LENGTH: int = 1200
+const RADIO_EVENT_IDS: Array[String] = ["bravo_echo", "bravo_verification"]
 const INTEGER_LIMITS: Dictionary = {
 	"version": [SAVE_VERSION, SAVE_VERSION],
 	"seed": [1, 999999],
@@ -25,7 +29,7 @@ const ID_FIELDS: Array[String] = ["rescued", "clues", "supplies_used"]
 const REQUIRED_KEYS: Array[String] = [
 	"version", "seed", "floor", "health", "oxygen", "stress", "anchors",
 	"flares", "rescued", "clues", "supplies_used", "elapsed", "seen_floors", "completed",
-	"incident_state"
+	"incident_state", "transmissions", "radio_events"
 ]
 
 
@@ -84,14 +88,21 @@ static func load_data(path: String = DEFAULT_PATH) -> Dictionary:
 	# integral, bounded values are converted for the integer fields.
 	var data: Dictionary = parser.data
 	var version: Variant = data.get("version")
-	if (typeof(version) == TYPE_INT or typeof(version) == TYPE_FLOAT) and version == 1:
-		# Migration is read-only until the next valid v2 checkpoint is saved.
+	if (typeof(version) == TYPE_INT or typeof(version) == TYPE_FLOAT) and (version == 1 or version == 2):
+		# JSON numbers are floats: numerical equality here intentionally avoids
+		# type-strict Array membership rejecting otherwise valid legacy files.
+		# Migration is read-only until the next valid v3 checkpoint is saved.
 		# Validate the entire exact legacy schema before adding any new fields.
-		var legacy: Dictionary = _normalize(data, true, true)
+		var legacy: Dictionary = _normalize(data, true, int(version))
 		if legacy.is_empty():
 			return {}
 		legacy["version"] = SAVE_VERSION
-		legacy["incident_state"] = "aftermath" if legacy["completed"] else "intact"
+		if version == 1:
+			legacy["incident_state"] = "aftermath" if legacy["completed"] else "intact"
+		# Older versions did not record received words or optional radio events.
+		# Empty records preserve that absence instead of inventing a transcript.
+		legacy["transmissions"] = []
+		legacy["radio_events"] = []
 		return legacy
 	return _normalize(data, true)
 
@@ -100,9 +111,12 @@ static func _valid_path(path: String) -> bool:
 	return not path.is_empty() and not path.get_file().is_empty() and (path.begins_with("user://") or path.is_absolute_path())
 
 
-static func _normalize(data: Dictionary, from_json: bool, legacy: bool = false) -> Dictionary:
+static func _normalize(data: Dictionary, from_json: bool, schema: int = SAVE_VERSION) -> Dictionary:
 	var required_keys: Array[String] = REQUIRED_KEYS.duplicate()
-	if legacy:
+	if schema < 3:
+		required_keys.erase("transmissions")
+		required_keys.erase("radio_events")
+	if schema == 1:
 		required_keys.erase("incident_state")
 	if data.size() != required_keys.size():
 		return {}
@@ -115,7 +129,7 @@ static func _normalize(data: Dictionary, from_json: bool, legacy: bool = false) 
 		if typeof(value) != TYPE_INT:
 			if not from_json or typeof(value) != TYPE_FLOAT or not is_finite(float(value)) or floorf(float(value)) != float(value):
 				return {}
-		var limits: Array = [1, 1] if legacy and key == "version" else INTEGER_LIMITS[key]
+		var limits: Array = [schema, schema] if key == "version" else INTEGER_LIMITS[key]
 		if value < limits[0] or value > limits[1]:
 			return {}
 		result[key] = int(value)
@@ -151,10 +165,44 @@ static func _normalize(data: Dictionary, from_json: bool, legacy: bool = false) 
 	if typeof(data["completed"]) != TYPE_BOOL:
 		return {}
 	result["completed"] = data["completed"]
-	if not legacy:
+	if schema >= 2:
 		if typeof(data["incident_state"]) != TYPE_STRING or data["incident_state"] not in ["intact", "aftermath"]:
 			return {}
 		if data["completed"] and data["incident_state"] != "aftermath":
 			return {}
 		result["incident_state"] = data["incident_state"]
+	if schema >= 3:
+		if not data["transmissions"] is Array or data["transmissions"].size() > MAX_TRANSMISSIONS:
+			return {}
+		var transmissions: Array[Dictionary] = []
+		var previous_time: float = 0.0
+		for entry in data["transmissions"]:
+			if not entry is Dictionary or entry.size() != 3 or not entry.has_all(["speaker", "message", "elapsed"]):
+				return {}
+			if typeof(entry["speaker"]) != TYPE_STRING or typeof(entry["message"]) != TYPE_STRING:
+				return {}
+			if entry["speaker"].strip_edges().is_empty() or entry["speaker"].length() > MAX_SPEAKER_LENGTH:
+				return {}
+			if entry["message"].strip_edges().is_empty() or entry["message"].length() > MAX_MESSAGE_LENGTH:
+				return {}
+			if typeof(entry["elapsed"]) != TYPE_INT and typeof(entry["elapsed"]) != TYPE_FLOAT:
+				return {}
+			var timestamp: float = float(entry["elapsed"])
+			if not is_finite(timestamp) or timestamp < previous_time or timestamp > result["elapsed"]:
+				return {}
+			previous_time = timestamp
+			transmissions.append({"speaker": entry["speaker"], "message": entry["message"], "elapsed": timestamp})
+		result["transmissions"] = transmissions
+		if not data["radio_events"] is Array or data["radio_events"].size() > RADIO_EVENT_IDS.size():
+			return {}
+		var events: Array[String] = []
+		for event in data["radio_events"]:
+			if typeof(event) != TYPE_STRING or event not in RADIO_EVENT_IDS or event in events:
+				return {}
+			if event == "bravo_verification" and "bravo_echo" not in events:
+				return {}
+			events.append(event)
+		if not events.is_empty() and (result["incident_state"] != "aftermath" or "survivor_28" not in result["rescued"]):
+			return {}
+		result["radio_events"] = events
 	return result
