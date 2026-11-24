@@ -10,7 +10,7 @@ L’événement doit transformer un lieu que le joueur vient de comprendre. Il a
 
 La scène est un événement réel du récit. Les incertitudes sur les hallucinations apparaissent dans ce qui suit ; elles n’effacent ni l’effondrement, ni les sauvetages confirmés.
 
-## 2. Périmètre de la version 0.5.0
+## 2. Périmètre de la version 0.6.0
 
 | Élément | Périmètre retenu |
 | --- | --- |

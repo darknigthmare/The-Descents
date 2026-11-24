@@ -36,6 +36,7 @@ var carried: Node3D
 var hoisting: Node3D
 var hoist_progress: float = 0.0
 var hoist_floor: int = 30
+var hoist_labels_enabled: bool = true
 var nearest: Node3D
 var last_floor: int = 31
 var checkpoint_floor: int = 31
@@ -197,6 +198,7 @@ func _build_world(seed_value: int) -> void:
 		menu_camera.free()
 	carried = null
 	hoisting = null
+	hoist_labels_enabled = true
 	nearest = null
 	shadow = null
 	current_seed = seed_value
@@ -822,11 +824,16 @@ func _start_hoist(survivor: Node3D, floor_number: int) -> void:
 	hoisting = survivor
 	hoist_floor = floor_number
 	hoist_progress = 0
+	# Keep the lift silhouette and cable legible. The HUD retains location and
+	# rescue progress; restore the existing annotation preference on completion.
+	hoist_labels_enabled = player.camera.get_cull_mask_value(2)
+	player.camera.set_cull_mask_value(2, false)
 	survivor.show()
 	survivor.global_position = Vector3(1.8, (floor_number - 24) * 6 + 0.6, 0)
 	carried = null
 	player.carrying = false
 	rescue_visuals.begin_hoist(survivor)
+	_notify("Treuillage en cours. Gardez le puits dégagé jusqu’à la réception.")
 	_say("VARGA  /  TREUIL", "Le harnais est verrouillé. On remonte votre rescapé au poste de secours. Gardez le puits dégagé.", 7)
 
 func _process_hoist(delta: float) -> void:
@@ -840,11 +847,13 @@ func _process_hoist(delta: float) -> void:
 			rescued.append(key)
 		hoisting.hide()
 		hoisting = null
+		player.camera.set_cull_mask_value(2, hoist_labels_enabled)
 		_play_effect("rescue")
 		stress = maxf(0, stress - 15)
 		world.set_rescued_people(rescued)
 		rescue_visuals.finish_hoist(key)
 		var person_name: String = {"survivor_30": "Ana Rios", "survivor_28": "Samuel Breton", "survivor_26": "Nora Haddad"}.get(key, "Rescapé")
+		_notify("%s : réception confirmée. Reprenez votre progression." % person_name)
 		_say("VARGA  /  POSTE DU TOIT", "%s : réception confirmée au poste de secours. %d sur 3 à l’abri." % [person_name, rescued.size()], 8, true)
 		_save_checkpoint(hoist_floor)
 

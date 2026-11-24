@@ -39,6 +39,8 @@ Une fois les images inspectées et les éventuels défauts corrigés, publier le
 | docs/validation/v0.6/EXPORTED_PACK_VERIFICATION.json | Tests des deux packs dans des répertoires vides, avec leurs limites explicites. |
 | .review/v0.6/request.json | Demande de capture liée au runtime, au script de capture et au rapport de tests. |
 | docs/captures/v0.6/CI_PROVENANCE.json | Empreintes des 22 captures, moteur, commit et exécution Actions. |
+| docs/captures/v0.6/REVIEW_DERIVATIVES.json | Correspondance entre les grands PNG natifs et leurs JPEG de lecture, avec les deux empreintes. |
+| docs/captures/v0.6/review_jpeg/ | Dérivés plein format, qualité 95, uniquement pour les PNG de plus de 900 000 octets. |
 | docs/validation/v0.6/DOCUMENT_BUILD.json | Empreintes des 13 sources, des deux formats et de chaque page rendue. |
 | docs/validation/v0.6/rendered/ | Images A4 de toutes les pages et texte extrait pour la revue. |
 | docs/validation/v0.6/VISUAL_REVIEW.json | Revue explicite du jeu, associée à chaque capture finale. |
@@ -53,6 +55,8 @@ Les 21 suites obligatoires couvrent les 18 domaines de la v0.5 et les ajouts de 
 ## Contrat des revues
 
 La revue du jeu doit porter sur les 22 captures finales. Elle conserve **all_pass: true**, le **source_commit** de CI_PROVENANCE.json, et la liste **captures** contenant pour chaque image son nom court et son **sha256**. Une image modifiée ne peut pas réutiliser une ancienne approbation.
+
+Lorsque le lecteur de fichiers ne retourne pas un PNG de plus de 1 Mio, les JPEG dérivés permettent d'examiner son contenu en 1 440 × 900, sans recadrage ni redimensionnement, à la qualité 95 et sans sous-échantillonnage chromatique. Le manifeste relie chaque dérivé au PNG original, vérifie que celui-ci n'a pas changé et conserve leurs empreintes distinctes. La revue indique le fichier réellement affiché et sa méthode de lecture ; ses champs **file** et **sha256** continuent de désigner le PNG natif. Les JPEG sont des copies avec compression destructive destinées à la lecture ; les PNG et leurs contrôles de livraison restent les preuves originales. La création de ces copies ne vaut pas approbation visuelle.
 
 La revue documentaire conserve les 13 sources, les deux formats, le nombre de pages et une entrée par page dans l'ordre. Chaque entrée de **pages** comprend **page**, **status: "pass"** et le **sha256** de l'image effectivement inspectée. Les empreintes doivent correspondre à DOCUMENT_BUILD.json.
 

@@ -413,7 +413,7 @@ Pour le prototype, un sous-ensemble de ce contrat suffit. Les six fonctions d’
 
 ## 15 Catalogue d’événements
 
-La plupart de ces événements sont des modules de campagne proposés. Une entrée est sélectionnée selon son contexte, ses prérequis et le temps de récupération disponible. L’effondrement observé au 29, introduit en 0.2 et conservé en 0.5.0, constitue l’événement fixe du prototype ; sa présence ne dépend pas d’un tirage aléatoire. Le [dossier de séquence](EFFONDREMENT_EN_DIRECT.md) distingue son implémentation en maquette des enrichissements cinématiques futurs.
+La plupart de ces événements sont des modules de campagne proposés. Une entrée est sélectionnée selon son contexte, ses prérequis et le temps de récupération disponible. L’effondrement observé au 29, introduit en 0.2 et conservé en 0.6.0, constitue l’événement fixe du prototype ; sa présence ne dépend pas d’un tirage aléatoire. Le [dossier de séquence](EFFONDREMENT_EN_DIRECT.md) distingue son implémentation en maquette des enrichissements cinématiques futurs.
 
 | Événement | Conditions | Action et information offertes au joueur |
 |---|---|---|
@@ -568,7 +568,7 @@ Le prototype doit répondre à des questions concrètes. Le rappel donne-t-il en
 
 ### Périmètre de la tranche
 
-| Zone | Fonction | Périmètre du prototype 0.5.0 |
+| Zone | Fonction | Périmètre du prototype 0.6.0 |
 |---|---|---|
 | Toit | Arrivée et briefing | Approche temps réel, deux tours intactes, deux appareils, équipes en maquette, réception nominative des rescapés et première ligne |
 | 30 | Restaurant panoramique | Ana Rios, maître d’hôtel, première rescapée et apprentissage de l’exploration |
@@ -703,7 +703,7 @@ Le nom public peut rester **The Tower Descent**, avec **The-Descents** comme nom
 
 La personnalisation complète d’Alex, le nombre exact de survivants de la campagne, la présence jouable de Malik, les durées de ressources, la taille finale des étages et le degré de violence explicite devront être confirmés après la première tranche. Le catalogue propose des situations et non un engagement à produire toutes leurs variantes simultanément.
 
-## 28 Dossier de production 0.5.0
+## 28 Historique — dossier de production 0.5.0
 
 La révision ajoute des spécifications transversales assez précises pour préparer une nouvelle tranche sans confondre conception et livraison. Le catalogue fournit trente fiches d’assemblage : volumes proposés, circulation, accessoires, rythme, sauvegarde et contrôle du retour. Les étages 24 à 1 restent à construire ; la fiche d’un étage déjà représenté décrit aussi des enrichissements non intégrés.
 

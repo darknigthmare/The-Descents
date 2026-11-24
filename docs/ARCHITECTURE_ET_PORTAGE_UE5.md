@@ -2,7 +2,7 @@
 
 Version de conception 0.6.0 — Présentation cinématique et continuité de mission — 24 novembre 2026
 
-Ce document décrit le prototype Godot 0.5.0 et propose une trajectoire vers Unreal Engine 5. La tranche solo en vue subjective comprend un toit, six étages de 30 à 25, trois sauvetages, trois indices et un refuge. Les deux tours commencent intactes, deux hélicoptères et des groupes de secours sont visibles en maquette, puis un effondrement partiel se déroule pendant l’observation depuis le 29. La campagne complète et le portage UE5 restent à produire.
+Ce document décrit le prototype Godot 0.6.0 et propose une trajectoire vers Unreal Engine 5. La tranche solo en vue subjective comprend un toit, six étages de 30 à 25, trois sauvetages, trois indices et un refuge. Les deux tours commencent intactes, deux hélicoptères et des groupes de secours sont visibles en maquette, puis un effondrement partiel se déroule pendant l’observation depuis le 29. La campagne complète et le portage UE5 restent à produire.
 
 Le projet déclare une base de fonctionnalités Godot 4.7. Les exécutables, versions de moteur effectivement utilisées et résultats de vérification sont décrits dans le rapport de livraison du dépôt. Ce document ne constitue pas un rapport d’exécution d’Unreal Engine. La coopération en réseau n’est pas implémentée.
 
@@ -130,7 +130,7 @@ Le générateur de campagne doit d'abord assembler un graphe praticable : entré
 
 Le framework PCG d'Unreal constitue une option pour distribuer végétation, gravats et accessoires à partir de règles. Il ne doit pas remplacer les invariants de sauvetage ou décider seul de la progression narrative. Cette utilisation est une proposition adaptée au rôle de génération procédurale décrit par Epic. [Documentation Epic PCG](https://dev.epicgames.com/documentation/en-us/unreal-engine/procedural-content-generation-framework-in-unreal-engine)
 
-Dans le prototype 0.5.0, Hespérie passe d’un état vertical intact à un état partiellement effondré pendant le jeu. Son état final, le détour et les communications sont persistants. Le portage UE5 proposé doit d’abord reproduire ce contrat, avec trajectoires préparées, zone d’observation, commandes libres, pause réelle et reprises avant/après. Des débris et effets plus détaillés pourront ensuite enrichir la scène sans décider de la praticabilité du trajet de secours.
+Dans le prototype 0.6.0, Hespérie passe d’un état vertical intact à un état partiellement effondré pendant le jeu. Son état final, le détour et les communications sont persistants. Le portage UE5 proposé doit d’abord reproduire ce contrat, avec trajectoires préparées, zone d’observation, commandes libres, pause réelle et reprises avant/après. Des débris et effets plus détaillés pourront ensuite enrichir la scène sans décider de la praticabilité du trajet de secours.
 
 Pour la production UE5, prévoir des groupes distincts : structure intacte, volume mobile de rupture, façade haute endommagée, débris décoratifs et collisions finales. Le contrôleur narratif resterait responsable du passage d’état ; une éventuelle simulation de débris ne serait pas la source de vérité des routes. L’approche en hélicoptère et le jeu d’acteurs de l’équipe opposée constituent des séquences supplémentaires à produire. Ces choix sont des propositions d’architecture, pas du code UE5 livré.
 

@@ -163,7 +163,7 @@ La cible d’habillage utilise une différence discrète de couleur sonore et un
 
 Le relais du 25 termine le périmètre de démonstration. L’écran récapitule les sauvetages et expose le journal des communications conservées. La présentation distingue personnes confirmées au treuil, informations recueillies et incertitude sur Bravo. La dernière image jouée reste un lieu sûr, sans attaque déclenchée par l’ouverture du bilan.
 
-Le menu peut ensuite proposer de consulter cette intervention terminée. Son décor correspond au refuge et son texte à la partie achevée. Le résultat n’autorise pas la présentation d’un bunker, d’Alma retrouvée ou d’une fin de campagne : ces chapitres sont conçus mais ne sont pas jouables dans la version 0.5.0.
+Le menu peut ensuite proposer de consulter cette intervention terminée. Son décor correspond au refuge et son texte à la partie achevée. Le résultat n’autorise pas la présentation d’un bunker, d’Alma retrouvée ou d’une fin de campagne : ces chapitres sont conçus mais ne sont pas jouables dans la version 0.6.0.
 
 ## 9 Storyboards de campagne à produire
 

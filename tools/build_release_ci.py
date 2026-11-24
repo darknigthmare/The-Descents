@@ -161,6 +161,66 @@ def capture(binary: str) -> None:
          "--log", str(VALIDATION / "native-render.txt"))
 
 
+
+def build_review_derivatives() -> None:
+    """Expose large captures to review tools without replacing the native PNGs."""
+    from PIL import Image
+
+    provenance_path = CAPTURES / "CI_PROVENANCE.json"
+    provenance = json.loads(provenance_path.read_text(encoding="utf-8"))
+    require(provenance["version"] == VERSION and provenance["source_commit"] == git_head(),
+            "Review derivatives require this build's verified native captures.")
+    threshold = 900_000
+    destination = CAPTURES / "review_jpeg"
+    if destination.exists():
+        shutil.rmtree(destination)
+    destination.mkdir()
+    derivatives = []
+    for capture_row in provenance["captures"]:
+        source = CAPTURES / capture_row["file"]
+        require(source.stat().st_size == capture_row["bytes"] and sha256(source) == capture_row["sha256"],
+                "Native capture changed before review conversion: " + capture_row["file"])
+        if source.stat().st_size <= threshold:
+            continue
+        output = destination / (source.stem + ".jpg")
+        with Image.open(source) as original:
+            original.load()
+            require(original.format == "PNG" and original.size == (1440, 900),
+                    "Review conversion received an unexpected native image.")
+            require(original.mode in {"RGB", "RGBA"}, "Review conversion requires a true-color native capture.")
+            if original.mode == "RGBA":
+                require(original.getextrema()[3] == (255, 255),
+                        "Review conversion would discard native transparency.")
+            with original.convert("RGB") as converted:
+                converted.save(output, format="JPEG", quality=95, subsampling=0, optimize=True, progressive=False)
+        with Image.open(output) as decoded:
+            decoded.load()
+            require(decoded.format == "JPEG" and decoded.size == (1440, 900),
+                    "A review derivative changed the native dimensions.")
+        require(output.stat().st_size < 1_000_000,
+                "A full-resolution quality-95 derivative is still too large for the review file reader.")
+        require(sha256(source) == capture_row["sha256"], "Review conversion modified its native PNG.")
+        derivatives.append({
+            "source_file": capture_row["file"], "source_bytes": capture_row["bytes"],
+            "source_sha256": capture_row["sha256"],
+            "file": output.relative_to(CAPTURES).as_posix(), "bytes": output.stat().st_size,
+            "sha256": sha256(output), "width": 1440, "height": 900,
+        })
+    write_json(CAPTURES / "REVIEW_DERIVATIVES.json", {
+        "format": 1, "version": VERSION, "source_commit": provenance["source_commit"],
+        "source_provenance": "CI_PROVENANCE.json", "source_provenance_sha256": sha256(provenance_path),
+        "built_utc": datetime.now(timezone.utc).isoformat(),
+        "selection": {"native_png_bytes_strictly_greater_than": threshold},
+        "conversion": {"format": "JPEG", "quality": 95, "chroma_subsampling": "4:4:4",
+                       "resize": False, "crop": False, "lossy": True},
+        "derivatives": derivatives, "manual_visual_review": False,
+        "limitations": [
+            "These full-size JPEG derivatives support visual inspection in file readers that cannot return PNGs above 1 MiB.",
+            "JPEG is lossy. The original PNGs and CI_PROVENANCE.json remain the authoritative capture evidence.",
+            "Derivative generation does not approve a visual review or change any PNG release gate.",
+        ],
+    })
+
 def build_documents() -> None:
     from build_bible import PARTS
 
@@ -269,6 +329,7 @@ def build(binary: str, request: dict) -> None:
         require(runtime_hashes() == before, "Import or source tests modified authored runtime files.")
         export_packs(binary, git_head())
         capture(binary)
+        build_review_derivatives()
         build_documents()
     else:
         verify_reviews()

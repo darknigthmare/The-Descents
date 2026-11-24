@@ -187,7 +187,7 @@ Les fiches suivantes servent à écrire les comportements et dialogues. Leurs mo
 
 **Peur et tension.** Il craint de devenir une charge pour l’autre équipe, ce qui peut le pousser à retarder une demande d’aide. Le joueur peut lui fournir un relais ou une route ; l’écriture doit montrer la conséquence avant une éventuelle séparation.
 
-**Fonction et cible.** Allié de mission, pas compagnon autonome livré en 0.5.0. Une première version pourrait utiliser des postes préparés et des transitions contrôlées, puis une navigation locale. Les états utiles sont engagé, contact établi, route partagée, isolé et pris en charge. Sa survie future dépend de décisions documentées, jamais d’un silence aléatoire destiné à surprendre.
+**Fonction et cible.** Allié de mission, pas compagnon autonome livré en 0.6.0. Une première version pourrait utiliser des postes préparés et des transitions contrôlées, puis une navigation locale. Les états utiles sont engagé, contact établi, route partagée, isolé et pris en charge. Sa survie future dépend de décisions documentées, jamais d’un silence aléatoire destiné à surprendre.
 
 ### Inès Valen — distinguer une estimation d’un fait
 

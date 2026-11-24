@@ -44,6 +44,7 @@ func _run() -> void:
 	_freeze()
 	await process_frame
 	_check(mission.rescue_visuals.carry_id.is_empty() and mission.rescue_visuals.hoist_id.is_empty() and mission.rescue_visuals.reception_id.is_empty(), "Checkpoint restored a transient animation.")
+	_check(mission.player.camera.get_cull_mask_value(2), "Checkpoint rebuild retained a temporary hidden annotation layer.")
 	for id_value: String in mission.world.roof_rescued_people:
 		var person: Node3D = mission.world.roof_rescued_people[id_value]
 		_check(person.visible and person.position.x >= 6 and person.position.z < -8, "Reload failed to place a received person under the medical canopy.")
@@ -112,6 +113,9 @@ func _rescue(floor_number: int) -> void:
 	var beacon: Node3D = _find("beacon", floor_number)
 	var id_value: String = str(survivor.get_meta("id"))
 	var registry_size: int = mission.rescued.size()
+	# Exercise both incoming annotation states, preserving every other layer.
+	mission.player.camera.set_cull_mask_value(2, floor_number != 26)
+	var original_camera_mask: int = mission.player.camera.cull_mask
 	mission.player.teleport_to_floor(floor_number)
 	mission.player.position = survivor.global_position + Vector3(0, 0.1, 1.3)
 	mission.player.camera.rotation = Vector3.ZERO
@@ -135,6 +139,8 @@ func _rescue(floor_number: int) -> void:
 	_check(mission.rescue_visuals.carry_id.is_empty() and not mission.rescue_visuals.carry_rig.visible, "First-person casualty remains after harness transfer.")
 	_check(mission.rescue_visuals.hoist_rig.visible and mission.rescue_visuals.cable.visible and survivor.visible, "Hoist is missing its casualty, harness or cable.")
 	_check(mission.rescued.size() == registry_size, "Attaching the hoist registered an unfinished rescue.")
+	_check(mission.player.camera.cull_mask == (original_camera_mask & ~2), "Hoist labels obstruct the cable, or another render layer was changed.")
+	_check(not mission.hud.notify_label.text.contains("Retournez"), "Active lift still tells the player to return a carried casualty.")
 	var safe_bytes: String = FileAccess.get_file_as_string(SAVE_PATH)
 	mission._process_hoist(2.5)
 	_check(survivor.global_position.is_equal_approx(Rescue.hoist_position(2.5, floor_number)), "Real hoist does not use the absolute trajectory.")
@@ -145,13 +151,16 @@ func _rescue(floor_number: int) -> void:
 	mission._process(3.0)
 	await process_frame
 	_check(survivor.global_position == hoist_position and mission.hoist_progress == clock, "Pause advanced the rescue.")
+	_check(not mission.player.camera.get_cull_mask_value(2), "Pausing the hoist restored obstructive annotations.")
 	_check(FileAccess.get_file_as_string(SAVE_PATH) == safe_bytes, "A half-hoisted casualty changed the safe checkpoint.")
 	mission._resume()
 	_freeze()
 	mission._process_hoist(2.5)
 	_check(mission.hoisting == null and mission.rescued.size() == registry_size + 1 and id_value in mission.rescued, "A full five-second hoist did not register exactly one rescue.")
+	_check(mission.player.camera.cull_mask == original_camera_mask, "Completed hoist failed to restore the incoming annotation state.")
 	_check(not mission.rescue_visuals.cable.visible and not mission.rescue_visuals.hoist_rig.visible and not survivor.visible, "Completed hoist retained a duplicate figure or cable.")
 	_check(mission.rescue_visuals.reception_id == id_value, "Roof reception did not start for the confirmed ID.")
+	_check(not mission.hud.notify_label.text.contains("Treuillage en cours"), "Receipt leaves an unfinished-lift instruction visible.")
 	var receipt: Node3D = mission.world.roof_rescued_people[id_value]
 	_check(receipt.visible and receipt.position.is_equal_approx(Rescue.DOCK), "Roof reception does not begin at the actual hoist dock.")
 	mission.rescue_visuals.advance(1.8, true)

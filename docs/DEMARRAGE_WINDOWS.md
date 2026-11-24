@@ -50,7 +50,7 @@ Une sauvegarde locale est créée au départ, après les treuillages, au refuge 
 
 ## Portée de cette version
 
-Prototype solo avec un toit et six étages jouables, des hélicoptères et personnages procéduraux, réalisé avec **Godot 4.7.2**. La campagne complète et le futur portage UE5 sont décrits dans la bible. L’export Windows a été construit et ses ressources embarquées ont réussi 28 contrôles isolés avec Godot sous Linux. L’exécutable de cette livraison n’a pas été lancé sur un PC Windows dans l’environnement de fabrication. Consultez `EXPORTS.md` pour les résultats et la méthode de vérification.
+Prototype solo avec un toit et six étages jouables, des hélicoptères et personnages procéduraux, réalisé avec **Godot 4.7.2**. La campagne complète et le futur portage UE5 sont décrits dans la bible. L’export Windows a été construit et ses ressources embarquées ont réussi 30 contrôles isolés avec Godot sous Linux. L’exécutable de cette livraison n’a pas été lancé sur un PC Windows dans l’environnement de fabrication. Consultez `EXPORTS.md` pour les résultats et la méthode de vérification.
 
 [Projet, sources et bible sur GitHub](https://github.com/darknigthmare/The-Descents/tree/feat/live-tower-collapse)
 
