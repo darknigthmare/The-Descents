@@ -317,16 +317,32 @@ func _floor_surface(parent: Node3D, y: float, floor_material: Material, enclosed
 	for zz in [-11.6, 11.6]:
 		for xx in [-4.2, 4.2]:
 			_box(parent, Vector3(xx, y + 2.8, zz), Vector3(0.65, 5.6, 0.65), materials["edge"], true)
-	# Complete transparent glazing, with visible frames and an intact sill.
+	# Each bay has transparent interior glass and an outward-facing opaque coat.
+	# The exterior reads as a complete curtain wall during the approach, while
+	# back-face culling preserves the player's view through the observation bay.
 	# East panes on 29/28 shatter only when Hesperie reaches Aube.
 	for zz in [-11.9, 11.9]:
 		for xx in [-8.0, 0.0, 8.0]:
-			_box(parent, Vector3(xx, y + 3.2, zz), Vector3(7.25, 4.25, 0.06), materials["clear_glass"])
+			_glazed_pane(parent, Vector3(xx, y + 3.2, zz), Vector3(7.25, 4.25, 0.06), Vector3(0, 0, signf(zz)))
 	for xx in [-11.9, 11.9]:
 		for zz in [-8.0, 0.0, 8.0]:
-			var pane: MeshInstance3D = _box(parent, Vector3(xx, y + 3.2, zz), Vector3(0.06, 4.25, 7.25), materials["clear_glass"])
+			var pane: MeshInstance3D = _glazed_pane(parent, Vector3(xx, y + 3.2, zz), Vector3(0.06, 4.25, 7.25), Vector3(signf(xx), 0, 0))
 			if xx > 0 and (is_equal_approx(y, 30.0) or is_equal_approx(y, 24.0)):
 				breakable_glass.append(pane)
+
+func _glazed_pane(parent: Node3D, position_value: Vector3, size: Vector3, outward: Vector3) -> MeshInstance3D:
+	var pane: MeshInstance3D = _box(parent, position_value, size, materials["clear_glass"])
+	var exterior: MeshInstance3D = MeshInstance3D.new()
+	exterior.name = "ExteriorGlazing"
+	var surface: QuadMesh = QuadMesh.new()
+	surface.size = Vector2(7.75, 4.4)
+	exterior.mesh = surface
+	exterior.material_override = materials["window"]
+	exterior.position = outward * 0.04
+	exterior.rotation.y = atan2(outward.x, outward.z)
+	exterior.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	pane.add_child(exterior)
+	return pane
 
 func _build_floor(number: int, spec: Dictionary) -> void:
 	var floor_node: Node3D = Node3D.new()
@@ -965,6 +981,9 @@ func _label(parent: Node3D, pos: Vector3, text_value: String, font_size: int, co
 	label.no_depth_test = false
 	if billboard:
 		label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+		# Gameplay annotations stay visible to the player, but never overlay
+		# the diegetic backgrounds used by the menu and cinematic camera.
+		label.layers = 2
 	parent.add_child(label)
 	label.position = pos
 	return label

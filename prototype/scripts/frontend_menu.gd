@@ -248,7 +248,8 @@ func set_context(value: Dictionary, valid_save: bool, seed_value: int = 271104) 
 	var floor_number: int = int(value.get("floor",31))
 	var rescued_count: int = int(value.get("rescued",0))
 	var seconds: int = int(value.get("elapsed",0))
-	progress_label.text = "DERNIER POINT SÛR  /  %s  /  %d VIES SAUVÉES  /  %02d:%02d" % ["TOIT" if floor_number == 31 else "ÉTAGE %d" % floor_number,rescued_count,seconds / 60,seconds % 60] if valid_save else "PREMIÈRE ROTATION  /  ALPHA + BRAVO"
+	var rescue_label: String = "%d VIE SAUVÉE" % rescued_count if rescued_count == 1 else "%d VIES SAUVÉES" % rescued_count
+	progress_label.text = "DERNIER POINT SÛR  /  %s  /  %s  /  %02d:%02d" % ["TOIT" if floor_number == 31 else "ÉTAGE %d" % floor_number,rescue_label,seconds / 60,seconds % 60] if valid_save else "PREMIÈRE ROTATION  /  ALPHA + BRAVO"
 	var situation: String = "Aube et Hespérie sont debout. Deux équipes sont déposées sur les toits. Le typhon se reforme : les appareils attendront une accalmie pour revenir."
 	if value.get("incident") == "aftermath":
 		situation = "Une réplique a fait basculer Hespérie contre Aube. Le noyau et le treuil tiennent. Le passage Est du 28 est condamné ; passez par le noyau. Bravo ne répond plus."

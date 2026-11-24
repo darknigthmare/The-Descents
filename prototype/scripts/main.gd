@@ -208,6 +208,7 @@ func _build_world(seed_value: int) -> void:
 	player.reduced_motion = reduced_motion
 	player.lost_footing.connect(_fall_recovery)
 	menu_camera = Camera3D.new()
+	menu_camera.cull_mask = 1
 	menu_camera.fov = 55
 	menu_camera.far = 1600
 	add_child(menu_camera)

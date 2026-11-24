@@ -76,8 +76,8 @@ func camera_sample(reduced_motion: bool = false, landing: Vector3 = Vector3(7,43
 			return {"position": Vector3(35,55,20).lerp(Vector3(19,50,21), p), "target": Vector3(18,43,-5), "fov": 59.0}
 		_:
 			if reduced_motion:
-				return {"position": Vector3(15,48,16), "target": Vector3(5,43.7,0), "fov": 62.0}
-			return {"position": Vector3(16,49,18).lerp(landing, p), "target": Vector3(4,43.7,0).lerp(landing + facing * 10.0, p), "fov": lerpf(62.0, 76.0, p)}
+				return {"position": Vector3(6,48,16), "target": Vector3(5,43.7,0), "fov": 62.0}
+			return {"position": Vector3(6,49,18).lerp(landing, p), "target": Vector3(4,43.7,0).lerp(landing + facing * 10.0, p), "fov": lerpf(62.0, 76.0, p)}
 
 static func menu_context(data: Dictionary) -> Dictionary:
 	if data.is_empty():

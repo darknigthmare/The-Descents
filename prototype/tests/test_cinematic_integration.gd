@@ -34,6 +34,8 @@ func _run() -> void:
 	await process_frame
 	_check(mission.preferences == comfortable and not mission.sound_enabled and mission.reduced_motion and not mission.flashes_enabled, "Stored comfort preferences were not applied before any sequence.")
 	_check(mission.player.reduced_motion and mission.hud.menu.toggles["reduced_motion"].button_pressed and AudioServer.is_bus_mute(0), "The player, menu and audio bus disagree with loaded comfort settings.")
+	_check(is_instance_valid(mission.audio_score) and mission.audio_score.stream != null and mission.audio_score.stream.get_length() > 0.0, "The menu score has no imported playable stream.")
+	_check(is_instance_valid(mission.audio_rotors) and mission.audio_rotors.stream != null and mission.audio_rotors.stream.get_length() > 0.0, "The approach rotors have no imported playable stream.")
 	_check(not mission.boot_playing and not mission.started and mission.hud.menu.visible, "Headless initialization failed to expose the menu without automatic boot.")
 	_check(mission.menu_context.get("id") == "approach" and mission.incident.phase == "intact" and mission.world.twin_tower.rotation.is_zero_approx(), "An empty installation reveals future structural damage.")
 	_check(not mission.hud.continue_button.visible and mission.hud.continue_button.disabled, "The no-save menu offers an invalid continuation.")
@@ -168,6 +170,9 @@ func _run() -> void:
 	mission._skip_cinematic()
 	_check(mission.player.active and mission.radio.history.size() == 1 and mission.incident.phase == "intact", "A repeated skip replayed cues or triggered the structural incident.")
 	mission.free()
+	# Let deferred scene/audio retirement finish before constructing a new scene.
+	await process_frame
+	await process_frame
 	mission = MainScene.instantiate()
 	mission.save_path = TEST_PATH
 	mission.preferences_path = PREFS_PATH
@@ -180,6 +185,8 @@ func _run() -> void:
 	mission._process(3.0)
 	_check(mission.menu_camera.position != camera_before and not mission.hud.menu.toggles["reduced_motion"].button_pressed, "Replayed intro ignored the persisted movement preference.")
 	mission.free()
+	await process_frame
+	await process_frame
 	_cleanup()
 	_finish()
 
