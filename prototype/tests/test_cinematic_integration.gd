@@ -39,6 +39,14 @@ func _run() -> void:
 	_check(not mission.boot_playing and not mission.started and mission.hud.menu.visible, "Headless initialization failed to expose the menu without automatic boot.")
 	_check(mission.menu_context.get("id") == "approach" and mission.incident.phase == "intact" and mission.world.twin_tower.rotation.is_zero_approx(), "An empty installation reveals future structural damage.")
 	_check(not mission.hud.continue_button.visible and mission.hud.continue_button.disabled, "The no-save menu offers an invalid continuation.")
+	_check((mission.menu_camera.cull_mask & 1) != 0 and (mission.menu_camera.cull_mask & 2) == 0, "Menu/cinematic camera exposes gameplay markers or hides the world geometry.")
+	var billboard_count: int = 0
+	var markers_separate: bool = true
+	for label: Label3D in mission.world.find_children("*", "Label3D", true, false):
+		if label.billboard != BaseMaterial3D.BILLBOARD_DISABLED:
+			billboard_count += 1
+			markers_separate = markers_separate and (label.layers & 2) != 0 and (label.layers & 1) == 0
+	_check(billboard_count > 0 and markers_separate, "Billboard gameplay labels are not isolated from scenic cameras.")
 	mission._process(40.0)
 	_check(mission.elapsed == 0.0 and not FileAccess.file_exists(TEST_PATH), "Waiting at the menu advanced mission time or wrote a checkpoint.")
 	_press(mission.hud.menu, "DOSSIER DE MISSION")
@@ -155,6 +163,7 @@ func _run() -> void:
 	_check(mission.arrival_playing and mission.elapsed == 0.0, "The approach ended before twenty-eight seconds.")
 	mission._process(0.02)
 	_check(not mission.arrival_playing and mission.player.active and mission.player.camera.current and mission.hud.game.visible and not mission.hud.cinematic.visible, "Natural arrival completion failed to transfer first-person control.")
+	_check((mission.player.camera.cull_mask & 3) == 3, "Player camera did not retain both world geometry and gameplay markers after the cinematic handoff.")
 	_check(mission.menu_camera.global_position.is_equal_approx(mission.player.camera.global_position) and mission.menu_camera.global_basis.z.is_equal_approx(mission.player.camera.global_basis.z), "The final unrestricted arrival camera does not meet the player pose.")
 	_check(mission.elapsed == 0.0 and mission.radio.history.size() == 4 and FileAccess.get_file_as_string(TEST_PATH) == initial_bytes, "Arrival finish leaked elapsed time, duplicated cues or changed the initial safe checkpoint.")
 	mission._process(0.25)
