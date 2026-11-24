@@ -145,7 +145,11 @@ func _capture() -> void:
 	file.store_string(JSON.stringify(manifest,"  ")+"\n")
 	file.close()
 	mission.queue_free()
-	await get_tree().process_frame
+	mission = null
+	# Drain actual renderer frames after releasing the scene, before GL shutdown.
+	for frame in range(5):
+		await get_tree().process_frame
+		await RenderingServer.frame_post_draw
 	_clean()
 	print("PASS visual frontend review: %d native Godot captures" % shots.size())
 	get_tree().quit(0)

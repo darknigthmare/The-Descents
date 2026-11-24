@@ -60,7 +60,7 @@ func presentation() -> Dictionary:
 	var subtitles: Array[String] = ["04:17  /  PREMIÈRE ROTATION DE SECOURS", "AUBE  /  HESPÉRIE", "ALPHA SUR AUBE  /  BRAVO SUR HESPÉRIE", "AUBE  /  POSTE DE COMMANDEMENT"]
 	return {"card": "arrival", "eyebrow": "OPÉRATION ORPHÉE", "title": titles[shot], "subtitle": subtitles[shot], "alpha": _card_alpha(elapsed, shot * 7.0, shot * 7.0 + 7.0), "progress": elapsed / ARRIVAL_DURATION, "shot": shot}
 
-func camera_sample(reduced_motion: bool = false, landing: Vector3 = Vector3(7,43.85,7), facing: Vector3 = Vector3(-0.6816,0,-0.7317)) -> Dictionary:
+func camera_sample(reduced_motion: bool = false, landing: Vector3 = Vector3(7,43.85,7), facing: Vector3 = Vector3(-0.6816,0,-0.7317), gameplay_fov: float = 76.0) -> Dictionary:
 	if mode == "boot":
 		var t: float = 0.5 if reduced_motion else smoothstep(0.0, 1.0, elapsed / BOOT_DURATION)
 		return {"position": Vector3(115,73,145).lerp(Vector3(84,64,105), t), "target": Vector3(16,-10,-4), "fov": 53.0}
@@ -77,7 +77,10 @@ func camera_sample(reduced_motion: bool = false, landing: Vector3 = Vector3(7,43
 		_:
 			if reduced_motion:
 				return {"position": Vector3(6,48,16), "target": Vector3(5,43.7,0), "fov": 62.0}
-			return {"position": Vector3(6,49,18).lerp(landing, p), "target": Vector3(4,43.7,0).lerp(landing + facing * 10.0, p), "fov": lerpf(62.0, 76.0, p)}
+			# Only the final moving bridge matches the player’s chosen lens.
+			# Other shots and reduced-motion fixed framing keep their authored FOV.
+			var handoff_fov: float = clampf(gameplay_fov, 65.0, 100.0) if is_finite(gameplay_fov) else 76.0
+			return {"position": Vector3(6,49,18).lerp(landing, p), "target": Vector3(4,43.7,0).lerp(landing + facing * 10.0, p), "fov": lerpf(62.0, handoff_fov, p)}
 
 static func staging_sample(time: float) -> Dictionary:
 	# Absolute poses make pausing, large frames and skipping converge on one state.

@@ -157,6 +157,15 @@ func _test_live_controls() -> void:
 	_check(not FileAccess.file_exists(SAVE_PATH) and mission.elapsed == 0.0, "Menu comfort changes created a mission checkpoint or advanced the mission.")
 	mission._start_new(271104)
 	_disable_ticks()
+	mission._setting_changed("reduced_motion", false)
+	for sample_time: float in [3.0, 10.0, 17.0]:
+		mission.cinematic.elapsed = sample_time
+		var authored: Dictionary = mission.cinematic.camera_sample(false, mission.player.camera.global_position, -mission.player.camera.global_basis.z)
+		mission._render_cinematic()
+		_check(is_equal_approx(mission.menu_camera.fov, float(authored["fov"])), "A gameplay FOV preference altered an authored approach shot.")
+	mission.cinematic.elapsed = 28.0
+	mission._render_cinematic()
+	_check(is_equal_approx(mission.menu_camera.fov, 88.0) and is_equal_approx(mission.player.camera.fov, 88.0), "The final moving handoff does not arrive at the selected gameplay FOV.")
 	mission._finish_arrival()
 	_check(is_equal_approx(mission.player.camera.fov, 88.0) and is_equal_approx(mission.player.sensitivity, 0.003), "World reconstruction lost gameplay comfort preferences.")
 	mission._pause()

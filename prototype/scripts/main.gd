@@ -164,7 +164,7 @@ func _apply_camera_sample(sample: Dictionary) -> void:
 	menu_camera.look_at(sample["target"])
 
 func _render_cinematic() -> void:
-	_apply_camera_sample(cinematic.camera_sample(reduced_motion,player.camera.global_position,-player.camera.global_basis.z))
+	_apply_camera_sample(cinematic.camera_sample(reduced_motion,player.camera.global_position,-player.camera.global_basis.z,player.camera.fov))
 	hud.cinematic.set_frame(cinematic.presentation(),cinematic.mode)
 	if arrival_playing:
 		hud.cinematic.set_transmission(str(radio.current.get("speaker","")),str(radio.current.get("message","")))

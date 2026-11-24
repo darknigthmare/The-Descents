@@ -10,6 +10,7 @@ func _initialize() -> void:
 	_run.call_deferred()
 
 func _run() -> void:
+	_test_existing_sky_retained()
 	var world = WorldScript.new()
 	root.add_child(world)
 	world.set_process(false)
@@ -91,6 +92,22 @@ func _run() -> void:
 	_check(is_equal_approx(world.get_node("StormLight").light_energy, 0.60), "Weather overrode the disabled-flashes preference.")
 	world.free()
 	_finish()
+
+func _test_existing_sky_retained() -> void:
+	var shell: Node3D = Node3D.new()
+	root.add_child(shell)
+	var environment_node: WorldEnvironment = WorldEnvironment.new()
+	environment_node.name = "environment"
+	var environment: Environment = Environment.new()
+	var existing_sky: Sky = Sky.new()
+	environment.sky = existing_sky
+	environment_node.environment = environment
+	shell.add_child(environment_node)
+	var atmosphere: Node3D = AtmosphereScript.new()
+	shell.add_child(atmosphere)
+	atmosphere.build(shell)
+	_check(environment.sky == existing_sky, "Weather replaced an existing Sky before its pending renderer update.")
+	shell.free()
 
 func _test_rain_volumes(atmosphere: Node3D) -> void:
 	var total: int = 0

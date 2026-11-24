@@ -94,6 +94,19 @@ func _test_sampling() -> void:
 	for obstruction: AABB in obstructions:
 		_check(not stretcher_bounds.intersects(obstruction), "Received stretcher intersects the roof anchor or beacon.")
 
+	var medical_obstacles: Array[AABB] = [
+		AABB(Vector3(5.455, 42.0, -8.245), Vector3(0.09, 2.65, 0.09)),
+		AABB(Vector3(11.055, 42.0, -8.245), Vector3(0.09, 2.65, 0.09)),
+		AABB(Vector3(5.74, 42.0, -10.81), Vector3(0.32, 1.25, 0.32)),
+		AABB(Vector3(6.14, 42.0, -10.81), Vector3(0.32, 1.25, 0.32))
+	]
+	var ana_destination: Transform3D = mission.rescue_visuals.reception_origins["survivor_30"]
+	for moment: float in [0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.2]:
+		var location: Vector3 = Rescue.reception_position(moment, ana_destination.origin)
+		var bed: AABB = AABB(location + Vector3(-0.58, 0.12, -1.3), Vector3(1.16, 1.12, 2.6))
+		for obstacle: AABB in medical_obstacles:
+			_check(not bed.intersects(obstacle), "Medical transfer intersects a canopy post or oxygen bottle.")
+
 func _rescue(floor_number: int) -> void:
 	var survivor: Node3D = _find("survivor", floor_number)
 	var beacon: Node3D = _find("beacon", floor_number)

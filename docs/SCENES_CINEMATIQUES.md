@@ -87,7 +87,7 @@ La caméra accompagne désormais une arrivée animée des deux appareils. Leurs 
 | 3, 14–21 s | Vue des cabines ouvertes et du déploiement des équipes ; rendre leur relation spatiale concrète, 64° | DEUX ÉQUIPES ; ALPHA SUR AUBE / BRAVO SUR HESPÉRIE |
 | 4, 21–28 s | Arrivée vers le poste d’Aube et le point de prise en main ; cadrage dégagé de l’antenne, 62° vers 76° en mode animé | VOTRE LIGNE TIENT ; AUBE / POSTE DE COMMANDEMENT |
 
-En caméra animée, chaque plan interpole une position et un regard avec accélération et décélération progressives. Les mouvements réduits conservent des cadrages fixes ; le dernier plan reste une vue stable du poste avant la remise du contrôle. Les bandes et sous-titres sont identiques dans les deux modes. Le champ de vision choisi pour la caméra jouable, 77 degrés par défaut, reprend à l’issue de la transition. Les plans cinématiques conservent leur cadrage propre.
+En caméra animée, chaque plan interpole une position et un regard avec accélération et décélération progressives. Les mouvements réduits conservent des cadrages fixes ; le dernier plan reste une vue stable du poste avant la remise du contrôle. Les bandes et sous-titres sont identiques dans les deux modes. Le champ de vision choisi pour la caméra jouable, 77 degrés par défaut, reprend à l’issue de la transition. Les trois premiers plans conservent leur cadrage propre. Le dernier raccord mobile rejoint progressivement le champ de vision choisi ; en mouvements réduits, le plan fixe garde son cadrage avant le retour au joueur.
 
 ### Dépose et déplacements de la version 0.5
 

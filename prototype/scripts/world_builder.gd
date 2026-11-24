@@ -617,7 +617,7 @@ func _build_roof_reception(roof: Node3D) -> void:
 	roof_medical_group.name = "RoofMedicalReception"
 	roof.add_child(roof_medical_group)
 	var roster: Array = [
-		["survivor_30", "ANA RIOS", Vector3(6, 42, -9.3)],
+		["survivor_30", "ANA RIOS", Vector3(6.4, 42, -9.1)],
 		["survivor_28", "SAMUEL BRETON", Vector3(8, 42, -9.3)],
 		["survivor_26", "NORA HADDAD", Vector3(10, 42, -9.3)]
 	]

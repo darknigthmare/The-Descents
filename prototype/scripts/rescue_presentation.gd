@@ -172,16 +172,20 @@ func _update_carry(reduced_motion: bool) -> void:
 		sway = Vector3(sin(presentation_time * 1.3) * 0.004, sin(presentation_time * 2.1) * 0.003, 0)
 	carry_rig.global_transform = camera.global_transform * Transform3D(Basis.IDENTITY, sway)
 
+static func reception_position(seconds: float, destination: Vector3) -> Vector3:
+	var t: float = clampf(seconds / RECEPTION_DURATION, 0.0, 1.0)
+	var progress: float = smoothstep(0.0, 1.0, t)
+	# Align east of the canopy's front-left post before entering its footprint.
+	var bend: Vector3 = Vector3(6.4, 42, -4.0)
+	return DOCK.lerp(bend, progress * 2.0) if progress < 0.5 else bend.lerp(destination, (progress - 0.5) * 2.0)
+
 func _sample_reception() -> void:
 	var patient: Node3D = world.roof_rescued_people.get(reception_id)
 	if not is_instance_valid(patient):
 		return
 	var destination: Transform3D = reception_origins[reception_id]
 	var t: float = clampf(reception_elapsed / RECEPTION_DURATION, 0.0, 1.0)
-	var from: Vector3 = DOCK
-	var bend: Vector3 = Vector3(4.9, 42, -4.0)
-	var progress: float = smoothstep(0.0, 1.0, t)
-	var location: Vector3 = from.lerp(bend, progress * 2.0) if progress < 0.5 else bend.lerp(destination.origin, (progress - 0.5) * 2.0)
+	var location: Vector3 = reception_position(reception_elapsed, destination.origin)
 	patient.position = location
 	# The existing medical figure is transported. There is never a second patient.
 	var body: Node3D = patient.get_node_or_null("Patient")
@@ -189,7 +193,8 @@ func _sample_reception() -> void:
 		_pose_limbs(body, sin(t * TAU * 3.0) * 0.25 * sin(t * PI), -0.25)
 	if world.alpha_roof_members.size() >= 2:
 		var escort: Node3D = world.alpha_roof_members[1]
-		var escort_target: Vector3 = location + Vector3(0.9, 0, 0.1)
+		var escort_side: float = -0.95 if reception_id == "survivor_26" else 0.9
+		var escort_target: Vector3 = location + Vector3(escort_side, 0, 0.1)
 		escort_target.y = 42.0
 		escort.position = escort_target
 		escort.rotation.y = -0.2

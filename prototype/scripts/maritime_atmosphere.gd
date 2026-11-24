@@ -34,7 +34,11 @@ func build(world: Node3D) -> void:
 	sky_material = ShaderMaterial.new()
 	sky_material.shader = SKY_SHADER
 	sky_material.set_shader_parameter("horizon_tint", HORIZON_TINT)
-	var sky: Sky = Sky.new()
+	# Reuse the world Sky RID. Replacing a newly dirtied sky before its first
+	# GL update can strand its queued radiance allocation in Godot 4.7.2.
+	var sky: Sky = environment.sky
+	if sky == null:
+		sky = Sky.new()
 	sky.sky_material = sky_material
 	sky.radiance_size = Sky.RADIANCE_SIZE_64
 	sky.process_mode = Sky.PROCESS_MODE_QUALITY

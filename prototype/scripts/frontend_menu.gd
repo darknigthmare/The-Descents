@@ -234,7 +234,7 @@ func _build_options() -> void:
 	_add_toggle(settings_col, "reduced_motion", "Réduire les mouvements de caméra")
 	_add_toggle(settings_col, "flashes", "Activer les éclairs lumineux")
 	_add_toggle(settings_col, "startup_intro", "Afficher l’introduction au lancement")
-	var detail: Label = _label("Les sous-titres restent affichés. Toutes les introductions peuvent être passées.\nLe champ de vision change votre regard en jeu ; les plans de cinéma gardent leur cadrage.\nMouvements réduits : plans fixes et pluie en voile, sans traînées mobiles.\nLe regard inversé s’applique à la souris et aux flèches. Les éclairs sont facultatifs.", 16, MUTED)
+	var detail: Label = _label("Les sous-titres restent affichés. Toutes les introductions peuvent être passées.\nLe champ de vision règle le regard en jeu et le dernier raccord mobile de l’arrivée.\nMouvements réduits : plans fixes et pluie en voile, sans traînées mobiles.\nLe regard inversé s’applique à la souris et aux flèches. Les éclairs sont facultatifs.", 16, MUTED)
 	detail.add_theme_constant_override("line_spacing", 5)
 	settings_col.add_child(detail)
 	col.add_child(_label("Appliqué immédiatement  ·  Tab : parcourir  ·  ← → : ajuster  ·  Molette : défiler", 15, MUTED))

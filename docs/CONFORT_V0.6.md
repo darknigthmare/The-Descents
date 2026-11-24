@@ -13,7 +13,7 @@ Cette version ajoute trois curseurs et l’inversion verticale, réunit l’ense
 | Activer le son | Oui | Oui / non | Coupe ou rétablit le bus principal, indépendamment du volume mémorisé. |
 | Volume général | 100 % | 0 à 100 %, pas de 5 % | Modifie le gain du bus principal ; les rapports entre ambiance, radio, effets, musique et rotors sont conservés. |
 | Sensibilité de la souris | × 1,00 | × 0,25 à × 2,50, pas de 0,05 | Multiplie la valeur de base de 0,0024 radian par pixel du contrôleur. |
-| Champ de vision en jeu | 77° | 65° à 100°, pas de 1° | Change la propriété FOV de la caméra du joueur. La caméra du menu et des introductions conserve son propre cadrage. |
+| Champ de vision en jeu | 77° | 65° à 100°, pas de 1° | Change la propriété FOV de la caméra du joueur. Les plans du menu et les trois premiers plans d’arrivée gardent leur cadrage. Le dernier raccord mobile rejoint le FOV choisi avant de rendre la main ; le plan fixe du mode à mouvements réduits garde son cadrage. |
 | Inverser le regard vertical | Non | Oui / non | Inverse l’axe vertical de la souris et des flèches ; l’axe horizontal et les déplacements restent identiques. |
 | Réduire les mouvements de caméra | Oui | Oui / non | Conserve les plans fixes et supprime le balancement du regard ; l’ambiance maritime suit également ce choix. |
 | Activer les éclairs lumineux | Non | Oui / non | Autorise l’effet lumineux facultatif de l’orage. |
@@ -94,7 +94,7 @@ La suite `prototype/tests/test_comfort.gd` exerce les préférences et les véri
 - la transformation du regard de la souris, avec et sans inversion verticale, et le blocage du regard lorsque le personnage est inactif ;
 - le volume et la coupure sonore indépendante ;
 - la persistance de chaque curseur et du bouton d’inversion ;
-- le maintien du cadrage cinématique ;
+- le maintien du cadrage des trois plans d’approche et le raccord final mobile au champ de vision choisi ;
 - la réapplication après création d’une nouvelle intervention ;
 - l’accès depuis la pause, le retour par Échap et la reprise explicite ;
 - la restauration complète des valeurs initiales sans modification du point sûr.
