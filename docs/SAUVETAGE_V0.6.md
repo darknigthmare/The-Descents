@@ -48,7 +48,7 @@ La consultation des observations de terrain demeure indisponible pendant le tran
 
 Le treuillage utilise un support orange, quatre sangles, deux suspentes et une attache supérieure. Un câble clair relie cette attache à la poutre du toit. Les jambes et les bras de la personne adoptent une pose soutenue, au lieu de conserver une station debout rigide pendant toute la remontée.
 
-La trajectoire reste à l’intérieur du puits tant que la personne n’a pas atteint le toit. Le centre du panier se trouve à x = 1,8 m, z = 0. Le puits existant s’étend jusqu’à x = 2,7 m. La dépose se termine à x = 3,3 m, sur la dalle du toit, avec les pieds à y = 42,08 m. Le point d’attache supérieur du câble suit le chariot sur la poutre à y = 45 m.
+La trajectoire reste à l’intérieur du puits tant que la personne n’a pas atteint le toit. Le centre du panier se trouve à x = 1,8 m, z = 0. Le puits existant s’étend jusqu’à x = 2,7 m. La dépose se termine à x = 3,3 m, z = −2 m, sur la dalle du toit, avec les pieds à y = 42,08 m. Ce décalage évite le montant de la poutre et le mât de la balise. Le point d’attache supérieur reste fixé à x = 1,8 m, y = 45 m, z = 0 ; le câble s’incline pendant la dépose et garde ses deux extrémités reliées.
 
 Les nouvelles géométries ne possèdent pas de collision. Elles ne réduisent pas l’ouverture, ne bloquent pas le joueur et ne transforment pas la corde guidée en simulation physique. La tension du câble est représentée par sa longueur calculée entre deux points connus.
 

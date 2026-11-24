@@ -74,10 +74,25 @@ func _test_sampling() -> void:
 		for step in range(1, 101):
 			var next: Vector3 = Rescue.hoist_position(step * 0.05, floor_number)
 			_check(next.y >= last.y - 0.0001 and next.y <= Rescue.DOCK.y + 0.0001, "Hoist reverses or overshoots vertically.")
-			_check(next.x >= 1.8 and next.x <= Rescue.DOCK.x + 0.0001, "Hoist escaped its shaft/dock corridor.")
+			_check(next.x >= 1.8 - 0.0001 and next.x <= Rescue.DOCK.x + 0.0001, "Hoist escaped its shaft/dock corridor.")
 			if step * 0.05 < 4.2:
 				_check(next.x < 2.7, "Casualty crosses a slab before clearing the roof.")
 			last = next
+
+	# Keep the physical silhouette clear of the actual roof anchor and beacon
+	# volumes, including the diagonal docking segment (not only the final point).
+	var obstructions: Array[AABB] = [
+		AABB(Vector3(3.31, 42.0, -0.09), Vector3(0.18, 3.0, 0.18)),
+		AABB(Vector3(3.26, 42.0, -0.34), Vector3(0.68, 1.8, 0.68))
+	]
+	for moment: float in [4.2, 4.4, 4.6, 4.8, 5.0]:
+		var point: Vector3 = Rescue.hoist_position(moment, 30)
+		var harness_bounds: AABB = AABB(point + Vector3(-0.43, 0.45, -0.43), Vector3(0.86, 1.75, 0.86))
+		for obstruction: AABB in obstructions:
+			_check(not harness_bounds.intersects(obstruction), "Docking harness intersects the roof anchor or beacon.")
+	var stretcher_bounds: AABB = AABB(Rescue.DOCK + Vector3(-0.58, 0.12, -1.3), Vector3(1.16, 1.12, 2.6))
+	for obstruction: AABB in obstructions:
+		_check(not stretcher_bounds.intersects(obstruction), "Received stretcher intersects the roof anchor or beacon.")
 
 func _rescue(floor_number: int) -> void:
 	var survivor: Node3D = _find("survivor", floor_number)

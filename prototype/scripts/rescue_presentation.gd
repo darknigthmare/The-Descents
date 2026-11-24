@@ -4,7 +4,8 @@ extends Node3D
 const Geometry = preload("res://scripts/presentation_geometry.gd")
 const HOIST_DURATION: float = 5.0
 const RECEPTION_DURATION: float = 4.2
-const DOCK: Vector3 = Vector3(3.3, 42.08, 0.0)
+const DOCK: Vector3 = Vector3(3.3, 42.08, -2.0)
+const ANCHOR: Vector3 = Vector3(1.8, 45.0, 0.0)
 
 var world: Node3D
 var camera: Camera3D
@@ -44,7 +45,7 @@ static func hoist_position(seconds: float, floor_number: int) -> Vector3:
 	var start: float = float(clampi(floor_number, 25, 30) - 24) * 6.0 + 0.6
 	var lift: float = smoothstep(0.45, 4.2, t)
 	var docking: float = smoothstep(4.2, HOIST_DURATION, t)
-	return Vector3(lerpf(1.8, DOCK.x, docking), lerpf(start, DOCK.y, lift), 0.0)
+	return Vector3(lerpf(1.8, DOCK.x, docking), lerpf(start, DOCK.y, lift), lerpf(0.0, DOCK.z, docking))
 
 func _build_carry() -> void:
 	carry_rig = Node3D.new()
@@ -133,9 +134,10 @@ func sample_hoist(survivor: Node3D, seconds: float, floor_number: int) -> void:
 	survivor.global_position = location
 	hoist_rig.global_position = location
 	var lower: Vector3 = location + Vector3(0, 2.13, 0)
-	var upper: Vector3 = Vector3(location.x, 45.0, 0)
+	var upper: Vector3 = ANCHOR
 	cable.global_position = (lower + upper) * 0.5
-	cable.scale = Vector3(1, maxf(upper.y - lower.y, 0.01), 1)
+	cable.quaternion = Quaternion(Vector3.UP, (upper - lower).normalized())
+	cable.scale = Vector3(1, maxf(upper.distance_to(lower), 0.01), 1)
 	if not world.alpha_roof_members.is_empty():
 		var operator: Node3D = world.alpha_roof_members[0]
 		operator.position = Vector3(4.35, 42, -1.15)

@@ -24,6 +24,8 @@ var pause_panel: Control
 var journal_panel: Control
 var end_panel: Control
 var help_panel: Control
+var help_close_button: Button
+var help_return_focus: Control
 var start_button: Button
 var continue_button: Button
 var seed_input: SpinBox
@@ -121,7 +123,7 @@ func _build_menu() -> void:
 	menu.start_requested.connect(func(seed_value: int): start_requested.emit(seed_value))
 	menu.continue_requested.connect(func(): continue_requested.emit())
 	menu.replay_requested.connect(func(): replay_intro_requested.emit())
-	menu.help_requested.connect(func(): help_panel.show())
+	menu.help_requested.connect(show_help)
 	menu.setting_changed.connect(func(key: String, value: Variant): setting_changed.emit(key,value))
 	menu.settings_closed.connect(_comfort_settings_closed)
 	start_button = menu.start_button
@@ -271,7 +273,7 @@ func _build_pause() -> void:
 	pause_panel = result[0]
 	var col: VBoxContainer = result[1]
 	col.add_child(_button("Reprendre", func(): resume_requested.emit(), true))
-	col.add_child(_button("Commandes et mission", func(): help_panel.show()))
+	col.add_child(_button("Commandes et mission", show_help))
 	col.add_child(_button("Options et confort", show_comfort_settings))
 	var motion: CheckButton = CheckButton.new()
 	motion.text = "Réduire les mouvements de caméra"
@@ -333,6 +335,7 @@ func _build_help() -> void:
 	var result: Array = _modal("DESCENDRE. SECOURIR. REMONTER.", 900)
 	help_panel = result[0]
 	help_panel.z_index = 30
+	menu.help_overlay = help_panel
 	var col: VBoxContainer = result[1]
 	var text: RichTextLabel = RichTextLabel.new()
 	text.custom_minimum_size = Vector2(900, 485)
@@ -340,7 +343,24 @@ func _build_help() -> void:
 	text.text = "MISSION\nRejoignez la balise orange près du puits central. E vous attache à la corde.\nRetrouvez les trois rescapés aux étages 30, 28 et 26. Sécurisez-les avec E,\npuis rapportez-les à la balise du même étage pour les évacuer au treuil.\nAprès les trois évacuations, rejoignez le refuge de l’étage 25.\n\nÀ PIED\nZQSD ou WASD : marcher   •   Souris : regarder   •   Flèches : regarder\nMaj : courir   •   Ctrl : s’accroupir   •   Espace : sauter   •   E : interagir\n\nSUR LA CORDE\nS : descendre   •   Z / W : remonter   •   Q / A et D : balancement\nE à hauteur d’un étage : se poser   •   X : ancrage secondaire (consommable)\n\nMATÉRIEL\nF : lampe   •   G : fusée lumineuse   •   R : appeler le commandement\nJ : indices et mission   •   Échap : pause et confort visuel\n\nL’air de réserve diminue seulement dans les zones enfumées.\nLa silhouette du spa recule devant une fusée. Le refuge reste sûr."
 	text.text += "\n\nLECTURE DU TERRAIN\nApprochez un objet et regardez-le : E ouvre sa fiche quand « Examiner » apparaît.\nLa lecture met l’intervention en pause. Molette ou Page ↑↓ : défiler.\nFermer ou Échap : reprendre. Ces observations restent facultatives."
 	col.add_child(text)
-	col.add_child(_button("Compris", func(): help_panel.hide(), true))
+	help_close_button = _button("Compris", close_help, true)
+	col.add_child(help_close_button)
+
+func show_help() -> void:
+	help_return_focus = get_viewport().gui_get_focus_owner()
+	help_panel.show()
+	help_close_button.grab_focus()
+
+func close_help() -> void:
+	help_panel.hide()
+	if is_instance_valid(help_return_focus) and help_return_focus.is_visible_in_tree():
+		help_return_focus.grab_focus()
+	help_return_focus = null
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if help_panel.visible and event.is_action_pressed("ui_cancel"):
+		close_help()
+		get_viewport().set_input_as_handled()
 
 func show_game() -> void:
 	menu.close_modals(false)

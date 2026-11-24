@@ -87,11 +87,24 @@ func _build_rain_layer(band: int, count: int, streak_size: Vector3, speed: float
 	multi.mesh = streak
 	multi.instance_count = count
 	multi.custom_aabb = AABB(Vector3(-360, SEA_LEVEL - 2.0, -360), Vector3(720, RAIN_HEIGHT + 4.0, 720))
+	# One row-major upload per layer: three transform rows plus four custom
+	# floats. The exact uploaded buffer remains inspectable in headless mode,
+	# where the rendering server's per-instance setters/getters are stubs.
+	var buffer: PackedFloat32Array = PackedFloat32Array()
+	buffer.resize(count * 16)
 	for index in range(count):
-		multi.set_instance_transform(index, Transform3D(Basis.IDENTITY, rain_column(index, band)))
-		var phase: float = fposmod(float(index) * 0.61803399 + float(band) * 0.37, 1.0)
-		var brightness: float = fposmod(float(index) * 0.41421356 + 0.23, 1.0)
-		multi.set_instance_custom_data(index, Color(phase, brightness, 0.0, 1.0))
+		var point: Vector3 = rain_column(index, band)
+		var offset: int = index * 16
+		buffer[offset] = 1.0
+		buffer[offset + 3] = point.x
+		buffer[offset + 5] = 1.0
+		buffer[offset + 7] = point.y
+		buffer[offset + 10] = 1.0
+		buffer[offset + 11] = point.z
+		buffer[offset + 12] = fposmod(float(index) * 0.61803399 + float(band) * 0.37, 1.0)
+		buffer[offset + 13] = fposmod(float(index) * 0.41421356 + 0.23, 1.0)
+		buffer[offset + 15] = 1.0
+	multi.buffer = buffer
 	var layer: MultiMeshInstance3D = MultiMeshInstance3D.new()
 	layer.name = "NearRain" if band == 0 else "DistantRain"
 	layer.multimesh = multi

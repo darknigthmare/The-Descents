@@ -382,6 +382,11 @@ func _unhandled_input(event: InputEvent) -> void:
 				_open_journal()
 			get_viewport().set_input_as_handled()
 		return
+	if hud.help_panel.visible:
+		if event.is_action_pressed("pause_game"):
+			hud.close_help()
+			get_viewport().set_input_as_handled()
+		return
 	if hud.menu.standalone_settings:
 		if event.is_action_pressed("pause_game"):
 			hud.menu.close_modals()
@@ -1115,6 +1120,7 @@ func _setting_changed(setting: String, value: Variant) -> void:
 	_apply_master_volume()
 	if DisplayServer.get_name() != "headless" and sound_enabled and is_instance_valid(audio_wind) and not audio_wind.playing:
 		audio_wind.play()
+		audio_wind.stream_paused = paused
 	if not sound_enabled:
 		for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect,audio_score,audio_rotors]:
 			if is_instance_valid(channel):

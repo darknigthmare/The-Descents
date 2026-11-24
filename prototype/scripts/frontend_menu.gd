@@ -33,6 +33,7 @@ var sliders: Dictionary = {}
 var value_labels: Dictionary = {}
 var settings_scroll: ScrollContainer
 var standalone_settings: bool = false
+var help_overlay: Control
 var modal_stack: Array[Control] = []
 var has_save: bool = false
 var reduced_motion: bool = true
@@ -422,6 +423,10 @@ func has_modal() -> bool:
 	return false
 
 func _unhandled_key_input(event: InputEvent) -> void:
+	# The help overlay is a higher modal layer owned by the HUD.
+	# Let its handler consume Escape before closing these underlying options.
+	if is_instance_valid(help_overlay) and help_overlay.visible:
+		return
 	if not is_visible_in_tree():
 		return
 	if event.is_action_pressed("ui_cancel") and has_modal():

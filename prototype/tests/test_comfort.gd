@@ -125,6 +125,17 @@ func _test_live_controls() -> void:
 	_check(menu.sliders.size() == 3 and menu.toggles.size() == 5, "Options expose an incomplete set of controls.")
 	menu._open_modal(menu.options)
 	_check(root.gui_get_focus_owner() == menu.toggles["audio"] and menu.settings_scroll.follow_focus, "Options do not begin in an accessible focusable control.")
+	var source_focus: Control = menu.sliders["master_volume"]
+	source_focus.grab_focus()
+	mission.hud.show_help()
+	_check(mission.hud.help_panel.visible and menu.options.visible and _button_has_focus("Compris"), "Help did not open above menu options with a usable keyboard focus.")
+	var cancel: InputEventAction = InputEventAction.new()
+	cancel.action = "ui_cancel"
+	cancel.pressed = true
+	menu._unhandled_key_input(cancel)
+	_check(mission.hud.help_panel.visible and menu.options.visible, "The underlying frontend consumed Escape while help owned the top modal.")
+	await _send_escape()
+	_check(not mission.hud.help_panel.visible and menu.options.visible and root.gui_get_focus_owner() == source_focus, "Real Escape failed to return from help to the original menu option.")
 	var cinematic_fov: float = mission.menu_camera.fov
 	menu.sliders["field_of_view"].value = 88.0
 	_check(is_equal_approx(mission.player.camera.fov, 88.0) and Preferences.load_settings(PREFS_PATH)["field_of_view"] == 88.0, "FOV slider does not reach the live player and persisted config.")
@@ -153,13 +164,17 @@ func _test_live_controls() -> void:
 	_check(mission.paused and menu.standalone_settings and menu.options.visible and not mission.hud.pause_panel.visible, "Paused options failed to open without resuming gameplay.")
 	var checkpoint_bytes: String = FileAccess.get_file_as_string(SAVE_PATH)
 	var elapsed_before: float = mission.elapsed
+	mission.hud.show_help()
+	_check(mission.paused and menu.standalone_settings and menu.options.visible and mission.hud.help_panel.visible and _button_has_focus("Compris"), "Help from paused options lost pause, modal context or keyboard focus.")
+	await _send_escape()
+	_check(mission.paused and menu.standalone_settings and menu.options.visible and not mission.hud.help_panel.visible, "Escape from paused help skipped the options layer or resumed the mission.")
 	menu.sliders["field_of_view"].value = 93.0
 	_check(mission.paused and not mission.player.active and mission.player.camera.fov == 93.0, "Adjusting a paused option resumed controls or failed to update the camera.")
-	var cancel: InputEventAction = InputEventAction.new()
-	cancel.action = "ui_cancel"
-	cancel.pressed = true
-	menu._unhandled_key_input(cancel)
-	_check(mission.paused and not menu.standalone_settings and not menu.visible and mission.hud.pause_panel.visible, "Escape from paused options did not return to pause.")
+	await _send_escape()
+	_check(mission.paused and not menu.standalone_settings and not menu.visible and mission.hud.pause_panel.visible and _button_has_focus("Reprendre"), "Escape from paused options did not return to pause with its resume focus.")
+	mission.hud.show_help()
+	await _send_escape()
+	_check(mission.paused and mission.hud.pause_panel.visible and not mission.hud.help_panel.visible and not menu.visible, "Escape from the pause help resumed gameplay or reopened the hidden menu.")
 	mission.hud.show_comfort_settings()
 	menu._reset_settings()
 	_check(mission.preferences == Preferences.DEFAULTS and Preferences.load_settings(PREFS_PATH) == Preferences.DEFAULTS, "Reset did not persist the complete safe default set.")
@@ -177,6 +192,22 @@ func _test_live_controls() -> void:
 	await process_frame
 	AudioServer.set_bus_mute(0, false)
 	AudioServer.set_bus_volume_db(0, 0.0)
+
+func _button_has_focus(title: String) -> bool:
+	var focus: Control = root.gui_get_focus_owner()
+	return focus is Button and (focus as Button).text == title
+
+func _send_escape() -> void:
+	var key: InputEventKey = InputEventKey.new()
+	key.keycode = KEY_ESCAPE
+	key.pressed = true
+	Input.parse_input_event(key)
+	await process_frame
+	var release: InputEventKey = InputEventKey.new()
+	release.keycode = KEY_ESCAPE
+	release.pressed = false
+	Input.parse_input_event(release)
+	await process_frame
 
 func _disable_ticks() -> void:
 	mission.set_process(false)

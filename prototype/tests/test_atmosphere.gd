@@ -27,7 +27,7 @@ func _run() -> void:
 	var environment: Environment = world.get_node("environment").environment
 	_check(environment.sky.sky_material == atmosphere.sky_material, "Weather does not own the visible sky material.")
 	_check(environment.fog_light_color.is_equal_approx(AtmosphereScript.HORIZON_TINT) and is_equal_approx(environment.fog_light_energy, 1.0), "Fog and the authored sea horizon use different colours or exposure.")
-	_check(environment.fog_density >= 0.0036, "Far-water absorption is weaker than the authored horizon contract.")
+	_check(is_equal_approx(environment.fog_density, AtmosphereScript.FOG_DENSITY), "Far-water absorption is weaker than the authored horizon contract.")
 	_check(atmosphere.sky_material.get_shader_parameter("horizon_tint").is_equal_approx(environment.fog_light_color), "Sky horizon uniform differs from the distance fog.")
 	_check(not world.rain.visible, "The legacy rain grid still falls through rooms.")
 	_check(atmosphere.rain_layers.size() == 2 and atmosphere.curtains.size() == 8, "The bounded near/far rain and distant veil layers are missing.")
@@ -102,13 +102,18 @@ func _test_rain_volumes(atmosphere: Node3D) -> void:
 		var layer: MultiMeshInstance3D = atmosphere.rain_layers[band]
 		var multi: MultiMesh = layer.multimesh
 		total += multi.instance_count
+		var buffer: PackedFloat32Array = multi.buffer
+		_check(buffer.size() == multi.instance_count * 16, "Uploaded rain buffer has an invalid transform/custom-data stride.")
+		if buffer.size() != multi.instance_count * 16:
+			continue
 		_check(layer.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_OFF, "Rain casts an artificial solid shadow.")
 		for index in range(multi.instance_count):
-			var point: Vector3 = multi.get_instance_transform(index).origin
+			var offset: int = index * 16
+			var point: Vector3 = Vector3(buffer[offset + 3], buffer[offset + 7], buffer[offset + 11])
 			outside_rooms = outside_rooms and (absf(point.x) >= 14.5 or absf(point.z) >= 14.5)
 			outside_rooms = outside_rooms and (absf(point.x - 46.0) >= 14.5 or absf(point.z + 6.0) >= 14.5)
 			valid_bounds = valid_bounds and multi.custom_aabb.has_point(point) and multi.custom_aabb.has_point(point + Vector3.UP * AtmosphereScript.RAIN_HEIGHT)
-			var custom: Color = multi.get_instance_custom_data(index)
+			var custom: Color = Color(buffer[offset + 12], buffer[offset + 13], buffer[offset + 14], buffer[offset + 15])
 			phases_valid = phases_valid and is_finite(custom.r) and custom.r >= 0.0 and custom.r <= 1.0 and custom.g >= 0.0 and custom.g <= 1.0
 			deterministic = deterministic and point.is_equal_approx(AtmosphereScript.rain_column(index, band))
 	_check(total == 1024, "Rain exceeded its bounded instance budget.")
