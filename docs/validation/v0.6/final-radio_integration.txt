@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS radio integration: 59 checks; confirmed rescue, quiet-time guards, optional exchange persistence, operational priority and accessible final journal. Uses placements; does not prove physical route traversal.

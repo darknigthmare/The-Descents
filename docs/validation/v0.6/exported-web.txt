@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS exported pack: 30 checks; mounted v0.5 resources, menu/cinematic directors, animated helicopters, twelve field props and paused inspection, imported audio, schema-3 radio persistence and isolated restoration. Linux headless engine loads the pack; this is not a Windows executable or browser launch.
