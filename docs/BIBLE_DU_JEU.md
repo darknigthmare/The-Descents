@@ -2,15 +2,15 @@
 
 ## Bible de conception du jeu
 
-**Version 0.2 — Tours intactes à l’arrivée, effondrement vécu pendant la descente — 24 novembre 2026**
+**Version 0.4.0 — Mise en scène du prototype et dossier de production détaillé — 24 novembre 2026**
 
 **Création et direction du projet : Darknigthmare. Dépôt : The-Descents.**
 
 Cette bible développe les notes fondatrices en une campagne de sauvetage et d’horreur à la première personne. Elle décrit l’univers, les personnages, les systèmes, les possibilités du joueur, la progression des étages et les règles de génération. Les noms propres, la chronologie, les révélations et les fins ci-dessous constituent une proposition de canon originale que la direction du projet peut faire évoluer.
 
-Le prototype 3D Godot 0.2 couvre un toit jouable et six étages, du 30 au 25, avec rappel, exploration, trois rescapés et un refuge. Il ajoute deux tours initialement droites, deux hélicoptères et des groupes de secours visibles en géométrie de blocage, puis une séquence d’effondrement pendant la partie. La baie Est du 29 en constitue le point d’observation. La campagne complète, l’approche aérienne avec personnages animés, les voix enregistrées, les zones souterraines, la coopération et le portage Unreal Engine 5 restent des objectifs de production. Le README et le rapport de validation du dépôt établissent l’état des exécutables et des vérifications.
+Le prototype 3D Godot 0.4.0 conserve un toit jouable et six étages, du 30 au 25, avec rappel, exploration, trois rescapés et un refuge. Les deux tours commencent intactes ; l’effondrement d’Hespérie est observé depuis la baie Est du 29. Bravo se replie vers l’intérieur et les personnes confirmées apparaissent au poste médical du toit. La radio ordonne ses sous-titres, conserve les trente-deux dernières transmissions et peut faire revenir un fragment de Bravo après Samuel. Cette révision ajoute une ouverture de marque, un menu situé dans le monde de la partie et une approche aérienne en temps réel avec les volumes de la maquette. La campagne complète, les personnages et voix définitifs, les souterrains, la coopération et le portage Unreal Engine 5 restent à produire. Le [rapport de livraison](ETAT_DE_LIVRAISON.md) distingue les fonctions vérifiées, les exports et les limites des essais.
 
-Le [Catalogue des étages](CATALOGUE_ETAGES.md) précise chaque niveau et ses variations. Le dossier [Effondrement en direct](EFFONDREMENT_EN_DIRECT.md) fixe le déroulement du nouvel événement, les états persistants et la proposition de script cinématique et radio. Ces trois documents forment la référence de conception.
+Le [Catalogue des étages](CATALOGUE_ETAGES.md) précise les trente niveaux de campagne et leur périmètre jouable. Les dossiers [Effondrement en direct](EFFONDREMENT_EN_DIRECT.md), [Communications et équipes](COMMUNICATIONS_ET_EQUIPES.md), [Props et interactions](PROPS_INTERACTIONS.md), [Ennemis et statistiques](ENNEMIS_STATISTIQUES.md), [Scènes cinématiques](SCENES_CINEMATIQUES.md) et [Gameplay détaillé](GAMEPLAY_DETAILLE.md) complètent cette bible. Les fiches d’objets, rencontres et scènes constituent des spécifications de production, avec des valeurs initiales à éprouver ; leur présence dans le document ne signifie pas qu’elles existent dans le moteur.
 
 ## 1 Intention du jeu
 
@@ -176,7 +176,7 @@ Elle peut aider concrètement à ouvrir un sas ou à stabiliser un relais. Cette
 
 ### Les autres équipes
 
-Les groupes de secours possèdent des indicatifs simples : **Corde**, **Médical**, **Échelle** et **Relais**. Corde et Médical s’installent sur Aube, sous le commandement de Varga. Le détachement **Bravo**, qui réunit Échelle et Relais, est déposé sur Hespérie pour localiser les personnels techniques et vérifier les signaux. Deux hélicoptères et des groupes visibles sur chaque toit matérialisent cette répartition dans la maquette 0.2. Les rencontres détaillées, le portage des caisses et les animations de travail appartiennent à la production de campagne.
+Les groupes de secours possèdent des indicatifs simples : **Corde**, **Médical**, **Échelle** et **Relais**. Corde et Médical s’installent sur Aube, sous le commandement de Varga. Le détachement **Bravo**, qui réunit Échelle et Relais, est déposé sur Hespérie pour localiser les personnels techniques et vérifier les signaux. Deux hélicoptères et des groupes visibles sur chaque toit matérialisent cette répartition dans la maquette 0.4.0 ; Bravo se replie à couvert et les sauvés sont visibles au poste médical. Les rencontres détaillées, le portage des caisses et les animations de travail appartiennent à la production de campagne.
 
 Bravo cesse de répondre lors de l’impact. Le journal porte « liaison perdue », sans déclarer les équipiers morts. Une reprise ambiguë de son indicatif plus bas pourra préparer les phénomènes d’imitation ; elle doit être distinguée d’une confirmation humaine vérifiée. Varga demeure joignable par intermittence et les victimes prises en charge restent au registre. La police sécurisera les zones d’arrivée et les archives dans la campagne lorsqu’elle le pourra.
 
@@ -413,7 +413,7 @@ Pour le prototype, un sous-ensemble de ce contrat suffit. Les six fonctions d’
 
 ## 15 Catalogue d’événements
 
-La plupart de ces événements sont des modules de campagne proposés. Une entrée est sélectionnée selon son contexte, ses prérequis et le temps de récupération disponible. L’effondrement observé au 29 constitue en revanche l’événement fixe du prototype 0.2 ; sa présence ne dépend pas d’un tirage aléatoire. Le [dossier de séquence](EFFONDREMENT_EN_DIRECT.md) distingue son implémentation en maquette des enrichissements cinématiques futurs.
+La plupart de ces événements sont des modules de campagne proposés. Une entrée est sélectionnée selon son contexte, ses prérequis et le temps de récupération disponible. L’effondrement observé au 29, introduit en 0.2 et conservé en 0.4.0, constitue l’événement fixe du prototype ; sa présence ne dépend pas d’un tirage aléatoire. Le [dossier de séquence](EFFONDREMENT_EN_DIRECT.md) distingue son implémentation en maquette des enrichissements cinématiques futurs.
 
 | Événement | Conditions | Action et information offertes au joueur |
 |---|---|---|
@@ -430,7 +430,7 @@ La plupart de ces événements sont des modules de campagne proposés. Une entr�
 | La porte qui respire | Proximité d’une cavité | Lire les variations de pression et ouvrir pendant la phase sûre |
 | La liste incomplète | Archives | Recouper des noms avec les personnes rencontrées |
 | Trois coups | Contact humain vérifié à proximité | Répondre selon un code simple puis rejoindre la personne |
-| Hespérie bascule | Ana treuillée, hélicoptères partis, approche et regard depuis la baie Est du 29 | Alerte, réplique, rupture et impact en temps réel ; commandes libres ; détour latéral et nouvelle silhouette persistants |
+| Hespérie bascule | Ana treuillée, hélicoptères partis, approche de la baie Est du 29, regard maintenu ou confirmation avec E | Alerte, réplique, rupture et impact en temps réel ; commandes libres ; détour latéral et nouvelle silhouette persistants |
 | La rupture du socle | Campagne, après retrouvailles avec Alma | Préparer le transfert puis vivre la chute vers le bassin ; événement distinct du choc du 29 |
 | La pièce trop longue | Après usage du télémètre enseigné | Mesurer depuis deux repères et sortir par un marquage stable |
 | Lumière dans Hespérie | Avant traversée annexe | Choisir d’examiner la source ou d’enregistrer sa position |
@@ -522,7 +522,7 @@ Un refuge certifié offre une sauvegarde explicite. Des points automatiques prot
 
 La campagne devra conserver la graine, la version du générateur, les étages révélés, les objets consommés, les appuis posés, les portes modifiées, les personnes prises en charge, les indices lus et les événements déjà déclenchés, avec les préférences dans un fichier indépendant.
 
-Le schéma 2 du prototype ajoute `incident_state`, limité à `intact` ou `aftermath`. Un point sûr précède l’avertissement ; un autre est enregistré une fois l’impact stabilisé. Les phases intermédiaires restent des états de session : quitter ou interrompre pendant la séquence reprend au point d’avant, tandis que charger `aftermath` restaure directement la géométrie et les communications après le choc. La pause fige le temps de scène. Une sauvegarde 1 non terminée migre vers `intact` ; une sauvegarde 1 terminée migre vers `aftermath`. Cette migration conserve les personnes sauvées, les indices et les ressources de la partie ancienne.
+Le schéma courant du prototype est le schéma 3. Il conserve `incident_state`, introduit par la 0.2 et limité à `intact` ou `aftermath`, puis ajoute `transmissions` et `radio_events`. Un point sûr précède l’avertissement ; un autre suit la stabilisation. Les phases intermédiaires restent des états de session : interrompre la séquence reprend avant son départ. Charger l’après-impact restaure les dégâts, les figures du registre médical et l’historique radio sans rejouer les anciens sous-titres. Les schémas 1 et 2 sont d’abord validés dans leur forme d’origine, puis migrés en lecture ; ils commencent avec un historique et des événements radio vides. Le schéma 1 donne `intact` pour une mission en cours, `aftermath` pour une mission terminée ; le schéma 2 conserve son état. Le fichier n’est réécrit qu’au prochain checkpoint réussi. Les préférences et la présentation d’accueil sont indépendantes de cette progression.
 
 La mort ou l’abandon d’une session ne relance pas toute la campagne depuis le toit. Le mode de référence reprend au dernier état sûr. Un mode sans retour peut être étudié plus tard, mais ne doit pas dicter la difficulté ni les sauvegardes du mode principal.
 
@@ -530,7 +530,7 @@ Le joueur distingue une partie nouvelle d’une reprise. Le prototype utilise de
 
 ## 20 Ouverture détaillée de la campagne
 
-L’approche aérienne détaillée ci-dessous reste une proposition de campagne. Le prototype 0.2 commence sur le toit, présente deux appareils et les groupes de secours simplifiés, puis joue la rupture du 29 dans la vue du personnage. Le [script détaillé](EFFONDREMENT_EN_DIRECT.md) sépare les états de jeu de cette future mise en scène avec doublage et animation.
+L’ouverture possède deux niveaux de finition distincts. La 0.4.0 met en scène la mer, les deux tours, les appareils et les équipes géométriques dans une approche temps réel d’environ vingt-huit secondes, passable. Le détail des gestes, l’intérieur de cabine et le doublage décrits ci-dessous restent une cible de campagne. Le [découpage cinématique](SCENES_CINEMATIQUES.md) donne les durées, les caméras, les textes, les transitions et les règles de reprise de la présentation actuelle.
 
 ### Approche
 
@@ -552,13 +552,13 @@ Au restaurant, un détail paraît légèrement faux : une table a été prépar�
 
 ### La baie Est et le choc
 
-Après Ana et le départ des appareils, l’objectif devient : « Rejoindre la baie Est du 29 et repérer Bravo sur Hespérie. » L’arrivée dans la zone et un regard vers l’autre tour arment la scène. Une alerte donne le temps de reconnaître l’abri intérieur, puis la réplique déplace Hespérie vers le joueur. La caméra reste sous son contrôle. Les bris de façade, la poussière et les bruits donnent le choc ; les commandes et la route du puits restent utilisables.
+Après Ana et le départ des appareils, l’objectif devient : « Rejoindre la baie Est du 29 et repérer Bravo sur Hespérie. » L’arrivée dans la zone et un regard maintenu vers l’autre tour déclenchent la scène ; E sur l’observation offre une confirmation explicite. Une alerte donne le temps de reconnaître l’abri intérieur, puis la réplique déplace Hespérie vers le joueur. La caméra reste sous son contrôle. Les bris de façade, la poussière et les bruits donnent le choc ; les commandes et la route du puits restent utilisables.
 
 Le passage latéral touché est remplacé par un détour. Varga confirme qu’Aube tient et que les sauvés sont toujours au toit. Bravo ne répond plus. Le joueur rejoint Samuel, dont la réaction appartient désormais à l’après-impact.
 
 ### Premières contradictions
 
-Les suites conservent l’indice antérieur au désastre ; les bureaux possèdent des archives datées d’avant le typhon. Le 27 donne une respiration après la catastrophe et porte les noms des enfants déplacés. Le spa fournit la première anomalie plus forte, liée à l’eau et à une voix. Une éventuelle reprise de Bravo plus bas demeure une information à vérifier. Le refuge permet enfin de confronter les indices sans menace immédiate.
+Les suites conservent l’indice antérieur au désastre ; les bureaux possèdent des archives datées d’avant le typhon. Le 27 donne une respiration après la catastrophe. Si Samuel est confirmé au toit et si la radio reste libre pendant six secondes continues, un fragment de Bravo peut s’y répéter. Après cet écho, Varga attend deux secondes de calme au 27, au 25 ou au toit pour confirmer qu’elle a reçu le fragment mais qu’aucun contact direct avec Bravo n’est établi. L’échange n’est requis ni pour descendre ni pour terminer ; il attend la fin du rappel, du portage et du treuillage. Le spa fournit une anomalie plus forte. Le refuge permet de confronter les indices et, depuis le bilan, de relire les transmissions.
 
 ## 21 Le prototype du dépôt
 
@@ -568,15 +568,15 @@ Le prototype doit répondre à des questions concrètes. Le rappel donne-t-il en
 
 ### Périmètre de la tranche
 
-| Zone | Fonction | Périmètre du prototype 0.2 |
+| Zone | Fonction | Périmètre du prototype 0.4.0 |
 |---|---|---|
-| Toit | Arrivée et briefing | Deux tours intactes, deux hélicoptères, équipes visibles en maquette, départ et première ligne |
+| Toit | Arrivée et briefing | Approche temps réel, deux tours intactes, deux appareils, équipes en maquette, réception nominative des rescapés et première ligne |
 | 30 | Restaurant panoramique | Ana Rios, maître d’hôtel, première rescapée et apprentissage de l’exploration |
 | 29 | Suites de l’hôtel | Chambre 2908, ravitaillement, baie Est et effondrement en direct avec dégâts persistants |
 | 28 | Bureaux et archives | Samuel Breton, deuxième rescapé ; réaction et sauvetage après impact |
-| 27 | Jardin d’enfants évacué | Dessin des deux tours, indice sur les personnes déplacées |
+| 27 | Jardin d’enfants évacué | Dessin des deux tours, respiration mécanique et écho facultatif de Bravo après Samuel |
 | 26 | Spa et piscine technique | Nora Haddad, kinésithérapeute, troisième rescapée ; Relevé SILLAGE 06 et anomalie |
-| 25 | Refuge de maintenance | Sécurité, bilan, ravitaillement et balise vers le toit |
+| 25 | Refuge de maintenance | Sécurité, bilan avec journal consultable, ravitaillement et balise vers le toit |
 
 La réussite de la tranche exige l’incident achevé, les trois rescapés pris en charge et l’envoi de la balise depuis le refuge. La progression de référence comprend le sauvetage d’Ana, l’observation de Bravo et le choc du 29, puis Samuel et Nora. Un joueur qui atteint le refuge sans avoir observé Hespérie doit recevoir un objectif de retour explicite. Les trois positions de rescapés sont 30, 28 et 26. Les indices se trouvent aux 29, 27 et 26. Les ravitaillements se trouvent aux 29 et 25. Ces points doivent rester cohérents entre le code, la notice, les essais et le catalogue.
 
@@ -595,6 +595,9 @@ Ces limites doivent être dites simplement, sans retirer sa valeur au prototype 
 - Les sauvés, le refuge et le trajet intérieur restent accessibles après le choc ; les dégâts ne disparaissent pas au rechargement.
 - Les commandes de rappel, de déplacement et d’interaction restent distinctes et compréhensibles.
 - Chaque rescapé peut être confirmé une seule fois ; le compteur ne dépend pas d’appuis répétés.
+- Les personnes confirmées restent visibles et nommées au toit ; la reconstruction de ce registre ne crée aucun obstacle.
+- Les alertes interrompent l’affichage ordinaire sans effacer les transmissions reçues de la fenêtre d’historique ; les événements facultatifs ne se répètent pas après une sauvegarde réussie.
+- L’introduction peut être passée dès son départ ; le menu ne révèle que le dernier point sûr d’une sauvegarde valide et n’avance pas la mission.
 - Les ressources ne se dupliquent pas et les interactions restent accessibles après une reprise.
 - L’anomalie ne condamne pas le trajet obligatoire ni le refuge.
 - La victoire demande l’incident achevé, les trois prises en charge et la balise ; elle ne s’active pas seulement en arrivant au niveau 25.
@@ -699,5 +702,17 @@ Ces exemples fixent une intention. Le [dossier Effondrement en direct](EFFONDREM
 Le nom public peut rester **The Tower Descent**, avec **The-Descents** comme nom de dépôt. Le pluriel pourra désigner une collection de campagnes si Mountain Hole devient un chapitre autonome. Le prototype ne nécessite pas de trancher ce point de marque.
 
 La personnalisation complète d’Alex, le nombre exact de survivants de la campagne, la présence jouable de Malik, les durées de ressources, la taille finale des étages et le degré de violence explicite devront être confirmés après la première tranche. Le catalogue propose des situations et non un engagement à produire toutes leurs variantes simultanément.
+
+## 28 Dossier de production 0.4.0
+
+La révision ajoute des spécifications transversales assez précises pour préparer une nouvelle tranche sans confondre conception et livraison. Le catalogue fournit trente fiches d’assemblage : volumes proposés, circulation, accessoires, rythme, sauvegarde et contrôle du retour. Les étages 24 à 1 restent à construire ; la fiche d’un étage déjà représenté décrit aussi des enrichissements non intégrés.
+
+Le dossier de props comporte **52 entrées P01 à P52**. Chaque fiche donne fonction, dimensions, état actuel, interaction cible, états, retour sonore, placement et points de validation. Le dossier de menaces sépare **E00**, silhouette réellement programmée au spa, de **dix archétypes de campagne E01 à E10**, avec comportements, valeurs initiales, signaux, contre-jeu, limites de génération et persistance. L’absence de points de vie sur une voix ou une empreinte est un choix fonctionnel, pas une fiche incomplète.
+
+Le gameplay détaillé consigne les paramètres actuels de déplacement, corde, ressources, portée d’interaction, treuillage et dangers. Il expose leurs simplifications : pas de capsule basse, sélection par proximité sans rayon de visibilité, portage abstrait, menace au mouvement direct, fusée à effet global. Les plages proposées pour l’accompagnement et les nouvelles interactions restent à essayer. Les motivations, objectifs et peurs des personnages relient leur rôle mécanique à leurs décisions narratives, sans leur inventer des statistiques psychologiques déjà simulées.
+
+La présentation livrée comprend un prologue de marque de **15 secondes**, un accueil contextuel issu d’une sauvegarde validée et une arrivée de **28 secondes**, en quatre plans et quatre communications sous-titrées. Les préférences sont chargées avant le prologue, les séquences peuvent être passées et leur horloge ne consomme pas le temps de mission. Les scènes de retrouvailles avec Alma, de rupture du socle et de seuil disposent de storyboards textuels de production ; elles ne sont pas des cinématiques jouables supplémentaires de la 0.4.0.
+
+La priorité suivante est d’éprouver la compréhension des gestes et des personnes, puis de remplacer progressivement les silhouettes et matériaux de maquette. Les objectifs de finition ne doivent pas masquer les contrats déjà établis : toute vie confirmée reste sauvée, tout refuge certifié tient sa promesse et toute reprise reconstruit une intervention cohérente.
 
 La ligne directrice reste stable : une opération humaine et méthodique descend dans un lieu qui exploite les voix, les souvenirs et les gestes de secours. Le joueur conserve des moyens de vérifier, des personnes à protéger et des routes à construire. Les deux tours visibles au début deviennent progressivement une petite partie de ce qu’il a traversé.

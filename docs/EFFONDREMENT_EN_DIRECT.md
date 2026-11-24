@@ -1,6 +1,6 @@
 # The Tower Descent — Effondrement en direct
 
-**Version 0.2 — Canon de mission, séquence jouable et proposition de mise en scène — 24 novembre 2026**
+**Version 0.4.0 — Incident, équipes et continuité cinématique — 24 novembre 2026**
 
 ## 1. Décision de direction
 
@@ -10,20 +10,21 @@ L’événement doit transformer un lieu que le joueur vient de comprendre. Il a
 
 La scène est un événement réel du récit. Les incertitudes sur les hallucinations apparaissent dans ce qui suit ; elles n’effacent ni l’effondrement, ni les sauvetages confirmés.
 
-## 2. Périmètre de la version 0.2
+## 2. Périmètre de la version 0.4.0
 
 | Élément | Périmètre retenu |
 | --- | --- |
 | Moteur jouable | Prototype Godot ; toit d’Aube et étages 30 à 25 |
 | État initial | Deux tours droites et intactes ; île submergée autour |
-| Déploiement | Deux hélicoptères et groupes de secours visibles en géométrie de blocage |
+| Déploiement | Approche temps réel, deux hélicoptères et équipes en maquette ; repli préparé de Bravo pendant l’incident |
 | Observation | Baie Est du 29, tournée vers Hespérie |
-| Prérequis | Ana treuillée et confirmée au toit ; hélicoptères partis ; approche et regard depuis la baie |
+| Prérequis | Ana treuillée et confirmée au toit ; hélicoptères partis ; approche de la baie puis regard maintenu ou confirmation avec E |
 | Événement | Quatre phases de session, puis état permanent après impact |
 | Contrôle | Regard et déplacement libres ; aucun cadrage forcé ou QTE obligatoire |
 | Conséquences | Hespérie partiellement effondrée contre Aube, dégâts hauts, détour latéral, radio modifiée |
-| Sauvetage | Puits et noyau intérieur d’Aube utilisables ; personnes confirmées conservées |
-| Sauvegarde | Schéma 2, états persistants `intact` et `aftermath`, reprise avant ou après la scène |
+| Sauvetage | Puits et noyau intérieur utilisables ; personnes confirmées visibles et nommées au poste médical |
+| Communications | Sous-titres ordonnés, alertes prioritaires, 32 transmissions conservées et écho facultatif après Samuel |
+| Sauvegarde | Schéma 3, états `intact` et `aftermath`, données radio et reprise avant ou après la scène |
 | Production ultérieure | Approche aérienne complète, personnages détaillés et animés, doublage, effets finaux, campagne et portage UE5 |
 
 Ce dossier décrit le contrat de la tranche et les propositions de mise en scène. Les scripts de voix et d’acting ci-dessous ne constituent pas des enregistrements ou animations livrés. Le [rapport d’état](ETAT_DE_LIVRAISON.md) porte les résultats de vérification ; aucun résultat de test n’est annoncé dans ce document.
@@ -48,11 +49,11 @@ Le niveau 6 appartient à la campagne future. Il porte une liaison basse déform
 
 ## 4. Parcours du joueur et déclenchement
 
-1. **Voir les deux tours.** Le joueur commence sur le toit d’Aube, avec un appareil et des équipiers à proximité. Le second appareil et le groupe opposé donnent une échelle à Hespérie.
+1. **Voir les deux tours.** L’approche de 28 secondes présente la mer, les tours et les équipes, puis rend le contrôle sur le toit d’Aube. Un appareil et des équipiers sont proches ; le second appareil et le groupe opposé donnent une échelle à Hespérie.
 2. **Entendre la répartition.** Varga annonce le rôle des deux détachements ; Bravo répond. Les pilotes expliquent que le retour dépendra de l’accalmie.
 3. **Réussir un sauvetage.** Au 30, Alex rejoint Ana et la ramène à la balise. Le treuil la conduit au toit et Varga confirme sa prise en charge. L’effondrement ne peut pas annuler ce résultat.
 4. **Recevoir un objectif lisible.** Après le départ des hélicoptères, l’objectif devient : « Rejoindre la baie Est du 29 et repérer Bravo sur Hespérie. » La baie et sa relation à la tour voisine doivent être évidentes dans l’espace.
-5. **Approcher et regarder.** L’approche de la baie et le regard vers Hespérie arment la scène. Le jeu ne retourne pas la caméra et ne remplace pas le regard par un film.
+5. **Approcher et confirmer.** À la baie, un regard maintenu vers Hespérie pendant 0,8 seconde déclenche automatiquement la scène lorsque les prérequis sont réunis. E sur l’observation permet une confirmation explicite sans condition d’orientation. Le jeu ne retourne pas la caméra et ne remplace pas le regard par un film.
 6. **Vivre les quatre phases.** La séquence dispose de sa propre horloge ; elle ne dépend plus de l’orientation du joueur une fois commencée. Regarder l’abri ou faire demi-tour n’interrompt pas l’effondrement.
 7. **Réorganiser l’intervention.** Une fois le choc stabilisé, Varga confirme que la route intérieure reste utilisable. Le joueur contourne le passage touché, rejoint Samuel au 28 puis le calme relatif du 27.
 
@@ -78,7 +79,7 @@ L’observation n’est pas un piège mortel. La route du puits, l’indice Cham
 
 ## 6. Proposition de cinématique d’arrivée et d’acting
 
-Cette section décrit une production ultérieure, au-delà des personnages simplifiés et des déplacements d’appareils de la maquette. Elle fixe une continuité compatible avec l’événement jouable ; elle ne change pas ses prérequis.
+La 0.4.0 donne une première approche en quatre plans temps réel avec la mer, les tours, les appareils et les équipes géométriques. Son contrat d’horloge, de saut et de reprise figure dans [Scènes cinématiques](SCENES_CINEMATIQUES.md). Les gestes précis, la cabine habitée et le doublage proposés ci-dessous restent à produire ; ils ne changent pas les prérequis de l’incident.
 
 | Séquence | Composition proposée | Jeu des personnages et intention |
 | --- | --- | --- |
@@ -89,7 +90,7 @@ Cette section décrit une production ultérieure, au-delà des personnages simpl
 | Départ des appareils | Les rotors s’éloignent, laissant le vent, la mer et le fonctionnement du treuil. | Les équipiers restent actifs. Le départ des hélicoptères ne signifie pas encore l’abandon du joueur. |
 | Retour au travail | Premier rappel puis prise en charge d’Ana. | Ana parle à Alex ; le toit répond à la fin du treuillage. Le système de secours paraît fiable. |
 
-Lors de la rupture, les équipiers de Bravo doivent agir avec un objectif concret : rejoindre l’intérieur, appeler leur binôme ou tirer une personne derrière un appui. Éviter de les laisser immobiles devant la catastrophe. L’état réel de chaque équipier demeure à écrire pour la campagne ; l’absence de réponse radio ne constitue pas un constat de décès.
+Dans la maquette, les deux membres de la galerie et les trois du toit se tournent pendant l’alerte, traversent vers la porte ou le noyau de service pendant la secousse, puis disparaissent à couvert au début de la chute. Le déplacement est préparé et échantillonné depuis la phase ; aucune navigation ni collision nouvelle n’est ajoutée. La campagne pourra enrichir cette action avec les binômes et les gestes de protection. L’absence de réponse ne constitue pas un constat de décès.
 
 ## 7. Proposition de script radio et sous-titres
 
@@ -116,9 +117,9 @@ Ces répliques donnent une direction de doublage. Les formulations courtes prés
 | AMB-01 | Plus bas, après respiration, campagne | Indicatif Bravo, origine incertaine | « On vous voit, Aube. Le relais est près de la baie. » |
 | AMB-02 | Réaction à l’appel ambigu, campagne | Varga ou Inès, pas de conclusion hâtive | « Je l’ai reçu. Gardez votre position, on vérifie l’horodatage. » |
 
-La reprise d’OBS-02 dans AMB-01 devient troublante parce que le contexte a changé. Elle ne doit pas arriver au milieu du choc : le joueur doit d’abord retrouver une action concrète, sauver Samuel et bénéficier du calme du 27. Elle ne confirme ni le décès de Bravo ni le caractère surnaturel de tout appel. Une vraie réponse ultérieure reste possible.
+Le fragment effectivement repris dans le prototype est « Bravo à Aube. On vous voit à la baie Est... ». L’écho exige Samuel reçu au toit, l’état `aftermath`, le niveau 27 et six secondes continues de radio libre. Varga attend ensuite deux secondes de calme au 27, au refuge 25 ou au toit. Rappel, portage, treuillage, pause et arrivée suspendent ces conditions ; la pause n’ajoute aucun temps. Les deux étapes sont facultatives et persistées chacune une seule fois après sauvegarde réussie. L’annexe [Communications et équipes](COMMUNICATIONS_ET_EQUIPES.md) fait autorité sur le texte livré ; les lignes de doublage du tableau restent des propositions.
 
-Les alertes de la scène ont priorité sur les commentaires optionnels. Une information de progression interrompue doit pouvoir être relue ou redonnée après l’urgence. Les sous-titres identifient l’indicatif ; une coupure de transmission est exprimée par le texte et le son, pas seulement par la couleur.
+Les alertes de la scène remplacent le sous-titre courant et retirent les instructions en attente devenues obsolètes. Les transmissions déjà reçues restent dans le journal, dans sa limite de 32 entrées. Un message ordinaire peut être archivé pendant l’incident sans masquer l’alerte. Les indicatifs et coupures sont lisibles dans les sous-titres, indépendamment de la couleur ou du son.
 
 ## 8. Conséquences à conserver
 
@@ -137,7 +138,7 @@ Les refuges certifiés restent sûrs. La scène ne détourne pas rétroactivemen
 
 ## 9. Sauvegarde, interruption et migration
 
-Le schéma 2 ajoute `incident_state` à la sauvegarde. Ses seules valeurs persistantes sont `intact` et `aftermath`. Les quatre phases transitoires sont suivies en session avec `phase` et `phase_elapsed` ; elles ne sont pas écrites comme une position de reprise au milieu d’un mouvement de bâtiment.
+Le schéma 2 avait ajouté `incident_state` ; le schéma courant 3 le conserve avec les transmissions et les événements radio. Ses seules valeurs persistantes sont `intact` et `aftermath`. Les phases transitoires sont suivies en session avec `phase` et `phase_elapsed` ; elles ne définissent pas une reprise au milieu d’un mouvement de bâtiment.
 
 | Situation | Résultat attendu |
 | --- | --- |
@@ -151,7 +152,7 @@ Le schéma 2 ajoute `incident_state` à la sauvegarde. Ses seules valeurs persis
 | Sauvegarde 1 terminée | Lecture puis migration vers `aftermath`, bilan conservé |
 | Échec d’écriture | Message d’erreur ; aucun succès de sauvegarde annoncé ; checkpoint précédent conservé si possible |
 
-Le fichier reste à `user://save_v1.json` pour retrouver les parties existantes. Son nom historique n’impose pas son schéma : les nouvelles écritures portent `version: 2`. Une ancienne sauvegarde n’est réécrite qu’à la prochaine écriture réussie. `completed: true` exige `aftermath` dans le schéma 2.
+Le fichier reste à `user://save_v1.json` pour retrouver les parties existantes. Son nom historique n’impose pas son schéma : les nouvelles écritures portent `version: 3`. Une ancienne sauvegarde n’est réécrite qu’à la prochaine écriture réussie. `completed: true` exige `aftermath` dans le schéma 3.
 
 La migration ne devine jamais l’incident à partir de la durée de partie ou des étages vus. Elle ne modifie pas le compteur des personnes sauvées pour fabriquer une transition. Les listes d’indices et de matériel consommé restent cohérentes avec l’état chargé.
 
@@ -179,12 +180,12 @@ Les points suivants servent à évaluer la révision ; ils ne constituent pas de
 
 - Une nouvelle partie présente deux tours intactes, deux appareils et des groupes identifiables sur les deux toits.
 - Le joueur peut prendre son temps avant le sauvetage d’Ana sans déclencher l’incident.
-- L’objectif conduit à la baie Est du 29 ; la scène requiert l’approche et le regard, puis continue si le joueur détourne les yeux.
+- L’objectif conduit à la baie Est du 29 ; la scène requiert l’approche et un regard maintenu ou une confirmation avec E, puis continue si le joueur détourne les yeux.
 - Les quatre phases suivent l’ordre et les durées définis ; la pause et une reprise ne doublent aucun événement.
 - Les commandes restent disponibles et les options de confort préservent les informations nécessaires.
 - Le passage latéral est modifié sans condamner les objets, les victimes ou le puits ; aucun changement de collision n’enferme le joueur.
 - Un arrêt pendant la scène reprend avant l’avertissement ; un arrêt après stabilisation restaure directement les dégâts.
-- Les sauvegardes 1 migrent selon l’état de fin, avec personnes, preuves et ressources conservées.
+- Les sauvegardes 1 migrent selon l’état de fin ; les sauvegardes 2 conservent l’incident. L’historique et les événements absents commencent vides ; la lecture n’écrit pas le fichier.
 - Ana, Samuel et Nora restent sauvables une seule fois ; les personnes confirmées restent au registre après le choc et la reprise.
 - Le refuge reste sûr ; la fin reste cohérente avec trois personnes sauvées et un incident achevé.
 - Le contraste entre organisation initiale, rupture et isolement est lisible à l’image et dans les communications.

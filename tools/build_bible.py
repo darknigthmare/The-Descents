@@ -6,7 +6,7 @@ Run with the primary document runtime:
 
 Rendering is a separate, mandatory delivery check:
     "$CODEX_PRIMARY_RUNTIME_PYTHON" /home/agent/.codex/skills/builtins/documents/render_docx.py \
-        docs/The-Tower-Descent-Bible-v0.2.docx --output_dir docs/rendered --emit_pdf
+        docs/The-Tower-Descent-Bible-v0.4.docx --output_dir docs/rendered --emit_pdf
 """
 
 from __future__ import annotations
@@ -28,7 +28,7 @@ from docx.opc.constants import RELATIONSHIP_TYPE as RT
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
-DEFAULT_OUTPUT = DOCS / "The-Tower-Descent-Bible-v0.2.docx"
+DEFAULT_OUTPUT = DOCS / "The-Tower-Descent-Bible-v0.4.docx"
 REPO_DOCS = "https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/"
 BODY_FONT = "Arial"
 MONO_FONT = "Consolas"
@@ -41,6 +41,11 @@ PARTS = [
     ("SYSTEMES_PROCEDURAUX.md", "Annexe A Génération et sauvegardes", "part_systems"),
     ("ARCHITECTURE_ET_PORTAGE_UE5.md", "Annexe B Architecture et portage vers Unreal Engine 5", "part_architecture"),
     ("EFFONDREMENT_EN_DIRECT.md", "Annexe C Effondrement en direct et mise en scène", "part_collapse"),
+    ("COMMUNICATIONS_ET_EQUIPES.md", "Annexe D Communications et continuité des équipes", "part_communications"),
+    ("PROPS_INTERACTIONS.md", "Annexe E Props et interactions", "part_props"),
+    ("ENNEMIS_STATISTIQUES.md", "Annexe F Présences, adversaires et statistiques", "part_enemies"),
+    ("SCENES_CINEMATIQUES.md", "Annexe G Scènes, cinématiques et accueil", "part_cinematics"),
+    ("GAMEPLAY_DETAILLE.md", "Annexe H Gameplay détaillé et personnages", "part_gameplay"),
 ]
 
 
@@ -189,7 +194,7 @@ def configure(document: Document):
         pf.line_spacing = 1.04
     header = section.header.paragraphs[0]
     header.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    set_font(header.add_run("THE TOWER DESCENT   |   Bible de conception   |   Version 0.2"), 9)
+    set_font(header.add_run("THE TOWER DESCENT   |   Bible de conception   |   Version 0.4.0"), 9)
     footer = section.footer.paragraphs[0]
     footer.paragraph_format.tab_stops.add_tab_stop(Cm(BODY_WIDTH_CM), WD_TAB_ALIGNMENT.RIGHT)
     set_font(footer.add_run("Darknigthmare  ·  24 novembre 2026\t"), 9)
@@ -197,7 +202,7 @@ def configure(document: Document):
     set_font(footer.add_run(" / "), 9)
     field(footer, "NUMPAGES")
     document.core_properties.title = "The Tower Descent Bible de conception"
-    document.core_properties.subject = "Bible du jeu, catalogue des étages, systèmes et architecture"
+    document.core_properties.subject = "Bible du jeu, étages, props, personnages, menaces, gameplay et cinématiques"
     document.core_properties.author = "Darknigthmare"
     document.core_properties.keywords = "The Tower Descent, The-Descents, Godot, Unreal Engine 5, sauvetage, horreur"
     document.core_properties.comments = ""
@@ -408,7 +413,7 @@ def cover(document: Document):
     title.paragraph_format.space_after = Pt(15)
     subtitle = document.add_paragraph("Bible de conception et catalogue des niveaux", style="Subtitle")
     subtitle.paragraph_format.space_after = Pt(18)
-    inline(document.add_paragraph(), "**Version 0.2 — 24 novembre 2026**")
+    inline(document.add_paragraph(), "**Version 0.4.0 — 24 novembre 2026**")
     inline(document.add_paragraph(), "**Création et direction du projet : Darknigthmare**")
     p = document.add_paragraph()
     hyperlink(p, "Dépôt The-Descents sur GitHub", "https://github.com/darknigthmare/The-Descents")
@@ -422,24 +427,37 @@ def cover(document: Document):
     )
     document.add_paragraph(
         "La bible présente l’univers, les personnages, les règles et les choix de production. "
-        "Le catalogue détaille les étages et les profondeurs. Les annexes décrivent les systèmes "
-        "du prototype, la trajectoire envisagée vers Unreal Engine 5 et la mise en scène de l’effondrement."
+        "Le catalogue détaille les étages et les profondeurs. Huit annexes développent systèmes, "
+        "architecture, incident, équipes, 52 props, 11 formes de présence, scènes et gameplay chiffré."
     )
     document.add_paragraph("Périmètre de cette version", style="Heading 2")
     add_table(document, [
         ["État", "Contenu"],
-        ["Prototype Godot 0.2", "Toit et six étages de 30 à 25, deux tours initialement intactes, deux appareils et équipes en maquette, effondrement pendant la descente, trois sauvetages, indices, refuge et sauvegarde avant/après."],
+        ["Prototype Godot 0.4.0", "Toit et six étages de 30 à 25, effondrement vécu, trois sauvetages avec réception visible, radio persistante et sauvegarde 3. Prologue de 15 s, accueil contextuel et arrivée de 28 s. Représentations de maquette."],
         ["Conception de campagne", "Trente étages principaux, seconde tour, socle, souterrains, bunker et profondeur 666; personnages, révélation, fins et extension Mountain Hole. Contenu à produire."],
         ["Référence de production", "Le contrat de jeu, les critères de revue et la mise en scène sont décrits ici. Le rapport de livraison du dépôt présente séparément les exécutables et les résultats de vérification."],
     ])
-    document.add_paragraph("Organisation du document", style="Heading 2")
+    contents = document.add_paragraph("Organisation du document", style="Heading 2")
+    contents.paragraph_format.page_break_before = True
     for _, title_text, anchor in PARTS:
         p = document.add_paragraph()
         p.paragraph_format.space_after = Pt(5)
         hyperlink(p, title_text, anchor, internal=True)
     document.add_paragraph(
-        "Les noms, révélations et fins constituent la proposition de canon 0.2. "
+        "Les noms, révélations et fins constituent la proposition de canon 0.4.0. "
         "L’état des fonctionnalités jouables est distinct des objectifs de campagne."
+    )
+    document.add_paragraph("Lecture et usage", style="Heading 2")
+    document.add_paragraph(
+        "Les deux premières parties exposent le récit, les choix de conception et le parcours complet. "
+        "Les annexes apportent les contrats techniques, les fiches de production et les paramètres. "
+        "Les mentions actuel ou livré désignent le prototype ; cible, proposé et campagne désignent "
+        "un contenu à construire ou à éprouver. Les tableaux de statistiques futures ne sont pas des résultats de test."
+    )
+    document.add_paragraph(
+        "Le volume reprend intégralement les dix sources Markdown du dépôt. Les liens de cette page "
+        "mènent aux parties dans le document ; les références de source mènent aux fichiers du dépôt. "
+        "L’état des exports, les captures et les résultats de vérification sont conservés dans les rapports de livraison."
     )
 
 
@@ -461,15 +479,6 @@ def main():
         source = (DOCS / filename).read_text(encoding="utf-8")
         total_words += len(source.split())
         add_markdown(document, source, index)
-        if index == 0:
-            # Keep the closing decisions with the dialogue guide on the final
-            # bible page without shortening its content or reducing type size.
-            closing_sections = False
-            for paragraph in document.paragraphs:
-                if paragraph.text == "25 Extension Mountain Hole":
-                    closing_sections = True
-                if closing_sections and not paragraph.style.name.startswith("Heading"):
-                    paragraph.paragraph_format.space_after = Pt(3)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     document.save(args.output)
     print(f"Built {args.output} from {len(PARTS)} Markdown sources ({total_words:,} source words).")

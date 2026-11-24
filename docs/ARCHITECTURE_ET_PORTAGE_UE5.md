@@ -1,8 +1,8 @@
 # Architecture du prototype et portage vers Unreal Engine 5
 
-Version de conception 0.2 — Effondrement en temps réel — 24 novembre 2026
+Version de conception 0.4.0 — Présentation cinématique et continuité de mission — 24 novembre 2026
 
-Ce document décrit le prototype Godot 0.2 et propose une trajectoire vers Unreal Engine 5. La tranche solo en vue subjective comprend un toit, six étages de 30 à 25, trois sauvetages, trois indices et un refuge. Les deux tours commencent intactes, deux hélicoptères et des groupes de secours sont visibles en maquette, puis un effondrement partiel se déroule pendant l’observation depuis le 29. La campagne complète et le portage UE5 restent à produire.
+Ce document décrit le prototype Godot 0.4.0 et propose une trajectoire vers Unreal Engine 5. La tranche solo en vue subjective comprend un toit, six étages de 30 à 25, trois sauvetages, trois indices et un refuge. Les deux tours commencent intactes, deux hélicoptères et des groupes de secours sont visibles en maquette, puis un effondrement partiel se déroule pendant l’observation depuis le 29. La campagne complète et le portage UE5 restent à produire.
 
 Le projet déclare une base de fonctionnalités Godot 4.7. Les exécutables, versions de moteur effectivement utilisées et résultats de vérification sont décrits dans le rapport de livraison du dépôt. Ce document ne constitue pas un rapport d’exécution d’Unreal Engine. La coopération en réseau n’est pas implémentée.
 
@@ -15,13 +15,31 @@ La scène d'entrée `prototype/scenes/main.tscn` instancie le contrôleur princi
 | `main.gd` | Cycle menu et partie, objectifs, interactions, ressources, événements, treuillage, points de reprise et coordination des autres scripts |
 | `player_controller.gd` | `CharacterBody3D`, caméra, marche, course, saut, déplacement lent accroupi, rappel guidé, lampe et tracé de corde |
 | `floor_generator.gd` | Production déterministe des six descriptions d'étage et validation des invariants de contenu |
-| `world_builder.gd` | Géométrie et collisions, deux états des tours, deux appareils, groupes de secours, effets de rupture, détour après impact et points interactifs |
-| `save_store.gd` | Schéma 2, migration des sauvegardes 1, état persistant de l’incident, validation et écriture temporaire avant remplacement |
-| `hud.gd` | Menu, jauges, objectifs, commandes contextuelles, radio, journal, pause et bilan |
+| `world_builder.gd` | Géométrie et collisions, repli préparé de Bravo, réception nominative des sauvés, appareils, rupture, détour et points interactifs |
+| `collapse_director.gd` | Phases et durées de l’incident, transitions et restauration de ses états stables |
+| `radio_director.gd` | File de sous-titres ordinaires, priorité des alertes et historique borné des transmissions |
+| `save_store.gd` | Schéma 3, migration stricte en lecture des schémas 1 et 2, progression et données radio, remplacement contrôlé du checkpoint |
+| `cinematic_director.gd` | Échantillonnage du prologue de 15 s et de l’arrivée de 28 s, quatre plans, quatre repères de communication, contexte du menu |
+| `frontend_menu.gd` | Accueil, reprise, nouveau déploiement confirmé, dossier et réglages de confort |
+| `cinematic_overlay.gd` | Cartons, bandes, sous-titres et commande de passage des séquences |
+| `preferences_store.gd` | Préférences booléennes validées, indépendantes de la mission et chargées avant le prologue |
+| `hud.gd` | Jauges, objectifs, commandes contextuelles, radio, journal, pause et bilan |
 
 Le personnage utilise `move_and_slide()` pour la marche. Godot décrit `CharacterBody3D` comme un corps contrôlé par script disposant notamment de détection des murs et des pentes ; la gravité et les règles de déplacement restent ici écrites dans le contrôleur. [Documentation Godot CharacterBody3D](https://docs.godotengine.org/en/stable/classes/class_characterbody3d.html)
 
 `main.gd` est volontairement central pour cette tranche courte. Avant d'étendre la campagne, séparer ses responsabilités en gestion de mission, ressources, interactions, événements et sauvegarde évitera que chaque nouveau niveau ajoute des conditions dans une boucle unique.
+
+## Présentation, horloges et vérité de la progression
+
+Le prologue et l’arrivée possèdent leur temps de séquence ; le menu dispose d’un temps d’animation distinct. Le temps de mission ne progresse ni pendant l’accueil ni pendant les 28 secondes d’arrivée. Les départs d’hélicoptères, dangers et treuillages restent ainsi liés à l’intervention jouée. La pause suspend les séquences. Passer l’arrivée applique une sortie unique : fin du directeur, caméra du joueur courante, HUD visible et contrôle rendu seulement si l’état de pause le permet.
+
+L’accueil reçoit uniquement le résultat validé de `save_store.gd`. Le contexte utilise le dernier étage sûr, le registre des sauvés, l’état stable d’incident et le temps enregistré. Il restaure un décor de présentation sans lancer de nouvelle mission. Sans sauvegarde valide, les tours sont intactes et le bouton Reprendre n’apparaît pas. Après une intervention terminée, le menu propose sa consultation au refuge. Les contrôles et textes sont détaillés dans [Scènes cinématiques](SCENES_CINEMATIQUES.md).
+
+Les façades extérieures ajoutées en 0.4.0 sont des surfaces visuelles sans collision. Leur face arrière n’est pas rendue pour conserver la lecture depuis l’intérieur ; les panneaux endommagés suivent les groupes de façade du 29 et du 28. Les étiquettes 3D de gameplay utilisent une couche de visibilité exclue des caméras de présentation. Ce masque ne modifie ni les objets interactifs ni la caméra jouable.
+
+Les préférences `audio`, `reduced_motion`, `flashes` et `startup_intro` sont des booléens du fichier `user://preferences.cfg`. Le chargeur conserve des valeurs par défaut sûres en cas de champ incorrect. Leur écriture utilise un fichier temporaire puis un remplacement. Elles ne dépendent pas de la création d’une sauvegarde de mission. Les mouvements réduits et l’absence d’éclairs sont les réglages initiaux.
+
+Le son de présentation provient de boucles synthétiques originales générées par un outil du dépôt : thème de menu de 16 s, signature de 3,6 s et rotor de 8 s. Les textes de l’approche ne sont pas doublés par des voix enregistrées. Les ressources doivent être embarquées dans les exports et le basculement du son doit s’appliquer aux effets déjà actifs.
 
 ## Espace et limites de la simulation
 
@@ -31,7 +49,7 @@ Chaque plateau mesure 24 m de côté et laisse un puits central de 5,4 m. Les po
 
 Le rappel actuel guide directement la position dans le puits, ajoute une oscillation latérale et affiche une ligne. L'ancrage secondaire amortit le balancement pendant une durée limitée. Ce dispositif n'est pas une simulation de corde segmentée ni un calcul d'efforts d'un système de sauvetage.
 
-Le sauvetage est également simplifié : sécuriser le rescapé ralentit le joueur ; rejoindre la balise déclenche sa remontée animée. Il n'existe pas encore de navigation autonome de blessés, d'animation de portage complète ou de partage de charge entre deux équipiers. L'accroupissement abaisse la caméra et réduit la vitesse, mais ne réduit pas actuellement la capsule de collision.
+Le sauvetage reste simplifié : sécuriser le rescapé ralentit le joueur ; rejoindre la balise déclenche une remontée animée. Après confirmation, `world.set_rescued_people(rescued)` projette le registre au poste médical du toit. Les figures, noms, couvertures et la civière sont préconstruits, sans collision ni nouvel interactable. La méthode peut être rappelée après chargement et reçoit une liste vide à chaque nouvelle partie. Elle ne constitue ni une IA de blessé ni une animation complète de transfert. L’accroupissement abaisse la caméra et réduit la vitesse, sans réduire la capsule.
 
 ## Génération déterministe et persistance
 
@@ -39,11 +57,11 @@ Le générateur conserve les fonctions architecturales et les objectifs : restau
 
 La graine permet de retrouver une partie avec le même code et le même environnement moteur. Elle ne constitue pas une garantie de reproduction entre toutes les versions : Godot indique que l'algorithme interne du générateur aléatoire est un détail d'implémentation. [Documentation Godot RandomNumberGenerator](https://docs.godotengine.org/en/stable/classes/class_randomnumbergenerator.html)
 
-La sauvegarde de schéma 2 contient la graine, le niveau de reprise, les ressources, le temps, les étages visités, les listes de personnes sauvées, indices et caisses utilisées, ainsi que `incident_state` (`intact` ou `aftermath`). Le chargeur refuse les types incorrects, nombres non finis, champs manquants et tailles excessives. L'écriture passe par un fichier temporaire voisin avant remplacement. Le principe de sérialiser explicitement les informations persistantes correspond au fonctionnement présenté par Godot. [Documentation Godot Saving games](https://docs.godotengine.org/en/stable/tutorials/io/saving_games.html)
+La sauvegarde de schéma 3 contient la graine, le niveau sûr, les ressources, le temps, les étages visités, les personnes sauvées, les indices, les caisses utilisées, `incident_state`, `transmissions` et `radio_events`. Elle conserve au plus 32 transmissions et deux événements facultatifs. Le chargeur refuse les types incorrects, nombres non finis, champs manquants ou supplémentaires, incohérences radio et tailles excessives. L’écriture passe par un temporaire voisin avant remplacement. Le contrat exact figure dans [Systèmes procéduraux](SYSTEMES_PROCEDURAUX.md).
 
 L'identité courante `type_étage`, par exemple `survivor_28`, convient à un objet de chaque type par étage. La campagne devra adopter des identifiants indépendants de l'ordre de création, tels que `aube/28/archive/samuel`. Ajouter `generation_version`, `content_revision` et le manifeste des étages générés au format de sauvegarde permettra de migrer les données et de charger la même disposition après un portage. Ne pas sauvegarder les adresses des acteurs ou leurs indices dans un tableau.
 
-Le chemin `user://save_v1.json` est conservé pour retrouver les parties existantes. Une ancienne sauvegarde valide non terminée migre en lecture vers `intact`, une ancienne partie terminée vers `aftermath` ; l’écriture au schéma 2 intervient au checkpoint suivant. La durée écoulée ne permet pas de reconstruire l’incident. Un arrêt pendant une phase transitoire reprend le checkpoint préalable, tandis qu’un état `aftermath` restaure directement les dégâts et la progression radio.
+Le chemin historique `user://save_v1.json` permet de retrouver les parties existantes. Les schémas 1 et 2 sont validés avant migration en lecture. Le premier déduit l’incident du seul état de fin ; le second conserve son état explicite. Tous deux commencent avec journal et événements radio vides. Une reprise ne rejoue pas un ancien sous-titre. Le prochain checkpoint réussi écrit le schéma 3. Un arrêt pendant l’effondrement reprend le point stable préalable ; `aftermath` restaure directement les dégâts et les prises en charge.
 
 ## Incident du 29 et séparation des états
 
@@ -105,7 +123,7 @@ Le générateur de campagne doit d'abord assembler un graphe praticable : entré
 
 Le framework PCG d'Unreal constitue une option pour distribuer végétation, gravats et accessoires à partir de règles. Il ne doit pas remplacer les invariants de sauvetage ou décider seul de la progression narrative. Cette utilisation est une proposition adaptée au rôle de génération procédurale décrit par Epic. [Documentation Epic PCG](https://dev.epicgames.com/documentation/en-us/unreal-engine/procedural-content-generation-framework-in-unreal-engine)
 
-Dans le prototype 0.2, Hespérie passe d’un état vertical intact à un état partiellement effondré pendant le jeu. Son état final, le détour et les communications sont persistants. Le portage UE5 proposé doit d’abord reproduire ce contrat, avec trajectoires préparées, zone d’observation, commandes libres, pause réelle et reprises avant/après. Des débris et effets plus détaillés pourront ensuite enrichir la scène sans décider de la praticabilité du trajet de secours.
+Dans le prototype 0.4.0, Hespérie passe d’un état vertical intact à un état partiellement effondré pendant le jeu. Son état final, le détour et les communications sont persistants. Le portage UE5 proposé doit d’abord reproduire ce contrat, avec trajectoires préparées, zone d’observation, commandes libres, pause réelle et reprises avant/après. Des débris et effets plus détaillés pourront ensuite enrichir la scène sans décider de la praticabilité du trajet de secours.
 
 Pour la production UE5, prévoir des groupes distincts : structure intacte, volume mobile de rupture, façade haute endommagée, débris décoratifs et collisions finales. Le contrôleur narratif resterait responsable du passage d’état ; une éventuelle simulation de débris ne serait pas la source de vérité des routes. L’approche en hélicoptère et le jeu d’acteurs de l’équipe opposée constituent des séquences supplémentaires à produire. Ces choix sont des propositions d’architecture, pas du code UE5 livré.
 
@@ -119,11 +137,23 @@ La coopération constitue un chantier distinct. Définir d'abord l'autorité sur
 
 ## Phases et critères de passage
 
+### Contrats de contenu avant extension
+
+Les fiches P01 à P52 doivent devenir des données séparant représentation, interaction et état persistant. Chaque instance porte un identifiant stable, un volume d’usage, des états autorisés et des points de pose. Un modèle artistique ne doit pas créer sa propre collision de route par défaut ; le niveau décide quelles surfaces bloquent réellement le joueur et les personnes transportées.
+
+Les archétypes E01 à E10 décrivent des règles de campagne, tandis qu’E00 documente la silhouette actuelle. La future interface d’une présence doit recevoir des faits observables : cible, distance, ligne de vue, bruit ou émission. Elle ne doit pas lire arbitrairement le contenu caché d’une sauvegarde pour deviner le joueur. Les limites de territoires, refuges et transferts restent des contraintes imposées par la mission.
+
+La première extraction technique prioritaire est un registre d’entités indépendantes des nœuds. Les noms actuels `survivor_30`, `clue_29` ou `supply_25` conviennent à la tranche mais ne distinguent pas plusieurs objets de même type au même étage. La campagne doit utiliser des identifiants de contenu, un manifeste de génération et un état sérialisable versionné. Les animations d’accueil et les groupes visibles doivent pouvoir être reconstruits depuis ce registre.
+
+Le portage UE5 doit conserver ces contrats avant de remplacer les images : montage de présentation annulable, horloge de mission séparée, reprise sûre et résultat humain persistant. Les références d’API externes de ce document décrivent une trajectoire d’architecture ; aucun projet Unreal compilé ni comparaison de performances avec Godot n’est livré.
+
+### Jalons proposés
+
 Les objectifs suivants sont des critères proposés, pas des mesures de performance déjà obtenues.
 
 | Phase | Livrable et critère vérifiable |
 | --- | --- |
-| Consolider la tranche Godot | Trois sauvetages, incident unique du 29, pause des phases, migration v1, reprise avant/après et trajets accessibles dans les deux états sur un lot de graines |
+| Consolider la tranche Godot | Trois sauvetages, incident unique du 29, pause des phases, migration des schémas 1 et 2, journal et réception restaurés, reprise avant/après et trajets accessibles dans les deux états sur un lot de graines |
 | Extraire les systèmes | Modules mission et interaction séparés ; tests inchangés ; identifiants uniques et manifeste versionné |
 | Reproduire sous UE5 | Même boucle sur un toit et deux étages ; marche et rappel sûrs ; commandes clavier et manette ; aucune progression perdue après recharge |
 | Étendre à six étages UE | Parité des objectifs, deux tours intactes puis effondrement, dangers, indices, refuge, sauvegarde et confort ; comparaison avec une grille de validation commune |
@@ -133,4 +163,4 @@ Les objectifs suivants sont des critères proposés, pas des mesures de performa
 
 Les risques immédiats sont le couplage du contrôleur principal, l'absence de navigation de PNJ, la capsule d'accroupissement inchangée, les interactions encore fondées sur proximité et les limites des identifiants actuels. Les traiter avant de multiplier les étages évitera de transporter ces simplifications dans toute la campagne.
 
-La fidélité du portage se jugera d'abord sur une intervention que l'on peut commencer, comprendre, terminer et reprendre. La qualité des personnages, animations, effets, ambiances et effondrements viendra ensuite enrichir cette base, avec un budget graphique établi à partir de mesures réelles.
+Le portage doit préserver une intervention compréhensible, terminable et reprenable. Les personnages, animations et effets seront ensuite enrichis selon un budget graphique mesuré.

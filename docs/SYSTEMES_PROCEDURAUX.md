@@ -1,6 +1,6 @@
 # Systèmes procéduraux de The Tower Descent
 
-**Version 0.2 — 24 novembre 2026**
+**Version 0.4.0 — 24 novembre 2026**
 
 ## Objet et périmètre
 
@@ -9,6 +9,22 @@ Le prototype assemble une descente de six étages, du restaurant panoramique 30 
 La révision 0.2 conserve ce générateur et ajoute un événement de mission indépendant : les tours commencent intactes, puis Hespérie s’effondre partiellement vers Aube pendant l’observation depuis la baie Est du 29. Le choix de graine ne décide ni de sa présence ni du destin d’une personne déjà sauvée.
 
 Ce document distingue ce mécanisme livré de la génération plus ambitieuse de la campagne, décrite dans la bible. Il ne faut pas interpréter les trente étages de la bible comme trente niveaux déjà jouables. La géométrie du prototype est construite par `world_builder.gd`; `floor_generator.gd` ne prétend pas, à lui seul, prouver la traversabilité des collisions produites.
+
+La 0.4.0 rétablit le repli de Bravo, la réception nominative au toit et les communications persistantes conçus pendant la continuation 0.3. Elle ajoute une présentation cinématique et un menu contextualisé. Ces systèmes utilisent la progression de mission et des horloges de présentation, sans modifier le tirage des six étages.
+
+## Contrat d’extension du contenu
+
+Les trente fiches d’assemblage du [catalogue](CATALOGUE_ETAGES.md), les 52 [props](PROPS_INTERACTIONS.md) et les archétypes du [bestiaire](ENNEMIS_STATISTIQUES.md) sont des spécifications de campagne. Ils ne sont pas tous inscrits dans le générateur actuel. Leur intégration doit commencer par des variantes préparées d’un petit nombre de niveaux, avec validation du chemin avant ajout de décoration.
+
+Une future description d’étage doit séparer quatre couches : graphe de circulation, états narratifs autorisés, interactions requises et habillage. Le graphe indique entrée, sortie, palier sûr et voie de transfert. Les états narratifs déterminent ce que le joueur peut déjà savoir. Les interactions déclarent outils, durée proposée et conséquence persistante. L’habillage peut choisir des tables ou des gravats compatibles sans déplacer les points nécessaires à la mission.
+
+Une instance de prop doit recevoir un identifiant stable, une orientation, un volume d’interaction et des volumes réservés. Les petits objets décoratifs peuvent varier librement à l’intérieur d’un emplacement validé ; un meuble de collision doit être soumis au contrôle de circulation. Une civière, un accompagnant ou un équipier au travail demande une enveloppe plus large que la capsule seule. Le générateur doit conserver le chemin de retour après l’action, pas seulement un accès aller à la personne.
+
+Une présence de campagne doit déclarer son territoire, les signaux d’annonce, le contre-jeu accessible et les exclusions. Les refuges, le premier transfert, les sorties de corde et les apprentissages de mouvement ne sont pas des emplacements aléatoires de menace. Deux événements facultatifs peuvent se remplacer selon le contexte ; ils ne doivent pas s’empiler jusqu’à rendre les appels opérationnels illisibles. Les délais d’événement n’incluent ni pause ni menu ni arrivée cinématique.
+
+Le contexte du menu est une projection du dernier checkpoint validé. Il n’effectue aucun nouveau tirage de progression et n’invente pas un état d’incident en fonction du temps de présentation. Les personnages médicaux et dégâts sont reconstruits depuis les mêmes registres que la reprise jouable. Les préférences restent dans un fichier séparé ; changer la graine de la mission ne réactive pas les éclairs ni les mouvements de caméra.
+
+Pour un portage, conserver le manifeste des modules retenus en plus de la graine. Une graine seule ne garantit pas les mêmes choix si le code, le moteur ou l’ordre de tirage change. Les clés de personnes, props, preuves et événements doivent survivre au changement d’asset ou au déchargement d’un étage. Le schéma 3 actuel reste inchangé tant que cette extension de données n’est pas effectivement développée et migrée.
 
 ## Contrat des données livrées
 
@@ -45,11 +61,11 @@ Ce document distingue ce mécanisme livré de la génération plus ambitieuse de
 
 Les trois sauvés ne sont pas tirés au sort. Un joueur ne perd donc pas un objectif obligatoire parce que la graine l’a omis. Les indices qui établissent l’existence d’événements avant la catastrophe ne disparaissent pas non plus. Les étages 30, 27 et 25 sont mécaniquement calmes. L’étage 27 donne une respiration après le choc du 29 et le sauvetage du 28, avant la première apparition lisible au 26 ; cela garantit qu’il n’existe jamais trois étages hostiles consécutifs dans les spécifications.
 
-Le statut `safe` est réservé au refuge 25. Une pause au 27 signifie seulement l’absence de danger ou d’anomalie programmés à cet étage dans le prototype. Elle n’ajoute pas de stock ni de point de sauvegarde implicite.
+Le statut `safe` du générateur est réservé au refuge 25. Le 27 reste sans danger mécanique ni apparition hostile ; un échange radio facultatif y est piloté par la mission. Traverser le niveau n’ajoute ni stock ni checkpoint implicite. Recevoir l’écho de Bravo ou sa vérification demande en revanche un checkpoint explicite en zone calme.
 
 ## Événement majeur indépendant de la graine
 
-La baie Est du 29, sa vue sur Hespérie, le passage intérieur et les emplacements de reprise sont des éléments fixes. L’événement requiert Ana treuillée et confirmée au toit, le départ des hélicoptères, puis l’approche de la baie et le regard vers la tour voisine. Il ne dépend pas du temps total passé dans la partie. Un joueur qui explore ou apprend les commandes ne rate pas l’effondrement au profit d’un minuteur invisible.
+La baie Est du 29, sa vue sur Hespérie, le passage intérieur et les emplacements de reprise sont des éléments fixes. L’événement requiert Ana treuillée et confirmée au toit, le départ des hélicoptères, puis l’approche de la baie et un regard maintenu vers la tour voisine ou une confirmation explicite avec E. Un délai minimal de mission permet le départ des appareils, mais il ne déclenche pas seul la scène. Un joueur qui explore ou apprend les commandes ne rate pas l’effondrement au profit d’un minuteur invisible.
 
 Le directeur de scène déroule `warning` pendant 8 s, `quake` pendant 6 s, `collapse` pendant 7 s et `impact` pendant 4 s, puis atteint `aftermath`. Les paramètres `phase` et `phase_elapsed` décrivent la session en cours. La pause arrête la progression de cette horloge ; le regard et le déplacement restent libres lorsque le jeu est actif. Le contrôleur attend un état compatible avec la scène : aucune victime portée ou en cours de transfert ne doit être perdue par un changement de phase.
 
@@ -63,7 +79,7 @@ Chaque étage possède quatre générateurs locaux indépendants : `layout`, `pr
 
 Godot documente qu’une graine donnée de `RandomNumberGenerator` reproduit une séquence, tout en précisant que l’algorithme sous-jacent reste un détail d’implémentation. La garantie de cette livraison s’applique donc à la même version du générateur et du moteur. Une migration de moteur doit conserver le manifeste déjà généré dans la sauvegarde ou fournir une migration explicite; conserver uniquement le nombre de la graine ne constitue pas une promesse de compatibilité éternelle. [Documentation officielle de RandomNumberGenerator](https://docs.godotengine.org/en/stable/classes/class_randomnumbergenerator.html)
 
-Dans le prototype, `GENERATION_VERSION` vaut 1 ; cette version du générateur est distincte du schéma de sauvegarde 2. Le choix de graine ne dépend ni de l’heure ni de la vitesse du processeur. La fonction pure accepte aussi des entiers négatifs pour les essais, tandis que l’entrée de partie et la sauvegarde utilisent une graine de 1 à 999999. Le moteur décide ensuite comment exploiter la valeur `prop_seed`; il ne doit pas introduire de nouveaux tirages globaux qui rendraient les accessoires sensibles à l’ordre de chargement.
+Dans le prototype, `GENERATION_VERSION` vaut 1 ; cette version du générateur est distincte du schéma de sauvegarde 3. Le choix de graine ne dépend ni de l’heure ni de la vitesse du processeur. La fonction pure accepte aussi des entiers négatifs pour les essais, tandis que l’entrée de partie et la sauvegarde utilisent une graine de 1 à 999999. Le moteur décide ensuite comment exploiter la valeur `prop_seed`; il ne doit pas introduire de nouveaux tirages globaux qui rendraient les accessoires sensibles à l’ordre de chargement.
 
 ## Ce que les tests vérifient
 
@@ -87,7 +103,7 @@ godot --headless --fixed-fps 60 --path prototype --script tests/test_routes.gd
 
 Les graines 3, 47 et 69 forment un ensemble couvrant les variantes de modules 0, 1 et 2 sur chacun des six étages. Le test suit les voies prévues autour du puits vers les trois survivants, les trois indices, les deux réserves et le refuge. Il s’arrête à portée d’interaction des objets, dont certains comportent leur propre collision, puis revient au treuil. La vitesse est de 3,7 mètres par seconde à l’aller et de 2,4 pendant le retour avec une victime.
 
-Ces trajets forment un corpus de vérification, pas une couverture de toutes les positions, des sauts, de toutes les graines ou de la campagne. La révision 0.2 demande également une traversée après impact et une vérification de la baie Est. La logique de mission, les pauses et les reprises relèvent de `tests/test_mission.gd` et des tests de l’incident ; l’interface et la visibilité des chemins exigent une inspection visuelle. Les résultats d’exécution appartiennent au rapport de validation du dépôt ; aucun total de la version précédente ne vaut validation de cette révision.
+Ces trajets forment un corpus de vérification, pas une couverture de toutes les positions, des sauts, de toutes les graines ou de la campagne. La validation courante comprend également une traversée après impact et une vérification de la baie Est. La logique de mission, les pauses et les reprises relèvent de `tests/test_mission.gd` et des tests de l’incident ; l’interface et la visibilité des chemins exigent une inspection visuelle. Les résultats d’exécution appartiennent au rapport de validation du dépôt ; aucun total de la version précédente ne vaut validation de cette révision.
 
 ## Extension prévue pour la campagne
 
@@ -115,7 +131,11 @@ Une hallucination peut troubler une voix, une silhouette ou la lecture momentan�
 
 Le composant livré `DescentSave`, dans `prototype/scripts/save_store.gd`, expose deux fonctions statiques : `save_data(data, path)` renvoie un code `Error`; `load_data(path)` renvoie le checkpoint normalisé ou `{}` si aucun fichier exploitable n’est disponible. Le chemin par défaut reste `user://save_v1.json`, dans les données locales du jeu, pour retrouver les fichiers existants ; le nom historique du fichier ne fixe pas la version de son contenu. Les erreurs d’écriture doivent être affichées par l’interface; un retour non nul ne signifie pas que le checkpoint est enregistré.
 
-La version 2 exige exactement les champs `version`, `seed`, `floor`, `health`, `oxygen`, `stress`, `anchors`, `flares`, `rescued`, `clues`, `supplies_used`, `elapsed`, `seen_floors`, `completed` et `incident_state`. Ce dernier est une chaîne égale à `intact` ou `aftermath`. Les écritures de parties terminées exigent `aftermath`. Les champs supplémentaires, les états transitoires et les versions inconnues sont refusés. Les jauges sont des nombres finis entre 0 et 100, les ancres entre 0 et 8, les fusées entre 0 et 6, la graine entre 1 et 999999 et le numéro de reprise entre 25 et 31. Les identifiants collectés sont des chaînes non vides, uniques dans chaque liste, limitées à 80 caractères et 64 éléments. Les étages vus sont des entiers distincts entre 25 et 31. Le temps écoulé est fini et positif ou nul.
+La version 3 exige exactement les champs `version`, `seed`, `floor`, `health`, `oxygen`, `stress`, `anchors`, `flares`, `rescued`, `clues`, `supplies_used`, `elapsed`, `seen_floors`, `completed`, `incident_state`, `transmissions` et `radio_events`. `incident_state` est une chaîne égale à `intact` ou `aftermath`. Les écritures de parties terminées exigent `aftermath`. Les champs supplémentaires, les états transitoires et les versions inconnues sont refusés. Les jauges sont des nombres finis entre 0 et 100, les ancres entre 0 et 8, les fusées entre 0 et 6, la graine entre 1 et 999999 et le numéro de reprise entre 25 et 31. Les identifiants collectés sont des chaînes non vides, uniques dans chaque liste, limitées à 80 caractères et 64 éléments. Les étages vus sont des entiers distincts entre 25 et 31. Le temps écoulé est fini et positif ou nul.
+
+`transmissions` contient au plus 32 dictionnaires exacts `speaker`, `message`, `elapsed`. Les textes sont non vides et limités à 96 caractères pour l’indicatif et 600 pour le message. Les temps sont finis, positifs ou nuls, chronologiques et ne dépassent pas le temps de mission sauvegardé. La reprise restaure le journal sans rejouer le sous-titre ou la file d’attente.
+
+`radio_events` contient au plus deux identifiants uniques : `bravo_echo` et `bravo_verification`. La vérification exige l’écho ; les deux exigent `aftermath` et `survivor_28` dans le registre. Les compteurs de silence repartent de zéro au chargement. Le détail de la priorité radio figure dans [Communications et équipes](COMMUNICATIONS_ET_EQUIPES.md).
 
 Le stockage n’interprète pas la géométrie : `floor = 29` désigne une reprise à l’emplacement choisi par le contrôleur, pas la preuve que tout l’étage est sans danger. Le contrôleur crée le checkpoint au point autorisé et restaure un emplacement stable. Le magasin ne sauvegarde pas une position arbitraire au milieu d’une corde ou d’un effondrement.
 
@@ -126,8 +146,10 @@ Le stockage n’interprète pas la géométrie : `floor = 29` désigne une repri
 | Stabilisation accomplie | `aftermath` | Application directe de la géométrie, du détour et de la radio après impact |
 | Ancienne version 1 non terminée | Migration en lecture vers `intact` | Ressources et objectifs préservés ; nouvelle scène disponible |
 | Ancienne version 1 terminée | Migration en lecture vers `aftermath` | Bilan conservé et nouvelle géométrie cohérente avec une mission terminée |
+| Ancienne version 2 valide | État d’incident conservé | Migration vers 3 avec historique et événements vides |
+| Écho ou vérification reçu en zone calme | `aftermath` et événement identifié | Checkpoint courant ; aucune répétition de l’étape après écriture réussie |
 
-La migration est effectuée à la lecture d’une ancienne sauvegarde valide. Le fichier source est remplacé seulement à la prochaine écriture de checkpoint réussie. La durée de jeu et la liste des étages visités ne servent pas à deviner l’état de l’incident. La pause fige l’horloge transitoire ; la reprise d’une sauvegarde restaure l’un des deux états persistants.
+La migration valide d’abord le schéma exact d’origine. Les schémas 1 et 2 reçoivent des listes `transmissions` et `radio_events` vides ; aucun ancien dialogue n’est inventé. Le schéma 1 utilise l’état de fin pour choisir `intact` ou `aftermath`, tandis que le schéma 2 conserve `incident_state`. La lecture ne réécrit pas le fichier : le prochain checkpoint réussi utilise le schéma 3. La durée de jeu et les étages visités ne servent pas à deviner l’incident. La pause fige l’horloge transitoire ; la reprise restaure un état stable.
 
 Avant toute écriture, le dictionnaire est validé et copié sans modification de l’entrée. Les données sont écrites dans un fichier temporaire voisin, vidées vers le système de fichiers, puis renommées sur le checkpoint. Le fichier précédent n’est jamais supprimé avant cette substitution. Cela évite qu’une sauvegarde normalement interrompue pendant l’écriture du temporaire remplace un fichier valide. Cette séquence ne constitue pas une garantie matérielle contre toute panne de disque ou coupure électrique.
 
