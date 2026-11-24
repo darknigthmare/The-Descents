@@ -289,13 +289,14 @@ func _build_lower_shell() -> void:
 	var shell: Node3D = Node3D.new()
 	shell.name = "UnplayableLowerTowerFacade"
 	add_child(shell)
-	_box(shell, Vector3(0, -69, 0), Vector3(23.8, 138, 23.8), materials["window"])
+	# The unplayable floors reach the level-25 slab at y=6, not y=0.
+	_box(shell, Vector3(0, -66, 0), Vector3(23.8, 144, 23.8), materials["window"])
 	for level in range(25):
 		var yy: float = -138.0 + float(level) * 6
 		_box(shell, Vector3(0, yy, 0), Vector3(24.5, 0.4, 24.5), materials["edge"])
 	for xx in [-11.8, -6.0, 0.0, 6.0, 11.8]:
-		_box(shell, Vector3(xx, -69, 12), Vector3(0.15, 138, 0.25), materials["metal"])
-		_box(shell, Vector3(xx, -69, -12), Vector3(0.15, 138, 0.25), materials["metal"])
+		_box(shell, Vector3(xx, -66, 12), Vector3(0.15, 144, 0.25), materials["metal"])
+		_box(shell, Vector3(xx, -66, -12), Vector3(0.15, 144, 0.25), materials["metal"])
 
 func _floor_surface(parent: Node3D, y: float, floor_material: Material, enclosed: bool = true) -> void:
 	# Four slabs make the 5.4 m square shaft genuinely open at every level.
