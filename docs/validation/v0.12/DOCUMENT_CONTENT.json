@@ -1,0 +1,996 @@
+{
+  "schema": 1,
+  "tool": "verify_document_content.py",
+  "checked_utc": "2026-11-25T22:04:58.126266+00:00",
+  "status": "pass",
+  "scope": "DOCX body text, table rows, cells and their paragraphs in source order",
+  "docx": {
+    "file": "/tmp/tower-descent-9432d2c85510/The-Descents/docs/The-Tower-Descent-Continuation-v0.12.docx",
+    "bytes": 52570,
+    "sha256": "6e077aa63d7105d18306578642eb408519083965e278a3513abdf7b5d5e44c06"
+  },
+  "pdf": {
+    "file": "/tmp/tower-descent-9432d2c85510/The-Descents/docs/The-Tower-Descent-Continuation-v0.12.pdf",
+    "bytes": 217394,
+    "sha256": "a7e3793801f0c1dd3b6b301b424ee70302e9277399e4b327f0290b1cd749f9db",
+    "pages": 9
+  },
+  "source_counts": {
+    "body_paragraphs": 89,
+    "cell_paragraphs": 89,
+    "all_paragraphs": 178,
+    "tables": 5,
+    "nonempty_table_rows": 28,
+    "nonempty_cells": 89,
+    "ordered_blocks": 117,
+    "punctuation_only_body_paragraphs": 0
+  },
+  "extraction": {
+    "command": "pdftotext -raw -enc UTF-8 PDF -",
+    "margin_lines_removed": 18,
+    "warnings": ""
+  },
+  "normalization": "NFKC; Unicode casefold; retain alphanumeric characters only",
+  "limitations": [
+    "Unicode NFKC, case folding and removal of non-alphanumeric characters make line wrapping, spacing and punctuation differences insignificant. This check therefore does not certify punctuation, signs, units or typography.",
+    "Ordered matching preserves the multiplicity of source paragraphs and table rows. Each cell and its paragraphs are checked inside its matched row; a copy of the same text elsewhere cannot validate a missing row.",
+    "Extra PDF text, including repeated table headings, is allowed. This is a source-content inclusion check, not a byte-for-byte or semantic comparison.",
+    "DOCX running headers, footers and page fields are excluded from body-text matching. Images, drawing content and hyperlink destinations require other checks. Nested tables or unenumerated body paragraphs fail closed.",
+    "A successful text check does not prove that text is visible, unclipped or legible. A separate visual review of every final page remains required."
+  ],
+  "visual_review_required": true,
+  "complete": true,
+  "counts": {
+    "ordered_blocks_checked": 117,
+    "ordered_blocks_matched": 117,
+    "body_paragraphs_checked": 89,
+    "body_paragraphs_matched": 89,
+    "table_rows_checked": 28,
+    "table_rows_matched": 28,
+    "cells_checked": 89,
+    "cells_matched_in_expected_row": 89,
+    "cell_paragraphs_checked": 89,
+    "cell_paragraphs_matched_in_expected_cell": 89,
+    "cell_texts_absent_everywhere": 0
+  },
+  "missing_ordered_blocks": [],
+  "failures": [],
+  "matched_blocks": [
+    {
+      "id": "p1",
+      "pages": [
+        1,
+        1
+      ],
+      "normalized_characters": 15
+    },
+    {
+      "id": "p2",
+      "pages": [
+        1,
+        1
+      ],
+      "normalized_characters": 26
+    },
+    {
+      "id": "p3",
+      "pages": [
+        1,
+        1
+      ],
+      "normalized_characters": 48
+    },
+    {
+      "id": "p4",
+      "pages": [
+        1,
+        1
+      ],
+      "normalized_characters": 40
+    },
+    {
+      "id": "p5",
+      "pages": [
+        1,
+        1
+      ],
+      "normalized_characters": 330
+    },
+    {
+      "id": "p6",
+      "pages": [
+        1,
+        1
+      ],
+      "normalized_characters": 321
+    },
+    {
+      "id": "p7",
+      "pages": [
+        1,
+        1
+      ],
+      "normalized_characters": 22
+    },
+    {
+      "id": "p8",
+      "pages": [
+        1,
+        1
+      ],
+      "normalized_characters": 246
+    },
+    {
+      "id": "p9",
+      "pages": [
+        1,
+        1
+      ],
+      "normalized_characters": 267
+    },
+    {
+      "id": "p10",
+      "pages": [
+        1,
+        1
+      ],
+      "normalized_characters": 331
+    },
+    {
+      "id": "p11",
+      "pages": [
+        1,
+        1
+      ],
+      "normalized_characters": 269
+    },
+    {
+      "id": "p12",
+      "pages": [
+        1,
+        1
+      ],
+      "normalized_characters": 34
+    },
+    {
+      "id": "p13",
+      "pages": [
+        1,
+        1
+      ],
+      "normalized_characters": 337
+    },
+    {
+      "id": "t1r1",
+      "pages": [
+        2,
+        2
+      ],
+      "normalized_characters": 43
+    },
+    {
+      "id": "t1r2",
+      "pages": [
+        2,
+        2
+      ],
+      "normalized_characters": 59
+    },
+    {
+      "id": "t1r3",
+      "pages": [
+        2,
+        2
+      ],
+      "normalized_characters": 83
+    },
+    {
+      "id": "t1r4",
+      "pages": [
+        2,
+        2
+      ],
+      "normalized_characters": 69
+    },
+    {
+      "id": "t1r5",
+      "pages": [
+        2,
+        2
+      ],
+      "normalized_characters": 91
+    },
+    {
+      "id": "p14",
+      "pages": [
+        2,
+        2
+      ],
+      "normalized_characters": 311
+    },
+    {
+      "id": "p15",
+      "pages": [
+        2,
+        2
+      ],
+      "normalized_characters": 330
+    },
+    {
+      "id": "p16",
+      "pages": [
+        2,
+        2
+      ],
+      "normalized_characters": 294
+    },
+    {
+      "id": "p17",
+      "pages": [
+        2,
+        2
+      ],
+      "normalized_characters": 36
+    },
+    {
+      "id": "p18",
+      "pages": [
+        2,
+        2
+      ],
+      "normalized_characters": 355
+    },
+    {
+      "id": "p19",
+      "pages": [
+        2,
+        2
+      ],
+      "normalized_characters": 289
+    },
+    {
+      "id": "p20",
+      "pages": [
+        2,
+        2
+      ],
+      "normalized_characters": 283
+    },
+    {
+      "id": "p21",
+      "pages": [
+        2,
+        2
+      ],
+      "normalized_characters": 328
+    },
+    {
+      "id": "p22",
+      "pages": [
+        3,
+        3
+      ],
+      "normalized_characters": 294
+    },
+    {
+      "id": "p23",
+      "pages": [
+        3,
+        3
+      ],
+      "normalized_characters": 36
+    },
+    {
+      "id": "p24",
+      "pages": [
+        3,
+        3
+      ],
+      "normalized_characters": 292
+    },
+    {
+      "id": "p25",
+      "pages": [
+        3,
+        3
+      ],
+      "normalized_characters": 299
+    },
+    {
+      "id": "p26",
+      "pages": [
+        3,
+        3
+      ],
+      "normalized_characters": 416
+    },
+    {
+      "id": "p27",
+      "pages": [
+        3,
+        3
+      ],
+      "normalized_characters": 300
+    },
+    {
+      "id": "p28",
+      "pages": [
+        3,
+        3
+      ],
+      "normalized_characters": 379
+    },
+    {
+      "id": "p29",
+      "pages": [
+        3,
+        3
+      ],
+      "normalized_characters": 40
+    },
+    {
+      "id": "p30",
+      "pages": [
+        3,
+        3
+      ],
+      "normalized_characters": 280
+    },
+    {
+      "id": "p31",
+      "pages": [
+        3,
+        3
+      ],
+      "normalized_characters": 280
+    },
+    {
+      "id": "p32",
+      "pages": [
+        3,
+        3
+      ],
+      "normalized_characters": 312
+    },
+    {
+      "id": "p33",
+      "pages": [
+        4,
+        4
+      ],
+      "normalized_characters": 348
+    },
+    {
+      "id": "p34",
+      "pages": [
+        4,
+        4
+      ],
+      "normalized_characters": 36
+    },
+    {
+      "id": "p35",
+      "pages": [
+        4,
+        4
+      ],
+      "normalized_characters": 283
+    },
+    {
+      "id": "p36",
+      "pages": [
+        4,
+        4
+      ],
+      "normalized_characters": 273
+    },
+    {
+      "id": "p37",
+      "pages": [
+        4,
+        4
+      ],
+      "normalized_characters": 292
+    },
+    {
+      "id": "p38",
+      "pages": [
+        4,
+        4
+      ],
+      "normalized_characters": 324
+    },
+    {
+      "id": "t2r1",
+      "pages": [
+        4,
+        4
+      ],
+      "normalized_characters": 34
+    },
+    {
+      "id": "t2r2",
+      "pages": [
+        4,
+        4
+      ],
+      "normalized_characters": 115
+    },
+    {
+      "id": "t2r3",
+      "pages": [
+        4,
+        4
+      ],
+      "normalized_characters": 78
+    },
+    {
+      "id": "t2r4",
+      "pages": [
+        4,
+        4
+      ],
+      "normalized_characters": 84
+    },
+    {
+      "id": "p39",
+      "pages": [
+        4,
+        4
+      ],
+      "normalized_characters": 269
+    },
+    {
+      "id": "p40",
+      "pages": [
+        4,
+        4
+      ],
+      "normalized_characters": 28
+    },
+    {
+      "id": "p41",
+      "pages": [
+        4,
+        4
+      ],
+      "normalized_characters": 297
+    },
+    {
+      "id": "p42",
+      "pages": [
+        5,
+        5
+      ],
+      "normalized_characters": 311
+    },
+    {
+      "id": "p43",
+      "pages": [
+        5,
+        5
+      ],
+      "normalized_characters": 298
+    },
+    {
+      "id": "p44",
+      "pages": [
+        5,
+        5
+      ],
+      "normalized_characters": 272
+    },
+    {
+      "id": "p45",
+      "pages": [
+        5,
+        5
+      ],
+      "normalized_characters": 259
+    },
+    {
+      "id": "p46",
+      "pages": [
+        5,
+        5
+      ],
+      "normalized_characters": 39
+    },
+    {
+      "id": "p47",
+      "pages": [
+        5,
+        5
+      ],
+      "normalized_characters": 244
+    },
+    {
+      "id": "t3r1",
+      "pages": [
+        5,
+        5
+      ],
+      "normalized_characters": 24
+    },
+    {
+      "id": "t3r2",
+      "pages": [
+        5,
+        5
+      ],
+      "normalized_characters": 165
+    },
+    {
+      "id": "t3r3",
+      "pages": [
+        5,
+        5
+      ],
+      "normalized_characters": 140
+    },
+    {
+      "id": "p48",
+      "pages": [
+        5,
+        5
+      ],
+      "normalized_characters": 326
+    },
+    {
+      "id": "p49",
+      "pages": [
+        5,
+        5
+      ],
+      "normalized_characters": 339
+    },
+    {
+      "id": "p50",
+      "pages": [
+        5,
+        5
+      ],
+      "normalized_characters": 299
+    },
+    {
+      "id": "p51",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 25
+    },
+    {
+      "id": "p52",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 284
+    },
+    {
+      "id": "t4r1",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 43
+    },
+    {
+      "id": "t4r2",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 95
+    },
+    {
+      "id": "t4r3",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 96
+    },
+    {
+      "id": "t4r4",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 75
+    },
+    {
+      "id": "t4r5",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 106
+    },
+    {
+      "id": "t4r6",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 100
+    },
+    {
+      "id": "t4r7",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 68
+    },
+    {
+      "id": "t4r8",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 103
+    },
+    {
+      "id": "t4r9",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 78
+    },
+    {
+      "id": "t4r10",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 95
+    },
+    {
+      "id": "t4r11",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 68
+    },
+    {
+      "id": "t4r12",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 99
+    },
+    {
+      "id": "t4r13",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 78
+    },
+    {
+      "id": "p53",
+      "pages": [
+        6,
+        6
+      ],
+      "normalized_characters": 510
+    },
+    {
+      "id": "p54",
+      "pages": [
+        6,
+        7
+      ],
+      "normalized_characters": 290
+    },
+    {
+      "id": "p55",
+      "pages": [
+        7,
+        7
+      ],
+      "normalized_characters": 21
+    },
+    {
+      "id": "p56",
+      "pages": [
+        7,
+        7
+      ],
+      "normalized_characters": 298
+    },
+    {
+      "id": "t5r1",
+      "pages": [
+        7,
+        7
+      ],
+      "normalized_characters": 40
+    },
+    {
+      "id": "t5r2",
+      "pages": [
+        7,
+        7
+      ],
+      "normalized_characters": 85
+    },
+    {
+      "id": "t5r3",
+      "pages": [
+        7,
+        7
+      ],
+      "normalized_characters": 96
+    },
+    {
+      "id": "p57",
+      "pages": [
+        7,
+        7
+      ],
+      "normalized_characters": 343
+    },
+    {
+      "id": "p58",
+      "pages": [
+        7,
+        7
+      ],
+      "normalized_characters": 323
+    },
+    {
+      "id": "p59",
+      "pages": [
+        7,
+        7
+      ],
+      "normalized_characters": 381
+    },
+    {
+      "id": "p60",
+      "pages": [
+        7,
+        7
+      ],
+      "normalized_characters": 35
+    },
+    {
+      "id": "p61",
+      "pages": [
+        7,
+        7
+      ],
+      "normalized_characters": 314
+    },
+    {
+      "id": "p62",
+      "pages": [
+        7,
+        7
+      ],
+      "normalized_characters": 285
+    },
+    {
+      "id": "p63",
+      "pages": [
+        7,
+        7
+      ],
+      "normalized_characters": 310
+    },
+    {
+      "id": "p64",
+      "pages": [
+        8,
+        8
+      ],
+      "normalized_characters": 273
+    },
+    {
+      "id": "p65",
+      "pages": [
+        8,
+        8
+      ],
+      "normalized_characters": 21
+    },
+    {
+      "id": "p66",
+      "pages": [
+        8,
+        8
+      ],
+      "normalized_characters": 308
+    },
+    {
+      "id": "p67",
+      "pages": [
+        8,
+        8
+      ],
+      "normalized_characters": 279
+    },
+    {
+      "id": "p68",
+      "pages": [
+        8,
+        8
+      ],
+      "normalized_characters": 328
+    },
+    {
+      "id": "p69",
+      "pages": [
+        8,
+        8
+      ],
+      "normalized_characters": 254
+    },
+    {
+      "id": "p70",
+      "pages": [
+        8,
+        8
+      ],
+      "normalized_characters": 357
+    },
+    {
+      "id": "p71",
+      "pages": [
+        8,
+        8
+      ],
+      "normalized_characters": 35
+    },
+    {
+      "id": "p72",
+      "pages": [
+        8,
+        8
+      ],
+      "normalized_characters": 256
+    },
+    {
+      "id": "p73",
+      "pages": [
+        8,
+        8
+      ],
+      "normalized_characters": 128
+    },
+    {
+      "id": "p74",
+      "pages": [
+        8,
+        8
+      ],
+      "normalized_characters": 149
+    },
+    {
+      "id": "p75",
+      "pages": [
+        8,
+        8
+      ],
+      "normalized_characters": 123
+    },
+    {
+      "id": "p76",
+      "pages": [
+        8,
+        8
+      ],
+      "normalized_characters": 135
+    },
+    {
+      "id": "p77",
+      "pages": [
+        8,
+        8
+      ],
+      "normalized_characters": 152
+    },
+    {
+      "id": "p78",
+      "pages": [
+        9,
+        9
+      ],
+      "normalized_characters": 145
+    },
+    {
+      "id": "p79",
+      "pages": [
+        9,
+        9
+      ],
+      "normalized_characters": 133
+    },
+    {
+      "id": "p80",
+      "pages": [
+        9,
+        9
+      ],
+      "normalized_characters": 122
+    },
+    {
+      "id": "p81",
+      "pages": [
+        9,
+        9
+      ],
+      "normalized_characters": 93
+    },
+    {
+      "id": "p82",
+      "pages": [
+        9,
+        9
+      ],
+      "normalized_characters": 343
+    },
+    {
+      "id": "p83",
+      "pages": [
+        9,
+        9
+      ],
+      "normalized_characters": 43
+    },
+    {
+      "id": "p84",
+      "pages": [
+        9,
+        9
+      ],
+      "normalized_characters": 323
+    },
+    {
+      "id": "p85",
+      "pages": [
+        9,
+        9
+      ],
+      "normalized_characters": 398
+    },
+    {
+      "id": "p86",
+      "pages": [
+        9,
+        9
+      ],
+      "normalized_characters": 317
+    },
+    {
+      "id": "p87",
+      "pages": [
+        9,
+        9
+      ],
+      "normalized_characters": 19
+    },
+    {
+      "id": "p88",
+      "pages": [
+        9,
+        9
+      ],
+      "normalized_characters": 250
+    },
+    {
+      "id": "p89",
+      "pages": [
+        9,
+        9
+      ],
+      "normalized_characters": 384
+    }
+  ]
+}

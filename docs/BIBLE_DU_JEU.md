@@ -2,7 +2,7 @@
 
 ## Bible de conception du jeu
 
-**Version 0.10 — Continuation au congrès et à l’exposition de Nacre — 25 novembre 2026**
+**Version 0.12 — Continuation jusqu’au refuge de logistique du 20 — 25 novembre 2026**
 
 **Création et direction du projet : Darknigthmare. Dépôt : The-Descents.**
 
@@ -23,6 +23,16 @@ A24 et A23 prolongent l’intervention après son bilan au refuge 25. Le congrè
 L’exposition Histoire de Nacre donne deux pièces indépendantes : une maquette des volumes souterrains et une photographie des anciens bains. Une Rémanence E01 facultative répète une routine de quatorze secondes, deux fois au maximum, sans attaque. Le terminal du 23 clôt la reconnaissance après réception du duo et collecte des deux pièces. Les humains hostiles gardent leur première rencontre à A21 ; A22 et les niveaux suivants, les retrouvailles avec Alma près d’A01 et l’Enfer restent à produire.
 
 Le [supplément A24–A23 v0.10](CONTINUATION_A24_A23_V0.10.md) détaille commandes, parcours, accueil, preuves, sauvegarde et limites. Il accompagne la Bible Word/PDF complète v0.9 conservée ; ses anciennes validations restent attachées à leurs fichiers et ne certifient pas cette extension. Les figures, gestes et décors actuels restent procéduraux. Le rapport de livraison doit établir séparément les contrôles et exports effectivement réalisés.
+
+### Continuation 0.12 : galerie, cuisines et refuge du 20
+
+Le bilan du 23 propose une nouvelle poursuite explicite vers A22, A21 et A20. Mina Bensaïd attend derrière le volet de la galerie ; Théo Lenoir doit être éloigné du réchauffeur après isolation et couverture du foyer ; Sofia Renard rejoint le refuge depuis la réserve du 20. Chacun marche jusqu’à son repère d’accueil, par les escaliers locaux. Le dossier conserve huit personnes reçues au total et jusqu’à sept pièces.
+
+Le Retranché est ici une première rencontre humaine tendue dans une alcôve du 22 : distance, lampe baissée et dialogue peuvent l’apaiser. Cette implantation du prototype n’intègre pas encore les attaques et statistiques de l’ennemi E11 prévu dans la campagne à A21. La forme distante du 21 demeure facultative et inexpliquée. Les deux constats du secteur donnent des traces antérieures au séisme sans confirmer encore l’explication infernale aux personnages.
+
+Les escaliers S23_22, S22_21 et S21_20 et le rappel facultatif R22_21 portent le réseau à douze liaisons. Le refuge 20 offre trois places, du matériel importé et un relais à rétablir. Le schéma 5 préserve la progression antérieure et remet les escortes inachevées en attente lors d’une reprise. Douze modèles éditables et deux matières originales complètent les assets de secours de la 0.11.
+
+Le [supplément A22–A20 v0.12](CONTINUATION_A22_A20_V0.12.md) fixe les implantations, commandes, actions, conditions de réception et limites exactes. Ses versions Word et PDF complètent les volumes v0.9 et v0.10 conservés. Les descriptions historiques ci-dessus restent attachées à leurs versions ; le périmètre courant s’arrête au 20. Les niveaux plus profonds, le combat contre les humains, les laboratoires et l’Enfer restent à produire.
 
 ## 1 Intention du jeu
 

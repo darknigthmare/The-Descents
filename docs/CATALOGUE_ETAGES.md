@@ -2,7 +2,7 @@
 
 ## Catalogue des étages et des espaces de campagne
 
-**Version 0.10 — Assemblage des niveaux et continuation A24–A23 — 25 novembre 2026**
+**Version 0.12 — Assemblage des niveaux et continuation jusqu’à A20 — 25 novembre 2026**
 
 Ce catalogue développe les lieux de la [Bible du jeu](BIBLE_DU_JEU.md). Chaque étage possède une fonction fixe, une scène reconnaissable et un objectif de rythme. La génération fait varier des passages, des objets, des personnes secondaires et des détails compatibles ; elle ne déplace pas les révélations principales au hasard.
 
@@ -10,7 +10,9 @@ Ce catalogue développe les lieux de la [Bible du jeu](BIBLE_DU_JEU.md). Chaque 
 
 **Continuation 0.10 :** après le bilan du 25, un choix explicite ouvre A24 Centre de congrès puis A23 Exposition Histoire de Nacre. S25_24, au nord du noyau, permet le retour à pied de Léa Mercier et Idris Kaci jusqu’au refuge ; R24_23 est un rappel personnel dans le noyau ouest. La maquette et la photographie de l’exposition se collectent séparément. Une Rémanence E01 facultative répète sa routine sans attaque. Le terminal du 23 clôt la reconnaissance après réception du duo et collecte des deux pièces. Le [supplément A24–A23](CONTINUATION_A24_A23_V0.10.md) précise le parcours, la sauvegarde et les limites de production ; les rapports de livraison établissent les vérifications réellement effectuées.
 
-Les étages 22 à 1, la traversée d’Hespérie, les sous-sols, le seuil 666, les secteurs infernaux et Mountain Hole restent conçus pour la campagne. Les variantes, personnes et incidents supplémentaires décrits dans leurs fiches ne sont pas des acteurs déjà intégrés au prototype. Les figures et décors de la continuation restent procéduraux.
+**Continuation 0.12 :** A22 Galerie, A21 Cuisines et A20 Refuge deviennent jouables après le bilan du 23. Trois escortes individuelles rejoignent les places du refuge 20 ; le volet, le circuit du réchauffeur, la couverture et le relais ont des actions contextuelles. Le [supplément A22–A20](CONTINUATION_A22_A20_V0.12.md) distingue cette tranche des variantes de campagne. Le Retranché du prototype est installé au 22, sans combat ; le premier ennemi E11 prévu au 21 reste une cible de production.
+
+Les étages 19 à 1, la traversée d’Hespérie, les sous-sols, le seuil 666, les secteurs infernaux et Mountain Hole restent conçus pour la campagne. Les variantes, personnes et incidents supplémentaires décrits dans leurs fiches ne sont pas des acteurs déjà intégrés au prototype. Les figures et décors de la continuation restent procéduraux.
 
 ## 1 Règles communes de variation
 
@@ -35,9 +37,9 @@ Les variantes présentées dans les entrées détaillées doivent être produite
 | A25 | 25 | Maintenance supérieure | Refuge certifié, bilan supérieur et accueil du duo | Base 0.9 et transition 0.10 |
 | A24 | 24 | Centre de congrès | Traversée et groupe isolé | Continuation 0.10 |
 | A23 | 23 | Exposition d’art et d’histoire | Enquête sur l’île | Continuation 0.10 |
-| A22 | 22 | Galerie de boutiques | Itinéraires et premier faux appel | Campagne conçue |
-| A21 | 21 | Cuisines et cantine | Danger matériel et entraide | Campagne conçue |
-| A20 | 20 | Logistique hôtelière | Refuge certifié et regroupement | Campagne conçue |
+| A22 | 22 | Galerie de boutiques | Mina, volet et rencontre humaine distante | Prototype v0.12 ; variantes et faux appel à produire |
+| A21 | 21 | Cuisines et cantine | Isolation, couverture et escorte de Théo | Prototype v0.12 ; combat E11 à produire |
+| A20 | 20 | Logistique hôtelière | Sofia, trois réceptions et relais | Prototype v0.12 ; dialogues de campagne à produire |
 | A19 | 19 | Résidences hautes | Sauvetage et liens familiaux | Campagne conçue |
 | A18 | 18 | Résidences basses | Traversée verticale intérieure | Campagne conçue |
 | A17 | 17 | Télécommunications | Réparation de relais et vérification | Campagne conçue |
@@ -235,6 +237,8 @@ La 0.7 fait suivre l’activation du relais d’un épilogue de quinze secondes 
 
 ### A22 Galerie des boutiques
 
+**Intégration 0.12.** Mina Bensaïd attend dans une réserve fermée par un volet. Le Halligan ouvre le passage ; l’accompagnement suit les escaliers jusqu’au refuge 20. Le registre nocturne constitue une pièce distincte. Le Retranché occupe l’alcôve ouest ; sa désescalade est facultative, sans attaque. Les autres variables ci-dessous restent des intentions de campagne.
+
 **Fonction et image.** Boutiques de luxe, café fermé, réserves et allée centrale. Les vitrines reflètent les lampes. Une enseigne tourne lentement au bout d’un câble.
 
 **Traversée et danger.** Le joueur peut traverser les arrière-boutiques pour éviter une galerie exposée. Un premier faux appel tente de l’attirer vers une gaine. Le code radio appris permet de vérifier l’origine.
@@ -247,6 +251,8 @@ La 0.7 fait suivre l’activation du relais d’un épilogue de quinze secondes 
 
 ### A21 Cuisines et cantine
 
+**Intégration 0.12.** Théo Lenoir attend dans l’office. Le coffret isole le réchauffeur, puis la couverture contient son foyer. La consigne de maintenance peut être relevée à l’ouest ; une forme distante facultative reste inexpliquée. L’escalier nord rejoint le 22 et celui du sud mène au 20. L’eau dynamique, la porte coincée et le combat E11 ne sont pas intégrés.
+
 **Fonction et image.** Cuisines centrales, plonge, chambre froide et cantine du personnel. Le contraste avec la galerie montre les coulisses du luxe. Des plateaux ont été utilisés pour caler une porte.
 
 **Traversée et danger.** Fumée localisée, équipement chaud et écoulement d’eau créent une situation matérielle compréhensible. Le joueur coupe une alimentation et ouvre un passage de service. Le réseau critique possède des indications répétées.
@@ -258,6 +264,8 @@ La 0.7 fait suivre l’activation du relais d’un épilogue de quinze secondes 
 **Invariant.** Le matériel nécessaire au passage principal est fourni avant le danger. Les personnes prises en charge apportent un résultat visible au refuge suivant.
 
 ### A20 Refuge de logistique
+
+**Intégration 0.12.** Sofia Renard attend dans la réserve nord-est. Trois repères réceptionnent physiquement Mina, Théo et Sofia. Le relais alimenté et les deux documents permettent le bilan. Les lits, paravents, eau et matériel médical sont présents ; les boissons, la résidente du 19 et le plan remis par Inès restent des scènes de campagne.
 
 **Fonction et image.** Lingerie, dépôt de chariots et salle du personnel transformés en point de regroupement. Des couvertures et du linge propre donnent au refuge une identité différente du 25.
 

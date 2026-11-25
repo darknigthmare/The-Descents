@@ -17,10 +17,15 @@ const Rope = preload("res://scripts/rope_traversal.gd")
 const RopePresentation = preload("res://scripts/rope_presentation.gd")
 const Continuation = preload("res://scripts/continuation_director.gd")
 const ContinuationPresentation = preload("res://scripts/continuation_presentation.gd")
+const Commerce = preload("res://scripts/commerce_director.gd")
+const CommercePresentation = preload("res://scripts/commerce_presentation.gd")
+const CommerceAssets = preload("res://scripts/commerce_asset_catalog.gd")
 const RescueAssets = preload("res://scripts/rescue_asset_catalog.gd")
+const Surfaces = preload("res://scripts/surface_materials.gd")
 const Equipment = preload("res://scripts/equipment_director.gd")
-const TEST_PATH: String = "user://qa_v011_external_pack.json"
-const PREFS_PATH: String = "user://qa_v011_external_pack.cfg"
+const TEST_PATH: String = "user://qa_v012_external_pack.json"
+const PREFS_PATH: String = "user://qa_v012_external_pack.cfg"
+const COMMERCE_MODELS: Array[String] = ["retail_display_case", "cash_register", "shutter_control", "service_trolley", "industrial_sink", "kitchen_stove", "extraction_hood", "utility_cutoff_panel", "fire_blanket_cabinet", "folding_cot", "water_canister", "privacy_screen"]
 var failures: Array[String] = []
 var checks: int = 0
 
@@ -40,13 +45,14 @@ func _run() -> void:
 	for id: String in ["salt_concrete", "smoked_oak", "dark_stone", "brushed_steel", "rescue_red_paint", "black_rubber", "teal_carpet", "porcelain_tile"]:
 		var texture: Texture2D = load("res://assets/materials/v011/" + id + ".png")
 		_check(texture != null and texture.get_width() == 1254 and texture.get_height() == 1254, "Missing or resized exported albedo: " + id)
+	_test_packed_commerce_assets()
 	var kit = Equipment.new()
 	kit.select_tool("extinguisher")
 	_check(kit.begin("equipment_fire_28"), "Packed equipment cannot begin its contextual action.")
 	for tick: int in range(24): kit.advance(0.125, true, true)
 	_check(kit.charges_left() == 2 and "equipment_fire_28" in kit.completed, "Packed extinguisher action or receipt is missing.")
 	_check(not ResourceLoader.exists("res://tests/test_equipment.gd") and not ResourceLoader.exists("res://tests/test_rescue_assets_v011.gd"), "New developer tests shipped in the pack.")
-	_check(ProjectSettings.get_setting("application/config/version", "") == "0.11.0", "Packed project has the wrong application version.")
+	_check(ProjectSettings.get_setting("application/config/version", "") == "0.12.0", "Packed project has the wrong application version.")
 	_check(not ResourceLoader.exists("res://tests/test_save.gd") and not ResourceLoader.exists("res://tests/test_cinematic_integration.gd"), "Developer tests unexpectedly shipped inside the pack.")
 	var scene: PackedScene = load("res://scenes/main.tscn")
 	_check(scene != null, "The mounted pack has no loadable main scene.")
@@ -186,9 +192,9 @@ func _run() -> void:
 	mission.rescued = ["survivor_30", "survivor_28"]
 	mission.radio_events = ["bravo_echo", "bravo_verification"]
 	mission.world.set_rescued_people(mission.rescued)
-	_check(mission._save_checkpoint(27), "The mounted runtime could not create its isolated schema-4 checkpoint.")
+	_check(mission._save_checkpoint(27), "The mounted runtime could not create its isolated schema-5 checkpoint.")
 	var saved: Dictionary = Store.load_data(TEST_PATH)
-	_check(saved.get("version") == 4 and saved.get("radio_events") == mission.radio_events and saved.get("transmissions", []).size() == received_before + 3, "Packed storage lost schema-4 received words or event markers.")
+	_check(saved.get("version") == Store.SAVE_VERSION and saved.get("radio_events") == mission.radio_events and saved.get("transmissions", []).size() == received_before + 3, "Packed storage lost schema-5 received words or event markers.")
 	var before: String = FileAccess.get_file_as_string(TEST_PATH)
 	var invalid: Dictionary = saved.duplicate(true)
 	invalid["radio_events"] = ["unknown_event"]
@@ -208,6 +214,7 @@ func _run() -> void:
 		_check(mission.hud.journal_panel.selected_tab == tab_id and mission.hud.journal_panel.journal_text.text == dossier["pages"][tab_id], "Packed dossier tab does not display its matching mission projection.")
 	_check(FileAccess.get_file_as_string(TEST_PATH) == before and mission.radio.history_snapshot() == saved["transmissions"], "Reading the exported dossier rewrote the checkpoint or received-radio ledger.")
 	await _test_packed_continuation(mission)
+	await _test_packed_commerce(mission)
 	mission.free()
 	await process_frame
 	await process_frame
@@ -216,7 +223,7 @@ func _run() -> void:
 
 
 func _test_packed_continuation(mission: Node3D) -> void:
-	_check(Store.SAVE_VERSION == 4 and mission.continuation.phase == "dormant", "The mounted continuation or schema-4 storage is missing.")
+	_check(Store.SAVE_VERSION == 5 and mission.continuation.phase == "dormant", "The mounted continuation or schema-5 storage is missing.")
 	_check(ResourceLoader.exists("res://scripts/continuation_director.gd") and ResourceLoader.exists("res://scripts/continuation_presentation.gd"), "The mounted pack lost a v0.10 mission or world module.")
 	for path: String in ["test_continuation.gd", "test_continuation_routes.gd", "test_continuation_integration.gd", "visual_continuation_preview.gd", "visual_continuation_preview.tscn"]:
 		_check(not ResourceLoader.exists("res://tests/" + path), "The v0.10 developer fixture unexpectedly ships in the exported pack: " + path)
@@ -248,7 +255,7 @@ func _test_packed_continuation(mission: Node3D) -> void:
 	await physics_frame
 	var started: Dictionary = Store.load_data(TEST_PATH)
 	_check(mission.started and not mission.completed and mission.continuation.phase == "active" and mission.player.active, "The mounted debrief button did not resume an active continuation.")
-	_check(started.get("version", 0) == 4 and started.get("floor", 0) == 25 and started.get("continuation", {}).get("started_at_refuge", false), "The mounted chapter choice did not first persist a schema-4 refuge checkpoint.")
+	_check(started.get("version", 0) == Store.SAVE_VERSION and started.get("floor", 0) == 25 and started.get("continuation", {}).get("started_at_refuge", false), "The mounted chapter choice did not first persist a schema-5 refuge checkpoint.")
 	_check(mission.rescued == Continuation.RESCUE_IDS and stock == [mission.health, mission.oxygen, mission.stress, mission.anchors, mission.flares], "The packed chapter transition lost earlier rescue receipts or material resources.")
 	_check(mission.player.continuation_enabled and mission.world_data.get("routes", []).size() == 8 and mission.world.get_node_or_null("Floor24") != null and mission.world.get_node_or_null("Floor23") != null, "The mounted transition failed to build the new levels or player bounds.")
 	var visuals: Node3D = mission.world_data.get("continuation_visuals")
@@ -295,6 +302,195 @@ func _test_packed_continuation(mission: Node3D) -> void:
 		_check(not mission.completed and mission.continuation.phase == "active" and FileAccess.get_file_as_string(TEST_PATH) == before_reload, "The packed exhibition terminal accepts missing civilian reception.")
 	else:
 		_check(false, "The packed exhibition terminal has no clear interaction approach.")
+
+
+func _test_packed_commerce_assets() -> void:
+	for path: String in ["commerce_director.gd", "commerce_presentation.gd", "commerce_asset_catalog.gd", "surface_materials.gd"]:
+		_check(ResourceLoader.exists("res://scripts/" + path), "The mounted pack lost a v0.12 production module: " + path)
+	for path: String in ["test_commerce.gd", "test_commerce_routes.gd", "test_commerce_integration.gd", "test_addon_schema.gd", "test_interaction_safety.gd", "test_rope_abort.gd", "interaction_fixture.gd", "visual_commerce_preview.gd", "visual_commerce_preview.tscn"]:
+		_check(not ResourceLoader.exists("res://tests/" + path), "A v0.12 developer fixture unexpectedly ships in the pack: " + path)
+	_check(CommerceAssets.all_ids().size() == COMMERCE_MODELS.size(), "The packed commerce catalogue lost one of its twelve authored models.")
+	for id: String in COMMERCE_MODELS:
+		var path: String = CommerceAssets.asset_path(id)
+		_check(id in CommerceAssets.all_ids() and path == "res://assets/models/commerce_v012/" + id + ".glb" and ResourceLoader.exists(path), "Missing mounted commerce GLB: " + id)
+		var model: Node3D = CommerceAssets.instantiate(id)
+		_check(is_instance_valid(model) and _mesh_count(model) > 0, "The mounted commerce GLB has no instantiable mesh: " + id)
+		if is_instance_valid(model):
+			_check(model.get_meta("authored_model", false) and model.get_meta("commerce_asset_id", "") == id and CommerceAssets.dimensions(id).length() > 0.0, "The packed commerce model lost its authored metadata: " + id)
+			model.free()
+	var surfaces = Surfaces.new()
+	for id: String in ["ivory_terrazzo", "kitchen_sage_tile"]:
+		var path: String = Surfaces.asset_path(id)
+		_check(path == "res://assets/materials/v012/" + id + ".png" and ResourceLoader.exists(path), "Missing mounted v0.12 albedo or catalogue path: " + id)
+		var texture: Texture2D = load(path) as Texture2D
+		_check(texture != null and texture.get_width() == 1254 and texture.get_height() == 1254, "The mounted v0.12 albedo is missing or resized: " + id)
+		var material: StandardMaterial3D = surfaces.get_surface(id)
+		_check(material.albedo_texture == texture and material.get_meta("asset_loaded", false) and material.get_meta("albedo_asset", "") == path and material.uv1_triplanar and material.uv1_world_triplanar, "The packed v0.12 surface silently uses a flat fallback or lost its texture projection: " + id)
+
+
+func _test_packed_commerce(mission: Node3D) -> void:
+	var routes: Array[Dictionary] = Routes.all_routes(true, true)
+	_check(routes.size() == 12 and Routes.validate(routes, true, true).is_empty(), "The mounted commerce catalogue lacks its twelve valid adjacent links.")
+	_check(Routes.all_routes().size() == 6 and Routes.all_routes(true).size() == 8 and Routes.all_routes(false, true).size() == 6, "The packed commerce graph bypasses the previous chapter or changes a historical route set.")
+	for id: String in ["S23_22", "S22_21", "S21_20", "R22_21"]:
+		var route: Dictionary = Routes.for_id(id)
+		_check(not route.is_empty() and int(route.get("upper", 0)) - int(route.get("lower", 0)) == 1, "A packed commerce link is missing or skips a storey: " + id)
+	_check(Routes.for_id("S23_22")["top_entry"].z > 0.0 and Routes.for_id("S22_21")["top_entry"].z < 0.0 and Routes.for_id("S21_20")["top_entry"].z > 0.0, "The packed lower stairs lost their separate south/north/south bays.")
+	var belay = Rope.new()
+	var optional_rope: Dictionary = Routes.for_id("R22_21")
+	_check(belay.attach(optional_rope, 22), "The mounted validator rejects the optional 22–21 belay.")
+	var lower: Dictionary = belay.advance(15.0, {"vertical": 1.0, "wind_strength": 0.0})
+	_check(lower["exit_floor"] == 21 and lower["position"] == optional_rope["rope_bottom"], "The packed 22–21 belay does not stop on its adjacent lower landing.")
+	var upper: Dictionary = belay.advance(15.0, {"vertical": -1.0, "wind_strength": 0.0})
+	_check(upper["exit_floor"] == 22 and upper["position"] == optional_rope["rope_top"], "The packed 22–21 belay lost its return ascent.")
+	# Establish previously confirmed receipts as fixture data. The following
+	# transition still uses the real visible debrief button; no escort is faked.
+	var previous: Dictionary = Store.load_data(TEST_PATH)
+	previous["floor"] = 23
+	previous["completed"] = true
+	previous["continuation"] = {"phase": "complete", "started_at_refuge": true, "duo_briefed": true, "escort_state": "received"}
+	previous["commerce"] = Commerce.dormant_state()
+	var prepared: bool = Store.save_data(previous, TEST_PATH) == OK
+	_check(prepared, "The mounted store rejects a valid completed exhibition fixture.")
+	if not prepared: return
+	mission._restore(Store.load_data(TEST_PATH))
+	_disable_ticks(mission)
+	await physics_frame
+	_check(mission.completed and mission.hud.end_panel.visible and mission.hud.end_panel.descent_button.visible and mission.commerce.phase == "dormant", "The mounted exhibition ending does not offer the commerce continuation.")
+	var stock: Array = [mission.health, mission.oxygen, mission.stress, mission.anchors, mission.flares]
+	mission.hud.end_panel.descent_button.pressed.emit()
+	_disable_ticks(mission)
+	await physics_frame
+	await physics_frame
+	var started: Dictionary = Store.load_data(TEST_PATH)
+	_check(mission.started and not mission.completed and mission.commerce.phase == "active" and mission.player.active, "The mounted exhibition button did not begin the playable commerce chapter.")
+	_check(started.get("version", 0) == 5 and started.get("floor", 0) == 23 and started.get("commerce", {}).get("phase", "") == "active", "The packed lower chapter began without its durable schema-5 departure checkpoint.")
+	_check(mission.rescued == previous["rescued"] and mission.continuation.snapshot() == previous["continuation"] and mission.clues == previous["clues"] and stock == [mission.health, mission.oxygen, mission.stress, mission.anchors, mission.flares], "The packed commerce transition changed previous receipts or material resources.")
+	_check(Dossier.build(mission._dossier_snapshot())["total_received"] == 5 and mission.continuation_visuals.both_arrived(), "The packed lower chapter lost or duplicated an earlier civilian reception.")
+	_check(mission.player.commerce_enabled and mission.world_data.get("routes", []).size() == 12, "The mounted transition did not enable the lower player bounds and complete route set.")
+	for number: int in [22, 21, 20]:
+		_check(mission.world.get_node_or_null("Floor%d" % number) != null, "The mounted commerce world omitted floor %d." % number)
+	var visuals: Node3D = mission.world_data.get("commerce_visuals")
+	_check(is_instance_valid(visuals) and visuals.get_script() == CommercePresentation and visuals.people.size() == 3, "The packed commerce presentation is missing its three physical civilians.")
+	var mounted_models: Dictionary = {}
+	_collect_commerce_models(mission.world, mounted_models)
+	for id: String in COMMERCE_MODELS:
+		_check(int(mounted_models.get(id, 0)) > 0, "A commerce model is in the catalogue but absent from the mounted playable world: " + id)
+	_check(_has_surface(mission.world.get_node("Floor22"), "ivory_terrazzo") and _has_surface(mission.world.get_node("Floor21"), "kitchen_sage_tile"), "The mounted new floors do not actually use both authored v0.12 textures.")
+	for id: String in Commerce.PERSON_IDS:
+		_check(is_instance_valid(_packed_object(mission, "commerce_person_" + id)) and visuals.people[id] is CharacterBody3D and not visuals.physically_arrived(id), "A packed civilian lacks its physical interaction or already invents a refuge receipt: " + id)
+	var before: String = FileAccess.get_file_as_string(TEST_PATH)
+	mission.hud.descent_requested.emit()
+	_check(FileAccess.get_file_as_string(TEST_PATH) == before and mission.commerce.received_count() == 0, "A repeated packed descent signal restarted the chapter or fabricated a rescue.")
+	# Normal guarded actions and evidence readings exercise production resources
+	# in the mounted pack. Standing placements are fixtures, not traversal proof.
+	mission.equipment.select_tool("halligan")
+	mission.player.lamp_enabled = false
+	for id: String in ["shutter", "resident", "isolation", "blanket", "relay"]:
+		var object: Node3D = _packed_object(mission, "commerce_action_" + id)
+		_check(is_instance_valid(object), "Missing mounted commerce operation: " + id)
+		if not is_instance_valid(object): continue
+		var number: int = int(object.get_meta("floor"))
+		mission.player.teleport_to_floor(number)
+		if number not in mission.seen_floors: mission.seen_floors.append(number)
+		await physics_frame
+		_check(_face_commerce(mission, object), "The mounted commerce operation has no reachable clear approach: " + id)
+		mission._interact_node(object)
+		_check(mission.commerce.active_action == id, "The mounted commerce operation did not begin through its normal guard: " + id)
+		for tick: int in range(16): mission._process_commerce_action(0.25, 1)
+		_check(mission.commerce.has_action(id) and id in Store.load_data(TEST_PATH).get("commerce", {}).get("actions", []), "The mounted operation did not complete and save its receipt: " + id)
+	_check(not visuals.fire_group.visible and not visuals.smoke_group.visible and visuals.blanket_mesh.visible and visuals.shutter_body.collision_layer == 0, "The packed completed operations did not update the fire, smoke, blanket and shutter.")
+	for id: String in Commerce.CLUES:
+		var object: Node3D = _packed_object(mission, id)
+		_check(is_instance_valid(object), "Missing mounted commerce evidence: " + id)
+		if not is_instance_valid(object): continue
+		mission.player.teleport_to_floor(int(object.get_meta("floor")))
+		await physics_frame
+		_check(_face_commerce(mission, object), "The mounted commerce evidence has no clear inspection approach: " + id)
+		mission._interact_node(object)
+		_check(id in mission.clues and object.is_visible_in_tree() and object.get_meta("used", false), "The mounted evidence is unreadable or removes its physical prop: " + id)
+	var theo: Node3D = _packed_object(mission, "commerce_person_theo")
+	_check(is_instance_valid(theo) and _face_commerce(mission, theo), "The mounted kitchen civilian has no clear contact approach.")
+	mission._interact_node(theo)
+	var active_save: Dictionary = Store.load_data(TEST_PATH)
+	_check(mission.commerce.person_state("theo") == "following" and active_save.get("commerce", {}).get("people", {}).get("theo", "") == "waiting", "The mounted contact failed or persisted an unfinished escort as completed movement.")
+	before = FileAccess.get_file_as_string(TEST_PATH)
+	mission._restore(active_save)
+	_disable_ticks(mission)
+	await physics_frame
+	_check(mission.player.nearest_floor() == 21 and mission.commerce.phase == "active" and mission.commerce.person_state("theo") == "waiting" and mission.commerce.received_count() == 0, "The mounted lower reload loses the checkpoint or invents a civilian reception.")
+	_check(FileAccess.get_file_as_string(TEST_PATH) == before and mission.commerce.snapshot()["actions"] == active_save["commerce"]["actions"], "Reloading the packed commerce checkpoint rewrites it or loses intervention receipts.")
+	for id: String in Commerce.CLUES:
+		var object: Node3D = _packed_object(mission, id)
+		_check(id in mission.clues and is_instance_valid(object) and object.is_visible_in_tree() and object.get_meta("used", false), "A packed commerce reload loses or reopens a collected document: " + id)
+	mission.player.teleport_to_floor(20)
+	await physics_frame
+	var terminal: Node3D = _packed_object(mission, "commerce_finish_20")
+	_check(is_instance_valid(terminal) and _face_commerce(mission, terminal), "The packed refuge 20 terminal has no clear interaction approach.")
+	mission._interact_node(terminal)
+	_check(not mission.completed and mission.commerce.phase == "active" and FileAccess.get_file_as_string(TEST_PATH) == before, "The packed refuge terminal accepts missing physical civilian receptions.")
+	# A separately prepared stable ending checks exported restoration and dossier
+	# resources. Actual three-civilian traversal is covered by the source suites.
+	var ending: Dictionary = active_save.duplicate(true)
+	ending["floor"] = 20
+	ending["completed"] = true
+	ending["commerce"]["phase"] = "complete"
+	ending["commerce"]["contacted"] = Commerce.PERSON_IDS.duplicate()
+	for id: String in Commerce.PERSON_IDS: ending["commerce"]["people"][id] = "received"
+	prepared = Store.save_data(ending, TEST_PATH) == OK
+	_check(prepared, "The mounted schema-5 store rejects the stable refuge 20 ending.")
+	if not prepared: return
+	before = FileAccess.get_file_as_string(TEST_PATH)
+	mission._restore(Store.load_data(TEST_PATH))
+	_disable_ticks(mission)
+	await physics_frame
+	_check(mission.completed and mission.commerce.phase == "complete" and mission.hud.end_panel.visible and not mission.hud.end_panel.descent_button.visible, "The packed refuge ending fails to restore or advertises an unavailable lower chapter.")
+	_check(Dossier.build(mission._dossier_snapshot())["total_received"] == 8 and mission.rescued == previous["rescued"] and mission.continuation_visuals.both_arrived(), "The packed final dossier loses or duplicates one of the eight confirmed civilians.")
+	for id: String in Commerce.PERSON_IDS:
+		_check(mission.commerce_visuals.physically_arrived(id), "The packed ending failed to restore a confirmed civilian at the supported refuge mark: " + id)
+	_check(FileAccess.get_file_as_string(TEST_PATH) == before, "Loading the packed refuge 20 ending rewrites its checkpoint.")
+
+
+func _mesh_count(parent: Node) -> int:
+	var total: int = 1 if parent is MeshInstance3D and parent.mesh != null and parent.mesh.get_surface_count() > 0 else 0
+	for child: Node in parent.get_children(): total += _mesh_count(child)
+	return total
+
+
+func _collect_commerce_models(parent: Node, result: Dictionary) -> void:
+	var id: String = str(parent.get_meta("commerce_asset_id", ""))
+	if not id.is_empty() and _mesh_count(parent) > 0: result[id] = int(result.get(id, 0)) + 1
+	for child: Node in parent.get_children(): _collect_commerce_models(child, result)
+
+
+func _has_surface(parent: Node, id: String) -> bool:
+	if parent is MeshInstance3D:
+		var material: Material = parent.material_override
+		if material is StandardMaterial3D and material.get_meta("v011_surface", "") == id and material.get_meta("asset_loaded", false) and material.albedo_texture != null:
+			return true
+	for child: Node in parent.get_children():
+		if _has_surface(child, id): return true
+	return false
+
+
+func _face_commerce(mission: Node3D, object: Node3D) -> bool:
+	var y: float = Routes.floor_height(int(object.get_meta("floor"))) + 0.06
+	var capsule := CapsuleShape3D.new()
+	capsule.radius = 0.34
+	capsule.height = 1.72
+	for offset: Vector3 in [Vector3(0,0,2.4), Vector3(0,0,-2.4), Vector3(2.4,0,0), Vector3(-2.4,0,0), Vector3(1.65,0,1.65), Vector3(-1.65,0,1.65), Vector3(1.65,0,-1.65), Vector3(-1.65,0,-1.65), Vector3(0,0,1.85), Vector3(0,0,-1.85)]:
+		var candidate := Vector3(object.global_position.x, y, object.global_position.z) + offset
+		var query := PhysicsShapeQueryParameters3D.new()
+		query.shape = capsule
+		query.transform = Transform3D(Basis.IDENTITY, candidate + Vector3(0,0.87,0))
+		query.exclude = [mission.player.get_rid()]
+		if not mission.get_world_3d().direct_space_state.intersect_shape(query).is_empty(): continue
+		mission.player.global_position = candidate
+		mission.player.velocity = Vector3.ZERO
+		mission.player.camera.look_at(object.global_position + (object.get_meta("focus_offset", Vector3(0,1.2,0)) as Vector3))
+		if mission._commerce_target_visible(object):
+			if str(object.get_meta("kind", "")) != "commerce_action" or mission._commerce_action_context(object): return true
+	return false
 
 
 func _packed_object(mission: Node3D, id: String) -> Node3D:
@@ -374,7 +570,7 @@ func _check(condition: bool, message: String) -> void:
 
 func _finish() -> void:
 	if failures.is_empty():
-		print("PASS exported pack: %d checks; mounted v0.10 resources, historical rescue/menu/cinematic/audio/rope checks, schema-4 persistence, real debrief-button continuation, optional eight-route world, physical civilian resources, lower-floor reload and retained exhibition readings. Developer tests remain excluded. Linux headless engine loads the pack; this is not a Windows executable or browser launch or a visual approval." % checks)
+		print("PASS exported pack: %d checks; mounted v0.12 resources, 28 authored model imports, ten native albedos, historical rescue/menu/cinematic/audio/rope checks, schema-5 persistence, both real debrief-button continuations, twelve adjacent links, five guarded commerce operations, retained evidence and reception-safe reloads. Developer tests remain excluded. Standing/receipt fixtures check resources and restoration, not civilian route traversal. Linux headless engine loads the pack; this is not a Windows executable or browser launch or a visual approval." % checks)
 		quit(0)
 	else:
 		for failure: String in failures:

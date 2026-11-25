@@ -1,6 +1,7 @@
 extends SceneTree
 ## Actual controller integration: early fear never becomes a hidden combat system.
 const MainScene = preload("res://scenes/main.tscn")
+const InteractionFixture = preload("res://tests/interaction_fixture.gd")
 const Horror = preload("res://scripts/horror_director.gd")
 const Store = preload("res://scripts/save_store.gd")
 const SAVE: String = "user://qa_horror_v08.json"
@@ -90,10 +91,12 @@ func _run() -> void:
 	_check(mission.horror.cue_serial == 0, "An active rescue transmission allowed a new manifestation.")
 	_silence()
 	var casualty: Node3D = _object("survivor",26)
+	InteractionFixture.face(mission, casualty)
 	mission._interact_node(casualty)
 	_silence()
 	_tick(12.0)
 	_check(mission.carried == casualty and mission.horror.cue_serial == 0 and not _visible(), "Carrying a person allowed a new manifestation.")
+	InteractionFixture.face(mission, _object("beacon",26))
 	mission._interact_node(_object("beacon",26))
 	_silence()
 	_tick(12.0)
@@ -135,7 +138,7 @@ func _run() -> void:
 	mission.seen_floors = [29,28,26]
 	_check(mission._save_checkpoint(28), "The unchanged schema3 failed to save a valid horror-era checkpoint.")
 	var checkpoint: Dictionary = Store.load_data(SAVE)
-	_check(checkpoint.get("version",0) == 4 and not checkpoint.has("horror_events"), "Cosmetic impression state leaked into the checkpoint schema.")
+	_check(checkpoint.get("version",0) == Store.SAVE_VERSION and not checkpoint.has("horror_events"), "Cosmetic impression state leaked into the checkpoint schema.")
 	save_bytes = FileAccess.get_file_as_bytes(SAVE)
 	mission._restore(checkpoint)
 	_disable_ticks()

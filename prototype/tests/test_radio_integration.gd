@@ -3,6 +3,7 @@ extends SceneTree
 ## Physical traversal remains the responsibility of the separate route suites.
 
 const MainScene = preload("res://scenes/main.tscn")
+const InteractionFixture = preload("res://tests/interaction_fixture.gd")
 const Store = preload("res://scripts/save_store.gd")
 const TEST_PATH: String = "user://qa_v04_radio_integration.json"
 const PREFS_PATH: String = "user://qa_v04_radio_preferences.json"
@@ -42,7 +43,7 @@ func _run() -> void:
 	_extract(30)
 	_check(mission.world.roof_rescued_people["survivor_30"].visible, "Confirmed Ana did not appear at rooftop reception.")
 	var first_save: Dictionary = Store.load_data(TEST_PATH)
-	_check(first_save.get("version") == 4 and first_save.get("rescued") == ["survivor_30"], "The first confirmed rescue was not saved as schema 4.")
+	_check(first_save.get("version") == Store.SAVE_VERSION and first_save.get("rescued") == ["survivor_30"], "The first confirmed rescue was not saved as schema 4.")
 	_check(_history_has(first_save.get("transmissions", []), "Ana Rios : réception confirmée"), "Reception confirmation was saved before its received transmission existed.")
 
 	_place(27)
@@ -166,7 +167,7 @@ func _run() -> void:
 	_extract(26)
 	_check(mission.world.roof_rescued_people["survivor_26"].visible and mission.rescued.size() == 3, "Nora's actual hoist did not complete the three-person reception.")
 	var refuge: Node3D = _find("refuge", 25)
-	_place(25)
+	InteractionFixture.face(mission, refuge)
 	mission._interact_node(refuge)
 	_check(mission.epilogue_playing and not mission.hud.end_panel.visible, "The closing sequence did not precede its final report.")
 	mission._finish_epilogue()
@@ -204,8 +205,9 @@ func _place(floor_number: int) -> void:
 
 func _extract(floor_number: int) -> void:
 	var person: Node3D = _find("survivor", floor_number)
-	_place(floor_number)
+	InteractionFixture.face(mission, person)
 	mission._interact_node(person)
+	InteractionFixture.face(mission, _find("beacon", floor_number))
 	mission._interact_node(_find("beacon", floor_number))
 	mission._process_hoist(5.01)
 

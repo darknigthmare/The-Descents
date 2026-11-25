@@ -5,13 +5,14 @@ class_name DescentMissionDossier
 const Routes = preload("res://scripts/route_catalog.gd")
 const Continuation = preload("res://scripts/continuation_director.gd")
 const Equipment = preload("res://scripts/equipment_director.gd")
+const Commerce = preload("res://scripts/commerce_director.gd")
 
 const ROSTER: Array = [
 	{"id": "survivor_30", "name": "Ana Rios", "floor": 30, "location": "Restaurant panoramique"},
 	{"id": "survivor_28", "name": "Samuel Breton", "floor": 28, "location": "Archives Pelagos"},
 	{"id": "survivor_26", "name": "Nora Haddad", "floor": 26, "location": "Spa de Nacre"}
 ]
-const FLOOR_NAMES: Dictionary = {31: "Poste du toit", 30: "Restaurant", 29: "Suites", 28: "Archives", 27: "Jardin", 26: "Spa", 25: "Refuge", 24: "Congrès", 23: "Exposition"}
+const FLOOR_NAMES: Dictionary = {31: "Poste du toit", 30: "Restaurant", 29: "Suites", 28: "Archives", 27: "Jardin", 26: "Spa", 25: "Refuge", 24: "Congrès", 23: "Exposition", 22: "Galerie", 21: "Cuisines", 20: "Refuge des équipes"}
 const CONTINUATION_CLUES: Dictionary = {
 	"continuation_model_23": {"floor": 23, "title": "Maquette des volumes enfouis", "text": "La maquette historique relie les fondations d’Aube et d’Hespérie à des galeries sous la mer. Le plan touristique actuel s’arrête aux parkings. Deux versions du même site : les volumes ont été retirés du plan récent, pas de la maquette."},
 	"continuation_photo_23": {"floor": 23, "title": "Photographie des anciens bains de Nacre", "text": "Sur la photographie des bains antérieurs aux tours, une porte à double arc porte une entaille verticale. La même silhouette apparaît sur le dessin du jardin d’enfants. Le cliché précède la construction de Pelagos ; la coïncidence est désormais un constat à vérifier."}
@@ -28,13 +29,19 @@ static func build(snapshot: Dictionary) -> Dictionary:
 	if not continuation_value.is_empty():
 		continuation.state = continuation_value
 	var extended: bool = continuation.phase != "dormant"
-	var floor_number: int = int(_number(snapshot, "floor", 31, 23 if extended else 25, 31))
-	var checkpoint: int = int(_number(snapshot, "checkpoint_floor", floor_number, 23 if extended else 25, 31))
+	var commerce = Commerce.new()
+	var commerce_value: Dictionary = Commerce.normalize(snapshot.get("commerce", Commerce.dormant_state()))
+	if not commerce_value.is_empty(): commerce.state = commerce_value
+	var lower: bool = commerce.phase != "dormant" and continuation.phase == "complete"
+	var minimum_floor: int = 20 if lower else (23 if extended else 25)
+	var floor_number: int = int(_number(snapshot, "floor", 31, minimum_floor, 31))
+	var checkpoint: int = int(_number(snapshot, "checkpoint_floor", floor_number, minimum_floor, 31))
 	var elapsed: float = _number(snapshot, "elapsed", 0, 0, 315360000)
 	var rescued: Array[String] = _ids(snapshot.get("rescued", []), ["survivor_30", "survivor_28", "survivor_26"])
 	var allowed_clues: Array = ["evidence_29", "evidence_27", "evidence_26"]
 	if extended:
 		allowed_clues.append_array(CONTINUATION_CLUES.keys())
+	if lower: allowed_clues.append_array(Commerce.CLUES.keys())
 	var clues: Array[String] = _ids(snapshot.get("clues", []), allowed_clues)
 	var supplies: Array[String] = _ids(snapshot.get("supplies_used", []), ["supply_29", "supply_25"])
 	var equipment_ids: Array[String] = _ids(snapshot.get("supplies_used", []), Equipment.ACTIONS.keys())
@@ -65,6 +72,13 @@ static func build(snapshot: Dictionary) -> Dictionary:
 				"status": "AU REFUGE 25" if received else ("ACCOMPAGNEMENT ENGAGÉ" if continuation.duo_briefed else "À REJOINDRE"),
 				"detail": "Réception physique confirmée au relais du 25." if received else "Cabine d’interprétation du 24. Consignes visuelles et escalier de service vers le refuge ; la réception reste à confirmer."})
 
+	if lower:
+		for id: String in Commerce.PERSON_IDS:
+			var record: Dictionary = Commerce.PEOPLE[id]
+			var received: bool = commerce.person_state(id) == "received"
+			survivors.append({"id": "commerce_person_" + id, "name": record["name"], "floor": record["floor"], "location": record["role"], "confirmed": received,
+				"status": "AU REFUGE 20" if received else ("EN ACCOMPAGNEMENT" if commerce.person_state(id) == "following" else "EN ATTENTE"),
+				"detail": "Présence physique confirmée au repère du refuge 20." if received else "Consignes visibles : E pour suivre / attendre. Restez à moins de 5 m ; les escaliers rejoignent le refuge 20. Une reprise replace toute escorte inachevée au contact initial."})
 	var collected_records: Dictionary = {}
 	var raw_records: Variant = snapshot.get("clue_records", [])
 	if raw_records is Array:
@@ -96,10 +110,18 @@ static func build(snapshot: Dictionary) -> Dictionary:
 				"title": str(record.get("title", "Relevé de l’exposition")) if collected else "PIÈCE NON RELEVÉE",
 				"text": str(record.get("text", "Pièce inscrite au compte rendu.")) if collected else "Examinez les pièces de l’exposition pour en relever le contenu. Aucun constat n’est encore inscrit."})
 
+	if lower:
+		for id_value: String in Commerce.CLUES:
+			var collected: bool = id_value in clues
+			var record: Dictionary = collected_records.get(id_value, {})
+			evidence.append({"id": id_value, "floor": Commerce.CLUES[id_value]["floor"], "collected": collected,
+				"title": str(record.get("title", "Constat consigné")) if collected else "DOCUMENT NON RELEVÉ",
+				"text": str(record.get("text", "Pièce inscrite au compte rendu.")) if collected else "Relevez les documents de la galerie et des cuisines pour en connaître le contenu."})
 	var transmissions: Array[Dictionary] = _transmissions(snapshot.get("transmissions", []))
 	var route: Array[Dictionary] = []
 	var visited: Variant = snapshot.get("seen_floors", [])
 	var floor_list: Array = [31, 30, 29, 28, 27, 26, 25, 24, 23] if extended else [31, 30, 29, 28, 27, 26, 25]
+	if lower: floor_list.append_array([22, 21, 20])
 	for level: int in floor_list:
 		var seen: bool = false
 		if visited is Array:
@@ -131,7 +153,17 @@ static func build(snapshot: Dictionary) -> Dictionary:
 	}
 	if extended:
 		result["relay_title"] = "RECONNAISSANCE A24–A23 · COMPTE RENDU" if complete else "RELAIS DU REFUGE A25"
-		result["relay_text"] = "Léa Mercier et Idris Kaci ont rejoint le refuge 25. La maquette des souterrains et la photographie des anciens bains ont été relevées. Les premiers secours restent au toit.\n\nCes deux constats ne confirment pas le sort de Bravo. Les galeries représentées restent à trouver ; la descente vers le 22 n’est pas encore ouverte." if complete else continuation.objective() + "\n\nLes trois réceptions de l’intervention supérieure restent acquises. Les signes visibles accompagnent chaque consigne à Léa et Idris."
+		result["relay_text"] = "Léa Mercier et Idris Kaci ont rejoint le refuge 25. La maquette des souterrains et la photographie des anciens bains ont été relevées. Les premiers secours restent au toit.\n\nCes deux constats ne confirment pas le sort de Bravo. Vous pouvez poursuivre vers la galerie du 22, les cuisines du 21 et le refuge des équipes au 20." if complete else continuation.objective() + "\n\nLes trois réceptions de l’intervention supérieure restent acquises. Les signes visibles accompagnent chaque consigne à Léa et Idris."
+	result["commerce_available"] = complete and continuation.phase == "complete" and commerce.phase == "dormant" and floor_number == 23
+	result["commerce_phase"] = commerce.phase
+	result["commerce_objective"] = commerce.objective() if lower else ""
+	result["commerce_actions"] = commerce.state["actions"].duplicate() if lower else []
+	if lower:
+		result["total_received"] = 5 + commerce.received_count()
+		result["roster_total"] = 8
+		result["evidence_total"] = 7
+		result["relay_title"] = "REFUGE 20 · COMPTE RENDU DES SECOURS" if complete else "RECONNAISSANCE A22–A20"
+		result["relay_text"] = "Mina Bensaïd, Théo Lenoir et Sofia Renard sont reçus au refuge 20. Le relais fonctionne ; le registre des livraisons et la consigne de maintenance sont consignés. Les cinq réceptions précédentes restent acquises.\n\nDes anomalies étaient signalées avant la catastrophe. Le sort de Bravo reste inconnu et l’accès inférieur est condamné." if complete else commerce.objective()
 	result["traversal_id"] = str(current_link.get("id", ""))
 	if not current_link.is_empty():
 		result["location"] = str(current_link["title"])
@@ -154,6 +186,8 @@ static func _situation_text(model: Dictionary) -> String:
 	var mission: String = "INTERVENTION TERMINÉE\nLes réceptions confirmées sont conservées au poste du toit. Le refuge 25 reste votre point sûr." if model["completed"] else "PRIORITÉ DE L’INTERVENTION\nSecourir Ana au 30, Samuel au 28 et Nora au 26, puis rejoindre le relais du refuge 25. Les treuils ramènent les personnes au poste d’Aube."
 	if model.get("continuation_phase", "dormant") != "dormant":
 		mission = ("RECONNAISSANCE A24–A23 TERMINÉE\n" if model["completed"] else "RECONNAISSANCE A24–A23\n") + str(model["continuation_objective"])
+	if model.get("commerce_phase", "dormant") != "dormant":
+		mission = ("REFUGE 20 ÉTABLI\n" if model["completed"] else "SECOURS A22–A20\n") + str(model["commerce_objective"])
 	var text: String = mission + "\n\n" + str(model["structure_title"]) + "\n" + str(model["structure_text"])
 	text += "\n\nPERSONNES PRISES EN CHARGE · %d / %d À L’ABRI\n" % [model["total_received"], model["roster_total"]]
 	for row: Dictionary in model["survivors"]:
@@ -162,9 +196,11 @@ static func _situation_text(model: Dictionary) -> String:
 	text += "\nMATÉRIEL D’INTERVENTION\n1 Hache · 2 Extincteur · 3 Halligan · 4 Coupe-boulon\nRéserve de l’extincteur %d / 3 · Travaux terminés %d / %d\n" % [model["equipment_charges"], model["equipment_events"].size(), 4 if model.get("continuation_phase", "dormant") != "dormant" else 3]
 	for id: String in model["equipment_events"]:
 		text += "ÉTAGE %d · %s\n" % [Equipment.ACTIONS[id]["floor"], Equipment.ACTIONS[id]["title"]]
+	for id: String in model.get("commerce_actions", []):
+		text += "ÉTAGE %d · %s · Confirmé\n" % [Commerce.ACTIONS[id]["floor"], Commerce.ACTIONS[id]["title"]]
 	text += "\nPOINT SÛR\n%s · %s. La consultation ne remplace pas ce point de reprise.\n" % [_floor_label(model["checkpoint_floor"]), FLOOR_NAMES[model["checkpoint_floor"]]]
 	text += "\nPASSAGES ENTRE LES ÉTAGES\nChaque liaison est réversible et limitée à deux niveaux. Les repères bleus indiquent les rappels personnels ; les balises orange servent au treuil des rescapés.\n"
-	for link: Dictionary in Routes.all_routes(model.get("continuation_phase", "dormant") != "dormant"):
+	for link: Dictionary in Routes.all_routes(model.get("continuation_phase", "dormant") != "dormant", model.get("commerce_phase", "dormant") != "dormant"):
 		text += "%s%s\n" % ["EN COURS · " if str(link["id"]) == str(model.get("traversal_id", "")) else "", str(link["title"])]
 	text += "Espace verrouille le descendeur ; relâcher les touches freine. Reposez-vous assuré avant de remonter. Une reprise charge un palier stable, jamais le milieu d’une corde ou d’un escalier.\n"
 	text += "\nTRANSMISSIONS REÇUES · DERNIERS ÉCHANGES\n"
@@ -183,6 +219,8 @@ static func _survivors_text(survivors: Array[Dictionary]) -> String:
 	for row: Dictionary in survivors:
 		text += "%s\n%s · ÉTAGE %d\n%s\n%s\n\n" % [str(row["name"]).to_upper(), row["location"], row["floor"], row["status"], row["detail"]]
 	text += "Ana, Samuel et Nora restent au poste du toit après leur réception. Léa et Idris restent au refuge 25 après leur accueil ; une escorte interrompue les remet à l’abri dans la cabine du 24. Aucun transfert en cours n’est restauré à mi-course."
+	if survivors.size() > 5:
+		text += "\nMina, Théo et Sofia restent au refuge 20 après réception. Toute escorte inférieure inachevée reprend à son point de contact initial, sans créer une réception automatique."
 	return text
 
 

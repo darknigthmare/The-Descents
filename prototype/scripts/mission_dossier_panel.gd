@@ -168,10 +168,14 @@ func _build_journal() -> void:
 	spacer.custom_minimum_size.y = 12
 	side_column.add_child(spacer)
 	route_box = VBoxContainer.new()
-	route_box.add_theme_constant_override("separation", 7)
-	side_column.add_child(route_box)
+	route_box.add_theme_constant_override("separation", 5)
+	var route_scroll := ScrollContainer.new()
+	route_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	route_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	side_column.add_child(route_scroll)
+	route_scroll.add_child(route_box)
 	route_box.add_child(_label("AXE DE DESCENTE", 12, GOLD))
-	for index in range(9):
+	for index in range(12):
 		var row: Label = _label("", 15, MUTED)
 		route_box.add_child(row)
 		route_rows.append(row)
@@ -261,6 +265,7 @@ func _refresh() -> void:
 	metric_values[3].text = "TOIT" if model["floor"] == 31 else "ÉTAGE %d" % model["floor"]
 	if mode == "debrief":
 		var extended: bool = model.get("continuation_phase", "dormant") != "dormant"
+		var lower: bool = model.get("commerce_phase", "dormant") != "dormant"
 		title_label.text = "SOUS LES PLANS DE NACRE" if extended else "LE REFUGE 25"
 		subtitle_label.text = "RECONNAISSANCE A24–A23 TERMINÉE · Cinq personnes à l’abri, deux constats à approfondir." if extended else "INTERVENTION SUPÉRIEURE TERMINÉE · Le refuge ouvre la suite de la descente."
 		# Three cards remain readable on compact displays. The extension uses
@@ -268,6 +273,10 @@ func _refresh() -> void:
 		var cards: Array = model["survivors"].slice(3, 5) if extended else model["survivors"]
 		if extended:
 			cards.append({"name": "Ana · Samuel · Nora", "status": "AU POSTE DU TOIT", "floor": 31, "confirmed": true, "detail": "Les trois réceptions initiales restent confirmées. Aucun secours n’a été rejoué."})
+		if lower:
+			title_label.text = "LE REFUGE DES ÉQUIPES"
+			subtitle_label.text = "SECOURS A22–A20 TERMINÉS · Huit personnes à l’abri, sept pièces possibles au dossier."
+			cards = model["survivors"].slice(5, 8)
 		for index in range(mini(cards.size(), survivor_names.size())):
 			var row: Dictionary = cards[index]
 			survivor_names[index].text = row["name"]
@@ -281,8 +290,11 @@ func _refresh() -> void:
 		else:
 			completion_text.text = completion_text.text.replace("Cette intervention s’arrête au refuge 25. Le sort de Bravo et la suite de la descente restent ouverts.", "Le bilan des secours supérieurs est acquis. Poursuivre au congrès ouvre l’escalier vers le 24 après enregistrement du nouveau point sûr. Le sort de Bravo reste inconnu.")
 		replay_button.disabled = not model["replay_available"]
+		if lower:
+			completion_text.text = str(model["relay_title"]) + "\n\n" + str(model["relay_text"]) + "\n\nPOINT SÛR\nRefuge 20 · Les réceptions et interventions sont conservées. Le journal distingue les faits recueillis de leur interprétation."
 		replay_button.visible = not extended
-		descent_button.visible = model.get("continuation_available", false)
+		descent_button.visible = model.get("continuation_available", false) or model.get("commerce_available", false)
+		descent_button.text = "Poursuivre vers les commerces" if model.get("commerce_available", false) else "Poursuivre au congrès"
 		var focus_chain: Array[Control] = [journal_button]
 		if replay_button.visible:
 			focus_chain.append(replay_button)

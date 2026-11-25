@@ -212,6 +212,8 @@ func _move_to(target: Node3D) -> void:
 	var number: int = int(target.get_meta("floor", 31))
 	mission.player.teleport_to_floor(number)
 	mission.player.position = target.global_position + Vector3(0.0 if target.get_meta("kind", "") == "rappel" else 1.1, 0.06, 0.0)
+	if target.get_meta("kind", "") != "rappel":
+		mission.player.camera.look_at(mission._legacy_interaction_focus(target))
 	mission.last_floor = number
 
 

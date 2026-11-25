@@ -111,6 +111,15 @@ static func menu_context(data: Dictionary) -> Dictionary:
 	var complete: bool = bool(data.get("completed",false))
 	var names: Dictionary = {31:"POSTE DU TOIT",30:"RESTAURANT PANORAMIQUE",29:"SUITES DE NACRE",28:"ARCHIVES D’AUBE",27:"JARDIN DES ENFANTS",26:"SPA DE NACRE",25:"REFUGE TECHNIQUE",24:"CENTRE DE CONGRÈS",23:"HISTOIRE DE NACRE"}
 	var continuation: Dictionary = data.get("continuation", {})
+	var commerce: Dictionary = data.get("commerce", {})
+	if commerce.get("phase", "dormant") != "dormant":
+		var received: int = 0
+		for state: Variant in commerce.get("people", {}).values():
+			if state == "received": received += 1
+		return {"id": "commerce_debrief" if complete else "commerce", "floor": floor_number,
+			"title": "LE REFUGE DES ÉQUIPES" if complete else {22: "GALERIE DES ALIZÉS", 21: "CUISINES DE SERVICE", 20: "REFUGE DES ÉQUIPES"}.get(floor_number, names.get(floor_number, "POINT SÛR")),
+			"detail": "Huit personnes à l’abri. Les anomalies précédaient la catastrophe." if complete else "Une nouvelle poche de secours, trois personnes à accompagner.",
+			"incident": "aftermath", "rescued": 5 + received, "elapsed": float(data.get("elapsed", 0.0))}
 	if continuation.get("phase", "dormant") != "dormant":
 		return {"id": "recon_debrief" if complete else "recon", "floor": floor_number,
 			"title": "RECONNAISSANCE TERMINÉE" if complete else names.get(floor_number, "POINT SÛR"),
@@ -128,11 +137,15 @@ static func menu_camera(context: Dictionary, time: float, reduced_motion: bool) 
 			position = Vector3(21,52,21)
 			target = Vector3(1,43.5,-5)
 			fov = 59.0
-		"floor", "refuge", "recon", "recon_debrief":
+		"floor", "refuge", "recon", "recon_debrief", "commerce", "commerce_debrief":
 			var y: float = float(floor_number - 24) * 6.0
 			position = Vector3(10.2,y+2.3,8.9)
 			target = Vector3(-5.0,y+1.8,-4.5)
 			fov = 68.0
+			if floor_number == 20:
+				position = Vector3(10.4, y + 2.1, 1.4)
+				target = Vector3(5.8, y + 1.1, 7.4)
+				fov = 66.0
 			if floor_number == 29 and context.get("incident") == "aftermath":
 				position = Vector3(7.4,y+2.0,3.1)
 				target = Vector3(42,31,-6)

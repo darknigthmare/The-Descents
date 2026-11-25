@@ -19,6 +19,10 @@ const Continuation = preload("res://scripts/continuation_director.gd")
 const Dossier = preload("res://scripts/mission_dossier.gd")
 const Equipment = preload("res://scripts/equipment_director.gd")
 const EquipmentPresentation = preload("res://scripts/rescue_equipment.gd")
+const Commerce = preload("res://scripts/commerce_director.gd")
+
+var commerce = Commerce.new()
+var commerce_visuals: Node3D
 
 var equipment = Equipment.new()
 var equipment_visuals: Node3D
@@ -129,6 +133,7 @@ func _prepare_menu() -> void:
 	menu_snapshot = Save.load_data(save_path)
 	equipment.restore(menu_snapshot.get("supplies_used", []))
 	continuation.restore(menu_snapshot.get("continuation", Continuation.new().snapshot()))
+	commerce.restore(menu_snapshot.get("commerce", Commerce.dormant_state()))
 	menu_context = Cinematics.menu_context(menu_snapshot)
 	started = false
 	paused = false
@@ -140,7 +145,7 @@ func _prepare_menu() -> void:
 	for target: Node3D in world_data.get("interactables",[]):
 		var key: String = _key(target)
 		if key in rescued or key in menu_snapshot.get("clues",[]) or key in menu_snapshot.get("supplies_used",[]):
-			if str(target.get_meta("kind", "")) not in ["continuation_evidence", "equipment"]:
+			if str(target.get_meta("kind", "")) not in ["continuation_evidence", "commerce_clue", "equipment"]:
 				target.hide()
 			target.set_meta("used",true)
 	if not menu_snapshot.is_empty():
@@ -149,6 +154,9 @@ func _prepare_menu() -> void:
 	_apply_camera_sample(Cinematics.menu_camera(menu_context,menu_time,reduced_motion))
 	hud.show_menu()
 	hud.set_menu_context(menu_context,not menu_snapshot.is_empty(),current_seed)
+	if not menu_snapshot.is_empty() and float(menu_snapshot.get("health", 0.0)) <= 0.0:
+		hud.continue_button.disabled = true
+		hud.continue_button.text = "Point sûr sans état vital — nouvelle intervention requise"
 	hud.apply_settings(preferences)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if DisplayServer.get_name() != "headless" and sound_enabled and is_instance_valid(audio_wind) and not audio_wind.playing:
@@ -221,6 +229,8 @@ func _bind_inputs() -> void:
 
 func _build_world(seed_value: int) -> void:
 	equipment.cancel()
+	commerce.cancel()
+	commerce_visuals = null
 	equipment_visuals = null
 	traversal_checkpoint_pending = false
 	continuation_visuals = null
@@ -248,8 +258,11 @@ func _build_world(seed_value: int) -> void:
 	floor_specs = Generator.generate(seed_value)
 	world = World.new()
 	add_child(world)
-	world_data = world.build(seed_value, floor_specs, continuation.phase != "dormant")
+	world_data = world.build(seed_value, floor_specs, continuation.phase != "dormant", commerce.phase != "dormant")
 	continuation_visuals = world_data.get("continuation_visuals")
+	commerce_visuals = world_data.get("commerce_visuals")
+	if is_instance_valid(commerce_visuals):
+		commerce_visuals.apply_state(commerce.snapshot())
 	world.set_continuation_state(continuation.snapshot())
 	world_data["interactables"].append_array(FieldProps.new().build(world))
 	world.set_rescued_people(rescued)
@@ -258,7 +271,7 @@ func _build_world(seed_value: int) -> void:
 	world.set_reduced_motion(reduced_motion)
 	player = Player.new()
 	add_child(player)
-	player.configure_continuation(continuation.phase != "dormant")
+	player.configure_continuation(continuation.phase != "dormant", commerce.phase != "dormant")
 	player.traversal_notice.connect(_notify)
 	player.position = world_data.get("roof_spawn", Vector3(7,42.2,7))
 	player.rotation.y = 0.75
@@ -299,6 +312,7 @@ func _start_new(seed_value: int) -> void:
 	equipment.reset()
 	# A new attempt does not erase the previous checkpoint until a new one is valid.
 	continuation.reset()
+	commerce.reset()
 	health = 100
 	oxygen = 100
 	stress = 8
@@ -355,6 +369,11 @@ func _continue_game() -> void:
 		hud.continue_button.text = "Sauvegarde indisponible — commencez une intervention"
 		hud.continue_button.disabled = true
 		return
+	if float(data.get("health", 0.0)) <= 0.0:
+		# Preserve an old dead checkpoint for diagnosis. Restoring it would
+		# immediately lose the rescuer again; only an explicit new run replaces it.
+		_return_to_menu()
+		return
 	_restore(data)
 	if not completed:
 		_say("VARGA  /  POSTE DU TOIT", "Point sûr rétabli. Votre compte rendu est à jour. Vérifiez votre matériel avant de continuer.", 8)
@@ -362,6 +381,7 @@ func _continue_game() -> void:
 func _restore(data: Dictionary) -> void:
 	equipment.restore(data.get("supplies_used", []))
 	continuation.restore(data.get("continuation", Continuation.new().snapshot()))
+	commerce.restore(data.get("commerce", Commerce.dormant_state()))
 	incident.restore(str(data["incident_state"]))
 	observation_hold = 0
 	_build_world(int(data["seed"]))
@@ -395,7 +415,7 @@ func _restore(data: Dictionary) -> void:
 	for target: Node3D in world_data.get("interactables", []):
 		var key: String = _key(target)
 		if key in rescued or key in clues or key in supplies_used:
-			if str(target.get_meta("kind", "")) not in ["continuation_evidence", "equipment"]:
+			if str(target.get_meta("kind", "")) not in ["continuation_evidence", "commerce_clue", "equipment"]:
 				target.hide()
 			target.set_meta("used", true)
 	_begin_game()
@@ -408,8 +428,15 @@ func _restore(data: Dictionary) -> void:
 			_complete_game(false)
 	elif continuation.phase == "active" and continuation.escort_state != "received" and continuation.duo_briefed:
 		_notify("Point sûr rétabli. Léa et Idris attendent en sécurité dans la cabine du 24 ; reprenez leur accompagnement.")
+	elif commerce.phase == "active":
+		_notify("Point sûr rétabli. Les réceptions sont conservées ; toute escorte inachevée attend à son point de contact initial.")
 
 func _save_checkpoint(floor_number: int) -> bool:
+	# Damage and an equipment/hoist completion can share one frame. Never
+	# replace a living checkpoint with a state that immediately dies on reload.
+	if not is_finite(health) or health <= 0.0:
+		_notify("État critique : le précédent point sûr est conservé.")
+		return false
 	# During the incident the preceding safe checkpoint remains authoritative.
 	# Never persist a half-collapsed mesh or a transient collider configuration.
 	if incident.is_active():
@@ -428,7 +455,8 @@ func _save_checkpoint(floor_number: int) -> bool:
 		"elapsed": elapsed, "seen_floors": seen_floors.duplicate(), "completed": completed,
 		"incident_state": incident.stable_state(),
 		"transmissions": radio.history_snapshot(), "radio_events": radio_events.duplicate(),
-		"continuation": continuation.checkpoint_snapshot()
+		"continuation": continuation.checkpoint_snapshot(),
+		"commerce": commerce.checkpoint_snapshot()
 	}
 	var error: Error = Save.save_data(data, save_path)
 	if error == OK:
@@ -574,6 +602,7 @@ func _process(delta: float) -> void:
 	_process_horror(delta, floor_number)
 	_find_nearest()
 	_process_equipment(delta)
+	_process_commerce_action(delta)
 	_update_hud()
 	if health <= 0:
 		_fall_recovery()
@@ -712,6 +741,12 @@ func _enter_floor(number: int) -> void:
 	var first: bool = not number in seen_floors
 	if first:
 		seen_floors.append(number)
+	if commerce.phase == "active" and number in [22, 21, 20]:
+		if first:
+			var message: String = {22: "Mina est enfermée derrière le volet de sa réserve. Une autre personne refuse qu’on l’approche dans le salon ouest. Gardez vos distances.", 21: "Le réchauffeur fume encore. Le coupe-circuit est dans l’office, hors de la fumée. Isolez-le avant de déployer la couverture.", 20: "Le refuge des équipes tient. Trois emplacements sont libres. Sofia attend dans la réserve au nord-est. Réactivez le relais et conduisez chacun aux repères verts."}[number]
+			_say("VARGA  /  RECONNAISSANCE A22–A20", message, 11)
+		_save_checkpoint(number)
+		return
 	if first and number == 30:
 		_say("ANA RIOS  /  VOIX PROCHE", "Ici ! Près des tables... J’ai vu votre hélicoptère. Ma jambe ne tient plus. Vous pouvez me remonter ?", 9)
 	elif first and number == 29:
@@ -728,7 +763,7 @@ func _enter_floor(number: int) -> void:
 		_say("VARGA  /  REFUGE 25", "Le refuge reste sûr. Accompagnez Léa et Idris jusqu’aux deux repères verts de réception." if continuation.phase == "active" and continuation.escort_state != "received" else ("Le groupe du congrès est à l’abri. Vous pouvez reconnaître l’exposition au 23." if continuation.phase == "active" else "Votre signal est propre. Le local technique est sécurisé. Activez son relais pour terminer l’intervention."), 9)
 	elif number == 24 and continuation.phase == "active":
 		if first:
-			_say("LÉA MOREL  /  CABINE D’INTERPRÉTATION", "Nous sommes deux dans la cabine. Idris entend mal : placez-vous devant nous et donnez un signe visible. Le foyer rejoint l’escalier de service.", 11)
+			_say("LÉA MERCIER  /  CABINE D’INTERPRÉTATION", "Nous sommes deux dans la cabine. Idris entend mal : placez-vous devant nous et donnez un signe visible. Le foyer rejoint l’escalier de service.", 11)
 		_save_checkpoint(24)
 	elif number == 23 and continuation.phase == "active":
 		if first:
@@ -743,6 +778,12 @@ func _process_hazards(delta: float, floor_number: int) -> void:
 	if player.on_rope:
 		stress = minf(100, stress + delta * 0.025)
 		return
+	if commerce.phase == "active" and is_instance_valid(commerce_visuals):
+		if commerce_visuals.smoke_exposure(player.global_position):
+			oxygen = maxf(0.0, oxygen - delta * 0.45)
+			if oxygen <= 0.0: health = maxf(0.0, health - delta * 2.0)
+		stress = minf(100.0, stress + commerce_visuals.resident_pressure(player.global_position, player.lamp_enabled) * delta)
+		if floor_number == 20: stress = maxf(0.0, stress - delta * 1.2)
 	var spec: Dictionary = _floor_spec(floor_number)
 	var hazard: String = spec.get("hazard", "none")
 	if incident.phase == "intact" and floor_number in [29, 28]:
@@ -798,6 +839,11 @@ func _find_nearest() -> void:
 	nearest = null
 	if player.on_rope or not player.is_at_landing():
 		return
+	if commerce.phase == "active" and not commerce.active_action.is_empty() and is_instance_valid(commerce_visuals):
+		var commerce_target: Node3D = commerce_visuals.action_targets.get(commerce.active_action)
+		if _commerce_target_visible(commerce_target):
+			nearest = commerce_target
+			return
 	# A held, still-visible operation owns its prompt until completion or cancellation.
 	# An adjacent supply crate must not replace the tool's instruction/progress.
 	if _can_use_equipment() and incident.phase == "aftermath" and is_instance_valid(equipment_visuals):
@@ -824,10 +870,14 @@ func _find_nearest() -> void:
 			continue
 		if str(object.get_meta("kind", "")).begins_with("continuation_") and not _continuation_target_visible(object):
 			continue
+		if str(object.get_meta("kind", "")).begins_with("commerce_") and not _commerce_target_visible(object):
+			continue
 		if str(object.get_meta("kind", "")) == "inspect":
 			if distance < inspection_distance and _can_inspect() and _interaction_visible(object):
 				inspection_distance = distance
 				inspection = object
+			continue
+		if str(object.get_meta("kind", "")) in ["survivor", "beacon", "rappel", "evidence", "supply", "refuge", "observation"] and not _legacy_interaction_reachable(object):
 			continue
 		if distance < best:
 			best = distance
@@ -841,6 +891,37 @@ func _find_nearest() -> void:
 	# Rescue controls retain their close-range priority; optional reading requires aim.
 	if is_instance_valid(inspection) and best >= 1.5:
 		nearest = inspection
+
+func _legacy_interaction_focus(object: Node3D) -> Vector3:
+	var kind: String = str(object.get_meta("kind", ""))
+	var height: float = 0.7 if kind == "supply" else (1.4 if kind == "beacon" else 1.1)
+	return object.global_position + Vector3(0, height, 0)
+
+func _legacy_interaction_reachable(object: Node3D) -> bool:
+	# The original rescue/supply actions obey the same physical reach as the
+	# later equipment sites. Revalidate at E, not just when the prompt was drawn.
+	if not started or paused or completed or arrival_playing or boot_playing or epilogue_playing or player.on_rope or not player.is_at_landing():
+		return false
+	if not is_instance_valid(object) or not object.is_visible_in_tree() or object.get_meta("used", false) or object not in world_data.get("interactables", []):
+		return false
+	if int(object.get_meta("floor", 0)) != player.nearest_floor():
+		return false
+	var distance: float = Vector2(player.global_position.x - object.global_position.x, player.global_position.z - object.global_position.z).length()
+	if distance > 3.0:
+		return false
+	var origin: Vector3 = player.camera.global_position
+	var focus: Vector3 = _legacy_interaction_focus(object)
+	var toward: Vector3 = focus - origin
+	var nearby_control: bool = str(object.get_meta("kind", "")) in ["rappel", "beacon"] and distance <= 1.5
+	if not nearby_control and toward.length_squared() > 0.001 and (-player.camera.global_basis.z).dot(toward.normalized()) < 0.55:
+		return false
+	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(origin, focus)
+	query.exclude = [player.get_rid()]
+	var hit: Dictionary = get_world_3d().direct_space_state.intersect_ray(query)
+	if hit.is_empty():
+		return true
+	var collider: Node = hit.get("collider")
+	return is_instance_valid(collider) and (collider == object or object.is_ancestor_of(collider))
 
 func _can_inspect() -> bool:
 	return started and not paused and not completed and not arrival_playing and not player.on_rope and not incident.is_active() and not is_instance_valid(carried) and not is_instance_valid(hoisting)
@@ -872,13 +953,15 @@ func _open_inspection(object: Node3D) -> void:
 	hud.show_inspection(entry)
 
 func _key(object: Node3D) -> String:
-	if str(object.get_meta("kind", "")) in ["inspect", "equipment"] or str(object.get_meta("kind", "")).begins_with("continuation_"):
+	if str(object.get_meta("kind", "")) in ["inspect", "equipment"] or str(object.get_meta("kind", "")).begins_with("continuation_") or str(object.get_meta("kind", "")).begins_with("commerce_"):
 		return str(object.get_meta("id", ""))
 	return "%s_%d" % [str(object.get_meta("kind", "unknown")), int(object.get_meta("floor", 0))]
 
 func _interact() -> void:
 	if player.on_rope:
-		if player.can_exit_rope():
+		if player.can_cancel_rope_transfer():
+			player.cancel_rope_transfer()
+		elif player.can_exit_rope():
 			player.leave_rope(int(player.rope_snapshot().get("exit_floor", 0)))
 		else:
 			_notify("Arrêtez-vous au palier et recentrez la longe avant de sortir · Espace verrouille le descendeur")
@@ -887,9 +970,11 @@ func _interact() -> void:
 		_interact_node(nearest)
 
 func _interact_node(object: Node3D) -> void:
-	if object.get_meta("used", false):
+	if not is_instance_valid(object) or object.get_meta("used", false):
 		return
 	var kind: String = object.get_meta("kind", "")
+	if kind in ["survivor", "beacon", "rappel", "evidence", "supply", "refuge", "observation"] and not _legacy_interaction_reachable(object):
+		return
 	var floor_number: int = int(object.get_meta("floor", 0))
 	if incident.is_active() and kind == "survivor":
 		_notify("La secousse continue. Restez près du rescapé ; le portage reprend dès la stabilisation.")
@@ -969,7 +1054,10 @@ func _interact_node(object: Node3D) -> void:
 			flares = mini(6, flares + 2)
 			_notify("Réserve récupérée  ·  Air remplacé, soins, 2 ancrages et 2 fusées")
 		"refuge":
-			if continuation.phase == "active":
+			if commerce.phase == "active":
+				if _save_checkpoint(25):
+					_notify("Relais 25 enregistré. " + commerce.objective())
+			elif continuation.phase == "active":
 				if _save_checkpoint(25):
 					_notify("Relais 25 enregistré. " + continuation.objective())
 			elif rescued.size() >= 3 and incident.phase == "aftermath":
@@ -986,6 +1074,8 @@ func _interact_node(object: Node3D) -> void:
 			_collect_continuation_evidence(object)
 		"continuation_finish":
 			_complete_continuation(object)
+		"commerce_action", "commerce_person", "commerce_clue", "commerce_finish":
+			_interact_commerce(object)
 
 func _start_hoist(survivor: Node3D, floor_number: int) -> void:
 	if not is_instance_valid(survivor) or int(survivor.get_meta("floor", 0)) != floor_number:
@@ -1047,7 +1137,9 @@ func _call_radio() -> void:
 	stress = maxf(0, stress - 5)
 	# Operational requests take precedence over both ambient fiction and queued
 	# normal messages. Received lines remain available in the journal.
-	if continuation.phase == "active":
+	if commerce.phase == "active":
+		_say("VARGA  /  SECOURS INFÉRIEURS", commerce.objective() + " Les groupes déjà reçus restent à l’abri au toit et au 25.", 11, true)
+	elif continuation.phase == "active":
 		_say("VARGA  /  RELAIS A25", continuation.objective() + " Les trois premières réceptions restent confirmées au toit. Bravo n’est toujours pas identifié.", 10, true)
 	elif is_instance_valid(carried):
 		_say("VARGA  /  POSTE DU TOIT", "Vous avez quelqu’un au harnais. Rejoignez la balise orange du même étage et confirmez le treuillage.", 8, true)
@@ -1098,7 +1190,7 @@ func _update_hud() -> void:
 	var stair_route: Dictionary = player.stair_context()
 	var rope_state: Dictionary = player.rope_snapshot() if player.on_rope else {}
 	var spec: Dictionary = _floor_spec(floor_number)
-	var display_names: Dictionary = {31:"Poste de commandement",30:"Restaurant panoramique",29:"Suites de Nacre",28:"Bureaux et archives",27:"Jardin des enfants",26:"Spa et piscine",25:"Refuge technique",24:"Centre de congrès",23:"Histoire de Nacre"}
+	var display_names: Dictionary = {31:"Poste de commandement",30:"Restaurant panoramique",29:"Suites de Nacre",28:"Bureaux et archives",27:"Jardin des enfants",26:"Spa et piscine",25:"Refuge technique",24:"Centre de congrès",23:"Histoire de Nacre",22:"Galerie des Alizés",21:"Cuisines de service",20:"Refuge des équipes"}
 	var name_text: String = display_names.get(floor_number, "Puits de rappel")
 	hud.location_label.text = ("TOIT" if floor_number == 31 else "ÉTAGE %02d" % floor_number) + "  ·  " + name_text
 	if not stair_route.is_empty():
@@ -1122,6 +1214,9 @@ func _update_hud() -> void:
 		atmosphere = "SIGNAL DÉGRADÉ  /  BRAVO SANS RÉPONSE"
 	elif incident.phase == "intact" and floor_number in [29,28] and not player.on_rope:
 		atmosphere = "DEUX ÉQUIPES EN INTERVENTION"
+	if commerce.phase != "dormant" and not player.on_rope and stair_route.is_empty():
+		if floor_number == 20: atmosphere = "REFUGE 20 · LIAISON ACTIVE" if commerce.has_action("relay") else "REFUGE 20 · RELAIS À RÉTABLIR"
+		elif is_instance_valid(commerce_visuals) and commerce_visuals.smoke_exposure(player.global_position): atmosphere = "FUMÉE LOCALE · ISOLER PUIS CONTENIR LE FOYER"
 	hud.depth_label.text = "ALT. %d m  ·  %s" % [int(player.position.y + 132), atmosphere]
 	hud.health_bar.value = health
 	hud.oxygen_bar.value = oxygen
@@ -1133,6 +1228,8 @@ func _update_hud() -> void:
 	hud.status_label.text = "RESCAPÉS %d / 3    •    INDICES %d / 3" % [rescued.size(), clues.size()]
 	if continuation.phase != "dormant":
 		hud.status_label.text = "TOIT 3 / 3   •   REFUGE %d / 2   •   INDICES %d / 5" % [2 if continuation.escort_state == "received" else 0, clues.size()]
+	if commerce.phase != "dormant":
+		hud.status_label.text = "À L’ABRI %d / 8   •   REFUGE 20 : %d / 3   •   INDICES %d / 7" % [5 + commerce.received_count(), commerce.received_count(), clues.size()]
 	if player.on_rope:
 		rope_state["kind"] = "rope"
 		hud.set_traversal_context(rope_state)
@@ -1144,6 +1241,8 @@ func _update_hud() -> void:
 		hud.mission_label.text = "Approche des deux tours  ·  Alpha sur Aube, Bravo sur Hespérie."
 	elif incident.is_active():
 		hud.mission_label.text = "Éloignez-vous des vitres. Le noyau et la ligne de rappel tiennent."
+	elif commerce.phase == "active":
+		hud.mission_label.text = commerce.objective()
 	elif continuation.phase == "active":
 		hud.mission_label.text = continuation.objective()
 	elif is_instance_valid(carried):
@@ -1162,9 +1261,9 @@ func _update_hud() -> void:
 	elif player.on_rope:
 		var rope_exit: String = "E  Rejoindre le palier %d" % int(rope_state.get("exit_floor", 0)) if player.can_exit_rope() else "Freinez au palier et recentrez la longe pour sortir"
 		if not str(rope_state.get("transfer", "")).is_empty():
-			rope_exit = "Transfert assuré vers le puits" if str(rope_state["transfer"]) == "attach" else "Retour assuré sur le palier"
+			rope_exit = "Transfert assuré vers le puits" if str(rope_state["transfer"]) in ["attach", "cancel_exit"] else "Retour assuré sur le palier"
 		if bool(rope_state.get("obstructed", false)):
-			rope_exit = "Passage encombré · Maintien de la longe"
+			rope_exit = "E  Annuler le transfert et revenir assuré" if bool(rope_state.get("can_cancel_transfer", false)) else "Passage encombré · Maintien de la longe"
 		hud.prompt_label.text = "S  Descendre  •  Z/W  Remonter  •  Q/D  Équilibrer\nCtrl  Précis  •  Maj  Rapide  •  Espace  Verrou  •  X  Ancrage\n" + rope_exit
 	elif not stair_route.is_empty():
 		hud.prompt_label.text = "Escalier %d ↔ %d · ZQSD / WASD pour progresser\nCette volée ne dessert que ces deux étages" % [int(stair_route["upper"]), int(stair_route["lower"])]
@@ -1185,6 +1284,20 @@ func _update_hud() -> void:
 			hud.prompt_label.text = "E  Relever · " + str(nearest.get_meta("title", "Pièce d’exposition"))
 		elif kind == "continuation_finish":
 			hud.prompt_label.text = "E  Transmettre le compte rendu de reconnaissance"
+		elif kind == "commerce_action":
+			var action: String = str(nearest.get_meta("action_id", ""))
+			hud.prompt_label.text = commerce.prompt(action, equipment.selected)
+			if action == "resident" and (player.lamp_enabled or player.global_position.distance_to(nearest.global_position) < 2.0):
+				hud.prompt_label.text = "Reculez à 2–3 m · F abaisse la lampe · Maintenir E pour parler"
+		elif kind == "commerce_person":
+			var person: String = str(nearest.get_meta("person_id", ""))
+			hud.prompt_label.text = "E · Attendez ici" if commerce.person_state(person) == "following" else "E · Suivez-moi jusqu’au refuge 20"
+			if person == "mina" and not commerce.has_action("shutter"): hud.prompt_label.text = "Dégagez d’abord le volet au Halligan"
+			if person == "theo" and not commerce.has_action("blanket"): hud.prompt_label.text = "Isolez le réchauffeur puis déployez la couverture"
+		elif kind == "commerce_clue":
+			hud.prompt_label.text = "E · Consigner " + str(nearest.get_meta("title", "le constat"))
+		elif kind == "commerce_finish":
+			hud.prompt_label.text = "E · Transmettre le bilan du refuge 20"
 		elif kind == "equipment":
 			hud.prompt_label.text = equipment.prompt(_key(nearest))
 		elif kind == "inspect":
@@ -1201,8 +1314,9 @@ func _update_hud() -> void:
 	hud.overlay.color.a = clampf((30 - health) / 160.0, 0, 0.16)
 	var rows: PackedStringArray = []
 	var map_floors: Array = [31,30,29,28,27,26,25,24,23] if continuation.phase != "dormant" else [31,30,29,28,27,26,25]
+	if commerce.phase != "dormant": map_floors.append_array([22,21,20])
 	for n: int in map_floors:
-		var title: String = {31:"TOIT",30:"RESTAURANT",29:"SUITES",28:"ARCHIVES",27:"JARDIN",26:"SPA",25:"REFUGE",24:"CONGRÈS",23:"EXPOSITION"}[n]
+		var title: String = {31:"TOIT",30:"RESTAURANT",29:"SUITES",28:"ARCHIVES",27:"JARDIN",26:"SPA",25:"REFUGE",24:"CONGRÈS",23:"EXPOSITION",22:"GALERIE",21:"CUISINES",20:"REFUGE"}[n]
 		rows.append(("▸ " if n == floor_number else "  ") + str(n) + "  " + title + ("  ✓" if "survivor_%d" % n in rescued else ""))
 	hud.floor_map.text = "\n".join(rows)
 
@@ -1247,6 +1361,11 @@ func _dossier_snapshot() -> Dictionary:
 			var entry: Dictionary = Dossier.CONTINUATION_CLUES[id].duplicate(true)
 			entry["id"] = id
 			records.append(entry)
+	for id: String in Commerce.CLUES:
+		if id in clues:
+			var entry: Dictionary = Commerce.CLUES[id].duplicate(true)
+			entry["id"] = id
+			records.append(entry)
 	return {
 		"seed": current_seed, "floor": player.nearest_floor() if player.is_at_landing() else last_floor, "checkpoint_floor": checkpoint_floor,
 		"traversal_id": str(active_route.get("route_id", active_route.get("id", ""))),
@@ -1257,7 +1376,7 @@ func _dossier_snapshot() -> Dictionary:
 		"incident_state": incident.phase, "transmissions": radio.history_snapshot(),
 		"carried_id": _key(carried) if is_instance_valid(carried) else "",
 		"hoisting_id": _key(hoisting) if is_instance_valid(hoisting) else "",
-		"continuation": continuation.snapshot()
+		"continuation": continuation.snapshot(), "commerce": commerce.snapshot()
 	}
 
 func _complete_game(play_epilogue: bool = true) -> void:
@@ -1361,6 +1480,9 @@ func _continuation_context() -> Dictionary:
 
 
 func _begin_continuation() -> void:
+	if continuation.phase == "complete":
+		_begin_commerce()
+		return
 	# Only the visible, settled first debrief owns this choice. Migration and
 	# merely reading the ending never start a new chapter or replace its save.
 	if not started or not completed or paused or epilogue_playing or boot_playing or arrival_playing or not hud.end_panel.visible or hud.journal_panel.visible:
@@ -1455,6 +1577,7 @@ func _process_continuation(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	_process_continuation(delta)
+	_process_commerce(delta)
 
 
 func _complete_continuation(object: Node3D) -> void:
@@ -1480,12 +1603,15 @@ func _show_continuation_debrief() -> void:
 	epilogue_playing = false
 	hud.set_paused(false)
 	menu_camera.current = true
-	_apply_camera_sample(Cinematics.menu_camera({"id": "floor", "floor": 23, "incident": "aftermath"}, 0.0, true))
+	_apply_camera_sample(Cinematics.menu_camera({"id": "floor", "floor": 20 if commerce.phase == "complete" else 23, "incident": "aftermath"}, 0.0, true))
 	hud.show_debrief(_dossier_snapshot())
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _fall_recovery() -> void:
 	var data: Dictionary = Save.load_data(save_path)
+	if not data.is_empty() and float(data.get("health", 0.0)) <= 0.0:
+		_return_to_menu()
+		return
 	if data.is_empty():
 		_start_new(current_seed)
 	else:
@@ -1504,6 +1630,7 @@ func _open_journal() -> void:
 func _pause(show_panel: bool = true) -> void:
 	paused = true
 	equipment.cancel()
+	commerce.cancel()
 	if is_instance_valid(equipment_visuals):
 		equipment_visuals.sample(equipment.snapshot(), false, incident.phase == "aftermath", reduced_motion)
 	for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect,audio_score,audio_rotors]:
@@ -1708,6 +1835,7 @@ func _select_equipment(id: String) -> void:
 		_notify("Rejoignez un appui stable, les mains libres, pour sortir un outil.")
 		return
 	if equipment.select_tool(id):
+		commerce.cancel()
 		_notify(str(Equipment.TITLES[id]) + " en main. Visez un point d’intervention puis maintenez E.")
 		equipment_visuals.sample(equipment.snapshot(), true, incident.phase == "aftermath", reduced_motion, elapsed)
 		_update_hud()
@@ -1738,5 +1866,115 @@ func _process_equipment(delta: float, held_override: int = -1) -> void:
 				"medical": health = minf(100.0, health + 20.0)
 		_save_checkpoint(player.nearest_floor())
 		_notify(str(result["message"]))
-	equipment_visuals.sample(equipment.snapshot(), available, incident.phase == "aftermath", reduced_motion, elapsed)
+	equipment_visuals.sample(equipment.snapshot(), available and commerce.active_action.is_empty(), incident.phase == "aftermath", reduced_motion, elapsed)
 	equipment_visuals.aim_spray(player.camera.to_global(Vector3(0.25, -0.22, -0.5)))
+
+
+func _begin_commerce() -> void:
+	if not started or not completed or paused or epilogue_playing or boot_playing or arrival_playing or not hud.end_panel.visible or hud.journal_panel.visible:
+		return
+	var previous: Dictionary = commerce.snapshot()
+	var previous_seen: Array = seen_floors.duplicate()
+	if not commerce.begin({"completed": completed, "floor": player.nearest_floor(), "at_landing": player.is_at_landing(), "continuation": continuation.snapshot()}):
+		return
+	if 23 not in seen_floors: seen_floors.append(23)
+	completed = false
+	if not _save_checkpoint(23):
+		commerce.restore(previous)
+		seen_floors = previous_seen
+		completed = true
+		hud.end_panel.subtitle_label.text = "Sauvegarde impossible. La reconnaissance au 23 reste conservée ; réessayez la poursuite."
+		return
+	_restore(Save.load_data(save_path))
+	_say("VARGA  /  SUITE DE LA RECONNAISSANCE", "L’escalier sud du 23 rejoint la galerie. Trois nouveaux signaux sont à vérifier : Mina au 22, Théo au 21 et Sofia au 20. Gardez un chemin de retour ; les groupes reçus restent à l’abri.", 13, true)
+	_update_hud()
+
+
+func _commerce_target_visible(object: Node3D) -> bool:
+	if commerce.phase != "active" or not _can_inspect() or not player.is_at_landing() or not is_instance_valid(object) or not object.is_visible_in_tree() or object.get_meta("used", false):
+		return false
+	if object not in world_data.get("interactables", []) or int(object.get_meta("floor", 0)) != player.nearest_floor():
+		return false
+	var origin: Vector3 = player.camera.global_position
+	var focus: Vector3 = object.global_position + (object.get_meta("focus_offset", Vector3(0, 1.2, 0)) as Vector3)
+	var toward: Vector3 = focus - origin
+	if toward.length() > 3.15 or toward.length_squared() < 0.001 or (-player.camera.global_basis.z).dot(toward.normalized()) < 0.72:
+		return false
+	var query := PhysicsRayQueryParameters3D.create(origin, focus)
+	query.exclude = [player.get_rid()]
+	var hit: Dictionary = get_world_3d().direct_space_state.intersect_ray(query)
+	if hit.is_empty(): return true
+	var collider: Node = hit.get("collider")
+	return is_instance_valid(collider) and (collider == object or object.is_ancestor_of(collider) or (str(object.get_meta("kind", "")) == "commerce_person" and collider == object.get_parent()))
+
+
+func _commerce_action_context(object: Node3D) -> bool:
+	if not _commerce_target_visible(object): return false
+	if str(object.get_meta("action_id", "")) == "resident":
+		return not player.lamp_enabled and player.global_position.distance_to(object.global_position) >= 2.0
+	return true
+
+
+func _interact_commerce(object: Node3D) -> void:
+	if not _commerce_target_visible(object): return
+	match str(object.get_meta("kind", "")):
+		"commerce_action":
+			var id: String = str(object.get_meta("action_id", ""))
+			if not _commerce_action_context(object) or not commerce.begin_action(id, equipment.selected):
+				_notify("Abaissez la lampe et gardez 2 à 3 mètres pour parler." if id == "resident" else commerce.prompt(id, equipment.selected))
+			else:
+				equipment.cancel()
+		"commerce_person":
+			var id: String = str(object.get_meta("person_id", ""))
+			var first: bool = id not in commerce.state["contacted"]
+			if commerce.toggle_person(id):
+				commerce_visuals.apply_state(commerce.snapshot())
+				if first: _save_checkpoint(player.nearest_floor())
+				_notify(str(Commerce.PEOPLE[id]["name"]) + (" vous suit vers le refuge 20. Gardez moins de 5 mètres d’écart." if commerce.person_state(id) == "following" else " attend ici. Revenez et donnez le signal pour reprendre."))
+			else:
+				_notify("Le volet doit être dégagé." if id == "mina" else "Isolez le réchauffeur et contenez le foyer avant de déplacer Théo.")
+		"commerce_clue":
+			var id: String = _key(object)
+			if Commerce.CLUES.has(id) and id not in clues:
+				clues.append(id)
+				object.set_meta("used", true)
+				_say("ALEX  /  CONSTAT CONSIGNÉ", Commerce.CLUES[id]["text"], 12)
+				_save_checkpoint(player.nearest_floor())
+		"commerce_finish":
+			var previous: Dictionary = commerce.snapshot()
+			if not commerce.complete({"floor": player.nearest_floor(), "at_landing": player.is_at_landing(), "clues": clues}):
+				_notify("Bilan incomplet : trois personnes reçues au 20, relais alimenté, registre du 22 et consigne du 21 à relever.")
+				return
+			completed = true
+			if not _save_checkpoint(20):
+				commerce.restore(previous)
+				completed = false
+				return
+			commerce_visuals.apply_state(commerce.snapshot())
+			_show_continuation_debrief()
+	_update_hud()
+
+
+func _process_commerce_action(delta: float, held_override: int = -1) -> void:
+	if not is_instance_valid(commerce_visuals): return
+	var target: Node3D = commerce_visuals.action_targets.get(commerce.active_action)
+	var held: bool = Input.is_action_pressed("interact") if held_override < 0 else held_override == 1
+	var result: Dictionary = commerce.advance_action(delta, _commerce_action_context(target), held, equipment.selected)
+	if result.is_empty(): return
+	commerce_visuals.apply_state(commerce.snapshot())
+	_save_checkpoint(player.nearest_floor())
+	_notify(str(result["message"]))
+	_say("ALEX  /  INTERVENTION", str(result["message"]), 8)
+
+
+func _process_commerce(delta: float) -> void:
+	if commerce.phase != "active" or not started or paused or completed or arrival_playing or not is_instance_valid(commerce_visuals): return
+	var running: bool = not player.on_rope and not incident.is_active()
+	var allow_unease: bool = player.is_at_landing() and not radio.is_busy() and commerce.active_action.is_empty()
+	commerce_visuals.advance(delta, player.global_position, running, allow_unease, player.lamp_enabled, reduced_motion)
+	if not player.is_at_landing() or player.nearest_floor() != 20: return
+	for id: String in Commerce.PERSON_IDS:
+		if commerce.receive(id, player.nearest_floor(), commerce_visuals.physically_arrived(id)):
+			commerce_visuals.apply_state(commerce.snapshot())
+			_say("VARGA  /  RÉCEPTION AU REFUGE 20", "%s est reçu·e au refuge 20. %d sur 3 nouvelles personnes à l’abri." % [Commerce.PEOPLE[id]["name"], commerce.received_count()], 9, true)
+			_save_checkpoint(20)

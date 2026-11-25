@@ -1,12 +1,26 @@
 # Présences ennemis et statistiques de rencontre
 
-**Version 0.8.0 — Une présence perceptive et seize archétypes de campagne — 25 novembre 2026**
+**Base v0.8.0 — Une présence perceptive et seize archétypes de campagne ; annotations de périmètre v0.12.0 — 25 novembre 2026**
 
 Le joueur affronte des situations qu’il peut lire, vérifier et modifier. Le bestiaire sert la mission de sauvetage : il ne transforme pas chaque étage en arène à nettoyer. Une routine ancienne, une voix imitée et un animal territorial n’utilisent pas les mêmes règles, même si tous peuvent créer de la tension.
 
 La figure E00 du spa devient une présence perceptive dans la 0.8 : elle ne poursuit plus le joueur et ne lui inflige aucun dégât. Les seize archétypes E01 à E16 ci-dessous sont des spécifications de campagne, avec des valeurs initiales à tester. Aucun chiffre proposé n’est présenté comme une mesure issue d’une partie de campagne ou d’un équilibrage déjà validé.
 
 La 0.8 conserve le périmètre jouable toit–25 et ralentit la révélation de l’horreur. Le dossier et l’épilogue du refuge n’ajoutent ni adversaire ni combat final. Le fragment de relais laisse l’origine du signal ouverte ; il ne confirme pas la présence d’un archétype de campagne dans le secteur jouable. La simulation de mission et la présentation restent suspendues pendant la lecture du journal et après la clôture de mission.
+
+## Périmètre des présences dans la candidature v0.12
+
+Le [supplément A22–A20](CONTINUATION_A22_A20_V0.12.md) étend le secours jusqu’au refuge 20. Les fiches E01–E16 ci-dessous conservent leurs valeurs et implantations **proposées pour la campagne**. Seuls les comportements explicitement intégrés sont décrits comme tels ; le nom d’un archétype ne livre pas l’ensemble de sa fiche.
+
+| Présence intégrée | Comportement limité au prototype | Ce qui reste une spécification |
+| --- | --- | --- |
+| Routine E01 au 23, depuis v0.10 | Apparition facultative sans attaque ni poursuite | Développements de campagne et fonction d’enquête générale de la fiche E01 |
+| Retranché au 22, v0.12 | Occupant fixe réagissant à la proximité et à la lampe ; dialogue d’apaisement facultatif, à distance et lampe abaissée | Première confrontation E11 au **21**, attaques, poursuite, santé de confrontation, désarmement et états avancés |
+| Forme distante des cuisines au 21, v0.12 | Manifestation visuelle sans attaque, destinée à prolonger le doute | Identité démontrée, ennemi corporel et explication infernale |
+
+Le Retranché du **22** adapte localement le thème d’E11 sans déplacer le canon de campagne de sa fiche au **21**. Il ne compte pas parmi les trois personnes à recevoir au refuge 20, et son apaisement ne conditionne pas leur bilan. Sa réaction peut augmenter la pression ressentie par Alex ; aucune statistique d’attaque de la fiche E11 n’est active dans cette scène. Les règles réellement utilisées viennent de [commerce_director.gd](../prototype/scripts/commerce_director.gd) et [commerce_presentation.gd](../prototype/scripts/commerce_presentation.gd).
+
+Les deux documents des commerces et des cuisines rapprochent des faits antérieurs à la catastrophe sans attester l’Enfer. Le faux appel E02 proposé pour A22, les autres humains hostiles, les expériences et les rencontres infernales non intégrées restent à produire. Les nouvelles présences ne confirment ni le sort de Bravo ni une interprétation unique des perceptions. La progression conserve les signes discrets puis récurrents avant les développements humains et infernaux de campagne.
 
 ## Convention des statistiques
 
@@ -177,6 +191,8 @@ La mise en scène n’atteste pas un exorcisme lorsqu’une fusée masque la for
 **Son, placement et reprise.** Les voix reprennent des motifs entendus plus haut, avec mots compréhensibles et silences de décision. Aucun volume extrême n’est nécessaire à l’intensité. Rencontre unique dans I04, au-delà de P666, avec routes et stations préparées. Le checkpoint reprend à une accalmie entre objectifs avec le même état d’Alma, du seuil et des preuves.
 
 ## E11 Le Retranché — humain
+
+**Statut v0.12.** La fiche suivante reste la confrontation de campagne proposée au **21**. Le dialogue facultatif du prototype au **22**, décrit en tête de ce document et dans le [supplément A22–A20](CONTINUATION_A22_A20_V0.12.md), n’active ni ses dommages, ni sa poursuite, ni sa santé de confrontation.
 
 **Rôle et silhouette.** Un occupant réel s’est approprié une réserve et considère toute approche comme une intrusion. Il barricade, écoute et menace avant d’agir. Sa tenue reste celle d’un salarié ou d’un résident ; ses mouvements ont un poids et une fatigue. Il n’est ni une apparition, ni le représentant de toute personne en détresse.
 

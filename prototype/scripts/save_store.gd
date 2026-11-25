@@ -3,7 +3,8 @@ extends RefCounted
 ## Versioned local checkpoint storage. Invalid input never overwrites a valid save.
 
 const Continuation = preload("res://scripts/continuation_director.gd")
-const SAVE_VERSION: int = 4
+const Commerce = preload("res://scripts/commerce_director.gd")
+const SAVE_VERSION: int = 5
 # Keep the original filename so a 0.1 installation can find its checkpoint.
 const DEFAULT_PATH: String = "user://save_v1.json"
 const MAX_BYTES: int = 65536
@@ -16,7 +17,7 @@ const RADIO_EVENT_IDS: Array[String] = ["bravo_echo", "bravo_verification"]
 const INTEGER_LIMITS: Dictionary = {
 	"version": [SAVE_VERSION, SAVE_VERSION],
 	"seed": [1, 999999],
-	"floor": [23, 31],
+	"floor": [20, 31],
 	"anchors": [0, 8],
 	"flares": [0, 6]
 }
@@ -30,16 +31,16 @@ const ID_FIELDS: Array[String] = ["rescued", "clues", "supplies_used"]
 const REQUIRED_KEYS: Array[String] = [
 	"version", "seed", "floor", "health", "oxygen", "stress", "anchors",
 	"flares", "rescued", "clues", "supplies_used", "elapsed", "seen_floors", "completed",
-	"incident_state", "transmissions", "radio_events", "continuation"
+	"incident_state", "transmissions", "radio_events", "continuation", "commerce"
 ]
 
 
 static func save_data(data: Dictionary, path: String = DEFAULT_PATH) -> Error:
 	# The previous writer API remains usable by validated v3 fixtures/clients.
 	# Old bounds and exact keys are checked before adding the dormant extension.
-	var schema: int = 3 if typeof(data.get("version")) == TYPE_INT and data.get("version") == 3 else SAVE_VERSION
+	var schema: int = int(data.get("version")) if typeof(data.get("version")) == TYPE_INT and data.get("version") in [3, 4] else SAVE_VERSION
 	var normalized: Dictionary = _normalize(data, false, schema)
-	if not normalized.is_empty() and schema == 3:
+	if not normalized.is_empty() and schema < SAVE_VERSION:
 		normalized = _migrate_legacy(normalized, schema)
 	if normalized.is_empty():
 		return ERR_INVALID_DATA
@@ -115,7 +116,9 @@ static func _migrate_legacy(legacy: Dictionary, schema: int) -> Dictionary:
 	if schema < 3:
 		migrated["transmissions"] = []
 		migrated["radio_events"] = []
-	migrated["continuation"] = Continuation.dormant_state()
+	if schema < 4:
+		migrated["continuation"] = Continuation.dormant_state()
+	migrated["commerce"] = Commerce.dormant_state()
 	return _normalize(migrated, false)
 
 
@@ -126,6 +129,8 @@ static func _valid_path(path: String) -> bool:
 
 static func _normalize(data: Dictionary, from_json: bool, schema: int = SAVE_VERSION) -> Dictionary:
 	var required_keys: Array[String] = REQUIRED_KEYS.duplicate()
+	if schema < 5:
+		required_keys.erase("commerce")
 	if schema < 4:
 		required_keys.erase("continuation")
 	if schema < 3:
@@ -144,7 +149,7 @@ static func _normalize(data: Dictionary, from_json: bool, schema: int = SAVE_VER
 		if typeof(value) != TYPE_INT:
 			if not from_json or typeof(value) != TYPE_FLOAT or not is_finite(float(value)) or floorf(float(value)) != float(value):
 				return {}
-		var limits: Array = [schema, schema] if key == "version" else ([25, 31] if key == "floor" and schema < 4 else INTEGER_LIMITS[key])
+		var limits: Array = [schema, schema] if key == "version" else (([25, 31] if schema < 4 else [23, 31]) if key == "floor" and schema < 5 else INTEGER_LIMITS[key])
 		if value < limits[0] or value > limits[1]:
 			return {}
 		result[key] = int(value)
@@ -166,14 +171,14 @@ static func _normalize(data: Dictionary, from_json: bool, schema: int = SAVE_VER
 				return {}
 			ids.append(value)
 		result[field] = ids
-	if not data["seen_floors"] is Array or data["seen_floors"].size() > (7 if schema < 4 else 9):
+	if not data["seen_floors"] is Array or data["seen_floors"].size() > (7 if schema < 4 else (9 if schema < 5 else 12)):
 		return {}
 	var seen_floors: Array[int] = []
 	for value in data["seen_floors"]:
 		if typeof(value) != TYPE_INT:
 			if not from_json or typeof(value) != TYPE_FLOAT or not is_finite(float(value)) or floorf(float(value)) != float(value):
 				return {}
-		if value < (25 if schema < 4 else 23) or value > 31 or seen_floors.has(int(value)):
+		if value < (25 if schema < 4 else (23 if schema < 5 else 20)) or value > 31 or seen_floors.has(int(value)):
 			return {}
 		seen_floors.append(int(value))
 	result["seen_floors"] = seen_floors
@@ -230,7 +235,12 @@ static func _normalize(data: Dictionary, from_json: bool, schema: int = SAVE_VER
 		result["radio_events"] = events
 	if schema >= 4:
 		var continuation_state: Dictionary = Continuation.normalize(data["continuation"], true)
-		if continuation_state.is_empty() or not Continuation.checkpoint_consistent(result, continuation_state):
+		var commerce_state: Dictionary = Commerce.normalize(data.get("commerce", Commerce.dormant_state()), true)
+		if commerce_state.is_empty() or continuation_state.is_empty() or not Continuation.checkpoint_consistent(result, continuation_state, commerce_state["phase"] != "dormant"):
 			return {}
 		result["continuation"] = continuation_state
+		if schema >= 5:
+			if not Commerce.checkpoint_consistent(result, commerce_state):
+				return {}
+			result["commerce"] = commerce_state
 	return result

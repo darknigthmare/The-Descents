@@ -10,11 +10,11 @@ func _initialize() -> void:
 
 func _run() -> void:
 	var library: RefCounted = Surfaces.new()
-	_check(Surfaces.CATALOG.size() == 8, "Material source catalogue is incomplete.")
+	_check(Surfaces.CATALOG.size() == 10, "Material source catalogue is incomplete.")
 	for id: String in Surfaces.CATALOG:
 		var material: StandardMaterial3D = library.get_surface(id)
 		var spec: Dictionary = Surfaces.CATALOG[id]
-		_check(ResourceLoader.exists(Surfaces.ASSET_ROOT + id + ".png"), "Required authored albedo asset is absent: " + id)
+		_check(ResourceLoader.exists(Surfaces.asset_path(id)), "Required authored albedo asset is absent: " + id)
 		_check(material.albedo_texture != null and bool(material.get_meta("asset_loaded", false)), "Final material still uses a placeholder colour: " + id)
 		if material.albedo_texture != null:
 			_check(material.albedo_texture.get_width() >= 256 and material.albedo_texture.get_height() >= 256, "Authored albedo is unexpectedly small: " + id)
@@ -39,11 +39,11 @@ func _run() -> void:
 	var unknown: StandardMaterial3D = library.get_surface("missing_catalogue_entry", Color("aabbcc"))
 	_check(unknown != null and unknown.albedo_texture == null and unknown.albedo_color.is_equal_approx(Color("aabbcc")), "Unknown material has no safe visible fallback.")
 	var snapshot: Dictionary = library.snapshot()
-	_check(snapshot["assets"].size() == 8 and str(snapshot["projection"]).contains("triplanar"), "Material provenance snapshot is incomplete.")
+	_check(snapshot["assets"].size() == 10 and str(snapshot["projection"]).contains("triplanar"), "Material provenance snapshot is incomplete.")
 	for record: Dictionary in snapshot["assets"]:
 		_check(record["loaded"], "Material manifest reports a missing final PNG: " + str(record["file"]))
 	if failures.is_empty():
-		print("PASS surface materials v0.11: %d checks; eight authored assets, metre-scale UVs, bounded procedural detail and local moving variants." % checks)
+		print("PASS surface materials v0.11: %d checks; ten authored assets, metre-scale UVs, bounded procedural detail and local moving variants." % checks)
 		quit(0)
 	else:
 		for failure: String in failures:

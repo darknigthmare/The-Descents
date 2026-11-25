@@ -1,6 +1,21 @@
 # Scènes, cinématiques et accueil
 
-**The Tower Descent — version 0.9.0.** Cette annexe fournit le découpage de l’ouverture, de la clôture au refuge, des transitions avec le jeu et des scènes à produire pour la campagne. La direction recherche la précision d’une présentation cinématographique : composition, rythme, lisibilité des équipes et continuité du son. Le résultat actuel reste une maquette en temps réel dans Godot, avec personnages et décors procéduraux. Il ne constitue pas une livraison de personnages, d’animations faciales ou d’assets « AAA » définitifs. Les résultats d’exécution et de revue restent documentés séparément dans l’état de livraison.
+**The Tower Descent — base de découpage v0.9.0, annotations de périmètre v0.12.0.** Cette annexe fournit le découpage de l’ouverture, de la clôture au refuge, des transitions avec le jeu et des scènes à produire pour la campagne. La direction recherche la précision d’une présentation cinématographique : composition, rythme, lisibilité des équipes et continuité du son. Le résultat de référence reste une maquette en temps réel dans Godot, avec personnages et décors procéduraux ; les lots d’accessoires ajoutés depuis sont précisés dans les suppléments. Il ne constitue pas une livraison de personnages, d’animations faciales ou d’assets « AAA » définitifs. Les résultats d’exécution et de revue restent documentés séparément dans l’état de livraison.
+
+## Périmètre de mise en scène de la candidature v0.12
+
+Le [supplément A22–A20](CONTINUATION_A22_A20_V0.12.md) ajoute un chapitre jouable après la reconnaissance du 23. **Aucune nouvelle cinématique automatique n’accompagne son ouverture ou sa clôture.** Le bouton du bilan 23 engage explicitement la continuation après enregistrement du départ. Les interventions et le dialogue du Retranché conservent le regard du joueur. Le bilan du 20 apparaît après les trois réceptions physiques, la remise en service du relais et la collecte des deux constats.
+
+| Contexte ajouté | Présentation effectivement utilisée | Limite |
+| --- | --- | --- |
+| Bilan achevé au 23 | Bouton « Poursuivre vers les commerces » ; les cinq premières réceptions restent visibles dans le dossier | Consulter ou charger le bilan ne lance pas le chapitre |
+| Commerces 22 et cuisines 21 | Décors jouables, douze nouveaux modèles statiques, interventions et documents lisibles en contexte | Les captures préparées de ces états ne sont pas des cinématiques supplémentaires |
+| Retranché au 22 | Réaction à la distance et à la lampe, puis apaisement facultatif | Aucun combat de la fiche E11, aucune scène SC12 automatique |
+| Refuge et bilan au 20 | Présence des personnes reçues, dossier actualisé et cadrage du refuge | Aucun lancement automatique d’un étage inférieur ; aucun épilogue supplémentaire |
+
+L’accueil sélectionne le contexte confirmé par la sauvegarde, y compris les états actifs des étages 22–20 et le bilan du 20. Le tableau historique de SC01 ci-dessous décrit la base toit–25 ; il ne constitue plus la liste exhaustive des points sûrs. Les sources actuelles sont [cinematic_director.gd](../prototype/scripts/cinematic_director.gd), [frontend_menu.gd](../prototype/scripts/frontend_menu.gd) et [main.gd](../prototype/scripts/main.gd).
+
+L’arrivée conserve les deux tours intactes, puis l’effondrement d’Hespérie est vécu pendant l’intervention supérieure. La suite commence après cet incident sans le rejouer. La routine perceptive du 23 et la forme distante du 21 ne livrent pas une révélation de l’Enfer. **SC12 reste une scène de campagne au 21** ; le contact facultatif du 22 est une adaptation limitée décrite dans le supplément. Les autres scènes non intégrées, les attaques proposées et les franchissements dimensionnels restent des spécifications.
 
 ## 1 Intentions et langage visuel
 
@@ -263,6 +278,8 @@ Cette scène conserve son identifiant de campagne. Elle se déroule bien après 
 **Conclusion cible, 35 à 60 secondes passables.** Après le retour, une galerie étroite s’ouvre vers le jour. Le son sépare de nouveau mer, vent et radio. Une réponse liée aux personnes et relais préservés confirme la continuité humaine. La vue basse des tours mesure la descente. Le bilan fournit les personnes sauvées et les preuves, sans transformer une exposition maximale au danger en score obligatoire. Passer cette conclusion rend le bilan ; passer un insert du dernier acte ne valide pas les objectifs restants.
 
 ### SC12 Le premier retranchement humain
+
+**Statut v0.12.** Découpage de campagne conservé au **21**, non livré dans son intégralité. Le Retranché du prototype se trouve au **22** et utilise seulement une interaction facultative d’apaisement, sans attaque ni prise de caméra. Son existence ne valide pas les durées, les gestes ou les états de confrontation proposés ci-dessous.
 
 **Contexte et fonction.** Séquence future au A21, après l’apprentissage du problème matériel des cuisines. Un humain E11 occupe la réserve et prend la lampe d’Alex pour le signe d’une intrusion. Sa silhouette reste la même lorsqu’Alex regarde ailleurs. Sa respiration, ses appuis, la porte qu’il tient et ses paroles établissent un corps présent, distinct des aperçus du haut de tour.
 

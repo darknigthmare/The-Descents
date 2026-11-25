@@ -81,6 +81,7 @@ func _run() -> void:
 		var expected: Dictionary = saved.duplicate(true)
 		expected["version"] = Store.SAVE_VERSION
 		expected["continuation"] = {"phase": "dormant", "started_at_refuge": false, "duo_briefed": false, "escort_state": "waiting"}
+		expected["commerce"] = preload("res://scripts/commerce_director.gd").dormant_state()
 		_check(mission.menu_context["floor"] == sample[0] and mission.menu_context["incident"] == sample[1] and mission.menu_snapshot == expected, "Menu preview did not preserve the validated legacy checkpoint through its explicit schema migration.")
 		_check(mission.current_seed == saved["seed"] and mission.world.roof_rescued_people["survivor_30"].visible and not _find("survivor", 30).visible, "Menu reconstructed the wrong seed or duplicated a confirmed rescue.")
 		_check((not mission.world.twin_tower.rotation.is_zero_approx()) == (sample[1] == "aftermath"), "Menu revealed future tower damage or concealed already witnessed damage.")

@@ -3,6 +3,7 @@ extends SceneTree
 ## completion integrity and modal ownership; it is not a human playthrough.
 
 const MainScene = preload("res://scenes/main.tscn")
+const InteractionFixture = preload("res://tests/interaction_fixture.gd")
 const Store = preload("res://scripts/save_store.gd")
 const Preferences = preload("res://scripts/preferences_store.gd")
 const SAVE_PATH: String = "user://qa_v07_epilogue_integration.json"
@@ -39,6 +40,7 @@ func _run() -> void:
 	mission.elapsed = 90.0
 	mission._complete_game()
 	_check(not mission.completed and not mission.epilogue_playing, "An incomplete intervention entered its ending.")
+	InteractionFixture.face(mission, _find("evidence", 29))
 	mission._interact_node(_find("evidence", 29))
 	var projection: Dictionary = mission._dossier_snapshot()
 	_check(projection["clue_records"].size() == 1 and projection["clue_records"][0]["id"] == "evidence_29", "Main leaked uncollected clue records into the dossier projection.")
@@ -60,7 +62,7 @@ func _run() -> void:
 	mission.health = 78.0
 	mission.oxygen = 83.0
 	mission.stress = 41.0
-	mission.player.teleport_to_floor(25)
+	InteractionFixture.face(mission, _find("refuge", 25))
 	mission.world.set_process(true)
 	var before_failed_completion: String = FileAccess.get_file_as_string(SAVE_PATH)
 	mission.save_path = "user://qa_v07_absent_%d/completion.json" % Time.get_ticks_usec()
@@ -178,8 +180,9 @@ func _state() -> Dictionary:
 		"player_position": mission.player.position, "carried": mission.carried, "hoisting": mission.hoisting}
 
 func _extract(floor_number: int) -> void:
-	mission.player.teleport_to_floor(floor_number)
+	InteractionFixture.face(mission, _find("survivor", floor_number))
 	mission._interact_node(_find("survivor", floor_number))
+	InteractionFixture.face(mission, _find("beacon", floor_number))
 	mission._interact_node(_find("beacon", floor_number))
 	mission._process_hoist(5.01)
 

@@ -3,6 +3,7 @@ extends SceneTree
 ## tested rope travel and transfers use the player's real move_and_collide.
 
 const MainScene = preload("res://scenes/main.tscn")
+const InteractionFixture = preload("res://tests/interaction_fixture.gd")
 const Store = preload("res://scripts/save_store.gd")
 const Routes = preload("res://scripts/route_catalog.gd")
 const PhysicalRoutes = preload("res://tests/test_vertical_routes.gd")
@@ -257,7 +258,7 @@ func _test_stair_checkpoint() -> void:
 	mission._process(0.01)
 	_check(mission.player.is_at_landing() and mission.last_floor == 29 and 29 in mission.seen_floors, "Reaching the lower slab did not commit the actual floor arrival.")
 	_check(not mission.traversal_checkpoint_pending and Store.load_data(SAVE).get("floor", 0) == 29, "The pending staircase checkpoint did not save on the reached lower slab.")
-	_check(Store.load_data(SAVE).get("version", 0) == 4 and not Store.load_data(SAVE).has("rope_state"), "Transient traversal state leaked into the stable schema-4 checkpoint.")
+	_check(Store.load_data(SAVE).get("version", 0) == Store.SAVE_VERSION and not Store.load_data(SAVE).has("rope_state"), "Transient traversal state leaked into the stable schema-4 checkpoint.")
 	stair_driver.queue_free()
 	stair_driver = null
 	await process_frame
@@ -265,17 +266,23 @@ func _test_stair_checkpoint() -> void:
 
 func _test_operational_priority() -> void:
 	await _station_fixture("R31_30", 30)
+	InteractionFixture.face(mission, _object("beacon", 30))
 	var p: Vector3 = mission.player.position
 	mission._interact_node(_object("beacon", 30))
 	_check(not mission.player.on_rope and mission.player.position == p, "An orange beacon without a casualty starts the personal rope.")
 	var casualty: Node3D = _object("survivor", 30)
+	InteractionFixture.face(mission, casualty)
 	mission._interact_node(casualty)
+	InteractionFixture.face(mission, _object("rappel", 30))
 	mission._interact_node(_object("rappel", 30))
 	_check(mission.carried == casualty and mission.player.carrying and not mission.player.on_rope, "A carried casualty was admitted onto the personal descender.")
+	InteractionFixture.face(mission, _object("beacon", 29))
 	mission._interact_node(_object("beacon", 29))
 	_check(mission.carried == casualty and mission.hoisting == null and mission.rescued.is_empty(), "A different-floor beacon evacuated a casualty from the wrong origin.")
+	InteractionFixture.face(mission, _object("beacon", 30))
 	mission._interact_node(_object("beacon", 30))
 	_check(mission.hoisting == casualty and mission.carried == null, "The valid origin beacon could not begin the rescue after rejecting a wrong floor.")
+	InteractionFixture.face(mission, _object("rappel", 30))
 	mission._interact_node(_object("rappel", 30))
 	_check(not mission.player.on_rope and mission.hoisting == casualty, "A live hoist allowed a new personal rappel.")
 	mission._process_hoist(5.1)
@@ -346,7 +353,9 @@ func _test_stair_radio_gate() -> void:
 	# Complete Samuel's real hoist so every narrative prerequisite is genuine.
 	mission.player.teleport_to_floor(28)
 	mission.last_floor = 28
+	InteractionFixture.face(mission, _object("survivor", 28))
 	mission._interact_node(_object("survivor", 28))
+	InteractionFixture.face(mission, _object("beacon", 28))
 	mission._interact_node(_object("beacon", 28))
 	mission._process_hoist(5.1)
 	mission.rescue_visuals.finish_reception()

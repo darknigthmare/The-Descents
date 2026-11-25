@@ -43,6 +43,7 @@ func _run() -> void:
 	# Materialise an exact legacy-v3 checkpoint without touching the v4 writer.
 	var legacy: Dictionary = Store.load_data(SAVE)
 	legacy.erase("continuation")
+	legacy.erase("commerce")
 	legacy["version"] = 3
 	var file: FileAccess = FileAccess.open(SAVE, FileAccess.WRITE)
 	file.store_string(JSON.stringify(legacy))
@@ -70,7 +71,7 @@ func _run() -> void:
 	await physics_frame
 	var started: Dictionary = Store.load_data(SAVE)
 	_check(mission.continuation.phase == "active" and not mission.completed and mission.player.active, "The real debrief button did not return control to an active chapter.")
-	_check(started.get("version") == 4 and started["continuation"]["phase"] == "active" and started["floor"] == 25 and 25 in started["seen_floors"], "The chapter did not establish its durable starting checkpoint.")
+	_check(started.get("version") == Store.SAVE_VERSION and started["continuation"]["phase"] == "active" and started["floor"] == 25 and 25 in started["seen_floors"], "The chapter did not establish its durable starting checkpoint.")
 	_check(mission.world_data["routes"].size() == 8 and not mission.world.continuation_access_cover.visible, "The recorded continuation did not open the two new routes.")
 	var active_bytes: String = FileAccess.get_file_as_string(SAVE)
 	mission.hud.descent_requested.emit()
@@ -135,7 +136,7 @@ func _run() -> void:
 	mission.save_path = SAVE
 	mission._interact_node(terminal)
 	_check(mission.completed and mission.continuation.phase == "complete" and mission.hud.end_panel.visible and not mission.player.active and not mission.world.is_processing(), "Final recognition did not stop gameplay and display its recorded report.")
-	_check(mission.hud.end_panel.model["total_received"] == 5 and not mission.hud.end_panel.replay_button.visible and not mission.hud.end_panel.descent_button.visible, "The final report lost received people or exposed old phase controls.")
+	_check(mission.hud.end_panel.model["total_received"] == 5 and not mission.hud.end_panel.replay_button.visible and mission.hud.end_panel.descent_button.visible and mission.hud.end_panel.descent_button.text == "Poursuivre vers les commerces", "The final report lost received people or exposed old phase controls.")
 	var final_bytes: String = FileAccess.get_file_as_string(SAVE)
 	mission.hud.epilogue_replay_requested.emit()
 	_check(not mission.epilogue_playing, "A stale old-epilogue signal replaced the new final report.")

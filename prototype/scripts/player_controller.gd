@@ -46,9 +46,11 @@ var rope_transfer_floor: int = 0
 var rope_obstructed: bool = false
 var last_ground_height: float = 42.0
 var continuation_enabled: bool = false
+var commerce_enabled: bool = false
 
-func configure_continuation(enabled: bool) -> void:
+func configure_continuation(enabled: bool, enable_commerce: bool = false) -> void:
 	continuation_enabled = enabled
+	commerce_enabled = enabled and enable_commerce
 
 func _ready() -> void:
 	name = "Rescuer"
@@ -129,7 +131,7 @@ func _physics_process(delta: float) -> void:
 		_process_walk(delta)
 	_apply_disaster_motion()
 	flashlight.visible = lamp_enabled
-	if position.y < (-10.0 if continuation_enabled else 2.0) or (not on_rope and position.y < last_ground_height - 3.5):
+	if position.y < (-28.0 if commerce_enabled else (-10.0 if continuation_enabled else 2.0)) or (not on_rope and position.y < last_ground_height - 3.5):
 		active = false
 		lost_footing.emit()
 
@@ -209,6 +211,7 @@ func _apply_rope_state(state: Dictionary) -> void:
 func _process_rope_transfer(delta: float) -> void:
 	if not active:
 		return
+	var previously_obstructed: bool = rope_obstructed
 	var next_elapsed: float = minf(TRANSFER_DURATION, rope_transfer_elapsed + delta)
 	var ratio: float = smoothstep(0.0, 1.0, next_elapsed / TRANSFER_DURATION)
 	var target: Vector3 = rope_transfer_origin.lerp(rope_transfer_target, ratio)
@@ -216,7 +219,7 @@ func _process_rope_transfer(delta: float) -> void:
 	velocity = Vector3.ZERO
 	if collision != null and global_position.distance_to(target) > 0.015:
 		if not rope_obstructed:
-			traversal_notice.emit("Passage encombré. La longe reste attachée ; dégagez le palier.")
+			traversal_notice.emit("Passage encombré. E pour revenir au point de départ, longe attachée." if rope_transfer in ["attach", "exit"] else "Retour encombré. La longe reste attachée ; le mouvement reprendra dès que le passage sera libre.")
 		rope_obstructed = true
 		_draw_rope()
 		return
@@ -226,11 +229,38 @@ func _process_rope_transfer(delta: float) -> void:
 	rope_presentation.sample(rope_snapshot(), reduced_motion)
 	if next_elapsed < TRANSFER_DURATION:
 		return
-	if rope_transfer == "exit":
+	if rope_transfer in ["exit", "cancel_attach"]:
+		# A floor may become unsupported after the transfer started. The belay
+		# is released only after checking the real destination once more.
+		if not _has_landing_support(global_position):
+			rope_obstructed = true
+			if not previously_obstructed:
+				traversal_notice.emit("Appui indisponible. La longe reste attachée.")
+			return
 		_finish_dismount()
 	else:
 		rope.sync_position(global_position)
 		rope_transfer = ""
+
+func can_cancel_rope_transfer() -> bool:
+	return active and on_rope and rope_obstructed and rope_transfer in ["attach", "exit"]
+
+func cancel_rope_transfer() -> bool:
+	if not can_cancel_rope_transfer():
+		return false
+	var destination: Vector3 = rope_transfer_origin
+	# Reverse along the already crossed segment. Never teleport through the
+	# obstruction, release above a hole, or spend another anchor for recovery.
+	if rope_transfer == "attach" and not _has_landing_support(destination):
+		traversal_notice.emit("Le point de départ ne porte plus. La longe reste attachée.")
+		return false
+	if test_move(global_transform, destination - global_position):
+		traversal_notice.emit("Retour également encombré. La longe reste attachée.")
+		return false
+	var return_kind: String = "cancel_attach" if rope_transfer == "attach" else "cancel_exit"
+	_begin_transfer(return_kind, destination, rope_transfer_floor)
+	traversal_notice.emit("Retour assuré vers l’appui de départ." if return_kind == "cancel_attach" else "Retour assuré vers la ligne de rappel.")
+	return true
 
 func _begin_transfer(kind: String, target: Vector3, floor_number: int) -> void:
 	rope_transfer = kind
@@ -266,8 +296,10 @@ func engage_rope(floor_number: int, route_id: String = "") -> bool:
 	var route: Dictionary = Routes.for_id(route_id)
 	if not continuation_enabled and int(route.get("lower", 25)) < 25:
 		return false
+	if not commerce_enabled and int(route.get("lower", 23)) < 23:
+		return false
 	if route_id.is_empty():
-		for candidate: Dictionary in Routes.routes_at_floor(floor_number, continuation_enabled):
+		for candidate: Dictionary in Routes.routes_at_floor(floor_number, continuation_enabled, commerce_enabled):
 			if str(candidate.get("kind", "")) == "rope":
 				route = candidate
 				break
@@ -335,14 +367,15 @@ func rope_snapshot() -> Dictionary:
 	var state: Dictionary = rope.snapshot()
 	state["transfer"] = rope_transfer
 	state["obstructed"] = rope_obstructed
+	state["can_cancel_transfer"] = can_cancel_rope_transfer()
 	if not rope_transfer.is_empty():
-		state["mode"] = "attach" if rope_transfer == "attach" else "exit"
+		state["mode"] = rope_transfer
 		state["can_exit"] = false
 		state["speed"] = 0.0
 	return state
 
 func stair_context() -> Dictionary:
-	return {} if on_rope else Routes.stair_at_position(global_position, continuation_enabled)
+	return {} if on_rope else Routes.stair_at_position(global_position, continuation_enabled, commerce_enabled)
 
 func is_at_landing() -> bool:
 	return not on_rope and stair_context().is_empty() and absf(velocity.y) <= 0.15 and absf(position.y - Routes.floor_height(nearest_floor())) <= FLOOR_TOLERANCE and _has_landing_support(global_position)
@@ -355,7 +388,7 @@ func _draw_rope() -> void:
 	rope_line.surface_end()
 
 func nearest_floor() -> int:
-	return clampi(roundi((position.y - 0.04) / 6.0) + 24, 23 if continuation_enabled else 25, 31)
+	return clampi(roundi((position.y - 0.04) / 6.0) + 24, 20 if commerce_enabled else (23 if continuation_enabled else 25), 31)
 
 func can_exit_rope() -> bool:
 	return on_rope and rope_transfer.is_empty() and not rope_obstructed and rope.can_exit()

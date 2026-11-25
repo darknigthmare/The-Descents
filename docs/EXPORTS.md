@@ -1,4 +1,28 @@
-# Exports du prototype 0.11
+# Exports du prototype 0.12
+
+La candidature 0.12 utilise **Godot 4.7.2 stable officiel** et ses modèles d’export vérifiés par empreinte. Le workflow **commerce-review** produit les validations sources, les exports Windows/Web, les contrôles de leurs packs et les captures préparées. Il ne publie aucun fichier dans la branche et ne crée aucune approbation.
+
+Le rendu Windows utilise Forward+ par défaut. Les lanceurs **JOUER_CINEMATIQUE.cmd** et **JOUER_COMPATIBILITE.cmd** demandent respectivement Vulkan/Forward+ et OpenGL/Compatibility. Le Web utilise Compatibility. Les modèles, matières, parcours et règles de secours sont communs.
+
+## Archives de la version 0.12
+
+| Archive | Contenu |
+| --- | --- |
+| `The-Tower-Descent-v0.12-Windows-x64.zip` | Exécutable avec son paquet embarqué, deux lanceurs, guide et licences |
+| `The-Tower-Descent-v0.12-Sources.zip` | Projet éditable, dix albedos originaux, vingt-huit GLB, deux sources Blender, tests, outils, guides, rapports et documents |
+| `The-Tower-Descent-v0.12-Captures-native.zip` | Images natives du nouveau chapitre et manifestes, aux chemins d’origine |
+
+Les trois ZIP utilisent la racine `The-Tower-Descent/`. Extraire Sources et Captures-native dans le même dossier parent réunit le projet et les preuves visuelles. Les captures restent facultatives pour jouer ou modifier le projet. La Bible complète v0.9 et les suppléments v0.10 et v0.12 sont inclus avec leurs Word/PDF. Les anciennes archives et captures restent dans leurs livraisons historiques.
+
+La revue v0.12 comprend dix-huit cadrages Compatibility, dont deux fenêtres de 1024 × 640, et trois cadrages comparables Forward+ lorsque la sonde Vulkan native est disponible. Une indisponibilité est déclarée ; un rendu échoué après une sonde réussie ne passe pas silencieusement. Chaque image doit être ouverte puis consignée avec ses octets exacts avant validation des archives. Les aperçus Blender et les pages du supplément ont leurs propres revues.
+
+`tools/verify_commerce_release.py` exige les tests, packs, provenance, revue des images et revue des neuf pages, puis compare les membres exacts et octets des ZIP avec leurs sources. Les empreintes et tailles figurent dans `releases/VERIFICATION_V0.12.json`. Chaque archive doit rester strictement sous **100 Mio**. Les fichiers Web de `dist/` doivent correspondre exactement à l’export vérifié ; ce dossier n’établit pas à lui seul la publication d’un site public.
+
+La procédure détaillée est dans [Validation v0.12](VALIDATION_V0.12.md). Le [rapport de livraison](ETAT_DE_LIVRAISON.md) donne le statut réel des fichiers. Les captures natives sous Linux et les packs montés ne constituent pas une partie humaine sous Windows ou dans un navigateur, ni un benchmark de GPU.
+
+## Contrat historique v0.11
+
+### Exports historiques du prototype 0.11
 
 Le workflow **release-v011** construit les exports Windows x64 et Web avec **Godot 4.7.2 stable officiel**. Il s’appuie sur les textures originales et les modèles éditables déjà générés, importés et figés dans le dépôt. Le contrat de livraison prévoit les trois archives ci-dessous après la revue du candidat gelé et les contrôles d’emballage. Leur description ne vaut pas constat de production : les [résultats mesurés](ETAT_DE_LIVRAISON.md) et le rapport `releases/VERIFICATION_V0.11.json`, produit après emballage, établissent l’état effectif de la livraison.
 

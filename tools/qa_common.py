@@ -49,7 +49,7 @@ def evidence_root() -> Path:
     return ROOT / "docs/validation" / ("v" + ".".join(version().split(".")[:2]))
 
 
-SOURCE_ARCHIVE_SCOPE = "All project sources and textual history; current-version captures and documents. Versions 0.10 and 0.11 retain the complete v0.9 reference Bible and the v0.10 continuation supplement."
+SOURCE_ARCHIVE_SCOPE = "All project sources and textual history; current-version captures and documents. Versions 0.10–0.12 retain the complete v0.9 reference Bible and continuation supplements."
 MAX_ARCHIVE_BYTES = 100 * 1024 * 1024
 
 
@@ -60,7 +60,7 @@ def historical_source_media(relative: Path, short_version: str) -> bool:
         return parts[2] != "v" + short_version
     if len(parts) == 2 and parts[0] == "docs":
         match = re.fullmatch(r"The-Tower-Descent-Bible-v(\d+\.\d+)\.(?:docx|pdf)", parts[1])
-        if short_version in {"0.10", "0.11"} and match is not None and match.group(1) == "0.9":
+        if short_version in {"0.10", "0.11", "0.12"} and match is not None and match.group(1) == "0.9":
             return False
         return match is not None and match.group(1) != short_version
     return False

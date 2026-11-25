@@ -1,10 +1,26 @@
 # Props et interactions de production
 
-**Version 0.9.0 — 64 fiches de référence et 12 observations jouables — 25 novembre 2026**
+**Base v0.9.0 — 64 fiches de référence et 12 observations jouables ; annotations de périmètre v0.12.0 — 25 novembre 2026**
 
 Ce catalogue donne aux équipes de niveau, d’art, de son et de gameplay des objets qui ont une fonction dans l’intervention. Il décrit les accessoires du prototype lorsqu’ils existent, puis les objets à produire pour la campagne. Une fiche de campagne n’est pas un inventaire d’assets déjà livrés. Les dimensions proposées servent au blocage et à la recette de circulation ; elles ne constituent ni des normes de construction ni des instructions de secours réels.
 
 Dans la 0.7, le dossier à quatre onglets décrit les faits issus de ces interactions ; il ne crée aucun accessoire collectable supplémentaire. Les plans de clôture observent le poste médical, le relais du 25 et la tour endommagée déjà présents dans le monde. La 0.8 porte le catalogue à 60 fiches avec huit props de campagne liés aux expériences et à l’Enfer. La 0.9 ajoute P61 à P64 pour les escaliers locaux, les stations personnelles, les dalles d’arrêt et le descendeur, soit 64 fiches. Les douze observations jouables conservent leur portée ; le bilan n’exige pas la lecture de tous les props facultatifs.
+
+## Ajouts intégrés à la candidature v0.12
+
+Le [supplément A22–A20](CONTINUATION_A22_A20_V0.12.md) complète ces fiches historiques avec **douze modèles GLB statiques**, utilisés dans les commerces, les cuisines et le refuge 20. Ils s’ajoutent au [lot de secours v0.11](VISUELS_ET_SECOURS_V0.11.md). Leur catalogue et leurs dimensions réelles se trouvent dans [commerce_asset_catalog.gd](../prototype/scripts/commerce_asset_catalog.gd) et dans le [manifeste du lot](../prototype/assets/models/commerce_v012/manifest.json).
+
+| Secteur principal | Modèles du nouveau catalogue | Périmètre d’usage |
+| --- | --- | --- |
+| Galerie 22 | Vitrine, caisse de comptoir, commande de volet | Mobilier commercial et repère de l’intervention au Halligan ; aucun système monétaire |
+| Cuisines 21 | Chariot, évier industriel, appareil de cuisson, hotte, tableau d’isolement, armoire de couverture coupe-feu | Présentation du service et des deux étapes du foyer local ; le chariot et le tableau sont aussi réutilisés au refuge |
+| Refuge 20 | Lit pliant, réserve d’eau, paravent | Organisation de l’accueil ; aucune nouvelle mécanique de déplacement des lits ou de consommation d’eau |
+
+La mécanique appartient aux scripts et aux cibles de scène, pas au seul fichier GLB. Les cinq interventions sont l’ouverture du volet, l’isolement du réchauffeur, la couverture du foyer, l’apaisement facultatif du Retranché et la remise en service du relais. Les trois réceptions de Mina, Théo et Sofia demandent leur présence physique sur les marques du refuge 20. Les deux nouveaux objets de constat, `commerce_deliveries_22` et `commerce_maintenance_21`, sont collectés séparément ; ils ne remplacent pas les douze observations facultatives du secteur supérieur.
+
+Le terrazzo ivoire et le carrelage gris vert ajoutent deux albedos natifs de 1254 × 1254 pixels. Les dimensions, usages, sources et limites du lot figurent dans le supplément. Le graphe ajoute S23_22, S22_21, S21_20 et le rappel personnel R22_21 ; les fiches P04 et P61–P64 décrivent toujours les principes locaux, avec un nombre de liaisons daté de leur version d’origine.
+
+Les **64 fiches P01–P64 gardent leurs identifiants et leurs cibles de campagne**. La présence d’un tableau, d’un chariot ou d’une couverture dans le lot v0.12 ne valide pas les mécaniques plus générales proposées dans leurs fiches. Les matériels expérimentaux et infernaux non intégrés restent des spécifications. Les actions de cette tranche, les états consommés et les reprises sont définis par [commerce_director.gd](../prototype/scripts/commerce_director.gd), [commerce_presentation.gd](../prototype/scripts/commerce_presentation.gd) et [save_store.gd](../prototype/scripts/save_store.gd), au schéma 5. Les mentions de schéma 3 ci-dessous décrivent les observations et la traversée dans leur version historique, sans nouveau reçu « déjà lu » pour les douze observations.
 
 ## Convention des fiches
 

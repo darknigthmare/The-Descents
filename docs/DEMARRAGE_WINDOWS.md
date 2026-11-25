@@ -1,10 +1,10 @@
-# The Tower Descent — prototype 0.11
+# The Tower Descent — prototype 0.12
 
-Ce guide décrit les commandes du paquet v0.11. [Télécharger Windows x64 v0.11](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.11-Windows-x64.zip) ou [les sources et documents v0.11](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.11-Sources.zip). Le statut des archives et les résultats de vérification figurent dans [l’état de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md).
+Ce guide décrit les commandes du paquet v0.12. [Télécharger Windows x64 v0.12](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.12-Windows-x64.zip) ou [les sources et documents v0.12](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.12-Sources.zip). Le statut des archives et les résultats de vérification figurent dans [l’état de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md).
 
 ## Lancer l’intervention
 
-1. Extraire tout le ZIP **The-Tower-Descent-v0.11-Windows-x64.zip** dans un dossier.
+1. Extraire tout le ZIP **The-Tower-Descent-v0.12-Windows-x64.zip** dans un dossier.
 2. Ouvrir **JOUER_CINEMATIQUE.cmd** pour le rendu Forward+ (Vulkan), ou **JOUER_COMPATIBILITE.cmd** pour le rendu OpenGL plus léger. **TheTowerDescent.exe** demande aussi Forward+ par défaut. Aucune installation de Godot n’est nécessaire.
 3. Passer ou regarder la signature du studio, ouvrir **Commencer l’intervention**, puis confirmer **Déployer Alpha**. La disposition proposée convient pour une première partie.
 
@@ -26,6 +26,10 @@ Le parcours alterne rappels dans les ouvertures et escaliers locaux. Chaque pass
 | S26_25 — escalier | Spa 26 → refuge 25 | Marche vers le 26 |
 | S25_24 — escalier, après le bilan | Refuge 25 → congrès 24 | Marche et escorte vers le refuge |
 | R24_23 — rappel | Congrès 24 → exposition 23 | Remontée au congrès |
+| S23_22 — escalier, après le bilan | Exposition 23 → galerie 22 | Retour au 23 |
+| S22_21 — escalier nord | Galerie 22 → cuisines 21 | Retour au 22 |
+| R22_21 — rappel facultatif | Galerie 22 → cuisines 21 | Remontée au 22 |
+| S21_20 — escalier sud | Cuisines 21 → refuge 20 | Retour au 21 |
 
 Dans les escaliers, marchez avec **ZQSD / WASD**. Descendez la première volée, tournez sur le palier intermédiaire puis continuez sur la seconde. Aucun appui sur E n’est nécessaire. L’autre extrémité rejoint le plateau ; la cage ne mène pas automatiquement à un troisième étage. Le HUD indique la paire parcourue et le journal situe votre liaison.
 
@@ -52,7 +56,7 @@ Relâchez la direction ou verrouillez pour récupérer de l’endurance. La remo
 
 Le HUD précise le mode, la vitesse, l’endurance, le câble déployé et les mètres jusqu’au terminal bas. Une stabilisation déjà active refuse un nouvel usage de X, sans consommer une autre unité. Vous pouvez effectuer l’itinéraire sans ce consommable.
 
-Pour sortir, rejoignez le niveau de la dalle, relâchez la direction, corrigez le balancement si nécessaire puis utilisez **E**. **Ctrl** aide à approcher et **Espace** à garder la hauteur. La sortie conserve la longe pendant un transfert de 0,85 s. Si l’accès est encombré, le message explique le refus et Alex reste assuré. Une sortie ne permet pas de choisir un autre étage que les deux extrémités du segment.
+Pour sortir, rejoignez le niveau de la dalle, relâchez la direction, corrigez le balancement si nécessaire puis utilisez **E**. **Ctrl** aide à approcher et **Espace** à garder la hauteur. La sortie conserve la longe pendant un transfert de 0,85 s. Si l’accès est encombré, le message explique le refus et Alex reste assuré. Si un transfert engagé se bloque, **E** permet de revenir au point de départ lorsque ce retour est dégagé. La longe reste attachée jusqu’au retour sur un appui réel. Une sortie ne permet pas de choisir un autre étage que les deux extrémités du segment.
 
 La pause, le journal et les panneaux de lecture suspendent la mission et le rappel. Le regard reste sous votre contrôle ; les mouvements réduits atténuent les mouvements cosmétiques du matériel et de la caméra.
 
@@ -107,7 +111,21 @@ Depuis le bilan du refuge 25, choisissez **Poursuivre au congrès**. Rejoignez l
 
 Une fois le groupe accueilli, redescendez au 24 puis engagez le **rappel 24–23**, dans le noyau ouest. Au 23, relevez séparément la maquette et la photographie des anciens bains. Les objets restent en place après lecture ; **J → Indices** permet de relire les constats. Le relais d’exposition transmet le compte rendu lorsque les deux pièces sont relevées et le groupe reçu.
 
-L’accueil et le dossier indiquent votre dernier point sûr et la phase de mission. Une reprise remet une escorte interrompue en attente dans la cabine du 24 ; les personnes déjà reçues restent au refuge. Les réceptions initiales au toit, les ressources et l’état effondré d’Hespérie sont conservés. Le niveau 22 n’est pas encore ouvert.
+L’accueil et le dossier indiquent votre dernier point sûr et la phase de mission. Une reprise remet une escorte interrompue en attente dans la cabine du 24 ; les personnes déjà reçues restent au refuge. Les réceptions initiales au toit, les ressources et l’état effondré d’Hespérie sont conservés. Le bouton **Poursuivre vers les commerces** du bilan du 23 ouvre maintenant les étages 22 à 20, après enregistrement du choix.
+
+## Accompagner les personnes des commerces jusqu’au refuge 20
+
+Depuis le bilan du 23, choisissez **Poursuivre vers les commerces**, puis empruntez l’escalier sud. Au 22, rejoignez le volet de la réserve, sélectionnez le **Halligan (3)** et **maintenez E** en regardant le point d’intervention. Le volet dégagé permet de contacter **Mina Bensaïd**. **E** la fait suivre ; utiliser E sur elle lui demande d’attendre.
+
+Les accompagnements à pied passent par l’escalier nord **22–21**, puis l’escalier sud **21–20**. Gardez moins de cinq mètres d’écart et laissez le temps de franchir chaque volée. Le rappel 22–21 est facultatif et personnel ; les civils utilisent les escaliers et attendent pendant votre manœuvre de rappel.
+
+Dans l’office du 21, **maintenez E au coffret de coupure** pour isoler le réchauffeur, puis **maintenez E à l’armoire de couverture**. La couverture contient le foyer local et libère le déplacement de **Théo Lenoir**. **Sofia Renard** attend au 20. Donnez à chacun le signal de suivi et conduisez-le jusqu’aux trois repères de réception. Le compteur change après l’arrivée physique de la personne, pas au premier contact.
+
+Le **Retranché**, dans une alcôve de la galerie, peut être évité. Pour lui parler, reculez à environ 2 à 3 mètres, abaissez la lampe avec **F** et maintenez **E** en le regardant. Cette rencontre ne demande ni attaque ni soin forcé. Le maintien s’interrompt si vous relevez la lampe, perdez la visée ou réduisez trop la distance.
+
+Relevez le **registre des livraisons au 22** et la **consigne de maintenance au 21**. Au refuge 20, rétablissez le relais en maintenant E au panneau puis utilisez son terminal. Le bilan demande trois nouvelles réceptions, le relais et les deux documents. Les cinq personnes déjà reçues au toit et au refuge 25 restent inscrites au dossier.
+
+Une reprise replace une escorte inachevée à son contact initial, en attente ; les réceptions confirmées restent acquises. Vous pouvez remonter au relais du 25 pour enregistrer. Le parcours actuel s’arrête au 20.
 
 ## Commandes essentielles
 
@@ -141,7 +159,7 @@ La pause fige l’effondrement et le temps de stabilisation. Les mouvements de c
 
 Un enregistrement local est demandé au départ, après les treuillages, au refuge et avant/après l’incident. Si une demande survient sur une corde, pendant un raccordement ou dans un escalier, elle attend le prochain plateau stable, avec un appui sous les pieds. Elle ne crée pas de reprise suspendue ou à mi-hauteur. Le point sûr précédent reste la référence tant que cette écriture n’a pas réussi.
 
-Si vous quittez pendant l’effondrement, la reprise revient au point sûr qui le précède. Après stabilisation, les dégâts sont conservés. **Déployer Alpha** confirme une nouvelle intervention et crée un point sûr ; **Reprendre l’intervention** poursuit le précédent. Les anciennes sauvegardes valides de schémas 1, 2 et 3 sont validées puis migrées en mémoire vers le schéma 4 ; leur lecture ne réécrit pas le fichier. Le journal conserve les 32 dernières transmissions et reste accessible dans le bilan final. Le temps et les sous-titres de l’épilogue ne sont pas ajoutés à cette sauvegarde ; sa relecture ne réécrit pas le fichier. Les données ne sont pas envoyées en ligne.
+Si vous quittez pendant l’effondrement, la reprise revient au point sûr qui le précède. Après stabilisation, les dégâts sont conservés. **Déployer Alpha** confirme une nouvelle intervention et crée un point sûr ; **Reprendre l’intervention** poursuit le précédent. Les anciennes sauvegardes valides de schémas 1 à 4 sont validées puis migrées en mémoire vers le schéma 5 ; leur lecture ne réécrit pas le fichier. Le journal conserve les 32 dernières transmissions et reste accessible dans le bilan final. Le temps et les sous-titres de l’épilogue ne sont pas ajoutés à cette sauvegarde ; sa relecture ne réécrit pas le fichier. Les données ne sont pas envoyées en ligne.
 
 ## Portée de cette version
 
@@ -153,7 +171,7 @@ La vérification du paquet comprend sa construction et le chargement de ses ress
 
 Les archives 0.1, 0.2, 0.4, 0.5, 0.6, 0.7, 0.8 et **0.9** restent historiques. La 0.10 conserve leur ouverture, les secours, les observations, les réglages, le dossier, l’épilogue, la montée discrète de l’horreur et les liaisons verticales, puis prolonge l’intervention du refuge au congrès et à l’exposition.
 
-Le ZIP Sources courant contient tous les codes, assets actifs, tests, guides et rapports textuels, avec les captures de la v0.11, les sources Blender, le guide des visuels, la Bible intégrale Word/PDF v0.9 et son supplément Word/PDF v0.10. Les autres médias historiques restent disponibles dans le dépôt et dans leurs archives d’origine. Les licences du moteur et de ses composants sont jointes dans `GODOT_LICENSES.txt` ; les notices Open Sans accompagnent également le paquet Windows.
+Le ZIP Sources courant contient tous les codes, assets actifs, tests, guides et rapports textuels, avec les captures de la v0.12, les sources Blender, le guide des visuels, la Bible intégrale Word/PDF v0.9 et son supplément Word/PDF v0.10. Les autres médias historiques restent disponibles dans le dépôt et dans leurs archives d’origine. Les licences du moteur et de ses composants sont jointes dans `GODOT_LICENSES.txt` ; les notices Open Sans accompagnent également le paquet Windows.
 
 ## Réglages et présentation conservés
 

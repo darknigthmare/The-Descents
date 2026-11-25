@@ -16,7 +16,9 @@ const CATALOG: Dictionary = {
 	"rescue_red_paint": {"repeat_m": 0.8, "roughness": 0.57, "metallic": 0.15, "normal": 0.09, "fallback": Color("a84336")},
 	"black_rubber": {"repeat_m": 0.5, "roughness": 0.88, "metallic": 0.0, "normal": 0.17, "fallback": Color("283034")},
 	"teal_carpet": {"repeat_m": 1.0, "roughness": 0.96, "metallic": 0.0, "normal": 0.27, "fallback": Color("42656c")},
-	"porcelain_tile": {"repeat_m": 1.2, "roughness": 0.34, "metallic": 0.0, "normal": 0.10, "fallback": Color("c0c4bd")}
+	"porcelain_tile": {"repeat_m": 1.2, "roughness": 0.34, "metallic": 0.0, "normal": 0.10, "fallback": Color("c0c4bd")},
+	"ivory_terrazzo": {"repeat_m": 2.0, "roughness": 0.64, "metallic": 0.0, "normal": 0.06, "fallback": Color("b9b7a8"), "root": "res://assets/materials/v012/"},
+	"kitchen_sage_tile": {"repeat_m": 2.0, "roughness": 0.88, "metallic": 0.0, "normal": 0.08, "fallback": Color("829187"), "root": "res://assets/materials/v012/"}
 }
 
 var _materials: Dictionary = {}
@@ -32,7 +34,7 @@ func get_surface(id: String, tint: Color = Color.WHITE) -> StandardMaterial3D:
 	var spec: Dictionary = CATALOG[id]
 	var material: StandardMaterial3D = StandardMaterial3D.new()
 	material.resource_name = "v011_" + id
-	var asset: String = ASSET_ROOT + id + ".png"
+	var asset: String = asset_path(id)
 	var texture: Texture2D = load(asset) as Texture2D if ResourceLoader.exists(asset) else null
 	material.albedo_texture = texture
 	material.albedo_color = tint if texture != null else (spec["fallback"] as Color) * tint
@@ -82,9 +84,12 @@ func localize_moving_branch(branch: Node) -> void:
 func snapshot() -> Dictionary:
 	var assets: Array[Dictionary] = []
 	for id: String in CATALOG:
-		var path: String = ASSET_ROOT + id + ".png"
+		var path: String = asset_path(id)
 		assets.append({"id": id, "file": path, "loaded": ResourceLoader.exists(path), "repeat_m": CATALOG[id]["repeat_m"]})
 	return {"assets": assets, "albedo_source": "authored PNG assets", "microdetail_source": "deterministic procedural approximation", "projection": "world-space triplanar; local-space for movers"}
+
+static func asset_path(id: String) -> String:
+	return str(CATALOG.get(id, {}).get("root", ASSET_ROOT)) + id + ".png"
 
 func _get_detail_maps(id: String) -> Dictionary:
 	if _detail_maps.has(id):

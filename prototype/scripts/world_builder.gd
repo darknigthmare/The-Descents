@@ -5,6 +5,7 @@ const Presentation = preload("res://scripts/presentation_geometry.gd")
 const Atmosphere = preload("res://scripts/maritime_atmosphere.gd")
 const Routes = preload("res://scripts/route_catalog.gd")
 const ContinuationPresentation = preload("res://scripts/continuation_presentation.gd")
+const CommercePresentation = preload("res://scripts/commerce_presentation.gd")
 const CinematicLighting = preload("res://scripts/cinematic_lighting.gd")
 const SurfaceMaterials = preload("res://scripts/surface_materials.gd")
 var lighting: Node
@@ -16,6 +17,8 @@ var reduced_motion: bool = true
 var continuation_enabled: bool = false
 var continuation_visuals: Node3D
 var continuation_access_cover: MeshInstance3D
+var commerce_enabled: bool = false
+var commerce_visuals: Node3D
 
 ## Self-contained, modular 3D greybox. Metres are the world unit.
 ## All gameplay corridors and interaction sockets remain outside prop jitter.
@@ -71,8 +74,9 @@ var twin_view_target: Vector3 = Vector3(34.1, 33.0, -2.5)
 const FINAL_LEAN: float = 7.2
 const FINAL_SETTLEMENT: Vector3 = Vector3(-0.8, -1.8, 0.2)
 
-func build(seed_value: int, floor_specs: Array, enable_continuation: bool = false) -> Dictionary:
+func build(seed_value: int, floor_specs: Array, enable_continuation: bool = false, enable_commerce: bool = false) -> Dictionary:
 	continuation_enabled = enable_continuation
+	commerce_enabled = enable_commerce and enable_continuation
 	rng.seed = seed_value
 	_make_materials()
 	_build_environment()
@@ -91,6 +95,11 @@ func build(seed_value: int, floor_specs: Array, enable_continuation: bool = fals
 			floor_heights[number] = Routes.floor_height(number)
 			specs_by_floor[number] = {"number": number, "name": "Centre de congrès" if number == 24 else "Exposition Histoire de Nacre", "hazard": "none", "survivor": false, "evidence": false, "supplies": false, "anomaly": "none"}
 			_build_floor(number, specs_by_floor[number])
+	if commerce_enabled:
+		for number: int in [22, 21, 20]:
+			floor_heights[number] = Routes.floor_height(number)
+			specs_by_floor[number] = {"number": number, "name": {22: "Galerie des Alizés", 21: "Cuisines de service", 20: "Refuge des équipes"}[number], "hazard": "none"}
+			_build_floor(number, specs_by_floor[number])
 	var roof: Dictionary = _build_roof()
 	_build_vertical_routes()
 	if continuation_enabled:
@@ -98,6 +107,10 @@ func build(seed_value: int, floor_specs: Array, enable_continuation: bool = fals
 		add_child(continuation_visuals)
 		continuation_visuals.build(self)
 		set_continuation_state({"phase": "dormant", "escort_state": "waiting"})
+	if commerce_enabled:
+		commerce_visuals = CommercePresentation.new()
+		add_child(commerce_visuals)
+		commerce_visuals.build(self)
 	_build_arrival_wash()
 	_build_rain()
 	atmosphere = Atmosphere.new()
@@ -125,8 +138,9 @@ func build(seed_value: int, floor_specs: Array, enable_continuation: bool = fals
 		"floor_y": floor_heights,
 		"sea_level": -132.0,
 		"specs": specs_by_floor,
-		"routes": Routes.all_routes(continuation_enabled),
-		"continuation_visuals": continuation_visuals
+		"routes": Routes.all_routes(continuation_enabled, commerce_enabled),
+		"continuation_visuals": continuation_visuals,
+		"commerce_visuals": commerce_visuals
 	}
 
 ## Quality selection changes supported effects, never the running graphics API.
@@ -217,6 +231,8 @@ func _make_materials() -> void:
 	materials["stone"] = surface_library.get_surface("dark_stone")
 	materials["carpet"] = surface_library.get_surface("teal_carpet")
 	materials["tile"] = surface_library.get_surface("porcelain_tile")
+	materials["commerce_terrazzo"] = surface_library.get_surface("ivory_terrazzo") if commerce_enabled else materials["stone"]
+	materials["commerce_tile"] = surface_library.get_surface("kitchen_sage_tile") if commerce_enabled else materials["tile"]
 	materials["blue"] = _mat(Color("3d687e"), 0.8)
 	materials["green"] = _mat(Color("476c5a"), 0.85)
 	materials["skin"] = _mat(Color("ad8f7b"), 0.9)
@@ -397,11 +413,11 @@ func _build_lower_shell() -> void:
 	shell.name = "UnplayableLowerTowerFacade"
 	add_child(shell)
 	# Stop the opaque shell below the lowest authored floor of this chapter.
-	var top: float = -6.0 if continuation_enabled else 6.0
+	var top: float = -24.0 if commerce_enabled else (-6.0 if continuation_enabled else 6.0)
 	var height: float = top + 138.0
 	var center: float = (top - 138.0) * 0.5
 	_box(shell, Vector3(0, center, 0), Vector3(23.8, height, 23.8), materials["window"])
-	for level in range(23 if continuation_enabled else 25):
+	for level in range(20 if commerce_enabled else (23 if continuation_enabled else 25)):
 		var yy: float = -138.0 + float(level) * 6
 		_box(shell, Vector3(0, yy, 0), Vector3(24.5, 0.4, 24.5), materials["edge"])
 	for xx in [-11.8, -6.0, 0.0, 6.0, 11.8]:
@@ -414,14 +430,14 @@ func _floor_surface(parent: Node3D, y: float, floor_material: Material, enclosed
 	_box(parent, Vector3(-7.35, y - 0.3, 0), Vector3(9.3, 0.6, 24), floor_material, true)
 	_box(parent, Vector3(7.35, y - 0.3, 0), Vector3(9.3, 0.6, 24), floor_material, true)
 	var number: int = roundi(y / 6.0) + 24
-	if continuation_enabled and number == 25:
+	if (continuation_enabled and number == 25) or (commerce_enabled and number == 22):
 		_box(parent, Vector3(0, y - 0.3, -4.25), Vector3(5.4, 0.6, 3.1), floor_material, true)
 		_box(parent, Vector3(0, y - 0.3, -11.7), Vector3(5.4, 0.6, 0.6), floor_material, true)
 		for side: float in [-2.6, 2.6]:
 			_box(parent, Vector3(side, y - 0.3, -8.6), Vector3(0.2, 0.6, 5.6), floor_material, true)
 	else:
 		_box(parent, Vector3(0, y - 0.3, -7.35), Vector3(5.4, 0.6, 9.3), floor_material, true)
-	if number in [30, 28, 26]:
+	if number in [30, 28, 26] or (commerce_enabled and number in [23, 21]):
 		# A real 5 x 5.6 m cut-out admits the two flights. No solid full slab
 		# remains hidden beneath the staircase presentation.
 		_box(parent, Vector3(0, y - 0.3, 4.25), Vector3(5.4, 0.6, 3.1), floor_material, true)
@@ -479,10 +495,10 @@ func _build_floor(number: int, spec: Dictionary) -> void:
 	floor_node.name = "Floor%d" % number
 	add_child(floor_node)
 	var y: float = floor_heights[number]
-	var floor_finish: Dictionary = {30: "stone", 29: "carpet", 28: "carpet", 27: "tile", 26: "tile", 25: "concrete", 24: "carpet", 23: "stone"}
+	var floor_finish: Dictionary = {30: "stone", 29: "carpet", 28: "carpet", 27: "tile", 26: "tile", 25: "concrete", 24: "carpet", 23: "stone", 22: "commerce_terrazzo", 21: "commerce_tile", 20: "concrete"}
 	var floor_material: Material = materials[str(floor_finish[number])]
 	_floor_surface(floor_node, y, floor_material)
-	var default_names: Dictionary = {30:"RESTAURANT PANORAMIQUE", 29:"SUITES DE L'AUBE", 28:"BUREAUX PELAGOS", 27:"JARDIN DES ENFANTS", 26:"SPA ET BASSIN", 25:"REFUGE TECHNIQUE", 24:"CENTRE DE CONGRÈS", 23:"HISTOIRE DE NACRE"}
+	var default_names: Dictionary = {30:"RESTAURANT PANORAMIQUE", 29:"SUITES DE L'AUBE", 28:"BUREAUX PELAGOS", 27:"JARDIN DES ENFANTS", 26:"SPA ET BASSIN", 25:"REFUGE TECHNIQUE", 24:"CENTRE DE CONGRÈS", 23:"HISTOIRE DE NACRE",22:"GALERIE DES ALIZÉS",21:"CUISINES DE SERVICE",20:"REFUGE DES ÉQUIPES"}
 	var title: String = str(spec.get("name", default_names[number])).to_upper()
 	_label(floor_node, Vector3(4.6, y + 3.8, -2.9), "%02d / %s" % [number, title], 40, Color("d7ded8"), 0.009, true)
 	# Keep the landing marker above eye level and at a readable physical size.
@@ -573,6 +589,8 @@ func _build_vertical_routes() -> void:
 	var landing_numbers: Array[int] = [30, 28, 26, 25]
 	if continuation_enabled:
 		landing_numbers.append(23)
+	if commerce_enabled:
+		landing_numbers.append_array([21, 20])
 	for number: int in landing_numbers:
 		var cap: MeshInstance3D = _box(network, Vector3(-1.0, Routes.floor_height(number) - 0.3, 0), Vector3(3.4, 0.6, 5.4), materials["concrete"], true)
 		cap.name = "RappelLanding%d" % number
@@ -580,9 +598,11 @@ func _build_vertical_routes() -> void:
 	var guard_numbers: Array[int] = [31, 30, 29, 28, 27, 26, 25]
 	if continuation_enabled:
 		guard_numbers.append_array([24, 23])
+	if commerce_enabled:
+		guard_numbers.append_array([22, 21, 20])
 	for number: int in guard_numbers:
 		_build_core_guards(network, number)
-	for route: Dictionary in Routes.all_routes(continuation_enabled):
+	for route: Dictionary in Routes.all_routes(continuation_enabled, commerce_enabled):
 		if route["kind"] == "rope":
 			_build_rappel_link(network, route)
 		else:

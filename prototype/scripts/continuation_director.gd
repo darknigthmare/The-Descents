@@ -66,7 +66,7 @@ static func has_proofs(context: Dictionary) -> bool:
 	return true
 
 
-static func checkpoint_consistent(context: Dictionary, continuation_value: Dictionary) -> bool:
+static func checkpoint_consistent(context: Dictionary, continuation_value: Dictionary, commerce_active: bool = false) -> bool:
 	var normalized: Dictionary = normalize(continuation_value, true)
 	if normalized.is_empty():
 		return false
@@ -88,6 +88,8 @@ static func checkpoint_consistent(context: Dictionary, continuation_value: Dicti
 	if 25 not in context.get("seen_floors", []):
 		return false
 	if phase == "complete":
+		if commerce_active:
+			return has_proofs(context)
 		return completed and floor_number == 23 and has_proofs(context)
 	return not completed
 

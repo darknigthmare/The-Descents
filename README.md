@@ -1,5 +1,61 @@
 # The Tower Descent
 
+**Version 0.12 — galerie, cuisines et refuge du 20.**
+
+La descente se poursuit du bilan de l’exposition au 23 jusqu’au refuge de logistique du 20. Trois personnes supplémentaires — Mina Bensaïd, Théo Lenoir et Sofia Renard — rejoignent les cinq secours déjà présents. Le nouveau secteur combine des interventions de secours, trois escaliers locaux, un rappel facultatif, deux constats et une première rencontre humaine tendue, sans révéler prématurément les expériences profondes ni l’Enfer.
+
+## Accès et documentation v0.12
+
+- [Guide de démarrage et commandes](docs/DEMARRAGE_WINDOWS.md) · [État de livraison](docs/ETAT_DE_LIVRAISON.md).
+- [Supplément de Bible Word](docs/The-Tower-Descent-Continuation-v0.12.docx) · [PDF](docs/The-Tower-Descent-Continuation-v0.12.pdf) · [Source détaillée A22–A20](docs/CONTINUATION_A22_A20_V0.12.md).
+- [Douze nouveaux modèles éditables](docs/assets/v0.12/MODELS.md) · [Deux matières originales](docs/assets/v0.12/TEXTURES.md).
+- [Protocole de vérification](docs/VALIDATION_V0.12.md) · [Contrôles sources](docs/validation/v0.12/VERIFICATION.json).
+
+Le projet éditable s’ouvre avec **Godot 4.7.2** depuis `prototype/project.godot`. Les archives Windows, Sources et Captures natives sont établies après revue des images et contrôle de leurs fichiers ; le rapport de livraison précise leur disponibilité. Le workflow de candidature produit les preuves et les exports sans publier ni fusionner la PR.
+
+## Ce qui devient jouable
+
+| Secteur | Actions et résultat |
+| --- | --- |
+| **22 — Galerie des Alizés** | Dégager le volet au Halligan, établir le contact avec Mina, consulter le registre de livraisons nocturnes |
+| **22 — Le Retranché** | Garder environ 2 à 3 mètres, abaisser la lampe et maintenir E pour parler ; la rencontre reste facultative |
+| **21 — Cuisines** | Isoler le réchauffeur, déployer la couverture coupe-feu puis accompagner Théo ; la fumée locale cesse après validation |
+| **21 — Maintenance** | Relever une consigne antérieure au séisme ; une forme distante facultative conserve le doute |
+| **20 — Logistique** | Rejoindre Sofia, recevoir physiquement les trois personnes, rétablir le relais et transmettre le bilan |
+| **Retour et traversée** | S23_22 au sud, S22_21 au nord, S21_20 au sud ; R22_21 facultatif, avec retour par chaque liaison |
+
+**E** ordonne à une personne de suivre ou d’attendre. Elle marche par les vrais escaliers, s’arrête si Alex s’éloigne de plus de cinq mètres et reste soumise aux collisions. Chaque réception exige son arrivée au repère du refuge avec un appui stable. Le rappel reste une voie personnelle ; une escorte ne traverse pas un étage par téléportation.
+
+Le bilan du 20 exige les trois nouvelles réceptions, le relais alimenté et les deux constats. Les trois personnes du toit et le duo du refuge 25 restent reçus. Le dossier présente jusqu’à **huit personnes**, **sept pièces** et **douze liaisons locales** ; les trois premières pièces restent facultatives pour les bilans suivants.
+
+## Modèles, matières et lumière
+
+Douze modèles supplémentaires complètent les seize accessoires de secours de la 0.11 : vitrine, terminal de paiement, commande de volet, chariot, plonge, fourneau, hotte, coffret de coupure, armoire de couverture, lit pliant, jerrican et paravent. La source `docs/assets/v0.12/commerce_equipment.blend` conserve leurs **485 pièces nommées** ; les douze GLB totalisent **176 430 triangles**. Le terrazzo ivoire et le carrelage sauge conservent leur résolution native **1254 × 1254** avec leurs prompts et empreintes.
+
+![Les douze nouveaux modèles — aperçu Blender Cycles, distinct d’une capture du jeu](docs/assets/v0.12/previews/commerce_contact_sheet.png)
+
+Forward+ conserve l’éclairage Godot développé en 0.11 ; Compatibilité propose les mêmes lieux et actions avec son rendu direct. Les personnes, le volet mobile, la fumée et les éléments animés sont exclus des occluders statiques. Les matières sont des créations artistiques, avec des raccords légèrement perceptibles ; les personnages et une partie de l’architecture restent procéduraux.
+
+## Sauvegardes et corrections
+
+Le schéma **5** conserve les anciennes réceptions, indices, interventions, ressources et conséquences de l’effondrement. Les schémas 1 à 4 sont validés puis migrés en mémoire. Lire un ancien bilan ne démarre pas les commerces : **Poursuivre vers les commerces** enregistre d’abord le choix, puis ouvre le secteur. Un échec d’écriture conserve le bilan précédent.
+
+Une escorte inachevée reprend en attente à son contact initial. Les personnes déjà reçues restent au refuge. Le relais du 25 peut servir de point sûr pendant la nouvelle reconnaissance. Un état de santé nul ne remplace plus le dernier checkpoint vivant ; un ancien fichier mortel est conservé et sa reprise désactivée.
+
+Les interactions historiques vérifient désormais portée, visée et obstacles au moment de l’action. Un transfert de rappel obstrué peut être annulé avec **E** pour revenir au départ, en conservant la longe jusqu’à un appui réel.
+
+## Portée actuelle
+
+Le parcours jouable s’arrête au **20**. Le Retranché est un humain en détresse avec dialogue et pression de proximité ; il n’a pas encore de système de combat. Les niveaux 19 à 1, les laboratoires SILLAGE, la traversée physique de l’Enfer, Alma, l’intérieur d’Hespérie et le portage UE5 appartiennent à la campagne à produire. Les tours commencent intactes et l’effondrement d’Hespérie se produit toujours pendant l’intervention initiale.
+
+Les contrôles de logique et de collisions s’exécutent sous Godot Linux. Les captures natives montrent des états préparés ; les exports Windows/Web sont inspectés comme packs de ressources. Ces preuves ne remplacent pas une partie humaine complète sur ces plateformes ni des mesures sur un GPU de joueur. Les rapports identifient les fichiers exacts vérifiés.
+
+La Bible intégrale [Word v0.9](docs/The-Tower-Descent-Bible-v0.9.docx) / [PDF](docs/The-Tower-Descent-Bible-v0.9.pdf), le supplément [Word v0.10](docs/The-Tower-Descent-Continuation-v0.10.docx) / [PDF](docs/The-Tower-Descent-Continuation-v0.10.pdf) et les anciennes livraisons restent conservés.
+
+## Historique de la version 0.11
+
+Les résultats et liens ci-dessous concernent la livraison 0.11 conservée.
+
 **Version 0.11 — matières originales, éclairage Godot et matériel de secours.**
 
 La descente du toit d’Aube à l’exposition du 23 reçoit huit matières générées pour le projet, seize modèles de secours éditables et quatre outils utilisables. Le rendu Windows propose un profil Forward+ avec éclairage global SDFGI et un profil Compatibilité. Les trois secours au toit, l’effondrement d’Hespérie, les huit liaisons réversibles et l’escorte du congrès restent dans le même parcours.

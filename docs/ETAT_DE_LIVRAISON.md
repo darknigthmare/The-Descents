@@ -1,4 +1,41 @@
-# État de livraison de la version 0.11
+# État de livraison de la version 0.12
+
+**25 novembre 2026 — galerie, cuisines et refuge du 20.**
+
+La source 0.12 prolonge le parcours par trois étages et trois escortes individuelles. Mina Bensaïd, Théo Lenoir et Sofia Renard doivent arriver physiquement au refuge 20. Le Halligan, la coupure du réchauffeur, la couverture et le relais ont des actions contextuelles. Le Retranché du 22 peut être apaisé à distance, lampe baissée ; il ne possède pas encore de combat. Les deux constats maintiennent une enquête progressive sur les événements antérieurs à la catastrophe.
+
+**Statut : candidat en cours de revue.** Les résultats sources, exports, captures et archives sont consignés séparément, avec les SHA256 des fichiers exacts. Une validation de parcours physique ne vaut pas une revue du rendu. Le workflow de candidature dispose uniquement de droits de lecture sur le dépôt et ne produit aucune approbation visuelle ni publication.
+
+## Contenu de la candidature
+
+| Domaine | Contenu |
+| --- | --- |
+| Étages | A22 galerie, A21 cuisines, A20 logistique ; choix explicite depuis le bilan du 23 |
+| Personnes | Mina, Théo et Sofia ; cinq réceptions antérieures conservées, huit au total |
+| Liaisons | Trois nouveaux escaliers voisins et un rappel facultatif 22–21 ; douze passages au total |
+| Interventions | Volet au Halligan, isolation, couverture, désescalade facultative du Retranché, relais |
+| Enquête | Registre du 22 et consigne du 21 ; jusqu’à sept pièces dans le dossier |
+| Modèles | Douze GLB, 176 430 triangles, 485 pièces dans la source Blender ; douze aperçus et une planche |
+| Matières | Terrazzo ivoire et carrelage sauge, deux PNG natifs 1254² |
+| Documentation | Supplément de neuf pages Word/PDF, source Markdown détaillée et volumes antérieurs préservés |
+| Sauvegarde | Schéma 5, migrations 1–4, progression antérieure et réceptions conservées |
+| Corrections | Interaction à portée et sans obstacle, annulation de transfert de rappel bloqué, protection du checkpoint vivant |
+
+Les [contrôles sources](validation/v0.12/VERIFICATION.json), la [preuve de candidature](validation/v0.12/CANDIDATE.json), les ressources montées des exports et la revue individuelle des captures établissent leurs résultats effectifs. La [procédure v0.12](VALIDATION_V0.12.md) décrit les limites et les étapes. Le [guide Windows](DEMARRAGE_WINDOWS.md) présente l’itinéraire et les commandes ; le [supplément de Bible](CONTINUATION_A22_A20_V0.12.md) sépare les fonctions intégrées des scènes de campagne à produire.
+
+## Limites du chapitre
+
+Le parcours s’arrête au 20. Les humains ont encore des silhouettes et poses procédurales ; les modèles importés sont statiques, sans rig ni LOD. Les variantes de galerie, le faux appel sophistiqué, l’eau dynamique, le combat du Retranché/E11 et les scènes sociales détaillées du refuge restent à produire. Les niveaux 19 à 1, les laboratoires, l’Enfer, Alma, l’intérieur d’Hespérie et UE5 ne sont pas intégrés.
+
+Les parcours utilisent les vrais corps et collisions. Le test des civils emploie un guide de sauvetage synthétique, sans téléporter les civils pendant leur marche. Les captures préparent des états de mission et d’interface. Les exports sont montés et interrogés par Godot Linux, sans exécuter l’application sous Windows ni le WebAssembly dans un navigateur. Le rendu Vulkan logiciel de CI ne mesure pas les performances d’un GPU de joueur.
+
+Les éléments mobiles sont exclus de la géométrie statique de l’éclairage global. L’intention lumineuse de Lumen reste adaptée aux fonctions Godot, sans parité revendiquée. La disparition de la fumée du réchauffeur est immédiate à la validation de la couverture dans cette version.
+
+## Historique de livraison v0.11
+
+Les chiffres et preuves ci-dessous restent ceux de la version 0.11.
+
+### État historique de la version 0.11
 
 **25 novembre 2026 — matières, lumière et outils de secours.**
 

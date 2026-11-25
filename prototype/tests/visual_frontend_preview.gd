@@ -2,6 +2,7 @@ extends Node
 
 ## Capture the actual Godot renderer at prepared states. This is not a human playthrough.
 const MainScene = preload("res://scenes/main.tscn")
+const InteractionFixture = preload("res://tests/interaction_fixture.gd")
 const Preferences = preload("res://scripts/preferences_store.gd")
 const Horror = preload("res://scripts/horror_director.gd")
 const Routes = preload("res://scripts/route_catalog.gd")
@@ -76,14 +77,16 @@ func _capture() -> void:
 	mission.player.teleport_to_floor(30)
 	_disable_ticks()
 	mission.player.position = Vector3(7, 36.1, -4.7)
-	mission.player.camera.look_at(Vector3(3.6, 37.1, 0))
+	mission.player.camera.look_at(mission._legacy_interaction_focus(casualty))
 	mission._interact_node(casualty)
+	mission.player.camera.look_at(Vector3(3.6, 37.1, 0))
 	mission.rescue_visuals.advance(0.0, true)
 	mission._update_hud()
 	await _shot("15_portage", "Portage d’Ana : harnais, personne et mains visibles, objectif dégagé")
+	InteractionFixture.face(mission, _mission_object("beacon", 30))
+	mission._interact_node(_mission_object("beacon", 30))
 	mission.player.position = Vector3(4.8, 36.1, 1.4)
 	mission.player.camera.look_at(Vector3(1.8, 39.3, 0))
-	mission._start_hoist(casualty, 30)
 	mission._process_hoist(1.8)
 	mission._update_hud()
 	await _shot("16_treuillage", "Remontée d’Ana dans le puits : harnais et câble sous tension")
@@ -136,7 +139,9 @@ func _capture() -> void:
 	mission.hud.menu.close_modals()
 	mission._continue_game()
 	_disable_ticks()
+	InteractionFixture.face(mission, _mission_object("evidence", 29))
 	mission._interact_node(_mission_object("evidence", 29))
+	mission.player.teleport_to_floor(28)
 	mission._save_checkpoint(28)
 	mission._open_journal()
 	for record: Array in [["situation", "20_journal_situation"], ["survivors", "21_journal_rescapes"], ["clues", "22_journal_indices"], ["transmissions", "23_journal_transmissions"]]:
@@ -146,14 +151,16 @@ func _capture() -> void:
 	_disable_ticks()
 	# Complete the remaining actual hoists before sampling the closing sequence.
 	for floor_number: int in [28, 26]:
-		mission.player.teleport_to_floor(floor_number)
+		InteractionFixture.face(mission, _mission_object("survivor", floor_number))
 		mission._interact_node(_mission_object("survivor", floor_number))
+		InteractionFixture.face(mission, _mission_object("beacon", floor_number))
 		mission._interact_node(_mission_object("beacon", floor_number))
 		mission._process_hoist(5.01)
 		mission.rescue_visuals.finish_reception()
+	InteractionFixture.face(mission, _mission_object("evidence", 27))
 	mission._interact_node(_mission_object("evidence", 27))
 	mission.elapsed = 210.0
-	mission.player.teleport_to_floor(25)
+	InteractionFixture.face(mission, _mission_object("refuge", 25))
 	mission._interact_node(_mission_object("refuge", 25))
 	_disable_ticks()
 	previous = 0.0
@@ -192,9 +199,10 @@ func _capture_early_manifestations() -> bool:
 	_disable_ticks()
 	# Keep the later aftermath state consistent with the real first rescue.
 	var casualty: Node3D = _mission_object("survivor", 30)
-	mission.player.teleport_to_floor(30)
+	InteractionFixture.face(mission, casualty)
 	mission._interact_node(casualty)
-	mission._start_hoist(casualty, 30)
+	InteractionFixture.face(mission, _mission_object("beacon", 30))
+	mission._interact_node(_mission_object("beacon", 30))
 	mission._process_hoist(5.01)
 	mission.rescue_visuals.finish_reception()
 	# These views represent a later quiet interval, beyond the six-second toast.
