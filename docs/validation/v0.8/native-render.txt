@@ -1,0 +1,39 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.5 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)
+
+CAPTURE 01_menu_arrivee
+CAPTURE 02_options
+CAPTURE 03_nouvelle_intervention
+CAPTURE 04_signature_studio
+CAPTURE 05_titre
+CAPTURE 06_approche_03
+CAPTURE 06_approche_10
+CAPTURE 06_approche_17
+CAPTURE 06_approche_25
+CAPTURE 07_pause_intro
+CAPTURE 14_toit_equipe
+CAPTURE 15_portage
+CAPTURE 16_treuillage
+CAPTURE 17_reception
+CAPTURE 18_meteo_toit
+CAPTURE 19_options_pause
+CAPTURE 11_inspection_toit
+CAPTURE 12_inspection_archives
+CAPTURE 13_inspection_apres
+CAPTURE 08_menu_archives
+CAPTURE 09_dossier_apres
+CAPTURE 20_journal_situation
+CAPTURE 21_journal_rescapes
+CAPTURE 22_journal_indices
+CAPTURE 23_journal_transmissions
+CAPTURE 24_epilogue_02
+CAPTURE 24_epilogue_07
+CAPTURE 24_epilogue_12
+CAPTURE 25_bilan_refuge
+CAPTURE 10_menu_refuge
+CAPTURE 26_suites_presence
+CAPTURE 27_archives_traces
+CAPTURE 28_spa_remanence
+PASS visual frontend review: 33 native Godot captures
