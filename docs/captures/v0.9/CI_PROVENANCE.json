@@ -1,0 +1,368 @@
+{
+  "version": "0.9.0",
+  "source_commit": "23f2284d2d2ce9f14744331d3ed8176797fafe02",
+  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45622597990",
+  "godot_archive_sha256": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4",
+  "engine": "4.7.2-stable (official)",
+  "display": "X11",
+  "rendering_method": "gl_compatibility",
+  "capture_protocol": "Native Godot Compatibility renderer via Xvfb and Mesa software rendering; prepared game states.",
+  "human_playthrough": false,
+  "manual_visual_review": false,
+  "request_sha256": "97b2a81f4653fefcce8168196a7e10e98ce4873b1c4ccae0dc33798e7587e6b0",
+  "fixture_sha256": "c75a336a1b797e8e185bf628040c451d55854a924eff83128e7fd6d5285e3e0b",
+  "runtime_sha256": {
+    "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
+    "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
+    "prototype/assets/audio/impact.wav": "e831204acdc889fa5b57a95b21edc8044748415342018720969cd6a589d58050",
+    "prototype/assets/audio/intro_sting.wav": "7920665fc873ca41cba6417e327d99f7229606634b64f2efd729b617a8c48571",
+    "prototype/assets/audio/menu_theme.wav": "42708f055e4aae61a48b07b9f6e67a3e02c7f82aade78f0907a15781478bb4a6",
+    "prototype/assets/audio/quake.wav": "869aaff278eaa264f9dfbe19801a09000d987cb9b316691876e52114f6e497b1",
+    "prototype/assets/audio/radio.wav": "7b5e25100bbd0738037ce091772325ece3ec9326c528d8e7593ee3d4ef7ade38",
+    "prototype/assets/audio/rescue.wav": "404c60cefad1f258166211024dfdbf402a0051d168efc906268afe3867bdae98",
+    "prototype/assets/audio/rotors.wav": "77fb4dcdf4248efd884ffe45c5ffad6315806f911577d51c3b9522dd38bcc78a",
+    "prototype/assets/audio/rumble.wav": "bc0e349c7dbda51573308c738b8e15c49c35d7ea4bcd2b91f07b19a81b91ebd2",
+    "prototype/assets/audio/uncertain_steps.wav": "52f8b66c082d53e293eb9a2bb69bae4eb82db2487ed084944214cbee545664f2",
+    "prototype/assets/audio/wind.wav": "e552edccc315de23a83114a6d43dfdc6ab347b925d05fa8839d0cdfda179511e",
+    "prototype/assets/fonts/LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "prototype/assets/fonts/NOTICE.txt": "94d4b78643f99d7cfa872145b38da578299f401405ca5cba66a5c95bf13933b0",
+    "prototype/assets/fonts/OpenSans-CondBold.ttf": "a859a438018739aee16c306586d91a453c208ee500c827d9e9aa063155c8a6e8",
+    "prototype/assets/fonts/OpenSans-Light.ttf": "cf5f5184c1441a1660aa52526328e9d5c2793e77b6d8d3a3ad654bdb07ab8424",
+    "prototype/assets/fonts/OpenSans-Regular.ttf": "e64e508b2aa2880f907e470c4550980ec4c0694d103a43f36150ac3f93189bee",
+    "prototype/assets/icon.svg": "6d3e2c2f34057f8c2d0c0381ba25a1a288a7145b28f17f4d4cbcdeba31c7351e",
+    "prototype/assets/ui/studio_mark.svg": "c452e38192adda61ef9cebfefe9759ef850e35f9b248a09a17ad818dd4e20835",
+    "prototype/export_presets.cfg": "7f3bdbfde7ff38421077283b9ee723f423b612feaf54f932dcdc648f5dea113b",
+    "prototype/project.godot": "19ae2465df430f3530e1de914b51ba69cd4c96e912ffb1681fd209868207447e",
+    "prototype/scenes/main.tscn": "db52bbe7b5a1df4d839ec4f721a1f09faa8272e35c387b097fa2c5b1b4ac6937",
+    "prototype/scripts/cinematic_director.gd": "9e9b226271955b07d754f5d5150f1398e268d89d7c0b8ef44d1fa1988229e235",
+    "prototype/scripts/cinematic_overlay.gd": "2b9c9d3f1b2368380fb92ef82b3949b6c90c863bbd02184c89ddc9df6c33050b",
+    "prototype/scripts/collapse_director.gd": "3d9dce62a1b99c68aba41dc7f447a1ced40041ab64f2fb07f16802af5cdd8ee7",
+    "prototype/scripts/epilogue_director.gd": "4a8da32affe5bf27d616f6d289f41b83121b37f4d60a41b71e069f732408d972",
+    "prototype/scripts/field_props.gd": "cc1d0ff0137f69678beb35622c6607d71700307490096b13e98a7e49960d3fd7",
+    "prototype/scripts/floor_generator.gd": "0ae0f3e796e0e219fb505ba688488661848434c5fc4e46278b030a257f399779",
+    "prototype/scripts/frontend_menu.gd": "99c9b895740c30ee6fcd4cad42eb67f392bc227894cc93feba20f1e61d93813a",
+    "prototype/scripts/horror_director.gd": "03b49075109baa5c3951044bc25f5d7a07f61ece9bba3e4c61f6fcb90b319e0c",
+    "prototype/scripts/horror_presentation.gd": "4dc010cef8b8e350d26a19f7682154b8b772b65ab07297e4445465c4d11ca3c1",
+    "prototype/scripts/hud.gd": "c6c2a62dfc5412528d8d78fb1d54d11110eb7c6420e5c6157948dd829bfae150",
+    "prototype/scripts/inspection_panel.gd": "37c8c06327a8e97f955381bd36564eddabb686bd053e0af1b99c2b7895d49cbd",
+    "prototype/scripts/main.gd": "62271ef1c195f5aca9c7701843eb9bcd4fa86c3b9075e0c40f5a86c63f4dd7a1",
+    "prototype/scripts/maritime_atmosphere.gd": "ccce77223a8aea0888ae660fb5a32facc89440afb4edbaf57f68834da84d33a5",
+    "prototype/scripts/mission_dossier.gd": "d6b4900a9668c9bfbc1398f167c933cf5de6b709350d6435a7899c3974c5580d",
+    "prototype/scripts/mission_dossier_panel.gd": "aeeb8fe808650b693bec31d1574fb37f84fc58f3991caf091490aa8b432ba10e",
+    "prototype/scripts/player_controller.gd": "3b35fd31d370bc72e273b811b96e9b63a0cbad396ef68da707c8d023be706f6a",
+    "prototype/scripts/preferences_store.gd": "31c0a2dee0287b17fc41f1ebd13dd8060986ed431174625d6c304bdd431f5420",
+    "prototype/scripts/presentation_geometry.gd": "1d1b52a483221eb98b477fd9e90b3aeaf42fe6a87af26abf8730cf9ccfa890db",
+    "prototype/scripts/radio_director.gd": "0c3d64be528a11db8df32ca9f6afcc5ed1bd228744f28740c56ef377b9b07dab",
+    "prototype/scripts/rescue_presentation.gd": "ac3e900f85615f4dedff422c3fcb5985901cd75107f17dffe876a5087565a7a8",
+    "prototype/scripts/rope_presentation.gd": "c8c5a2826a4fa1fcddaa7e37e7994a49f5981b9c2a1fea14bbcbe914a89cc731",
+    "prototype/scripts/rope_traversal.gd": "cbdd78ba95db6f1fe3ce5b69680ceae12d2c7de471075716c8fa2810801b0c04",
+    "prototype/scripts/route_catalog.gd": "faef3719e2120cb3988f3aaf2a4cb3df692c5511c27ec74d15a89cd79fb81acf",
+    "prototype/scripts/save_store.gd": "9c679cea225d908f2b5fa606c7056b754bc2b9b9fa3454aa950401d4686f0c64",
+    "prototype/scripts/world_builder.gd": "0af9696a31df5f0e3608bbf14d3edb829ddf96744920033c0eaac6978feced60",
+    "prototype/shaders/cinematic_veil.gdshader": "1aa18255935f3c9ab0d3ebb2ee49dea18d32828d21eac67eeaaf0f22a8cdfb0e",
+    "prototype/shaders/maritime_rain.gdshader": "ff3e19dca63c9bdcc79fc283f468c9213c6a93044b095c5a6e305d84ef4867cd",
+    "prototype/shaders/rotor_wash.gdshader": "8a59b620e99331970aef867ec4c847d27094eda1e7fed6a7b6bdcfe9b8ce8866",
+    "prototype/shaders/storm_curtain.gdshader": "9a359ac0bb58a46838db1d02f6a5ae33447f61b430b21ecd38343088b6e16d37",
+    "prototype/shaders/storm_sky.gdshader": "3f952ed773256f532f95fc7636c4d9ef04d0bc3363c13b1e5860e1d213e95f7a",
+    "prototype/shaders/water.gdshader": "800331fda3f273e43fa5196a26720fcc5eee80f8b80d3680842583fbba4203c5",
+    "prototype/shaders/weathered_surface.gdshader": "e71f62962863bc3e3fe64e73c1b2b53098ec2c354eb46464a32eba0db0a62d3d",
+    "prototype/web_shell.html": "2153408b1c07a7cdac170f9f87fdb99617fd61f82c523902a11658e17d2e54fd"
+  },
+  "verification_sha256": "4a6511f5a5d2b8fad7f6ec6d4e5a0b309b107510fcc15c00e5ee82b917bf5f55",
+  "captures": [
+    {
+      "file": "01_menu_arrivee.png",
+      "bytes": 856752,
+      "sha256": "4291c9b995586497f9ab8fda0a0c6566e878792280562eade5390709dbca554c",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "02_options.png",
+      "bytes": 142728,
+      "sha256": "4ae80ae59996bf9ef147442e1472268e965a0f3696a7f26aab89a3785f01bc3a",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "03_nouvelle_intervention.png",
+      "bytes": 137783,
+      "sha256": "83a254b6b4de6275104698e12b5a7495831fe2c9cc7a1da9493428cc4e70012e",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "04_signature_studio.png",
+      "bytes": 1099471,
+      "sha256": "1271c07b096f331119cf936d62b9b62a4df0c05ce40255d3d5a0350e358953b4",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "05_titre.png",
+      "bytes": 1099697,
+      "sha256": "ea0a3596ebd9cd492591445f672e3c60571bcfcb244ae1eba32f71754bc358f7",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_03.png",
+      "bytes": 877118,
+      "sha256": "76df0da23ffe808e753692c09cbecbafd5fc0ccb02803bc1c96cced769636b18",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_10.png",
+      "bytes": 880583,
+      "sha256": "57edc4ffd30c4a4848894db96c137d1d0f65a64063ce85d1452f5b5627b1aa28",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_17.png",
+      "bytes": 927476,
+      "sha256": "ffdac2732f297d2d4104050ce117cd4de2bb0ade01d455bf830c7b0d54883d9a",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_25.png",
+      "bytes": 939456,
+      "sha256": "4041dcb761b641dd351d398692fb8c65738dafb8b5337f8ed6c9560c53a22bb2",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "07_pause_intro.png",
+      "bytes": 220412,
+      "sha256": "2307c985ad671735a6747ca391ef425594869586d10e1118a14e59297b6b2605",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "14_toit_equipe.png",
+      "bytes": 684218,
+      "sha256": "d0ad1a858437e2911a6eb98d2dca2498521abe2320af8bed2ac3e0320fd093ba",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "15_portage.png",
+      "bytes": 534917,
+      "sha256": "8fb694ec20332bb8e11b900ecbfcc46bc8c5ed61247ea467a623b8d7f736c579",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "16_treuillage.png",
+      "bytes": 539669,
+      "sha256": "b3003e0a5e33bb6e8191470712d832d6ce576aac3996b9172fecee36149b6121",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "17_reception.png",
+      "bytes": 662813,
+      "sha256": "8f629629c7e1681a9e606a55ad5679d049b3ec02df487dffad41fb2940b453a6",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "18_meteo_toit.png",
+      "bytes": 529093,
+      "sha256": "a76bbfb72e3fd6e4f46fdb2d4dfb3067fb61c9c5b14af1be9e6d179348bf3241",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "19_options_pause.png",
+      "bytes": 162988,
+      "sha256": "1632e57a20e3efb27cf146ebc509967796e045635169b09232b01f63821755be",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "11_inspection_toit.png",
+      "bytes": 198793,
+      "sha256": "13f5e2aa02574c764405de3d641b8607fc724377ab18f93e02ffcca661caf1bd",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "12_inspection_archives.png",
+      "bytes": 149882,
+      "sha256": "c0a8cd6786b12546e5a27a923bff5a02495ad3c9ff206852146d8ce001d6c2a7",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "13_inspection_apres.png",
+      "bytes": 153821,
+      "sha256": "96cc71d4ffada1b1bcc68a8323effd075104d97b82876cec703e767094994ab5",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "08_menu_archives.png",
+      "bytes": 750322,
+      "sha256": "e9723919e761184f11b895999fc6ab18a07da2247a9ac44af33432897542f0b8",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "09_dossier_apres.png",
+      "bytes": 169468,
+      "sha256": "df03f0a3b53b34f20a6dd4c3f578ce9d402a559a6f478703c3371390464c20fb",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "20_journal_situation.png",
+      "bytes": 192516,
+      "sha256": "910b8576aaf5ea5a6765a0f0f119efebbcdf5817b4a2fc10a134308e915f8a3f",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "21_journal_rescapes.png",
+      "bytes": 169753,
+      "sha256": "5f1f84030339130795cd658f2b33185efa026a08ea425cd332964c47909c18b0",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "22_journal_indices.png",
+      "bytes": 183024,
+      "sha256": "8d709f2caf18dc96cb653905562a26f077fade0d93db3ac0c2d6dc89d18ee146",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "23_journal_transmissions.png",
+      "bytes": 174645,
+      "sha256": "c7c944a7cbe84a905bfd191d560c1dec0498dac795f1f24c70c42a0a19e718d6",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "24_epilogue_02.png",
+      "bytes": 901927,
+      "sha256": "8b1bf3d5b6ed113c333fa57ec8b6a289b3a8fd7d8ecd66a63ecfb534df3f55fa",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "24_epilogue_07.png",
+      "bytes": 828952,
+      "sha256": "0c0f4e181689ae211f6c8b75e8488c52218139dcb0d3708b127a15742a4b0cfe",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "24_epilogue_12.png",
+      "bytes": 872965,
+      "sha256": "2cac92fe4d05ec10a88a6c9e62a113ce2043daa868c678e4f5a612f3292454f4",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "25_bilan_refuge.png",
+      "bytes": 198998,
+      "sha256": "255beac2ad80007a0d4edf81d22c046bcdce318a1c43c2fdd8b5fc4556cdadc8",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "10_menu_refuge.png",
+      "bytes": 787113,
+      "sha256": "67b2cdef8dee293748378003f60a775f66e9e4fe55a196bc246313ae8c1d7370",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "26_suites_presence.png",
+      "bytes": 356425,
+      "sha256": "59b843cd52c0b202a360dd8bc6d5f4d60f48d11a4c48f0b93059e6bfbe01bf01",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "27_archives_traces.png",
+      "bytes": 301268,
+      "sha256": "3c72c788bd89001c06b42ec61a74c2b456381f4053534b083e108231063db475",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "28_spa_remanence.png",
+      "bytes": 443369,
+      "sha256": "c13c5efc384a17f114e1052689a700acd8b8646faf98ca9d89ea5b38c40aa47c",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "29_station_rappel_toit.png",
+      "bytes": 648822,
+      "sha256": "b7fcb8f7f2fba6815d535aa7392c8c7af0cb127dcd3bccf3cf50b25b83fee6f4",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "30_rappel_descente.png",
+      "bytes": 498902,
+      "sha256": "2e57c66bfd196a01e19b11f6189a839aba24c79daa2dadcd7840f424f910cd11",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "31_rappel_verrouille.png",
+      "bytes": 532707,
+      "sha256": "579bfa34faf49d54d3070571b3c7bbc0a74f05a3692d4b7fc00c6925fed56dcd",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "34_rappel_remontee.png",
+      "bytes": 407998,
+      "sha256": "374f7a5ad2832624b19997a36f170796ce60bec84b84d48451578986672b7225",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "32_escalier_30_29.png",
+      "bytes": 512264,
+      "sha256": "239bb2f886c16f8d2c9cd4354330f64f4357d7e82f0148b95fda3a2924f86e7f",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "33_escalier_palier.png",
+      "bytes": 511613,
+      "sha256": "4cb3b20ffdf74195c9b86d34e52c679cff692b74b6592d7d5f7f637a9fbb405f",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "36_escalier_28_27.png",
+      "bytes": 506561,
+      "sha256": "b31c109aad2b91412aaee171093753c29c5f1b233ffbb8a70d0b65608addd6d9",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "37_escalier_26_25.png",
+      "bytes": 539466,
+      "sha256": "5a6e80f31bb0dd5978253ee2c2c62bc4df5d01b0e0e931b375c50951aeaf4ebe",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "35_aide_deplacements.png",
+      "bytes": 161162,
+      "sha256": "ea013137a3ce4fe11cf1ec8370eafd77c6454a0afa9278053288c57c66a3443d",
+      "width": 1440,
+      "height": 900
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS exported pack: 70 checks; mounted v0.9 resources, menu/cinematic directors, animated helicopters, twelve field props and paused inspection, imported audio, schema-3 radio persistence, isolated restoration, four-tab mission dossier, three-shot rescue epilogue, isolated non-damaging perceptions, six adjacent stair/rope routes, lock and pause, safe local landings and sampled descender geometry. Linux headless engine loads the pack; this is not a Windows executable or browser launch or a visual approval.
