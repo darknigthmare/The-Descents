@@ -507,9 +507,21 @@ def verify_approval() -> dict:
     return review
 
 
-def verify_archives() -> dict:
-    windows = ROOT / f"releases/The-Tower-Descent-v{SHORT}-Windows-x64.zip"
-    source = ROOT / f"releases/The-Tower-Descent-v{SHORT}-Sources.zip"
+def archive_paths() -> dict[str, Path]:
+    return {
+        "windows": ROOT / f"releases/The-Tower-Descent-v{SHORT}-Windows-x64.zip",
+        "sources": ROOT / f"releases/The-Tower-Descent-v{SHORT}-Sources.zip",
+        "native_captures": ROOT / f"releases/The-Tower-Descent-v{SHORT}-Captures-native.zip",
+    }
+
+
+def archive_input_maps() -> tuple[dict[str, dict[str, Path]], dict]:
+    """Derive exact, complementary ZIP contracts from the unsplit source scope.
+
+    The packager partitions by directory. This independent verifier additionally
+    requires exactly the reviewed 71 native PNGs and each group's two metadata
+    files. Every other member of the original source package stays in Sources.
+    """
     prefix = "The-Tower-Descent/"
     windows_inputs = {
         prefix + "TheTowerDescent.exe": ROOT / "builds/windows/TheTowerDescent.exe",
@@ -521,30 +533,91 @@ def verify_archives() -> dict:
         prefix + "JOUER_CINEMATIQUE.cmd": ROOT / "docs/launchers/JOUER_CINEMATIQUE.cmd",
         prefix + "JOUER_COMPATIBILITE.cmd": ROOT / "docs/launchers/JOUER_COMPATIBILITE.cmd",
     }
-    source_inputs_map = {prefix + path.relative_to(ROOT).as_posix(): path for path in source_package_paths()}
+    original_paths = source_package_paths()
+    original_inputs = {prefix + path.relative_to(ROOT).as_posix(): path for path in original_paths}
+    require(len(original_paths) == len(original_inputs), "Original source contract contains duplicate archive members.")
+    review = read_json(REVIEW)
+    expected = expected_captures({"expected_captures": review.get("expected_captures")})
+    native_pngs = {f"docs/captures/v{SHORT}/{group}/{name}" for group, names in expected.items() for name in names}
+    require({row["file"] for row in review["captures"]} == native_pngs,
+            "The native archive must retain all seventy-one reviewed captures.")
+    native_metadata = {f"docs/captures/v{SHORT}/{group}/{name}" for group in FIXTURES
+                       for name in ["MANIFEST.json", "PROVENANCE.json"]}
+    native_prefix = prefix + f"docs/captures/v{SHORT}/"
+    native_inputs = {name: path for name, path in original_inputs.items() if name.startswith(native_prefix)}
+    require(set(native_inputs) == {prefix + name for name in native_pngs | native_metadata},
+            "Native archive scope must be exactly 71 PNGs, five capture manifests and five provenance manifests.")
+    source_inputs_map = {name: path for name, path in original_inputs.items() if name not in native_inputs}
+    require(not set(source_inputs_map) & set(native_inputs), "Sources and native capture archives overlap.")
+    require(set(source_inputs_map) | set(native_inputs) == set(original_inputs),
+            "Sources plus native captures no longer cover the original source package exactly.")
+    require(not any(name.startswith(native_prefix) for name in source_inputs_map),
+            "Native capture evidence must stay outside the editable Sources ZIP.")
     required_sources = set(REFERENCE_DOCUMENTS) | set(GUIDES) | set(WINDOWS_LAUNCHERS)
     required_sources |= {path.relative_to(ROOT).as_posix() for path in ASSET_DOCS.rglob("*") if path.is_file()}
     required_sources |= {path.relative_to(ROOT).as_posix() for directory in [MODEL_ROOT, MATERIAL_ROOT] for path in directory.rglob("*") if path.is_file() and path.suffix not in {".import", ".uid"}}
-    required_sources |= {row["file"] for row in read_json(REVIEW)["captures"]}
     require(all(prefix + name in source_inputs_map for name in required_sources),
-            "Source ZIP omits a preserved document, current capture, authored model/texture, preview or editable source.")
+            "Source ZIP omits a preserved document, authored model/texture, preview, guide or editable source.")
+    partition = {
+        "shared_extraction_root": prefix, "native_capture_root": native_prefix,
+        "sources_members": len(source_inputs_map), "native_members": len(native_inputs),
+        "native_png_members": len(native_pngs), "native_metadata_members": len(native_metadata),
+        "original_source_members": len(original_inputs),
+        "original_member_names_sha256": hashlib.sha256(json.dumps(sorted(original_inputs), separators=(",", ":")).encode()).hexdigest(),
+        "disjoint": True, "complete_original_source_union": True,
+    }
+    return {"windows": windows_inputs, "sources": source_inputs_map, "native_captures": native_inputs}, partition
+
+
+def verify_archive_members(archive_path: Path, expected: dict[str, Path]) -> list[dict]:
+    require(archive_path.is_file() and archive_path.stat().st_size < MAX_ARCHIVE_BYTES,
+            "Archive is missing or exceeds the strict 100MiB publication limit: " + archive_path.name)
+    contents = []
+    with ZipFile(archive_path) as archive:
+        names = archive.namelist()
+        require(len(names) == len(set(names)) and set(names) == set(expected),
+                "Archive membership differs from its exact contract: " + archive_path.name)
+        require(archive.testzip() is None, "Archive has a CRC error: " + archive_path.name)
+        for name, path in sorted(expected.items()):
+            source = record(path)
+            digest = hashlib.sha256()
+            size = 0
+            with archive.open(name) as stream:
+                for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+                    digest.update(chunk)
+                    size += len(chunk)
+            require(size == source["bytes"] and digest.hexdigest() == source["sha256"],
+                    "Archived bytes differ from their source: " + name)
+            contents.append({"member": name, "source_file": source["file"], "bytes": size, "sha256": digest.hexdigest()})
+    return contents
+
+
+def verify_archive_checksums(reports: list[dict]) -> dict:
+    path = ROOT / "releases/SHA256SUMS.txt"
+    require(path.is_file(), "Archive checksum manifest is missing.")
+    listed = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        match = re.fullmatch(r"([0-9a-f]{64})  ([^/\\]+\.zip)", line)
+        require(match is not None and match.group(2) not in listed, "Malformed or duplicate archive checksum entry.")
+        listed[match.group(2)] = match.group(1)
+    for report in reports:
+        name = Path(report["file"]).name
+        require(listed.get(name) == report["sha256"], "Archive checksum differs from the verified ZIP: " + name)
+    return record(path)
+
+
+def verify_archives() -> dict:
+    inputs, partition = archive_input_maps()
     reports = []
-    for archive_path, expected in [(windows, windows_inputs), (source, source_inputs_map)]:
-        require(archive_path.stat().st_size < MAX_ARCHIVE_BYTES, "Archive exceeds the strict 100MiB publication limit.")
-        with ZipFile(archive_path) as archive:
-            names = archive.namelist()
-            require(len(names) == len(set(names)) and set(names) == set(expected), "Archive membership differs from its exact contract: " + archive_path.name)
-            require(archive.testzip() is None, "Archive has a CRC error: " + archive_path.name)
-            for name, path in expected.items():
-                digest = hashlib.sha256()
-                size = 0
-                with archive.open(name) as stream:
-                    for chunk in iter(lambda: stream.read(1024 * 1024), b""):
-                        digest.update(chunk)
-                        size += len(chunk)
-                require(size == path.stat().st_size and digest.hexdigest() == sha256(path), "Archived bytes differ from their source: " + name)
-        reports.append({**record(archive_path), "members": len(expected), "all_members_and_bytes_verified": True})
-    return {"version": VERSION, "status": "PASS", "archives": reports, "source_archive_scope": SOURCE_ARCHIVE_SCOPE,
+    for role, archive_path in archive_paths().items():
+        contents = verify_archive_members(archive_path, inputs[role])
+        reports.append({**record(archive_path), "role": role, "members": len(contents), "contents": contents,
+                        "all_members_and_bytes_verified": True})
+    return {"version": VERSION, "status": "PASS", "archives": reports, "partition": partition,
+            "source_archive_scope": "Complete editable project, authored game assets, Blender sources/previews, preserved documents, guides and reports; current native captures are in the complementary archive.",
+            "native_capture_archive_scope": "Exactly 71 current native PNGs plus five MANIFEST.json and five PROVENANCE.json files, under the same project extraction root.",
+            "combined_project_archive_scope": SOURCE_ARCHIVE_SCOPE,
+            "checksums": verify_archive_checksums(reports),
             "max_archive_bytes_exclusive": MAX_ARCHIVE_BYTES, "approved_review": record(APPROVAL),
             "source_verification": record(VALIDATION / "VERIFICATION.json"),
             "export_verification": record(VALIDATION / "EXPORTED_PACK_VERIFICATION.json"),
@@ -639,12 +712,14 @@ def publish(request: dict) -> None:
         release = read_json(ROOT / f"releases/VERIFICATION_V{SHORT}.json")
         require(release.get("status") == "PASS" and release.get("version") == VERSION, "No final archive verification.")
         check_records(release["archives"])
+        require(release == verify_archives(), "Stored archive membership, partition or byte evidence changed before publication.")
         require(release.get("approved_review") == record(APPROVAL)
                 and release.get("source_verification") == record(VALIDATION / "VERIFICATION.json")
                 and release.get("export_verification") == record(VALIDATION / "EXPORTED_PACK_VERIFICATION.json"),
                 "Published archives no longer bind the approved source/export evidence.")
         paths += ["dist", f"releases/The-Tower-Descent-v{SHORT}-Windows-x64.zip",
-                  f"releases/The-Tower-Descent-v{SHORT}-Sources.zip", "releases/SHA256SUMS.txt", f"releases/VERIFICATION_V{SHORT}.json"]
+                  f"releases/The-Tower-Descent-v{SHORT}-Sources.zip", f"releases/The-Tower-Descent-v{SHORT}-Captures-native.zip",
+                  "releases/SHA256SUMS.txt", f"releases/VERIFICATION_V{SHORT}.json"]
     subprocess.run(["git", "add", "--", *paths], cwd=ROOT, check=True)
     staged = git("diff", "--cached", "--name-only").splitlines()
     require(all(any(name == path or name.startswith(path + "/") for path in paths) for name in staged), "Unexpected staged path outside generated outputs.")

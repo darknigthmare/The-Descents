@@ -1,4 +1,4 @@
-"""Package the validated exports and editable project without caches or secrets."""
+"""Package Windows, editable sources and complementary native capture evidence."""
 from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 import hashlib
@@ -11,6 +11,31 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "releases"
 VERSION = re.search(r'config/version="([^"]+)"', (ROOT / "prototype/project.godot").read_text()).group(1)
 SHORT_VERSION = ".".join(VERSION.split(".")[:2])
+
+
+def split_source_package_paths(paths: list[Path]) -> tuple[list[Path], list[Path]]:
+    """Partition the complete source contract without dropping any of its files.
+
+    Both ZIPs retain The-Tower-Descent/ as their extraction root. Only the
+    current native capture tree moves to the companion archive; authored
+    textures, GLBs, Blender sources/previews, documents and reports stay in
+    Sources. The release verifier checks the exact 71-image/10-manifest set
+    independently against the approved review.
+    """
+    current_captures = Path("docs/captures") / f"v{SHORT_VERSION}"
+    native = [path for path in paths if path.relative_to(ROOT).is_relative_to(current_captures)]
+    source = [path for path in paths if not path.relative_to(ROOT).is_relative_to(current_captures)]
+    if len(paths) != len(set(paths)) or set(source) & set(native) or set(source) | set(native) != set(paths):
+        raise SystemExit("Source/native archive partition lost or duplicated files.")
+    if not source or not native:
+        raise SystemExit("Both editable sources and native capture evidence are required.")
+    return sorted(source), sorted(native)
+
+
+def write_project_archive(archive: Path, paths: list[Path]) -> None:
+    with ZipFile(archive, "w", ZIP_DEFLATED, compresslevel=9) as output:
+        for path in paths:
+            output.write(path, "The-Tower-Descent/" + path.relative_to(ROOT).as_posix())
 
 
 def main():
@@ -29,10 +54,11 @@ def main():
         for name in ["LICENSE.txt", "NOTICE.txt"]:
             z.write(ROOT / "prototype/assets/fonts" / name, "The-Tower-Descent/fonts/" + name)
     source = OUT / f"The-Tower-Descent-v{SHORT_VERSION}-Sources.zip"
-    with ZipFile(source, "w", ZIP_DEFLATED, compresslevel=9) as z:
-        for file in source_package_paths():
-            z.write(file, "The-Tower-Descent/" + file.relative_to(ROOT).as_posix())
-    for archive in [windows, source]:
+    native = OUT / f"The-Tower-Descent-v{SHORT_VERSION}-Captures-native.zip"
+    source_paths, native_paths = split_source_package_paths(source_package_paths())
+    write_project_archive(source, source_paths)
+    write_project_archive(native, native_paths)
+    for archive in [windows, source, native]:
         if archive.stat().st_size >= MAX_ARCHIVE_BYTES:
             raise SystemExit("Archive exceeds the strict 100 MiB publication limit: " + archive.name)
     hashes = []

@@ -6,13 +6,15 @@ La descente du toit d’Aube à l’exposition du 23 reçoit huit matières gén
 
 ## Jouer et ouvrir les sources v0.11
 
-- [Windows x64 v0.11](releases/The-Tower-Descent-v0.11-Windows-x64.zip) · [Sources, modèles Blender et textures v0.11](releases/The-Tower-Descent-v0.11-Sources.zip).
+- [Windows x64 v0.11](releases/The-Tower-Descent-v0.11-Windows-x64.zip) · [Sources, modèles Blender et textures v0.11](releases/The-Tower-Descent-v0.11-Sources.zip) · [Captures natives et leur provenance](releases/The-Tower-Descent-v0.11-Captures-native.zip).
 - [Démarrage Windows et commandes](docs/DEMARRAGE_WINDOWS.md) · [Guide visuel et matériel](docs/VISUELS_ET_SECOURS_V0.11.md) · [État de livraison et limites](docs/ETAT_DE_LIVRAISON.md).
 - [Catalogue des captures v0.11](docs/CAPTURES_V0.11.md) · [Manifeste de revue](docs/validation/v0.11/REVIEW_MANIFEST.json) · [Approbation des fichiers examinés](.review/v0.11/approval.json).
 - [Guide des modèles éditables](docs/assets/v0.11/README.md) · [Manifeste des seize modèles](docs/assets/v0.11/rescue_equipment_manifest.json) · [Textures, prompts et empreintes](prototype/assets/materials/v011/manifest.json).
 - [Contrôles sources](docs/validation/v0.11/VERIFICATION.json) · [Ressources des exports](docs/validation/v0.11/EXPORTED_PACK_VERIFICATION.json) · [Vérification finale des archives](releases/VERIFICATION_V0.11.json).
 
 Extraire le ZIP Windows puis choisir **JOUER_CINEMATIQUE.cmd** pour Forward+/Vulkan ou **JOUER_COMPATIBILITE.cmd** pour OpenGL. Le projet éditable se lance depuis `prototype/project.godot` avec Godot 4.7.2. Le fichier `docs/assets/v0.11/rescue_equipment.blend` conserve les pièces nommées des seize accessoires.
+
+Le ZIP Sources contient le projet complet, ses assets et ses documents. Les 71 images de contrôle, leurs manifestes et leur provenance sont réunis dans le ZIP Captures natives. Extraire les deux archives dans le même dossier réunit leurs chemins sous `The-Tower-Descent/`. Les aperçus Blender restent avec les sources ; les captures du jeu sont facultatives pour ouvrir le projet.
 
 ## Ce que la 0.11 ajoute
 

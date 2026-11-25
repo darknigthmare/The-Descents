@@ -19,6 +19,8 @@ Les chemins des groupes sont relatifs à la racine du dépôt. Chaque tableau d�
 
 ## Portée de la preuve visuelle
 
+Les images et leurs manifestes/provenances sont distribués dans [l’archive Captures natives v0.11](../releases/The-Tower-Descent-v0.11-Captures-native.zip). Elle conserve les chemins `The-Tower-Descent/docs/captures/v0.11/` et peut s’extraire dans le même dossier que le ZIP Sources. Cette séparation garde trois archives sous 100 Mio tout en conservant les fichiers de revue exacts.
+
 Les scènes de capture préparent les positions de caméra, les étapes de mission et certains temps d’animation pour rendre les états comparables. Elles utilisent le monde, les interfaces et les systèmes du prototype. Certaines actions passent par la logique de jeu et certains mouvements sont avancés par le scénario automatisé ; d’autres positions et étapes sont directement préparées. Chaque description doit être lue dans ce cadre.
 
 Les captures servent à examiner la lisibilité, les chevauchements, le cadrage, l’état des outils, les matériaux et la cohérence de l’éclairage. Elles ne constituent pas l’enregistrement d’une partie humaine complète. Les collisions, la progression, la sauvegarde et les conditions d’action sont également couvertes par les suites de tests ; une image isolée ne remplace pas ces vérifications.

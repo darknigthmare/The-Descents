@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: tower-descent-v011-build-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -78,6 +78,8 @@ jobs:
             dist/
             releases/The-Tower-Descent-v0.11-Windows-x64.zip
             releases/The-Tower-Descent-v0.11-Sources.zip
+            releases/The-Tower-Descent-v0.11-Captures-native.zip
+            releases/SHA256SUMS.txt
             releases/VERIFICATION_V0.11.json
             .review/v0.11/
           include-hidden-files: true

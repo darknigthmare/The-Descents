@@ -1,16 +1,28 @@
 # Exports du prototype 0.11
 
-Le workflow **release-v011** construit les exports Windows x64 et Web avec **Godot 4.7.2 stable officiel**. Il s’appuie sur les textures originales et les modèles éditables déjà générés, importés et figés dans le dépôt. [Windows v0.11](../releases/The-Tower-Descent-v0.11-Windows-x64.zip) · [Sources v0.11](../releases/The-Tower-Descent-v0.11-Sources.zip) · [résultats mesurés](ETAT_DE_LIVRAISON.md) · [rapport final des archives](../releases/VERIFICATION_V0.11.json).
+Le workflow **release-v011** construit les exports Windows x64 et Web avec **Godot 4.7.2 stable officiel**. Il s’appuie sur les textures originales et les modèles éditables déjà générés, importés et figés dans le dépôt. Le contrat de livraison prévoit les trois archives ci-dessous après la revue du candidat gelé et les contrôles d’emballage. Leur description ne vaut pas constat de production : les [résultats mesurés](ETAT_DE_LIVRAISON.md) et le rapport `releases/VERIFICATION_V0.11.json`, produit après emballage, établissent l’état effectif de la livraison.
 
 ## Rendu et contenu
 
 Windows démarre en **Forward+**. `JOUER_CINEMATIQUE.cmd` demande explicitement Forward+ avec Vulkan ; `JOUER_COMPATIBILITE.cmd` demande Compatibility avec OpenGL 3. Le profil lumineux réellement actif dépend du moteur obtenu. Le premier combine SDFGI, SSIL, SSAO, SSR et brouillard volumétrique ; le second conserve les matières, lumières directes, ombres locales et brouillard classique. Le Web utilise Compatibility. Les choix et leurs limites sont décrits dans [Visuels et secours](VISUELS_ET_SECOURS_V0.11.md).
 
-Le ZIP Windows contient exactement huit fichiers : l’exécutable avec son paquet embarqué, les deux lanceurs, le guide de démarrage renommé `README.md`, ce guide des exports, les licences Godot et les deux notices Open Sans. Tous doivent être extraits ensemble.
+Les trois archives prévues utilisent la racine `The-Tower-Descent/` :
 
-Le ZIP Sources contient le projet Godot, ses huit PNG de matière en résolution native 1254², seize GLB, le catalogue d’import, le fichier Blender éditable, les manifestes et les vingt et une vues de modèles. Il conserve les tests, scripts, workflows, guides, rapports textuels historiques et captures natives de la version courante. La Bible intégrale Word/PDF v0.9 et son supplément Word/PDF v0.10 restent identiques octet par octet. Les captures anciennes et les autres compilations historiques restent accessibles dans le dépôt et leurs archives d’origine.
+| Archive prévue | Contenu et usage |
+| --- | --- |
+| `The-Tower-Descent-v0.11-Windows-x64.zip` | Programme Windows avec ses deux lanceurs, guides et notices |
+| `The-Tower-Descent-v0.11-Sources.zip` | Projet modifiable complet, assets, documents et rapports |
+| `The-Tower-Descent-v0.11-Captures-native.zip` | Preuves visuelles natives et leurs manifestes, à extraire facultativement avec les sources |
 
-`dist/` reçoit l’export Web au commit de livraison. Ce dossier ne constitue pas, à lui seul, la publication d’un site public. Les archives ZIP, caches Godot et Python et rendus temporaires de pages ne sont pas réemballés dans le ZIP Sources. Les deux archives sont limitées chacune à moins de 100 Mio ; le rapport final compare leur ensemble exact de membres, leurs tailles et leurs octets avec les sources prévues.
+Le ZIP Windows conservera exactement huit fichiers : l’exécutable avec son paquet embarqué, les deux lanceurs, le guide de démarrage renommé `README.md`, ce guide des exports, les licences Godot et les deux notices Open Sans. Tous doivent être extraits ensemble.
+
+Le ZIP Sources conservera le projet Godot, ses huit PNG de matière en résolution native 1254², seize GLB, le catalogue d’import, le fichier Blender éditable, les manifestes des assets et les vingt et une vues de modèles. Il inclura les tests, scripts, workflows, guides et rapports textuels, y compris les rapports historiques. La Bible intégrale Word/PDF v0.9 et son supplément Word/PDF v0.10 resteront identiques octet par octet. Les captures anciennes et les autres compilations historiques restent accessibles dans le dépôt et leurs archives d’origine.
+
+Le ZIP Captures-native réunira **81 fichiers** : les **71 PNG natifs** et les fichiers `MANIFEST.json` et `PROVENANCE.json` de chacun des cinq groupes `baseline`, `continuation`, `equipment`, `lighting_forward` et `lighting_compat`. Leurs chemins `docs/captures/v0.11/<groupe>/` seront conservés sous la racine commune. Ces 81 fichiers seront les seuls éléments déplacés du ZIP Sources vers cette archive de preuves ; les aperçus Blender resteront dans Sources.
+
+Pour réunir le projet et ses preuves visuelles, extraire **Sources** puis, facultativement, **Captures-native** dans le **même dossier parent**. Les deux extractions compléteront ainsi un seul dossier `The-Tower-Descent/`, avec les chemins attendus par les guides et les manifestes. L’archive de captures n’est pas nécessaire pour jouer au programme Windows ou modifier le projet.
+
+`dist/` reçoit l’export Web au commit de livraison. Ce dossier ne constitue pas, à lui seul, la publication d’un site public. Les archives ZIP, caches Godot et Python et rendus temporaires de pages ne seront pas réemballés dans le ZIP Sources. **Chacune des trois archives devra rester strictement sous 100 Mio, soit 104 857 600 octets.** Le rapport final devra comparer l’ensemble exact des membres de chaque archive, leurs tailles et leurs octets avec les fichiers prévus ; séparer les captures ne retire aucun contrôle de complétude ou d’empreinte.
 
 ## Construction, examen et livraison
 
@@ -20,7 +32,7 @@ La demande `.review/v0.11/build-request.json` est seule dans son commit et nomme
 
 Chaque image du jeu et chaque vue Blender nécessite une observation après ouverture du fichier exact. L’approbation lie également les modèles, textures, guides, source éditable et quatre documents préservés à leurs SHA256. Le workflow ne produit pas lui-même cette approbation. Un changement dans le runtime, un test, une fixture, un guide lié ou un outil de livraison invalide les preuves correspondantes.
 
-La phase **release** exige cette revue explicite, vérifie à nouveau les packs, crée les ZIP et contrôle chaque membre. La publication avance uniquement `feat/live-tower-collapse` si son commit est toujours celui demandé ; elle ne fusionne pas `main` et ne force pas une branche ayant évolué. Les fichiers sont également conservés dans l’artefact Actions de l’exécution.
+La phase **release** exige cette revue explicite, vérifie à nouveau les packs, crée les trois ZIP et contrôle chaque membre. Le changement de répartition des archives impose une nouvelle revue complète du candidat gelé avant leur production ; il n’accorde aucune dérogation aux contrôles ou aux empreintes approuvées. La publication avance uniquement `feat/live-tower-collapse` si son commit est toujours celui demandé ; elle ne fusionne pas `main` et ne force pas une branche ayant évolué. Les fichiers sont également conservés dans l’artefact Actions de l’exécution.
 
 Les tests source, l’import des GLB, les chargements de packs sous Linux et les captures préparées ont des portées différentes. Ils ne constituent ni une partie humaine de l’EXE Windows, ni une partie WebAssembly dans un navigateur, ni une mesure de fréquence d’images sur une carte dédiée. Les résultats et limites du candidat exact figurent dans les rapports v0.11 ; une simple source sur la branche n’est pas un export validé.
 

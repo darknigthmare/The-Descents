@@ -1,4 +1,44 @@
-# État de livraison de la version 0.10
+# État de livraison de la version 0.11
+
+**25 novembre 2026 — matières, lumière et outils de secours.**
+
+La 0.11 enrichit le parcours existant du toit au 23. Elle apporte huit albedos originaux, seize modèles éditables et quatre interventions contextuelles : réserve à ouvrir à la hache au 29, foyer à éteindre au 28, armoire de soins au 25 et projecteur à libérer au 24. Les outils apparaissent en main, se rangent pendant les secours et les traversées et conservent leurs résultats dans la sauvegarde de schéma 4.
+
+**État de préparation :** les seize modèles finaux et leurs 21 vues Blender ont été contrôlés. La première revue native a conduit à corriger la priorité de la hache, les enseignes, deux placements de matériel et la synchronisation des outils dans les captures. Le candidat corrigé est en reconstruction ; la revue des nouvelles images et la vérification des trois archives restent à consigner.
+
+## Éléments de preuve v0.11
+
+| Domaine | Preuve et portée |
+| --- | --- |
+| Génération des modèles | [ASSET_BOOTSTRAP.json](validation/v0.11/ASSET_BOOTSTRAP.json), source Blender, manifestes et contrôle indépendant des GLB |
+| Compilation, import et logique | [VERIFICATION.json](validation/v0.11/VERIFICATION.json) : résultat des 37 suites sur les empreintes indiquées |
+| Exports Windows et Web | [EXPORTS.json](validation/v0.11/EXPORTS.json), construit à partir des modèles officiels du moteur |
+| Ressources embarquées | [EXPORTED_PACK_VERIFICATION.json](validation/v0.11/EXPORTED_PACK_VERIFICATION.json), chargement des deux packs depuis des dossiers isolés |
+| Présentation du jeu et moteurs | [Catalogue](CAPTURES_V0.11.md), [REVIEW_MANIFEST.json](validation/v0.11/REVIEW_MANIFEST.json), manifestes et provenance de chacun des cinq groupes |
+| Examen des octets exacts | [approval.json](../.review/v0.11/approval.json), observations individuelles des captures et vues Blender, empreintes des assets et documents |
+| Archives finales | [VERIFICATION_V0.11.json](../releases/VERIFICATION_V0.11.json), membres exacts, tailles, SHA256 et comparaison des octets |
+
+Un rapport vaut pour le commit et les empreintes qu’il nomme. Les résultats d’une génération préparatoire ne constituent pas, seuls, une revue des nouvelles images ou une validation des archives finales. Le workflow garde ces étapes séparées et ne crée pas lui-même d’approbation visuelle.
+
+## Changements de présentation
+
+Le profil Forward+ utilise SDFGI, SSIL, SSAO, SSR, ombres locales, brouillard volumétrique et réponse tonale ACES. Le profil Compatibilité garde les mêmes matières et modèles avec ses lumières directes, ombres et brouillard classique. Deux lanceurs Windows demandent explicitement le moteur choisi ; le Web utilise Compatibilité. Les états rapportés par Godot et les captures comparables font foi pour les capacités réellement actives.
+
+Les huit PNG conservent leur résolution native de 1254² et leurs octets originaux. Ils ont été inspectés seuls puis en répétition 2 × 2. Les légers raccords du bois et de la pierre sont consignés. Le microrelief et la rugosité de détail utilisés par le moteur sont des données procédurales ; le lot n’est pas présenté comme une série de scans PBR mesurés.
+
+Le fichier Blender conserve les pièces nommées des seize accessoires. Les GLB emploient les mètres, des UV et normales, et un maillage à plusieurs surfaces par objet. Les textures partagées restent des ressources du projet, sans copie embarquée dans chaque GLB. Les vues de contrôle servent à examiner les formes ; les images natives vérifient leur présentation dans le jeu.
+
+## Continuité et limites de cette livraison
+
+La mission conserve les trois réceptions au toit, l’incident d’Hespérie, les huit liaisons locales, Léa et Idris à accompagner au refuge et les deux pièces de l’exposition. Les quatre nouveaux sites sont facultatifs. Une action interrompue n’utilise aucune charge ; un résultat achevé ne donne pas une seconde récompense. Les nouvelles entrées de matériel restent distinctes des deux caisses de secours dans le dossier.
+
+La Bible intégrale Word/PDF v0.9 et son supplément Word/PDF v0.10 sont conservés octet par octet dans le ZIP Sources, avec le code, les textures, les modèles, le fichier Blender, les aperçus, les guides et les rapports. Le ZIP Captures natives contient les 71 images du jeu, leurs cinq manifestes et leurs cinq provenances, avec les mêmes chemins relatifs sous `The-Tower-Descent/`. Les deux archives se réunissent par extraction dans le même dossier ; le projet s’ouvre avec le seul ZIP Sources. Les anciennes archives restent disponibles. Le [guide v0.11](VISUELS_ET_SECOURS_V0.11.md) détaille les modèles, les quatre gestes, les profils et les commandes.
+
+Les contrôles s’exécutent sous Godot Linux. Les captures préparent des états du jeu et le profil Forward+ de CI utilise un pilote Vulkan logiciel. Aucune partie humaine sous Windows ou dans un navigateur, aucune mesure sur un GPU de joueur et aucun mixage final ne sont déduits de ces essais. Les personnages, les mains, les véhicules et une partie importante de l’architecture restent procéduraux. Les accessoires n’incluent pas de LOD ni d’animations de combat ; leurs usages livrés sont les interventions décrites.
+
+Le parcours s’arrête au 23. A22 et les niveaux inférieurs, les humains hostiles, les laboratoires SILLAGE, l’Enfer, Alma, l’intérieur d’Hespérie et le portage UE5 restent à produire. L’éclairage Godot répond à l’intention visuelle demandée sans revendiquer une implémentation ni une parité complète avec Lumen.
+
+## Historique de livraison v0.10
 
 **25 novembre 2026 — continuation A24 et A23.**
 

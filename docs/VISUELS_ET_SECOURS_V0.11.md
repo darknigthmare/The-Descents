@@ -96,6 +96,16 @@ La construction sépare trois étapes : génération des modèles et contrôle d
 
 Le contrôle source couvre les comportements historiques et les nouveaux outils, matériaux et profils. Les ressources Windows et Web sont également chargées depuis des dossiers isolés. Le plan de revue comporte 42 états du secteur initial, 13 de continuation, 8 d’équipement et 4 cadrages comparables dans chacun des deux moteurs. Les images du jeu sont des états préparés, avec la méthode inscrite dans leurs manifestes. Elles ne constituent pas un enregistrement d’une partie humaine.
 
-Le ZIP Windows contient le programme, les deux lanceurs, le guide et les notices. Le ZIP Sources conserve les scripts, textures, modèles, source Blender, guides, tests et captures de la version, ainsi que la Bible intégrale Word/PDF v0.9 et son supplément Word/PDF v0.10. Les archives précédentes restent disponibles dans leur version d’origine. Le pack source reste limité à moins de 100 Mio, comme le pack Windows.
+Le contrat d’emballage prévoit **trois archives**, chacune strictement sous **100 Mio**, après une nouvelle revue complète du candidat gelé. Cette répartition ne signifie pas que les ZIP ont déjà été produits ; l’état de livraison et les contrôles finaux doivent confirmer les fichiers effectivement construits.
+
+| Archive prévue | Contenu |
+| --- | --- |
+| `The-Tower-Descent-v0.11-Windows-x64.zip` | Programme, deux lanceurs, guides et notices |
+| `The-Tower-Descent-v0.11-Sources.zip` | Projet Godot, scripts, huit textures, seize GLB, source Blender, vingt et un aperçus de modèles, manifestes des assets, tests, guides et rapports ; Bible intégrale Word/PDF v0.9 et supplément Word/PDF v0.10 conservés à l’identique |
+| `The-Tower-Descent-v0.11-Captures-native.zip` | 71 PNG natifs du jeu et les dix fichiers de manifeste et provenance de leurs cinq groupes, soit 81 fichiers |
+
+Les trois archives auront la racine `The-Tower-Descent/`. Pour joindre les preuves aux sources, extraire facultativement **Captures-native dans le même dossier parent que Sources** : les chemins `docs/captures/v0.11/{baseline,continuation,equipment,lighting_forward,lighting_compat}/` seront ainsi rétablis sans déplacer les images à la main. Chaque groupe conserve son `MANIFEST.json` et son `PROVENANCE.json`. Les captures sont facultatives pour jouer ou modifier le projet ; les aperçus Blender demeurent dans Sources.
+
+Seuls ces 81 fichiers natifs seront déplacés hors du ZIP Sources. Les contrôles d’ensemble des membres, de taille et d’empreinte resteront obligatoires pour les trois archives. Les archives précédentes restent disponibles dans leur version d’origine. [Le guide des exports](EXPORTS.md) précise le contenu et la procédure de vérification.
 
 Le rendu et la performance sur un PC Windows de joueur, une carte graphique dédiée ou un navigateur doivent encore être mesurés sur ces environnements. Les personnages, animations de mains, véhicules et une partie importante de l’architecture restent procéduraux. Les modèles de secours constituent un lot d’assets de prototype éditables ; les LOD, les collisions détaillées de chaque accessoire et les animations de combat ne sont pas livrés ici. Les outils présentés servent aux interventions contextuelles décrites ci-dessus.
