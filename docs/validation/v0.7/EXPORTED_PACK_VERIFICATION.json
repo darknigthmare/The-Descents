@@ -1,8 +1,8 @@
 {
   "version": "0.7.0",
   "runtime_freeze_commit": "ca8753a510486e969040460ec0f5db9b75253091",
-  "git_head": "ca8753a510486e969040460ec0f5db9b75253091",
-  "verified_utc": "2026-11-25T06:02:36.605835+00:00",
+  "git_head": "fc78d18e8110de7100352939068be9756f0c6ac4",
+  "verified_utc": "2026-11-25T06:17:35.316000+00:00",
   "engine": "4.7.2.stable.official.ed1daf0bf",
   "test_script": "prototype/tests/test_exported_pack.gd",
   "test_script_sha256": "3f90c82e01f0f25abb6b0357341b96576049893ab0f21d80609bf116653be04c",
@@ -68,7 +68,7 @@
         "/home/runner/work/The-Descents/The-Descents/prototype/tests/test_exported_pack.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.528,
+      "duration_seconds": 0.525,
       "error_lines": [],
       "checks": 45,
       "pass_markers": 1,
@@ -77,7 +77,7 @@
       "platform": "windows",
       "pack": "builds/windows/TheTowerDescent.exe",
       "pack_bytes": 110450192,
-      "pack_sha256": "797754a9f9e6cf6b5bcbeca8dc1aee47afcebaceb35c890a72f558778466d27c",
+      "pack_sha256": "5f230c8d512dc5acef347947d8355eb5023bb3cec88dc61f2ee36f99d2db5f24",
       "pack_unchanged_during_test": true,
       "execution_directory_was_empty": true,
       "log_sha256": "b4fe2af6615f34b3298dbc6ecc03d1e406c9fe8b4ef473482d54f237885302ff"
@@ -92,7 +92,7 @@
         "/home/runner/work/The-Descents/The-Descents/prototype/tests/test_exported_pack.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.528,
+      "duration_seconds": 0.525,
       "error_lines": [],
       "checks": 45,
       "pass_markers": 1,
@@ -101,7 +101,7 @@
       "platform": "web",
       "pack": "builds/web/index.pck",
       "pack_bytes": 1181696,
-      "pack_sha256": "094c3ea8349ab88a79deb9577f78a4af1f6fcaae5fa84c0d62ee7383ce1ba3f8",
+      "pack_sha256": "ed1afd4c62f07bbb419503e6b62964bc69dc3eb39451acee915a0ca8be34f069",
       "pack_unchanged_during_test": true,
       "execution_directory_was_empty": true,
       "log_sha256": "b4fe2af6615f34b3298dbc6ecc03d1e406c9fe8b4ef473482d54f237885302ff"
