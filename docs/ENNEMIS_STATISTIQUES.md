@@ -6,7 +6,7 @@ Le joueur affronte des situations qu’il peut lire, vérifier et modifier. Le b
 
 La figure E00 du spa devient une présence perceptive dans la 0.8 : elle ne poursuit plus le joueur et ne lui inflige aucun dégât. Les seize archétypes E01 à E16 ci-dessous sont des spécifications de campagne, avec des valeurs initiales à tester. Aucun chiffre proposé n’est présenté comme une mesure issue d’une partie de campagne ou d’un équilibrage déjà validé.
 
-La 0.8 conserve le périmètre jouable toit–25 et ralentit la révélation de l’horreur. Le dossier et l’épilogue du refuge n’ajoutent ni adversaire ni combat final. Le fragment de relais laisse l’origine du signal ouverte ; il ne confirme pas la présence d’un archétype de campagne dans le secteur jouable. La simulation hostile reste suspendue pendant la lecture du journal et après la clôture de mission.
+La 0.8 conserve le périmètre jouable toit–25 et ralentit la révélation de l’horreur. Le dossier et l’épilogue du refuge n’ajoutent ni adversaire ni combat final. Le fragment de relais laisse l’origine du signal ouverte ; il ne confirme pas la présence d’un archétype de campagne dans le secteur jouable. La simulation de mission et la présentation restent suspendues pendant la lecture du journal et après la clôture de mission.
 
 ## Convention des statistiques
 

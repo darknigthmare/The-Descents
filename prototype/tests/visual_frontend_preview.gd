@@ -187,6 +187,16 @@ func _capture_early_manifestations() -> bool:
 	mission._start_new(271104)
 	mission._finish_arrival()
 	_disable_ticks()
+	# Keep the later aftermath state consistent with the real first rescue.
+	var casualty: Node3D = _mission_object("survivor", 30)
+	mission.player.teleport_to_floor(30)
+	mission._interact_node(casualty)
+	mission._start_hoist(casualty, 30)
+	mission._process_hoist(5.01)
+	mission.rescue_visuals.finish_reception()
+	# These views represent a later quiet interval, beyond the six-second toast.
+	mission.notify_time = 0.0
+	mission.hud.notify_label.hide()
 	mission.player.teleport_to_floor(29)
 	mission.player.position = Vector3(-3.0,30.1,2.0)
 	mission.player.camera.look_at(Vector3(-3.0,31.3,-5))

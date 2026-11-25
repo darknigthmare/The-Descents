@@ -58,7 +58,7 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 
 ### P05 Lampe de secours
 
-**Présent. Fonction et gabarit.** Petite lampe visible de 0,32 m de longueur, faisceau de maquette de portée 27 m et angle 32°. Elle aide à lire les indices et ralentit l’approche de la silhouette du spa. Elle ne vide pas une batterie dans la tranche actuelle.
+**Présent. Fonction et gabarit.** Petite lampe visible de 0,32 m de longueur, faisceau de maquette de portée 27 m et angle 32°. Elle aide à lire les indices, les obstacles et les appuis du trajet de secours. Elle ne vide pas une batterie dans la tranche actuelle.
 
 **Interaction et états.** F alterne allumée et éteinte. Cible de campagne : faisceau orienté, réglage confort et panne scénarisée très courte avec remplacement immédiat de l’information utile. Aucune réserve obligatoire ne peut disparaître sans moyen de traverser l’étage.
 
@@ -312,7 +312,7 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 
 ### P35 Bassin du spa
 
-**Présent. Fonction et gabarit.** Volume de maquette de 7 × 6,5 m, bord haut de 0,3 m et surface d’eau visuelle. Il structure le niveau 26 et donne un repère stable à une apparition mobile.
+**Présent. Fonction et gabarit.** Volume de maquette de 7 × 6,5 m, bord haut de 0,3 m et surface d’eau visuelle. Il structure le niveau 26 et donne un repère stable à la présence stationnaire.
 
 **Interaction et états.** Le bassin actuel n’est pas une simulation de nage. La campagne distingue eau décorative, passage ralenti, circuit dangereux et bassin isolé ; chaque catégorie possède un retour clair. Une coupure électrique ne fait pas disparaître magiquement toute menace sans vérification.
 

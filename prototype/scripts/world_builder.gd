@@ -383,7 +383,9 @@ func _build_floor(number: int, spec: Dictionary) -> void:
 	var default_names: Dictionary = {30:"RESTAURANT PANORAMIQUE", 29:"SUITES DE L'AUBE", 28:"BUREAUX PELAGOS", 27:"JARDIN DES ENFANTS", 26:"SPA ET BASSIN", 25:"REFUGE TECHNIQUE"}
 	var title: String = str(spec.get("name", default_names[number])).to_upper()
 	_label(floor_node, Vector3(4.6, y + 3.8, -2.9), "%02d / %s" % [number, title], 40, Color("d7ded8"), 0.009, true)
-	_label(floor_node, Vector3(-2.64, y + 1.7, 0), "%02d" % number, 92, Color("e8a15f"), 0.014, true)
+	# Keep the landing marker above eye level and at a readable physical size.
+	# The former metre-high billboard obscured nearby rooms and their occupants.
+	_label(floor_node, Vector3(-2.64, y + 2.8, 0), "%02d" % number, 64, Color("e8a15f"), 0.005, true)
 	# Ceiling structural beams and soft indirect lights establish each volume.
 	for zz in [-10.5, 10.5]:
 		_box(floor_node, Vector3(0, y + 5.45, zz), Vector3(24, 0.3, 0.38), materials["metal"])
