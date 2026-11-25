@@ -1,7 +1,7 @@
 {
   "format": 1,
   "version": "0.9.0",
-  "phase": "review",
-  "request_id": "v09-review-20261125-03",
-  "source_commit": "9c55464aee77cb95e1282b518696e5af5f694845"
+  "phase": "release",
+  "request_id": "v09-release-20261125-01",
+  "source_commit": "e82d8a5a11ae224134502fef38e9e4553ffc8994"
 }
