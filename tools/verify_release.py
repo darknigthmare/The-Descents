@@ -72,6 +72,7 @@ def main() -> None:
         ".github/workflows/release-v" + SHORT.replace(".", "") + ".yml",
         "tools/build_release_ci.py", f".review/v{SHORT}/build-request.json",
         f"docs/validation/v{SHORT}/DOCUMENT_BUILD.json",
+        f"docs/validation/v{SHORT}/DOCUMENT_CONTENT.json", "tools/verify_document_content.py",
         "prototype/scripts/rescue_presentation.gd", "prototype/scripts/maritime_atmosphere.gd",
         "prototype/tests/test_rescue_presentation.gd", "prototype/tests/test_atmosphere.gd", "prototype/tests/test_comfort.gd",
         "prototype/scripts/mission_dossier.gd", "prototype/scripts/mission_dossier_panel.gd",
@@ -197,6 +198,26 @@ def main() -> None:
     require([row["page"] for row in document_review["pages"]] == list(range(1, document_review["page_count"] + 1)), "Document review has missing or duplicate pages")
     require(all(row["status"] == "pass" for row in document_review["pages"]), "Document contains an unapproved page")
     document_build = json.loads((VALIDATION / "DOCUMENT_BUILD.json").read_text())
+    if document_build.get("canonical_document") is not None:
+        from build_release_ci import verify_canonical_document
+        prepared = verify_canonical_document()
+        preparation = document_build["canonical_document"]
+        require(preparation["file"] == ".review/v0.9/canonical-document.json" and
+                digest((ROOT / preparation["file"]).read_bytes()) == preparation["sha256"],
+                "Prepared canonical PDF manifest changed after construction")
+        require(prepared["pdf_sha256"] == digest((ROOT / f"docs/The-Tower-Descent-Bible-v{SHORT}.pdf").read_bytes()),
+                "Archive PDF differs from its canonical preparation")
+    content_path = VALIDATION / "DOCUMENT_CONTENT.json"
+    content = json.loads(content_path.read_text())
+    require(content.get("complete") is True and content.get("status") == "pass", "PDF text is incomplete")
+    for kind, extension in [("docx", "docx"), ("pdf", "pdf")]:
+        artifact = ROOT / "docs" / f"The-Tower-Descent-Bible-v{SHORT}.{extension}"
+        require(content[kind]["sha256"] == digest(artifact.read_bytes()), "Content verification refers to another document: " + kind)
+    require(document_build["content_verification"]["file"] == content_path.relative_to(ROOT).as_posix() and
+            document_build["content_verification"]["sha256"] == digest(content_path.read_bytes()), "Document content report changed after construction")
+    require(content["counts"]["ordered_blocks_matched"] == content["counts"]["ordered_blocks_checked"] > 0 and
+            content["counts"]["cells_matched_in_expected_row"] == content["counts"]["cells_checked"] > 0,
+            "Document content verification does not cover every ordered block and cell")
     require(document_build["version"] == VERSION and document_build["source_count"] == len(DOCUMENT_SOURCES), "Wrong document build version or source count")
     require(document_review.get("source_commit") == document_build["source_commit"], "Document review refers to another construction revision")
     require(document_build["page_count"] == document_review["page_count"], "Document review page count differs from its rendered document")
@@ -220,7 +241,9 @@ def main() -> None:
                       "source_archive_scope": SOURCE_ARCHIVE_SCOPE, "source_member_set_exact": True,
                       "historical_media_retained_in_repository": True, "archive_limit_bytes_exclusive": MAX_ARCHIVE_BYTES,
                       "document_pages_reviewed": document_review["page_count"], "document_sources_verified": document_review["source_count"],
-                      "checks": ["ZIP integrity", "SHA256 manifest", "every source member equals local source", "exact source-member set and current-version media policy", "current archives below 100 MiB", "required deliverables", "PE x64 and embedded executable bytes", "Windows guide and font license", "Web sizes and distribution equality", "frozen runtime hashes and test logs", f"{len(EXPECTED_CAPTURES)} native captures against CI provenance and runtime hashes", "complete document review and final Word/PDF/source hashes", "Web font notices"]}, indent=2))
+                      "document_ordered_blocks_verified": content["counts"]["ordered_blocks_matched"],
+                      "document_cells_verified": content["counts"]["cells_matched_in_expected_row"],
+                      "checks": ["ZIP integrity", "SHA256 manifest", "every source member equals local source", "exact source-member set and current-version media policy", "current archives below 100 MiB", "required deliverables", "PE x64 and embedded executable bytes", "Windows guide and font license", "Web sizes and distribution equality", "frozen runtime hashes and test logs", f"{len(EXPECTED_CAPTURES)} native captures against CI provenance and runtime hashes", "complete document review and final Word/PDF/source hashes", "ordered PDF body/table/cell content bound to exact Word and PDF", "Web font notices"]}, indent=2))
 
 
 if __name__ == "__main__":

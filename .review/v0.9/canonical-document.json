@@ -1,0 +1,109 @@
+{
+  "format": 1,
+  "version": "0.9.0",
+  "created_utc": "2026-11-25T14:14:09.575407+00:00",
+  "sources": [
+    {
+      "file": "docs/BIBLE_DU_JEU.md",
+      "sha256": "fdfb59e959b363d7ac68150a127f719a2bb7bc1470a7540cf9372cdcfa6c2d46"
+    },
+    {
+      "file": "docs/CATALOGUE_ETAGES.md",
+      "sha256": "a2fa367b7b16c9d8b21cdbc4d6468a53904a630586644d2a83475db9a49ce006"
+    },
+    {
+      "file": "docs/SYSTEMES_PROCEDURAUX.md",
+      "sha256": "473c39d9f481bbec26fd3b0ecd263067cabb53dded7cafd4400907e5f043a58e"
+    },
+    {
+      "file": "docs/ARCHITECTURE_ET_PORTAGE_UE5.md",
+      "sha256": "3e5a2a9377e78c4d9be793c3c33a33b9c6a53ed43f0a3eb8cc17543883f0454b"
+    },
+    {
+      "file": "docs/EFFONDREMENT_EN_DIRECT.md",
+      "sha256": "2edf417356bffeee149fcbe62353615108a8bb2d73c64d462c2361da422f6e9f"
+    },
+    {
+      "file": "docs/COMMUNICATIONS_ET_EQUIPES.md",
+      "sha256": "cdd3a5d4126f0c62bb235662a57c10842acf9392cf1daf4359ea9dcf4204da0b"
+    },
+    {
+      "file": "docs/PROPS_INTERACTIONS.md",
+      "sha256": "f841ccaa89c6744f53427c4074e4d575dfbc8d8788af9bce5468afa1114148cc"
+    },
+    {
+      "file": "docs/ENNEMIS_STATISTIQUES.md",
+      "sha256": "0618928f99b0d9c04ff69b8dd59e48e1e3ae860a68f7dcbd108e9a1e32e69d2f"
+    },
+    {
+      "file": "docs/SCENES_CINEMATIQUES.md",
+      "sha256": "ddadf50b2f1c3b24263c9476e7654d31a02b5fb7205a422dbf1e255f1d7e600a"
+    },
+    {
+      "file": "docs/GAMEPLAY_DETAILLE.md",
+      "sha256": "463c72f505e68d7675eed6622bde1a9b078c7409623f7c24ff4817d4896f097c"
+    },
+    {
+      "file": "docs/SAUVETAGE_V0.6.md",
+      "sha256": "a2df21a6974262c1024e027a3a5b38ff35024722e406fb4bca4d052cf13552eb"
+    },
+    {
+      "file": "docs/AMBIANCE_V0.6.md",
+      "sha256": "11d0e639631deb639a48beeff3d7047395fee333f2f33eefa6890640b01c3dc7"
+    },
+    {
+      "file": "docs/CONFORT_V0.6.md",
+      "sha256": "38f6f01f567c4c6c5986e9bd73d5ff8e8e4bbc4122a5bb8d2ff3d3aeaa0ca2b5"
+    },
+    {
+      "file": "docs/DOSSIER_ET_EPILOGUE_V0.7.md",
+      "sha256": "b6e6d0f98fb804b5036910bc828e40cf0e348b4ef2efc66745129609effc9386"
+    },
+    {
+      "file": "docs/PROGRESSION_HORREUR_V0.8.md",
+      "sha256": "b023c48f4787226a7622c7dda90813fbee041bba39eb8ed050645dc299339f43"
+    },
+    {
+      "file": "docs/TRAVERSEE_ET_RAPPEL_V0.9.md",
+      "sha256": "5a1ef16395cde12325528d203acf4b518c40a2009deff29becdaf58903a62f98"
+    }
+  ],
+  "build_bible_sha256": "0b90555d098cbb9ae85a5e7818d64e760118c6ce852a13ce30603dcfcdd31f80",
+  "docx_members": {
+    "[Content_Types].xml": "479ad1a2258771db93540fbde6ad43e861d8d39dd2559e3f6db17286b11cc6ab",
+    "_rels/.rels": "a9ae57efe9186f07d48303bcac5d54c7e359bf3f503939c03ad2954e5c59a5c4",
+    "customXml/_rels/item1.xml.rels": "1ca6c9a64edcebe24ee703a54403611b322d96da33371779e742d2d3f7ed7a6c",
+    "customXml/item1.xml": "a86086ffc5d8e83ebd6c71a55d1d2efaa31b137977f5f3a752366e1023612144",
+    "customXml/itemProps1.xml": "c542307b13ec29a8b546217bb37936ab4822e044b265d2952985ec3d6afed24e",
+    "docProps/app.xml": "be664981c3141cddfc59362beb287ebf20d0773660e2dd6faac5968a5930a081",
+    "docProps/core.xml": "177ba388d5c7bd21b27c5dafb9b905795540383f190be47a4e4c73727710d374",
+    "docProps/thumbnail.jpeg": "96367138dc44ce09bf2c8f0f8e49348a1478d2c5c0af69bbc2bbc38b63cdcead",
+    "word/_rels/document.xml.rels": "48df7e807552a84cb8e1291e132918bddc126aed70a0fdcab05f6bea7366fd32",
+    "word/document.xml": "553257e4706efe554dbca559b999b2e78b635336697672c8867e7dfc816ca1c2",
+    "word/fontTable.xml": "79385fb7f60247507ecaffc292e9ebd52ea0657b8634f629ba6fccc54011d6bb",
+    "word/footer1.xml": "da4f57aba2c8ef8547803a64151389290a3b1bb2514c74be2e73feb24e75193a",
+    "word/header1.xml": "92122ffbc203b7af083059398f25247e4d942295ed9b92f8a27476f831a77da0",
+    "word/numbering.xml": "9e398710e0218d3e3b1e25b2256996261db4714d6c15ec7ad816c980d04847f2",
+    "word/settings.xml": "0cd844b6ed3d2f8aba575aa2105bb8147b5c7234ed3e1c0257a10fcf1190834d",
+    "word/styles.xml": "5e1098472b9a00cff01952b9f834afdcf1750026df0b438c8380e64db29cb421",
+    "word/stylesWithEffects.xml": "463ae0928cf0d84775dbf8cf18d6c3029f6707c81bf590f6d6dd8757a5e93f15",
+    "word/theme/theme1.xml": "e3a8ab7db9ca7afca56f5f2820a56e8b660016c647773555b060b0a02ac76941",
+    "word/webSettings.xml": "349d36de7434d09f86987ff671d8814964a0588c1e630c06e562cda7e75e9f95"
+  },
+  "pdf_sha256": "25776d758dfb7070afb4157f15859864c6f991809fba71f78cf6f442cbe61121",
+  "pdf_bytes": 3064715,
+  "page_count": 186,
+  "canonical_renderer": {
+    "script": "/home/agent/.codex/skills/builtins/documents/render_docx.py",
+    "script_sha256": "876d5993324e2faaaa96a68a4f7504642e9a07e6df265b385b2baa03b231369e",
+    "libreoffice": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+    "method": "Primary document runtime DOCX build and canonical render_docx.py --emit_pdf; complete PDF prepared locally and retained unchanged for CI page rendering and independent visual approval."
+  },
+  "origin": {
+    "source_commit": "afa4e21ccea7e876930200fcd85d7a3d929244fa",
+    "word_sha256": "d10ea97019bfd8dc3290e43621c4d87ad841fff761fa3d36f857121aeabe8bb8",
+    "render_log_sha256": "b9f2b52a2e6d879b450e867df1f679072c5ef033d454054101f24f3b0bfd8e7f",
+    "content_guard_sha256": "88bf3b1a9494d96df9a4f8795fc7d7b2f83d01d14171e9f49805648cbe170398"
+  },
+  "reason": "LibreOffice 24.2.7.2 on CI omitted table 16 rows 3-7 in both conversion attempts. The canonical renderer preserves the complete ordered content; CI must verify source and DOCX-member identity, rerun the same full content guard and render this exact PDF for page-by-page review. No visual approval is implied by this input manifest."
+}

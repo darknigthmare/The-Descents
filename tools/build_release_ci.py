@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 from datetime import datetime, timezone
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -20,6 +21,7 @@ import struct
 import subprocess
 import sys
 import tempfile
+from zipfile import ZipFile
 
 from qa_common import DOCUMENT_SOURCES, ROOT, git_head, godot_binary, run, runtime_hashes, sha256, version
 
@@ -28,6 +30,7 @@ VERSION = "0.9.0"
 SHORT = "0.9"
 REQUEST = ROOT / ".review/v0.9/build-request.json"
 CAPTURE_REQUEST = ROOT / ".review/v0.9/request.json"
+CANONICAL_DOCUMENT = ROOT / ".review/v0.9/canonical-document.json"
 VALIDATION = ROOT / "docs/validation/v0.9"
 CAPTURES = ROOT / "docs/captures/v0.9"
 RENDERED = VALIDATION / "rendered"
@@ -80,6 +83,65 @@ def checked(command: list[str], log: Path, timeout: int = 240) -> dict:
 
 def record(path: Path) -> dict:
     return {"file": path.relative_to(ROOT).as_posix(), "bytes": path.stat().st_size, "sha256": sha256(path)}
+
+
+def verify_canonical_document() -> dict:
+    """Bind a prepared PDF to the fresh DOCX package and every authored input."""
+    require(CANONICAL_DOCUMENT.is_file(), "The canonical document manifest is missing or is not a file.")
+    prepared = json.loads(CANONICAL_DOCUMENT.read_text(encoding="utf-8"))
+    require(isinstance(prepared, dict) and prepared.get("format") == 1 and
+            prepared.get("version") == VERSION == version(), "Canonical document manifest format or version differs from this release.")
+    rows = prepared.get("sources")
+    require(isinstance(rows, list) and len(rows) == len(DOCUMENT_SOURCES) and
+            all(isinstance(row, dict) and isinstance(row.get("file"), str) and
+                isinstance(row.get("sha256"), str) for row in rows), "Canonical document manifest must identify all sixteen sources.")
+    expected_sources = {row["file"]: row["sha256"] for row in rows}
+    require(set(expected_sources) == set(DOCUMENT_SOURCES), "Canonical document source names are missing, duplicated or unexpected.")
+    require(expected_sources == {name: sha256(ROOT / name) for name in DOCUMENT_SOURCES},
+            "A Bible source changed after canonical PDF preparation.")
+    require(prepared.get("build_bible_sha256") == sha256(ROOT / "tools/build_bible.py"),
+            "The Bible generator differs from the canonical PDF preparation.")
+    expected_members = prepared.get("docx_members")
+    require(isinstance(expected_members, dict) and bool(expected_members), "Canonical document manifest omits the DOCX package members.")
+    require(BIBLE_DOCX.is_file(), "The fresh Word document is missing.")
+    with ZipFile(BIBLE_DOCX) as package:
+        names = package.namelist()
+        require(len(names) == len(set(names)), "The Word document contains duplicate ZIP members.")
+        actual_members = {name: hashlib.sha256(package.read(name)).hexdigest() for name in names}
+    require(set(actual_members) == set(expected_members), "The fresh Word package has missing or unexpected canonical members.")
+    require(actual_members == expected_members, "The fresh Word package contents differ from the canonical PDF preparation.")
+    require(BIBLE_PDF.is_file() and sha256(BIBLE_PDF) == prepared.get("pdf_sha256"),
+            "The prepared canonical PDF is missing or its fingerprint differs from the manifest.")
+    require(BIBLE_PDF.read_bytes()[:5] == b"%PDF-", "The prepared canonical document is not a PDF.")
+    if "pdf_bytes" in prepared:
+        require(BIBLE_PDF.stat().st_size == prepared["pdf_bytes"], "The prepared canonical PDF size differs from the manifest.")
+    renderer = prepared.get("canonical_renderer")
+    require(isinstance(renderer, dict) and all(isinstance(renderer.get(key), str) and renderer[key].strip()
+            for key in ("script", "libreoffice", "method")), "Canonical renderer provenance is incomplete.")
+    if "script_sha256" in renderer:
+        require(isinstance(renderer["script_sha256"], str) and bool(re.fullmatch(r"[0-9a-f]{64}", renderer["script_sha256"])),
+                "Canonical renderer script fingerprint is malformed.")
+    require(isinstance(prepared.get("created_utc"), str) and bool(prepared["created_utc"].strip()),
+            "Canonical document preparation time is missing.")
+    return prepared
+
+
+def canonical_document_renderer(prepared: dict) -> dict:
+    return {
+        "method": "Fresh repository DOCX matched against every prepared package member; canonical PDF retained unchanged; CI Poppler PNG rendering at 2000 px.",
+        "pdf_preparation": "prepared_canonical_document",
+        "libreoffice": prepared["canonical_renderer"]["libreoffice"],
+        "canonical_renderer": prepared["canonical_renderer"],
+        "canonical_source_provenance": {
+            "created_utc": prepared["created_utc"],
+            "build_bible_sha256": prepared["build_bible_sha256"],
+            "origin": prepared.get("origin"), "reason": prepared.get("reason"),
+        },
+        "rasterizer": "CI Poppler pdftoppm -png -scale-to 2000",
+        "requested_body_font": "Arial",
+        "font_report": "docs/validation/v0.9/document-fonts.txt",
+        "canonical_local_skill_renderer_used": True,
+    }
 
 
 def install_templates() -> None:
@@ -227,25 +289,46 @@ def build_documents() -> None:
     require(tuple("docs/" + part[0] for part in PARTS) == DOCUMENT_SOURCES, "Bible builder does not include exactly the sixteen required sources in order.")
     sources = [record(ROOT / name) for name in DOCUMENT_SOURCES]
     tool("build_bible.py", "--output", str(BIBLE_DOCX))
+    prepared = None
+    preparation_record = None
+    if CANONICAL_DOCUMENT.exists():
+        prepared = verify_canonical_document()
+        preparation_record = record(CANONICAL_DOCUMENT)
     if RENDERED.exists():
         shutil.rmtree(RENDERED)
     RENDERED.mkdir(parents=True)
-    with tempfile.TemporaryDirectory(prefix="tower-v09-document-") as temporary:
-        directory = Path(temporary)
-        converted = directory / "pdf"
-        converted.mkdir()
-        checked([
-            "libreoffice", "-env:UserInstallation=" + (directory / "profile").as_uri(),
-            "--headless", "--convert-to", "pdf:writer_pdf_Export", "--outdir", str(converted), str(BIBLE_DOCX),
-        ], VALIDATION / "document-conversion.txt", timeout=360)
-        produced = converted / BIBLE_PDF.name
-        require(produced.is_file() and produced.read_bytes()[:5] == b"%PDF-", "LibreOffice did not produce the requested PDF.")
-        shutil.copy2(produced, BIBLE_PDF)
+    if prepared is not None:
+        renderer = canonical_document_renderer(prepared)
+        (VALIDATION / "document-conversion.txt").write_text(
+            "Prepared canonical PDF retained byte-for-byte; no CI LibreOffice conversion was performed.\n"
+            + json.dumps({"manifest": preparation_record, "renderer": renderer}, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8")
+    else:
+        with tempfile.TemporaryDirectory(prefix="tower-v09-document-") as temporary:
+            directory = Path(temporary)
+            converted = directory / "pdf"
+            converted.mkdir()
+            checked([
+                "libreoffice", "-env:UserInstallation=" + (directory / "profile").as_uri(),
+                "--headless", "--convert-to", "pdf:writer_pdf_Export", "--outdir", str(converted), str(BIBLE_DOCX),
+            ], VALIDATION / "document-conversion.txt", timeout=360)
+            produced = converted / BIBLE_PDF.name
+            require(produced.is_file() and produced.read_bytes()[:5] == b"%PDF-", "LibreOffice did not produce the requested PDF.")
+            shutil.copy2(produced, BIBLE_PDF)
+        renderer = {
+            "method": "Repository DOCX builder, LibreOffice PDF conversion, Poppler PNG rendering at 2000 px.",
+            "libreoffice": subprocess.check_output(["libreoffice", "--version"], text=True).strip(),
+            "requested_body_font": "Arial", "resolved_body_font": subprocess.check_output(["fc-match", "Arial", "--format=%{family}"], text=True).strip(),
+            "font_report": "docs/validation/v0.9/document-fonts.txt",
+            "canonical_local_skill_renderer_used": False,
+        }
     info = subprocess.check_output(["pdfinfo", str(BIBLE_PDF)], text=True)
     match = re.search(r"^Pages:\s+(\d+)", info, re.M)
     require(match is not None, "The rendered PDF has no readable page count.")
     page_count = int(match.group(1))
     require(page_count > 0, "The rendered PDF is empty.")
+    if prepared is not None and "page_count" in prepared:
+        require(page_count == prepared["page_count"], "The canonical PDF page count differs from its preparation manifest.")
     checked(["pdftoppm", "-png", "-scale-to", "2000", str(BIBLE_PDF), str(RENDERED / "page")],
             VALIDATION / "document-pages.txt", timeout=360)
     checked(["pdftotext", "-layout", str(BIBLE_PDF), str(RENDERED / "document.txt")],
@@ -267,6 +350,9 @@ def build_documents() -> None:
         require(height == 2000 and 1400 <= width <= 1430, "Document page no longer has the expected A4 portrait shape.")
         pages.append({"page": index, **record(path), "width": width, "height": height})
     require(sources == [record(ROOT / name) for name in DOCUMENT_SOURCES], "The Bible source changed during document construction.")
+    if prepared is not None:
+        require(record(CANONICAL_DOCUMENT) == preparation_record and verify_canonical_document() == prepared,
+                "Canonical document inputs changed during CI page rendering.")
     text_pages = (RENDERED / "document.txt").read_text().split("\f")
     if text_pages and not text_pages[-1].strip():
         text_pages.pop()
@@ -277,15 +363,10 @@ def build_documents() -> None:
         "source_count": len(sources), "source_words": sum(len((ROOT / name).read_text().split()) for name in DOCUMENT_SOURCES),
         "sources": sources, "artifacts": [record(BIBLE_DOCX), record(BIBLE_PDF)],
         "content_verification": record(VALIDATION / "DOCUMENT_CONTENT.json"),
+        **({"canonical_document": preparation_record} if preparation_record is not None else {}),
         "page_count": page_count, "pages": pages,
         "manual_visual_review": False,
-        "renderer": {
-            "method": "Repository DOCX builder, LibreOffice PDF conversion, Poppler PNG rendering at 2000 px.",
-            "libreoffice": subprocess.check_output(["libreoffice", "--version"], text=True).strip(),
-            "requested_body_font": "Arial", "resolved_body_font": subprocess.check_output(["fc-match", "Arial", "--format=%{family}"], text=True).strip(),
-            "font_report": "docs/validation/v0.9/document-fonts.txt",
-            "canonical_local_skill_renderer_used": False,
-        },
+        "renderer": renderer,
         "limitations": ["A successful conversion and page count do not approve visual layout. Every final page requires a separate visual review."],
     })
 
@@ -308,6 +389,15 @@ def verify_reviews() -> None:
         require(sha256(CAPTURES / row["file"]) == row["sha256"], "A reviewed native capture changed.")
     document = json.loads((VALIDATION / "DOCUMENT_REVIEW.json").read_text())
     built = json.loads((VALIDATION / "DOCUMENT_BUILD.json").read_text())
+    if built.get("canonical_document") is not None:
+        prepared = verify_canonical_document()
+        require(built["canonical_document"] == record(CANONICAL_DOCUMENT), "The canonical preparation manifest changed after document construction.")
+        require(built["renderer"] == canonical_document_renderer(prepared), "Canonical document renderer provenance changed after construction.")
+        if "page_count" in prepared:
+            require(built["page_count"] == prepared["page_count"], "Reviewed canonical document page count differs from its preparation.")
+    else:
+        require(not CANONICAL_DOCUMENT.exists() and built["renderer"].get("canonical_local_skill_renderer_used") is False,
+                "The document build does not record its canonical preparation manifest.")
     require(document.get("all_pass") is True and built["version"] == VERSION, "The document is not fully reviewed.")
     require(document.get("source_commit") == built["source_commit"], "The document review identifies a different construction revision.")
     require(document["source_count"] == len(DOCUMENT_SOURCES) and {row["file"] for row in document["sources"]} == set(DOCUMENT_SOURCES), "Document review omits a Bible source.")
