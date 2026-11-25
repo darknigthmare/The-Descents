@@ -1,12 +1,12 @@
-# Captures natives prévues — The Tower Descent 0.7
+# Captures natives examinées — The Tower Descent 0.7
 
-Ce document définit le lot exact de **30 captures à produire et à examiner** pour la v0.7. Il ne constitue pas une attestation de capture ou d’approbation. Les liens du tableau désignent leurs emplacements attendus ; ils ne sont valides qu’après publication du lot correspondant. L’[état de livraison](ETAT_DE_LIVRAISON.md) sera complété avec les résultats réels.
+Les **30 captures natives de la v0.7** ont été produites par la [construction de revue du 25 novembre 2026](https://github.com/darknigthmare/The-Descents/actions/runs/45557532133), puis ouvertes et examinées une à une dans leur format PNG original. La [revue visuelle](validation/v0.7/VISUAL_REVIEW.json) conserve un verdict, une observation et l’empreinte de chaque fichier. L’[état de livraison](ETAT_DE_LIVRAISON.md) relie ces images aux tests et aux documents.
 
-Le contrat utilise **Godot 4.7.2 officiel**, rendu **Compatibility / OpenGL 3**, à **1440 × 900**, sous Linux avec Xvfb et Mesa. Les états sont préparés par la scène de capture, puis rendus par le moteur : scènes, menus, personnages procéduraux et interfaces du jeu. Les 22 vues de la version précédente sont recapturées avec le runtime v0.7 ; aucune image historique n’est réétiquetée comme une nouvelle preuve.
+Le lot utilise **Godot 4.7.2 officiel**, rendu **Compatibility / OpenGL 3**, à **1440 × 900**, sous Linux avec Xvfb et Mesa. Les états sont préparés par la scène de capture, puis rendus par le moteur : scènes, menus, personnages procéduraux et interfaces du jeu. Les 22 vues de la version précédente ont été recapturées avec le runtime v0.7 ; aucune image historique n’a été réétiquetée comme une nouvelle preuve.
 
-## Provenance à établir
+## Provenance vérifiée
 
-| Preuve attendue | Contenu exigé |
+| Preuve | Contenu |
 | --- | --- |
 | `.review/v0.7/request.json` | Runtime, fixture, rapport de tests et noms exacts des captures demandées |
 | `captures/v0.7/MANIFEST.json` | Les trente états effectivement produits, sans nom manquant ni doublon |
@@ -15,6 +15,16 @@ Le contrat utilise **Godot 4.7.2 officiel**, rendu **Compatibility / OpenGL 3**,
 | `validation/v0.7/VISUAL_REVIEW.json` | Fichiers réellement examinés, empreintes exactes, observations et décision de revue |
 
 Les PNG restent les preuves natives. Pour les lecteurs qui ne peuvent pas afficher un PNG volumineux, le pipeline peut produire une copie JPEG de même dimension, qualité 95 et chroma 4:4:4, sans recadrage ni redimensionnement. Cette copie utilise une compression avec perte ; le manifeste conserve les deux empreintes et vérifie que l’original n’a pas changé. La revue précise le support affiché. Produire un PNG ou un JPEG ne vaut jamais approbation visuelle.
+
+Les trente approbations de cette version portent sur les **PNG originaux**. Le commit de capture est `ca8753a510486e969040460ec0f5db9b75253091` ; les fichiers ont été publiés au commit `e8e376c2f88b008728aed3e1f4a3835c042eef63`. Les essais d’interface complètent les images pour le défilement, le focus et les transitions.
+
+## Aperçu de la continuation
+
+![Journal de mission : situation et progression](captures/v0.7/20_journal_situation.png)
+
+![Épilogue : les trois personnes au poste médical](captures/v0.7/24_epilogue_02.png)
+
+![Bilan de l’intervention au refuge 25](captures/v0.7/25_bilan_refuge.png)
 
 ## Ouverture et accueil
 
@@ -50,7 +60,7 @@ Les PNG restent les preuves natives. Pour les lecteurs qui ne peuvent pas affich
 
 ## Dossier de mission et clôture
 
-| Capture | État à présenter |
+| Capture | État présenté |
 | --- | --- |
 | [20 — Journal Situation](captures/v0.7/20_journal_situation.png) | Intervention après impact, une réception et un indice confirmés ; point sûr, état structurel, ressources et derniers échanges |
 | [21 — Journal Rescapés](captures/v0.7/21_journal_rescapes.png) | Trois noms, une réception confirmée et deux personnes encore à secourir ; distinction entre objectif et résultat |

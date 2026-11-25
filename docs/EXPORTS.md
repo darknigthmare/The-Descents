@@ -11,7 +11,7 @@
 | Web | dist/ | Chargeur, WebAssembly, paquet de ressources et licences à servir ensemble |
 | Bible | docs/The-Tower-Descent-Bible-v0.7.docx et .pdf | Volume complet issu de quatorze sources, soumis à revue de chaque page |
 
-Windows embarque son paquet de ressources dans l’exécutable. Le dossier Web n’établit pas à lui seul qu’un site public a été déployé. Les archives, documents et preuves v0.6 restent conservés pendant la préparation de cette version.
+Windows embarque son paquet de ressources dans l’exécutable. Le dossier Web n’établit pas à lui seul qu’un site public a été déployé. Les archives, documents et preuves des versions précédentes restent conservés. La distribution Web figure dans `dist/` au commit de livraison ; elle n’est pas incluse dans le ZIP Sources. Le rapport final des archives est produit après l’emballage et reste accessible séparément dans `releases/VERIFICATION_V0.7.json`.
 
 ## Construction et vérification
 

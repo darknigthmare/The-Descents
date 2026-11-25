@@ -8,22 +8,22 @@ Le dépôt contient une tranche jouable sous **Godot 4.7.2**, du toit au refuge 
 
 ## État de la version et accès au projet
 
-La branche prépare la **0.7**. Son contrat de livraison exige **24 suites**, les ressources des deux exports testées en isolation, **30 captures natives** et une bible complète issue de **14 sources**, avec revue de chaque page. Les résultats et archives v0.7 restent à renseigner après exécution et revue ; les nombres de contrôles réussis et de pages ne sont pas anticipés. Voir [le suivi de livraison](docs/ETAT_DE_LIVRAISON.md) et [la procédure v0.7](docs/VALIDATION_V0.7.md).
+Le runtime **0.7** a passé **24 suites et 4 840 contrôles**, puis **90 contrôles supplémentaires** sur les ressources des exports Windows et Web. Les **30 captures natives** ont été examinées. La bible complète réunit **14 sources, 72 395 mots sources et 149 pages**, avec revue de chaque page. Voir [les résultats et leur portée](docs/ETAT_DE_LIVRAISON.md) et [la procédure v0.7](docs/VALIDATION_V0.7.md).
 
-Les liens suivants donnent accès à la **dernière livraison validée, la v0.6**, conservée pendant cette préparation. Le projet source courant se lance depuis `prototype/project.godot`.
+Les téléchargements de la **v0.7** sont produits par la phase de livraison, après vérification des revues et des empreintes. Le [rapport des archives](releases/VERIFICATION_V0.7.json) consigne leur intégrité et leur correspondance avec les sources. Le projet se lance depuis `prototype/project.godot`.
 
-- [Windows x64 — version 0.6](releases/The-Tower-Descent-v0.6-Windows-x64.zip)
-- [Sources complètes — version 0.6](releases/The-Tower-Descent-v0.6-Sources.zip)
+- [Windows x64 — version 0.7](releases/The-Tower-Descent-v0.7-Windows-x64.zip)
+- [Sources complètes — version 0.7](releases/The-Tower-Descent-v0.7-Sources.zip)
 - [Démarrage Windows et commandes](docs/DEMARRAGE_WINDOWS.md)
 - [État de livraison et limites vérifiées](docs/ETAT_DE_LIVRAISON.md)
 - [Exports, moteur et licences](docs/EXPORTS.md)
 - [Empreintes des archives](releases/SHA256SUMS.txt)
 
-La source v0.6 a passé **21 suites et 4 500 contrôles**, avec **60 contrôles supplémentaires** sur les ressources des deux exports. Les **22 captures natives** et les **139 pages de bible** sont couvertes par les revues de leurs fichiers exacts. Le [rapport final des archives](releases/VERIFICATION_V0.6.json) vérifie l’intégrité et la cohérence des livrables. Les versions précédentes restent disponibles dans releases.
+La [construction de revue](https://github.com/darknigthmare/The-Descents/actions/runs/45557532133), les [tests du runtime](docs/validation/v0.7/VERIFICATION.json), la [revue visuelle](docs/validation/v0.7/VISUAL_REVIEW.json) et la [revue documentaire](docs/validation/v0.7/DOCUMENT_REVIEW.json) fixent les fichiers contrôlés. Les versions précédentes restent disponibles dans releases.
 
-![Accueil contextuel conservé de la livraison v0.6](docs/captures/v0.6/01_menu_arrivee.png)
+![Accueil contextuel de The Tower Descent v0.7](docs/captures/v0.7/01_menu_arrivee.png)
 
-[Revoir les vingt-deux captures validées de la v0.6](docs/CAPTURES_V0.6.md), ou [consulter le contrat des trente captures v0.7](docs/CAPTURES_V0.7.md). L’image ci-dessus appartient à la livraison v0.6.
+[Consulter les trente captures examinées de la v0.7](docs/CAPTURES_V0.7.md), notamment les quatre rubriques du journal, les trois plans de clôture et le bilan du refuge.
 
 ## Ouverture et accueil
 
@@ -55,7 +55,7 @@ Le [dossier de conception v0.7](docs/DOSSIER_ET_EPILOGUE_V0.7.md) décrit les sc
 
 Une personne sécurisée apparaît dans le harnais de première personne, avec sangles, poignée et mains d’Alex. Une seule personne est transportée et le centre de visée reste destiné à la route.
 
-La balise engage cinq secondes de transfert : verrouillage, remontée et dépose. Le panier, le câble tendu et l’opérateur matérialisent le geste. L’objectif affiche phase et avancement. Seule la fin confirme le sauvetage et crée le point sûr.
+La balise engage cinq secondes de transfert : verrouillage, remontée et dépose. Le panier, le câble tendu et l’opérateur matérialisent le geste. L’objectif affiche phase et avancement. Seule la fin confirme le sauvetage et demande l’enregistrement d’un point sûr ; son écriture reste soumise aux conditions de sauvegarde.
 
 Une prise en charge de 4,2 secondes accompagne ensuite la personne déjà reçue jusqu’à l’abri. Les équipiers existants retrouvent leurs postes. Le rechargement installe les personnes confirmées à leur place finale. Le [dossier de sauvetage](docs/SAUVETAGE_V0.6.md) décrit scène, props, durées et continuité.
 
@@ -92,10 +92,10 @@ La radio gère priorités, file et trente-deux dernières transmissions. Le sile
 
 ## Bible complète et dossiers de production
 
-La bible v0.7 doit réunir intégralement les **14 sources** ci-dessous, avec une nouvelle annexe consacrée au dossier et à l’épilogue. Les Word et PDF v0.7 sont soumis à construction et revue ; les liens suivants désignent les documents validés de la v0.6.
+La bible v0.7 réunit intégralement les **14 sources** ci-dessous, avec une nouvelle annexe consacrée au dossier et à l’épilogue : **72 395 mots sources, 149 pages, 1 737 paragraphes et 58 tableaux dans le Word**. Chaque page du PDF final a été rendue et examinée. Le Word final a également été rendu avec le moteur documentaire local ; ses 149 images correspondent au rendu intégralement revu.
 
-- [Bible Word v0.6](docs/The-Tower-Descent-Bible-v0.6.docx)
-- [Bible PDF v0.6](docs/The-Tower-Descent-Bible-v0.6.pdf)
+- [Bible Word v0.7](docs/The-Tower-Descent-Bible-v0.7.docx)
+- [Bible PDF v0.7](docs/The-Tower-Descent-Bible-v0.7.pdf)
 
 | Source | Contenu |
 | --- | --- |
