@@ -1,10 +1,10 @@
 # Props et interactions de production
 
-**Version 0.7.0 — 52 fiches de référence et 12 observations jouables — 25 novembre 2026**
+**Version 0.8.0 — 60 fiches de référence et 12 observations jouables — 25 novembre 2026**
 
 Ce catalogue donne aux équipes de niveau, d’art, de son et de gameplay des objets qui ont une fonction dans l’intervention. Il décrit les accessoires du prototype lorsqu’ils existent, puis les objets à produire pour la campagne. Une fiche de campagne n’est pas un inventaire d’assets déjà livrés. Les dimensions proposées servent au blocage et à la recette de circulation ; elles ne constituent ni des normes de construction ni des instructions de secours réels.
 
-Dans la 0.7, le dossier à quatre onglets décrit les faits issus de ces interactions ; il ne crée aucun accessoire collectable supplémentaire. Les plans de clôture observent le poste médical, le relais du 25 et la tour endommagée déjà présents dans le monde. Les 52 fiches et les douze observations conservent leur portée ; le bilan n’exige pas la lecture de tous les props facultatifs.
+Dans la 0.7, le dossier à quatre onglets décrit les faits issus de ces interactions ; il ne crée aucun accessoire collectable supplémentaire. Les plans de clôture observent le poste médical, le relais du 25 et la tour endommagée déjà présents dans le monde. La 0.8 porte le catalogue à 60 fiches avec huit props de campagne liés aux expériences et à l’Enfer. Les douze observations jouables conservent leur portée ; le bilan n’exige pas la lecture de tous les props facultatifs.
 
 ## Convention des fiches
 
@@ -74,9 +74,9 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 
 ### P07 Fusée rouge
 
-**Présent sous forme abstraite. Fonction et gabarit.** G consomme une unité, crée une lumière rouge pendant 20 s et repousse la figure du spa. Stock initial 3, plafond 6. Cible physique : bâton de 0,04 m de diamètre sur 0,28 m, support visuel au sol ou en main.
+**Présent sous forme abstraite. Fonction et gabarit.** G consomme une unité, crée une lumière rouge pendant 20 s et réduit le stress de dix points. En 0.8, les silhouettes perceptives sont masquées pendant cette durée ; aucune créature n’est projetée ou téléportée. Stock initial 3, plafond 6. Cible physique : bâton de 0,04 m de diamètre sur 0,28 m, support visuel au sol ou en main.
 
-**Interaction et états.** Non utilisée, allumée, consumée. Dans la maquette, l’effet contre la figure dépend du temps actif de la fusée, sans véritable calcul d’exposition à sa lumière. La campagne devra tester portée, occultation et durée avant de présenter cet effet comme local.
+**Interaction et états.** Non utilisée, allumée, consumée. Le masquage perceptif dépend du temps actif de la fusée, sans calcul d’exposition locale. Ce résultat ne confirme ni une attaque réelle ni un pouvoir d’exorcisme. La campagne devra tester portée, occultation et durée avant de proposer un effet défensif spatial sur une entité corporelle.
 
 **Son et implantation.** Amorçage bref, crépitement discret, sous-titre utile si le joueur ne voit pas le halo. Pas de clignotement rapide. Les réserves critiques sont accessibles avant la rencontre ; une variante sans fusée conserve un détour et la ligne de retour.
 
@@ -316,7 +316,7 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 
 **Interaction et états.** Le bassin actuel n’est pas une simulation de nage. La campagne distingue eau décorative, passage ralenti, circuit dangereux et bassin isolé ; chaque catégorie possède un retour clair. Une coupure électrique ne fait pas disparaître magiquement toute menace sans vérification.
 
-**Son et implantation.** Eau, filtre et réverbération distincte des appels. La passerelle sèche reste visible et praticable pour Nora. Recette : lumière rouge, reflet trompeur optionnel, largeur du contournement, appui de capsule et lisibilité de la sortie après un contact avec la figure.
+**Son et implantation.** Eau, filtre et réverbération distincte des appels. La passerelle sèche reste visible et praticable pour Nora. Recette : lumière rouge, reflet trompeur optionnel, largeur du contournement, appui de capsule et lisibilité de la sortie lorsque la présence perceptive est visible.
 
 ### P36 Transat de soin
 
@@ -446,7 +446,7 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 
 **Interaction et états.** Actif, identifié, isolé ou détourné, résultat confirmé. Chaque choix exige une condition montrée dans la scène. La résolution peut être interrompue et reprise depuis un appui protégé ; elle ne réinitialise pas les personnes sauvées.
 
-**Son et implantation.** Chaque liaison porte une signature stable et des sous-titres de source ; les couches se retirent avec les actions. Placement authored dans P666, aucune permutation du sens des stations. Recette : ordre alternatif autorisé, choix final explicite, retour de checkpoint et épilogue cohérent avec les faits enregistrés.
+**Son et implantation.** Chaque liaison porte une signature stable et des sous-titres de source ; les couches se retirent avec les actions. Placement écrit en B06 puis dans I04, de l’autre côté de P666 ; aucune permutation du sens des stations. Recette : ordre alternatif autorisé, choix final explicite, retour de checkpoint et épilogue cohérent avec les faits enregistrés.
 
 ### P51 Télémètre
 
@@ -463,6 +463,74 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 **Interaction et états.** Approche, descente finale, toucher, ouverture, sortie des équipes, fermeture, appareil au toit, départ opérationnel, éloigné. Le joueur ne le pilote pas. La cinématique d’arrivée possède son horloge ; la passer ne doit pas accélérer le départ de mission ni remettre un appareil au mauvais endroit. Aucun appareil n’est enfant de la tour qui bascule pendant son vol. Le souffle visible des rotors est un effet sans collision et sans coût de ressource.
 
 **Son et implantation.** Couches de rotor, moteur et vent, atténuées sous les sous-titres. Points fixes de dépose sur Aube et Hespérie, pas de spawn aléatoire. Recette : caméra finale, pale sans collider, reprise au menu, mouvement réduit et cohérence du départ après une introduction passée.
+
+## Accessoires des expériences et de la traversée infernale — campagne future
+
+Les huit fiches suivantes complètent P01–P52. Elles fixent des verbes et des états avant la production des modèles. **Aucun de ces objets n’est livré comme interaction dans la tranche toit–25.** Les dimensions sont des gabarits de jeu à éprouver.
+
+### P53 Caisson de comparaison matérielle
+
+**Fonction et gabarit cible.** Deux cellules vitrées sur un bâti de 2,4 × 1,1 × 1,7 m. Un échantillon local et une matière ramenée de la brèche peuvent être observés sans exposer Alex. L’objet établit que les essais portent sur un transfert matériel ; il ne prétend pas expliquer toute la physique de l’Enfer.
+
+**Interaction et états.** Scellé, témoin local lu, témoin étranger lu, comparaison consignée. Deux repères persistants et un registre daté rendent la conclusion indépendante d’un seul écran. Une vitre brisée reste un obstacle local annoncé, jamais une contamination mortelle invisible.
+
+**Son, implantation et recette.** Compresseur à bas régime, verrous et signal d’état doublé par un mot. Implantation A08 puis B02 ; comparaison principale possible sans consommable. Vérifier lecture dans n’importe quel ordre, retour après panne, contraste des matières et séparation entre observation et certitude cosmologique.
+
+### P54 Registre de franchissement
+
+**Fonction et gabarit cible.** Pupitre de 0,8 × 0,5 × 1,1 m avec feuillets et écran d’archive. Il relie départ, retour, masse transportée, opérateurs et décisions d’autorisation. Le récit se construit par concordance avec les objets présents.
+
+**Interaction et états.** Fermé, pièce lue, pièces rapprochées, copie emportée. Les noms d’opérateurs et les dates sont stables. Une pièce facultative peut préciser une victime ; aucune seule page cachée ne verrouille la compréhension du passage.
+
+**Son, implantation et recette.** Papier, tiroir, lecteur sobre ; aucun « succès » sonore avant lecture effective. A07 expose la chaîne de responsabilité, B01 et B05 la complètent. Tester page longue, lecture interrompue, journal et preuve dupliquée : une copie d’un registre ne compte pas comme un second témoignage indépendant.
+
+### P55 Collecteur de seuil
+
+**Fonction et gabarit cible.** Assemblage industriel fictif de 3 × 2 × 2,8 m, raccords reconnaissables et chambre inaccessible. Il matérialise l’exploitation tentée par Pelagos et la dépendance énergétique de la brèche.
+
+**Interaction et états.** Alimenté, dérivation disponible, isolé, état confirmé. Le joueur agit sur un panneau simplifié ; le modèle n’enseigne aucune procédure réelle de haute énergie. Couper une branche modifie un effet visible et ouvre une fenêtre de traversée définie.
+
+**Son, implantation et recette.** Pulsation grave et rythme de relais, sans niveau sonore extrême. B03 puis installation transférée en I03. Recette : anticipation du changement, détour sans précision au pixel, panne au milieu d’une commande et conservation de l’état après reprise.
+
+### P56 Porte de confinement déformée
+
+**Fonction et gabarit cible.** Cadre de 2,8 × 1,2 × 3 m, double battant et joint marqué par une matière étrangère. Les efforts visibles indiquent de quel côté est venue la rupture. La porte sert aussi de séparation contre une menace humaine corporelle.
+
+**Interaction et états.** Entrebâillée, retenue, passage autorisé, refermée ou condamnée avec détour. Une fermeture attend que le joueur et toute personne accompagnée aient quitté le volume. Le retour utile ne se condamne pas par un clic involontaire.
+
+**Son, implantation et recette.** Frottement métallique, flexion progressive et verrou distinct. Première porte lisible à A09, variante profonde B04. Vérifier capsule, corps porté, course des battants, état du verrou et chemin secondaire avant toute mise en scène hostile.
+
+### P57 Balise d’amarrage dimensionnel
+
+**Fonction et gabarit cible.** Tripode de 0,7 × 0,7 × 1,1 m avec identifiant mécanique, lumière fixe et bobine visible. Il authentifie un appui de retour entre P666 et I01. Sa signature est un objet du monde que le joueur a préparé, pas un label apparu sur une copie inconnue.
+
+**Interaction et états.** Transportée, posée sur socket sûr, raccordée, liaison vérifiée, protégée. La première balise est fournie avant le franchissement. L’équipement ne disparaît pas au chargement et une copie perceptive ne reçoit pas son identifiant.
+
+**Son, implantation et recette.** Bip espacé désactivable, texte et symbole permanent. Un couple Nacre/Enfer au chemin critique, variantes secondaires limitées. Tester passage, retour, sauvegarde, partenaire absent et lecture sans distinguer seulement le rouge du vert.
+
+### P58 Ligne de retour et treuil d’amarrage
+
+**Fonction et gabarit cible.** Treuil de 1,6 × 1 × 1,3 m et ligne représentée entre points préparés. Il transpose le geste de rappel en moyen de continuité physique dans la dimension infernale, sans simuler une corde infinie libre.
+
+**Interaction et états.** Ancrée, déployée par segment, tendue, segment isolé, route confirmée. Les segments portent des numéros et ont des appuis valides. Le jeu annonce une rupture narrative et fournit une solution de repli avant de retirer une ligne acquise.
+
+**Son, implantation et recette.** Roulement, tension lente et cliquetis localisés. P666, I01 et I02 ; aucun câble traversant la capsule. Vérifier retour avec charge, bifurcation, pause sous tension, orientation et reprise au dernier appui plutôt qu’au milieu d’un segment.
+
+### P59 Borne de contre-signal
+
+**Fonction et gabarit cible.** Trois variantes d’un poste de 1,3 × 0,9 × 1,6 m, distinguées par forme, fonction et repère. Elles rendent accessibles les liaisons énergie, motif et réponse du Chœur bas.
+
+**Interaction et états.** Liaison reconnue, contre-signal préparé, fenêtre ouverte, liaison isolée ou détournée. Chaque commande annonce son coût et son effet sur le retour. Le joueur peut observer un cycle depuis un appui avant d’agir ; aucune phrase cachée n’est une solution magique.
+
+**Son, implantation et recette.** Couches différentes qui se retirent à l’action, sous-titres de source et indicateurs fixes. I04 uniquement pour la résolution complète, version d’enseignement B06. Vérifier ordre alternatif, interruption, preuve incomplète, personnes protégées et sauvegarde entre objectifs.
+
+### P60 Sas de retour à Nacre
+
+**Fonction et gabarit cible.** Volume de 4 × 4 × 3 m, rail de matériel, baie d’observation et double repère d’amarrage. Il rend le retour physique vérifiable avant la galerie de sortie.
+
+**Interaction et états.** Appui établi, personnes regroupées, matériel compté, côté Nacre confirmé, fermeture autorisée. La validation conserve les identifiants des personnes et des objets qui franchissent. Elle ne transforme pas une personne déjà sauvée en copie douteuse pour fabriquer un retournement final.
+
+**Son, implantation et recette.** La réverbération infernale s’efface devant la ventilation connue et un appel authentifié. Interface unique entre I04, P666 et la route SORTIE. Tester retour partiel, partenaire retardé, abandon volontaire d’un objet facultatif, échec d’écriture et reprise de chaque côté avec les mêmes résultats humains.
 
 ## Les douze observations de terrain de la version 0.5
 

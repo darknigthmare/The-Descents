@@ -1,6 +1,6 @@
 # Systèmes procéduraux de The Tower Descent
 
-**Version 0.7.0 — 25 novembre 2026**
+**Version 0.8.0 — 25 novembre 2026**
 
 ## Objet et périmètre
 
@@ -16,7 +16,7 @@ La 0.7 ajoute une projection de dossier et un réalisateur de clôture détermin
 
 ## Contrat d’extension du contenu
 
-Les trente fiches d’assemblage du [catalogue](CATALOGUE_ETAGES.md), les 52 [props](PROPS_INTERACTIONS.md) et les archétypes du [bestiaire](ENNEMIS_STATISTIQUES.md) sont des spécifications de campagne. Ils ne sont pas tous inscrits dans le générateur actuel. Leur intégration doit commencer par des variantes préparées d’un petit nombre de niveaux, avec validation du chemin avant ajout de décoration.
+Les trente fiches d’assemblage du [catalogue](CATALOGUE_ETAGES.md), les 60 [props](PROPS_INTERACTIONS.md) et les archétypes du [bestiaire](ENNEMIS_STATISTIQUES.md) sont des spécifications de campagne. Ils ne sont pas tous inscrits dans le générateur actuel. Leur intégration doit commencer par des variantes préparées d’un petit nombre de niveaux, avec validation du chemin avant ajout de décoration.
 
 Une future description d’étage doit séparer quatre couches : graphe de circulation, états narratifs autorisés, interactions requises et habillage. Le graphe indique entrée, sortie, palier sûr et voie de transfert. Les états narratifs déterminent ce que le joueur peut déjà savoir. Les interactions déclarent outils, durée proposée et conséquence persistante. L’habillage peut choisir des tables ou des gravats compatibles sans déplacer les points nécessaires à la mission.
 
@@ -58,10 +58,10 @@ Pour un portage, conserver le manifeste des modules retenus en plus de la graine
 | 29 | Suites et baie Est d’observation | Aucun | Chambre 2908 | Stock accessible | Événement majeur fixe ; dangers secondaires compatibles, accessoires hors des trajets protégés |
 | 28 | Bureaux et archives après impact | Samuel Breton | Aucun | Aucune cache | Fumée ou instabilité possibles ; réplique de Samuel adaptée à l’état de l’incident |
 | 27 | Jardin d’enfants évacué | Aucun | Le dessin des deux tours | Aucune cache | Accessoires; pause mécanique garantie |
-| 26 | Spa et piscine | Nora Haddad | Relevé SILLAGE 06 | Aucune cache | Eau possible; apparition visuelle garantie |
+| 26 | Spa et piscine | Nora Haddad | Relevé SILLAGE 06 | Aucune cache | Eau possible ; présence perceptive prévue, soumise aux priorités de mission |
 | 25 | Refuge de maintenance | Point de regroupement | Bilan | Réapprovisionnement | Accessoires; sécurité garantie |
 
-Les trois sauvés ne sont pas tirés au sort. Un joueur ne perd donc pas un objectif obligatoire parce que la graine l’a omis. Les indices qui établissent l’existence d’événements avant la catastrophe ne disparaissent pas non plus. Les étages 30, 27 et 25 sont mécaniquement calmes. L’étage 27 donne une respiration après le choc du 29 et le sauvetage du 28, avant la première apparition lisible au 26 ; cela garantit qu’il n’existe jamais trois étages hostiles consécutifs dans les spécifications.
+Les trois sauvés ne sont pas tirés au sort. Un joueur ne perd donc pas un objectif obligatoire parce que la graine l’a omis. Les indices qui établissent l’existence d’événements avant la catastrophe ne disparaissent pas non plus. Les étages 30, 27 et 25 sont mécaniquement calmes. L’étage 27 donne une respiration après le choc du 29 et le sauvetage du 28, avant la présence récurrente du 26 ; cela garantit qu’il n’existe jamais trois étages hostiles consécutifs dans les spécifications.
 
 Le statut `safe` du générateur est réservé au refuge 25. Le 27 reste sans danger mécanique ni apparition hostile ; un échange radio facultatif y est piloté par la mission. Traverser le niveau n’ajoute ni stock ni checkpoint implicite. Recevoir l’écho de Bravo ou sa vérification demande en revanche un checkpoint explicite en zone calme.
 
@@ -109,7 +109,7 @@ Ces trajets forment un corpus de vérification, pas une couverture de toutes les
 
 ## Extension prévue pour la campagne
 
-La campagne doit conserver un squelette conçu à la main : déploiement sur deux toits intacts, premier sauvetage, choc vécu au 29, refuges, liaison basse du 6, sauvetage d’Alma, chute dans le bassin, sous-sols, cavernes, bunker et seuil 666. La génération peut choisir les pièces secondaires et l’état des connexions, mais ne doit pas effacer ces événements ou les placer hors de leur ordre narratif.
+La campagne doit conserver un squelette conçu à la main : déploiement sur deux toits intacts, premier sauvetage, choc vécu au 29, refuges, liaison basse du 6, sauvetage d’Alma, chute dans le bassin, sous-sols, cavernes, bunker, seuil 666, traversée infernale I01–I04 et retour physique à Nacre. La génération peut choisir les pièces secondaires et l’état des connexions, mais ne doit pas effacer ces événements ou les placer hors de leur ordre narratif.
 
 La proposition de génération complète comporte cinq passes :
 
@@ -167,3 +167,9 @@ Le test dédié se lance avec `godot --headless --path prototype --script tests/
 Pour une version ultérieure, enregistrer ensemble la graine, la version de génération, le manifeste complet, les objectifs résolus, les ressources ramassées, les ancres posées et les événements déjà joués. Un rechargement doit restaurer un monde, pas rerouler les dangers. Les identifiants des objets doivent dériver de l’étage et de leur rôle, et rester indépendants de leur position exacte.
 
 Un outil d’édition utile afficherait la pile des trente niveaux, les connexions verticales, le budget d’oxygène requis, les espaces de retournement des civières et la dernière validation. Son export JSON pourrait être consommé aussi bien par Godot que par une future implémentation Unreal Engine 5. Cette séparation entre manifeste, construction et état de partie constitue la partie à préserver lors d’un changement de moteur.
+
+## Paliers de vérité et territoires de campagne
+
+La génération future reçoit un palier narratif explicite : perception discrète, manifestation corroborée, menace humaine, preuve expérimentale ou monde infernal. Une intensité de stress ne permet jamais de sauter directement du premier secours à une attaque démoniaque. Les rencontres humaines E11–E13 ne sont pas tirées parmi les silhouettes d’ambiance ; elles possèdent corps, collisions, territoire et issue. Les créatures E14–E16 n’entrent dans le catalogue éligible qu’après leurs scènes d’annonce.
+
+Le seuil P666 et le franchissement vers I01 sont des transitions écrites. La variation porte sur les chemins secondaires, les poches de menace et les détails d’extraction, jamais sur la réalité du passage. Une graine ne peut produire une fin « tout était halluciné ». Les objets de retour P57, P58 et P60 et les états des personnes conservent leurs identifiants dans les deux dimensions. Ces règles définissent une architecture future ; le générateur courant construit toujours seulement les étages 30–25.

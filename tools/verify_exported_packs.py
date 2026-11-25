@@ -31,7 +31,7 @@ def main() -> None:
     for platform, relative in [("windows", "builds/windows/TheTowerDescent.exe"), ("web", "builds/web/index.pck")]:
         path = ROOT / relative
         before = sha256(path)
-        with tempfile.TemporaryDirectory(prefix="tower-v07-pack-") as empty:
+        with tempfile.TemporaryDirectory(prefix="tower-v08-pack-") as empty:
             directory = Path(empty)
             was_empty = not any(directory.iterdir())
             entry = run([binary, "--headless", "--main-pack", str(path), "--script", str(test)],

@@ -1,16 +1,16 @@
 # The Tower Descent
 
-**Version 0.7 — dossier de mission, bilan au refuge et épilogue en jeu.**
+**Version 0.8 — montée progressive de l’horreur et premières manifestations perceptives.**
 
-Deux tours encore debout, une ville noyée, deux équipes de secours. Alex descend dans Aube pour ramener trois personnes au toit. Après le premier sauvetage, Hespérie bascule contre la façade : les lieux changent et Bravo ne répond plus.
+Deux tours encore debout, une ville noyée, deux équipes de secours. Alex descend dans Aube pour ramener trois personnes au toit. Après le premier sauvetage, Hespérie bascule contre la façade : les lieux changent et Bravo ne répond plus. Les anomalies d’abord discrètes amorcent une campagne qui révélera des expériences avec une dimension infernale réelle.
 
-Le dépôt contient une tranche jouable sous **Godot 4.7.2**, du toit au refuge du 25, et une bible détaillée de la campagne. Les personnages et décors restent procéduraux. Les assets et animations définitifs, la campagne complète et UE5 restent à produire.
+Le dépôt contient une tranche jouable sous **Godot 4.7.2**, du toit au refuge du 25, et une bible détaillée de la campagne. Les personnages et décors restent procéduraux. Les assets et animations définitifs, les humains hostiles, les profondeurs infernales, la campagne complète et UE5 restent à produire.
 
 ## État de la version et accès au projet
 
-Le runtime **0.7** a passé **24 suites et 4 840 contrôles**, puis **90 contrôles supplémentaires** sur les ressources des exports Windows et Web. Les **30 captures natives** ont été examinées. La bible complète réunit **14 sources, 72 395 mots sources et 149 pages**, avec revue de chaque page. Voir [les résultats et leur portée](docs/ETAT_DE_LIVRAISON.md) et [la procédure v0.7](docs/VALIDATION_V0.7.md).
+La branche prépare la **0.8**. Son contrat de livraison exige **26 suites sources**, le chargement isolé des ressources des deux exports, **33 captures natives** et une bible complète issue de **15 sources**, avec revue de chaque page finale. Les nombres de contrôles réussis, de mots et de pages restent à renseigner après l’exécution et la revue. Voir [le suivi de livraison](docs/ETAT_DE_LIVRAISON.md) et [la procédure v0.8](docs/VALIDATION_V0.8.md).
 
-Les téléchargements de la **v0.7** sont produits par la phase de livraison, après vérification des revues et des empreintes. Le [rapport des archives](releases/VERIFICATION_V0.7.json) consigne leur intégrité et leur correspondance avec les sources. Le projet se lance depuis `prototype/project.godot`.
+Les liens suivants correspondent à la **dernière livraison validée, la v0.7**, conservée pendant cette préparation. Le projet source courant se lance depuis `prototype/project.godot`.
 
 - [Windows x64 — version 0.7](releases/The-Tower-Descent-v0.7-Windows-x64.zip)
 - [Sources complètes — version 0.7](releases/The-Tower-Descent-v0.7-Sources.zip)
@@ -19,11 +19,11 @@ Les téléchargements de la **v0.7** sont produits par la phase de livraison, ap
 - [Exports, moteur et licences](docs/EXPORTS.md)
 - [Empreintes des archives](releases/SHA256SUMS.txt)
 
-La [construction de revue](https://github.com/darknigthmare/The-Descents/actions/runs/45557532133), les [tests du runtime](docs/validation/v0.7/VERIFICATION.json), la [revue visuelle](docs/validation/v0.7/VISUAL_REVIEW.json) et la [revue documentaire](docs/validation/v0.7/DOCUMENT_REVIEW.json) fixent les fichiers contrôlés. Les versions précédentes restent disponibles dans releases.
+La v0.7 conservée a passé 24 suites et 4 840 contrôles sources, puis 90 contrôles de packs. Ses 30 captures et ses 149 pages de bible issues de 14 sources sont couvertes par leurs revues propres. Son [rapport d’archives](releases/VERIFICATION_V0.7.json) reste historique et ne valide pas le candidat v0.8.
 
-![Accueil contextuel de The Tower Descent v0.7](docs/captures/v0.7/01_menu_arrivee.png)
+![Accueil contextuel de la livraison v0.7 conservée](docs/captures/v0.7/01_menu_arrivee.png)
 
-[Consulter les trente captures examinées de la v0.7](docs/CAPTURES_V0.7.md), notamment les quatre rubriques du journal, les trois plans de clôture et le bilan du refuge.
+[Consulter les trente captures validées de la v0.7](docs/CAPTURES_V0.7.md), ou [le contrat des trente-trois captures v0.8](docs/CAPTURES_V0.8.md). L’image ci-dessus appartient à la livraison v0.7.
 
 ## Ouverture et accueil
 
@@ -33,7 +33,23 @@ L’accueil montre le monde 3D au dernier point sûr : approche, toit, restauran
 
 L’arrivée en quatre plans dure vingt-huit secondes. Deux hélicoptères approchent, se posent, ouvrent leurs portes et déposent leurs équipes. Les six membres de toit gagnent leurs postes. Pause, passage et reprise du point initial convergent vers le même état de mission.
 
-## Ce que la 0.7 apporte
+## Ce que la 0.8 développe
+
+### Une ouverture plus discrète
+
+Les suites du 29 accueillent une silhouette périphérique fugace. Aux archives du 28, après l’impact, des traces humides laissent un constat plus durable mais encore interprétable. Au spa du 26, une présence stationnaire peut persister puis revenir lorsque le regard change. Les manifestations attendent un contexte calme et laissent la priorité aux secours, au rappel, au treuil, aux communications et à l’incident.
+
+La silhouette E00 du premier secteur ne poursuit plus Alex et n’inflige plus de dégâts. Les effets restent dans l’espace du jeu, avec un indice sonore positionnel discret ; aucun flash ni mouvement forcé de caméra n’annonce prématurément un combat démoniaque. Les commandes et la route de sauvetage restent disponibles.
+
+### Une destination infernale réelle dans le canon
+
+La progression de campagne est désormais explicite : **doute perceptif discret → répétitions et phénomènes persistants → humains dangereux → expériences SILLAGE avec une dimension infernale → franchissement physique de l’Enfer**. L’incertitude des premiers étages concerne ce qu’Alex comprend ; elle ne transforme pas la destination finale en simple métaphore.
+
+La référence à *Condemned* guide la proximité menaçante, les lieux humains et les comportements imprévisibles. La référence à *Doom* guide la révélation des expériences et le passage vers une dimension infernale. Les personnages, lieux, créatures et systèmes restent propres à The Tower Descent. Les humains hostiles, les laboratoires profonds et l’Enfer sont décrits pour la campagne à produire ; ils ne sont pas annoncés comme jouables dans cette tranche toit–25.
+
+La [progression de l’horreur](docs/PROGRESSION_HORREUR_V0.8.md) relie paliers, scènes, props, statistiques, objectifs et règles de production.
+
+## Dossier et clôture conservés
 
 ### Un dossier qui suit la mission
 
@@ -92,7 +108,7 @@ La radio gère priorités, file et trente-deux dernières transmissions. Le sile
 
 ## Bible complète et dossiers de production
 
-La bible v0.7 réunit intégralement les **14 sources** ci-dessous, avec une nouvelle annexe consacrée au dossier et à l’épilogue : **72 395 mots sources, 149 pages, 1 737 paragraphes et 58 tableaux dans le Word**. Chaque page du PDF final a été rendue et examinée. Le Word final a également été rendu avec le moteur documentaire local ; ses 149 images correspondent au rendu intégralement revu.
+La bible v0.8 doit réunir intégralement les **15 sources** ci-dessous. La nouvelle annexe précise la montée de l’horreur et la réalité de la dimension infernale. Le corpus passe à **60 fiches de props** et **E00 plus 16 archétypes de campagne**. Le nombre de pages et de mots du volume v0.8 sera établi lors de sa construction ; les liens ci-dessous donnent accès aux documents de la dernière livraison validée, la v0.7.
 
 - [Bible Word v0.7](docs/The-Tower-Descent-Bible-v0.7.docx)
 - [Bible PDF v0.7](docs/The-Tower-Descent-Bible-v0.7.pdf)
@@ -105,16 +121,17 @@ La bible v0.7 réunit intégralement les **14 sources** ci-dessous, avec une nou
 | [Architecture et UE5](docs/ARCHITECTURE_ET_PORTAGE_UE5.md) | Architecture réelle et proposition de portage |
 | [Effondrement](docs/EFFONDREMENT_EN_DIRECT.md) | Déclencheurs, chronologie, conséquences et reprise |
 | [Communications et équipes](docs/COMMUNICATIONS_ET_EQUIPES.md) | Radio, secours, sauvetages et journal |
-| [Props et interactions](docs/PROPS_INTERACTIONS.md) | 52 fiches et douze observations livrées |
-| [Ennemis et statistiques](docs/ENNEMIS_STATISTIQUES.md) | Figure E00 et dix archétypes de campagne |
+| [Props et interactions](docs/PROPS_INTERACTIONS.md) | 60 fiches de référence et douze observations jouables |
+| [Ennemis et statistiques](docs/ENNEMIS_STATISTIQUES.md) | E00 perceptif et seize archétypes de campagne |
 | [Scènes et cinématiques](docs/SCENES_CINEMATIQUES.md) | Ouverture, accueil, arrivée, sauvetage, clôture et scènes futures |
 | [Gameplay détaillé](docs/GAMEPLAY_DETAILLE.md) | Règles, ressources, progression, envies, motivations et peurs |
 | [Sauvetage v0.6](docs/SAUVETAGE_V0.6.md) | Portage, harnais, câble, réception et recette |
 | [Ambiance v0.6](docs/AMBIANCE_V0.6.md) | Nuages, horizon, pluie et rendu |
 | [Confort v0.6](docs/CONFORT_V0.6.md) | Réglages, migration, pause, focus et valeurs |
 | [Dossier et épilogue v0.7](docs/DOSSIER_ET_EPILOGUE_V0.7.md) | Quatre onglets, faits de mission, bilan, trois plans, reprise et relecture |
+| [Progression de l’horreur v0.8](docs/PROGRESSION_HORREUR_V0.8.md) | Doute, persistance, humains dangereux, expériences, brèche et traversée de l’Enfer |
 
-Les fonctions programmées et les cibles de campagne sont distinguées. Alma, la piscine, l’intérieur d’Hespérie, les cavernes, le bunker, le seuil 666, les fins et Mountain Hole ne sont pas jouables dans cette tranche.
+Les fonctions programmées et les cibles de campagne sont distinguées. Alma, la piscine, l’intérieur d’Hespérie, les humains hostiles, les laboratoires profonds, les cavernes, le bunker, le seuil 666, l’Enfer, les fins et Mountain Hole ne sont pas jouables dans cette tranche.
 
 ## Développer et vérifier
 
@@ -122,6 +139,6 @@ Ouvrir prototype/project.godot avec Godot 4.7.2, puis lancer la scène principal
 
 Commande : python3 tools/run_validation.py --godot /chemin/vers/godot
 
-La [procédure v0.7](docs/VALIDATION_V0.7.md) décrit construction figée, exports, contrôles des ressources embarquées, captures natives et revue des documents. Une erreur moteur reste bloquante même si le processus renvoie zéro.
+La [procédure v0.8](docs/VALIDATION_V0.8.md) décrit construction figée, exports, contrôles des ressources embarquées, captures natives et revue des documents. Une erreur moteur reste bloquante même si le processus renvoie zéro.
 
 Les captures sont des vues du moteur natif Linux à partir d’états préparés. Elles ne constituent pas une partie humaine sous Windows ou dans un navigateur, ni une mesure de performances. La PR reste en brouillon ; main conserve son état précédent.

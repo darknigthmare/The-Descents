@@ -1,12 +1,12 @@
-# Ambiance maritime — The Tower Descent v0.7
+# Ambiance maritime — The Tower Descent v0.8
 
-Le fichier conserve son nom historique. La 0.7 réutilise cette ambiance dans les plans de clôture ; le journal, le bilan et l’épilogue ne relancent pas la simulation météo de l’intervention terminée. La caméra animée de clôture conserve sa propre horloge de présentation.
+Le fichier conserve son nom historique. Depuis la 0.7, cette ambiance accompagne les plans de clôture conservés en 0.8 ; le journal, le bilan et l’épilogue ne relancent pas la simulation météo de l’intervention terminée. La caméra animée de clôture conserve sa propre horloge de présentation.
 
 ## Intention de mise en scène
 
 L’opération Orphée commence dans une ville submergée, sous un ciel chargé, avec deux tours encore debout. La météo doit donner une profondeur à cet espace et rendre la distance sensible. Elle accompagne le menu contextualisé, l’approche des hélicoptères et les vues depuis les étages. Les informations de secours, les silhouettes de l’équipe, les balises et la ligne de rappel conservent la priorité visuelle.
 
-La composition maritime introduite en 0.6 est conservée dans la 0.7 : plafond nuageux en deux nappes, bande de brume au niveau de l’horizon, voiles de pluie dans le lointain et deux volumes de précipitations à l’extérieur des bâtiments. Les couleurs appartiennent à la même gamme froide que Nacre et les façades mouillées. Les éclairages ambre et vert des équipements gardent ainsi leur fonction de repères.
+La composition maritime introduite en 0.6 est conservée dans la 0.8 : plafond nuageux en deux nappes, bande de brume au niveau de l’horizon, voiles de pluie dans le lointain et deux volumes de précipitations à l’extérieur des bâtiments. Les couleurs appartiennent à la même gamme froide que Nacre et les façades mouillées. Les éclairages ambre et vert des équipements gardent ainsi leur fonction de repères.
 
 Le ciel représente la même situation météorologique avant et après la réplique. L’effondrement modifie la tour et sa poussière, sans déclencher artificiellement un changement de saison, un lever de soleil ou une nouvelle tempête.
 
@@ -71,3 +71,9 @@ Pour une production ultérieure, les références à développer sont la variati
 - [Godot — Sky shaders](https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference/sky_shader.html) : calcul du ciel, passage de cubemap et mises à jour provoquées par les uniformes.
 - [Godot — Sky](https://docs.godotengine.org/en/stable/classes/class_sky.html) : matériau de ciel et modes de calcul de la radiance.
 - [Godot — MultiMesh](https://docs.godotengine.org/en/stable/classes/class_multimesh.html) : instanciation, données personnalisées et volume de visibilité.
+
+## Contraste avec les manifestations et les profondeurs
+
+La v0.8 conserve l’horizon maritime et les repères du monde pour que les petites anomalies des étages hauts aient un contexte lisible. Une apparition ne change pas toute la palette, n’ajoute pas un éclair obligatoire et ne fait pas disparaître la météo pour annoncer un démon. Les traces humides restent proches des matériaux ordinaires du bâtiment.
+
+La campagne future élargit ensuite le contraste : lumière fonctionnelle des chambres d’essai, zones de contamination matérielle, puis horizons et matières réellement infernaux. L’Enfer possède une composition propre — cendre, structures de contrainte, ouvrages étrangers et enclaves Pelagos transférées — au lieu d’un simple voile rouge. Les effets restent subordonnés aux chemins, aux attaques lisibles et aux appuis de retour.

@@ -1,24 +1,24 @@
 # Présences ennemis et statistiques de rencontre
 
-**Version 0.7.0 — Une figure jouable et dix archétypes de campagne — 25 novembre 2026**
+**Version 0.8.0 — Une présence perceptive et seize archétypes de campagne — 25 novembre 2026**
 
 Le joueur affronte des situations qu’il peut lire, vérifier et modifier. Le bestiaire sert la mission de sauvetage : il ne transforme pas chaque étage en arène à nettoyer. Une routine ancienne, une voix imitée et un animal territorial n’utilisent pas les mêmes règles, même si tous peuvent créer de la tension.
 
-Une seule menace mobile simplifiée est actuellement intégrée à la tranche : la figure du spa au 26. Les dix archétypes de campagne ci-dessous sont des spécifications, avec des valeurs initiales à tester. Aucun chiffre proposé n’est présenté comme une mesure issue d’une partie de campagne ou d’un équilibrage déjà validé.
+La figure E00 du spa devient une présence perceptive dans la 0.8 : elle ne poursuit plus le joueur et ne lui inflige aucun dégât. Les seize archétypes E01 à E16 ci-dessous sont des spécifications de campagne, avec des valeurs initiales à tester. Aucun chiffre proposé n’est présenté comme une mesure issue d’une partie de campagne ou d’un équilibrage déjà validé.
 
-La 0.7 conserve ce périmètre. Le dossier et l’épilogue du refuge n’ajoutent ni adversaire ni combat final. Le fragment de relais laisse l’origine du signal ouverte ; il ne confirme pas la présence d’un archétype de campagne dans le secteur jouable. La simulation hostile reste suspendue pendant la lecture du journal et après la clôture de mission.
+La 0.8 conserve le périmètre jouable toit–25 et ralentit la révélation de l’horreur. Le dossier et l’épilogue du refuge n’ajoutent ni adversaire ni combat final. Le fragment de relais laisse l’origine du signal ouverte ; il ne confirme pas la présence d’un archétype de campagne dans le secteur jouable. La simulation hostile reste suspendue pendant la lecture du journal et après la clôture de mission.
 
 ## Convention des statistiques
 
 Les distances sont en mètres, les vitesses en mètres par seconde, les durées en secondes et les dommages en points sur une santé de référence de 100. Les valeurs correspondent au mode de campagne « Référence » proposé. La marche actuelle d’Alex est de 3,7 m/s, sa vitesse avec une victime de 2,4 m/s, et sa course de 6 m/s ; ces repères motivent les vitesses de poursuite et les fenêtres de repli.
 
-Un temps d’annonce commence lorsque le joueur peut percevoir une intention hostile, pas lorsque le script décide intérieurement de l’attaque. Une détection requiert une visibilité ou un événement conforme à la fiche. Une porte opaque bloque une vision ; une simple distance ne doit pas faire traverser un mur. La maquette actuelle du spa n’implémente pas encore toutes ces règles : ses limites sont décrites séparément.
+Un temps d’annonce commence lorsque le joueur peut percevoir une intention hostile, pas lorsque le script décide intérieurement de l’attaque. Une détection requiert une visibilité ou un événement conforme à la fiche. Une porte opaque bloque une vision ; une simple distance ne doit pas faire traverser un mur. La présence perceptive du spa n’est pas une IA de combat : ses limites sont décrites séparément.
 
 Les points de vie de combat ne sont pas un champ obligatoire pour une présence sans corps. La Rémanence et le Répondant ne deviennent pas « tuables » pour remplir une colonne. Lorsqu’une créature corporelle possède une vitalité interne proposée, sa résolution pacifique et la protection des personnes restent possibles ; l’interface ne demande pas de vider une jauge pour poursuivre.
 
 | Code | Famille | Rôle principal | Statut |
 | --- | --- | --- | --- |
-| E00 | Figure du spa | Première menace lisible, lampe et fusée | Jouable en maquette |
+| E00 | Rémanence du spa | Présence récurrente encore interprétable, sans contact hostile | Présentation jouable v0.8 |
 | E01 | Rémanence | Observer une routine et lire une route | Campagne |
 | E02 | Répondant | Vérifier une voix et son contexte | Campagne ; échos radio préparatoires présents |
 | E03 | Noyé sec | Retirer un bruit qui masque l’approche | Campagne |
@@ -29,29 +29,32 @@ Les points de vie de combat ne sont pas un champ obligatoire pour une présence 
 | E08 | Contremaître | Comprendre puis modifier une ronde | Campagne |
 | E09 | Chambre qui écoute | Maintenir des repères dans un espace réactif | Campagne |
 | E10 | Chœur bas | Rompre les liaisons du seuil | Campagne |
+| E11 | Retranché | Désamorcer ou contourner une violence humaine territoriale | Campagne, humain |
+| E12 | Débusqueur | Lire les angles et rompre une poursuite humaine limitée | Campagne, humain |
+| E13 | Fidèle du protocole | Isoler une menace humaine liée aux essais | Campagne, humain |
+| E14 | Pénitent des chaînes | Lire une attaque matérielle et exploiter ses attaches | Campagne, Enfer |
+| E15 | Souffleur de scories | Traverser une zone de projection annoncée | Campagne, Enfer |
+| E16 | Gardien de brèche | Ouvrir le retour par trois objectifs de liaison | Campagne, Enfer |
 
-## E00 Figure actuellement jouable au spa
+## E00 Présence perceptive du spa
 
-**Silhouette et rôle.** Figure humaine sombre étirée en hauteur, deux petits repères ambrés au visage, construite avec les volumes existants. Elle se trouve au 26, autour du bassin et de Nora. Son rôle est d’enseigner la différence entre une lumière ordinaire qui ralentit et une fusée qui donne un temps de repli. Elle n’est pas encore un rig animé ni une IA générale de campagne.
+**Silhouette et rôle actuels.** Une forme humaine sombre, à distance du trajet de Nora, revient dans le champ puis se retire. Elle participe à l’escalade entre l’aperçu fugace des suites et une rémanence plus insistante. Elle ne reçoit ni nom démoniaque, ni statut d’ennemi confirmé. La phrase de Nora exprime ce qu’elle croit avoir vu ; elle ne donne plus un tutoriel de combat contre une créature déjà identifiée.
 
-| Paramètre actuel | Valeur et comportement |
+| Paramètre actuel v0.8 | Valeur ou règle |
 | --- | --- |
-| Activation | Plus de 4 s cumulées dans le traitement actif du niveau 26 |
-| Vitesse avec lampe allumée | 0,72 m/s |
-| Vitesse avec lampe éteinte | 1,1 m/s |
-| Cible | Position horizontale du joueur, hauteur fixe du niveau 26 |
-| Portée de contact | Distance inférieure à 2 m |
-| Dommage | 12 points |
-| Délai entre dommages | 3 s |
-| Pression de stress | +0,9 point/s lorsque la figure est visible |
-| Fusée | Figure cachée et replacée au fond tant que le temps de fusée est positif ; effet de 20 s |
-| Après contact | Repositionnement de la figure loin du joueur |
-| Exclusions | Figure cachée hors du 26, sur la corde et pendant l’incident |
-| Vitalité | Aucun système de dégâts infligés à la figure |
+| Lieu | Spa du 26, point de présentation hors du trajet de secours |
+| Nature | Manifestation visuelle échantillonnée, sans collider de menace |
+| Poursuite | Aucune ; pas de déplacement dirigé vers Alex |
+| Dommages | 0 ; aucun contact hostile ni minuteur d’attaque |
+| Coût de perception | Aucun prélèvement de santé, d’air ou de consommable par la manifestation |
+| Fusée | Masque les silhouettes pendant les 20 s actives ; lumière et baisse de stress ordinaires conservées |
+| Priorités | Secours, rappel, incident actif, écrans de lecture et présentations prennent la priorité |
+| Persistance | Horloge transitoire ; les indices déjà visités sont traités à la reprise selon le directeur, sans nouveau champ de sauvegarde |
+| Fin de mission | Présentation suspendue ; aucune apparition derrière le bilan ou l’épilogue |
 
-**Contrejeu actuel et limites.** Allumer la lampe, garder une distance, employer une fusée ou rejoindre la corde. L’effet de la lampe dépend actuellement de son état allumé, pas d’un test du faisceau sur la silhouette. La fusée utilise une durée globale, pas une exposition spatiale. Le déplacement se fait par rapprochement direct et ne fournit pas encore une navigation de contournement ; il ne faut pas attribuer au personnage une compréhension des portes ou du mobilier. Le rayon de contact est une simplification à revoir avec des animations finales.
+La mise en scène n’atteste pas un exorcisme lorsqu’une fusée masque la forme. Elle n’établit pas davantage qu’un humain réel aurait été blessé par la lumière. Les témoins et indices du secteur restent insuffisants pour nommer l’Enfer. Les durées et conditions exactes sont portées par `horror_director.gd` et ses tests.
 
-**Recette.** Sauver Nora avec et sans fusée, revenir chercher le relevé, quitter puis retrouver l’étage, ouvrir la pause, passer sur la corde et reprendre un checkpoint. Vérifier que la figure ne s’expose pas au 27 ou au refuge, qu’une menace masquée ne produit pas de dégâts invisibles et que son repositionnement reste compréhensible. Les résultats réels de la révision appartiennent au rapport de livraison.
+**Historique utile.** Avant la 0.8, le prototype essayait ici une poursuite directe avec dommage de contact. Ce comportement est retiré de l’ouverture : il révélait trop tôt une menace physique et réduisait la progression demandée. Les chiffres de cet ancien essai ne sont plus les paramètres actifs d’E00.
 
 ## E01 La Rémanence
 
@@ -171,7 +174,67 @@ Les points de vie de combat ne sont pas un champ obligatoire pour une présence 
 
 **Contrejeu et fins.** Couper ou détourner les réseaux selon les preuves, obtenir une confirmation d’un témoin, cesser une réponse qui alimente la présence. Les options de résolution sont annoncées par leurs conséquences locales. La fin dépend de plusieurs états persistants ; aucune option de confort ou de difficulté ne donne automatiquement la mauvaise fin.
 
-**Son, placement et reprise.** Les voix reprennent des motifs entendus plus haut, avec mots compréhensibles et silences de décision. Aucun volume extrême n’est nécessaire à l’intensité. Rencontre unique P666, routes et stations préparées. Le checkpoint reprend à une accalmie entre objectifs avec le même état d’Alma, du seuil et des preuves.
+**Son, placement et reprise.** Les voix reprennent des motifs entendus plus haut, avec mots compréhensibles et silences de décision. Aucun volume extrême n’est nécessaire à l’intensité. Rencontre unique dans I04, au-delà de P666, avec routes et stations préparées. Le checkpoint reprend à une accalmie entre objectifs avec le même état d’Alma, du seuil et des preuves.
+
+## E11 Le Retranché — humain
+
+**Rôle et silhouette.** Un occupant réel s’est approprié une réserve et considère toute approche comme une intrusion. Il barricade, écoute et menace avant d’agir. Sa tenue reste celle d’un salarié ou d’un résident ; ses mouvements ont un poids et une fatigue. Il n’est ni une apparition, ni le représentant de toute personne en détresse.
+
+**Valeurs proposées.** Santé de confrontation 90 ; marche 0,8 m/s, engagement 2,4 m/s ; vision 9 m dans 100°, écoute locale 7 m ; avertissement initial 2 s, préparation d’un geste 1,4 s ; portée 1,3 m, dommage 10, récupération 3,5 s ; poursuite maximale 7 m hors de sa réserve. Un impact défensif crée 1,8 s de recul ; aucune combinaison n’exige une mise à mort.
+
+**États et contrejeu.** Guet, sommation, approche, geste annoncé, recul, retour à la barricade, contact possible. Alex peut parler depuis une distance sûre, laisser un accès, montrer un objet associé à la personne ou contourner par le service. Une porte opaque bloque réellement la vue. La réussite peut être un passage sécurisé ou une aide acceptée ; désarmer ne vaut pas réception médicale.
+
+**Placement et reprise.** Première rencontre proposée à A21, après observation depuis une séparation. Un seul acteur, aucune victime portée dans le premier apprentissage, issue vers A20 conservée. Son territoire, sa relation et la barricade sont persistants ; la reprise donne au moins 5 s d’observation sans attaque immédiate.
+
+## E12 Le Débusqueur — humain
+
+**Rôle et silhouette.** Ancien intervenant de sécurité exposé aux événements du complexe, il se déplace entre des locaux connus et tente de prendre l’avantage sur une personne isolée. Il utilise les angles et le mobilier. Son comportement inquiétant tient à ses actes et à son objectif ; le récit n’emploie pas un diagnostic médical comme explication automatique de sa violence.
+
+**Valeurs proposées.** Santé de confrontation 80 ; marche 1,1 m/s, course 3,1 m/s limitée à 4 s ; vision 11 m dans 90°, investigation d’un bruit jusqu’à 10 m ; annonce de sortie du couvert 1,2 s, portée 1,4 m, dommage 14, récupération 4 s. Recherche après perte 8 s ; territoire de 16 m, une seule relance après désengagement.
+
+**États et contrejeu.** Observation depuis une poche autorisée, changement de couvert, sortie annoncée, attaque, recherche, repli. Il ne se téléporte pas derrière la caméra. Une lampe révèle son déplacement mais ne l’évapore pas. Maintenir une distance, fermer une séparation, éclairer un angle avant de passer ou effectuer une poussée défensive ouvre une sortie. Son endurance limitée permet la fuite sans course infinie.
+
+**Placement et reprise.** A18 ou A16, en dehors du premier appui de corde. Maximum un Débusqueur ; seconde menace au contact interdite. Deux routes préparées et une poche de retour non certifiée mais sûre à observer. Reprise à une position de guet connue, avec les portes déjà fermées et le même état de personne secourue.
+
+## E13 Le Fidèle du protocole — humain
+
+**Rôle et silhouette.** Un opérateur du programme, resté convaincu qu’il doit maintenir les essais, cherche à empêcher Alex de couper un poste. Il est humain, conscient d’une partie de ses actes et capable de parler. Son obsession transforme un outil de travail en menace. Sa responsabilité ne doit pas se dissoudre dans l’explication de la dimension infernale.
+
+**Valeurs proposées.** Santé de confrontation 110 ; ronde 0,9 m/s, engagement 2,2 m/s ; vision 10 m dans 110°, réponse à un poste coupé à 14 m avec chemin valide ; sommation 2,5 s ; attaque préparée 1,8 s, portée 1,6 m, dommage 18, récupération 5 s. Deux gestes consécutifs au maximum, puis 4 s de reprise d’appui ; recherche 10 s.
+
+**États et contrejeu.** Ronde, maintien de poste, sommation, interruption violente, perte de contact, négociation conditionnelle. Couper un relais secondaire le détourne vers une tâche observée ; isoler une porte crée un trajet de secours. Des preuves peuvent ouvrir une issue verbale prévue, sans bouton universel qui calme tous les humains. Une défense à l’outil interrompt ; la fermeture du passage résout la rencontre même sans vaincre sa santé.
+
+**Placement et reprise.** Clinique A09 puis une variante en B04. Jamais simultané à la première explication essentielle d’un terminal. La reprise conserve la configuration des circuits et la décision de dialogue. Une personne remise aux secours ne réapparaît pas comme cet adversaire.
+
+## E14 Le Pénitent des chaînes — entité infernale
+
+**Rôle et silhouette.** Créature corporelle de 2,4 m, articulations nouées et pièces métalliques soudées à une matière minérale. Sa forme ne laisse plus croire à un employé aperçu brièvement. Ses chaînes raclent des rainures qui délimitent son territoire ; elles relient la menace à l’architecture d’I02.
+
+**Valeurs proposées.** Résistance de confrontation 160 ; marche 1 m/s, traction de 2,7 m/s sur 3 m après annonce de 2 s ; perception 12 m, retour au territoire après 8 m de poursuite ; portée de balayage 2,1 m, dommage 20, récupération 5,5 s. Une chaîne bloquée dans un point d’ancrage préparé immobilise la créature 6 s ; grâce de 2 s après remise en mouvement.
+
+**États et contrejeu.** Attente au sillon, tension de chaîne, balayage annoncé, chaîne engagée, libération, repli. Observer l’amplitude, utiliser les colonnes préparées, fermer une chicane ou immobiliser une attache donne un passage. Le champ d’attaque est testé contre les obstacles réels ; aucune chaîne visuelle ne frappe à travers un mur. L’éclairage révèle les attaches, sans devenir une solution universelle.
+
+**Placement et reprise.** I02, un premier individu présenté sans autre attaque active ; maximum deux territoires non superposés dans une reprise avancée. Sauvegarder la route ouverte et les attaches utilisées, restaurer l’acteur au repos hors du point sûr. La scène n’exige pas de lui livrer une personne ou de dépenser un objet de secours unique.
+
+## E15 Le Souffleur de scories — entité infernale
+
+**Rôle et silhouette.** Organisme massif fixé à des ouvrages d’extraction, avec une cavité qui s’ouvre avant chaque souffle. Il appartient à l’écologie matérielle de l’Enfer et répond aux collecteurs installés par Pelagos. Il menace une traversée par projection plutôt que par poursuite.
+
+**Valeurs proposées.** Résistance 130 ; déplacement local 0,4 m/s ; détection dans un secteur de 60° à 12 m ; annonce visuelle et sonore 2,6 s ; projection jusqu’à 8 m dans un cône de 30°, dommage 16 ; dépôt au sol visible 4 s, sans dommage différé invisible ; récupération 7 s. Une dérivation du collecteur provoque 10 s d’arrêt. Maximum une projection dangereuse active dans l’espace d’apprentissage.
+
+**États et contrejeu.** Alimentation, cavité ouverte, souffle, refroidissement, nouvelle orientation. Lire les signes, attendre derrière un volume complet, détourner l’alimentation ou emprunter la passerelle haute. Un objet transporté ne masque pas l’intégralité de l’annonce. Les attaques visent une zone annoncée, sans correction parfaite de la trajectoire après le départ.
+
+**Placement et reprise.** I03 uniquement, hors du sas d’arrivée et des stations de lecture. Leur horloge se fige pendant toute pause ou lecture ; les dépôts ne s’éteignent qu’en temps de jeu actif. Reprise avant un cycle, état du collecteur conservé et aucun projectile déjà au contact d’Alex.
+
+## E16 Le Gardien de brèche — entité infernale
+
+**Rôle et silhouette.** Une masse de 3,6 m articulée autour de trois points d’appui protège le nœud de retour d’I04. Son corps est relié aux ouvrages du Chœur bas ; il ne remplace pas les décisions sur les trois liaisons par un combat à tirs obligatoire.
+
+**Valeurs proposées.** Marche 0,7 m/s ; changement de secteur 2 m/s sur 4 s maximum ; portée d’impact 2,4 m, annonce 2,8 s, dommage 26, récupération 8 s. Trois appuis structurels à neutraliser par les fonctions du niveau ; chaque appui retiré ouvre un passage durable. Au moins 12 s d’accalmie sont garanties après un objectif validé. Aucune santé globale affichée ni phase de précision au pixel.
+
+**États et contrejeu.** Garde, liaison sollicitée, déplacement annoncé, impact local, appui découvert, retour. Les actions sur P59 mettent un appui en défaut, puis Alex rejoint un point protégé ou aide une personne à passer. Un coup défensif ne traverse pas une armature ; le jeu le communique avant de demander un consommable. Les mouvements du Gardien laissent au moins une issue préparée.
+
+**Placement et reprise.** Rencontre unique I04. Le checkpoint conserve les appuis neutralisés, les personnes regroupées et la décision concernant chaque liaison. La reprise se place dans une accalmie ; elle ne réactive pas un appui pour prolonger artificiellement la scène. La fuite réussie et la fermeture du passage restent des issues mécaniques complètes.
 
 ## Contraintes communes de rencontre
 
@@ -200,4 +263,4 @@ Une fiche livrée au moteur comprendra l’identifiant d’archétype, la versio
 
 Pour chaque rencontre, mesurer le temps de première compréhension, les dégâts avant compréhension, les dépenses indispensables, le temps de repli et les échecs de navigation. Enregistrer aussi si le joueur a compris le résultat humain de l’action. Réussir un test de distance ne prouve pas que le signal d’attaque a été vu. La recette comprend son coupé, mouvements réduits, lecture prolongée, pause à chaque transition, reprise avant et après résolution, retour avec charge et absence totale de consommable optionnel.
 
-Références locales : [menace actuelle et ressources](../prototype/scripts/main.gd), [construction de la figure](../prototype/scripts/world_builder.gd), [mouvement du joueur](../prototype/scripts/player_controller.gd), [règles de la campagne](BIBLE_DU_JEU.md) et [objets de contrejeu](PROPS_INTERACTIONS.md).
+Références locales : [coordination actuelle et ressources](../prototype/scripts/main.gd), [construction de la figure](../prototype/scripts/world_builder.gd), [mouvement du joueur](../prototype/scripts/player_controller.gd), [règles de la campagne](BIBLE_DU_JEU.md) et [objets de contrejeu](PROPS_INTERACTIONS.md).

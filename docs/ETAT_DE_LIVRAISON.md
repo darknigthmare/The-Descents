@@ -1,75 +1,70 @@
-# État de livraison — version 0.7
+# État de livraison — version 0.8
 
-**25 novembre 2026 — runtime, captures et Bible v0.7 contrôlés.**
+**25 novembre 2026 — candidat 0.8.0 en préparation.**
 
-La 0.7 poursuit la tranche avec un journal à quatre onglets, un bilan issu des faits de mission et un épilogue en jeu de quinze secondes. Le périmètre jouable reste le toit d’Aube et les étages 30–25. La clôture exige les trois réceptions confirmées, l’incident stabilisé et l’activation du relais au refuge ; elle n’ouvre aucun étage supplémentaire.
+La 0.8 aligne le premier secteur sur une horreur progressive : présence périphérique au 29, traces humides après impact au 28 et présence stationnaire au spa du 26. L’ancienne poursuite avec dégâts d’E00 est remplacée par une manifestation perceptive. Le périmètre jouable reste le toit et les étages 30–25.
 
-## Résultats constatés
+Le canon de campagne est précisé : les hallucinations possibles du début cèdent progressivement à des phénomènes persistants, à des humains dangereux puis à la découverte des expériences SILLAGE avec une dimension infernale réelle. Le joueur devra franchir le seuil et atteindre physiquement l’Enfer dans la campagne. Les humains hostiles, les laboratoires profonds, la brèche et l’Enfer restent des contenus à produire.
 
-| Élément | Résultat | Preuve |
+## Statut du candidat v0.8
+
+Les chiffres de cette table sont **les exigences du contrat**, pas des résultats déjà obtenus. Les comptes de contrôles réussis, la pagination et le volume de mots seront établis à partir des sorties effectives. Les preuves historiques v0.7 ne valent pas validation de la v0.8.
+
+| Élément | Contrat | Preuve à produire |
 | --- | --- | --- |
-| Sources | **24 suites, 4 840 contrôles réussis**, runtime inchangé, aucune erreur moteur détectée | [VERIFICATION.json](validation/v0.7/VERIFICATION.json) |
-| Exports Windows et Web | Deux constructions à partir du runtime testé et gelé ; commandes et empreintes consignées | [EXPORTS.json](validation/v0.7/EXPORTS.json) |
-| Ressources embarquées | **90 contrôles réussis**, 45 par pack, chargement depuis des dossiers isolés | [EXPORTED_PACK_VERIFICATION.json](validation/v0.7/EXPORTED_PACK_VERIFICATION.json) |
-| Rendu du jeu | **30 PNG natifs de 1440 × 900**, tous ouverts et examinés | [Provenance](captures/v0.7/CI_PROVENANCE.json) · [Revue visuelle](validation/v0.7/VISUAL_REVIEW.json) |
-| Bible complète | **14 sources, 72 395 mots sources, 149 pages** ; Word de 1 737 paragraphes et 58 tableaux | [DOCUMENT_BUILD.json](validation/v0.7/DOCUMENT_BUILD.json) |
-| Revue documentaire | **149 pages finales examinées** ; Word final également rendu avec le moteur documentaire local et comparé au rendu canonique revu | [DOCUMENT_REVIEW.json](validation/v0.7/DOCUMENT_REVIEW.json) |
-| Archives de livraison | Le rapport final vérifie les deux ZIP, les fichiers sources, les exports, les captures et les documents approuvés | [VERIFICATION_V0.7.json](../releases/VERIFICATION_V0.7.json) |
+| Sources | 26 suites obligatoires, dont manifestations et intégration ; runtime inchangé et absence d’erreur moteur | [VERIFICATION.json](validation/v0.8/VERIFICATION.json) |
+| Windows et Web | Deux exports issus du runtime testé, avec commandes, octets et empreintes | [EXPORTS.json](validation/v0.8/EXPORTS.json) |
+| Ressources embarquées | Deux packs chargés séparément dans des dossiers vides ; nouveaux modules et son positionnel réellement présents | [EXPORTED_PACK_VERIFICATION.json](validation/v0.8/EXPORTED_PACK_VERIFICATION.json) |
+| Rendu du jeu | 33 captures natives de 1440 × 900, dont les trois manifestations | [CI_PROVENANCE.json](captures/v0.8/CI_PROVENANCE.json) |
+| Revue du jeu | Chaque PNG final examiné et associé à son empreinte et à une observation | [VISUAL_REVIEW.json](validation/v0.8/VISUAL_REVIEW.json) |
+| Bible complète | 15 sources intégrales ; Word et PDF, chaque page rendue | [DOCUMENT_BUILD.json](validation/v0.8/DOCUMENT_BUILD.json) |
+| Revue documentaire | Chaque page finale examinée ; mêmes sources et artefacts que la construction | [DOCUMENT_REVIEW.json](validation/v0.8/DOCUMENT_REVIEW.json) |
+| Archives | ZIP Windows et Sources, intégrité, fichiers approuvés et cohérence des livrables | [VERIFICATION_V0.8.json](../releases/VERIFICATION_V0.8.json) |
 
-La [construction de revue](https://github.com/darknigthmare/The-Descents/actions/runs/45557532133) a réussi. Elle part de la source `50145b56eeb81757a6a318ec3e7a886a5b29ea42`, avec une demande isolée au commit `ca8753a510486e969040460ec0f5db9b75253091`. Les preuves ont été publiées au commit `e8e376c2f88b008728aed3e1f4a3835c042eef63`.
+La [procédure v0.8](VALIDATION_V0.8.md) sépare **review** et **release**. La première construit les preuves ; la seconde exige les revues correspondantes puis reconstruit les exports et vérifie les archives. Le workflow n’écrit pas d’approbation visuelle automatique. Chaque phase est déclenchée par une demande isolée, après les sources ou les revues concernées.
 
-Les rapports de revue relient leurs verdicts aux octets finaux. La phase **release** exige ces revues, reconstruit les exports, recharge leurs ressources et assemble les ZIP. [CI_BUILD.json](validation/v0.7/CI_BUILD.json) donne l’exécution et le commit de cette phase ; le rapport des archives est la référence pour leurs tailles, empreintes et nombre de membres. Une sortie moteur en erreur reste bloquante même si le processus renvoie zéro.
+## Comportements visés dans cette continuation
 
-## Ce qui change en 0.7
-
-| Domaine | Comportement livré dans le runtime |
+| Domaine | Comportement v0.8 |
 | --- | --- |
-| Dossier | Situation, Rescapés, Indices et Transmissions ; lieu, ressources, état structurel et point sûr |
-| Vérité des secours | Une personne au harnais ou au treuil reste distincte d’une réception confirmée au toit |
-| Indices | Seuls les titres et récits des documents récupérés sont transmis au lecteur ; les autres emplacements restent fermés |
-| Transmissions | Jusqu’à 32 échanges reçus, dans leur ordre, avec indicatifs et temps de mission ; aucun ajout dû à une relecture |
-| Clôture | Refuge 25, trois personnes confirmées et incident stabilisé ; sauvegarde réussie avant toute présentation de fin |
-| Échec d’écriture | Ancien point sûr préservé, intervention encore active, message visible et relais réessayable |
-| Épilogue | Quinze secondes, trois plans de cinq secondes : poste médical, terminal du refuge et tours après impact |
-| Pause et confort | Horloge de présentation indépendante, monde figé, pause et options cohérentes, cadrages fixes en mouvements réduits |
-| Bilan | Trois cartes nominatives, preuves, durée, ressources, fragment du relais et trois actions de consultation |
-| Reprise et relecture | Une mission terminée s’ouvre au bilan ; revoir la séquence ne réécrit ni la sauvegarde ni la radio |
+| Suites 29 | Présence humaine fugace à la périphérie du regard ; aucun démon montré dès le début |
+| Archives 28 | Traces humides après l’impact ; leur persistance laisse un constat encore interprétable |
+| Spa 26 | Présence stationnaire avec rémanence ; E00 ne poursuit plus le joueur et n’inflige plus de dégâts |
+| Priorités | Rappel, portage, treuil, radio et incident gardent la priorité sur les manifestations |
+| Présentation | Effets dans le monde 3D, aucun collider ajouté aux routes, aucun flash ni caméra forcée |
+| Son | Pas discrets positionnels, originaux ; pause, volume et coupure du son cohérents avec les réglages |
+| Sauvegarde | Schéma 3 conservé ; le dossier et les secours ne reçoivent pas de fausses preuves ou réceptions |
+| Révélation future | Dimension infernale réelle, expériences humaines et passage physique en Enfer ; connaissance progressive d’Alex |
 
-La caméra du poste médical cadre les trois places de réception avec les équipiers au premier plan. L’un d’eux recouvre partiellement le bord proche de la civière d’Ana ; Ana et sa prise en charge restent identifiables. Le terminal du refuge et les tours après impact sont visibles dans leurs plans respectifs. Ces observations concernent les images exactes, pas des assets définitifs.
+La Bible inclut une nouvelle annexe [Progression de l’horreur](PROGRESSION_HORREUR_V0.8.md). Le catalogue passe à **60 props** ; le dossier des menaces distingue **E00** et **16 archétypes de campagne**. Les comportements futurs, leurs valeurs proposées et leurs props ne sont pas annoncés comme des systèmes déjà jouables.
 
-## Ouverture et intervention conservées
+## Parcours conservé
 
-La signature du studio dure **quinze secondes** et l’arrivée **vingt-huit secondes en quatre plans**. Deux hélicoptères se posent, ouvrent leurs portes et déposent les six membres des toits. L’accueil correspond au dernier point sûr : approche, toit ou étage atteint, avant ou après l’incident, jusqu’au refuge final.
+La signature du studio dure quinze secondes ; l’arrivée en quatre plans dure vingt-huit secondes. Deux hélicoptères se posent et les équipes gagnent leurs postes. L’accueil reconstruit le dernier point sûr et la situation des tours.
 
-Le parcours conserve Ana Rios, Samuel Breton et Nora Haddad, trois preuves, deux réserves, douze observations facultatives, rappel guidé, ancrages, radio, journal, lampe, fusées et refuge. Le portage de première personne, le panier et le câble rendent le secours visible. Le treuil dure cinq secondes ; une prise en charge cosmétique de 4,2 secondes suit la confirmation médicale. Un rechargement restaure directement les places finales.
+Ana Rios, Samuel Breton et Nora Haddad conservent leurs sauvetages au 30, au 28 et au 26. Le portage visible, les cinq secondes de treuil et la réception médicale de 4,2 secondes sont conservés. L’incident observé à la baie Est du 29 modifie le passage du 28, sans annuler les personnes déjà reçues.
 
-Après le premier sauvetage et le départ des appareils, l’observation à la baie Est du 29 déclenche l’effondrement. Le détour après l’impact et le repli de Bravo restent liés à l’état stable de l’incident. Le ciel maritime, la pluie, la mer et les réglages de confort sont conservés. La sauvegarde reste au schéma 3, avec migration stricte des versions 1 et 2.
+Les trois indices, deux réserves, douze observations, le rappel, les ancrages, les fusées, la lampe et la radio restent présents. Le journal possède quatre onglets. Le refuge 25 exige une sauvegarde finale réussie avant l’épilogue de quinze secondes ; reprise et relecture conservent le bilan sans rejouer les secours ni réécrire les transmissions.
 
-## Livrables
+## Dernière livraison validée conservée : v0.7
 
-- [Windows x64 v0.7](../releases/The-Tower-Descent-v0.7-Windows-x64.zip) et [guide de démarrage](DEMARRAGE_WINDOWS.md).
-- [Projet et sources v0.7](../releases/The-Tower-Descent-v0.7-Sources.zip).
+La v0.7 reste accessible pendant la préparation : **24 suites et 4 840 contrôles sources**, **90 contrôles de packs**, **30 captures** et **149 pages issues de 14 sources**. Ces résultats appartiennent à son runtime et à ses fichiers exacts.
+
+- [Windows x64 v0.7](../releases/The-Tower-Descent-v0.7-Windows-x64.zip).
+- [Sources v0.7](../releases/The-Tower-Descent-v0.7-Sources.zip).
 - [Bible Word v0.7](The-Tower-Descent-Bible-v0.7.docx) et [Bible PDF v0.7](The-Tower-Descent-Bible-v0.7.pdf).
-- [Galerie des 30 captures](CAPTURES_V0.7.md).
-- [Exports, provenance et licences](EXPORTS.md).
-- [Empreintes des archives](../releases/SHA256SUMS.txt).
+- [Captures v0.7](CAPTURES_V0.7.md) et [rapport d’archives v0.7](../releases/VERIFICATION_V0.7.json).
 
-La PR reste ouverte en brouillon sur `feat/live-tower-collapse`. Cette continuation ne fusionne pas `main`. Les archives des versions précédentes sont conservées.
+Les archives et preuves antérieures sont conservées. La PR reste ouverte en brouillon sur `feat/live-tower-collapse` ; le pipeline ne fusionne pas `main`.
 
-## Portée des vérifications et limites de production
+## Portée de la validation et de la production
 
-Le moteur utilisé est **Godot 4.7.2 officiel, Compatibility**, sous Linux pour la construction et les captures. Les ressources de Windows x64 et du Web sont chargées séparément sous Godot Linux. Ce contrôle ne constitue pas une exécution de l’EXE sur un PC Windows ni une partie Web dans un navigateur. Aucun relevé de performances sur machines cibles n’est revendiqué. Les images proviennent d’états préparés ; les suites d’intégration contrôlent séparément pause, passage, reprise, sauvegarde et relecture.
+Godot 4.7.2 officiel, rendu Compatibility, est utilisé sous Linux pour la construction et les captures. Le chargement des ressources de l’EXE Windows sous Godot Linux ne constitue pas une exécution du programme sur un PC Windows. Le chargement du PCK Web ne constitue pas une partie WebAssembly/WebGL dans un navigateur. Aucun résultat de performances sur matériel cible ni mixage sonore final n’est déduit des tests automatisés.
 
-Le PDF final est issu du Word via LibreOffice 24.2 et Poppler dans la construction CI. La police demandée Arial y est résolue en Liberation Sans. Les 149 PNG de ce PDF ont été examinés directement. Le Word final a aussi été rendu par `render_docx.py` : les 149 pages obtenues sont identiques aux pages canoniques déjà examinées. Les deux DOCX comparés ont les mêmes 19 membres décompressés ; seule leur enveloppe ZIP diffère. Les empreintes et la portée de chaque revue figurent dans le rapport documentaire.
+Les captures partent d’états préparés. Elles doivent être examinées à leur dimension native, puis reliées aux empreintes finales. Les transitions, les priorités et l’absence de dommages demandent également les suites de logique et d’intégration. Une image d’apparition ne constitue pas une vidéo intégrale du phénomène.
 
-Les blancs de fin d’annexe sont conservés. Une coupure entre les pages 143 et 144 sépare le guillemet fermant de « ÉVAC. » ; le texte reste complet et le guillemet ouvre une ligne de prose, sans ligne isolée. Ce détail typographique est consigné comme observation non bloquante. Une autre installation Word peut produire une pagination différente.
+Le Word complet provient des quinze sources. Le PDF est converti par LibreOffice puis rendu par Poppler dans la construction CI ; le rapport consigne les polices effectivement résolues. Chaque page finale doit faire l’objet d’une revue visuelle, y compris lorsque son numéro a changé depuis la v0.7. Un nombre de pages calculé ne vaut pas approbation de mise en page.
 
-Figures, hélicoptères, sangles, poses et décors sont procéduraux. La réception suit des trajectoires préparées, sans navigation autonome, contacts physiques des mains ou animation faciale. Le câble est calculé ; les cinq secondes de treuil compressent le temps de secours. Les sous-titres sont présents ; les voix ne sont pas doublées. Le remappage complet reste à produire. Le fond des options conserve une transparence légère sans gêner les contrôles.
+Personnages, hélicoptères, décors, matériaux et poses restent procéduraux. Le jeu d’acteurs, le doublage, les assets définitifs, le remappage complet et les essais sur matériels cibles restent à produire. Les références à Condemned et Doom guident la tension et la révélation ; le jeu conserve ses personnages, créatures et lieux originaux.
 
-La campagne complète, Alma, la piscine, l’intérieur d’Hespérie, les cavernes, le bunker, le seuil 666, les fins, Mountain Hole et UE5 gardent leur statut de conception. Ces cibles sont décrites dans la bible et ne sont pas annoncées comme des niveaux jouables livrés.
-
-## Repère historique
-
-La livraison **v0.6** reste conservée avec ses propres preuves : 21 suites et 4 500 contrôles sources, 60 contrôles de packs, 22 captures et 139 pages issues de 13 sources. Son [rapport d’archives](../releases/VERIFICATION_V0.6.json) reste distinct. Les chiffres de cette section ne servent pas de validation à la v0.7.
-
-Les contrats détaillés figurent dans [Sauvetage](SAUVETAGE_V0.6.md), [Ambiance](AMBIANCE_V0.6.md), [Confort](CONFORT_V0.6.md), [Gameplay](GAMEPLAY_DETAILLE.md), [Scènes](SCENES_CINEMATIQUES.md) et [Dossier et épilogue](DOSSIER_ET_EPILOGUE_V0.7.md). Les noms historiques des trois annexes v0.6 sont conservés ; leurs contrats restent applicables à la tranche actuelle.
+La campagne complète, les humains hostiles, les laboratoires profonds, Alma, la piscine, l’intérieur d’Hespérie, les cavernes, le bunker, le seuil 666, l’Enfer, les fins, Mountain Hole et UE5 gardent un statut de conception. La réalité de la dimension infernale dans le canon ne signifie pas que sa traversée est livrée dans le prototype actuel.

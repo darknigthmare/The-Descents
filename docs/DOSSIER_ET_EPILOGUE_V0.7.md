@@ -1,4 +1,4 @@
-# Dossier d’intervention, bilan et signal du relais — v0.7
+# Dossier d’intervention, bilan et signal du relais — contrat v0.7 conservé en v0.8
 
 ## 1. Intention et périmètre livré
 
@@ -166,4 +166,10 @@ La suite `test_epilogue.gd` couvre l’horloge, les frontières de plans, les de
 
 La suite `test_epilogue_integration.gd` exerce la véritable fin de mission, les onglets et les actions du bilan, la pause et les options imbriquées, l’échec d’une sauvegarde finale, la relecture, le passage et la reprise d’une fin déjà enregistrée sans nouvelle écriture. Elle contrôle aussi le retour à une nouvelle partie pour détecter une caméra, une horloge ou un état de fin conservé par erreur.
 
-Les captures natives du pipeline complètent ces contrôles par une inspection du rendu. Les captures utilisent des états préparés : elles ne prouvent pas une partie humaine complète, la durée réelle d’un parcours, la qualité d’une voix enregistrée ou la disponibilité de la campagne sous le 25. Les résultats exacts, versions d’outils et archives livrées appartiennent au [rapport de validation v0.7](VALIDATION_V0.7.md).
+Les captures natives du pipeline complètent ces contrôles par une inspection du rendu. Les captures utilisent des états préparés : elles ne prouvent pas une partie humaine complète, la durée réelle d’un parcours, la qualité d’une voix enregistrée ou la disponibilité de la campagne sous le 25. Les preuves historiques de cette introduction figurent dans le [rapport de validation v0.7](VALIDATION_V0.7.md). Les résultats exacts, versions d’outils et archives de la livraison courante sont référencés dans [État de livraison](ETAT_DE_LIVRAISON.md).
+
+## Continuité avec les manifestations de la 0.8
+
+Le fichier conserve le nom de l’annexe introduite en 0.7. Le journal, le bilan et SC06 gardent leurs contrats dans la 0.8. Les apparitions discrètes ne deviennent pas des messages radio reçus ou des documents collectés par le seul fait d’être présentées. Un effet visuel du spa ne fait pas afficher « Enfer confirmé » dans Situation.
+
+L’incertitude du fragment de Bravo reste locale : le journal ne sait pas encore authentifier son origine ou son heure. Le canon de campagne confirme en revanche l’existence d’une dimension infernale réellement traversée après les laboratoires et le bunker. Ces informations d’auteur ne sont pas révélées prématurément par le bilan de la tranche toit–25. Le dernier plan n’affiche pas des niveaux inférieurs non visités.

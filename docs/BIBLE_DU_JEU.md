@@ -2,13 +2,15 @@
 
 ## Bible de conception du jeu
 
-**Version 0.7.0 — Dossier de mission, clôture cinématique et conception de campagne — 25 novembre 2026**
+**Version 0.8.0 — Hallucinations progressives, menace humaine et dimension infernale — 25 novembre 2026**
 
 **Création et direction du projet : Darknigthmare. Dépôt : The-Descents.**
 
-Cette bible développe les notes fondatrices en une campagne de sauvetage et d’horreur à la première personne. Elle décrit l’univers, les personnages, les systèmes, les possibilités du joueur, la progression des étages et les règles de génération. Les noms propres, la chronologie, les révélations et les fins ci-dessous constituent une proposition de canon originale que la direction du projet peut faire évoluer.
+Cette bible développe les notes fondatrices en une campagne de sauvetage et d’horreur à la première personne. Elle décrit l’univers, les personnages, les systèmes, les possibilités du joueur, la progression des étages et les règles de génération. La direction confirmée le 25 novembre 2026 fixe une progression précise : perceptions discrètes, phénomènes persistants, humains dangereux, révélation d’expériences sur une dimension infernale, puis traversée réelle de l’Enfer. L’incertitude appartient à ce qu’Alex peut savoir au début ; la destination finale est un fait du récit. Les noms et les variantes de production restent des propositions originales à éprouver.
 
-Le prototype 3D Godot 0.7.0 conserve un toit jouable et six étages, du 30 au 25, avec rappel, exploration, trois rescapés et un refuge. Les deux tours commencent intactes ; l’effondrement d’Hespérie est observé depuis la baie Est du 29. Bravo se replie vers l’intérieur et les personnes confirmées apparaissent au poste médical du toit. La radio ordonne ses sous-titres, conserve les trente-deux dernières transmissions et peut faire revenir un fragment de Bravo après Samuel. L’ouverture de marque et l’accueil contextuel de la 0.4 sont conservés. La 0.5 anime l’approche des deux appareils, leurs portes et le débarquement des six membres de toit ; elle enrichit les volumes des hélicoptères, des sauveteurs et du littoral. Douze objets examinables donnent une lecture des lieux qui évolue avec l’incident et les réceptions médicales confirmées. La 0.6 rend le portage visible à la première personne, met en scène le panier et le câble du treuil, puis accompagne les personnes reçues jusqu’à l’abri. Elle ajoute un ciel maritime stratifié, une pluie extérieure et des réglages de volume, sensibilité, champ de vision et regard inversé accessibles avant et pendant la partie. Les annexes [Sauvetage](SAUVETAGE_V0.6.md), [Ambiance](AMBIANCE_V0.6.md) et [Confort](CONFORT_V0.6.md) précisent ces contrats. La 0.7 organise le journal en quatre onglets, présente un bilan issu des faits enregistrés et clôt la tranche par un épilogue en jeu de quinze secondes, passable et rejouable. Le relais du 25 reste la fin jouable ; sa reprise ouvre directement le bilan. L’annexe [Dossier et épilogue](DOSSIER_ET_EPILOGUE_V0.7.md) détaille états, textes, plans, commandes et critères de revue. La campagne complète, les personnages et voix définitifs, les souterrains, la coopération et le portage Unreal Engine 5 restent à produire. Le [rapport de livraison](ETAT_DE_LIVRAISON.md) distingue les fonctions vérifiées, les exports et les limites des essais.
+Le prototype 3D Godot 0.8.0 conserve un toit jouable et six étages, du 30 au 25, avec rappel, exploration, trois rescapés et un refuge. Les deux tours commencent intactes ; l’effondrement d’Hespérie est observé depuis la baie Est du 29. Bravo se replie vers l’intérieur et les personnes confirmées apparaissent au poste médical du toit. La radio ordonne ses sous-titres, conserve les trente-deux dernières transmissions et peut faire revenir un fragment de Bravo après Samuel. L’ouverture de marque et l’accueil contextuel de la 0.4 sont conservés. La 0.5 anime l’approche des deux appareils, leurs portes et le débarquement des six membres de toit ; elle enrichit les volumes des hélicoptères, des sauveteurs et du littoral. Douze objets examinables donnent une lecture des lieux qui évolue avec l’incident et les réceptions médicales confirmées. La 0.6 rend le portage visible à la première personne, met en scène le panier et le câble du treuil, puis accompagne les personnes reçues jusqu’à l’abri. Elle ajoute un ciel maritime stratifié, une pluie extérieure et des réglages de volume, sensibilité, champ de vision et regard inversé accessibles avant et pendant la partie. Les annexes [Sauvetage](SAUVETAGE_V0.6.md), [Ambiance](AMBIANCE_V0.6.md) et [Confort](CONFORT_V0.6.md) précisent ces contrats. La 0.7 organise le journal en quatre onglets, présente un bilan issu des faits enregistrés et clôt la tranche par un épilogue en jeu de quinze secondes, passable et rejouable. Le relais du 25 reste la fin jouable ; sa reprise ouvre directement le bilan. L’annexe [Dossier et épilogue](DOSSIER_ET_EPILOGUE_V0.7.md) détaille états, textes, plans, commandes et critères de revue. La campagne complète, les personnages et voix définitifs, les souterrains, la coopération et le portage Unreal Engine 5 restent à produire. Le [rapport de livraison](ETAT_DE_LIVRAISON.md) distingue les fonctions vérifiées, les exports et les limites des essais.
+
+La 0.8 remplace la poursuite agressive précoce du spa par une présence perceptive sans dégâts. Une silhouette périphérique aux suites du 29 et des traces humides aux archives du 28 préparent cette récurrence ; les secours, l’incident, les pauses et les refuges gardent la priorité. Les humains hostiles, les laboratoires profonds et l’Enfer ne deviennent pas jouables dans cette tranche. L’annexe [Progression de l’horreur](PROGRESSION_HORREUR_V0.8.md) fixe les paliers, leurs preuves, les rencontres, les expériences et le passage physique.
 
 Le [Catalogue des étages](CATALOGUE_ETAGES.md) précise les trente niveaux de campagne et leur périmètre jouable. Les dossiers [Effondrement en direct](EFFONDREMENT_EN_DIRECT.md), [Communications et équipes](COMMUNICATIONS_ET_EQUIPES.md), [Props et interactions](PROPS_INTERACTIONS.md), [Ennemis et statistiques](ENNEMIS_STATISTIQUES.md), [Scènes cinématiques](SCENES_CINEMATIQUES.md) et [Gameplay détaillé](GAMEPLAY_DETAILLE.md) complètent cette bible. Les fiches d’objets, rencontres et scènes constituent des spécifications de production, avec des valeurs initiales à éprouver ; leur présence dans le document ne signifie pas qu’elles existent dans le moteur.
 
@@ -42,10 +44,10 @@ Le plaisir principal vient d’une décision préparée puis exécutée : repér
 | Structure | Étages écrits à la main, variations procédurales contrôlées |
 | Combat | Défense, détour, éclairage et outils ; vulnérabilité durable du secouriste |
 | Progression | Accès, connaissance, confiance, routes de secours et état des personnes |
-| Ton | Catastrophe crédible, présence humaine, malaise, horreur souterraine |
+| Ton | Catastrophe crédible, hallucinations discrètes, violence humaine, paranormal persistant puis Enfer réel |
 | État visuel du prototype | Géométrie de blocage et éclairage d’ambiance ; direction finale distincte |
 
-Les références initiales renseignent des intentions : la tour comme monde vertical, la diversité de ses activités, les opérations de secours dans un bâtiment brisé et un sous-sol qui transforme la lecture du lieu. Elles ne fournissent ni personnages, ni musique, ni décors à reproduire. La bande sonore doit être originale. Le lien de sirène des notes reste une référence d’intention sonore ; aucun enregistrement de cette vidéo n’est réputé intégré au projet.
+Les références initiales renseignent des intentions : la tour comme monde vertical, la diversité de ses activités, les opérations de secours dans un bâtiment brisé et un sous-sol qui transforme la lecture du lieu. Elles ne fournissent ni personnages, ni musique, ni décors à reproduire. Condemned renseigne ici la proximité inquiétante de personnes agressives, la lecture des gestes et la violence matérielle des lieux. Doom renseigne la révélation d’expériences ouvrant une dimension infernale puis sa traversée. Ces références ne dictent ni leurs personnages, ni leurs créatures, ni un passage automatique à un héros surarmé : Alex conserve sa fonction de secouriste. La bande sonore doit être originale. Le lien de sirène des notes reste une référence d’intention sonore ; aucun enregistrement de cette vidéo n’est réputé intégré au projet.
 
 ## 2 Les principes qui gouvernent toutes les décisions
 
@@ -113,9 +115,9 @@ Les dates relatives permettent de déplacer l’année de l’action sans rééc
 
 ### Le programme SILLAGE
 
-SILLAGE étudie la persistance de motifs acoustiques et sensoriels dans les matériaux de Nacre. L’objectif commercial annoncé consiste à mesurer l’état d’un bâtiment en comparant ses réponses vibratoires dans le temps. Une branche clinique étudie ensuite la mémoire émotionnelle, officiellement pour traiter les conséquences d’un traumatisme. Pelagos découvre que certains espaces restituent des séquences beaucoup plus complètes qu’un simple enregistrement.
+SILLAGE commence publiquement par l’étude des réponses acoustiques et sensorielles des matériaux de Nacre. La maintenance prédictive du bâtiment et le traitement du stress forment sa couverture commerciale. Sous cette façade, Pelagos identifie une frontière avec une dimension infernale réelle. Les premiers protocoles captent ses résonances ; les suivants visent à stabiliser une ouverture, transférer de la matière et exploiter ce qui répond de l’autre côté. Le complexe hôtelier fournit l’énergie, les locaux dissimulés et des populations exposées sans information suffisante.
 
-Les chercheurs appellent ces phénomènes des **empreintes**. Une empreinte peut reproduire un bruit, une routine, une silhouette ou le trajet d’une personne. Dans les premières expériences, elle répète. Dans les dernières, elle semble attendre une réponse. L’accident d’Hespérie correspond au moment où une empreinte a cessé de suivre la séquence qu’on lui fournissait.
+Les chercheurs appellent les premiers phénomènes des **empreintes**. Une empreinte peut reproduire un bruit, une routine, une silhouette ou le trajet d’une personne. Les premières boucles répètent des informations prélevées dans Nacre ; des réponses adaptatives révèlent ensuite un interlocuteur réel. L’accident d’Hespérie est lié à un essai de franchissement interrompu et à une contamination matérielle, pas seulement à un enregistrement devenu étrange. Pelagos a poursuivi ses essais après cette preuve, sous de nouveaux noms administratifs.
 
 Pelagos entretient une confusion commode entre anomalie instrumentale, fatigue des employés et défaut de protocole. Ce choix crée une responsabilité humaine claire. Les victimes du programme ne sont pas uniquement des savants imprudents : agents de nettoyage, maintenance, soignants et résidents ont subi des décisions qu’ils ne pouvaient pas évaluer.
 
@@ -129,10 +131,11 @@ Pelagos entretient une confusion commode entre anomalie instrumentale, fatigue d
 | Les rescapés confirmés sont-ils réels ? | Oui. Le registre de sauvetage est fiable. | Confirmation par relais et réaction d’autres personnes |
 | Alma existe-t-elle ? | Oui. Elle a une histoire, des liens et une trajectoire indépendants d’Alex. | Registre scolaire, objets personnels, témoin vivant, présence avant la chute |
 | Que veulent les empreintes ? | Les empreintes simples répètent. Une présence plus profonde apprend à exploiter les réponses humaines. | Différences de comportement entre répétition et adaptation |
-| SILLAGE a-t-il inventé la présence ? | Non. Il lui a donné des structures, une énergie et un vocabulaire. | Archives antérieures au programme et motifs identiques dans les cavernes |
-| Peut-on comprendre entièrement le niveau 666 ? | Non. Son fonctionnement local est jouable, son origine demeure partiellement ouverte. | Règles observables, retour possible, traces conservées |
+| SILLAGE a-t-il créé l’Enfer ? | Non. Cette dimension préexiste ; le programme a élargi et stabilisé son accès depuis Nacre. | Traces anciennes, historiques d’essais, échantillons étrangers et traversée de la brèche |
+| Le seuil 666 est-il un Enfer seulement symbolique ? | Non. C’est le passage matériel vers une dimension infernale réellement traversée. | Corps, matériel, témoins et mesures demeurent continus avant et après le franchissement |
+| Toute la cosmologie est-elle expliquée ? | Non. L’ancienneté, l’étendue et les puissances lointaines peuvent rester inconnues ; l’existence du monde infernal est établie. | Expériences corroborées, géographie accessible et effets mesurables |
 
-La résolution établit les actes de Pelagos et permet de fermer un passage. Elle n’oblige pas le scénario à expliquer chaque apparition par une unique phrase scientifique ou religieuse. Les entités profondes peuvent rappeler l’enfer sans confirmer une cosmologie précise.
+La résolution établit la responsabilité des expériences, conduit Alex au-delà de la brèche et lui donne les moyens d’isoler une liaison depuis l’Enfer. La campagne ne termine pas par « tout était dans sa tête ». L’origine cosmique exacte de ce monde peut conserver des zones d’ombre, mais son existence, les transferts de matière et la traversée du joueur sont des faits. Une perception ambiguë au 29 reste ambiguë à cet instant ; elle n’oblige pas chaque bruit banal du début à devenir rétroactivement une attaque démoniaque.
 
 ## 5 Personnages et équipes
 
@@ -176,7 +179,7 @@ Elle peut aider concrètement à ouvrir un sas ou à stabiliser un relais. Cette
 
 ### Les autres équipes
 
-Les groupes de secours possèdent des indicatifs simples : **Corde**, **Médical**, **Échelle** et **Relais**. Corde et Médical s’installent sur Aube, sous le commandement de Varga. Le détachement **Bravo**, qui réunit Échelle et Relais, est déposé sur Hespérie pour localiser les personnels techniques et vérifier les signaux. Deux hélicoptères et des groupes visibles sur chaque toit matérialisent cette répartition dans la maquette 0.7.0 ; Bravo se replie à couvert et les sauvés sont visibles au poste médical. La 0.6 donne des poses de treuil et d’accompagnement à deux membres d’Alpha. Les rencontres détaillées, le portage des caisses, le contact des mains et les animations de travail définitives appartiennent à la production de campagne.
+Les groupes de secours possèdent des indicatifs simples : **Corde**, **Médical**, **Échelle** et **Relais**. Corde et Médical s’installent sur Aube, sous le commandement de Varga. Le détachement **Bravo**, qui réunit Échelle et Relais, est déposé sur Hespérie pour localiser les personnels techniques et vérifier les signaux. Deux hélicoptères et des groupes visibles sur chaque toit matérialisent cette répartition dans la maquette 0.8.0 ; Bravo se replie à couvert et les sauvés sont visibles au poste médical. La 0.6 donne des poses de treuil et d’accompagnement à deux membres d’Alpha. Les rencontres détaillées, le portage des caisses, le contact des mains et les animations de travail définitives appartiennent à la production de campagne.
 
 Bravo cesse de répondre lors de l’impact. Le journal porte « liaison perdue », sans déclarer les équipiers morts. Une reprise ambiguë de son indicatif plus bas pourra préparer les phénomènes d’imitation ; elle doit être distinguée d’une confirmation humaine vérifiée. Varga demeure joignable par intermittence et les victimes prises en charge restent au registre. La police sécurisera les zones d’arrivée et les archives dans la campagne lorsqu’elle le pourra.
 
@@ -188,13 +191,13 @@ La population comprend des touristes, des travailleurs, des résidents, des tech
 
 Les deux toits installent la dimension collective : groupes distincts, matériel, météo, rotors et échanges courts. Les façades intactes contrastent avec la ville noyée. La première descente atteint le restaurant du 30 et permet de treuiller Ana. Une fois ce transfert confirmé et les hélicoptères partis, Varga demande une observation de Bravo depuis la baie Est du 29. L’approche et le regard vers Hespérie déclenchent l’événement : avertissement 8 s, réplique 6 s, effondrement 7 s et impact 4 s, puis état permanent après impact. Aucun chronomètre global ne fait s’écrouler la tour pendant que le joueur apprend le rappel ou aide Ana.
 
-Le joueur rejoint ensuite Samuel au 28 dans un environnement qui vient d’être frappé. Le 27 ménage une respiration, puis le spa introduit une menace plus nette. Le refuge du 25 ferme la boucle de sauvetage. La ligne intérieure, les prises en charge et le retour au toit restent utilisables malgré le détour latéral imposé par les dégâts.
+Le joueur rejoint ensuite Samuel au 28 dans un environnement qui vient d’être frappé. Le 27 ménage une respiration, puis le spa répète une présence perceptive encore sans attaque corporelle. Le refuge du 25 ferme la boucle de sauvetage. La ligne intérieure, les prises en charge et le retour au toit restent utilisables malgré le détour latéral imposé par les dégâts.
 
 Des étages plus bas introduisent les conférences, les commerces, les cuisines et les résidences. Les habitants racontent des versions différentes de la soirée précédant la catastrophe. L’une des équipes retrouve une zone détruite depuis longtemps alors qu’elle figure comme récemment rénovée. À la fin de cet acte, le joueur sait que le désastre visible n’explique pas tout.
 
 ### Acte deux Ce que la tour contenait
 
-La partie médiane relie les services du bâtiment, des bureaux condamnés, une clinique, les laboratoires et des archives administratives. Le joueur peut choisir des détours qui améliorent le réseau d’évacuation, sauvent des personnes et rendent les preuves plus solides. Les phénomènes commencent à interagir avec les objets.
+La partie médiane relie les services du bâtiment, des bureaux condamnés, une clinique, les laboratoires et des archives administratives. Le joueur peut choisir des détours qui améliorent le réseau d’évacuation, sauvent des personnes et rendent les preuves plus solides. Les phénomènes commencent à interagir avec les objets et à laisser des traces que plusieurs personnes constatent. Des humains retranchés ou violemment désorientés deviennent des menaces distinctes : ils respirent, utilisent des passages réels et ne disparaissent pas lorsque la lampe les éclaire. Les rencontres E11 à E13 font travailler distance, gestes défensifs, séparation et choix d’évitement, sans transformer toute personne en détresse en ennemi.
 
 Une traversée future d’Hespérie, accessible par la liaison basse du 6 et ses débris secondaires, donne un espace plus ancien, presque privé de communication. Le joueur y voit des tentatives de secours datant de plusieurs années. Le contraste ne doit pas être celui d’un décor gratuit : certaines balises portent des règles encore utiles et les supports techniques expliquent les liaisons entre les tours.
 
@@ -208,17 +211,21 @@ Quand Alex reprend conscience, la route supérieure est condamnée. Une silhouet
 
 ### Acte quatre Sous le nom de la ville
 
-Les anciens bains, les cavernes et le bunker montrent les différentes couches d’occupation de Nacre. Des survivants de la crise récente et des personnes retenues par le programme peuvent encore être retrouvés. Les traces d’Alma fournissent un fil concret. L’objectif n’est pas de tuer une hiérarchie de monstres, mais de reconstituer une route de retour et de couper le mécanisme qui entretient le passage.
+Les anciens bains, les cavernes et le bunker montrent les différentes couches d’occupation de Nacre. Des survivants de la crise récente et des personnes retenues par le programme peuvent encore être retrouvés. Les traces d’Alma fournissent un fil concret. Les chambres d’essai, les journaux de transfert et les échantillons d’origine étrangère établissent que Pelagos expérimentait avec l’Enfer. L’objectif devient de retrouver les personnes déplacées, préparer une ligne de retour et atteindre le mécanisme qui maintient la brèche.
 
-Le dernier espace est désigné **666** par un ancien système de repérage SILLAGE : puits 6, boucle 6, seuil 6. Les interfaces ont concaténé ces trois valeurs. À proximité, les numéros d’étage se répètent ou deviennent incohérents. Il ne s’agit pas de six cent soixante-six niveaux à produire ni d’un ascenseur qui descend arbitrairement de plusieurs kilomètres.
+Le sas de franchissement est désigné **666** par un ancien système de repérage SILLAGE : puits 6, boucle 6, seuil 6. Les interfaces ont concaténé ces trois valeurs. À proximité, les numéros d’étage se répètent ou deviennent incohérents. Il ne s’agit pas de six cent soixante-six niveaux à produire ni d’un ascenseur qui descend arbitrairement de plusieurs kilomètres.
 
-Dans cette profondeur, des fragments d’espaces déjà traversés se réassemblent selon une logique de réponse. Le joueur reconnaît le restaurant, le jardin d’enfants ou un refuge, mais seul le refuge réel possède la signature physique et les confirmations apprises. Un espace imité ne porte jamais le statut de refuge certifié dans l’interface.
+### Acte cinq De l’autre côté de la brèche
+
+Alex franchit physiquement le seuil et atteint une géographie infernale continue : le rivage des cendres, les galeries de contrainte, les ouvrages d’extraction et le nœud qui entretient la liaison. Les matériaux, créatures et horizons ne peuvent plus être confondus avec un étage abîmé. Des fragments du restaurant ou du jardin, prélevés lors des essais, s’y trouvent mêlés à des architectures étrangères. Ces fragments servent de preuves du transfert et de points de repère ; le monde infernal ne se réduit pas à une copie rouge de la tour.
+
+Le joueur conserve son matériel, les traces d’Alma et les décisions de sauvetage. Une ligne de retour liée à Nacre fournit un objectif physique. Il doit protéger des appuis, détourner des alimentations et traverser des territoires corporels hostiles, puis isoler les liaisons avec le Chœur bas. Un appui certifié reste fiable ; une imitation de refuge n’en reçoit jamais le statut. Les étapes et les contre-jeux figurent dans l’annexe [Progression de l’horreur](PROGRESSION_HORREUR_V0.8.md).
 
 ### Épilogue de campagne
 
 La clôture de la tranche au refuge 25 précède cet épilogue de campagne, encore à produire. Ses trois plans de sauvetage et de relais ne montrent ni l’évacuation de l’île ni la résolution du seuil.
 
-Une route technique permet de rejoindre une ouverture plus éloignée des tours. L’accalmie peut enfin rendre possible l’évacuation. Les personnes sauvées, les relais établis, les preuves sorties et le traitement du seuil déterminent l’épilogue. Une vue de l’île au matin montre les tours à distance et donne un sens aux chemins parcourus.
+Après un retour effectif du côté de Nacre, une route technique permet de rejoindre une ouverture plus éloignée des tours. L’accalmie peut enfin rendre possible l’évacuation. Les personnes sauvées, les relais établis, les preuves sorties et le traitement du seuil déterminent l’épilogue. Une vue de l’île au matin montre les tours à distance et donne un sens aux chemins parcourus.
 
 ## 7 Fins et conséquences
 
@@ -354,6 +361,8 @@ Le bestiaire définit des comportements avant des silhouettes. Les premières re
 | La Chambre qui écoute | Menace spatiale, sans corps unique | Réplique les réponses et modifie les sorties non surveillées | Marquage, témoins, balises et silence coordonné | Réservée aux profondeurs |
 | Le Chœur bas | Présence finale faite de fragments et d’appels superposés | Maintient le seuil grâce aux relais qui lui répondent | Couper ou détourner les liaisons dans un ordre déduit | Un finale en plusieurs objectifs |
 
+Les rencontres humaines E11 à E13 précèdent les entités corporelles les plus explicites. E14 à E16 appartiennent aux profondeurs et à l’Enfer ; leurs attaques, territoires et ouvertures défensives sont détaillés dans le bestiaire. Un humain agressif demeure un individu réel, avec un objectif et une mémoire de rencontre ; une silhouette fugitive ne sert pas à lui attribuer une origine surnaturelle sans preuve.
+
 Les personnes mutilées des notes deviennent des victimes identifiables et des présences tragiques, pas une collection décorative de corps. Les niveaux d’explicite peuvent être réglés. Les animaux cavernicoles conservent un comportement territorial compréhensible avant leurs variantes anormales.
 
 ### Défense et échec
@@ -415,7 +424,7 @@ Pour le prototype, un sous-ensemble de ce contrat suffit. Les six fonctions d’
 
 ## 15 Catalogue d’événements
 
-La plupart de ces événements sont des modules de campagne proposés. Une entrée est sélectionnée selon son contexte, ses prérequis et le temps de récupération disponible. L’effondrement observé au 29, introduit en 0.2 et conservé en 0.7.0, constitue l’événement fixe du prototype ; sa présence ne dépend pas d’un tirage aléatoire. Le [dossier de séquence](EFFONDREMENT_EN_DIRECT.md) distingue son implémentation en maquette des enrichissements cinématiques futurs.
+La plupart de ces événements sont des modules de campagne proposés. Une entrée est sélectionnée selon son contexte, ses prérequis et le temps de récupération disponible. L’effondrement observé au 29, introduit en 0.2 et conservé en 0.8.0, constitue l’événement fixe du prototype ; sa présence ne dépend pas d’un tirage aléatoire. Le [dossier de séquence](EFFONDREMENT_EN_DIRECT.md) distingue son implémentation en maquette des enrichissements cinématiques futurs.
 
 | Événement | Conditions | Action et information offertes au joueur |
 |---|---|---|
@@ -572,7 +581,7 @@ Le prototype doit répondre à des questions concrètes. Le rappel donne-t-il en
 
 ### Périmètre de la tranche
 
-| Zone | Fonction | Périmètre du prototype 0.7.0 |
+| Zone | Fonction | Périmètre du prototype 0.8.0 |
 |---|---|---|
 | Toit | Arrivée et briefing | Approche temps réel, deux tours intactes, deux appareils, équipes en maquette, réception nominative des rescapés et première ligne |
 | 30 | Restaurant panoramique | Ana Rios, maître d’hôtel, première rescapée et apprentissage de l’exploration |
@@ -650,7 +659,7 @@ Les niveaux 14 à 1, les laboratoires, la liaison basse endommagée du 6 et le t
 
 ### Jalon cinq Profondeurs et conclusion
 
-Les bains enfouis, cavernes, bunker, seuil 666 et fins deviennent jouables. Le projet vérifie que les règles apprises plus haut restent utiles. Les preuves et les personnes sauvées produisent des conséquences visibles. L’extension Mountain Hole reste séparée de ce chemin critique.
+Les bains enfouis, cavernes, bunker, seuil 666, secteurs réellement situés en Enfer et fins deviennent jouables dans cette étape de production future. Le projet vérifie que les règles apprises plus haut restent utiles. Les preuves et les personnes sauvées produisent des conséquences visibles. L’extension Mountain Hole reste séparée de ce chemin critique.
 
 ### Jalon six Finition
 
@@ -711,12 +720,18 @@ La personnalisation complète d’Alex, le nombre exact de survivants de la camp
 
 La révision ajoute des spécifications transversales assez précises pour préparer une nouvelle tranche sans confondre conception et livraison. Le catalogue fournit trente fiches d’assemblage : volumes proposés, circulation, accessoires, rythme, sauvegarde et contrôle du retour. Les étages 24 à 1 restent à construire ; la fiche d’un étage déjà représenté décrit aussi des enrichissements non intégrés.
 
-Le dossier de props comporte **52 entrées P01 à P52**. Chaque fiche donne fonction, dimensions, état actuel, interaction cible, états, retour sonore, placement et points de validation. Le dossier de menaces sépare **E00**, silhouette réellement programmée au spa, de **dix archétypes de campagne E01 à E10**, avec comportements, valeurs initiales, signaux, contre-jeu, limites de génération et persistance. L’absence de points de vie sur une voix ou une empreinte est un choix fonctionnel, pas une fiche incomplète.
+Le dossier de props comportait **52 entrées P01 à P52** à cette étape. La 0.8 le porte à **60 fiches P01 à P60**, en ajoutant huit accessoires d’expérimentation, de franchissement et de retour infernal, encore à produire. Chaque fiche donne fonction, dimensions, état actuel, interaction cible, états, retour sonore, placement et points de validation. Le dossier de menaces sépare **E00**, silhouette réellement programmée au spa, de **seize archétypes de campagne E01 à E16** dans l’état actuel de la conception, avec comportements, valeurs initiales, signaux, contre-jeu, limites de génération et persistance. L’absence de points de vie sur une voix ou une empreinte est un choix fonctionnel, pas une fiche incomplète.
 
-Le gameplay détaillé consigne les paramètres actuels de déplacement, corde, ressources, portée d’interaction, treuillage et dangers. Il expose leurs simplifications : pas de capsule basse, interactions de mission sélectionnées par proximité, inspections soumises à la visée et à la visibilité, portage abstrait, menace au mouvement direct, fusée à effet global. Les plages proposées pour l’accompagnement et les nouvelles interactions restent à essayer. Les motivations, objectifs et peurs des personnages relient leur rôle mécanique à leurs décisions narratives, sans leur inventer des statistiques psychologiques déjà simulées.
+Le gameplay détaillé consignait à cette étape les paramètres de déplacement, corde, ressources, portée d’interaction, treuillage et dangers. Ses simplifications de l’époque comprenaient l’absence de capsule basse, les interactions de mission sélectionnées par proximité, les inspections soumises à la visée et à la visibilité, le portage abstrait, une menace au mouvement direct et une fusée à effet global. La 0.6 a ajouté la présentation du portage et la 0.8 retire cette poursuite précoce : la fusée masque désormais les silhouettes perceptives sans déplacer un ennemi. Les plages proposées pour l’accompagnement et les nouvelles interactions restent à essayer. Les motivations, objectifs et peurs des personnages relient leur rôle mécanique à leurs décisions narratives, sans leur inventer des statistiques psychologiques déjà simulées.
 
 La présentation livrée comprend un prologue de marque de **15 secondes**, un accueil contextuel issu d’une sauvegarde validée et une arrivée de **28 secondes**, en quatre plans et quatre communications sous-titrées. Les préférences sont chargées avant le prologue, les séquences peuvent être passées et leur horloge ne consomme pas le temps de mission. Les scènes de retrouvailles avec Alma, de rupture du socle et de seuil disposent de storyboards textuels de production ; elles ne sont pas des cinématiques jouables supplémentaires de la 0.5.0.
 
 La priorité suivante est d’éprouver la compréhension des gestes et des personnes, puis de remplacer progressivement les silhouettes et matériaux de maquette. Les objectifs de finition ne doivent pas masquer les contrats déjà établis : toute vie confirmée reste sauvée, tout refuge certifié tient sa promesse et toute reprise reconstruit une intervention cohérente.
 
 La ligne directrice reste stable : une opération humaine et méthodique descend dans un lieu qui exploite les voix, les souvenirs et les gestes de secours. Le joueur conserve des moyens de vérifier, des personnes à protéger et des routes à construire. Les deux tours visibles au début deviennent progressivement une petite partie de ce qu’il a traversé.
+
+## 29 Direction confirmée et continuation 0.8
+
+La progression n’est plus laissée ouverte entre rêve et Enfer symbolique. Le début entretient un doute perceptif ; les phénomènes deviennent persistants ; des humains dangereux occupent les secteurs intermédiaires ; les expériences de SILLAGE révèlent une dimension infernale ; la campagne franchit cette frontière. La subtilité des étages hauts et la réalité du dernier acte sont compatibles parce que le savoir du joueur évolue.
+
+La tranche v0.8 réalise seulement les prémices dans les lieux 29, 28 et 26, avec secours et effondrement prioritaires. Les nouveaux catalogues portent **60 props** et **E00 plus 16 archétypes de campagne**. Les nouvelles fiches détaillent l’intention, les paramètres proposés, les scènes, les interactions et la reprise ; elles ne valent pas livraison d’IA humaines, de combat complet ou de niveaux infernaux. Les choix de persistance et les valeurs exécutées sont ceux du code et des rapports de cette version.

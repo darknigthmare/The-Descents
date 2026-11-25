@@ -1,6 +1,6 @@
 # The Tower Descent — Effondrement en direct
 
-**Version 0.7.0 — Incident, équipes et continuité cinématique — 25 novembre 2026**
+**Version 0.8.0 — Incident, équipes et continuité cinématique — 25 novembre 2026**
 
 ## 1. Décision de direction
 
@@ -10,7 +10,7 @@ L’événement doit transformer un lieu que le joueur vient de comprendre. Il a
 
 La scène est un événement réel du récit. Les incertitudes sur les hallucinations apparaissent dans ce qui suit ; elles n’effacent ni l’effondrement, ni les sauvetages confirmés.
 
-## 2. Périmètre de la version 0.7.0
+## 2. Périmètre de la version 0.8.0
 
 | Élément | Périmètre retenu |
 | --- | --- |
@@ -190,3 +190,9 @@ Les points suivants servent à évaluer la révision ; ils ne constituent pas de
 - Ana, Samuel et Nora restent sauvables une seule fois ; les personnes confirmées restent au registre après le choc et la reprise.
 - Le refuge reste sûr ; la fin reste cohérente avec trois personnes sauvées et un incident achevé.
 - Le contraste entre organisation initiale, rupture et isolement est lisible à l’image et dans les communications.
+
+## Cohérence avec la montée de l’horreur en 0.8
+
+L’effondrement demeure une catastrophe physique vécue par toutes les équipes. Les trois manifestations discrètes des étages hauts ne l’interrompent pas et ne le présentent pas comme une perception d’Alex. Elles attendent une situation compatible avec l’observation ; aucune attaque n’est ajoutée au premier transfert ou au passage de corde. Les traces plus persistantes des archives surviennent après la stabilisation du choc, avec une interprétation matérielle encore possible.
+
+Le canon profond confirme les expériences de Pelagos sur une dimension infernale et une traversée ultérieure de l’Enfer. Cette révélation ne réécrit pas la causalité déjà établie : le typhon, le tsunami et les secousses sont des désastres du récit, tandis que les essais ont aggravé les faiblesses et les risques du complexe. Les victimes confirmées restent réelles et sauvées.

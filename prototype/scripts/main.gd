@@ -12,8 +12,13 @@ const Preferences = preload("res://scripts/preferences_store.gd")
 const FieldProps = preload("res://scripts/field_props.gd")
 const RescuePresentation = preload("res://scripts/rescue_presentation.gd")
 const Epilogue = preload("res://scripts/epilogue_director.gd")
+const Horror = preload("res://scripts/horror_director.gd")
+const HorrorPresentation = preload("res://scripts/horror_presentation.gd")
 
 var rescue_visuals: Node3D
+var horror_visuals: Node3D
+var horror = Horror.new()
+var horror_cue_serial: int = 0
 var world: Node3D
 var player: CharacterBody3D
 var hud: CanvasLayer
@@ -46,8 +51,6 @@ var radio_time: float = 0
 var notify_time: float = 0
 var radio_cooldown: float = 0
 var flare_time: float = 0
-var shadow: Node3D
-var shadow_time: float = 0
 var damage_cooldown: float = 0
 var flashes_enabled: bool = false
 var sound_enabled: bool = true
@@ -57,6 +60,7 @@ var audio_radio: AudioStreamPlayer
 var audio_effect: AudioStreamPlayer
 var audio_score: AudioStreamPlayer
 var audio_rotors: AudioStreamPlayer
+var audio_horror: AudioStreamPlayer3D
 var flare_light: OmniLight3D
 var intro_stage: int = 0
 var helicopter_origin: Vector3
@@ -200,6 +204,12 @@ func _build_world(seed_value: int) -> void:
 	epilogue.finish()
 	epilogue_voice_key = ""
 	rescue_visuals = null
+	horror_visuals = null
+	horror.reset()
+	horror_cue_serial = 0
+	if is_instance_valid(audio_horror):
+		audio_horror.stop()
+		audio_horror.stream_paused = false
 	if is_instance_valid(world):
 		world.free()
 	if is_instance_valid(player):
@@ -210,7 +220,6 @@ func _build_world(seed_value: int) -> void:
 	hoisting = null
 	hoist_labels_enabled = true
 	nearest = null
-	shadow = null
 	current_seed = seed_value
 	floor_specs = Generator.generate(seed_value)
 	world = World.new()
@@ -229,6 +238,9 @@ func _build_world(seed_value: int) -> void:
 	rescue_visuals = RescuePresentation.new()
 	world.add_child(rescue_visuals)
 	rescue_visuals.build(world, player.camera)
+	horror_visuals = HorrorPresentation.new()
+	world.add_child(horror_visuals)
+	horror_visuals.build(world)
 	player.lost_footing.connect(_fall_recovery)
 	menu_camera = Camera3D.new()
 	menu_camera.cull_mask = 1
@@ -274,7 +286,6 @@ func _start_new(seed_value: int) -> void:
 	hud.radio_panel.hide()
 	observation_hold = 0
 	arrival_time = 0
-	shadow_time = 0
 	flare_time = 0
 	radio_cooldown = 0
 	damage_cooldown = 0
@@ -327,6 +338,9 @@ func _restore(data: Dictionary) -> void:
 	clues = data["clues"].duplicate()
 	supplies_used = data["supplies_used"].duplicate()
 	seen_floors = data["seen_floors"].duplicate()
+	# Atmospheric cues are not mission receipts. Loading does not invent an
+	# observation or replay the initial fleeting cue on already visited floors.
+	horror.reset(seen_floors)
 	elapsed = float(data["elapsed"])
 	completed = bool(data["completed"])
 	checkpoint_floor = int(data["floor"])
@@ -341,7 +355,6 @@ func _restore(data: Dictionary) -> void:
 	world.set_rescued_people(rescued)
 	_sync_radio()
 	intro_stage = 3 if elapsed > 34.0 or incident.phase == "aftermath" else (2 if elapsed > 22.0 else (1 if elapsed > 11.0 else 0))
-	shadow_time = 0
 	flare_time = 0
 	for target: Node3D in world_data.get("interactables", []):
 		var key: String = _key(target)
@@ -497,6 +510,7 @@ func _process(delta: float) -> void:
 	_process_incident(delta)
 	_process_hazards(delta, floor_number)
 	_process_story_radio(quiet_radio_delta)
+	_process_horror(delta, floor_number)
 	_find_nearest()
 	_update_hud()
 	if health <= 0:
@@ -636,7 +650,6 @@ func _enter_floor(number: int) -> void:
 	var first: bool = not number in seen_floors
 	if first:
 		seen_floors.append(number)
-	var spec: Dictionary = _floor_spec(number)
 	if first and number == 30:
 		_say("ANA RIOS  /  VOIX PROCHE", "Ici ! Près des tables... J’ai vu votre hélicoptère. Ma jambe ne tient plus. Vous pouvez me remonter ?", 9)
 	elif first and number == 29:
@@ -647,28 +660,18 @@ func _enter_floor(number: int) -> void:
 	elif first and number == 27:
 		_say("VARGA  /  POSTE DU TOIT", "Le jardin d’enfants a été évacué. Prenez le temps de souffler. On vous reçoit encore.", 9)
 	elif number == 26:
-		if not is_instance_valid(shadow):
-			shadow = world.create_shadow(26)
-			shadow.visible = false
-		shadow_time = 0
 		if first:
-			_say("NORA HADDAD  /  SPA", "Ne laissez pas la silhouette approcher. La lumière rouge l’a fait reculer. Il y a une fusée dans votre équipement.", 10)
+			_say("NORA HADDAD  /  SPA", "J’ai cru voir quelqu’un près du bassin… Je ne sais plus. Ne me laissez pas ici.", 10)
 	elif number == 25:
 		_say("VARGA  /  REFUGE 25", "Votre signal est propre. Le local technique est sécurisé. Activez son relais pour terminer l’intervention.", 9)
-	if first and spec.get("anomaly", "none") == "radio" and number != 26:
-		stress = minf(100, stress + 9)
 
 func _process_hazards(delta: float, floor_number: int) -> void:
 	player.environment_speed = 1.0
 	# The catastrophe is a witnessed event, not an unavoidable damage timer.
 	if incident.is_active():
-		if is_instance_valid(shadow):
-			shadow.hide()
 		return
 	if player.on_rope:
 		stress = minf(100, stress + delta * 0.025)
-		if is_instance_valid(shadow):
-			shadow.hide()
 		return
 	var spec: Dictionary = _floor_spec(floor_number)
 	var hazard: String = spec.get("hazard", "none")
@@ -686,24 +689,40 @@ func _process_hazards(delta: float, floor_number: int) -> void:
 		stress = minf(100, stress + delta * 0.07)
 	if floor_number == 25 or floor_number == 31 or floor_number == 27:
 		stress = maxf(0, stress - delta * 1.2)
-	if is_instance_valid(shadow):
-		if floor_number == 26:
-			shadow_time += delta
-			shadow.visible = shadow_time > 4 and flare_time <= 0
-			if shadow.visible:
-				var target: Vector3 = Vector3(player.position.x, 12, player.position.z)
-				var speed: float = 0.72 if player.lamp_enabled else 1.1
-				shadow.position = shadow.position.move_toward(target, delta * speed)
-				stress = minf(100, stress + delta * 0.9)
-				if shadow.position.distance_to(player.position) < 2.0 and damage_cooldown <= 0:
-					health = maxf(0, health - 12)
-					damage_cooldown = 3
-					_notify("La silhouette vous atteint. Une fusée rouge la repousse. G")
-					shadow.position = Vector3(-7,12,-7)
-			elif flare_time > 0:
-				shadow.position = Vector3(-8,12,-8)
-		else:
-			shadow.hide()
+
+func _process_horror(delta: float, floor_number: int) -> void:
+	if not is_instance_valid(horror_visuals):
+		return
+	var context: Dictionary = {
+		"floor": floor_number,
+		"running": started and not paused and not completed and not arrival_playing and not boot_playing and not epilogue_playing,
+		"on_rope": player.on_rope, "carrying": is_instance_valid(carried),
+		"hoisting": is_instance_valid(hoisting), "incident_active": incident.is_active(),
+		"incident_state": incident.stable_state(), "radio_busy": radio.is_busy(),
+		"player_position": player.global_position, "camera_position": player.camera.global_position,
+		"camera_forward": -player.camera.global_basis.z,
+		"line_of_sight": _horror_line_of_sight(floor_number),
+		"lamp_enabled": player.lamp_enabled, "flare_active": flare_time > 0,
+		"reduced_motion": reduced_motion
+	}
+	var frame: Dictionary = horror.advance(delta, context)
+	horror_visuals.sample(frame, reduced_motion)
+	var serial: int = int(frame.get("cue_serial", 0))
+	if serial > horror_cue_serial:
+		horror_cue_serial = serial
+		if sound_enabled and is_instance_valid(audio_horror) and context["running"]:
+			audio_horror.global_position = frame.get("cue_position", player.global_position)
+			audio_horror.play()
+	if not context["running"] or context["on_rope"] or context["carrying"] or context["hoisting"] or context["incident_active"] or context["radio_busy"]:
+		if is_instance_valid(audio_horror):
+			audio_horror.stop()
+
+func _horror_line_of_sight(floor_number: int) -> bool:
+	if floor_number not in [29, 26]:
+		return true
+	var target: Vector3 = (Horror.SUITES_POSITION + Vector3(0, 1.15, 0)) if floor_number == 29 else (Horror.SPA_POSITION + Vector3(0, 1.2, 0))
+	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(player.camera.global_position, target, 1, [player.get_rid()])
+	return get_world_3d().direct_space_state.intersect_ray(query).is_empty()
 
 func _find_nearest() -> void:
 	nearest = null
@@ -1084,6 +1103,10 @@ func _complete_game(play_epilogue: bool = true) -> void:
 		completed = false
 		return
 	rescue_visuals.finish_reception()
+	if is_instance_valid(horror_visuals):
+		horror_visuals.clear()
+	if is_instance_valid(audio_horror):
+		audio_horror.stop()
 	for channel: AudioStreamPlayer in [audio_score,audio_rotors,audio_radio,audio_effect]:
 		if is_instance_valid(channel):
 			channel.stop()
@@ -1180,6 +1203,12 @@ func _pause(show_panel: bool = true) -> void:
 	for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect,audio_score,audio_rotors]:
 		if is_instance_valid(channel):
 			channel.stream_paused = true
+	if is_instance_valid(audio_horror):
+		# A short optional 3D cue can still be pending its first audio frame.
+		# Stop it on pause so it cannot start behind a modal; the serial prevents
+		# an automatic replay when the same visual frame resumes.
+		audio_horror.stop()
+		audio_horror.stream_paused = false
 	player.active = false
 	world.set_process(false)
 	hud.pause_panel.visible = show_panel
@@ -1192,6 +1221,8 @@ func _resume() -> void:
 	for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect,audio_score,audio_rotors]:
 		if is_instance_valid(channel):
 			channel.stream_paused = false
+	if is_instance_valid(audio_horror):
+		audio_horror.stream_paused = false
 	player.active = not arrival_playing and not completed
 	world.set_process(not completed)
 	hud.hide_inspection()
@@ -1205,6 +1236,9 @@ func _resume() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if completed or arrival_playing else Input.MOUSE_MODE_CAPTURED
 
 func _return_to_menu() -> void:
+	if is_instance_valid(audio_horror):
+		audio_horror.stop()
+		audio_horror.stream_paused = false
 	for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect,audio_score,audio_rotors]:
 		if is_instance_valid(channel):
 			channel.stream_paused = false
@@ -1247,12 +1281,19 @@ func _setting_changed(setting: String, value: Variant) -> void:
 	if is_instance_valid(world):
 		world.set_lightning_enabled(flashes_enabled)
 		world.set_reduced_motion(reduced_motion)
+	if is_instance_valid(horror_visuals):
+		if started and not completed and not boot_playing and not arrival_playing and not epilogue_playing:
+			horror_visuals.sample(horror.presentation(), reduced_motion)
+		else:
+			horror_visuals.clear()
 	AudioServer.set_bus_mute(0,not sound_enabled)
 	_apply_master_volume()
 	if DisplayServer.get_name() != "headless" and sound_enabled and is_instance_valid(audio_wind) and not audio_wind.playing:
 		audio_wind.play()
 		audio_wind.stream_paused = paused
 	if not sound_enabled:
+		if is_instance_valid(audio_horror):
+			audio_horror.stop()
 		for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect,audio_score,audio_rotors]:
 			if is_instance_valid(channel):
 				channel.stop()
@@ -1284,6 +1325,13 @@ func _make_audio() -> void:
 	audio_effect.volume_db = -15
 	audio_score = _make_loop("menu_theme",-26)
 	audio_rotors = _make_loop("rotors",-29)
+	audio_horror = AudioStreamPlayer3D.new()
+	audio_horror.name = "UncertainFootsteps"
+	add_child(audio_horror)
+	audio_horror.stream = load("res://assets/audio/uncertain_steps.wav")
+	audio_horror.volume_db = -20.0
+	audio_horror.unit_size = 4.0
+	audio_horror.max_distance = 18.0
 
 func _make_loop(asset: String, volume: float) -> AudioStreamPlayer:
 	var channel: AudioStreamPlayer = AudioStreamPlayer.new()
@@ -1321,6 +1369,8 @@ func _play_effect(effect: String) -> void:
 		audio_effect.play()
 
 func _exit_tree() -> void:
+	if is_instance_valid(audio_horror):
+		audio_horror.stop()
 	for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect,audio_score,audio_rotors]:
 		if is_instance_valid(channel):
 			channel.stop()

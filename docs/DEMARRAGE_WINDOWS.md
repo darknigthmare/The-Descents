@@ -1,10 +1,10 @@
-# The Tower Descent — prototype 0.7
+# The Tower Descent — prototype 0.8
 
-Ce guide décrit les commandes du paquet v0.7. Le statut des archives et les résultats de vérification se trouvent dans [l’état de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md).
+Ce guide décrit les commandes du paquet v0.8. Le statut des archives et les résultats de vérification se trouvent dans [l’état de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md).
 
 ## Lancer l’intervention
 
-1. Extraire tout le ZIP **The-Tower-Descent-v0.7-Windows-x64.zip** dans un dossier.
+1. Extraire tout le ZIP **The-Tower-Descent-v0.8-Windows-x64.zip** dans un dossier.
 2. Ouvrir **TheTowerDescent.exe**. Aucune installation de Godot n’est nécessaire.
 3. Passer ou regarder la signature du studio, ouvrir **Commencer l’intervention**, puis confirmer **Déployer Alpha**. La disposition proposée convient pour une première partie.
 
@@ -20,7 +20,7 @@ Après le sauvetage d’**Ana au 30** et le départ des hélicoptères, rejoigne
 
 Après l’impact, le couloir Est du **28** est condamné : contournez-le par le noyau pour atteindre Samuel, puis ramenez-le au treuil. Les rescapés déjà arrivés au toit restent en sécurité. Une fois les trois sauvetages confirmés et la scène terminée, activez le relais du refuge **25**.
 
-Les lueurs bleues signalent les indices ; les caisses fournissent du matériel. Dans le spa, la lampe ralentit la silhouette et une fusée la repousse pendant vingt secondes.
+Les lueurs bleues signalent les indices ; les caisses fournissent du matériel. Les apparitions du premier secteur restent des manifestations perceptives : elles ne poursuivent pas Alex et ne lui infligent pas de dégâts. Gardez les secours et la lecture des lieux comme priorité ; lampe et fusées restent à votre disposition.
 
 ## Examiner les lieux
 
@@ -61,7 +61,7 @@ Le bilan reprend les personnes sauvées, les documents recueillis, le temps et l
 
 La pause fige l’effondrement. Les mouvements de caméra sont réduits par défaut ; les éclairs lumineux sont facultatifs. Les réglages sont accessibles avant la partie et conservés sur cet appareil. **Revoir l’introduction** relance la signature sans modifier la sauvegarde.
 
-Une sauvegarde locale est créée au départ, après les treuillages, au refuge et avant/après l’incident. Si vous quittez pendant l’effondrement, la reprise revient au point sûr qui le précède. Après stabilisation, les dégâts sont conservés. **Déployer Alpha** confirme une nouvelle intervention et crée un point sûr ; **Reprendre l’intervention** poursuit le précédent. Les anciennes sauvegardes de schémas 1 et 2 valides sont migrées automatiquement vers le schéma 3. Le journal conserve les 32 dernières transmissions et reste accessible dans le bilan final. Le temps et les sous-titres de l’épilogue ne sont pas ajoutés à cette sauvegarde ; sa relecture ne réécrit pas le fichier. Les données ne sont pas envoyées en ligne.
+Un enregistrement local est demandé au départ, après les treuillages, au refuge et avant/après l’incident. Le point sûr précédent reste la référence tant que cette écriture n’a pas réussi. Si vous quittez pendant l’effondrement, la reprise revient au point sûr qui le précède. Après stabilisation, les dégâts sont conservés. **Déployer Alpha** confirme une nouvelle intervention et crée un point sûr ; **Reprendre l’intervention** poursuit le précédent. Les anciennes sauvegardes de schémas 1 et 2 valides sont migrées automatiquement vers le schéma 3. Le journal conserve les 32 dernières transmissions et reste accessible dans le bilan final. Le temps et les sous-titres de l’épilogue ne sont pas ajoutés à cette sauvegarde ; sa relecture ne réécrit pas le fichier. Les données ne sont pas envoyées en ligne.
 
 ## Portée de cette version
 
@@ -69,7 +69,7 @@ Prototype solo avec un toit et six étages jouables, des hélicoptères et perso
 
 [Projet, sources et bible sur GitHub](https://github.com/darknigthmare/The-Descents/tree/feat/live-tower-collapse)
 
-Les archives 0.1, 0.2, 0.4, 0.5 et 0.6 restent historiques. La **0.7** conserve leur ouverture, leurs sauvetages, leurs observations et leurs réglages, puis ajoute le dossier, le bilan détaillé et l’épilogue du refuge.
+Les archives 0.1, 0.2, 0.4, 0.5, 0.6 et 0.7 restent historiques. La **0.8** conserve l’ouverture, les sauvetages, les observations, les réglages, le dossier et l’épilogue du refuge. Elle ajoute une progression plus discrète des manifestations dans le premier secteur.
 
 Les licences du moteur et de ses composants sont jointes dans `GODOT_LICENSES.txt`. La notice et la licence des polices Open Sans accompagnent également cette archive.
 

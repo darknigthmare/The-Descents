@@ -1,6 +1,6 @@
-# Options et confort — The Tower Descent v0.7
+# Options et confort — The Tower Descent v0.8
 
-Le fichier conserve son nom historique et décrit les réglages conservés en 0.7. Le dossier et le bilan ajoutent leurs propres commandes de lecture ; l’épilogue reprend le choix de mouvements réduits, la coupure sonore et la pause explicite. Ces ajouts ne modifient pas le format des préférences.
+Le fichier conserve son nom historique et décrit les réglages conservés en 0.8. Le dossier et le bilan ajoutent leurs propres commandes de lecture ; l’épilogue reprend le choix de mouvements réduits, la coupure sonore et la pause explicite. Ces ajouts ne modifient pas le format des préférences.
 
 ## Intention
 
@@ -43,7 +43,7 @@ La sensibilité de la souris ne modifie pas la vitesse des flèches. L’inversi
 
 La fenêtre ne remet pas le chronomètre en marche, ne rejoue pas l’arrivée, ne réinitialise pas l’équipe et ne crée pas de point de sauvegarde. Le fond reste figé pendant les réglages en pause.
 
-Pendant l’épilogue de la 0.7, Échap suspend la séquence. Les options restent accessibles depuis cette pause et leur fermeture y revient ; Reprendre rend la main au réalisateur. Le passage de séquence est disponible hors pause. Le journal se parcourt au clavier avec Tab, les flèches sur ses quatre onglets et Page ↑ / Page ↓ dans son lecteur ; fermer le journal final revient au bilan sans réactiver le personnage.
+Pendant l’épilogue introduit en 0.7 et conservé en 0.8, Échap suspend la séquence. Les options restent accessibles depuis cette pause et leur fermeture y revient ; Reprendre rend la main au réalisateur. Le passage de séquence est disponible hors pause. Le journal se parcourt au clavier avec Tab, les flèches sur ses quatre onglets et Page ↑ / Page ↓ dans son lecteur ; fermer le journal final revient au bilan sans réactiver le personnage.
 
 ### Commandes et valeurs par défaut
 
@@ -104,3 +104,9 @@ La suite `prototype/tests/test_comfort.gd` exerce les préférences et les véri
 - la restauration complète des valeurs initiales sans modification du point sûr.
 
 Les suites existantes de préférences et d’intégration cinématique conservent leurs assertions ; leurs dictionnaires attendus intègrent les nouveaux champs. Les résultats effectivement obtenus et les captures sont consignés dans les rapports de validation de la livraison. Une vérification logique ne démontre pas à elle seule la lisibilité du rendu ni le ressenti de la souris sur Windows.
+
+## Manifestations de la 0.8
+
+Les silhouettes discrètes ne secouent pas la caméra pour forcer le regard. Elles ne retirent ni contrôle, ni santé, ni matériel et ne sont pas nécessaires à la réussite des secours. Une pause ou une lecture ne fait pas avancer leur horloge active ; les silhouettes peuvent être masquées par la fusée pendant sa durée. Les réglages de mouvements réduits et de son demeurent indépendants du scénario.
+
+La vérité de la campagne ne varie pas selon le confort choisi : les expériences et la traversée infernale restent réelles. Les scènes futures doivent conserver leurs preuves par plusieurs supports, avec lecture des gestes hostiles et des chemins sans flash ni volume extrême. Les interfaces de sauvegarde et les refuges certifiés restent fiables.

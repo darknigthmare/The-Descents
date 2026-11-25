@@ -2,13 +2,13 @@
 
 ## Catalogue des étages et des espaces de campagne
 
-**Version 0.7.0 — Assemblage des niveaux et dossier de production — 25 novembre 2026**
+**Version 0.8.0 — Assemblage des niveaux et dossier de production — 25 novembre 2026**
 
 Ce catalogue développe les lieux de la [Bible du jeu](BIBLE_DU_JEU.md). Chaque étage possède une fonction fixe, une scène reconnaissable et un objectif de rythme. La génération fait varier des passages, des objets, des personnes secondaires et des détails compatibles ; elle ne déplace pas les révélations principales au hasard.
 
-**Périmètre du prototype Godot 0.7.0 :** toit jouable d’Aube, Hespérie visible à distance, deux hélicoptères et équipes en maquette, étages 30 à 25, trois rescapés aux 30, 28 et 26, indices aux 29, 27 et 26, ravitaillement aux 29 et 25, anomalie au 26 et balise de fin au refuge 25. Les tours commencent intactes. La baie Est du 29 accueille l’effondrement en temps réel et les conséquences persistantes décrits dans [Effondrement en direct](EFFONDREMENT_EN_DIRECT.md). L’approche temps réel de la 0.5.0 anime les posés, les portes latérales et le déploiement des six membres de toit. Douze observations facultatives sont réparties sur les niveaux jouables. La 0.7 donne au refuge un épilogue en trois plans, un bilan contextuel et le journal à quatre onglets, sans ouvrir d’étage supplémentaire. Le jeu d’acteurs et le doublage détaillés restent des cibles de campagne. Le README et le rapport de validation établissent l’état logiciel et les vérifications.
+**Périmètre du prototype Godot 0.8.0 :** toit jouable d’Aube, Hespérie visible à distance, deux hélicoptères et équipes en maquette, étages 30 à 25, trois rescapés aux 30, 28 et 26, indices aux 29, 27 et 26, ravitaillement aux 29 et 25, anomalie au 26 et balise de fin au refuge 25. Les tours commencent intactes. La baie Est du 29 accueille l’effondrement en temps réel et les conséquences persistantes décrits dans [Effondrement en direct](EFFONDREMENT_EN_DIRECT.md). L’approche temps réel de la 0.5.0 anime les posés, les portes latérales et le déploiement des six membres de toit. Douze observations facultatives sont réparties sur les niveaux jouables. La 0.7 donne au refuge un épilogue en trois plans, un bilan contextuel et le journal à quatre onglets, sans ouvrir d’étage supplémentaire. Le jeu d’acteurs et le doublage détaillés restent des cibles de campagne. Le README et le rapport de validation établissent l’état logiciel et les vérifications.
 
-Les étages 24 à 1, la traversée d’Hespérie, les sous-sols, le seuil 666 et Mountain Hole sont conçus ici mais ne font pas partie de cette première tranche jouable. Les personnes et les incidents supplémentaires restent des propositions de contenu, pas des acteurs déjà intégrés au prototype.
+Les étages 24 à 1, la traversée d’Hespérie, les sous-sols, le seuil 666, les secteurs infernaux et Mountain Hole sont conçus ici mais ne font pas partie de cette première tranche jouable. Les personnes et les incidents supplémentaires restent des propositions de contenu, pas des acteurs déjà intégrés au prototype.
 
 ## 1 Règles communes de variation
 
@@ -47,7 +47,7 @@ Les variantes présentées dans les entrées détaillées doivent être produite
 | A11 | 11 | Salons de réception privés | Témoignage et trace de Sorel | Campagne conçue |
 | A10 | 10 | Poste technique de secours | Refuge certifié et distribution d’énergie | Campagne conçue |
 | A09 | 9 | Clinique SILLAGE | Preuves humaines et menace | Campagne conçue |
-| A08 | 8 | Laboratoires de géologie | Comprendre les empreintes | Campagne conçue |
+| A08 | 8 | Laboratoires de géologie | Preuves de matière étrangère et des essais | Campagne conçue |
 | A07 | 7 | Direction et archives juridiques | Responsabilités et décisions | Campagne conçue |
 | A06 | 6 | Liaison basse entre les tours | Débris secondaires et accès futur à Hespérie | Campagne conçue |
 | A05 | 5 | Sécurité incendie | Refuge certifié et dernier réseau stable | Campagne conçue |
@@ -63,7 +63,7 @@ Les numéros décrivent les espaces de la tour, pas une équidistance obligatoir
 
 ### A TOIT Le poste qui attend le retour
 
-**Fonction et image.** Hélisurface, groupes techniques et terrasse de maintenance. Deux appareils et des groupes de secours sont visibles dans la maquette 0.7.0, répartis sur les deux tours. Aube et Hespérie sont droites, séparées et visiblement intactes. Le poste de commandement et le treuil principal sont sur Aube ; Bravo est déposé sur Hespérie. La campagne enrichira les gestes des équipiers, la tente médicale et les transferts de matériel.
+**Fonction et image.** Hélisurface, groupes techniques et terrasse de maintenance. Deux appareils et des groupes de secours sont visibles dans la maquette 0.8.0, répartis sur les deux tours. Aube et Hespérie sont droites, séparées et visiblement intactes. Le poste de commandement et le treuil principal sont sur Aube ; Bravo est déposé sur Hespérie. La campagne enrichira les gestes des équipiers, la tente médicale et les transferts de matériel.
 
 **Traversée et action.** Le joueur reçoit son objectif, consulte le repérage du bâtiment et rejoint l’ancrage marqué du puits de service. L’ouverture constitue un accès de travail identifié. Le passage enseigne l’observation et l’interaction sans présenter le toit comme déjà effondré.
 
@@ -139,11 +139,11 @@ Depuis la 0.5.0, le retour facultatif d’une phrase de Bravo peut suivre six se
 
 **Personne et indice.** Nora Haddad, kinésithérapeute, constitue la troisième rescapée. Elle a entendu un appel dans un local condamné. Le Relevé SILLAGE 06 fournit une première mention explicite du programme.
 
-**Anomalie.** Une apparition ou contradiction est garantie à cet étage. Elle arrive après que le joueur a pu reconnaître un objectif humain. Son déclenchement ne doit pas rendre Nora inaccessible.
+**Anomalie.** Une rémanence perceptive est prévue à cet étage, après que le joueur a pu reconnaître un objectif humain. Les séquences de secours et les interruptions peuvent en reporter la présentation ; elle n’est pas une condition de réussite. Elle ne poursuit pas Alex, ne le blesse pas et ne rend jamais Nora inaccessible.
 
 **Variables.** Reflets, mobilier de soin, position de la voie sèche, contenu secondaire des vestiaires.
 
-**Invariant.** Nora, le relevé et la sortie restent atteignables. Le refuge inférieur est une destination clairement lisible. Aucun tirage n’annule l’anomalie narrative de la tranche.
+**Invariant.** Nora, le relevé et la sortie restent atteignables. Le refuge inférieur est une destination clairement lisible. La manifestation reste définie dans toutes les graines ; son observation n’est pas obligatoire pour terminer la tranche.
 
 ### A25 Refuge de maintenance supérieure
 
@@ -369,7 +369,7 @@ La 0.7 fait suivre l’activation du relais d’un épilogue de quinze secondes 
 
 **Traversée et danger.** Le joueur compare deux réponses acoustiques, isole une émission et ouvre un accès technique. Une salle permet d’observer une empreinte dans des conditions relativement contrôlées.
 
-**Personne et indice.** Un chercheur ou un enregistrement complet établit que SILLAGE n’a pas créé le phénomène. Des échantillons plus anciens présentent la même signature. L’information précise la responsabilité humaine sans expliquer toute la cosmologie.
+**Personne et indice.** Un chercheur ou un enregistrement complet établit que SILLAGE n’a pas créé la dimension contactée. Des échantillons plus anciens présentent la même signature que la matière transférée lors des essais. Un journal d’entrée et de retour physique contredit l’explication officielle par simples perceptions. L’information prépare la révélation infernale du bunker sans raconter prématurément tout le dernier acte.
 
 **Variables.** Salle d’essai utilisable, position des échantillons, présence du chercheur et bruit de machines.
 
@@ -565,21 +565,27 @@ Trois liaisons maintiennent la relation entre le bunker et la profondeur. Le jou
 
 ## 10 Le seuil 666
 
-### P666 La chambre qui écoute
+### P666 La chambre qui écoute et la brèche
 
-Le code 666 correspond à **puits 6, boucle 6, seuil 6** dans l’ancienne classification SILLAGE. Le lieu est une profondeur impossible, pas le six cent soixante-sixième étage d’un immeuble. La signalétique et les distances deviennent contradictoires, tandis que certains objets laissés par le joueur demeurent fiables.
+Le code 666 correspond à **puits 6, boucle 6, seuil 6** dans l’ancienne classification SILLAGE. Le lieu est le dernier dispositif matériel du côté de Nacre, ouvrant une dimension infernale réelle ; ce n’est pas le six cent soixante-sixième étage d’un immeuble. La signalétique et les distances deviennent contradictoires, tandis que certains objets laissés par le joueur demeurent fiables.
 
 Des fragments du restaurant, des suites, du jardin d’enfants et de la tour abandonnée forment un espace composé. Chaque fragment possède une fonction de gameplay déjà apprise : maintenir une lumière, interrompre un appel, conserver un repère ou protéger un témoin. La pièce peut imiter un refuge, mais l’interface ne lui donne jamais une certification authentique.
 
-Le Chœur bas maintient le passage à travers des réponses. Le joueur traverse plusieurs objectifs courts avec une possibilité de reprendre ses repères entre eux. Alma ou un autre survivant peut l’aider depuis un point protégé. La confrontation finale porte sur les liaisons et le retour, pas sur une immense barre de vie démoniaque.
+Le franchissement mène aux secteurs I01 à I04 décrits dans [Progression de l’horreur](PROGRESSION_HORREUR_V0.8.md). Le Chœur bas maintient le passage depuis I04, au-delà de la brèche. Le joueur traverse plusieurs objectifs courts avec une possibilité de reprendre ses repères entre eux. Alma ou un autre survivant peut l’aider depuis un point protégé. La confrontation finale porte sur les liaisons et le retour ; les entités corporelles rencontrées en chemin possèdent leurs règles propres, sans imposer une barre de vie unique à l’Enfer entier.
 
 **Variables autorisées.** Ordre de deux fragments secondaires, voix reprises selon les personnes rencontrées, objets issus de preuves optionnelles et réactions de Sorel.
 
 **Invariants.** Les règles nécessaires ont été enseignées. La fermeture ne rend pas automatiquement nuls les sauvetages précédents. Les options d’accessibilité conservent les signaux. Les fins dépendent d’états documentés, pas d’un choix final opaque.
 
+### I01 à I04 La traversée de l’Enfer
+
+Ces quatre secteurs sont des zones de campagne futures, physiquement situées de l’autre côté de P666. I01, le rivage des cendres, enseigne la continuité du matériel et le premier appui de retour. I02, les galeries de contrainte, met les repères à l’épreuve face au Pénitent des chaînes E14. I03, les ouvrages d’extraction, révèle les équipements Pelagos transportés et confronte le joueur au Souffleur de scories E15. I04, le nœud du Chœur, relie les trois stations finales, le Gardien de brèche E16 et la route de retour.
+
+Le passage entre ces zones conserve un graphe lisible, des repères authentiques et des appuis certifiés. Les paysages infernaux ont leur propre échelle, leurs matériaux, leur faune et leur acoustique ; ils ne sont pas un filtre coloré appliqué au complexe. L’annexe de progression détaille scènes, budgets de rythme, objets, dangers, sauvegardes et objectifs. Aucun de ces quatre secteurs n’est jouable dans le prototype toit–25.
+
 ### SORTIE La galerie vers le jour
 
-Une conduite de service ou une ancienne galerie d’entretien rejoint une ouverture éloignée du socle effondré. L’espace est étroit puis s’ouvre sur une vue de l’île. Les sons de vent, de mer et de radio redeviennent distincts. Les relais et les personnes sauvées influencent qui répond à l’appel.
+Après le retour de l’Enfer à Nacre, une conduite de service ou une ancienne galerie d’entretien rejoint une ouverture éloignée du socle effondré. L’espace est étroit puis s’ouvre sur une vue de l’île. Les sons de vent, de mer et de radio redeviennent distincts. Les relais et les personnes sauvées influencent qui répond à l’appel.
 
 Le joueur retrouve une météo améliorée, sans effacer les dégâts. Une arrivée aérienne ou maritime conclut l’évacuation selon l’état du monde retenu. La caméra donne enfin une vue des deux tours depuis un point bas extérieur. Le résultat humain et les preuves occupent l’épilogue ; les statistiques restent facultatives.
 
@@ -608,7 +614,7 @@ Une feuille de suivi de production pourra ajouter, pour chaque code, les statuts
 
 Les fiches suivantes traduisent les intentions précédentes en blocs à construire. **Toutes les dimensions, durées et interactions supplémentaires de cette section sont des cibles de production**, même pour les étages 30 à 25 déjà représentés. Le plateau actuel mesure 24 × 24 m, avec une hauteur d’étage régulière de 6 m ; les volumes proposés n’affirment pas qu’une nouvelle architecture a été intégrée. Les durées sont des budgets de rythme à tester, sans limite imposée au joueur.
 
-Les identifiants P renvoient aux [52 props](PROPS_INTERACTIONS.md), les identifiants E aux [présences et adversaires](ENNEMIS_STATISTIQUES.md). Un objet inscrit dans une fiche peut exister seulement comme cible. Les zones de transfert exigent un volume libre de 1,8 m de largeur proposé ; les retours principaux visent au moins 1,4 m, avec essais sur les capsules et animations retenues. Ces mesures sont des critères de jeu à vérifier, pas des normes de bâtiment.
+Les identifiants P renvoient aux [60 props](PROPS_INTERACTIONS.md), les identifiants E aux [présences et adversaires](ENNEMIS_STATISTIQUES.md). Un objet inscrit dans une fiche peut exister seulement comme cible. Les zones de transfert exigent un volume libre de 1,8 m de largeur proposé ; les retours principaux visent au moins 1,4 m, avec essais sur les capsules et animations retenues. Ces mesures sont des critères de jeu à vérifier, pas des normes de bâtiment.
 
 ### A30 Assemblage du premier sauvetage
 
@@ -620,11 +626,15 @@ Prévoir trois temps : localiser Ana, lire le trajet, confirmer le treuil. Viser
 
 Prévoir deux suites de 6 × 5 m, un salon de 8 × 5 m et une baie d’observation de 4 × 3 m. P27, P28 et P31 construisent un séjour interrompu. P19 encadre Bravo sans barreau placé devant les silhouettes. La caisse P08 reste distincte du document afin que deux interactions ne se disputent pas la même position.
 
+La 0.8 permet aussi un aperçu humain périphérique après un moment calme : il s’efface sous le regard, ne poursuit pas Alex et laisse la priorité à la radio, au secours et à l’incident. Il ne révèle ni SILLAGE ni l’Enfer.
+
 Le trajet enseigne d’abord la vue entre tours, puis l’abri intérieur. La scène du choc possède son propre temps, mais la préparation reste libre. La variante déplace les bagages et une porte secondaire, jamais la zone d’observation ni sa sortie. Tester l’état intact, l’avertissement, l’impact et le retour après sauvegarde avec les mêmes points de repère.
 
 ### A28 Assemblage du détour et de Samuel
 
 Composer un espace de bureaux de 10 × 8 m, des archives de 7 × 5 m et un couloir de noyau de 2 m de large. P29–P31 portent les traces administratives. Le passage Est possède deux états préparés : ouvert avant impact, condamné par P20–P21 après impact. P18 matérialise le détour accessible.
+
+Après impact, la 0.8 présente huit empreintes humides dans une zone lisible des archives. Elles restent en place, mais leur origine demeure interprétable à ce stade. Elles ne créent ni collision, ni attaque, ni observation inscrite automatiquement au dossier.
 
 Le joueur comprend le nouveau chemin avant de prendre Samuel. Viser quatre à sept minutes avec retour chargé. Aucun E ne doit apparaître dans le couloir de transfert ; la structure et la fumée éventuelle suffisent. Valider les deux sens du trajet, la visibilité de la personne derrière les archives et l’absence de meuble déplacé dans la sortie de corde.
 
@@ -636,9 +646,9 @@ Conserver deux à quatre minutes de lecture possible sans attaque. L’écho de 
 
 ### A26 Assemblage de Nora et de la silhouette
 
-Prévoir un bassin de 8 × 5 m, une plage sèche d’au moins 2 m et deux locaux de 5 × 4 m. P35, P36 et P39 indiquent l’usage du spa. Nora doit être atteignable par une route lisible sans saut sur l’eau ; la balise garde un axe direct de retour. E00 reste la menace réellement livrée.
+Prévoir un bassin de 8 × 5 m, une plage sèche d’au moins 2 m et deux locaux de 5 × 4 m. P35, P36 et P39 indiquent l’usage du spa. Nora doit être atteignable par une route lisible sans saut sur l’eau ; la balise garde un axe direct de retour. E00 est la présence perceptive réellement présentée en 0.8, sans poursuite ni dommages.
 
-La cible d’habillage donne une première vue de la silhouette à distance, puis une occasion de vérifier lampe et fusée. Viser cinq à huit minutes comprenant Nora et l’indice. Les variantes déplacent les transats hors du chemin de secours. Avant d’ajouter une menace navigante, corriger le mouvement direct d’E00 qui ne contourne pas les obstacles.
+La cible d’habillage conserve une silhouette distante, puis une réapparition suffisamment insistante pour que le joueur doute de la première vision. Viser cinq à huit minutes comprenant Nora et l’indice. Les variantes déplacent les transats hors du chemin de secours. La fusée peut masquer la silhouette pendant sa durée sans certifier une origine surnaturelle. Aucune IA navigante ou attaque de contact n’est ajoutée au premier secteur.
 
 ### A25 Assemblage du premier refuge
 
@@ -668,6 +678,8 @@ E02 propose un premier faux appel situé hors de la route obligatoire. Une confi
 
 Cible : production de 10 × 8 m, réserve de 6 × 5 m et cantine de 8 × 6 m. P26, P37, P39 et P40 organisent un problème matériel simple : couper un effet dangereux par une commande identifiée puis dégager un passage. Les tables fixes créent des couloirs suffisamment larges pour le portage.
 
+Une fois le problème matériel compris, la cible de campagne place E11 dans la réserve. SC12 enseigne sa sommation, son territoire et la possibilité de parler ou contourner. L’accès de service reste praticable et la personne secourable n’exige pas de tuer le Retranché. Ne pas déclencher son geste pendant l’apprentissage de la commande.
+
 Le danger enseigne ses signes avant toute consommation importante d’air. Une personne fournit une indication utile sans exiger une suite de recettes techniques réalistes. Viser cinq à sept minutes. La variante choisit le poste en panne parmi deux emplacements validés ; aucune vanne n’est cachée derrière le danger qu’elle seule permet d’arrêter.
 
 ### A20 Assemblage de la logistique
@@ -685,6 +697,8 @@ La difficulté tient à l’information et au retour, pas à une course de déc�
 ### A18 Assemblage des résidences basses
 
 Cible : deux appartements de 7 × 6 m et un volume de service vertical de 4 × 4 m. P15, P16 et P17 proposent un franchissement préparé. La vue doit montrer l’appui d’arrivée avant l’engagement ; une route de personne portée ne dépend pas d’une échelle que son animation ne sait pas utiliser.
+
+Un appartement distinct peut ensuite accueillir E12, le Débusqueur, dans la campagne future. Deux angles lisibles, une porte utilisable et une boucle de repli rendent sa recherche matérielle ; il ne traverse pas le plancher et ne se téléporte pas derrière Alex. Sa zone n’empiète ni sur la première démonstration de franchissement ni sur le palier de reprise.
 
 Enseigner une seule nouvelle transition dans un espace sans menace active. Le passage peut ensuite être utilisé dans un retour court. Viser trois à six minutes. La sauvegarde se fait sur un palier, pas au milieu du franchissement. Tester caméra réduite, annulation avant engagement et reprise après l’ouverture de la trappe.
 
@@ -740,11 +754,11 @@ Le refuge permet de préparer la clinique et la liaison basse. La distribution d
 
 Cible : trois chambres de 5 × 4 m, observation de 6 × 5 m et corridor de 2,4 m. P09, P31, P46 et P48 exposent un usage du soin transformé en contrôle. Les données personnelles nécessaires au récit sont inventées pour le jeu et présentées avec retenue.
 
-E07 peut occuper une route secondaire après démonstration de sa règle. Une personne réelle dispose d’un chemin compatible avec son accompagnement. Viser six à neuf minutes, avec première preuve accessible sans combat. Ne pas produire une confusion systématique entre patient et créature ; les silhouettes humaines doivent avoir une lecture narrative distincte.
+E13, le Fidèle du protocole, est l’opposition humaine future de ce secteur : il applique des consignes et défend un poste d’accès. Sa présence n’identifie pas tous les patients comme hostiles. Un ordre vérifiable, une coupure locale et un détour permettent de traiter le verrou sans exécution. E07 peut occuper une route secondaire après démonstration de sa règle ; leurs apprentissages ne se superposent pas. Une personne réelle dispose d’un chemin compatible avec son accompagnement. Viser six à neuf minutes, avec première preuve accessible sans combat. Ne pas produire une confusion systématique entre patient et créature ; les silhouettes humaines doivent avoir une lecture narrative distincte.
 
 ### A08 Assemblage des laboratoires
 
-Cible : laboratoire de 10 × 7 m, réserve minérale de 6 × 5 m et poste d’essai de 5 × 4 m. P45, P47 et P51 servent à comparer une mesure et une répétition. Une expérience locale enseigne une règle d’empreinte avec un résultat reproductible.
+Cible : laboratoire de 10 × 7 m, réserve minérale de 6 × 5 m et poste d’essai de 5 × 4 m. P45, P47 et P51 servent à comparer une mesure et une répétition. P53 et P54 préparent la chaîne de preuves matérielles de SC13, complétée en B03. Une expérience locale enseigne une règle d’empreinte avec un résultat reproductible ; les transferts physiques établis plus bas ne seront pas révoqués comme hallucinations.
 
 La découverte prépare le souterrain sans révéler toute la profondeur. Prévoir quatre à sept minutes. E01 peut rejouer un geste de travail ; le joueur distingue une répétition fixe d’une réaction nouvelle. La variante change l’échantillon secondaire, pas le résultat essentiel. Prévoir une sortie avant tout essai volontaire qui augmente la pression.
 

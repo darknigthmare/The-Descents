@@ -1,6 +1,6 @@
 # Scènes, cinématiques et accueil
 
-**The Tower Descent — version 0.7.0.** Cette annexe fournit le découpage de l’ouverture, de la clôture au refuge, des transitions avec le jeu et des scènes à produire pour la campagne. La direction recherche la précision d’une présentation cinématographique : composition, rythme, lisibilité des équipes et continuité du son. Le résultat actuel reste une maquette en temps réel dans Godot, avec personnages et décors procéduraux. Il ne constitue pas une livraison de personnages, d’animations faciales ou d’assets « AAA » définitifs. Les résultats d’exécution et de revue restent documentés séparément dans l’état de livraison.
+**The Tower Descent — version 0.8.0.** Cette annexe fournit le découpage de l’ouverture, de la clôture au refuge, des transitions avec le jeu et des scènes à produire pour la campagne. La direction recherche la précision d’une présentation cinématographique : composition, rythme, lisibilité des équipes et continuité du son. Le résultat actuel reste une maquette en temps réel dans Godot, avec personnages et décors procéduraux. Il ne constitue pas une livraison de personnages, d’animations faciales ou d’assets « AAA » définitifs. Les résultats d’exécution et de revue restent documentés séparément dans l’état de livraison.
 
 ## 1 Intentions et langage visuel
 
@@ -135,7 +135,7 @@ L’horloge de mission demeure suspendue pendant l’arrivée. La caméra de cin
 
 Cette scène est jouée. L’ouverture s’achève au poste, le joueur apprend la corde puis atteint le restaurant du 30. Les accessoires P01, P02, P04 et P11 forment une chaîne visuelle : ligne, balise, treuil et réception médicale. Aucun plan forcé ne doit cacher la commande au moment de sortir de la corde.
 
-La 0.6 permet de sécuriser Ana avec E, puis montre le harnais et les mains d’Alex pendant le retour à la balise. La remontée de cinq secondes comprend verrouillage, montée et dépose sur le toit ; le panier, les sangles, le câble et l’opérateur matérialisent ce transfert. La fin du treuil inscrit `survivor_30` parmi les personnes sauvées et crée le point sûr. Un accompagnement cosmétique de 4,2 secondes rejoint ensuite la place médicale d’Ana. Samuel et Nora utilisent la même chaîne, avec leur nom, leur pose ou leur couverture. La caméra du joueur n’est pas déplacée vers le toit. Le chapitre [Sauvetage visible](SAUVETAGE_V0.6.md) décrit les coordonnées, les durées, les props, la pause et la reprise.
+La 0.6 permet de sécuriser Ana avec E, puis montre le harnais et les mains d’Alex pendant le retour à la balise. La remontée de cinq secondes comprend verrouillage, montée et dépose sur le toit ; le panier, les sangles, le câble et l’opérateur matérialisent ce transfert. La fin du treuil inscrit `survivor_30` parmi les personnes sauvées et demande l’écriture du point sûr ; le dernier checkpoint réussi reste la référence tant que cette écriture n’a pas abouti. Un accompagnement cosmétique de 4,2 secondes rejoint ensuite la place médicale d’Ana. Samuel et Nora utilisent la même chaîne, avec leur nom, leur pose ou leur couverture. La caméra du joueur n’est pas déplacée vers le toit. Le chapitre [Sauvetage visible](SAUVETAGE_V0.6.md) décrit les coordonnées, les durées, les props, la pause et la reprise.
 
 La cible de production ajoute un regard d’Alex vers la ligne tendue, un geste d’accueil de l’équipier et une réponse courte de la personne recueillie. Ces inserts doivent pouvoir être désactivés et ne jamais masquer une sortie. Ils ne demandent pas une caméra externe obligatoire : le mouvement de la corde et l’équipe au-dessus peuvent suffire. La priorité demeure la certitude qu’une personne a été prise en charge.
 
@@ -189,7 +189,7 @@ La sauvegarde ne contient ni caméra intermédiaire, ni temps d’épilogue, ni 
 
 Le bilan utilise un cadrage fixe du refuge et la même projection de données que le journal. Il montre les trois noms, le nombre de documents recueillis, le temps de mission, les ressources restantes et le signal encore à vérifier. Il propose de consulter le dossier, revoir l’épilogue ou revenir à l’accueil. Le journal sépare **Situation**, **Rescapés**, **Indices** et **Transmissions** ; il ne dévoile pas le texte des preuves non collectées. Fermer ce journal retourne au bilan, avec le personnage inactif.
 
-Le menu conserve ensuite son décor de refuge et son action de consultation. Le résultat n’autorise pas la présentation d’un bunker, d’Alma retrouvée ou d’une fin de campagne : ces chapitres ne sont pas jouables dans la version 0.7.0. Les champs, props, contrôles et cas de reprise sont détaillés dans [Dossier et épilogue](DOSSIER_ET_EPILOGUE_V0.7.md).
+Le menu conserve ensuite son décor de refuge et son action de consultation. Le résultat n’autorise pas la présentation d’un bunker, d’Alma retrouvée ou d’une fin de campagne : ces chapitres ne sont pas jouables dans la version 0.8.0. Les champs, props, contrôles et cas de reprise sont détaillés dans [Dossier et épilogue](DOSSIER_ET_EPILOGUE_V0.7.md).
 
 ## 9 Storyboards de campagne à produire
 
@@ -219,7 +219,7 @@ Le menu conserve ensuite son décor de refuge et son action de consultation. Le 
 
 ### SC10 Le premier contrôle SILLAGE
 
-Cette scène conserve son identifiant de campagne. Elle se déroule bien après le refuge du prototype et reste à produire ; l’épilogue jouable de la 0.7 appartient à SC06. Le fragment de clôture ne constitue ni une visite de SILLAGE ni le début jouable de ce contrôle.
+Cette scène conserve son identifiant de campagne. Elle se déroule bien après le refuge du prototype et reste à produire ; l’épilogue introduit en 0.7 et conservé en 0.8 appartient à SC06. Le fragment de clôture ne constitue ni une visite de SILLAGE ni le début jouable de ce contrôle.
 
 **Contexte et fonction.** Au S07 puis B01, l’architecture industrielle change la lecture de la catastrophe. Une porte et un tableau montrent que l’isolement précède le tsunami. Les informations essentielles sont réparties entre un registre, un état de porte et un témoin, pas dissimulées dans un seul long enregistrement.
 
@@ -227,13 +227,47 @@ Cette scène conserve son identifiant de campagne. Elle se déroule bien après 
 
 **Production.** P45, P47 et P48 portent les informations. E05 peut imposer une discipline d’émission dans le secteur suivant, après explication de la règle. Ne pas cumuler une transmission indispensable, un verrouillage de porte et une attaque pendant ce premier apprentissage.
 
-### SC11 Le seuil et le retour
+### SC11 Le seuil, la fermeture et le retour
 
-**Contexte et fonction.** B06 et P666 reprennent des lieux déjà traversés. La scène exploite la mémoire du joueur : table, casier, balise et voix sont reconnaissables, mais leur relation change. La fermeture s’appuie sur des règles enseignées et sur un réseau de retour, pas sur un choix opaque dans un dialogue final.
+**Contexte et fonction.** Cet identifiant orchestre le dernier acte de campagne à produire. B06 prépare la ligne de retour ; P666 est le dernier sas du côté de Nacre ; SC14 conduit physiquement vers I01. La traversée jouable d’I01 à I04 fait ensuite découvrir une géographie infernale réelle. Le franchissement n’est pas une ellipse qui mènerait directement au dénouement. Les matériels transportés, l’état d’Alma et les liaisons d’Alex restent continus.
 
-**Découpage cible.** Trois objectifs courts, séparés par des points d’orientation, remplacent une longue cinématique. Chaque action produit une conséquence visible sur une liaison. Les plans ne quittent le contrôle que pour un changement spatial impossible à communiquer autrement, pendant deux à quatre secondes au maximum par insert. E09 et E10 agissent sur perception et réponse, sans barre de vie de boss arbitraire.
+**Découpage cible du dénouement.** Dans I04, trois objectifs de contre-signal sont séparés par des appuis reconnaissables. Chacun modifie visiblement une liaison P59. E10, le Chœur bas, porte la réponse du lieu ; E16, le Gardien de brèche, constitue l’obstacle corporel du secteur. Leurs règles sont enseignées séparément avant leur combinaison. Les inserts durent deux à quatre secondes au maximum, uniquement lorsqu’une conséquence spatiale exige un autre cadrage. La progression repose sur les postes réglés et l’ouverture du retour, sans barre de vie finale arbitraire ni choix opaque remplaçant les actions.
 
-**Conclusion cible, 35 à 60 secondes passables.** Une galerie étroite s’ouvre vers le jour. Le son sépare de nouveau mer, vent et radio. Une réponse liée aux personnes et relais préservés confirme la continuité humaine. La vue basse des tours mesure la descente. Le bilan fournit les personnes sauvées et les preuves, sans transformer une exposition maximale au danger en score obligatoire.
+**Retour et continuité.** P60 est franchi vers Nacre avant la galerie technique finale. Le joueur reconnaît un raccord de béton, un identifiant d’équipement et une réponse radio venant du monde d’origine. Le retour ne révoque pas ce qui a été traversé : personnes, matériel déplacé et preuves restent réels. Les confirmations de secours ne sont jamais remplacées par une révélation annonçant qu’elles étaient imaginaires.
+
+**Conclusion cible, 35 à 60 secondes passables.** Après le retour, une galerie étroite s’ouvre vers le jour. Le son sépare de nouveau mer, vent et radio. Une réponse liée aux personnes et relais préservés confirme la continuité humaine. La vue basse des tours mesure la descente. Le bilan fournit les personnes sauvées et les preuves, sans transformer une exposition maximale au danger en score obligatoire. Passer cette conclusion rend le bilan ; passer un insert du dernier acte ne valide pas les objectifs restants.
+
+### SC12 Le premier retranchement humain
+
+**Contexte et fonction.** Séquence future au A21, après l’apprentissage du problème matériel des cuisines. Un humain E11 occupe la réserve et prend la lampe d’Alex pour le signe d’une intrusion. Sa silhouette reste la même lorsqu’Alex regarde ailleurs. Sa respiration, ses appuis, la porte qu’il tient et ses paroles établissent un corps présent, distinct des aperçus du haut de tour.
+
+**Découpage cible, 12 à 20 secondes de préparation jouable.** Une vue à travers le vitrage de service révèle l’outil tenu bas et la personne derrière le battant. Une sommation explicite précède toute attaque. Le joueur garde son regard et peut reculer, répondre depuis la distance indiquée ou inspecter la route de service. Le plan ne force pas à avancer dans la portée d’E11. Une courte réponse sous-titrée explique ce qu’il protège sans faire d’un diagnostic une explication universelle de la violence.
+
+**États et validation.** La scène se termine dès que la règle du territoire est comprise ; la rencontre continue avec les valeurs de la fiche E11. Un détour et une désescalade sont possibles. La première attaque reste annoncée après toute reprise. La personne secourable, les outils essentiels et la sortie ne dépendent pas d’une mise à mort. La sauvegarde future conserve l’accord obtenu ou la porte sécurisée ; le refuge 20 n’accepte aucune poursuite.
+
+### SC13 La matière revenue
+
+**Contexte et fonction.** Le laboratoire A08 prépare cette scène par une comparaison ; B03 en fournit la corroboration complète. P53 expose un échantillon, P54 rapproche les enregistrements de départ et de retour, P55 montre le résidu recueilli au seuil. Les mêmes identifiants traversent ces supports. L’explication progresse d’un phénomène mesuré vers un transfert réel ; elle ne repose pas sur la seule parole de Sorel.
+
+**Découpage cible, 18 à 30 secondes facultatives.** Alex compare deux scellés et une marque d’outil visibles, puis un témoin ou une transmission authentifiée confirme l’origine d’un équipement revenu. Une anomalie de matière persiste hors du champ de caméra. Un insert de trois secondes au maximum peut montrer la différence de surface ; la lecture détaillée demeure volontaire. Le silence entre deux constatations laisse le joueur rapprocher les faits.
+
+**Écriture et sortie.** Sorel emploie d’abord le vocabulaire du programme ; Alex peut demander où sont passés les opérateurs. Les preuves restent consultables et la synthèse essentielle existe sans son. Une acquisition future est liée à une interaction effectivement réalisée, avec une provenance explicite ; le simple passage d’une caméra ne crée pas un journal omniscient. La séquence ne déclenche aucune attaque pendant la lecture. Elle n’est pas présente dans le dossier du prototype.
+
+### SC14 Le franchissement de P666
+
+**Contexte et fonction.** La porte déformée P56, les balises P57 et la ligne P58 montrent que des équipes ont déjà travaillé sur ce passage. Les expériences ont ouvert une route vers une dimension infernale réelle. Le joueur prépare son retour du côté de Nacre, vérifie le groupe et franchit le seuil avec son matériel. Il ne se réveille pas ailleurs après une perte de connaissance imposée.
+
+**Découpage cible, 14 à 22 secondes dont le franchissement reste contrôlé.** Première vue : l’appui arrière, le repère de la ligne et le sas. Deuxième temps : un pas amène la lampe à éclairer une matière qui n’appartient plus au bunker ; le câble demeure visible de part et d’autre. Dernier temps : le regard découvre le premier appui I01, avant tout panorama large. Le mode mouvements réduits utilise des cadres fixes et des fondus brefs aux transitions de chargement, avec les mêmes indices de continuité.
+
+**Passage et reprise.** Passer la présentation abrège son habillage et amène au premier appui sûr d’I01 ; cela ne termine pas la traversée infernale. Les états avant et après le sas doivent être certifiés. Une interruption ne dépose pas Alex entre deux mondes et ne perd ni témoin ni équipement requis. La confirmation du franchissement est distincte de la confirmation d’un sauvetage. Aucun danger ne commence avant la remise du contrôle et l’orientation sur l’appui.
+
+### SC15 Le premier appui en Enfer
+
+**Contexte et fonction.** À I01, le jeu donne le temps de comprendre le changement d’échelle. Le rivage de cendres, un horizon impossible et des ouvrages dont une partie porte les numéros Pelagos établissent que l’on a réellement atteint l’autre côté. Un équipement connu répond au test ; la radio conserve ses limites de portée. Alex n’acquiert ni pouvoir magique ni connaissance immédiate de cette géographie.
+
+**Découpage cible, 10 à 18 secondes passables.** Une vue proche identifie l’anneau d’amarrage et l’état de la ligne. Une vue plus large révèle un ouvrage d’extraction sans montrer tous les ennemis à venir. Le contrôle revient sur un sol stable face à une balise lisible. L’objectif demande d’abord de certifier l’appui de retour, puis de suivre un indice d’Alma. La découverte possède une durée minimale de sécurité, pas une immobilisation obligatoire devant le paysage.
+
+**Son, état et recette.** Le son conserve respiration, équipement et repères de la ligne, puis ouvre une profondeur nouvelle. Il ne dépend pas d’un pic de volume. Son coupé, les changements de matière et le retour du matériel suffisent. La première rencontre infernale corporelle E14 attend I02 ; I01 enseigne lieu, distance et retour. Vérifier la continuité des personnes, la lecture de l’objectif après passage et la reprise sur le même appui, avec la même route restante.
 
 ## 10 Contrats de réalisation et validation
 
@@ -250,5 +284,7 @@ Les essais automatiques valident les durées, états, préférences, événement
 Le découpage livré est défini par [cinematic_director.gd](../prototype/scripts/cinematic_director.gd), l’accueil par [frontend_menu.gd](../prototype/scripts/frontend_menu.gd), les cartons par [cinematic_overlay.gd](../prototype/scripts/cinematic_overlay.gd) et les options par [preferences_store.gd](../prototype/scripts/preferences_store.gd). [main.gd](../prototype/scripts/main.gd) assure le changement de caméra, les horloges et la remise du contrôle. Le décor et la réception médicale viennent de [world_builder.gd](../prototype/scripts/world_builder.gd).
 
 La clôture de la 0.7 est échantillonnée par [epilogue_director.gd](../prototype/scripts/epilogue_director.gd). [mission_dossier.gd](../prototype/scripts/mission_dossier.gd) projette les faits de mission sans écrire dans le monde ; [mission_dossier_panel.gd](../prototype/scripts/mission_dossier_panel.gd) les présente dans le journal et le bilan. Le contrôleur de mission conserve la responsabilité du checkpoint final et du retour entre les écrans.
+
+La progression complète est détaillée dans [De la perception incertaine à l’Enfer](PROGRESSION_HORREUR_V0.8.md). Les scènes SC07 à SC15 restent futures ; SC06 conserve la clôture jouable au refuge 25. Le menu futur pourra cadrer un appui infernal uniquement après un checkpoint de campagne validant son atteinte ; aucun plan actuel ne révèle ce lieu.
 
 La prochaine passe de production doit d’abord valider la compréhension du parcours sans commentaire extérieur, puis remplacer les silhouettes par des rigs, travailler gestes et regards, enregistrer les voix et mixer l’ambiance. Les nouvelles ressources doivent respecter les durées et les contrats de sauvegarde. Un meilleur rendu ne justifie pas l’allongement automatique de l’ouverture ni la suppression de son passage immédiat.

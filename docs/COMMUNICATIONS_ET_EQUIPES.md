@@ -1,6 +1,6 @@
 # Communications et continuité des équipes
 
-**Version 0.7.0 — 25 novembre 2026**
+**Version 0.8.0 — 25 novembre 2026**
 
 Ce dossier fixe ce que le joueur peut conclure à partir des personnes visibles, d’un appel radio et du journal. Le poste d’Aube confirme les prises en charge. Bravo devient difficile à joindre après l’effondrement, sans que son silence prouve sa mort. Les communications peuvent être ambiguës ; le registre des personnes effectivement sauvées reste fiable.
 
@@ -65,7 +65,7 @@ Les choix de priorité ne doivent pas effacer un indice. Le journal conserve au 
 
 ## Journal et compte rendu
 
-Le journal de la 0.7 présente quatre onglets : **Situation**, **Rescapés**, **Indices** et **Transmissions**. Situation réunit l’objectif, le point sûr, l’état structurel, les ressources et les derniers échanges ; Rescapés distingue personne à secourir, au harnais, au treuil et réellement reçue. Indices ne révèle le texte que des pièces collectées. Transmissions conserve les mots reçus et leurs temps de mission. La touche J ouvre le dossier pendant l’intervention et suspend la simulation. Depuis la fin, le bouton de compte rendu ouvre le même contenu en maintenant le monde arrêté ; fermer le journal retourne au bilan.
+Le journal introduit en 0.7 et conservé en 0.8 présente quatre onglets : **Situation**, **Rescapés**, **Indices** et **Transmissions**. Situation réunit l’objectif, le point sûr, l’état structurel, les ressources et les derniers échanges ; Rescapés distingue personne à secourir, au harnais, au treuil et réellement reçue. Indices ne révèle le texte que des pièces collectées. Transmissions conserve les mots reçus et leurs temps de mission. La touche J ouvre le dossier pendant l’intervention et suspend la simulation. Depuis la fin, le bouton de compte rendu ouvre le même contenu en maintenant le monde arrêté ; fermer le journal retourne au bilan.
 
 Une heure de réception ne certifie pas l’heure d’émission. Le fragment Bravo porte donc un temps local dans le journal sans que celui-ci authentifie sa source. L’indicatif livré le désigne comme un écho non vérifié. Cette distinction doit être conservée dans la localisation et le futur doublage : l’incertitude concerne l’origine du signal, pas le fonctionnement de la montre d’Alex.
 
@@ -111,3 +111,9 @@ Le Répondant de campagne imitera des fragments, sans disposer automatiquement d
 La future localisation conservera les identifiants de réplique, la priorité, la fenêtre de contexte et une durée minimale de lecture par langue. Une coupe de doublage ne supprimera pas le texte du journal. La lecture sans son doit permettre de distinguer voix directe, transmission coupée et source non authentifiée sans révéler prématurément la vérité de la fiction.
 
 Sources du comportement : [mission](../prototype/scripts/main.gd), [directeur radio](../prototype/scripts/radio_director.gd), [monde](../prototype/scripts/world_builder.gd), [sauvegarde](../prototype/scripts/save_store.gd) et [interface](../prototype/scripts/hud.gd).
+
+## Ce qui est incertain et ce qui devient établi
+
+Dans les étages hauts, un bruit perçu, une silhouette ou une phrase ancienne ne reçoit pas automatiquement une authentification radio. Le journal consigne les mots reçus et les documents trouvés ; il n’annonce pas « démon détecté » ni « Enfer confirmé » au 26. Une trace humide peut être constatée sans en attribuer immédiatement l’auteur.
+
+Dans la campagne future, les témoignages croisés, les supports enregistrés et les transferts matériels finissent par établir l’existence d’une dimension infernale. L’équipe peut alors nommer le fait sans continuer artificiellement à parler de simple fatigue. Le doute restant porte sur l’identité d’un appel, l’intention d’un interlocuteur ou la sécurité d’une route. Les transmissions de Nacre et celles relayées à travers la brèche gardent une provenance distincte. Couper la liaison infernale ne supprime jamais les réceptions médicales déjà confirmées.

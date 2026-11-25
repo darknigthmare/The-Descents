@@ -1,8 +1,8 @@
 # Architecture du prototype et portage vers Unreal Engine 5
 
-Version de conception 0.7.0 — Présentation cinématique et continuité de mission — 25 novembre 2026
+Version de conception 0.8.0 — Présentation cinématique et continuité de mission — 25 novembre 2026
 
-Ce document décrit le prototype Godot 0.7.0 et propose une trajectoire vers Unreal Engine 5. La tranche solo en vue subjective comprend un toit, six étages de 30 à 25, trois sauvetages, trois indices et un refuge. Les deux tours commencent intactes, deux hélicoptères et des groupes de secours sont visibles en maquette, puis un effondrement partiel se déroule pendant l’observation depuis le 29. La campagne complète et le portage UE5 restent à produire.
+Ce document décrit le prototype Godot 0.8.0 et propose une trajectoire vers Unreal Engine 5. La tranche solo en vue subjective comprend un toit, six étages de 30 à 25, trois sauvetages, trois indices et un refuge. Les deux tours commencent intactes, deux hélicoptères et des groupes de secours sont visibles en maquette, puis un effondrement partiel se déroule pendant l’observation depuis le 29. La campagne complète et le portage UE5 restent à produire.
 
 Le projet déclare une base de fonctionnalités Godot 4.7. Les exécutables, versions de moteur effectivement utilisées et résultats de vérification sont décrits dans le rapport de livraison du dépôt. Ce document ne constitue pas un rapport d’exécution d’Unreal Engine. La coopération en réseau n’est pas implémentée.
 
@@ -30,6 +30,8 @@ La scène d'entrée `prototype/scenes/main.tscn` instancie le contrôleur princi
 | `mission_dossier.gd` | Projection pure des faits de mission vers Situation, Rescapés, Indices, Transmissions et bilan, sans écriture ni tirage |
 | `mission_dossier_panel.gd` | Présentation du dossier et du bilan, onglets, défilement, focus et actions de retour ou relecture |
 | `epilogue_director.gd` | Clôture de 15 s en trois plans, caméra réduite ou animée, sous-titres de présentation et cadrage fixe du bilan |
+| `horror_director.gd` | Manifestations discrètes des 29, 28 et 26, conditions de mission, horloge transitoire et reprise sans nouveau champ de sauvegarde |
+| `horror_presentation.gd` | Silhouettes et traces visuelles sans collider hostile, sans poursuite et sans dégâts |
 
 Le personnage utilise `move_and_slide()` pour la marche. Godot décrit `CharacterBody3D` comme un corps contrôlé par script disposant notamment de détection des murs et des pentes ; la gravité et les règles de déplacement restent ici écrites dans le contrôleur. [Documentation Godot CharacterBody3D](https://docs.godotengine.org/en/stable/classes/class_characterbody3d.html)
 
@@ -91,7 +93,7 @@ La variable actuelle appelée `oxygen` représente une **réserve abstraite d'ai
 
 Pour la version complète, distinguer trois éléments dans les données et l'interface : mesure d'atmosphère du capteur, autonomie du dispositif respiratoire et exposition à un danger. Une atmosphère signalée dangereuse ne doit pas vider instantanément une bouteille ; une bouteille pleine ne doit pas afficher un air ambiant sain. Les seuils et durées seront des paramètres d'équilibrage clairement présentés au joueur.
 
-Le stress est aujourd'hui un indicateur de tension modulé par les événements, la radio et les espaces sûrs. Il ne doit pas devenir un pourcentage arbitraire autorisant n'importe quelle hallucination. Le système futur distinguera événements objectifs, perceptions individuelles et preuves persistantes, chacun avec des conditions et un contre-jeu définis dans la bible.
+Le stress est aujourd'hui un indicateur de tension modulé par les événements, la radio et les espaces sûrs. Il ne doit pas devenir un pourcentage arbitraire autorisant n'importe quelle hallucination. La 0.8 distingue déjà les manifestations sans conséquence de mission des événements objectifs et des documents collectés. Un directeur échantillonne les présentations ; il ne produit ni dommage ni faux reçu. La campagne étendra cette séparation aux preuves corroborées, aux humains corporels et aux phénomènes infernaux, avec conditions et contre-jeux définis dans la bible.
 
 ## Répartition proposée sous Unreal Engine 5
 
@@ -137,7 +139,7 @@ Le générateur de campagne doit d'abord assembler un graphe praticable : entré
 
 Le framework PCG d'Unreal constitue une option pour distribuer végétation, gravats et accessoires à partir de règles. Il ne doit pas remplacer les invariants de sauvetage ou décider seul de la progression narrative. Cette utilisation est une proposition adaptée au rôle de génération procédurale décrit par Epic. [Documentation Epic PCG](https://dev.epicgames.com/documentation/en-us/unreal-engine/procedural-content-generation-framework-in-unreal-engine)
 
-Dans le prototype 0.7.0, Hespérie passe d’un état vertical intact à un état partiellement effondré pendant le jeu. Son état final, le détour et les communications sont persistants. Le portage UE5 proposé doit d’abord reproduire ce contrat, avec trajectoires préparées, zone d’observation, commandes libres, pause réelle et reprises avant/après. Des débris et effets plus détaillés pourront ensuite enrichir la scène sans décider de la praticabilité du trajet de secours.
+Dans le prototype 0.8.0, Hespérie passe d’un état vertical intact à un état partiellement effondré pendant le jeu. Son état final, le détour et les communications sont persistants. Le portage UE5 proposé doit d’abord reproduire ce contrat, avec trajectoires préparées, zone d’observation, commandes libres, pause réelle et reprises avant/après. Des débris et effets plus détaillés pourront ensuite enrichir la scène sans décider de la praticabilité du trajet de secours.
 
 Pour la production UE5, prévoir des groupes distincts : structure intacte, volume mobile de rupture, façade haute endommagée, débris décoratifs et collisions finales. Le contrôleur narratif resterait responsable du passage d’état ; une éventuelle simulation de débris ne serait pas la source de vérité des routes. L’approche en hélicoptère et le jeu d’acteurs de l’équipe opposée constituent des séquences supplémentaires à produire. Ces choix sont des propositions d’architecture, pas du code UE5 livré.
 
@@ -153,9 +155,9 @@ La coopération constitue un chantier distinct. Définir d'abord l'autorité sur
 
 ### Contrats de contenu avant extension
 
-Les fiches P01 à P52 doivent devenir des données séparant représentation, interaction et état persistant. Chaque instance porte un identifiant stable, un volume d’usage, des états autorisés et des points de pose. Un modèle artistique ne doit pas créer sa propre collision de route par défaut ; le niveau décide quelles surfaces bloquent réellement le joueur et les personnes transportées.
+Les fiches P01 à P60 doivent devenir des données séparant représentation, interaction et état persistant. Chaque instance porte un identifiant stable, un volume d’usage, des états autorisés et des points de pose. Un modèle artistique ne doit pas créer sa propre collision de route par défaut ; le niveau décide quelles surfaces bloquent réellement le joueur et les personnes transportées.
 
-Les archétypes E01 à E10 décrivent des règles de campagne, tandis qu’E00 documente la silhouette actuelle. La future interface d’une présence doit recevoir des faits observables : cible, distance, ligne de vue, bruit ou émission. Elle ne doit pas lire arbitrairement le contenu caché d’une sauvegarde pour deviner le joueur. Les limites de territoires, refuges et transferts restent des contraintes imposées par la mission.
+Les archétypes E01 à E16 décrivent des règles de campagne, tandis qu’E00 documente la silhouette actuelle. La future interface d’une présence doit recevoir des faits observables : cible, distance, ligne de vue, bruit ou émission. Elle ne doit pas lire arbitrairement le contenu caché d’une sauvegarde pour deviner le joueur. Les limites de territoires, refuges et transferts restent des contraintes imposées par la mission.
 
 La première extraction technique prioritaire est un registre d’entités indépendantes des nœuds. Les noms actuels `survivor_30`, `evidence_29` ou `supply_25` conviennent à la tranche mais ne distinguent pas plusieurs objets de même type au même étage. La campagne doit utiliser des identifiants de contenu, un manifeste de génération et un état sérialisable versionné. Les animations d’accueil et les groupes visibles doivent pouvoir être reconstruits depuis ce registre.
 
@@ -178,3 +180,13 @@ Les objectifs suivants sont des critères proposés, pas des mesures de performa
 Les risques immédiats sont le couplage du contrôleur principal, l'absence de navigation de PNJ, la capsule d'accroupissement inchangée, les interactions de mission encore fondées sur proximité et les limites des identifiants actuels. Les traiter avant de multiplier les étages évitera de transporter ces simplifications dans toute la campagne.
 
 Le portage doit préserver une intervention compréhensible, terminable et reprenable. Les personnages, animations et effets seront ensuite enrichis selon un budget graphique mesuré.
+
+## Contrat perceptif de la 0.8 et extension infernale future
+
+La présentation courante ajoute des indices aux espaces existants, sans changer le graphe des routes. Le directeur reçoit les faits de mission et reste indépendant du générateur de niveaux. Les pauses, le journal, les inspections, le rappel, les transferts, l’incident actif et les séquences de présentation ne doivent pas devenir des moments de déclenchement hostile. L’horloge transitoire ne devient ni temps de mission ni nouveau champ du schéma 3.
+
+Lors d’une reprise, les étages déjà vus permettent de traiter les aperçus fugaces comme consommés ; les traces stables sont restaurées si l’incident est après impact et si le 28 figure parmi les étages visités. Cette reconstruction ne prouve pas que le joueur a personnellement observé une forme. Le journal de mission n’invente aucun constat automatique. Le chargeur conserve sa validation stricte et les anciens fichiers ne sont pas réécrits à la lecture.
+
+Les courts sons spatiaux facultatifs sont arrêtés à l’ouverture de la pause, du journal ou de l’inspection. Leur numéro de cue demeure consommé et la reprise ne relance pas le son. Les horloges et visuels, eux, restent figés puis poursuivent leur présentation. Ce contrat couvre aussi un `play()` qui attend encore sa première image audio.
+
+L’architecture future distingue `perception`, `human_actor`, `corroborated_phenomenon` et `infernal_actor`. Ces catégories sont proposées pour la campagne, pas des classes toutes présentes. Une traversée de P666 exige un changement de monde avec correspondance des personnes, du matériel et des repères, puis un point de reprise au côté sûr. La réalité de l’Enfer est un invariant de scénario ; le stress et la graine ne choisissent pas une cosmologie différente.

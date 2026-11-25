@@ -994,18 +994,6 @@ func _build_rain() -> void:
 	rain_origin = Vector3(0,12,0)
 	rain.position = rain_origin
 
-func create_shadow(number: int) -> Node3D:
-	var shadow: Node3D = Node3D.new()
-	shadow.name = "SillageFigure%d" % number
-	add_child(shadow)
-	shadow.position = Vector3(-6,float(number-24)*6,-3.8)
-	_human(shadow,Vector3.ZERO,materials["dark"],false)
-	shadow.scale = Vector3(0.72,1.4,0.72)
-	_sphere(shadow,Vector3(-0.09,1.65,-0.18),Vector3(0.025,0.025,0.025),materials["lit_amber"])
-	_sphere(shadow,Vector3(0.09,1.65,-0.18),Vector3(0.025,0.025,0.025),materials["lit_amber"])
-	shadow.visible = false
-	return shadow
-
 func _interaction(parent: Node3D, pos: Vector3, kind: String, id_value: String, number: int, title: String, description: String) -> Node3D:
 	var node: Node3D = Node3D.new()
 	node.name = id_value

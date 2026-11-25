@@ -1,6 +1,6 @@
 # Gameplay détaillé, réglages et personnages
 
-**The Tower Descent — version 0.7.0.** Les valeurs désignées « actuelles » proviennent du prototype. Les valeurs « cibles » sont des propositions de réglage pour une prochaine tranche et doivent être éprouvées en jeu. Une fiche de conception ne signifie pas que la fonction correspondante est déjà programmée. Cette annexe complète la bible avec des contrats utilisables par la conception, l’animation, le son et les essais.
+**The Tower Descent — version 0.8.0.** Les valeurs désignées « actuelles » proviennent du prototype. Les valeurs « cibles » sont des propositions de réglage pour une prochaine tranche et doivent être éprouvées en jeu. Une fiche de conception ne signifie pas que la fonction correspondante est déjà programmée. Cette annexe complète la bible avec des contrats utilisables par la conception, l’animation, le son et les essais.
 
 ## 1 Expérience recherchée et boucles
 
@@ -68,7 +68,7 @@ Un objet essentiel doit fournir au moins deux indices parmi forme, position, tex
 
 Le prototype suit une personne dans les états **présente, portée, au treuil, reçue**. L’interaction de sécurisation est instantanée. La représentation au sol disparaît pendant le portage et la vitesse d’Alex est limitée. La 0.6 affiche une représentation dédiée de la personne dans un harnais, avec sangles, poignée et mains d’Alex ; elle suit la caméra et désactive son léger balancement lorsque les mouvements sont réduits. Une seule personne peut être prise en charge à la fois.
 
-À la balise du même étage, E commence une montée de **cinq secondes**. Le panier et la personne suivent une trajectoire absolue dans le puits, puis une dépose latérale sur la dalle du toit. La longueur du câble relie le support à la poutre ; elle reste une représentation calculée, sans simulation physique de corde. Seule la fin de la montée ajoute l’identifiant au registre des sauvés, diminue le stress de quinze points et crée un point sûr. La réception médicale au toit reconstruit ensuite la présence nommée. En partie, un équipier accompagne pendant 4,2 secondes cette personne déjà confirmée jusqu’à sa place ; une reprise de sauvegarde l’installe directement à sa pose finale. Aucun état cosmétique n’est ajouté au schéma 3.
+À la balise du même étage, E commence une montée de **cinq secondes**. Le panier et la personne suivent une trajectoire absolue dans le puits, puis une dépose latérale sur la dalle du toit. La longueur du câble relie le support à la poutre ; elle reste une représentation calculée, sans simulation physique de corde. Seule la fin de la montée ajoute l’identifiant au registre des sauvés, diminue le stress de quinze points et demande l’enregistrement d’un point sûr. L’ancien checkpoint reste la référence tant que l’écriture n’a pas réussi. La réception médicale au toit reconstruit ensuite la présence nommée. En partie, un équipier accompagne pendant 4,2 secondes cette personne déjà confirmée jusqu’à sa place ; une reprise de sauvegarde l’installe directement à sa pose finale. Aucun état cosmétique n’est ajouté au schéma 3.
 
 | Personne | Identifiant | Point de départ | Réception confirmée |
 | --- | --- | --- | --- |
@@ -101,7 +101,7 @@ La stabilisation envisagée dure trois à cinq secondes avec annulation immédia
 
 Les caisses du 29 et du 25 permettent de récupérer sans boucle de collecte infinie. La sauvegarde mémorise leur consommation. Le terminal du refuge ne doit pas être confondu avec un distributeur réinitialisé à chaque reprise.
 
-La fusée est posée visuellement près du joueur, mais son effet sur la silhouette du spa est actuellement **global pendant vingt secondes**, sans test de rayon ou d’occlusion. C’est une simplification importante. L’équilibrage futur d’un cercle de protection demanderait une nouvelle règle visible : portée, obstruction, durée et interaction avec une personne portée. La documentation ne doit pas attribuer ce comportement spatial à la version actuelle.
+La fusée est posée visuellement près du joueur. En 0.8, ses vingt secondes actives masquent les silhouettes perceptives, tout en conservant l’éclairage et la réduction de stress. Il n’existe ni test d’exposition local, ni ennemi repoussé, ni preuve d’exorcisme. Un futur effet de protection contre une créature corporelle demanderait une règle distincte : portée, obstruction, durée et interaction avec une personne portée.
 
 ### Dangers de sol et d’ambiance
 
@@ -109,7 +109,7 @@ Dans la fumée, l’air perd 0,65 point/s et le stress augmente de 0,12 point/s.
 
 Avant l’effondrement, les dangers des 29 et 28 sont désactivés même si leur variante de secteur en prévoit un après le choc. Pendant la séquence active de catastrophe, les dangers ordinaires sont suspendus. Sur corde, le stress augmente de 0,025 point/s et la silhouette est masquée. Au toit, au 27 et au 25, le stress diminue de 1,2 point/s.
 
-La silhouette du 26 s’active après plus de quatre secondes cumulées dans ce secteur. Elle avance à 0,72 m/s avec la lampe allumée et à 1,1 m/s sans lampe. À moins de deux mètres, elle inflige douze points de dégâts, avec trois secondes de délai avant un nouveau contact. Elle augmente le stress de 0,9 point/s lorsqu’elle est visible. Son mouvement direct n’utilise pas encore de navigation autour des obstacles. La fiche E00 du [bestiaire](ENNEMIS_STATISTIQUES.md) expose les conséquences et la différence avec les adversaires futurs.
+La v0.8 retire la poursuite et les dégâts de la figure du 26. Le directeur de manifestations présente un aperçu périphérique au 29, des traces humides au 28 après impact et une présence récurrente au spa. Aucun de ces événements ne consomme de santé, d’air ou de matériel. Ils ne créent pas de reçu de secours ni de preuve scientifique dans le journal. Les actions de mission gardent la priorité. La fiche E00 du [bestiaire](ENNEMIS_STATISTIQUES.md) distingue cette présentation actuelle des adversaires corporels futurs.
 
 ### Cibles d’équilibrage
 
@@ -191,7 +191,7 @@ Les fiches suivantes servent à écrire les comportements et dialogues. Leurs mo
 
 **Peur et tension.** Il craint de devenir une charge pour l’autre équipe, ce qui peut le pousser à retarder une demande d’aide. Le joueur peut lui fournir un relais ou une route ; l’écriture doit montrer la conséquence avant une éventuelle séparation.
 
-**Fonction et cible.** Allié de mission, pas compagnon autonome livré en 0.7.0. Une première version pourrait utiliser des postes préparés et des transitions contrôlées, puis une navigation locale. Les états utiles sont engagé, contact établi, route partagée, isolé et pris en charge. Sa survie future dépend de décisions documentées, jamais d’un silence aléatoire destiné à surprendre.
+**Fonction et cible.** Allié de mission, pas compagnon autonome livré en 0.8.0. Une première version pourrait utiliser des postes préparés et des transitions contrôlées, puis une navigation locale. Les états utiles sont engagé, contact établi, route partagée, isolé et pris en charge. Sa survie future dépend de décisions documentées, jamais d’un silence aléatoire destiné à surprendre.
 
 ### Inès Valen — distinguer une estimation d’un fait
 
@@ -238,3 +238,28 @@ Les objectifs initiaux de validation sont qualitatifs : trouver Ana sans aide ex
 Les paramètres jouables proviennent de [player_controller.gd](../prototype/scripts/player_controller.gd) et [main.gd](../prototype/scripts/main.gd). La génération est définie par [floor_generator.gd](../prototype/scripts/floor_generator.gd), la communication par [radio_director.gd](../prototype/scripts/radio_director.gd), la persistance par [save_store.gd](../prototype/scripts/save_store.gd) et les représentations par [world_builder.gd](../prototype/scripts/world_builder.gd). Les noms de scripts sont vérifiables dans le dépôt ; toute modification de valeur doit conduire à réviser cette annexe.
 
 Le [catalogue des étages](CATALOGUE_ETAGES.md) détermine où les boucles se combinent. Les [props](PROPS_INTERACTIONS.md) décrivent les actions et états locaux. Le [bestiaire](ENNEMIS_STATISTIQUES.md) définit les contre-jeux et statistiques proposés. Les [scènes](SCENES_CINEMATIQUES.md) règlent la transition entre présentation et contrôle. Le rapport de livraison conserve les résultats d’essais effectivement obtenus.
+
+
+## 12 Extension de campagne : confrontation, preuve et traversée
+
+Cette section définit des **cibles futures**, sans ajouter de commande ou d’IA au prototype 0.8. La progression suit [l’annexe de l’horreur](PROGRESSION_HORREUR_V0.8.md). Alex reste un secouriste : ses moyens principaux sont l’observation, la communication, le déplacement, l’équipement et les routes de retour. La découverte de l’Enfer ne le transforme pas instantanément en combattant surhumain.
+
+### Corps humain, distance et défense
+
+E11, E12 et E13 possèdent un territoire, une perception limitée et des gestes annoncés. Alex peut attendre hors de portée, reculer derrière un appui, refermer une séparation, attirer l’attention depuis un autre angle, parler lorsqu’une ouverture existe ou employer un geste défensif pour quitter le contact. L’affrontement modifie concrètement la circulation ; il ne constitue pas une obligation d’exécuter chaque occupant pour ouvrir un étage. Une personne peut être blessée, désorientée, immobile ou bruyante sans être hostile : la sommation, le mouvement d’engagement et l’objet tenu donnent la lecture utile.
+
+Pour un premier prototype de confrontation, essayer une poussée à 1,25 m avec préparation de 0,35 s et récupération d’Alex de 1,2 s. Son effet dépend ensuite de l’archétype : E11 cède du terrain, E12 perd brièvement la poursuite, E13 exige un angle libre ou un obstacle. Ces valeurs servent à éprouver la lisibilité d’une séparation, pas à promettre un système de mêlée livré. Le contrôle doit montrer la portée avant de permettre une dépense répétée. Une rencontre avec deux humains actifs attend la validation d’un duel lisible, du détour et de la reprise.
+
+Le portage conserve la priorité de secours. Alex ne combine pas une attaque à deux mains avec une personne portée. Une zone de dépose certifiée ou une porte sécurisée doit exister avant toute séquence où la défense serait indispensable. La personne déposée reste présente et identifiable ; un aller-retour ne remet pas son transfert à zéro. Les territoires adverses excluent les refuges, les lectures protégées et les premières transitions d’apprentissage.
+
+### Une expérience qui apporte une preuve
+
+La boucle de laboratoire demande d’observer un montage, comparer deux identifiants, choisir une commande locale expliquée, constater un résultat persistant puis confronter ce résultat au registre ou au témoin. P53, P54 et P55 rendent la chaîne matérielle. La première preuve essentielle peut être obtenue sans poursuivre une expérience dangereuse. Des essais facultatifs précisent les responsabilités et les limites du programme ; ils ne conditionnent pas la reconnaissance des personnes sauvées.
+
+L’interface future distingue ce qu’Alex a vu, ce qu’un document rapporte et ce qu’un témoin confirme. L’auteur sait que la dimension infernale est réelle ; le joueur le découvre par ces faits successifs. Une mauvaise estimation d’Alex peut être corrigée par une preuve ultérieure, sans effacer l’objet collecté ou remplacer arbitrairement sa description historique.
+
+### Agir dans la dimension infernale
+
+La boucle change d’échelle, mais garde ses verbes : établir un appui P57, suivre la ligne P58, reconnaître un danger annoncé, rejoindre la personne ou le poste, puis conserver un retour. I01 enseigne cette continuité dans un espace stable. I02 met la route à l’épreuve avec E14 et ses attaches. I03 relie les collecteurs aux projections d’E15. I04 demande trois objectifs P59 tandis qu’E10 agit sur les réponses du lieu et qu’E16 défend le passage. P60 ramène physiquement à Nacre avant la dernière sortie.
+
+L’air, la santé et le matériel ont des causes lisibles. La seule couleur d’un ciel ne retire aucune ressource. Une zone de scories annonce sa portée et sa durée ; un refuge conserve son contrat. Le matériel indispensable à un objectif est disponible dans le secteur ou garanti avant le franchissement : aucune fusée facultative économisée depuis le 30 ne devient une clé finale cachée. Les quantités finales, les temps de dépose et les interactions à deux mains seront fixés après essais sur ces parcours futurs.

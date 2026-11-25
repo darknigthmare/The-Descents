@@ -77,6 +77,8 @@ def main() -> None:
         "prototype/scripts/mission_dossier.gd", "prototype/scripts/mission_dossier_panel.gd",
         "prototype/scripts/epilogue_director.gd", "prototype/tests/test_mission_dossier.gd",
         "prototype/tests/test_epilogue.gd", "prototype/tests/test_epilogue_integration.gd",
+        "prototype/scripts/horror_director.gd", "prototype/scripts/horror_presentation.gd",
+        "prototype/tests/test_horror.gd", "prototype/tests/test_horror_integration.gd",
         f".review/v{SHORT}/request.json",
         "tools/package_release.py", "tools/verify_release.py", "tools/qa_common.py",
         "tools/run_validation.py", "tools/verify_exported_packs.py", "tools/capture_evidence.py"
@@ -171,6 +173,7 @@ def main() -> None:
         require(struct.unpack_from(">II", capture, 16) == (1440, 900), "Unexpected capture dimensions")
     visual_review = json.loads((VALIDATION / "VISUAL_REVIEW.json").read_text())
     require(visual_review["all_pass"] and visual_review["source_commit"] == provenance["source_commit"], "Visual review does not match the captured source")
+    require(len(visual_review.get("captures", [])) == len(EXPECTED_CAPTURES) and all(row.get("status") == "pass" for row in visual_review["captures"]), "A final native capture lacks individual visual approval")
     require({row["file"]: row["sha256"] for row in visual_review["captures"]} == {row["file"]: row["sha256"] for row in provenance["captures"]}, "Visual review does not cover every final capture")
     document_review = json.loads((VALIDATION / "DOCUMENT_REVIEW.json").read_text())
     require(document_review["all_pass"], "Document review has unresolved findings")
@@ -185,6 +188,7 @@ def main() -> None:
     require(all(row["status"] == "pass" for row in document_review["pages"]), "Document contains an unapproved page")
     document_build = json.loads((VALIDATION / "DOCUMENT_BUILD.json").read_text())
     require(document_build["version"] == VERSION and document_build["source_count"] == len(DOCUMENT_SOURCES), "Wrong document build version or source count")
+    require(document_review.get("source_commit") == document_build["source_commit"], "Document review refers to another construction revision")
     require(document_build["page_count"] == document_review["page_count"], "Document review page count differs from its rendered document")
     require({row["page"]: row["sha256"] for row in document_review["pages"]} ==
             {row["page"]: row["sha256"] for row in document_build["pages"]},

@@ -1,8 +1,8 @@
 # Sauvetage visible, portage et réception médicale
 
-**The Tower Descent — version 0.7.0 — 25 novembre 2026**
+**The Tower Descent — version 0.8.0 — 25 novembre 2026**
 
-Ce contrat de sauvetage, introduit en 0.6, est conservé dans la 0.7. Son nom de fichier historique reste inchangé. Le dossier et l’épilogue utilisent les mêmes identifiants de rescapés et les mêmes places de réception ; aucun plan de clôture ne déclenche un nouveau transfert.
+Ce contrat de sauvetage, introduit en 0.6, est conservé dans la 0.8. Son nom de fichier historique reste inchangé. Le dossier et l’épilogue utilisent les mêmes identifiants de rescapés et les mêmes places de réception ; aucun plan de clôture ne déclenche un nouveau transfert.
 
 ## 1. Intention de la tranche
 
@@ -123,7 +123,7 @@ Les essais de trajet physique existants gardent la responsabilité de vérifier 
 
 Les captures de recette doivent montrer le portage depuis les yeux d’Alex, une remontée réellement en cours, une réception pendant le déplacement et la pose finale. L’examen doit vérifier le centre de l’image, la lecture du panier, la continuité apparente du câble, l’absence d’un second corps et la relation entre la position affichée et le texte de mission.
 
-Les résultats exécutés, les empreintes des ressources, les images retenues et les limites matérielles figurent dans le dossier de validation de chaque livraison. Les preuves v0.6 restent historiques ; la 0.7 demande ses propres tests et captures du même contrat. La présence de ce chapitre ne remplace pas ces preuves.
+Les résultats exécutés, les empreintes des ressources, les images retenues et les limites matérielles figurent dans le dossier de validation de chaque livraison. Les preuves v0.6 restent historiques ; la 0.8 demande ses propres tests et captures du même contrat. La présence de ce chapitre ne remplace pas ces preuves.
 
 ## 9. Prochaine production de la scène SC03
 
@@ -134,3 +134,7 @@ La seconde priorité est le contact de l’équipe : saisir la civière, oriente
 Une réponse de la personne recueillie peut apporter l’émotion : Ana reprend son souffle, Samuel demande de prévenir quelqu’un, Nora vérifie que le refuge tient. Ces lignes doivent respecter les envies et peurs des fiches de personnages et ne pas introduire de nouvelles preuves sur Bravo. Elles ne sont pas doublées ni livrées comme nouvelles communications dans cette tranche.
 
 Une vraie simulation de câble ne doit être envisagée que si elle améliore un choix de jeu précis. La fiabilité du secours, la clarté du retour au point sûr et la maîtrise du joueur restent les critères de décision.
+
+## Priorité du secours dans la 0.8
+
+Les manifestations des suites, des archives et du spa ne déclenchent pas de poursuite ni de dommage. Leur présentation respecte les états de portage, treuillage et rappel ; elle ne remplace pas un message opérationnel. La prise en charge des trois personnes reste une réalité commune, même si Alex interprète mal une silhouette périphérique. Les humains dangereux et les créatures infernales appartiennent aux étapes futures du bestiaire : aucune rencontre de ce type n’est insérée rétroactivement dans le premier tutoriel.

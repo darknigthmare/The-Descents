@@ -3,10 +3,11 @@ extends Node
 ## Capture the actual Godot renderer at prepared states. This is not a human playthrough.
 const MainScene = preload("res://scenes/main.tscn")
 const Preferences = preload("res://scripts/preferences_store.gd")
-const SAVE: String = "user://qa_visual_frontend_v07.json"
-const PREFS: String = "user://qa_visual_frontend_v07.cfg"
+const Horror = preload("res://scripts/horror_director.gd")
+const SAVE: String = "user://qa_visual_frontend_v08.json"
+const PREFS: String = "user://qa_visual_frontend_v08.cfg"
 var mission: Node3D
-var output: String = "res://../docs/captures/v0.7"
+var output: String = "res://../docs/captures/v0.8"
 var shots: Array[Dictionary] = []
 
 func _ready() -> void:
@@ -164,6 +165,8 @@ func _capture() -> void:
 	mission._return_to_menu()
 	mission.set_process(false)
 	await _shot("10_menu_refuge","Accueil après une intervention terminée, point sûr du refuge")
+	if not await _capture_early_manifestations():
+		return
 	var manifest: Dictionary = {"version":ProjectSettings.get_setting("application/config/version"), "engine":Engine.get_version_info().get("string"),"display":DisplayServer.get_name(),"rendering_method":RenderingServer.get_current_rendering_method(),"viewport":str(get_viewport().get_visible_rect().size),"prepared_states":true,"human_playthrough":false,"captures":shots}
 	var file: FileAccess = FileAccess.open(output.path_join("MANIFEST.json"),FileAccess.WRITE)
 	file.store_string(JSON.stringify(manifest,"  ")+"\n")
@@ -177,6 +180,63 @@ func _capture() -> void:
 	_clean()
 	print("PASS visual frontend review: %d native Godot captures" % shots.size())
 	get_tree().quit(0)
+
+func _capture_early_manifestations() -> bool:
+	# The three new views advance the actual director through controller gates.
+	# Only starting poses and mission state are prepared; no opacity is injected.
+	mission._start_new(271104)
+	mission._finish_arrival()
+	_disable_ticks()
+	mission.player.teleport_to_floor(29)
+	mission.player.position = Vector3(-3.0,30.1,2.0)
+	mission.player.camera.look_at(Vector3(-3.0,31.3,-5))
+	mission.radio.reset()
+	mission._sync_radio()
+	await get_tree().physics_frame
+	for index in range(34):
+		mission._process_horror(0.1,29)
+	if not mission.horror_visuals.suites_figure.visible:
+		push_error("Native suite fixture failed to produce its actual peripheral cue.")
+		get_tree().quit(1)
+		return false
+	mission._update_hud()
+	await _shot("26_suites_presence", "Manifestation des suites 29 : pose périphérique préparée, directeur avancé réellement de 3,4 s, silhouette sans dégâts")
+	mission.incident.restore("aftermath")
+	mission.world.apply_incident("aftermath",0.0)
+	mission.player.teleport_to_floor(28)
+	mission.player.position = Vector3(-3.4,24.1,4.9)
+	mission.player.camera.look_at(Horror.TRACE_POSITION)
+	mission.radio.reset()
+	mission._sync_radio()
+	for index in range(90):
+		mission._process_horror(0.1,28)
+	if not mission.horror_visuals.trace_root.visible or float(mission.horror.presentation()["trace_progress"]) < 1.0:
+		push_error("Native archive fixture failed to settle the actual damp traces.")
+		get_tree().quit(1)
+		return false
+	mission._update_hud()
+	await _shot("27_archives_traces", "Archives 28 : huit traces humides après impact, neuf secondes de présentation réelle, sans indice ajouté au journal")
+	mission.player.teleport_to_floor(26)
+	mission.player.position = Vector3(-2.5,12.1,4.5)
+	mission.player.camera.look_at(Vector3(-10,13,2))
+	mission.radio.reset()
+	mission._sync_radio()
+	await get_tree().physics_frame
+	for index in range(105):
+		mission._process_horror(0.1,26)
+	mission.player.camera.look_at(mission.player.camera.global_position + Vector3(8,0,1))
+	for index in range(210):
+		mission._process_horror(0.1,26)
+	mission.player.camera.look_at(Horror.SPA_POSITION + Vector3(0,1.2,0))
+	for index in range(17):
+		mission._process_horror(0.1,26)
+	if not mission.horror_visuals.spa_figure.visible or int(mission.horror.presentation()["recurrence"]) != 2:
+		push_error("Native spa fixture failed to show the bounded second presence.")
+		get_tree().quit(1)
+		return false
+	mission._update_hud()
+	await _shot("28_spa_remanence", "Spa 26 : seconde présence après extinction, attente calme et regard détourné, sans poursuite ni dommage")
+	return true
 
 func _shot(name_value: String, description: String) -> void:
 	if mission.hud.menu.visible:

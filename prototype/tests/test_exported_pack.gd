@@ -10,8 +10,10 @@ const FieldProps = preload("res://scripts/field_props.gd")
 const Dossier = preload("res://scripts/mission_dossier.gd")
 const DossierPanel = preload("res://scripts/mission_dossier_panel.gd")
 const Epilogue = preload("res://scripts/epilogue_director.gd")
-const TEST_PATH: String = "user://qa_v07_external_pack.json"
-const PREFS_PATH: String = "user://qa_v07_external_pack.cfg"
+const Horror = preload("res://scripts/horror_director.gd")
+const HorrorPresentation = preload("res://scripts/horror_presentation.gd")
+const TEST_PATH: String = "user://qa_v08_external_pack.json"
+const PREFS_PATH: String = "user://qa_v08_external_pack.cfg"
 var failures: Array[String] = []
 var checks: int = 0
 
@@ -22,7 +24,7 @@ func _initialize() -> void:
 
 func _run() -> void:
 	_cleanup()
-	_check(ProjectSettings.get_setting("application/config/version", "") == "0.7.0", "Packed project has the wrong application version.")
+	_check(ProjectSettings.get_setting("application/config/version", "") == "0.8.0", "Packed project has the wrong application version.")
 	_check(not ResourceLoader.exists("res://tests/test_save.gd") and not ResourceLoader.exists("res://tests/test_cinematic_integration.gd"), "Developer tests unexpectedly shipped inside the pack.")
 	var scene: PackedScene = load("res://scenes/main.tscn")
 	_check(scene != null, "The mounted pack has no loadable main scene.")
@@ -62,6 +64,27 @@ func _run() -> void:
 		_check(card["card"] == "epilogue" and card["shot"] == shot and not str(card["message"]).is_empty() and (camera["position"] as Vector3).is_finite() and (camera["target"] as Vector3).is_finite(), "Packed closing director lost a staged shot or transmission.")
 	epilogue.finish()
 	_check(not epilogue.active and epilogue.elapsed == 15.0 and epilogue.presentation()["progress"] == 1.0, "Packed closing director did not reach its stable final state.")
+	_check(ResourceLoader.exists("res://scripts/horror_director.gd") and ResourceLoader.exists("res://scripts/horror_presentation.gd"), "The mounted pack lost the v0.8 perception director or presentation module.")
+	_check(not ResourceLoader.exists("res://tests/test_horror.gd") and not ResourceLoader.exists("res://tests/test_horror_integration.gd"), "The v0.8 developer tests unexpectedly shipped inside the pack.")
+	var perception = Horror.new()
+	perception.reset()
+	var dormant: Dictionary = perception.advance(20.0, {"running": false})
+	_check(float(dormant.get("suites_alpha", 0.0)) == 0.0 and float(dormant.get("trace_alpha", 0.0)) == 0.0 and float(dormant.get("spa_alpha", 0.0)) == 0.0 and perception.elapsed == 0.0, "The packed perception director advanced or exposed an anomaly outside live gameplay.")
+	var detached_frame: Dictionary = perception.presentation()
+	detached_frame["spa_alpha"] = 1.0
+	_check(float(perception.presentation().get("spa_alpha", 0.0)) == 0.0, "The packed director exposes a mutable alias of its live frame.")
+	var perception_visuals = HorrorPresentation.new()
+	mission.world.add_child(perception_visuals)
+	perception_visuals.build(mission.world)
+	_check(is_instance_valid(perception_visuals.suites_figure) and is_instance_valid(perception_visuals.trace_root) and is_instance_valid(perception_visuals.spa_figure), "Packed perception presentation failed to create its three authored anchors.")
+	_check(_perception_colliders(perception_visuals) == 0, "Packed perceptive manifestations added a collider to the playable rescue routes.")
+	perception_visuals.sample({"suites_alpha": 0.3, "trace_alpha": 0.3, "trace_progress": 1.0, "spa_alpha": 0.3}, true)
+	_check(perception_visuals.suites_figure.visible and perception_visuals.trace_root.visible and perception_visuals.spa_figure.visible, "The packed presentation cannot display the sampled manifestations with reduced motion.")
+	perception_visuals.clear()
+	_check(not perception_visuals.suites_figure.visible and not perception_visuals.trace_root.visible and not perception_visuals.spa_figure.visible, "The packed perception presentation did not clear all three manifestations.")
+	perception_visuals.free()
+	var uncertain_steps: AudioStream = load("res://assets/audio/uncertain_steps.wav")
+	_check(uncertain_steps != null and uncertain_steps.get_length() > 0.0, "The mounted pack is missing the imported positional footstep cue.")
 	_check(ResourceLoader.exists("res://scripts/presentation_geometry.gd") and ResourceLoader.exists("res://shaders/weathered_surface.gdshader") and ResourceLoader.exists("res://shaders/rotor_wash.gdshader"), "The final procedural model or material resources are absent from the pack.")
 	_check(mission.audio_score.stream != null and mission.audio_rotors.stream != null, "Export is missing the cinematic audio resources.")
 	mission._start_new(928401)
@@ -155,6 +178,13 @@ func _face_field(mission: Node3D, object: Node3D) -> bool:
 	return false
 
 
+func _perception_colliders(parent: Node) -> int:
+	var total: int = 1 if parent is CollisionObject3D else 0
+	for child: Node in parent.get_children():
+		total += _perception_colliders(child)
+	return total
+
+
 func _disable_ticks(mission: Node3D) -> void:
 	mission.set_process(false)
 	mission.player.set_process(false)
@@ -176,7 +206,7 @@ func _check(condition: bool, message: String) -> void:
 
 func _finish() -> void:
 	if failures.is_empty():
-		print("PASS exported pack: %d checks; mounted v0.7 resources, menu/cinematic directors, animated helicopters, twelve field props and paused inspection, imported audio, schema-3 radio persistence, isolated restoration, four-tab mission dossier and three-shot rescue epilogue. Linux headless engine loads the pack; this is not a Windows executable or browser launch." % checks)
+		print("PASS exported pack: %d checks; mounted v0.8 resources, menu/cinematic directors, animated helicopters, twelve field props and paused inspection, imported audio, schema-3 radio persistence, isolated restoration, four-tab mission dossier three-shot rescue epilogue, isolated non-damaging perception director and collision-free manifestation anchors. Linux headless engine loads the pack; this is not a Windows executable or browser launch." % checks)
 		quit(0)
 	else:
 		for failure: String in failures:
