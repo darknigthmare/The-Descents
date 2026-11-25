@@ -1,5 +1,44 @@
 # The Tower Descent
 
+**Version 0.11 — matières originales, éclairage Godot et matériel de secours.**
+
+La descente du toit d’Aube à l’exposition du 23 reçoit huit matières générées pour le projet, seize modèles de secours éditables et quatre outils utilisables. Le rendu Windows propose un profil Forward+ avec éclairage global SDFGI et un profil Compatibilité. Les trois secours au toit, l’effondrement d’Hespérie, les huit liaisons réversibles et l’escorte du congrès restent dans le même parcours.
+
+## Jouer et ouvrir les sources v0.11
+
+- [Windows x64 v0.11](releases/The-Tower-Descent-v0.11-Windows-x64.zip) · [Sources, modèles Blender et textures v0.11](releases/The-Tower-Descent-v0.11-Sources.zip).
+- [Démarrage Windows et commandes](docs/DEMARRAGE_WINDOWS.md) · [Guide visuel et matériel](docs/VISUELS_ET_SECOURS_V0.11.md) · [État de livraison et limites](docs/ETAT_DE_LIVRAISON.md).
+- [Catalogue des captures v0.11](docs/CAPTURES_V0.11.md) · [Manifeste de revue](docs/validation/v0.11/REVIEW_MANIFEST.json) · [Approbation des fichiers examinés](.review/v0.11/approval.json).
+- [Guide des modèles éditables](docs/assets/v0.11/README.md) · [Manifeste des seize modèles](docs/assets/v0.11/rescue_equipment_manifest.json) · [Textures, prompts et empreintes](prototype/assets/materials/v011/manifest.json).
+- [Contrôles sources](docs/validation/v0.11/VERIFICATION.json) · [Ressources des exports](docs/validation/v0.11/EXPORTED_PACK_VERIFICATION.json) · [Vérification finale des archives](releases/VERIFICATION_V0.11.json).
+
+Extraire le ZIP Windows puis choisir **JOUER_CINEMATIQUE.cmd** pour Forward+/Vulkan ou **JOUER_COMPATIBILITE.cmd** pour OpenGL. Le projet éditable se lance depuis `prototype/project.godot` avec Godot 4.7.2. Le fichier `docs/assets/v0.11/rescue_equipment.blend` conserve les pièces nommées des seize accessoires.
+
+## Ce que la 0.11 ajoute
+
+| Domaine | Contenu |
+| --- | --- |
+| Matières | Béton salin, bois fumé, pierre sombre, acier brossé, peinture rouge, caoutchouc, moquette bleu-vert, porcelaine ; PNG originaux 1254² |
+| Lumière cinématique | SDFGI, SSIL, SSAO, SSR, ombres locales, brouillard volumétrique et réponse tonale ACES sous Forward+ |
+| Mode Compatibilité | Même parcours, modèles et textures ; éclairage direct, ombres et brouillard classique ; utilisé aussi par le Web |
+| Modèles | Hache, extincteur, Halligan, coupe-boulon, lampe, projecteur, radio, sac médical, corde, mousqueton, descendeur en huit, bouteille d’oxygène, casque, brancard, mallette et balise |
+| Outils | Touches physiques 1–4 ; maintien de E sur un site accessible ; interruption sans consommation ; résultat conservé dans la sauvegarde |
+| Présentation | Matériel disposé au toit et au refuge, outils visibles en main, lampe importée, jet d’extincteur et projecteur activable |
+
+La hache ouvre une réserve de balisage au 29 ; l’extincteur éteint un foyer local au 28 ; le Halligan ouvre une armoire de soins au 25 ; le coupe-boulon libère un projecteur au 24. Ces gestes facultatifs complètent le secours. Leur visibilité réelle, le bon outil, la proximité, l’appui au sol et les mains libres sont contrôlés. Les outils se rangent pendant le portage, le rappel et les séquences de présentation.
+
+![Modèles de secours v0.11 — aperçu Blender](docs/assets/v0.11/rescue_equipment_contact_sheet.png)
+
+L’éclairage demandé est une adaptation de l’intention lumineuse de Lumen aux fonctions de Godot. SDFGI ne reproduit pas toute sa gestion des géométries mobiles. Les personnages, hélicoptères, outils et Hespérie en mouvement restent exclus des occluders statiques. Les huit albedos sont des créations artistiques, accompagnées de microrelief et rugosité procéduraux ; quelques raccords du bois et de la pierre restent perceptibles.
+
+Le contrat de revue couvre **37 suites**, **71 captures natives**, les **21 vues Blender** et les ressources des deux exports. Les nombres effectivement réussis, les moteurs obtenus et les empreintes du candidat sont consignés dans les rapports liés ci-dessus. Les captures préparées sous Godot Linux ne constituent pas une partie humaine sous Windows ou dans un navigateur, ni un benchmark de GPU.
+
+La Bible intégrale [Word v0.9](docs/The-Tower-Descent-Bible-v0.9.docx) / [PDF](docs/The-Tower-Descent-Bible-v0.9.pdf) et le supplément [Word v0.10](docs/The-Tower-Descent-Continuation-v0.10.docx) / [PDF](docs/The-Tower-Descent-Continuation-v0.10.pdf) sont conservés sans changement. Les personnages, mains, véhicules et une partie de l’architecture restent procéduraux. Le parcours s’arrête au 23 ; les niveaux inférieurs et la campagne complète restent à produire.
+
+## Historique de la version 0.10
+
+Les résultats, captures et liens de cette section appartiennent à la livraison 0.10 conservée.
+
 **Version 0.10 — du refuge au congrès et à l’histoire de Nacre.**
 
 Le prototype Godot poursuit maintenant la descente jusqu’au **23**. Après les trois secours et le bilan du refuge 25, une action explicite ouvre le centre de congrès du 24, son escorte à pied, puis l’exposition du 23. Les tours commencent toujours intactes ; l’effondrement en cours d’intervention, les réceptions au toit, le rappel contrôlé et les cinématiques précédentes restent présents.

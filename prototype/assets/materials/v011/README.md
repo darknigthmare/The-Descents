@@ -27,18 +27,18 @@ Le fichier `manifest.json` conserve les prompts exacts, la provenance, les dimen
 
 ## Contrôle visuel et raccords
 
-Les huit images originales ont été affichées et examinées. Des aperçus de quatre copies en grille 2 × 2 ont été produits pour vérifier les raccords ; sept ont été réellement ouverts et examinés. Les aperçus sont des montages temporaires de contrôle et ne modifient pas les PNG source.
+Les huit images originales ont été affichées et examinées. Des aperçus de quatre copies en grille 2 × 2 ont été produits pour vérifier les raccords ; les huit ont été réellement ouverts et examinés. Les aperçus sont des montages temporaires de contrôle et ne modifient pas les PNG source.
 
 - L’acier, la peinture rouge, le caoutchouc et la moquette ne montrent pas de couture fortement visible à l’échelle de ces aperçus.
 - Le béton conserve un motif minéral périodique identifiable.
 - Le bois présente une légère rupture du veinage au raccord haut-bas.
 - La pierre sombre présente une légère limite horizontale de texture au raccord haut-bas.
-- La porcelaine a été examinée seule : grille régulière, joints droits, pas de reflet directionnel marqué. Son aperçu répété a été généré, mais son ouverture a échoué lorsque l’environnement d’exécution est devenu indisponible.
+- La porcelaine répétée en grille 2 × 2 conserve des joints alignés et une teinte stable, sans couture fortement visible à cette échelle. Ce dernier aperçu a été effectivement ouvert et examiné après le rétablissement de l’environnement.
 
-**Aucune garantie de périodicité parfaite (« seamless ») n’est donnée.** Les bords n’ont pas été égalisés par traitement de pixels. Le contrôle en situation dans le moteur, ainsi que l’examen du dernier aperçu répété, restent nécessaires. Les éventuelles corrections d’image doivent préserver la traçabilité de la génération.
+**Aucune garantie de périodicité parfaite (« seamless ») n’est donnée.** Les bords n’ont pas été égalisés par traitement de pixels. Le contrôle visuel en situation dans le moteur reste nécessaire. Les éventuelles corrections d’image doivent préserver la traçabilité de la génération.
 
 ## Conservation et vérification des octets
 
 Après l’interruption de l’exécuteur, les huit retours originaux Imagegen étaient encore disponibles sous forme de données PNG. Ils ont été enregistrés directement comme blobs GitHub, sans régénération et sans déplacement de branche.
 
-Pour chacun, la signature PNG, les dimensions IHDR, les CRC de tous les chunks et la présence d’un IEND complet ont été vérifiés en mémoire. Les SHA256 ont été calculés sur les octets décodés ; ceux du béton et du bois concordent avec les mesures locales indépendantes effectuées avant l’interruption. La création de ces blobs ne constitue pas à elle seule un commit ni une publication.
+Pour chacun, la signature PNG, les dimensions IHDR, les CRC de tous les chunks et la présence d’un IEND complet ont été vérifiés en mémoire. Les SHA256 ont été calculés sur les octets décodés ; ceux du béton et du bois concordent avec les mesures locales indépendantes effectuées avant l’interruption. Après le rétablissement de l’exécuteur, les huit PNG du dépôt ont été vérifiés et décodés intégralement. Leurs dimensions et leur mode RGB sont conformes ; leurs SHA256 et leurs identifiants de blobs concordent avec le manifeste et les objets présents dans HEAD. Les huit PNG sont conservés dans l’historique Git.

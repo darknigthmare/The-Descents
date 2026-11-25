@@ -1,4 +1,30 @@
-# Exports du prototype 0.10
+# Exports du prototype 0.11
+
+Le workflow **release-v011** construit les exports Windows x64 et Web avec **Godot 4.7.2 stable officiel**. Il s’appuie sur les textures originales et les modèles éditables déjà générés, importés et figés dans le dépôt. [Windows v0.11](../releases/The-Tower-Descent-v0.11-Windows-x64.zip) · [Sources v0.11](../releases/The-Tower-Descent-v0.11-Sources.zip) · [résultats mesurés](ETAT_DE_LIVRAISON.md) · [rapport final des archives](../releases/VERIFICATION_V0.11.json).
+
+## Rendu et contenu
+
+Windows démarre en **Forward+**. `JOUER_CINEMATIQUE.cmd` demande explicitement Forward+ avec Vulkan ; `JOUER_COMPATIBILITE.cmd` demande Compatibility avec OpenGL 3. Le profil lumineux réellement actif dépend du moteur obtenu. Le premier combine SDFGI, SSIL, SSAO, SSR et brouillard volumétrique ; le second conserve les matières, lumières directes, ombres locales et brouillard classique. Le Web utilise Compatibility. Les choix et leurs limites sont décrits dans [Visuels et secours](VISUELS_ET_SECOURS_V0.11.md).
+
+Le ZIP Windows contient exactement huit fichiers : l’exécutable avec son paquet embarqué, les deux lanceurs, le guide de démarrage renommé `README.md`, ce guide des exports, les licences Godot et les deux notices Open Sans. Tous doivent être extraits ensemble.
+
+Le ZIP Sources contient le projet Godot, ses huit PNG de matière en résolution native 1254², seize GLB, le catalogue d’import, le fichier Blender éditable, les manifestes et les vingt et une vues de modèles. Il conserve les tests, scripts, workflows, guides, rapports textuels historiques et captures natives de la version courante. La Bible intégrale Word/PDF v0.9 et son supplément Word/PDF v0.10 restent identiques octet par octet. Les captures anciennes et les autres compilations historiques restent accessibles dans le dépôt et leurs archives d’origine.
+
+`dist/` reçoit l’export Web au commit de livraison. Ce dossier ne constitue pas, à lui seul, la publication d’un site public. Les archives ZIP, caches Godot et Python et rendus temporaires de pages ne sont pas réemballés dans le ZIP Sources. Les deux archives sont limitées chacune à moins de 100 Mio ; le rapport final compare leur ensemble exact de membres, leurs tailles et leurs octets avec les sources prévues.
+
+## Construction, examen et livraison
+
+La génération des modèles est une étape distincte, documentée par `ASSET_BOOTSTRAP.json`. Le générateur Blender conserve les pièces nommées dans le fichier source, puis exporte un maillage à plusieurs surfaces par objet. Le vérificateur contrôle les seize identifiants, UV, normales, dimensions, matériaux, empreintes et budgets. Les prévisualisations utilisent Cycles CPU, sans dépendre d’un débruiteur optionnel absent de certains binaires Blender.
+
+La demande `.review/v0.11/build-request.json` est seule dans son commit et nomme son parent immédiat. La phase **review** exige les assets déjà figés, exécute les 37 suites sources, construit les packs Windows/Web et charge leurs ressources depuis des dossiers isolés. Elle produit 71 états natifs : 42 du secteur initial, 13 de continuation, 8 du matériel et les mêmes 4 cadrages sous chacun des deux moteurs. Le rendu Forward+ emploie un affichage natif et un pilote Vulkan logiciel dans la CI ; le manifeste exige le moteur réel et les capacités actives, sans assimiler cette exécution à un benchmark sur GPU de joueur.
+
+Chaque image du jeu et chaque vue Blender nécessite une observation après ouverture du fichier exact. L’approbation lie également les modèles, textures, guides, source éditable et quatre documents préservés à leurs SHA256. Le workflow ne produit pas lui-même cette approbation. Un changement dans le runtime, un test, une fixture, un guide lié ou un outil de livraison invalide les preuves correspondantes.
+
+La phase **release** exige cette revue explicite, vérifie à nouveau les packs, crée les ZIP et contrôle chaque membre. La publication avance uniquement `feat/live-tower-collapse` si son commit est toujours celui demandé ; elle ne fusionne pas `main` et ne force pas une branche ayant évolué. Les fichiers sont également conservés dans l’artefact Actions de l’exécution.
+
+Les tests source, l’import des GLB, les chargements de packs sous Linux et les captures préparées ont des portées différentes. Ils ne constituent ni une partie humaine de l’EXE Windows, ni une partie WebAssembly dans un navigateur, ni une mesure de fréquence d’images sur une carte dédiée. Les résultats et limites du candidat exact figurent dans les rapports v0.11 ; une simple source sur la branche n’est pas un export validé.
+
+## Contrat historique v0.10
 
 Le workflow **release-v010** construit Windows x64 et Web, puis vérifie leurs ressources depuis des dossiers isolés. Le moteur et les modèles restent Godot 4.7.2 stable officiels. [Windows v0.10](../releases/The-Tower-Descent-v0.10-Windows-x64.zip) · [Sources v0.10](../releases/The-Tower-Descent-v0.10-Sources.zip) · [preuves de livraison](ETAT_DE_LIVRAISON.md).
 

@@ -301,9 +301,11 @@ def halligan():
     cylinder("Forged fork shoulder",(0,0,.145),.023,.050,"steel_dark",vertices=12)
     cube("Head socket",(0,0,.836),(.056,.043,.054),"steel_dark",.006)
     cone("Tapered pike",(-.072,0,.844),.019,.001,.125,"steel_brushed",(-1,0,.16))
-    prism_xz("Adze neck",[(.014,.814),(.070,.832),(.082,.864),(.025,.86)],.043,"steel_brushed",.003)
-    prism_xz("Adze wedge blade",[(.061,.836),(.118,.862),(.116,.893),(.076,.881)],.075,"steel_brushed",.002)
-    prism_xz("Adze sharpened edge",[(.106,.855),(.119,.861),(.117,.894),(.105,.888)],.075,"steel_edge",.0006)
+    prism_xz("Adze neck",[(.014,.814),(.070,.832),(.082,.864),(.025,.86)],.046,"steel_brushed",.003)
+    adze = prism_xz("Adze wedge blade",[(.061,.836),(.118,.862),(.116,.893),(.076,.881)],.075,"steel_brushed",.002)
+    # The sharpened end is a face of the forged blade, not a coplanar overlay.
+    adze.data.materials.append(M["steel_edge"])
+    adze.data.polygons[3].material_index = 1
     rubber_grip((0,0,.328),(0,0,.520),.016,rings=13)
     for z in [.29,.56]:
         cylinder("High visibility shaft band",(0,0,z),.018,.024,"paint_safety_yellow",vertices=24)
@@ -482,7 +484,24 @@ def rescue_helmet():
     cross_badge((0,.153,.095),.038)
     for side in [-1,1]:
         cylinder("Visor hinge",(side*.135,.025,.071),.018,.012,"steel_dark",(1,0,0),24)
-        cube("Side reflective marking",(side*.129,-.040,.109),(.005,.075,.019),"label_ivory",.002)
+        # Fit the strip to the ellipsoidal shell instead of floating a flat plaque.
+        strip_verts,strip_faces = [],[]
+        columns = 9
+        for z in [.100,.110,.120]:
+            latitude = math.sqrt(1-((z-.050)/.148)**2)
+            shell_rx,shell_ry = .133*latitude,.155*latitude
+            for j in range(columns):
+                y = -.077+.075*j/(columns-1)
+                x = side*shell_rx*math.sqrt(1-(y/shell_ry)**2)
+                strip_verts.append((x+side*.0013,y,z))
+        for row in range(2):
+            for j in range(columns-1):
+                a = row*columns+j
+                face = (a,a+1,a+1+columns,a+columns)
+                strip_faces.append(face if side>0 else tuple(reversed(face)))
+        strip = mesh("Conforming side reflective strip",strip_verts,strip_faces,"label_ivory",smooth=True)
+        thickness = strip.modifiers.new("Reflective strip backing thickness","SOLIDIFY")
+        thickness.thickness,thickness.offset = .0008,0
     tube("Chin retention strap",[(-.128,0,.043),(-.101,.012,-.014),(0,.020,-.031),
                                  (.101,.012,-.014),(.128,0,.043)],.007,"webbing_black")
     cube("Chin strap buckle",(.062,.02,-.020),(.036,.016,.022),"polymer_anthracite",.004)

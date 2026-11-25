@@ -26,7 +26,7 @@
   "tiling": {
     "intent": "repeat in both U and V",
     "mathematically_seamless_verified": false,
-    "note": "Prompts request repeating edges. Opposite edges are not algorithmically equalized. Seven exact 2×2 repetition previews were visually reviewed; the porcelain repetition preview was generated but could not be opened after the executor became unavailable. This review does not prove mathematical periodicity."
+    "note": "Prompts request repeating edges. Opposite edges are not algorithmically equalized. All eight exact 2×2 repetition previews were visually reviewed. This review does not prove mathematical periodicity."
   },
   "materials": [
     {
@@ -288,20 +288,29 @@
       "git_blob_sha": "9737c0444f918c1270e79b71e337301bef490452",
       "visual_review": {
         "original_inspected": true,
-        "repeat_2x2_inspected": false,
-        "observation_fr": "Image source inspectée : grille 2×2 de porcelaine claire, joints droits réguliers, sans reflet directionnel marqué. L’aperçu de répétition 2×2 a été produit mais pas encore ouvert à cause de l’indisponibilité de l’environnement.",
-        "repeat_status": "pending_environment_unavailable"
+        "repeat_2x2_inspected": true,
+        "observation_fr": "Porcelaine claire à grille régulière, sans reflet directionnel marqué. Répétition 2×2 réellement inspectée après rétablissement de l’environnement : joints alignés et teinte stable, sans couture fortement visible à cette échelle. La périodicité exacte des pixels n’est pas garantie.",
+        "repeat_status": "reviewed_no_strong_boundary_at_preview_scale"
       }
     }
   ],
   "quality_review": {
     "original_images_reviewed": 8,
-    "repeat_2x2_previews_reviewed": 7,
-    "pending": "Repeat-preview inspection for porcelain_tile and final in-engine review.",
+    "repeat_2x2_previews_reviewed": 8,
+    "pending": "Final in-engine visual review.",
     "review_method": "Each original image was displayed and inspected; exact 2×2 repeats were assembled with ImageMagick as temporary QA previews only. Asset pixels were never edited.",
     "byte_integrity_method": "Decode the stored data URI, inspect PNG signature/IHDR, validate every PNG chunk CRC32 and complete IEND, compute SHA256. SHA256 implementation checked against the empty-string standard digest and the independent local SHA256 measurements for salt_concrete and smoked_oak.",
     "repeated_image_preview_storage": "Temporary QA only; not part of the asset pack.",
     "engine_review_performed": false,
-    "guaranteed_seamless": false
+    "guaranteed_seamless": false,
+    "local_git_verification": {
+      "checked_materials": 8,
+      "complete_png_decode": true,
+      "all_dimensions_rgb8_native": true,
+      "all_sha256_match_manifest": true,
+      "all_worktree_git_blobs_match_manifest": true,
+      "all_head_git_blobs_match_manifest": true,
+      "method": "After executor recovery: Pillow verify and full pixel decode, SHA256 of every project PNG, git hash-object, and git ls-tree HEAD compared with the recorded original hashes."
+    }
   }
 }

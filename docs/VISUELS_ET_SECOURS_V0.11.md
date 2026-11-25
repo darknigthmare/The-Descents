@@ -64,8 +64,8 @@ Les modèles sont construits dans Blender avec des pièces nommées, des biseaux
 | Sac médical | Compartiments et sangles ; toit et refuge |
 | Corde lovée | Réserve de corde sur la mallette |
 | Mousqueton | Corps et fermeture ; râtelier |
-| Descendeur | Corps et levier ; accessoire de râtelier, distinct du contrôle de rappel déjà jouable |
-| Bouteille d’air | Corps et robinet ; poste et refuge |
+| Descendeur en huit | Corps et anneaux ; accessoire de râtelier, distinct du descendeur à levier du rappel déjà jouable |
+| Bouteille d’oxygène | Corps, robinet, manomètre et flexible ; matériel médical au poste et au refuge |
 | Casque | Coque et éléments de protection ; comptoir d’Alpha |
 | Brancard | Cadre, toile et sangles ; postes de secours |
 | Mallette | Corps, couvercle et fermetures ; réserve matérielle |
