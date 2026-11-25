@@ -1,8 +1,8 @@
 {
   "version": "0.9.0",
   "runtime_freeze_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
-  "git_head": "96e278c0e6bcc0e756b5418129317f04d44650ff",
-  "verified_utc": "2026-11-25T14:21:50.367395+00:00",
+  "git_head": "3efe085bfdf009d776142fbede5e40f17ca895d4",
+  "verified_utc": "2026-11-25T14:42:18.427840+00:00",
   "engine": "4.7.2.stable.official.ed1daf0bf",
   "test_script": "prototype/tests/test_exported_pack.gd",
   "test_script_sha256": "fb0790a1e7dc75a4889550581047a7f76c8e378e2bdb84be084cefc8d5b79f39",
@@ -74,7 +74,7 @@
         "/home/runner/work/The-Descents/The-Descents/prototype/tests/test_exported_pack.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.821,
+      "duration_seconds": 0.616,
       "error_lines": [],
       "checks": 70,
       "pass_markers": 1,
@@ -83,7 +83,7 @@
       "platform": "windows",
       "pack": "builds/windows/TheTowerDescent.exe",
       "pack_bytes": 110508128,
-      "pack_sha256": "fda39fa6d3c7893e27920fb66cb37c83f11c61d56bec2f54439d36c93466637b",
+      "pack_sha256": "6d3ae0074008f2be86152f91bac87be9ba8688f70469ec72886f5cd87bbaf47f",
       "pack_unchanged_during_test": true,
       "execution_directory_was_empty": true,
       "log_sha256": "d14f2c82849f316407191f7b6a5b96f4c685bb091e1129cbf43b26b1ddb8da47"
@@ -98,7 +98,7 @@
         "/home/runner/work/The-Descents/The-Descents/prototype/tests/test_exported_pack.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.823,
+      "duration_seconds": 0.616,
       "error_lines": [],
       "checks": 70,
       "pass_markers": 1,
@@ -107,7 +107,7 @@
       "platform": "web",
       "pack": "builds/web/index.pck",
       "pack_bytes": 1239632,
-      "pack_sha256": "00d74543444dbeea8a950c08b5cedd39328be6356468a34e6f9904da5906d369",
+      "pack_sha256": "f43d174b0d18226f85c492ddf0a4aaccfbdf3bf4adb6e52fc0fd267f1a43bc00",
       "pack_unchanged_during_test": true,
       "execution_directory_was_empty": true,
       "log_sha256": "d14f2c82849f316407191f7b6a5b96f4c685bb091e1129cbf43b26b1ddb8da47"

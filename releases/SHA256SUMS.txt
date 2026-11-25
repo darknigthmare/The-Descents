@@ -12,3 +12,5 @@ b8960635966288532005b5722301d7eae6fd44d3d637068f25f1a6e77ae4971b  The-Tower-Desc
 bcc07ee369141c83ef2afe862ad6fd6202097d9930a6a091e6e2c9eefdd0d9e9  The-Tower-Descent-v0.7-Windows-x64.zip
 6699465b1ad9786ccaeef28086cc69b65b69f5173ed9f3c447de3ed9f1b3f7a1  The-Tower-Descent-v0.8-Sources.zip
 9ed25e518e0fcfcb06db02c6440eeb8631fa60712015f494a8b78ecada1121f0  The-Tower-Descent-v0.8-Windows-x64.zip
+20dbb207f4641017971a4ae523d1cad9000b66520bd677c3495cc653f4dc09a1  The-Tower-Descent-v0.9-Sources.zip
+63437e237f90d5f4e781c2e44285c9d7ed61cc9de05b949f8a80d17cfb5ebfdf  The-Tower-Descent-v0.9-Windows-x64.zip

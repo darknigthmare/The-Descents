@@ -1,11 +1,11 @@
 {
   "version": "0.9.0",
-  "phase": "review",
-  "request_id": "v09-review-20261125-03",
-  "source_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
-  "source_parent_commit": "9c55464aee77cb95e1282b518696e5af5f694845",
-  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45632857245",
-  "completed_utc": "2026-11-25T14:27:18.619995+00:00",
+  "phase": "release",
+  "request_id": "v09-release-20261125-01",
+  "source_commit": "3efe085bfdf009d776142fbede5e40f17ca895d4",
+  "source_parent_commit": "e82d8a5a11ae224134502fef38e9e4553ffc8994",
+  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45636645664",
+  "completed_utc": "2026-11-25T14:42:18.472924+00:00",
   "runtime_sha256": {
     "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
     "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
@@ -64,7 +64,7 @@
     "prototype/web_shell.html": "2153408b1c07a7cdac170f9f87fdb99617fd61f82c523902a11658e17d2e54fd"
   },
   "automated_steps_passed": true,
-  "manual_visual_review_required": true,
-  "archive_verification_report": null,
+  "manual_visual_review_required": false,
+  "archive_verification_report": "releases/VERIFICATION_V0.9.json",
   "pipeline_sha256": "f5173e6b7e2160d3652d4c31258919b16e3dd2013d3cfccfb3d350848bca7ec5"
 }

@@ -1,8 +1,8 @@
 {
   "version": "0.9.0",
   "all_pass": true,
-  "built_utc": "2026-11-25T14:21:48.477124+00:00",
-  "build_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
+  "built_utc": "2026-11-25T14:42:16.987129+00:00",
+  "build_commit": "3efe085bfdf009d776142fbede5e40f17ca895d4",
   "captured_source_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
   "source_verification_sha256": "79ba58a19d64cee144be05da3fc2ba60009025eedd351bb5bd4457a5266b96d6",
   "runtime_sha256_before": {
@@ -132,7 +132,7 @@
         "/home/runner/work/The-Descents/The-Descents/builds/windows/TheTowerDescent.exe"
       ],
       "returncode": 0,
-      "duration_seconds": 3.28,
+      "duration_seconds": 2.49,
       "error_lines": [],
       "checks": 0,
       "pass_markers": 0,
@@ -152,7 +152,7 @@
         "/home/runner/work/The-Descents/The-Descents/builds/web/index.html"
       ],
       "returncode": 0,
-      "duration_seconds": 2.995,
+      "duration_seconds": 2.396,
       "error_lines": [],
       "checks": 0,
       "pass_markers": 0,
@@ -166,7 +166,7 @@
     {
       "file": "builds/windows/TheTowerDescent.exe",
       "bytes": 110508128,
-      "sha256": "fda39fa6d3c7893e27920fb66cb37c83f11c61d56bec2f54439d36c93466637b"
+      "sha256": "6d3ae0074008f2be86152f91bac87be9ba8688f70469ec72886f5cd87bbaf47f"
     },
     {
       "file": "builds/web/index.apple-touch-icon.png",
@@ -201,7 +201,7 @@
     {
       "file": "builds/web/index.pck",
       "bytes": 1239632,
-      "sha256": "00d74543444dbeea8a950c08b5cedd39328be6356468a34e6f9904da5906d369"
+      "sha256": "f43d174b0d18226f85c492ddf0a4aaccfbdf3bf4adb6e52fc0fd267f1a43bc00"
     },
     {
       "file": "builds/web/index.png",
@@ -261,7 +261,7 @@
     {
       "file": "dist/index.pck",
       "bytes": 1239632,
-      "sha256": "00d74543444dbeea8a950c08b5cedd39328be6356468a34e6f9904da5906d369"
+      "sha256": "f43d174b0d18226f85c492ddf0a4aaccfbdf3bf4adb6e52fc0fd267f1a43bc00"
     },
     {
       "file": "dist/index.png",
