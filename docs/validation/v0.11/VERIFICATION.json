@@ -1,10 +1,10 @@
 {
   "version": "0.11.0",
   "label": "v0.11 materials, imported rescue equipment, contextual tools, lighting profiles and preserved continuation",
-  "validated_utc": "2026-11-25T17:34:28.854890+00:00",
+  "validated_utc": "2026-11-25T18:31:04.179751+00:00",
   "engine": "4.7.2.stable.official.ed1daf0bf",
-  "runtime_freeze_commit": "839c502bea31d0776245dee35b237b6c2fe15118",
-  "git_head": "839c502bea31d0776245dee35b237b6c2fe15118",
+  "runtime_freeze_commit": "97c606c61cf70f3604fa3869977500326593582b",
+  "git_head": "97c606c61cf70f3604fa3869977500326593582b",
   "import": {
     "command": [
       "/home/runner/work/_temp/godot/Godot_v4.7.2-stable_linux.x86_64",
@@ -16,7 +16,7 @@
       "--quit"
     ],
     "returncode": 0,
-    "duration_seconds": 8.468,
+    "duration_seconds": 10.232,
     "error_lines": [],
     "checks": 0,
     "pass_markers": 0,
@@ -75,7 +75,7 @@
         "res://tests/test_arrival_staging.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 2.944,
+      "duration_seconds": 2.942,
       "error_lines": [],
       "checks": 126,
       "pass_markers": 1,
@@ -96,7 +96,7 @@
         "res://tests/test_atmosphere.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.618,
+      "duration_seconds": 0.616,
       "error_lines": [],
       "checks": 44,
       "pass_markers": 1,
@@ -117,7 +117,7 @@
         "res://tests/test_cinematic_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 7.127,
+      "duration_seconds": 7.034,
       "error_lines": [],
       "checks": 103,
       "pass_markers": 1,
@@ -138,7 +138,7 @@
         "res://tests/test_cinematics.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.15,
+      "duration_seconds": 0.149,
       "error_lines": [],
       "checks": 109,
       "pass_markers": 1,
@@ -180,7 +180,7 @@
         "res://tests/test_comfort.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.458,
+      "duration_seconds": 1.454,
       "error_lines": [],
       "checks": 152,
       "pass_markers": 1,
@@ -201,7 +201,7 @@
         "res://tests/test_continuation.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.149,
+      "duration_seconds": 0.145,
       "error_lines": [],
       "checks": 202,
       "pass_markers": 1,
@@ -224,7 +224,7 @@
         "res://tests/test_continuation_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 3.504,
+      "duration_seconds": 3.407,
       "error_lines": [],
       "checks": 40,
       "pass_markers": 1,
@@ -247,7 +247,7 @@
         "res://tests/test_continuation_routes.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.084,
+      "duration_seconds": 0.988,
       "error_lines": [],
       "checks": 84,
       "pass_markers": 1,
@@ -268,7 +268,7 @@
         "res://tests/test_epilogue.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.711,
+      "duration_seconds": 0.709,
       "error_lines": [],
       "checks": 161,
       "pass_markers": 1,
@@ -289,7 +289,7 @@
         "res://tests/test_epilogue_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 2.667,
+      "duration_seconds": 2.571,
       "error_lines": [],
       "checks": 50,
       "pass_markers": 1,
@@ -310,7 +310,7 @@
         "res://tests/test_equipment.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.151,
+      "duration_seconds": 0.148,
       "error_lines": [],
       "checks": 33,
       "pass_markers": 1,
@@ -333,16 +333,16 @@
         "res://tests/test_equipment_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 2.387,
+      "duration_seconds": 2.291,
       "error_lines": [],
-      "checks": 23,
+      "checks": 31,
       "pass_markers": 1,
       "log": "final-equipment_integration.txt",
-      "sha256": "cbf5a68295b50be4ea7fadef04226f6c20f19cc745400a83db590459374f6e5c",
+      "sha256": "3d8fb4e7635fce081de124ed8a092ff3914a921c6aec6abd5d0aa6919e42de0a",
       "pass": true,
       "suite": "equipment_integration",
       "script": "prototype/tests/test_equipment_integration.gd",
-      "script_sha256": "9cdf17d1316c4669780dc9c412919de3b7ecef1609d1d9f813d46c9c3eedc195"
+      "script_sha256": "10d707a4b7271fed09a3137f2dbdc173547a9f95f0e94421cffa886910741163"
     },
     {
       "command": [
@@ -354,7 +354,7 @@
         "res://tests/test_field_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 2.293,
+      "duration_seconds": 2.2,
       "error_lines": [],
       "checks": 125,
       "pass_markers": 1,
@@ -375,7 +375,7 @@
         "res://tests/test_field_props.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.805,
+      "duration_seconds": 0.709,
       "error_lines": [],
       "checks": 477,
       "pass_markers": 1,
@@ -396,7 +396,7 @@
         "res://tests/test_generation.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.243,
+      "duration_seconds": 0.242,
       "error_lines": [],
       "checks": 820,
       "pass_markers": 1,
@@ -417,7 +417,7 @@
         "res://tests/test_horror.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.364,
+      "duration_seconds": 1.267,
       "error_lines": [],
       "checks": 140,
       "pass_markers": 1,
@@ -438,7 +438,7 @@
         "res://tests/test_horror_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 2.387,
+      "duration_seconds": 2.292,
       "error_lines": [],
       "checks": 39,
       "pass_markers": 1,
@@ -459,7 +459,7 @@
         "res://tests/test_incident_effects.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.898,
+      "duration_seconds": 0.897,
       "error_lines": [],
       "checks": 29,
       "pass_markers": 1,
@@ -480,7 +480,7 @@
         "res://tests/test_incident_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 2.015,
+      "duration_seconds": 1.92,
       "error_lines": [],
       "checks": 64,
       "pass_markers": 1,
@@ -503,7 +503,7 @@
         "res://tests/test_incident_routes.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.735,
+      "duration_seconds": 1.733,
       "error_lines": [],
       "checks": 130,
       "pass_markers": 1,
@@ -545,7 +545,7 @@
         "res://tests/test_mission.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 2.015,
+      "duration_seconds": 2.013,
       "error_lines": [],
       "checks": 89,
       "pass_markers": 1,
@@ -566,7 +566,7 @@
         "res://tests/test_mission_dossier.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.895,
+      "duration_seconds": 0.892,
       "error_lines": [],
       "checks": 110,
       "pass_markers": 1,
@@ -587,7 +587,7 @@
         "res://tests/test_preferences.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.152,
+      "duration_seconds": 0.145,
       "error_lines": [],
       "checks": 80,
       "pass_markers": 1,
@@ -608,7 +608,7 @@
         "res://tests/test_radio.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.151,
+      "duration_seconds": 0.143,
       "error_lines": [],
       "checks": 33,
       "pass_markers": 1,
@@ -629,7 +629,7 @@
         "res://tests/test_radio_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 3.04,
+      "duration_seconds": 2.848,
       "error_lines": [],
       "checks": 60,
       "pass_markers": 1,
@@ -650,7 +650,7 @@
         "res://tests/test_rescue_assets_v011.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.174,
+      "duration_seconds": 1.169,
       "error_lines": [],
       "checks": 217,
       "pass_markers": 1,
@@ -671,7 +671,7 @@
         "res://tests/test_rescue_presentation.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 2.016,
+      "duration_seconds": 1.918,
       "error_lines": [],
       "checks": 1005,
       "pass_markers": 1,
@@ -692,7 +692,7 @@
         "res://tests/test_rope_traversal.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.243,
+      "duration_seconds": 0.239,
       "error_lines": [],
       "checks": 98,
       "pass_markers": 1,
@@ -715,7 +715,7 @@
         "res://tests/test_routes.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.642,
+      "duration_seconds": 1.547,
       "error_lines": [],
       "checks": 205,
       "pass_markers": 1,
@@ -736,7 +736,7 @@
         "res://tests/test_save.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.243,
+      "duration_seconds": 0.24,
       "error_lines": [],
       "checks": 288,
       "pass_markers": 1,
@@ -757,7 +757,7 @@
         "res://tests/test_surface_materials_v011.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.429,
+      "duration_seconds": 0.427,
       "error_lines": [],
       "checks": 135,
       "pass_markers": 1,
@@ -778,7 +778,7 @@
         "res://tests/test_team_reactions.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.617,
+      "duration_seconds": 0.521,
       "error_lines": [],
       "checks": 27,
       "pass_markers": 1,
@@ -845,7 +845,7 @@
         "res://tests/test_world_presentation.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.616,
+      "duration_seconds": 0.522,
       "error_lines": [],
       "checks": 534,
       "pass_markers": 1,
@@ -857,7 +857,7 @@
       "script_sha256": "9c8931e0e1f6c887af17c12315ed392c6d21ceb0224093ffb5e97a80bf1ec9e6"
     }
   ],
-  "total_checks": 7924,
+  "total_checks": 7932,
   "all_pass": true,
   "runtime_unchanged_during_run": true,
   "sha256_before": {
@@ -915,7 +915,7 @@
     "prototype/scripts/cinematic_overlay.gd": "2b9c9d3f1b2368380fb92ef82b3949b6c90c863bbd02184c89ddc9df6c33050b",
     "prototype/scripts/collapse_director.gd": "3d9dce62a1b99c68aba41dc7f447a1ced40041ab64f2fb07f16802af5cdd8ee7",
     "prototype/scripts/continuation_director.gd": "fadf17cfdf6e86d4e92632d9b0cd5519ac01555156ee914ca12251584e7dc3a8",
-    "prototype/scripts/continuation_presentation.gd": "992d938ada694b400ea2381c3907146063a4a68b279c45ea4c5582278da0ddb7",
+    "prototype/scripts/continuation_presentation.gd": "4017561aa70fe34694ebd535cbabd875bfc0a46968a27e2a062a26850dc3555b",
     "prototype/scripts/epilogue_director.gd": "4a8da32affe5bf27d616f6d289f41b83121b37f4d60a41b71e069f732408d972",
     "prototype/scripts/equipment_director.gd": "010d075fbf8ea23107a197810f363e5811be55484b55a1a941e4671f3bc0a144",
     "prototype/scripts/field_props.gd": "a9f6bb6e879c5dbdab0143bee832032d98a2fc2afd37f531f3900326d3a5a514",
@@ -925,7 +925,7 @@
     "prototype/scripts/horror_presentation.gd": "4dc010cef8b8e350d26a19f7682154b8b772b65ab07297e4445465c4d11ca3c1",
     "prototype/scripts/hud.gd": "39d777f64e0c328eadf1706d1f43392b56ef51c19cd127a96b87508743651f27",
     "prototype/scripts/inspection_panel.gd": "37c8c06327a8e97f955381bd36564eddabb686bd053e0af1b99c2b7895d49cbd",
-    "prototype/scripts/main.gd": "605e8b2f892169f517f61754334f53b97651d92f1ca877e158ce1f4255f2215d",
+    "prototype/scripts/main.gd": "4535b36b593b9bc466eab4b6d2b8134cdfd4adf3e17ee9fac386d18c41910bc6",
     "prototype/scripts/maritime_atmosphere.gd": "ccce77223a8aea0888ae660fb5a32facc89440afb4edbaf57f68834da84d33a5",
     "prototype/scripts/mission_dossier.gd": "08e805c1724ecfcd274a8c81f9ae1932b2d6a9cffa0d5c0456bce941ba8f5897",
     "prototype/scripts/mission_dossier_panel.gd": "d74ae8d25510d386321e70232fc95f29e3811faff4db16fda0a5024f597eca36",
@@ -934,14 +934,14 @@
     "prototype/scripts/presentation_geometry.gd": "1d1b52a483221eb98b477fd9e90b3aeaf42fe6a87af26abf8730cf9ccfa890db",
     "prototype/scripts/radio_director.gd": "0c3d64be528a11db8df32ca9f6afcc5ed1bd228744f28740c56ef377b9b07dab",
     "prototype/scripts/rescue_asset_catalog.gd": "c6ff7a890b12f1d13be806f8c899211367b6d6c2742caa6d151fa4c2b0234d79",
-    "prototype/scripts/rescue_equipment.gd": "1ffcf384bfaabbf332f39ba0cf6ca32be31e4712ab72e359093d306e95bfc989",
+    "prototype/scripts/rescue_equipment.gd": "b6a84934d90346cf732e04ebb05a0ec928df39595d1286763a90cc4d3de98fed",
     "prototype/scripts/rescue_presentation.gd": "ac3e900f85615f4dedff422c3fcb5985901cd75107f17dffe876a5087565a7a8",
     "prototype/scripts/rope_presentation.gd": "c8c5a2826a4fa1fcddaa7e37e7994a49f5981b9c2a1fea14bbcbe914a89cc731",
     "prototype/scripts/rope_traversal.gd": "2690c1a8cd07e9ddc333bcb9002b8735ae9985bd2ec99271b2f6c6e63d060704",
     "prototype/scripts/route_catalog.gd": "ec5dadc197f2995c8fdad9348905d0ab05eaadb000f8b0d5808d4f6fbcd73b4e",
     "prototype/scripts/save_store.gd": "2929265b598f18a108c94feec14aea9b19410042c509fb2e98494b69d1f7f5ff",
     "prototype/scripts/surface_materials.gd": "5e657399ab1e3016b14594a17debeb5e91acc2e9a2f392dafcc088613fd56542",
-    "prototype/scripts/world_builder.gd": "33b6f505495808c4e9b5beae4dcc60c9658710c43fb63f14ca0407382d109318",
+    "prototype/scripts/world_builder.gd": "5e79a2ac89db74803b18849ed3543ac9b24958b05e0920a7ccc93156e2605b4a",
     "prototype/shaders/cinematic_veil.gdshader": "1aa18255935f3c9ab0d3ebb2ee49dea18d32828d21eac67eeaaf0f22a8cdfb0e",
     "prototype/shaders/maritime_rain.gdshader": "ff3e19dca63c9bdcc79fc283f468c9213c6a93044b095c5a6e305d84ef4867cd",
     "prototype/shaders/rotor_wash.gdshader": "8a59b620e99331970aef867ec4c847d27094eda1e7fed6a7b6bdcfe9b8ce8866",
@@ -1006,7 +1006,7 @@
     "prototype/scripts/cinematic_overlay.gd": "2b9c9d3f1b2368380fb92ef82b3949b6c90c863bbd02184c89ddc9df6c33050b",
     "prototype/scripts/collapse_director.gd": "3d9dce62a1b99c68aba41dc7f447a1ced40041ab64f2fb07f16802af5cdd8ee7",
     "prototype/scripts/continuation_director.gd": "fadf17cfdf6e86d4e92632d9b0cd5519ac01555156ee914ca12251584e7dc3a8",
-    "prototype/scripts/continuation_presentation.gd": "992d938ada694b400ea2381c3907146063a4a68b279c45ea4c5582278da0ddb7",
+    "prototype/scripts/continuation_presentation.gd": "4017561aa70fe34694ebd535cbabd875bfc0a46968a27e2a062a26850dc3555b",
     "prototype/scripts/epilogue_director.gd": "4a8da32affe5bf27d616f6d289f41b83121b37f4d60a41b71e069f732408d972",
     "prototype/scripts/equipment_director.gd": "010d075fbf8ea23107a197810f363e5811be55484b55a1a941e4671f3bc0a144",
     "prototype/scripts/field_props.gd": "a9f6bb6e879c5dbdab0143bee832032d98a2fc2afd37f531f3900326d3a5a514",
@@ -1016,7 +1016,7 @@
     "prototype/scripts/horror_presentation.gd": "4dc010cef8b8e350d26a19f7682154b8b772b65ab07297e4445465c4d11ca3c1",
     "prototype/scripts/hud.gd": "39d777f64e0c328eadf1706d1f43392b56ef51c19cd127a96b87508743651f27",
     "prototype/scripts/inspection_panel.gd": "37c8c06327a8e97f955381bd36564eddabb686bd053e0af1b99c2b7895d49cbd",
-    "prototype/scripts/main.gd": "605e8b2f892169f517f61754334f53b97651d92f1ca877e158ce1f4255f2215d",
+    "prototype/scripts/main.gd": "4535b36b593b9bc466eab4b6d2b8134cdfd4adf3e17ee9fac386d18c41910bc6",
     "prototype/scripts/maritime_atmosphere.gd": "ccce77223a8aea0888ae660fb5a32facc89440afb4edbaf57f68834da84d33a5",
     "prototype/scripts/mission_dossier.gd": "08e805c1724ecfcd274a8c81f9ae1932b2d6a9cffa0d5c0456bce941ba8f5897",
     "prototype/scripts/mission_dossier_panel.gd": "d74ae8d25510d386321e70232fc95f29e3811faff4db16fda0a5024f597eca36",
@@ -1025,14 +1025,14 @@
     "prototype/scripts/presentation_geometry.gd": "1d1b52a483221eb98b477fd9e90b3aeaf42fe6a87af26abf8730cf9ccfa890db",
     "prototype/scripts/radio_director.gd": "0c3d64be528a11db8df32ca9f6afcc5ed1bd228744f28740c56ef377b9b07dab",
     "prototype/scripts/rescue_asset_catalog.gd": "c6ff7a890b12f1d13be806f8c899211367b6d6c2742caa6d151fa4c2b0234d79",
-    "prototype/scripts/rescue_equipment.gd": "1ffcf384bfaabbf332f39ba0cf6ca32be31e4712ab72e359093d306e95bfc989",
+    "prototype/scripts/rescue_equipment.gd": "b6a84934d90346cf732e04ebb05a0ec928df39595d1286763a90cc4d3de98fed",
     "prototype/scripts/rescue_presentation.gd": "ac3e900f85615f4dedff422c3fcb5985901cd75107f17dffe876a5087565a7a8",
     "prototype/scripts/rope_presentation.gd": "c8c5a2826a4fa1fcddaa7e37e7994a49f5981b9c2a1fea14bbcbe914a89cc731",
     "prototype/scripts/rope_traversal.gd": "2690c1a8cd07e9ddc333bcb9002b8735ae9985bd2ec99271b2f6c6e63d060704",
     "prototype/scripts/route_catalog.gd": "ec5dadc197f2995c8fdad9348905d0ab05eaadb000f8b0d5808d4f6fbcd73b4e",
     "prototype/scripts/save_store.gd": "2929265b598f18a108c94feec14aea9b19410042c509fb2e98494b69d1f7f5ff",
     "prototype/scripts/surface_materials.gd": "5e657399ab1e3016b14594a17debeb5e91acc2e9a2f392dafcc088613fd56542",
-    "prototype/scripts/world_builder.gd": "33b6f505495808c4e9b5beae4dcc60c9658710c43fb63f14ca0407382d109318",
+    "prototype/scripts/world_builder.gd": "5e79a2ac89db74803b18849ed3543ac9b24958b05e0920a7ccc93156e2605b4a",
     "prototype/shaders/cinematic_veil.gdshader": "1aa18255935f3c9ab0d3ebb2ee49dea18d32828d21eac67eeaaf0f22a8cdfb0e",
     "prototype/shaders/maritime_rain.gdshader": "ff3e19dca63c9bdcc79fc283f468c9213c6a93044b095c5a6e305d84ef4867cd",
     "prototype/shaders/rotor_wash.gdshader": "8a59b620e99331970aef867ec4c847d27094eda1e7fed6a7b6bdcfe9b8ce8866",

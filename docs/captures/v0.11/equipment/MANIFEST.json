@@ -13,7 +13,7 @@
 			"prepared_state": true,
 			"rendering_method": "gl_compatibility",
 			"selected_tool": "fire_axe",
-			"sha256": "cb2204bf31daed6161450f7a9618196169536c3f8d0ab21cfc138c758b66fd31",
+			"sha256": "9a0651ad113003285bc937726e4dfafae9220f9b9e1d997b5039aee7df6c02bd",
 			"width": 1440
 		},
 		{
@@ -29,7 +29,7 @@
 			"prepared_state": true,
 			"rendering_method": "gl_compatibility",
 			"selected_tool": "fire_axe",
-			"sha256": "6d4cf7cfe9eb17719a45b27f71123f6e0ed85d84948c969982bfb4dd81becf1b",
+			"sha256": "d021c88df9f5a5636a8d36288b199c3766916884c9ef349a204028cce2faa338",
 			"width": 1440
 		},
 		{
@@ -45,7 +45,7 @@
 			"prepared_state": true,
 			"rendering_method": "gl_compatibility",
 			"selected_tool": "fire_axe",
-			"sha256": "5b9c61c73b17fb17ff94473ac0a5e58372429a4391a73f2c0b08d1d828180748",
+			"sha256": "6049718180f16b8cc2464508a0af64e7804e89536b1fbcec8518e8f427ea47d8",
 			"width": 1440
 		},
 		{
@@ -63,7 +63,7 @@
 			"prepared_state": true,
 			"rendering_method": "gl_compatibility",
 			"selected_tool": "extinguisher",
-			"sha256": "a60be5b3eb8062b952145a32e15f31b4eb2730d75970f2550463663743a02f5d",
+			"sha256": "7d112e7466bdc2a253f49aae69dcb12cb75bc114d9b906950fe63867c1a019a3",
 			"width": 1440
 		},
 		{
@@ -101,7 +101,7 @@
 			"prepared_state": true,
 			"rendering_method": "gl_compatibility",
 			"selected_tool": "halligan",
-			"sha256": "7826b2a53658af2e0081335dc531486e543b7d4cef2222caba2144bb760fa245",
+			"sha256": "c2a172b6e884e1d4eb836a7f36758327bee317a940ad21e5f655b20baf760e3c",
 			"width": 1440
 		},
 		{
@@ -122,7 +122,7 @@
 			"prepared_state": true,
 			"rendering_method": "gl_compatibility",
 			"selected_tool": "bolt_cutter",
-			"sha256": "ef24b19209735dcb2d19cf4dd15df3b94197d67f789543bdcb2c7fa21a79afe6",
+			"sha256": "9cedca0b68c51a2c5ca7d321e09467f8f3499ad03fc8781006058347afe50645",
 			"width": 1440
 		},
 		{
@@ -143,7 +143,7 @@
 			"prepared_state": true,
 			"rendering_method": "gl_compatibility",
 			"selected_tool": "halligan",
-			"sha256": "2c47d100927c345bc49e44188296f3f0004776f0e97c91750a1c5c7cc1ffff0b",
+			"sha256": "fbcd0838b9b59e5145bc30be6f93199dfbc6382e87d41ac88fc3f65724e3169a",
 			"width": 1440
 		}
 	],
