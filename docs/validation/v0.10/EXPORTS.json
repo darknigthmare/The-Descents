@@ -2,8 +2,8 @@
   "version": "0.10.0",
   "all_pass": true,
   "source_commit": "5d6e3878b0e103216d995f8b49944d847b834b79",
-  "build_commit": "39144444ea6f7b57f5fe341d8cd25b8bf08d48dc",
-  "built_utc": "2026-11-25T15:50:32.702315+00:00",
+  "build_commit": "203a225dae1c30360fd079e412225d5277db09ea",
+  "built_utc": "2026-11-25T16:02:47.771260+00:00",
   "runtime_sha256": {
     "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
     "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
@@ -72,7 +72,7 @@
     {
       "file": "builds/windows/TheTowerDescent.exe",
       "bytes": 110541616,
-      "sha256": "96c39e72e2e0891f8d6c53f6a054952182dd5b303116e4cdd2dfac5d1a740dc9"
+      "sha256": "a9e603cafd46d179bec3cde29d9e27d5dfbfb3abc7d68a5b1b53e1ac6405bb75"
     },
     {
       "file": "builds/web/index.apple-touch-icon.png",
@@ -107,7 +107,7 @@
     {
       "file": "builds/web/index.pck",
       "bytes": 1273120,
-      "sha256": "be851955041199f6a0d87a5b2470256dae02afdcd337c577264f06655ea6e413"
+      "sha256": "c5ac28be6e31ac817347bbb8c85eb6ddf30961779f07060a1a5f48f2798667eb"
     },
     {
       "file": "builds/web/index.png",
@@ -167,7 +167,7 @@
     {
       "file": "dist/index.pck",
       "bytes": 1273120,
-      "sha256": "be851955041199f6a0d87a5b2470256dae02afdcd337c577264f06655ea6e413"
+      "sha256": "c5ac28be6e31ac817347bbb8c85eb6ddf30961779f07060a1a5f48f2798667eb"
     },
     {
       "file": "dist/index.png",
@@ -192,7 +192,7 @@
         "/home/runner/work/The-Descents/The-Descents/builds/windows/TheTowerDescent.exe"
       ],
       "returncode": 0,
-      "duration_seconds": 3.083,
+      "duration_seconds": 2.584,
       "error_lines": [],
       "checks": 0,
       "pass_markers": 0,
@@ -212,7 +212,7 @@
         "/home/runner/work/The-Descents/The-Descents/builds/web/index.html"
       ],
       "returncode": 0,
-      "duration_seconds": 2.896,
+      "duration_seconds": 2.396,
       "error_lines": [],
       "checks": 0,
       "pass_markers": 0,

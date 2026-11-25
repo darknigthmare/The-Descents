@@ -1,8 +1,8 @@
 {
   "version": "0.10.0",
   "runtime_freeze_commit": "39144444ea6f7b57f5fe341d8cd25b8bf08d48dc",
-  "git_head": "39144444ea6f7b57f5fe341d8cd25b8bf08d48dc",
-  "verified_utc": "2026-11-25T15:50:35.135229+00:00",
+  "git_head": "203a225dae1c30360fd079e412225d5277db09ea",
+  "verified_utc": "2026-11-25T16:02:49.765486+00:00",
   "engine": "4.7.2.stable.official.ed1daf0bf",
   "test_script": "prototype/tests/test_exported_pack.gd",
   "test_script_sha256": "e12763508100bd656289f504d307523846ac08b8a44d73f6b8467fdd8698501e",
@@ -76,7 +76,7 @@
         "/home/runner/work/The-Descents/The-Descents/prototype/tests/test_exported_pack.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.096,
+      "duration_seconds": 0.894,
       "error_lines": [],
       "checks": 106,
       "pass_markers": 1,
@@ -85,7 +85,7 @@
       "platform": "windows",
       "pack": "builds/windows/TheTowerDescent.exe",
       "pack_bytes": 110541616,
-      "pack_sha256": "96c39e72e2e0891f8d6c53f6a054952182dd5b303116e4cdd2dfac5d1a740dc9",
+      "pack_sha256": "a9e603cafd46d179bec3cde29d9e27d5dfbfb3abc7d68a5b1b53e1ac6405bb75",
       "pack_unchanged_during_test": true,
       "execution_directory_was_empty": true,
       "log_sha256": "c42aa7709f7ed1a17776b984411640258abfb67ea806198341e245940b27f306"
@@ -100,7 +100,7 @@
         "/home/runner/work/The-Descents/The-Descents/prototype/tests/test_exported_pack.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.097,
+      "duration_seconds": 0.895,
       "error_lines": [],
       "checks": 106,
       "pass_markers": 1,
@@ -109,7 +109,7 @@
       "platform": "web",
       "pack": "builds/web/index.pck",
       "pack_bytes": 1273120,
-      "pack_sha256": "be851955041199f6a0d87a5b2470256dae02afdcd337c577264f06655ea6e413",
+      "pack_sha256": "c5ac28be6e31ac817347bbb8c85eb6ddf30961779f07060a1a5f48f2798667eb",
       "pack_unchanged_during_test": true,
       "execution_directory_was_empty": true,
       "log_sha256": "c42aa7709f7ed1a17776b984411640258abfb67ea806198341e245940b27f306"

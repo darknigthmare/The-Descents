@@ -1,0 +1,40 @@
+{
+  "version": "0.10.0",
+  "status": "PASS",
+  "archives": [
+    {
+      "file": "releases/The-Tower-Descent-v0.10-Windows-x64.zip",
+      "bytes": 39148049,
+      "sha256": "cdd5f2aaa3a983cd1ced132240127ebcaa16a1b65a754c4e95fa741b349ec738",
+      "members": 6,
+      "all_members_and_bytes_verified": true
+    },
+    {
+      "file": "releases/The-Tower-Descent-v0.10-Sources.zip",
+      "bytes": 32148250,
+      "sha256": "79cdd212626de6a9cc88c47a6e511d6cdb96adb3d58d0b55d30286a67a5b3850",
+      "members": 618,
+      "all_members_and_bytes_verified": true
+    }
+  ],
+  "source_archive_scope": "All project sources and textual history; current-version captures and documents. Version 0.10 also retains the complete v0.9 reference Bible.",
+  "max_archive_bytes_exclusive": 104857600,
+  "approved_review": {
+    "file": ".review/v0.10/approval.json",
+    "bytes": 33223,
+    "sha256": "74dc4af8acf47163682de26d856e820439b85eacdfa8aaa383145a646a46d666"
+  },
+  "source_verification": {
+    "file": "docs/validation/v0.10/VERIFICATION.json",
+    "bytes": 38719,
+    "sha256": "66d2e8eae68bb5478d16bff17845d5e08cb6cc63e96fa2d45899c5f3d2a00cc4"
+  },
+  "export_verification": {
+    "file": "docs/validation/v0.10/EXPORTED_PACK_VERIFICATION.json",
+    "bytes": 9170,
+    "sha256": "38740d5fb24443d626342fc073f294ddfb5633affca3a11d0a5304488ed9c7f8"
+  },
+  "limitations": [
+    "Automated Linux checks and prepared native captures do not establish a human Windows or Web playthrough."
+  ]
+}
