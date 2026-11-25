@@ -1,7 +1,7 @@
 {
   "version": "0.8.0",
-  "source_commit": "a2724ffa670aa7cf6aa84f9fb00b51d585700c07",
-  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45568427539",
+  "source_commit": "90c7c23d1f00c1c007967083bc73364a4f34debe",
+  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45569546416",
   "godot_archive_sha256": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4",
   "engine": "4.7.2-stable (official)",
   "display": "X11",
@@ -9,8 +9,8 @@
   "capture_protocol": "Native Godot Compatibility renderer via Xvfb and Mesa software rendering; prepared game states.",
   "human_playthrough": false,
   "manual_visual_review": false,
-  "request_sha256": "211221ada86f8ce846597b4b2a6067750c1a3a89a9f230f93ca192111823e1a5",
-  "fixture_sha256": "a5849b2b9b6ec170582f3b773774158f39344807cfcb4005179691931c449831",
+  "request_sha256": "e2fb5b03f303174db630daa5ada83840ee7a52a03a792913198c2b79332f8403",
+  "fixture_sha256": "67f5d5b22362755330202c7b3bdaed69d99867acb7f2f6c576d480226ff07fb1",
   "runtime_sha256": {
     "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
     "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
@@ -55,7 +55,7 @@
     "prototype/scripts/radio_director.gd": "0c3d64be528a11db8df32ca9f6afcc5ed1bd228744f28740c56ef377b9b07dab",
     "prototype/scripts/rescue_presentation.gd": "ac3e900f85615f4dedff422c3fcb5985901cd75107f17dffe876a5087565a7a8",
     "prototype/scripts/save_store.gd": "9c679cea225d908f2b5fa606c7056b754bc2b9b9fa3454aa950401d4686f0c64",
-    "prototype/scripts/world_builder.gd": "523a548cd49a0431db2c58a8fd6acecb28f96685d4255d916ca92c6ee46d4d43",
+    "prototype/scripts/world_builder.gd": "4df3a04ab52afc972cf0370b93ba131000a5991a83cdec60fdc3643e8a092d14",
     "prototype/shaders/cinematic_veil.gdshader": "1aa18255935f3c9ab0d3ebb2ee49dea18d32828d21eac67eeaaf0f22a8cdfb0e",
     "prototype/shaders/maritime_rain.gdshader": "ff3e19dca63c9bdcc79fc283f468c9213c6a93044b095c5a6e305d84ef4867cd",
     "prototype/shaders/rotor_wash.gdshader": "8a59b620e99331970aef867ec4c847d27094eda1e7fed6a7b6bdcfe9b8ce8866",
@@ -65,7 +65,7 @@
     "prototype/shaders/weathered_surface.gdshader": "e71f62962863bc3e3fe64e73c1b2b53098ec2c354eb46464a32eba0db0a62d3d",
     "prototype/web_shell.html": "2153408b1c07a7cdac170f9f87fdb99617fd61f82c523902a11658e17d2e54fd"
   },
-  "verification_sha256": "abf1bdaec1cef11f8c7e4f271268a7ea0e761cb8c3e491b403d4fa413b286411",
+  "verification_sha256": "d4c2e17e053a9cc951cbaea492e6745943a6e7e5cf4e03723a14ed9a8c803a7b",
   "captures": [
     {
       "file": "01_menu_arrivee.png",
@@ -76,92 +76,92 @@
     },
     {
       "file": "02_options.png",
-      "bytes": 142709,
-      "sha256": "763a1faa3998b25af73c4de061ec5a7a38d87cb9746aae010109b12ef55762e8",
+      "bytes": 142716,
+      "sha256": "bf294c94097e08cb07e9f33ba46221608cbb48c935c054a4707f37ac3ca4aba6",
       "width": 1440,
       "height": 900
     },
     {
       "file": "03_nouvelle_intervention.png",
-      "bytes": 137738,
-      "sha256": "a6826ca0574824f452131c5572fee64c3cda38a112eca7b09e145ee94974f407",
+      "bytes": 137707,
+      "sha256": "a25562b494c2b2948a61331e413cd0d1bb2755188f15eb08001bdbfb65a8c321",
       "width": 1440,
       "height": 900
     },
     {
       "file": "04_signature_studio.png",
-      "bytes": 1099157,
-      "sha256": "a59a7c4de499a430be4315460c12b1cecd1615bafbf55c087f7189bf07ca4018",
+      "bytes": 1099137,
+      "sha256": "cecad4248986c51abc2fb495dd09820bde3ed41522552eeab7654de5b14b35ae",
       "width": 1440,
       "height": 900
     },
     {
       "file": "05_titre.png",
-      "bytes": 1098930,
-      "sha256": "0561bf271ee954a6d9e090f53515ecea7eb515ed328d0d2d8f85478325c52f21",
+      "bytes": 1098813,
+      "sha256": "f705b3fd7685c3cdbf92e41c565e302ceeba9040bc721994ff9558a3dc13655c",
       "width": 1440,
       "height": 900
     },
     {
       "file": "06_approche_03.png",
-      "bytes": 876983,
-      "sha256": "13443c6196fee9a383b3d800f0b5dc0406ebb9cdca7ca5ce1cf248b6ee888fff",
+      "bytes": 877275,
+      "sha256": "bcf136d4ee1fa2d2d31ac2cf40d9c03d835504c17f1c76a2e43a1e1e48948e07",
       "width": 1440,
       "height": 900
     },
     {
       "file": "06_approche_10.png",
-      "bytes": 880499,
-      "sha256": "cc4cac26357f17a37603995598709e22c2f5595f6760d85d62615d9785eff131",
+      "bytes": 880170,
+      "sha256": "597a7eb19f3cb6a41bca26adbffaf0f55da0ff1b71a9648752431e3764587eab",
       "width": 1440,
       "height": 900
     },
     {
       "file": "06_approche_17.png",
-      "bytes": 925703,
-      "sha256": "e5a623bc01f94b2b74d9ea0403c7ca7133cd3a98ef120ffa902adc8ec8b52567",
+      "bytes": 925367,
+      "sha256": "4acc26fc773a597bc80b058b3bc9b5086835bc12eb899e03f62d41f22cd3ad28",
       "width": 1440,
       "height": 900
     },
     {
       "file": "06_approche_25.png",
-      "bytes": 927304,
-      "sha256": "8254b499524471e33ff09361255e87b0acfc7914101878d8ae2345393c576fa2",
+      "bytes": 927279,
+      "sha256": "e634b6b20986625cba02869f86b0c95068c03a2e3a8d79eed788fb3a73fda702",
       "width": 1440,
       "height": 900
     },
     {
       "file": "07_pause_intro.png",
-      "bytes": 215237,
-      "sha256": "bdf58007d50536f15644498ae5041a98b250f8e626b4e64164e66f2e00482cd7",
+      "bytes": 215245,
+      "sha256": "6bf8f0a01e5a9543c9bdcdb443dd1b32d93d61b52b4c5ed75ec9867d2b271a7d",
       "width": 1440,
       "height": 900
     },
     {
       "file": "14_toit_equipe.png",
-      "bytes": 671684,
-      "sha256": "2ad4e73261a4b6bed05902cccc5d26b27a90cb85311f6832ebfd7cf58aa5a297",
+      "bytes": 671651,
+      "sha256": "6aa6548a0165bbb63bd8cc1d80991a74a5ce53fa01ede16a5870b536032c586f",
       "width": 1440,
       "height": 900
     },
     {
       "file": "15_portage.png",
-      "bytes": 485868,
-      "sha256": "426ce020882fcd70d87186c3d78bbe15dc8f0aa3ab1b4ade7ec221cf9cb7e21f",
+      "bytes": 481907,
+      "sha256": "32bcae6262744233295a43b89d23d718f97d8c26034d1d851cd4be225d3117c2",
       "width": 1440,
       "height": 900
     },
     {
       "file": "16_treuillage.png",
-      "bytes": 505955,
-      "sha256": "c42d6829c3b5ffac66872d6ab4d579564320eccf17168c1ceedef8313f9081f3",
+      "bytes": 505961,
+      "sha256": "79195236da5bb3edb48ce0a3b135d85a9ee5a5ce3c636cd7e5deba0aaf7d124e",
       "width": 1440,
       "height": 900
     },
     {
       "file": "17_reception.png",
-      "bytes": 634790,
-      "sha256": "d00225cc53981cd601f46016d8da08abf96b4151e7c53088a4f058045ffb2cc0",
+      "bytes": 634851,
+      "sha256": "7957ead7bf447a6aa08b372cf74d266b6a631e6a214cf62a8ac77330c6e4bf61",
       "width": 1440,
       "height": 900
     },
@@ -174,8 +174,8 @@
     },
     {
       "file": "19_options_pause.png",
-      "bytes": 154753,
-      "sha256": "69cfb4e3b7dc9788dd1a5b7e2b56746690b7139bb3f6c7980da8ab27a60a5786",
+      "bytes": 154206,
+      "sha256": "7269b39b28af9803d8c02cdcf2d533131010aa2cc15b77095a38038f58bdfcc4",
       "width": 1440,
       "height": 900
     },
@@ -202,8 +202,8 @@
     },
     {
       "file": "08_menu_archives.png",
-      "bytes": 726000,
-      "sha256": "b3067396ba8795e48223c64ba2b403d830cfb4079b7553537d33f08269f93501",
+      "bytes": 726086,
+      "sha256": "0b408e89a2a677829f0030528f95cde29b4c80c53a1c82ec939b6e1e5dd0b890",
       "width": 1440,
       "height": 900
     },
@@ -272,29 +272,29 @@
     },
     {
       "file": "10_menu_refuge.png",
-      "bytes": 776651,
-      "sha256": "02ce90ccc02a3c6c94426323ee8b54f0dca82e3cdec1331375b2734c805e24c1",
+      "bytes": 776642,
+      "sha256": "fae7903726d8f8b6e3a755df3eeeee2d06471660a038d4b27b8b9efeadb4ee89",
       "width": 1440,
       "height": 900
     },
     {
       "file": "26_suites_presence.png",
-      "bytes": 347560,
-      "sha256": "7ec5e3a04f2090fe151377eaa2761242a550f9e86bbd407bf795559ee68285a4",
+      "bytes": 306673,
+      "sha256": "a788aa609c09d6f66f23aeb3b2bbab420dcc0681bcb85c5678ff27b8a29c2cb7",
       "width": 1440,
       "height": 900
     },
     {
       "file": "27_archives_traces.png",
-      "bytes": 301841,
-      "sha256": "1eb53e0a042bd4a4685b5925bfd8498aa9bd6afca8b1b2f1b5cc0f19c8b1985b",
+      "bytes": 290364,
+      "sha256": "e66509a1ce8e8f7b5403d83eaa938759c74aae4c0ed5071606115d7fa1181c4b",
       "width": 1440,
       "height": 900
     },
     {
       "file": "28_spa_remanence.png",
-      "bytes": 461184,
-      "sha256": "c8e8aab60ce6bf7c89686315d71ad71fed1606ede91c8950ad707aed89be785d",
+      "bytes": 438049,
+      "sha256": "90ae004c13be8f39fd7ccc0ce51f6ab2455ce429c7c722ec5f60c27eb76597df",
       "width": 1440,
       "height": 900
     }

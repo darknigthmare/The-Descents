@@ -1,10 +1,10 @@
 {
   "format": 1,
   "version": "0.8.0",
-  "source_commit": "a2724ffa670aa7cf6aa84f9fb00b51d585700c07",
+  "source_commit": "90c7c23d1f00c1c007967083bc73364a4f34debe",
   "source_provenance": "CI_PROVENANCE.json",
-  "source_provenance_sha256": "5345f2f45ae88d9ce7875f3f5dad1ac9217a6455aed6b948272e9ab1781eee2c",
-  "built_utc": "2026-11-25T07:32:13.679347+00:00",
+  "source_provenance_sha256": "e0961bb1e310c7bc73664b681f3c78fcd7c7eeb5593d8508a572b5b5a0b484c5",
+  "built_utc": "2026-11-25T07:40:40.063546+00:00",
   "selection": {
     "native_png_bytes_strictly_greater_than": 900000
   },
@@ -19,41 +19,41 @@
   "derivatives": [
     {
       "source_file": "04_signature_studio.png",
-      "source_bytes": 1099157,
-      "source_sha256": "a59a7c4de499a430be4315460c12b1cecd1615bafbf55c087f7189bf07ca4018",
+      "source_bytes": 1099137,
+      "source_sha256": "cecad4248986c51abc2fb495dd09820bde3ed41522552eeab7654de5b14b35ae",
       "file": "review_jpeg/04_signature_studio.jpg",
-      "bytes": 188202,
-      "sha256": "aac443f340ddb9a6f16f0d123ca8068442ec0abc16b8741a49e697ec3d4d6d65",
+      "bytes": 188241,
+      "sha256": "63724caf3bbebe87133732703582121021dd3137105659a0f23dd3fe5ade44b0",
       "width": 1440,
       "height": 900
     },
     {
       "source_file": "05_titre.png",
-      "source_bytes": 1098930,
-      "source_sha256": "0561bf271ee954a6d9e090f53515ecea7eb515ed328d0d2d8f85478325c52f21",
+      "source_bytes": 1098813,
+      "source_sha256": "f705b3fd7685c3cdbf92e41c565e302ceeba9040bc721994ff9558a3dc13655c",
       "file": "review_jpeg/05_titre.jpg",
-      "bytes": 203389,
-      "sha256": "5ff25c7543104063356a2995085db64e77140dd65a2e5e72551e29364595eb37",
+      "bytes": 203376,
+      "sha256": "8bcb0fdcd8ff17e38bd54f99010ec0f2d183a053e7fdacc11b5dd3f444beab9a",
       "width": 1440,
       "height": 900
     },
     {
       "source_file": "06_approche_17.png",
-      "source_bytes": 925703,
-      "source_sha256": "e5a623bc01f94b2b74d9ea0403c7ca7133cd3a98ef120ffa902adc8ec8b52567",
+      "source_bytes": 925367,
+      "source_sha256": "4acc26fc773a597bc80b058b3bc9b5086835bc12eb899e03f62d41f22cd3ad28",
       "file": "review_jpeg/06_approche_17.jpg",
-      "bytes": 220433,
-      "sha256": "6693cad9903d01fc254e997e19fd7ce1522ba973672e487c11db1fb904433de5",
+      "bytes": 220420,
+      "sha256": "7ccaee84e98b2dd8fc63b64222231d677f9275becde6d701861675891cf54293",
       "width": 1440,
       "height": 900
     },
     {
       "source_file": "06_approche_25.png",
-      "source_bytes": 927304,
-      "source_sha256": "8254b499524471e33ff09361255e87b0acfc7914101878d8ae2345393c576fa2",
+      "source_bytes": 927279,
+      "source_sha256": "e634b6b20986625cba02869f86b0c95068c03a2e3a8d79eed788fb3a73fda702",
       "file": "review_jpeg/06_approche_25.jpg",
-      "bytes": 255540,
-      "sha256": "0b6863274fc5bb48108f666bc54f7f9a6f3bf12c327fa59d91180b0880691a25",
+      "bytes": 255481,
+      "sha256": "1ad180b13a444dd4d34d1bb893da5f973b0bfe829a187dd59b750fa8f1a9b79a",
       "width": 1440,
       "height": 900
     },

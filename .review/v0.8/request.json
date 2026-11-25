@@ -1,8 +1,8 @@
 {
   "format": 1,
   "version": "0.8.0",
-  "requested_utc": "2026-11-25T07:30:42.450624+00:00",
-  "local_freeze_commit": "a2724ffa670aa7cf6aa84f9fb00b51d585700c07",
+  "requested_utc": "2026-11-25T07:39:13.246725+00:00",
+  "local_freeze_commit": "90c7c23d1f00c1c007967083bc73364a4f34debe",
   "runtime_sha256": {
     "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
     "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
@@ -47,7 +47,7 @@
     "prototype/scripts/radio_director.gd": "0c3d64be528a11db8df32ca9f6afcc5ed1bd228744f28740c56ef377b9b07dab",
     "prototype/scripts/rescue_presentation.gd": "ac3e900f85615f4dedff422c3fcb5985901cd75107f17dffe876a5087565a7a8",
     "prototype/scripts/save_store.gd": "9c679cea225d908f2b5fa606c7056b754bc2b9b9fa3454aa950401d4686f0c64",
-    "prototype/scripts/world_builder.gd": "523a548cd49a0431db2c58a8fd6acecb28f96685d4255d916ca92c6ee46d4d43",
+    "prototype/scripts/world_builder.gd": "4df3a04ab52afc972cf0370b93ba131000a5991a83cdec60fdc3643e8a092d14",
     "prototype/shaders/cinematic_veil.gdshader": "1aa18255935f3c9ab0d3ebb2ee49dea18d32828d21eac67eeaaf0f22a8cdfb0e",
     "prototype/shaders/maritime_rain.gdshader": "ff3e19dca63c9bdcc79fc283f468c9213c6a93044b095c5a6e305d84ef4867cd",
     "prototype/shaders/rotor_wash.gdshader": "8a59b620e99331970aef867ec4c847d27094eda1e7fed6a7b6bdcfe9b8ce8866",
@@ -57,8 +57,8 @@
     "prototype/shaders/weathered_surface.gdshader": "e71f62962863bc3e3fe64e73c1b2b53098ec2c354eb46464a32eba0db0a62d3d",
     "prototype/web_shell.html": "2153408b1c07a7cdac170f9f87fdb99617fd61f82c523902a11658e17d2e54fd"
   },
-  "fixture_sha256": "a5849b2b9b6ec170582f3b773774158f39344807cfcb4005179691931c449831",
-  "verification_sha256": "abf1bdaec1cef11f8c7e4f271268a7ea0e761cb8c3e491b403d4fa413b286411",
+  "fixture_sha256": "67f5d5b22362755330202c7b3bdaed69d99867acb7f2f6c576d480226ff07fb1",
+  "verification_sha256": "d4c2e17e053a9cc951cbaea492e6745943a6e7e5cf4e03723a14ed9a8c803a7b",
   "expected_captures": [
     "01_menu_arrivee.png",
     "02_options.png",

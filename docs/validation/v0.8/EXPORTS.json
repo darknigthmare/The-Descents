@@ -1,10 +1,10 @@
 {
   "version": "0.8.0",
   "all_pass": true,
-  "built_utc": "2026-11-25T07:30:41.127608+00:00",
-  "build_commit": "a2724ffa670aa7cf6aa84f9fb00b51d585700c07",
-  "captured_source_commit": "a2724ffa670aa7cf6aa84f9fb00b51d585700c07",
-  "source_verification_sha256": "abf1bdaec1cef11f8c7e4f271268a7ea0e761cb8c3e491b403d4fa413b286411",
+  "built_utc": "2026-11-25T07:39:11.913945+00:00",
+  "build_commit": "90c7c23d1f00c1c007967083bc73364a4f34debe",
+  "captured_source_commit": "90c7c23d1f00c1c007967083bc73364a4f34debe",
+  "source_verification_sha256": "d4c2e17e053a9cc951cbaea492e6745943a6e7e5cf4e03723a14ed9a8c803a7b",
   "runtime_sha256_before": {
     "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
     "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
@@ -49,7 +49,7 @@
     "prototype/scripts/radio_director.gd": "0c3d64be528a11db8df32ca9f6afcc5ed1bd228744f28740c56ef377b9b07dab",
     "prototype/scripts/rescue_presentation.gd": "ac3e900f85615f4dedff422c3fcb5985901cd75107f17dffe876a5087565a7a8",
     "prototype/scripts/save_store.gd": "9c679cea225d908f2b5fa606c7056b754bc2b9b9fa3454aa950401d4686f0c64",
-    "prototype/scripts/world_builder.gd": "523a548cd49a0431db2c58a8fd6acecb28f96685d4255d916ca92c6ee46d4d43",
+    "prototype/scripts/world_builder.gd": "4df3a04ab52afc972cf0370b93ba131000a5991a83cdec60fdc3643e8a092d14",
     "prototype/shaders/cinematic_veil.gdshader": "1aa18255935f3c9ab0d3ebb2ee49dea18d32828d21eac67eeaaf0f22a8cdfb0e",
     "prototype/shaders/maritime_rain.gdshader": "ff3e19dca63c9bdcc79fc283f468c9213c6a93044b095c5a6e305d84ef4867cd",
     "prototype/shaders/rotor_wash.gdshader": "8a59b620e99331970aef867ec4c847d27094eda1e7fed6a7b6bdcfe9b8ce8866",
@@ -103,7 +103,7 @@
     "prototype/scripts/radio_director.gd": "0c3d64be528a11db8df32ca9f6afcc5ed1bd228744f28740c56ef377b9b07dab",
     "prototype/scripts/rescue_presentation.gd": "ac3e900f85615f4dedff422c3fcb5985901cd75107f17dffe876a5087565a7a8",
     "prototype/scripts/save_store.gd": "9c679cea225d908f2b5fa606c7056b754bc2b9b9fa3454aa950401d4686f0c64",
-    "prototype/scripts/world_builder.gd": "523a548cd49a0431db2c58a8fd6acecb28f96685d4255d916ca92c6ee46d4d43",
+    "prototype/scripts/world_builder.gd": "4df3a04ab52afc972cf0370b93ba131000a5991a83cdec60fdc3643e8a092d14",
     "prototype/shaders/cinematic_veil.gdshader": "1aa18255935f3c9ab0d3ebb2ee49dea18d32828d21eac67eeaaf0f22a8cdfb0e",
     "prototype/shaders/maritime_rain.gdshader": "ff3e19dca63c9bdcc79fc283f468c9213c6a93044b095c5a6e305d84ef4867cd",
     "prototype/shaders/rotor_wash.gdshader": "8a59b620e99331970aef867ec4c847d27094eda1e7fed6a7b6bdcfe9b8ce8866",
@@ -126,7 +126,7 @@
         "/home/runner/work/The-Descents/The-Descents/builds/windows/TheTowerDescent.exe"
       ],
       "returncode": 0,
-      "duration_seconds": 2.491,
+      "duration_seconds": 2.586,
       "error_lines": [],
       "checks": 0,
       "pass_markers": 0,
@@ -146,7 +146,7 @@
         "/home/runner/work/The-Descents/The-Descents/builds/web/index.html"
       ],
       "returncode": 0,
-      "duration_seconds": 2.397,
+      "duration_seconds": 2.493,
       "error_lines": [],
       "checks": 0,
       "pass_markers": 0,
@@ -159,8 +159,8 @@
   "outputs": [
     {
       "file": "builds/windows/TheTowerDescent.exe",
-      "bytes": 110475856,
-      "sha256": "a9f7eee16b3661b4812187528e8ac29dee25095a037fd22485ac45edc793ba08"
+      "bytes": 110475824,
+      "sha256": "3af88d283a07d21b7697072f620e0729fa2fd3993eed809e3e7170b66f053e3c"
     },
     {
       "file": "builds/web/index.apple-touch-icon.png",
@@ -180,7 +180,7 @@
     {
       "file": "builds/web/index.html",
       "bytes": 6472,
-      "sha256": "f1af66ec916222186c3135a585b93900fd00379d562e4ece8bc35892d3c30ae9"
+      "sha256": "ebebb5843d7de4e9b7525ea86095f30b1fda07a99a80cf235970386e890db66f"
     },
     {
       "file": "builds/web/index.icon.png",
@@ -194,8 +194,8 @@
     },
     {
       "file": "builds/web/index.pck",
-      "bytes": 1207364,
-      "sha256": "8cf34ba21eaa86ef36e335f7c69e6862918b92f3c12797757ac7bee73a84571a"
+      "bytes": 1207332,
+      "sha256": "8eb9c943ac237beaf6ace9e7340f3f7baac060efebbc850f594af87c4ff2c4fe"
     },
     {
       "file": "builds/web/index.png",
@@ -240,7 +240,7 @@
     {
       "file": "dist/index.html",
       "bytes": 6472,
-      "sha256": "f1af66ec916222186c3135a585b93900fd00379d562e4ece8bc35892d3c30ae9"
+      "sha256": "ebebb5843d7de4e9b7525ea86095f30b1fda07a99a80cf235970386e890db66f"
     },
     {
       "file": "dist/index.icon.png",
@@ -254,8 +254,8 @@
     },
     {
       "file": "dist/index.pck",
-      "bytes": 1207364,
-      "sha256": "8cf34ba21eaa86ef36e335f7c69e6862918b92f3c12797757ac7bee73a84571a"
+      "bytes": 1207332,
+      "sha256": "8eb9c943ac237beaf6ace9e7340f3f7baac060efebbc850f594af87c4ff2c4fe"
     },
     {
       "file": "dist/index.png",
