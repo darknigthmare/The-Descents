@@ -16,8 +16,8 @@
   },
   "source": {
     "path": "docs/assets/v0.11/rescue_equipment.blend",
-    "sha256": "c94dcbba2f1fc8bbf57532380f8da4f1390fe521e19ed6229acac69190130525",
-    "bytes": 1894401
+    "sha256": "818eabcbcf195a6b69d2a6d513f270b51fc7ba1bf150c327a56cd05fdb64beab",
+    "bytes": 1891271
   },
   "authoring": "Original deterministic Blender Python geometry; no external models or embedded image textures.",
   "uv_convention": "One smart-projected UV atlas per asset; tiled material textures may use object/world coordinates.",
@@ -103,27 +103,27 @@
       "id": "halligan",
       "label_fr": "Outil Halligan",
       "path": "res://assets/models/rescue_v011/halligan.glb",
-      "sha256": "1a32039831131be375bb055cc00a49ee835238c9a5eb24112b5ad97e5b79de11",
-      "bytes": 311136,
+      "sha256": "537c07642f6075639a406702f56ea896c1e1a0fcc9981697bb5244070af22c46",
+      "bytes": 304892,
       "dimensions_m": {
-        "x": 0.255663,
-        "y": 0.890614,
+        "x": 0.25457,
+        "y": 0.889273,
         "z": 0.075
       },
       "source_dimensions_m": {
-        "x": 0.255663,
+        "x": 0.25457,
         "y": 0.075,
-        "z": 0.890614
+        "z": 0.889273
       },
       "pivot": "bottom bounding-box centre",
       "grip_offset_m": [
-        0.008868,
+        0.009414,
         0.426815,
         -0.0
       ],
-      "triangles": 8648,
-      "mesh_parts": 27,
-      "source_mesh_parts": 27,
+      "triangles": 8460,
+      "mesh_parts": 26,
+      "source_mesh_parts": 26,
       "runtime_meshes": 1,
       "materials": [
         "paint_safety_yellow",
@@ -469,8 +469,8 @@
       "id": "rescue_helmet",
       "label_fr": "Casque de secours",
       "path": "res://assets/models/rescue_v011/rescue_helmet.glb",
-      "sha256": "2a361ca149b2b6bb6a3758ae2a0258690f4b10995c35609b7cb46d85706b5525",
-      "bytes": 212336,
+      "sha256": "a88430f9ff535a64866dc52bc10d40abc6ae213c2e2c7daa04a04c43c19769d2",
+      "bytes": 206852,
       "dimensions_m": {
         "x": 0.308,
         "y": 0.24972,
@@ -487,7 +487,7 @@
         0.118708,
         -0.0
       ],
-      "triangles": 6492,
+      "triangles": 6324,
       "mesh_parts": 13,
       "source_mesh_parts": 13,
       "runtime_meshes": 1,
@@ -545,7 +545,7 @@
       "id": "equipment_case",
       "label_fr": "Valise de secours",
       "path": "res://assets/models/rescue_v011/equipment_case.glb",
-      "sha256": "7820c6481a31724e75de3a9e2d337262b3bf969f57f54d91d13c673e682b15f9",
+      "sha256": "c1f087b4a222e8b5b75d62c2cd7db7a66ffa84a57725182d80260488ae076f7e",
       "bytes": 178240,
       "dimensions_m": {
         "x": 0.55,
@@ -616,6 +616,6 @@
       "embedded_images": 0
     }
   ],
-  "total_glb_bytes": 5273052,
-  "total_triangles": 150660
+  "total_glb_bytes": 5261324,
+  "total_triangles": 150304
 }

@@ -2,12 +2,12 @@
   "format": 1,
   "version": "0.11.0",
   "phase": "asset_candidate",
-  "source_commit": "d9c6ca9c1210963dc29de9676e6c38a04d16a1c6",
-  "request_commit": "78b22ab94ccee91f2e5079e677ed0357b1c7e26d",
-  "generated_utc": "2026-11-25T17:13:46.708397+00:00",
+  "source_commit": "a5621040aa6fdc17f5c65a9ea4d3242bea85ae33",
+  "request_commit": "d5b58d6324bc013a7e5afe409b54d7d52b3e40cb",
+  "generated_utc": "2026-11-25T17:26:53.084638+00:00",
   "blender": "Blender 4.0.2",
   "godot": "4.7.2.stable.official.ed1daf0bf",
-  "generator_sha256": "2f9ef9d67f813b9de3ce072ebaeb979f83a6140b21d848f218bba77f5e9ca996",
+  "generator_sha256": "a35c21cc09293d7bf86d5345fccdbb5ade398d6c4cecbbe9f25f66457b20a71b",
   "generated": [
     {
       "file": "prototype/assets/models/rescue_v011/bolt_cutter.glb",
@@ -32,7 +32,7 @@
     {
       "file": "prototype/assets/models/rescue_v011/equipment_case.glb",
       "bytes": 178240,
-      "sha256": "7820c6481a31724e75de3a9e2d337262b3bf969f57f54d91d13c673e682b15f9"
+      "sha256": "c1f087b4a222e8b5b75d62c2cd7db7a66ffa84a57725182d80260488ae076f7e"
     },
     {
       "file": "prototype/assets/models/rescue_v011/extinguisher.glb",
@@ -46,8 +46,8 @@
     },
     {
       "file": "prototype/assets/models/rescue_v011/halligan.glb",
-      "bytes": 311136,
-      "sha256": "1a32039831131be375bb055cc00a49ee835238c9a5eb24112b5ad97e5b79de11"
+      "bytes": 304892,
+      "sha256": "537c07642f6075639a406702f56ea896c1e1a0fcc9981697bb5244070af22c46"
     },
     {
       "file": "prototype/assets/models/rescue_v011/oxygen_cylinder.glb",
@@ -66,8 +66,8 @@
     },
     {
       "file": "prototype/assets/models/rescue_v011/rescue_helmet.glb",
-      "bytes": 212336,
-      "sha256": "2a361ca149b2b6bb6a3758ae2a0258690f4b10995c35609b7cb46d85706b5525"
+      "bytes": 206852,
+      "sha256": "a88430f9ff535a64866dc52bc10d40abc6ae213c2e2c7daa04a04c43c19769d2"
     },
     {
       "file": "prototype/assets/models/rescue_v011/rescue_radio.glb",
@@ -97,122 +97,122 @@
     {
       "file": "docs/assets/v0.11/renders/bolt_cutter.png",
       "bytes": 84159,
-      "sha256": "fd29336a6d227f66ecb4367cf5ab7849949a14bd2f2094187c2d946da7ad416f"
+      "sha256": "fac9acf59145d094e0436f934cd8a80ca1f730b6e54e070d9bf9b5aab30ec9a8"
     },
     {
       "file": "docs/assets/v0.11/renders/carabiner.png",
       "bytes": 88747,
-      "sha256": "b76837c0f15da440617508d9460bfe0c2d1da3467e13cb5785097a644ef61d81"
+      "sha256": "91883cc5bc491d8385a3426e8060ff9d9d706bae084308eb33d61189f16febbc"
     },
     {
       "file": "docs/assets/v0.11/renders/descender.png",
       "bytes": 90982,
-      "sha256": "03f9209f07af92ab464ad696b19e2d7aee0fb3c94547d950402b2037f177218e"
+      "sha256": "0915664f78f3166cc092a9f77d3afef9c197e059058da825a747382a7941ec85"
     },
     {
       "file": "docs/assets/v0.11/renders/detail_bolt_cutter.png",
       "bytes": 765860,
-      "sha256": "d5118b3edd7120b88e3d53687a1dc8375d6213d9edae02b976efad2c03f25797"
+      "sha256": "947ba603ec9a5e23ba39d0f60555362409ebc314200abc0fac9f56055cd9ab54"
     },
     {
       "file": "docs/assets/v0.11/renders/detail_extinguisher.png",
       "bytes": 804185,
-      "sha256": "4b79e1a7c4eec685d9133807bb6f36b5b25d74ae2f5791de360c38e8eabcac8f"
+      "sha256": "3781e56ce7e9acf6a6960d766d391fb92331f6475f88906c1947994fd3728397"
     },
     {
       "file": "docs/assets/v0.11/renders/detail_fire_axe.png",
       "bytes": 714018,
-      "sha256": "7ec01599528ca7c2cff2f6b8fdea702231cf2cb1f90eb90192adcb4186a86b9f"
+      "sha256": "3f445cc3ce612dbb224cac8197bb8e31500cf72d0d36fb9f4a24b20044758535"
     },
     {
       "file": "docs/assets/v0.11/renders/detail_halligan.png",
-      "bytes": 667398,
-      "sha256": "4e7ebab1e117d524506f7ddb8c7b001df683923594a902ac775c2e745e6e649a"
+      "bytes": 666225,
+      "sha256": "e4660121240c8d7333a223bf1991354f32310d9f332fafca22d58fea27ee6e1c"
     },
     {
       "file": "docs/assets/v0.11/renders/emergency_beacon.png",
       "bytes": 92029,
-      "sha256": "5c4e417736fee2493878021452eba44fb0e24bcd2f414271d88c2c884bbb68b8"
+      "sha256": "97b7ba33ddff993c5c432c4e36337108b105ae6d22e656ea67e90a223a9d57ad"
     },
     {
       "file": "docs/assets/v0.11/renders/equipment_case.png",
       "bytes": 93737,
-      "sha256": "7c106e7e3a480262360734f967422bba94623bd771404b8ab7191ff653489687"
+      "sha256": "3d550c6fdf4c8b54b358bf5e3935e3db480c1687e59e2bd02531eb9b8e315e7c"
     },
     {
       "file": "docs/assets/v0.11/renders/extinguisher.png",
       "bytes": 89781,
-      "sha256": "ce46c1aff6edaff0fa12073012813f902b37ab49fb1546b1230a52f0f2a99742"
+      "sha256": "1929905cdfd99c87874f8ea929fd9684a00d7ccbb61860ba0de727b4258d668e"
     },
     {
       "file": "docs/assets/v0.11/renders/fire_axe.png",
       "bytes": 81168,
-      "sha256": "a6defb2d1feb7cf04352cbbd9345a92427b4f179bdad2046ea150ef6340e6912"
+      "sha256": "18f7dcc15d25c4b551f0617e883dc4229f87cf07099c36fc144fcfb01c6b8fcb"
     },
     {
       "file": "docs/assets/v0.11/renders/halligan.png",
-      "bytes": 80343,
-      "sha256": "2a544038ce3a6f9e54ac32a46d5bfd7fddc255bace2a48ed4dd8139002480a9e"
+      "bytes": 80210,
+      "sha256": "c296569267607ad3b4855c3cc3b22b15e821a6f5f17ac1cf4fc6600de9d04922"
     },
     {
       "file": "docs/assets/v0.11/renders/oxygen_cylinder.png",
       "bytes": 87399,
-      "sha256": "90bf459f045b2f6f7dacb284503f0be1fc258af0bb31edef331eee8a5153ae24"
+      "sha256": "4d457433d260136a0f5a28db2535d3cc604d6837a9708840b46ac083f4dddeb0"
     },
     {
       "file": "docs/assets/v0.11/renders/portable_worklight.png",
       "bytes": 87467,
-      "sha256": "d23b0e87e664c77018646189b4bfbd44f4b793d1c53c28f81fba3ccdc79bc3ae"
+      "sha256": "4b618768d838c5f7eee768f993b6681d1e692aabacb971bb8dab3a32aaed91de"
     },
     {
       "file": "docs/assets/v0.11/renders/rescue_flashlight.png",
       "bytes": 79973,
-      "sha256": "f34d3971d5fbabe033b5f3ec525eb5cb24bd8ac2a9c61290496dfcab672b97cf"
+      "sha256": "4316b2795d206f88497c0a3598157ed6698e09c1ff601ae0bad9e1621b8c186c"
     },
     {
       "file": "docs/assets/v0.11/renders/rescue_helmet.png",
-      "bytes": 95075,
-      "sha256": "044c9e38214c6d1ce49bc91f6a1b6e26c4097ffe69c558388f88f7a926939f33"
+      "bytes": 94968,
+      "sha256": "0f6b3ab654ba87c627b2d8c733037e54a1071b866d7fc17b6f3198ba64092a7b"
     },
     {
       "file": "docs/assets/v0.11/renders/rescue_radio.png",
       "bytes": 89729,
-      "sha256": "103bbce4c223a06ca5ab347fcd16356bf77862d659e848cacc87516d36b04999"
+      "sha256": "6e4c1ddfed4ce0029b1e1bb7e5a2df1fc806a2ec8cdae6bdd665c87c8bfc7fa5"
     },
     {
       "file": "docs/assets/v0.11/renders/rescue_stretcher.png",
       "bytes": 90079,
-      "sha256": "7c432fe682fd46742c84d570a568130f13ad68f68f391df04609b173b3521739"
+      "sha256": "317497024fdecf25f85536a827ce93d584478ae27a67a8dcc6a7832bd9f51830"
     },
     {
       "file": "docs/assets/v0.11/renders/rope_coil.png",
       "bytes": 99521,
-      "sha256": "3ba0de528a703520b01285c3f4cdadb12a966e920d1fe9a65ab884fcd3fbcf09"
+      "sha256": "8f9be137648e039ed35bc27bf358cdd79b913dca1f8e7b05d0b8f90e9558ba6d"
     },
     {
       "file": "docs/assets/v0.11/renders/trauma_bag.png",
       "bytes": 96805,
-      "sha256": "5dfd546c65fde7ff1895ef9008c7f2708b2064499568a2cecc7454f7bbb44bd3"
+      "sha256": "0bd1e2fee71bd206bb303844115939be389e7c5eccd5c5ac379e3614e4b7bc3b"
     },
     {
       "file": "docs/assets/v0.11/rescue_equipment.blend",
-      "bytes": 1894401,
-      "sha256": "c94dcbba2f1fc8bbf57532380f8da4f1390fe521e19ed6229acac69190130525"
+      "bytes": 1891271,
+      "sha256": "818eabcbcf195a6b69d2a6d513f270b51fc7ba1bf150c327a56cd05fdb64beab"
     },
     {
       "file": "docs/assets/v0.11/rescue_equipment_contact_sheet.png",
-      "bytes": 1292361,
-      "sha256": "ac019408004c9860c970c2886ecda2fa657e3bb6c8f2f67fc98795653332cfff"
+      "bytes": 1292030,
+      "sha256": "558c7f7a623681c8811e631b8d0edeaceef24a02532be9d55f3562ac0cb93254"
     },
     {
       "file": "docs/assets/v0.11/rescue_equipment_manifest.json",
-      "bytes": 16269,
-      "sha256": "df8c1be22ffa128912f12e69a7447301cbc89aa5381bece17c478a6faf44b533"
+      "bytes": 16267,
+      "sha256": "8203c05898243ea84381eae11e0a6259d0fc3dcb7de26fb8d6dd28f59aa44e2c"
     },
     {
       "file": "prototype/scripts/rescue_asset_catalog.gd",
-      "bytes": 4938,
-      "sha256": "b6d382028d4d94654fb077568771d7597e251ef9335a6ea4f986ce24c29cd00f"
+      "bytes": 4937,
+      "sha256": "c6ff7a890b12f1d13be806f8c899211367b6d6c2742caa6d151fa4c2b0234d79"
     }
   ],
   "runtime_sha256": {
@@ -234,11 +234,11 @@
     "prototype/assets/fonts/OpenSans-Light.ttf": "cf5f5184c1441a1660aa52526328e9d5c2793e77b6d8d3a3ad654bdb07ab8424",
     "prototype/assets/fonts/OpenSans-Regular.ttf": "e64e508b2aa2880f907e470c4550980ec4c0694d103a43f36150ac3f93189bee",
     "prototype/assets/icon.svg": "6d3e2c2f34057f8c2d0c0381ba25a1a288a7145b28f17f4d4cbcdeba31c7351e",
-    "prototype/assets/materials/v011/README.md": "41da79330d2655901a73c254973ca256f49eba6ccc77d90c30c6fec98dbc26ec",
+    "prototype/assets/materials/v011/README.md": "f457113bff4563beb1d17b3ed300785445871b942d7359f669bc14588484ea80",
     "prototype/assets/materials/v011/black_rubber.png": "dd554c6a3ce03657395330df817e78a9c36c93de983a0ae20fc018d344c38581",
     "prototype/assets/materials/v011/brushed_steel.png": "b182a04fc8bda2b8cd657fd6a7386233bad6b7635e7924bac6b2efccd3d5dc69",
     "prototype/assets/materials/v011/dark_stone.png": "ea23d3a2fef5ecb13f153c65a7edb9b45c5512a75553f26923b89cfaa82babc0",
-    "prototype/assets/materials/v011/manifest.json": "43182b5632649a86c4467fd792445798bbef7b818472cc712559b9b73d76bce6",
+    "prototype/assets/materials/v011/manifest.json": "cf7fbe726af5f4b4485b9b23b5d3f9171203ad4837271e310514f96e84d0c6c9",
     "prototype/assets/materials/v011/porcelain_tile.png": "e9bd1d3e86af1f1eefb0d3679b8ff4526dd72af04575077af2fd164b1c7e632b",
     "prototype/assets/materials/v011/rescue_red_paint.png": "adcd2865e7853a4e79ab932a09f35bfed054a2613978d8e7ea75de2276617a96",
     "prototype/assets/materials/v011/salt_concrete.png": "7299270d824a23a54a642dd528e215047fd41173b7765b0ad6de1723b064d4c9",
@@ -248,15 +248,15 @@
     "prototype/assets/models/rescue_v011/carabiner.glb": "baf7f4df4a47f377d719cf16e8c1e18d969b767e7ea05b243b9c88463a1bf887",
     "prototype/assets/models/rescue_v011/descender.glb": "12d97ba55f74027750377607ff871fe93546dcf4d3f9d550b937f8f6709a5f61",
     "prototype/assets/models/rescue_v011/emergency_beacon.glb": "c25c7b2c38d9500060e0a587c74101898490c4e3fff06c95f06f8643c141e2c1",
-    "prototype/assets/models/rescue_v011/equipment_case.glb": "7820c6481a31724e75de3a9e2d337262b3bf969f57f54d91d13c673e682b15f9",
+    "prototype/assets/models/rescue_v011/equipment_case.glb": "c1f087b4a222e8b5b75d62c2cd7db7a66ffa84a57725182d80260488ae076f7e",
     "prototype/assets/models/rescue_v011/extinguisher.glb": "9437897f50f2d611baafd628325347e472aeeb18afe9b5e47e2a44898506f606",
     "prototype/assets/models/rescue_v011/fire_axe.glb": "3e1f58918d56fe9f92131eef8d389faab3849408b838cf24baab140f02430ae2",
-    "prototype/assets/models/rescue_v011/halligan.glb": "1a32039831131be375bb055cc00a49ee835238c9a5eb24112b5ad97e5b79de11",
-    "prototype/assets/models/rescue_v011/manifest.json": "df8c1be22ffa128912f12e69a7447301cbc89aa5381bece17c478a6faf44b533",
+    "prototype/assets/models/rescue_v011/halligan.glb": "537c07642f6075639a406702f56ea896c1e1a0fcc9981697bb5244070af22c46",
+    "prototype/assets/models/rescue_v011/manifest.json": "8203c05898243ea84381eae11e0a6259d0fc3dcb7de26fb8d6dd28f59aa44e2c",
     "prototype/assets/models/rescue_v011/oxygen_cylinder.glb": "c1490f993e6a503aa0d17e951a2252b5224c3ed2de4b664e0adecdcd97a77802",
     "prototype/assets/models/rescue_v011/portable_worklight.glb": "e65b7a006b750e00124aa1cdb7f40a43bbd9ca5e8cd50237dc2483e392a49734",
     "prototype/assets/models/rescue_v011/rescue_flashlight.glb": "73212e4a7445e10bc4d36b19533a6adec6bf994a60d0281223ab9467f8e4d574",
-    "prototype/assets/models/rescue_v011/rescue_helmet.glb": "2a361ca149b2b6bb6a3758ae2a0258690f4b10995c35609b7cb46d85706b5525",
+    "prototype/assets/models/rescue_v011/rescue_helmet.glb": "a88430f9ff535a64866dc52bc10d40abc6ae213c2e2c7daa04a04c43c19769d2",
     "prototype/assets/models/rescue_v011/rescue_radio.glb": "f4a828b9f86c5b2841f7dc582f91428aa4e788acb80916c322ddf63861ecd326",
     "prototype/assets/models/rescue_v011/rescue_stretcher.glb": "6493fb4540944fb0ad1337810bfd7a0ac3848899e4b7c8032e4f21c56ac4a943",
     "prototype/assets/models/rescue_v011/rope_coil.glb": "9a5d496abbb6e610b9b5fc9d471f567aa70ffcb1fa18602f2edd4e4dc3fe0f40",
@@ -288,7 +288,7 @@
     "prototype/scripts/preferences_store.gd": "31c0a2dee0287b17fc41f1ebd13dd8060986ed431174625d6c304bdd431f5420",
     "prototype/scripts/presentation_geometry.gd": "1d1b52a483221eb98b477fd9e90b3aeaf42fe6a87af26abf8730cf9ccfa890db",
     "prototype/scripts/radio_director.gd": "0c3d64be528a11db8df32ca9f6afcc5ed1bd228744f28740c56ef377b9b07dab",
-    "prototype/scripts/rescue_asset_catalog.gd": "b6d382028d4d94654fb077568771d7597e251ef9335a6ea4f986ce24c29cd00f",
+    "prototype/scripts/rescue_asset_catalog.gd": "c6ff7a890b12f1d13be806f8c899211367b6d6c2742caa6d151fa4c2b0234d79",
     "prototype/scripts/rescue_equipment.gd": "1ffcf384bfaabbf332f39ba0cf6ca32be31e4712ab72e359093d306e95bfc989",
     "prototype/scripts/rescue_presentation.gd": "ac3e900f85615f4dedff422c3fcb5985901cd75107f17dffe876a5087565a7a8",
     "prototype/scripts/rope_presentation.gd": "c8c5a2826a4fa1fcddaa7e37e7994a49f5981b9c2a1fea14bbcbe914a89cc731",

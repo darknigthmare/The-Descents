@@ -13,7 +13,7 @@ const MATERIAL_TEXTURE_ROOT := "res://assets/materials/v011/"
 const MODELS := {
 	"fire_axe": {"dimensions": Vector3(0.385852, 0.876545, 0.0583), "grip": Vector3(0.031013, 0.1938, 0.00165), "triangles": 8924},
 	"extinguisher": {"dimensions": Vector3(0.231514, 0.567919, 0.182), "grip": Vector3(-0.004757, 0.55, -0.0), "triangles": 11892},
-	"halligan": {"dimensions": Vector3(0.255663, 0.890614, 0.075), "grip": Vector3(0.008868, 0.426815, -0.0), "triangles": 8648},
+	"halligan": {"dimensions": Vector3(0.25457, 0.889273, 0.075), "grip": Vector3(0.009414, 0.426815, -0.0), "triangles": 8460},
 	"bolt_cutter": {"dimensions": Vector3(0.2914, 0.630628, 0.04275), "grip": Vector3(-0.09, 0.18031, 0.001875), "triangles": 13252},
 	"rescue_flashlight": {"dimensions": Vector3(0.095, 0.271, 0.115648), "grip": Vector3(0.0, 0.115, 0.010324), "triangles": 11500},
 	"portable_worklight": {"dimensions": Vector3(0.39, 0.513517, 0.293393), "grip": Vector3(0.0, 0.496, 0.001697), "triangles": 11076},
@@ -23,7 +23,7 @@ const MODELS := {
 	"carabiner": {"dimensions": Vector3(0.080581, 0.122322, 0.0186), "grip": Vector3(0.005991, 0.060676, -0.0), "triangles": 4048},
 	"descender": {"dimensions": Vector3(0.125538, 0.149, 0.017), "grip": Vector3(0.0, 0.0545, -0.0), "triangles": 2044},
 	"oxygen_cylinder": {"dimensions": Vector3(0.187253, 0.482, 0.134744), "grip": Vector3(-0.029627, 0.475, 0.003372), "triangles": 9712},
-	"rescue_helmet": {"dimensions": Vector3(0.308, 0.24972, 0.37), "grip": Vector3(0.0, 0.118708, -0.0), "triangles": 6492},
+	"rescue_helmet": {"dimensions": Vector3(0.308, 0.24972, 0.37), "grip": Vector3(0.0, 0.118708, -0.0), "triangles": 6324},
 	"rescue_stretcher": {"dimensions": Vector3(0.602682, 0.1575, 2.02), "grip": Vector3(0.0, 0.08, -0.91), "triangles": 22740},
 	"equipment_case": {"dimensions": Vector3(0.55, 0.426887, 0.3804), "grip": Vector3(0.0, 0.399, 0.0077), "triangles": 4772},
 	"emergency_beacon": {"dimensions": Vector3(0.15, 0.143, 0.15), "grip": Vector3(0.0, 0.07, -0.0), "triangles": 5868},
