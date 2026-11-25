@@ -4,21 +4,23 @@
 
 La 0.11 enrichit le parcours existant du toit au 23. Elle apporte huit albedos originaux, seize modèles éditables et quatre interventions contextuelles : réserve à ouvrir à la hache au 29, foyer à éteindre au 28, armoire de soins au 25 et projecteur à libérer au 24. Les outils apparaissent en main, se rangent pendant les secours et les traversées et conservent leurs résultats dans la sauvegarde de schéma 4.
 
-**État de préparation :** les seize modèles finaux et leurs 21 vues Blender ont été contrôlés. La première revue native a conduit à corriger la priorité de la hache, les enseignes, deux placements de matériel et la synchronisation des outils dans les captures. Le candidat corrigé est en reconstruction ; la revue des nouvelles images et la vérification des trois archives restent à consigner.
+**État de la revue : candidat 0.11 approuvé.** Les **7 932 contrôles sources**, les **300 contrôles des packs**, les **71 captures natives** et les **21 vues Blender** sont validés sur les fichiers identifiés dans les rapports. L’assemblage des trois archives exige cette approbation. Le résultat de l’assemblage et le verdict de livraison doivent être lus dans [le rapport final des archives](../releases/VERIFICATION_V0.11.json), établi uniquement après vérification des membres, des tailles et des empreintes.
 
 ## Éléments de preuve v0.11
 
-| Domaine | Preuve et portée |
-| --- | --- |
-| Génération des modèles | [ASSET_BOOTSTRAP.json](validation/v0.11/ASSET_BOOTSTRAP.json), source Blender, manifestes et contrôle indépendant des GLB |
-| Compilation, import et logique | [VERIFICATION.json](validation/v0.11/VERIFICATION.json) : résultat des 37 suites sur les empreintes indiquées |
-| Exports Windows et Web | [EXPORTS.json](validation/v0.11/EXPORTS.json), construit à partir des modèles officiels du moteur |
-| Ressources embarquées | [EXPORTED_PACK_VERIFICATION.json](validation/v0.11/EXPORTED_PACK_VERIFICATION.json), chargement des deux packs depuis des dossiers isolés |
-| Présentation du jeu et moteurs | [Catalogue](CAPTURES_V0.11.md), [REVIEW_MANIFEST.json](validation/v0.11/REVIEW_MANIFEST.json), manifestes et provenance de chacun des cinq groupes |
-| Examen des octets exacts | [approval.json](../.review/v0.11/approval.json), observations individuelles des captures et vues Blender, empreintes des assets et documents |
-| Archives finales | [VERIFICATION_V0.11.json](../releases/VERIFICATION_V0.11.json), membres exacts, tailles, SHA256 et comparaison des octets |
+| Domaine | Résultat mesuré et portée | Preuve |
+| --- | --- | --- |
+| Génération des modèles | 16 GLB, source Blender éditable, 21 aperçus examinés ; 150 304 triangles et 5 261 324 octets GLB | [Source et manifeste](assets/v0.11/README.md) · [Revue des modèles](validation/v0.11/MODEL_VISUAL_REVIEW.json) |
+| Compilation, import et logique | 7 932 contrôles réussis dans 37 suites ; runtime inchangé pendant les essais | [VERIFICATION.json](validation/v0.11/VERIFICATION.json) |
+| Exports Windows et Web | Deux exports construits à partir des modèles officiels du moteur | [EXPORTS.json](validation/v0.11/EXPORTS.json) |
+| Ressources embarquées | 300 contrôles réussis, 150 par pack, chargés depuis des dossiers isolés | [EXPORTED_PACK_VERIFICATION.json](validation/v0.11/EXPORTED_PACK_VERIFICATION.json) |
+| Présentation du jeu et moteurs | 71 PNG natifs de 1440 × 900, cinq groupes ; Forward+ et Compatibility effectivement obtenus et images examinées | [Catalogue](CAPTURES_V0.11.md) · [Revue du jeu](validation/v0.11/VISUAL_REVIEW.json) |
+| Examen des octets exacts | Approbation des 71 captures, 21 aperçus, modèles, matières, guides, source éditable et quatre documents préservés | [approval.json](../.review/v0.11/approval.json) |
+| Assemblage des trois archives | Membres exacts, tailles, SHA256, comparaison des octets et limite de 100 Mio par archive exigés avant publication | [VERIFICATION_V0.11.json](../releases/VERIFICATION_V0.11.json) |
 
 Un rapport vaut pour le commit et les empreintes qu’il nomme. Les résultats d’une génération préparatoire ne constituent pas, seuls, une revue des nouvelles images ou une validation des archives finales. Le workflow garde ces étapes séparées et ne crée pas lui-même d’approbation visuelle.
+
+La [construction de revue finale](https://github.com/darknigthmare/The-Descents/actions/runs/45674669046) contrôle la source [`edd0d935204b`](https://github.com/darknigthmare/The-Descents/commit/edd0d935204b276e9671270b9993d87373534b34). La [revue initiale](validation/v0.11/INITIAL_VISUAL_REVIEW.json) a motivé les corrections de priorité de la hache, de revers des enseignes, de placement du projecteur et du sac, ainsi que de synchronisation des outils dans les captures. Les nouveaux fichiers ont été examinés après reconstruction ; les empreintes des vues Blender déjà approuvées sont restées identiques.
 
 ## Changements de présentation
 
