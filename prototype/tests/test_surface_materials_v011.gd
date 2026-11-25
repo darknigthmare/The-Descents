@@ -49,3 +49,8 @@ func _run() -> void:
 		for failure: String in failures:
 			push_error(failure)
 		quit(1)
+
+func _check(condition: bool, message: String) -> void:
+	checks += 1
+	if not condition:
+		failures.append(message)

@@ -28,7 +28,7 @@ def generate():
     request = guard()
     OUT.mkdir(parents=True, exist_ok=True)
     subprocess.run([sys.executable, "-m", "py_compile", "tools/generate_rescue_models.py"], cwd=ROOT, check=True)
-    command = ["blender", "--background", "--factory-startup", "--threads", "2",
+    command = ["blender", "--background", "--factory-startup", "--threads", "2", "--python-exit-code", "1",
                "--python", "tools/generate_rescue_models.py", "--", "--root", str(ROOT), "--render"]
     with (OUT / "model-generation.txt").open("w") as log:
         result = subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, timeout=1200)

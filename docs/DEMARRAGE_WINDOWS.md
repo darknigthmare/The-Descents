@@ -1,11 +1,11 @@
-# The Tower Descent — prototype 0.10
+# The Tower Descent — prototype 0.11
 
-Ce guide décrit les commandes du paquet v0.10. [Télécharger Windows x64 v0.10](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.10-Windows-x64.zip) ou [les sources et documents v0.10](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.10-Sources.zip). Le statut des archives et les résultats de vérification figurent dans [l’état de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md).
+Ce guide décrit les commandes du paquet v0.11. [Télécharger Windows x64 v0.11](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.11-Windows-x64.zip) ou [les sources et documents v0.11](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.11-Sources.zip). Le statut des archives et les résultats de vérification figurent dans [l’état de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md).
 
 ## Lancer l’intervention
 
-1. Extraire tout le ZIP **The-Tower-Descent-v0.10-Windows-x64.zip** dans un dossier.
-2. Ouvrir **TheTowerDescent.exe**. Aucune installation de Godot n’est nécessaire.
+1. Extraire tout le ZIP **The-Tower-Descent-v0.11-Windows-x64.zip** dans un dossier.
+2. Ouvrir **JOUER_CINEMATIQUE.cmd** pour le rendu Forward+ (Vulkan), ou **JOUER_COMPATIBILITE.cmd** pour le rendu OpenGL plus léger. **TheTowerDescent.exe** demande aussi Forward+ par défaut. Aucune installation de Godot n’est nécessaire.
 3. Passer ou regarder la signature du studio, ouvrir **Commencer l’intervention**, puis confirmer **Déployer Alpha**. La disposition proposée convient pour une première partie.
 
 La signature de 15 secondes précède un accueil lié à votre dernier point sûr. L’approche en jeu de 28 secondes montre la ville, les deux tours encore droites et les équipes de secours en quatre plans. Les deux hélicoptères approchent et se posent ; les portes s’ouvrent pendant le déploiement des équipes, puis se referment avant la prise de contrôle. **E**, **Entrée** ou le bouton **Passer** permettent de passer la séquence. **Échap** met l’approche en pause. Le chronomètre de mission démarre après le raccord au joueur. Vous prenez ensuite le contrôle sur le toit d’Aube ; Bravo se déploie sur Hespérie.
@@ -66,6 +66,19 @@ Après l’impact, le couloir Est du **28** est condamné : contournez-le par le
 
 Les documents de preuve restent sur les plateaux ; les caisses fournissent du matériel. Les stations bleues de traversée se reconnaissent à la paire d’étages indiquée. Les apparitions du premier secteur restent des manifestations perceptives : elles ne poursuivent pas Alex et ne lui infligent pas de dégâts. Gardez les secours et la lecture des lieux comme priorité ; lampe et fusées restent à votre disposition.
 
+## Utiliser le matériel d’intervention
+
+Les touches physiques **1, 2, 3 et 4** de la rangée supérieure (ou du pavé numérique) sélectionnent la hache, l’extincteur, le Halligan et le coupe-boulon. L’outil choisi apparaît en main. Visez un point d’intervention proche et **maintenez E** jusqu’à la fin de la progression. Relâcher E, changer d’outil, s’éloigner ou ouvrir la pause interrompt le travail sans consommer de réserve.
+
+| Outil | Point de travail après l’impact | Résultat |
+| --- | --- | --- |
+| 1 · Hache | Réserve de balisage dans la pièce ouest des suites 29 | Une fusée récupérée, dans la limite de six |
+| 2 · Extincteur | Corbeille en feu dans les archives 28, près du passage intérieur | Foyer local éteint ; une charge consommée sur trois |
+| 3 · Halligan | Armoire médicale dans la partie ouest du refuge 25 | Jusqu’à vingt points d’état physique récupérés |
+| 4 · Coupe-boulon | Projecteur enchaîné dans le foyer du congrès 24 | Projecteur de secours activé |
+
+Ces travaux sont facultatifs et chaque résultat n’est attribué qu’une fois. Un point sûr conserve les travaux achevés et les charges utilisées. Une reprise remet les outils au repos, sans rétablir un foyer déjà éteint. L’extincteur agit sur ce foyer identifié ; les fumées structurelles et les autres dangers du plateau conservent leur comportement. Le matériel se range pendant un portage, un treuillage, un rappel ou une secousse. Le dossier **J → Situation** récapitule les travaux et la réserve.
+
 ## Examiner les lieux
 
 Douze objets peuvent être examinés du toit au refuge : registre médical, treuil, table du restaurant, passe de service, bagage, vitrage, dossier des archives, relais, casier, filtration, contrôle d’air et extincteur. Approchez-vous et regardez l’objet pour afficher son interaction, puis appuyez sur **E**.
@@ -110,6 +123,8 @@ L’accueil et le dossier indiquent votre dernier point sûr et la phase de miss
 | Verrouiller / libérer le descendeur | Espace, sur corde |
 | Stabiliser seize secondes | X, sur corde |
 | Courir / s’accroupir / sauter à pied | Maj / Ctrl / Espace |
+| Hache / extincteur / Halligan / coupe-boulon | 1 / 2 / 3 / 4 (touches physiques ou pavé numérique) |
+| Utiliser le bon outil sur un point de travail visé | Maintenir E |
 | Lampe / fusée | F / G |
 | Radio / journal à quatre onglets | R / J |
 | Changer d’onglet du journal | Flèches sur un onglet ; Tab pour parcourir les contrôles |
@@ -130,7 +145,7 @@ Si vous quittez pendant l’effondrement, la reprise revient au point sûr qui l
 
 ## Portée de cette version
 
-Prototype solo avec un toit et huit étages jouables, des hélicoptères, personnages et équipements procéduraux, réalisé avec **Godot 4.7.2**. Les étages 24 et 23 s’ouvrent depuis le bilan du refuge. La campagne complète, les humains hostiles, les laboratoires profonds, l’Enfer et le futur portage UE5 sont décrits dans la Bible. La corde actuelle suit des segments locaux prédéfinis ; elle ne simule pas la pose libre de tous types de relais.
+Prototype solo avec un toit et huit étages jouables, des hélicoptères et personnages procéduraux, seize modèles de matériel importés et huit albedos générés, réalisé avec **Godot 4.7.2**. Les étages 24 et 23 s’ouvrent depuis le bilan du refuge. La campagne complète, les humains hostiles, les laboratoires profonds, l’Enfer et le futur portage UE5 sont décrits dans la Bible. La corde actuelle suit des segments locaux prédéfinis ; elle ne simule pas la pose libre de tous types de relais.
 
 La vérification du paquet comprend sa construction et le chargement de ses ressources embarquées dans un dossier isolé sous Godot Linux. Ce contrôle ne constitue pas une exécution sur un PC Windows. L’état de livraison consigne les résultats ; `EXPORTS.md` décrit la méthode et sa portée.
 
@@ -138,10 +153,16 @@ La vérification du paquet comprend sa construction et le chargement de ses ress
 
 Les archives 0.1, 0.2, 0.4, 0.5, 0.6, 0.7, 0.8 et **0.9** restent historiques. La 0.10 conserve leur ouverture, les secours, les observations, les réglages, le dossier, l’épilogue, la montée discrète de l’horreur et les liaisons verticales, puis prolonge l’intervention du refuge au congrès et à l’exposition.
 
-Le ZIP Sources courant contient tous les codes, assets actifs, tests, guides et rapports textuels, avec les captures de la v0.10, la Bible intégrale Word/PDF v0.9 et son supplément Word/PDF v0.10. Les autres médias historiques restent disponibles dans le dépôt et dans leurs archives d’origine. Les licences du moteur et de ses composants sont jointes dans `GODOT_LICENSES.txt` ; les notices Open Sans accompagnent également le paquet Windows.
+Le ZIP Sources courant contient tous les codes, assets actifs, tests, guides et rapports textuels, avec les captures de la v0.11, les sources Blender, le guide des visuels, la Bible intégrale Word/PDF v0.9 et son supplément Word/PDF v0.10. Les autres médias historiques restent disponibles dans le dépôt et dans leurs archives d’origine. Les licences du moteur et de ses composants sont jointes dans `GODOT_LICENSES.txt` ; les notices Open Sans accompagnent également le paquet Windows.
 
 ## Réglages et présentation conservés
 
 Accueil → Options et confort, ou Échap → Options et confort pendant l’intervention. Volume 0–100 %, sensibilité ×0,25–×2,5, champ de vision 65–100° et regard vertical inversé sont appliqués immédiatement. Fermer ce panneau en partie retourne à la pause ; Reprendre rend le contrôle. Les réglages restent distincts du point sûr.
 
 Le portage montre le harnais et les mains d’Alex. Le treuil conserve ses cinq secondes, puis l’équipe prend la personne en charge au toit. La pluie et la mer suivent la pause ; les mouvements réduits conservent une ambiance fixe. Le matériel de rappel possède sa propre présentation, liée à la vitesse, au verrou et à l’état d’attache.
+
+## Rendu et performances
+
+Le profil cinématique utilise le moteur **Forward+** de Godot : SDFGI pour les surfaces fixes opaques, SSIL, SSAO, réflexions en espace écran, brouillard volumétrique et glow modéré. Il vise des rebonds et une profondeur lumineuse proches de l’intention visuelle de Lumen ; il ne reproduit pas toutes ses capacités. Les personnages, outils, appareils et la tour mobile ne sont pas des occluders SDFGI.
+
+Le lanceur **Compatibilité** garde les textures, modèles, lumières directes, ombres et brouillard classique, avec un coût réduit. Le Web choisit automatiquement ce moteur. Le changement de moteur se fait au lancement. Aucun minimum matériel ni nombre d’images par seconde sur carte graphique dédiée n’est certifié par les contrôles automatisés. Les captures natives décrites dans les rapports montrent le moteur réellement utilisé.

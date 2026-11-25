@@ -34,7 +34,7 @@ jobs:
         run: |
           set -euo pipefail
           sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends blender python3-pil fontconfig fonts-dejavu-core libgl1
+          sudo apt-get install -y --no-install-recommends blender python3-pil python3-numpy fontconfig fonts-dejavu-core libgl1
           curl --fail --location --retry 3 --output "$RUNNER_TEMP/godot.zip" "$GODOT_ARCHIVE_URL"
           printf '%s  %s\n' "$GODOT_ARCHIVE_SHA256" "$RUNNER_TEMP/godot.zip" | sha256sum --check -
           mkdir -p "$RUNNER_TEMP/godot"

@@ -213,7 +213,10 @@ func _bind_inputs() -> void:
 			InputMap.add_action(action)
 		for key in keys[action]:
 			var event: InputEventKey = InputEventKey.new()
-			event.keycode = key
+			if str(action).begins_with("tool_") and key in [KEY_1, KEY_2, KEY_3, KEY_4]:
+				event.physical_keycode = key
+			else:
+				event.keycode = key
 			InputMap.action_add_event(action, event)
 
 func _build_world(seed_value: int) -> void:

@@ -82,6 +82,10 @@ def finish(obj, name, mat, bevel=0., smooth=False):
     if mat:
         obj.data.materials.append(M[mat] if isinstance(mat, str) else mat)
     if obj.type == "MESH":
+        # Blender 4.0 requires Auto Smooth for bevel/custom weighted normals.
+        # Blender 4.1+ removed this property; its normal pipeline needs no flag.
+        if hasattr(obj.data, "use_auto_smooth"):
+            obj.data.use_auto_smooth = True
         if bevel:
             mod = obj.modifiers.new("Machined edge radius", "BEVEL")
             mod.width, mod.segments = bevel, 3
@@ -646,7 +650,8 @@ def export_asset(asset,output):
     bpy.ops.export_scene.gltf(filepath=str(path),export_format="GLB",use_selection=True,
         export_apply=True,export_yup=True,export_texcoords=True,export_normals=True,
         export_tangents=False,export_materials="EXPORT",export_cameras=False,
-        export_lights=False,export_animations=False,export_extras=True)
+        export_lights=False,export_animations=False,export_extras=True,
+        export_draco_mesh_compression_enable=False)
     for obj in list(export_collection.objects):
         bpy.data.objects.remove(obj,do_unlink=True)
     bpy.data.collections.remove(export_collection)
