@@ -35,6 +35,7 @@ var location_label: Label
 var status_label: Label
 var mission_label: Label
 var resources_label: Label
+var equipment_label: Label
 var prompt_label: Label
 var radio_label: Label
 var radio_source: Label
@@ -242,6 +243,13 @@ func _build_game() -> void:
 	floor_map.position = Vector2(1245, 265)
 	floor_map.add_theme_constant_override("line_spacing", 10)
 	game.add_child(floor_map)
+	equipment_label = _label("", 14, PALE)
+	equipment_label.position = Vector2(880, 652)
+	equipment_label.size = Vector2(520, 52)
+	equipment_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	equipment_label.add_theme_color_override("font_outline_color", Color(0.025, 0.055, 0.07, 1.0))
+	equipment_label.add_theme_constant_override("outline_size", 3)
+	game.add_child(equipment_label)
 	_build_traversal_panel()
 	var keys: Label = _label("ZQSD / WASD  Marcher     E  Interagir     F  Lampe     R  Radio     G  Fusée     J  Journal     ÉCHAP  Pause", 14, MUTED)
 	keys.position = Vector2(382, 865)
@@ -419,7 +427,7 @@ func _build_help() -> void:
 	text.add_theme_font_size_override("normal_font_size", 20)
 	text.focus_mode = Control.FOCUS_ALL
 	text.selection_enabled = true
-	text.text = "MISSION\nSecourez Ana au 30, Samuel au 28 et Nora au 26. E fixe leur harnais.\nRamenez chaque personne à la balise ORANGE de son étage pour le treuil.\nAprès les trois réceptions et l’incident, rejoignez le refuge 25.\n\nITINÉRAIRE LOCAL\nRappel toit–30 · Escalier 30–29 · Rappel 29–28 · Escalier 28–27\nRappel 27–26 · Escalier 26–25. Chaque passage permet aussi le retour.\n\nÀ PIED ET DANS LES ESCALIERS\nZQSD / WASD : marcher · Souris / flèches : regarder · Maj : courir\nCtrl : s’accroupir · Espace : sauter · E : interagir au repère BLEU du rappel\n\nSUR LA CORDE\nS : descendre · Z/W : remonter · Q/A et D : équilibrer le balancement\nCtrl : progression précise · Maj + S : descente rapide\nEspace : verrouiller / libérer le descendeur · Relâcher : frein automatique\nX : stabiliser 16 s (un ancrage) · E : sortir, arrêté et centré au palier\nRemontée et descente rapide demandent de l’endurance. Reposez-vous assuré.\nLe rappel personnel exige les mains libres ; évacuez d’abord votre rescapé.\n\nMATÉRIEL ET LECTURE\nF : lampe · G : fusée · R : radio · J : dossier · Échap : pause et options\nE devant un objet « Examiner » ouvre sa fiche et suspend l’intervention.\nMolette / Page ↑↓ : défiler. Fermer ou Échap : reprendre.\nL’air de réserve diminue dans les fumées. Le refuge reste sûr."
+	text.text = "MISSION\nSecourez Ana au 30, Samuel au 28 et Nora au 26. E fixe leur harnais.\nRamenez chaque personne à la balise ORANGE de son étage pour le treuil.\nAprès les trois réceptions et l’incident, rejoignez le refuge 25.\n\nITINÉRAIRE LOCAL\nRappel toit–30 · Escalier 30–29 · Rappel 29–28 · Escalier 28–27\nRappel 27–26 · Escalier 26–25. Chaque passage permet aussi le retour.\n\nÀ PIED ET DANS LES ESCALIERS\nZQSD / WASD : marcher · Souris / flèches : regarder · Maj : courir\nCtrl : s’accroupir · Espace : sauter · E : interagir au repère BLEU du rappel\n\nSUR LA CORDE\nS : descendre · Z/W : remonter · Q/A et D : équilibrer le balancement\nCtrl : progression précise · Maj + S : descente rapide\nEspace : verrouiller / libérer le descendeur · Relâcher : frein automatique\nX : stabiliser 16 s (un ancrage) · E : sortir, arrêté et centré au palier\nRemontée et descente rapide demandent de l’endurance. Reposez-vous assuré.\nLe rappel personnel exige les mains libres ; évacuez d’abord votre rescapé.\n\nMATÉRIEL ET LECTURE\n1 : hache · 2 : extincteur · 3 : Halligan · 4 : coupe-boulon\nMaintenir E en visant le point d’intervention avec le bon outil.\nS’éloigner, relâcher E ou changer d’outil interrompt le travail.\nLes outils se rangent pendant le portage, le rappel et les secousses.\nF : lampe · G : fusée · R : radio · J : dossier · Échap : pause et options\nE devant un objet « Examiner » ouvre sa fiche et suspend l’intervention.\nMolette / Page ↑↓ : défiler. Fermer ou Échap : reprendre.\nL’air de réserve diminue dans les fumées. Le refuge reste sûr."
 	text.text += "\n\nAPRÈS LE BILAN DU 25\nChoisissez Poursuivre au congrès pour ouvrir la reconnaissance.\nEscalier de service NORD 25–24 : voie de retour pour Léa et Idris.\nPlacez-vous devant le groupe et E : signe visible Suivez-moi / Attendez.\nAvancez près d’eux ; s’ils vous perdent, ils attendent sans se téléporter.\nLes deux personnes doivent atteindre les repères du refuge pour être reçues.\nAprès réception : rappel personnel 24–23, maquette et photographie à relever.\nLe terminal du 23 transmet le compte rendu. La suite au 22 reste fermée.\nUne reprise remet une escorte inachevée à l’abri dans la cabine du 24."
 	col.add_child(text)
 	help_close_button = _button("Compris", close_help, true)

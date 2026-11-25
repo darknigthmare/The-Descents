@@ -22,6 +22,8 @@ def main():
     with ZipFile(windows, "w", ZIP_DEFLATED, compresslevel=9) as z:
         z.write(exe, "The-Tower-Descent/TheTowerDescent.exe")
         z.write(ROOT / "docs/DEMARRAGE_WINDOWS.md", "The-Tower-Descent/README.md")
+        for name in ["JOUER_CINEMATIQUE.cmd", "JOUER_COMPATIBILITE.cmd"]:
+            z.write(ROOT / "docs/launchers" / name, "The-Tower-Descent/" + name)
         for file in [ROOT / "docs/GODOT_LICENSES.txt", ROOT / "docs/EXPORTS.md"]:
             z.write(file, "The-Tower-Descent/" + file.name)
         for name in ["LICENSE.txt", "NOTICE.txt"]:

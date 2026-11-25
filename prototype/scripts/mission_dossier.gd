@@ -4,6 +4,7 @@ class_name DescentMissionDossier
 ## In particular, an attached casualty is never counted as a confirmed rescue.
 const Routes = preload("res://scripts/route_catalog.gd")
 const Continuation = preload("res://scripts/continuation_director.gd")
+const Equipment = preload("res://scripts/equipment_director.gd")
 
 const ROSTER: Array = [
 	{"id": "survivor_30", "name": "Ana Rios", "floor": 30, "location": "Restaurant panoramique"},
@@ -36,6 +37,7 @@ static func build(snapshot: Dictionary) -> Dictionary:
 		allowed_clues.append_array(CONTINUATION_CLUES.keys())
 	var clues: Array[String] = _ids(snapshot.get("clues", []), allowed_clues)
 	var supplies: Array[String] = _ids(snapshot.get("supplies_used", []), ["supply_29", "supply_25"])
+	var equipment_ids: Array[String] = _ids(snapshot.get("supplies_used", []), Equipment.ACTIONS.keys())
 	var complete: bool = snapshot.get("completed", false) is bool and snapshot.get("completed", false)
 	var carried_id: String = _string(snapshot.get("carried_id", ""), 80)
 	var hoisting_id: String = _string(snapshot.get("hoisting_id", ""), 80)
@@ -120,6 +122,7 @@ static func build(snapshot: Dictionary) -> Dictionary:
 		"health": _number(snapshot, "health", 100, 0, 100), "oxygen": _number(snapshot, "oxygen", 100, 0, 100),
 		"stress": _number(snapshot, "stress", 8, 0, 100), "anchors": int(_number(snapshot, "anchors", 4, 0, 8)),
 		"flares": int(_number(snapshot, "flares", 3, 0, 6)), "supplies_count": supplies.size(),
+		"equipment_events": equipment_ids, "equipment_charges": 2 if "equipment_fire_28" in equipment_ids else 3,
 		"rescued_count": rescued.size(), "clue_count": clues.size(), "survivors": survivors,
 		"clues": evidence, "transmissions": transmissions, "route": route,
 		"structure_title": situation["title"], "structure_text": situation["text"], "incident_state": phase,
@@ -156,6 +159,9 @@ static func _situation_text(model: Dictionary) -> String:
 	for row: Dictionary in model["survivors"]:
 		text += "%s — %s\n%s\n" % [row["name"], row["status"], row["detail"]]
 	text += "\nRESSOURCES À CET INSTANT\nÉtat physique %d %% · Air %d %% · Tension %d %%\nAncrages %d · Fusées %d · Réserves ouvertes %d / 2\n" % [roundi(model["health"]), roundi(model["oxygen"]), roundi(model["stress"]), model["anchors"], model["flares"], model["supplies_count"]]
+	text += "\nMATÉRIEL D’INTERVENTION\n1 Hache · 2 Extincteur · 3 Halligan · 4 Coupe-boulon\nRéserve de l’extincteur %d / 3 · Travaux terminés %d / %d\n" % [model["equipment_charges"], model["equipment_events"].size(), 4 if model.get("continuation_phase", "dormant") != "dormant" else 3]
+	for id: String in model["equipment_events"]:
+		text += "ÉTAGE %d · %s\n" % [Equipment.ACTIONS[id]["floor"], Equipment.ACTIONS[id]["title"]]
 	text += "\nPOINT SÛR\n%s · %s. La consultation ne remplace pas ce point de reprise.\n" % [_floor_label(model["checkpoint_floor"]), FLOOR_NAMES[model["checkpoint_floor"]]]
 	text += "\nPASSAGES ENTRE LES ÉTAGES\nChaque liaison est réversible et limitée à deux niveaux. Les repères bleus indiquent les rappels personnels ; les balises orange servent au treuil des rescapés.\n"
 	for link: Dictionary in Routes.all_routes(model.get("continuation_phase", "dormant") != "dormant"):

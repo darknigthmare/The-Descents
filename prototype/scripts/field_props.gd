@@ -3,6 +3,8 @@ class_name DescentFieldProps
 ## Optional, reconstructible reading points. They never alter mission or save data.
 ## Positions are on the existing floor slabs and outside the protected rope sockets.
 
+const RescueAssets = preload("res://scripts/rescue_asset_catalog.gd")
+
 const GROUP_NAME: String = "FieldInspectionPoints"
 const RANGE: float = 2.4
 const PATIENTS: Array = [
@@ -306,12 +308,19 @@ func _dress(point: Node3D, geometry: String, m: Dictionary) -> void:
 		"extinguisher":
 			_box(point, Vector3(0, 0.05, 0), Vector3(0.52, 0.1, 0.42), m.dark)
 			_box(point, Vector3(0, 0.76, -0.12), Vector3(0.39, 1.42, 0.07), m.metal)
-			_cylinder(point, Vector3(0, 0.66, 0.04), 0.14, 0.7, m.red)
-			_cylinder(point, Vector3(0, 1.02, 0.04), 0.06, 0.09, m.metal)
-			_box(point, Vector3(0, 1.1, 0.04), Vector3(0.22, 0.045, 0.08), m.dark)
-			_box(point, Vector3(0.18, 0.87, 0.04), Vector3(0.035, 0.43, 0.04), m.dark).rotation.z = 0.2
-			_box(point, Vector3(0, 0.71, 0.179), Vector3(0.16, 0.24, 0.015), m.white)
+			var model: Node3D = RescueAssets.instantiate("extinguisher")
+			if is_instance_valid(model):
+				point.add_child(model)
+				model.position = Vector3(0, 0.40, 0.04)
+				model.rotation.y = PI
+				_exclude_model_gi(model)
 			_plate(point, Vector3(0, 1.3, -0.075), "INCENDIE", 0.35, m)
+
+func _exclude_model_gi(node: Node) -> void:
+	if node is GeometryInstance3D:
+		node.gi_mode = GeometryInstance3D.GI_MODE_DISABLED
+	for child: Node in node.get_children():
+		_exclude_model_gi(child)
 
 func _stand(parent: Node3D, height: float, top: Vector2, m: Dictionary) -> void:
 	_box(parent, Vector3(0, 0.035, 0), Vector3(top.x * 0.8, 0.07, top.y * 0.8), m.dark)

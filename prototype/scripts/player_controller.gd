@@ -8,6 +8,7 @@ const Preferences = preload("res://scripts/preferences_store.gd")
 const Routes = preload("res://scripts/route_catalog.gd")
 const Rope = preload("res://scripts/rope_traversal.gd")
 const RopePresentation = preload("res://scripts/rope_presentation.gd")
+const RescueAssets = preload("res://scripts/rescue_asset_catalog.gd")
 
 const TRANSFER_DURATION: float = 0.85
 const FLOOR_TOLERANCE: float = 0.35
@@ -76,20 +77,13 @@ func _ready() -> void:
 	flashlight.spot_attenuation = 1.4
 	flashlight.position = Vector3(0.24, -0.18, -0.08)
 	camera.add_child(flashlight)
-	# A small, diegetic torch instead of an oversized weapon.
-	var torch: MeshInstance3D = MeshInstance3D.new()
-	var tube: CylinderMesh = CylinderMesh.new()
-	tube.top_radius = 0.045
-	tube.bottom_radius = 0.04
-	tube.height = 0.32
-	torch.mesh = tube
-	torch.rotation.x = PI / 2
-	torch.position = Vector3(0.27, -0.29, -0.47)
-	var mat: StandardMaterial3D = StandardMaterial3D.new()
-	mat.albedo_color = Color(0.1, 0.16, 0.17)
-	mat.metallic = 0.6
-	torch.material_override = mat
-	camera.add_child(torch)
+	# The imported rescue flashlight stays on the left, clear of the selected tool.
+	var torch: Node3D = RescueAssets.instantiate("rescue_flashlight")
+	if is_instance_valid(torch):
+		torch.rotation.x = -PI / 2.0
+		torch.position = Vector3(-0.27, -0.32, -0.48)
+		camera.add_child(torch)
+		_set_torch_layers(torch)
 	rope_line = ImmediateMesh.new()
 	rope_mesh = MeshInstance3D.new()
 	rope_mesh.mesh = rope_line
@@ -374,3 +368,12 @@ func teleport_to_floor(floor_number: int) -> void:
 	last_ground_height = position.y
 	rotation = Vector3.ZERO
 	head.rotation = Vector3.ZERO
+
+
+func _set_torch_layers(node: Node) -> void:
+	if node is GeometryInstance3D:
+		node.layers = 4
+		node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		node.gi_mode = GeometryInstance3D.GI_MODE_DISABLED
+	for child: Node in node.get_children():
+		_set_torch_layers(child)

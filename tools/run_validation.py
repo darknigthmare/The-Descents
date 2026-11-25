@@ -22,6 +22,7 @@ REQUIRED = {
     "horror", "horror_integration",
     "rope_traversal", "vertical_routes", "traversal_integration",
     "continuation", "continuation_integration", "continuation_routes",
+    "equipment", "equipment_integration", "lighting_v011", "surface_materials_v011", "rescue_assets_v011",
 }
 
 
@@ -48,7 +49,7 @@ def main() -> None:
         for script in scripts:
             name = script.stem.removeprefix("test_")
             command = [binary, "--headless", "--path", str(ROOT / "prototype")]
-            if name in {"routes", "incident_routes", "vertical_routes", "traversal_integration", "continuation_routes", "continuation_integration"}:
+            if name in {"routes", "incident_routes", "vertical_routes", "traversal_integration", "continuation_routes", "continuation_integration", "equipment_integration"}:
                 command += ["--fixed-fps", "60"]
             command += ["--script", "res://tests/" + script.name]
             entry = run(command, cwd=ROOT, timeout=180, log=output / ("final-" + name + ".txt"))
@@ -60,7 +61,7 @@ def main() -> None:
     after = runtime_hashes()
     report = {
         "version": version(),
-        "label": "v0.10 continuation after refuge 25, physical duo escort, adjacent-floor traversal and two-proof reconnaissance",
+        "label": "v0.11 materials, imported rescue equipment, contextual tools, lighting profiles and preserved continuation",
         "validated_utc": datetime.now(timezone.utc).isoformat(),
         "engine": engine,
         "runtime_freeze_commit": git_head(),

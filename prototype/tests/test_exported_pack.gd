@@ -17,8 +17,10 @@ const Rope = preload("res://scripts/rope_traversal.gd")
 const RopePresentation = preload("res://scripts/rope_presentation.gd")
 const Continuation = preload("res://scripts/continuation_director.gd")
 const ContinuationPresentation = preload("res://scripts/continuation_presentation.gd")
-const TEST_PATH: String = "user://qa_v010_external_pack.json"
-const PREFS_PATH: String = "user://qa_v010_external_pack.cfg"
+const RescueAssets = preload("res://scripts/rescue_asset_catalog.gd")
+const Equipment = preload("res://scripts/equipment_director.gd")
+const TEST_PATH: String = "user://qa_v011_external_pack.json"
+const PREFS_PATH: String = "user://qa_v011_external_pack.cfg"
 var failures: Array[String] = []
 var checks: int = 0
 
@@ -29,7 +31,22 @@ func _initialize() -> void:
 
 func _run() -> void:
 	_cleanup()
-	_check(ProjectSettings.get_setting("application/config/version", "") == "0.10.0", "Packed project has the wrong application version.")
+	_check(RescueAssets.all_ids().size() == 16, "The exported kit lost an authored rescue model.")
+	for id: String in RescueAssets.all_ids():
+		_check(ResourceLoader.exists(RescueAssets.asset_path(id)), "Missing exported model: " + id)
+		var model: Node3D = RescueAssets.instantiate(id)
+		_check(is_instance_valid(model), "Exported GLB cannot instantiate: " + id)
+		if is_instance_valid(model): model.free()
+	for id: String in ["salt_concrete", "smoked_oak", "dark_stone", "brushed_steel", "rescue_red_paint", "black_rubber", "teal_carpet", "porcelain_tile"]:
+		var texture: Texture2D = load("res://assets/materials/v011/" + id + ".png")
+		_check(texture != null and texture.get_width() == 1254 and texture.get_height() == 1254, "Missing or resized exported albedo: " + id)
+	var kit = Equipment.new()
+	kit.select_tool("extinguisher")
+	_check(kit.begin("equipment_fire_28"), "Packed equipment cannot begin its contextual action.")
+	for tick: int in range(24): kit.advance(0.125, true, true)
+	_check(kit.charges_left() == 2 and "equipment_fire_28" in kit.completed, "Packed extinguisher action or receipt is missing.")
+	_check(not ResourceLoader.exists("res://tests/test_equipment.gd") and not ResourceLoader.exists("res://tests/test_rescue_assets_v011.gd"), "New developer tests shipped in the pack.")
+	_check(ProjectSettings.get_setting("application/config/version", "") == "0.11.0", "Packed project has the wrong application version.")
 	_check(not ResourceLoader.exists("res://tests/test_save.gd") and not ResourceLoader.exists("res://tests/test_cinematic_integration.gd"), "Developer tests unexpectedly shipped inside the pack.")
 	var scene: PackedScene = load("res://scenes/main.tscn")
 	_check(scene != null, "The mounted pack has no loadable main scene.")

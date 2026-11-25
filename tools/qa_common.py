@@ -49,7 +49,7 @@ def evidence_root() -> Path:
     return ROOT / "docs/validation" / ("v" + ".".join(version().split(".")[:2]))
 
 
-SOURCE_ARCHIVE_SCOPE = "All project sources and textual history; current-version captures and documents. Version 0.10 also retains the complete v0.9 reference Bible."
+SOURCE_ARCHIVE_SCOPE = "All project sources and textual history; current-version captures and documents. Versions 0.10 and 0.11 retain the complete v0.9 reference Bible and the v0.10 continuation supplement."
 MAX_ARCHIVE_BYTES = 100 * 1024 * 1024
 
 
@@ -60,7 +60,7 @@ def historical_source_media(relative: Path, short_version: str) -> bool:
         return parts[2] != "v" + short_version
     if len(parts) == 2 and parts[0] == "docs":
         match = re.fullmatch(r"The-Tower-Descent-Bible-v(\d+\.\d+)\.(?:docx|pdf)", parts[1])
-        if short_version == "0.10" and match is not None and match.group(1) == "0.9":
+        if short_version in {"0.10", "0.11"} and match is not None and match.group(1) == "0.9":
             return False
         return match is not None and match.group(1) != short_version
     return False
@@ -72,8 +72,7 @@ def source_package_paths() -> list[Path]:
     Every authored module, asset, test and guide stays included. Historical
     captures and compiled Bibles remain in Git and their earlier releases;
     copying them into each new source ZIP would eventually exceed GitHub's
-    per-file limit without adding any current project source. Version 0.10 is
-    an explicit supplement: its source package retains the complete v0.9 Bible.
+    per-file limit without adding any current project source. Versions 0.10 and 0.11 extend the playable prototype and retain the complete v0.9 Bible.
     """
     short_version = ".".join(version().split(".")[:2])
     selected: set[Path] = set()

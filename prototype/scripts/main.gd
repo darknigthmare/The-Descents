@@ -17,6 +17,11 @@ const HorrorPresentation = preload("res://scripts/horror_presentation.gd")
 const Routes = preload("res://scripts/route_catalog.gd")
 const Continuation = preload("res://scripts/continuation_director.gd")
 const Dossier = preload("res://scripts/mission_dossier.gd")
+const Equipment = preload("res://scripts/equipment_director.gd")
+const EquipmentPresentation = preload("res://scripts/rescue_equipment.gd")
+
+var equipment = Equipment.new()
+var equipment_visuals: Node3D
 
 var continuation = Continuation.new()
 var continuation_visuals: Node3D
@@ -122,6 +127,7 @@ func _ready() -> void:
 func _prepare_menu() -> void:
 	# A menu is a preview of the last validated checkpoint, never a new save.
 	menu_snapshot = Save.load_data(save_path)
+	equipment.restore(menu_snapshot.get("supplies_used", []))
 	continuation.restore(menu_snapshot.get("continuation", Continuation.new().snapshot()))
 	menu_context = Cinematics.menu_context(menu_snapshot)
 	started = false
@@ -134,7 +140,7 @@ func _prepare_menu() -> void:
 	for target: Node3D in world_data.get("interactables",[]):
 		var key: String = _key(target)
 		if key in rescued or key in menu_snapshot.get("clues",[]) or key in menu_snapshot.get("supplies_used",[]):
-			if str(target.get_meta("kind", "")) != "continuation_evidence":
+			if str(target.get_meta("kind", "")) not in ["continuation_evidence", "equipment"]:
 				target.hide()
 			target.set_meta("used",true)
 	if not menu_snapshot.is_empty():
@@ -199,7 +205,8 @@ func _bind_inputs() -> void:
 		"look_up": [KEY_UP], "look_down": [KEY_DOWN],
 		"jump": [KEY_SPACE], "sprint": [KEY_SHIFT], "crouch": [KEY_CTRL],
 		"interact": [KEY_E], "flashlight": [KEY_F], "flare": [KEY_G],
-		"radio": [KEY_R], "journal": [KEY_J], "anchor": [KEY_X], "pause_game": [KEY_ESCAPE]
+		"radio": [KEY_R], "journal": [KEY_J], "anchor": [KEY_X], "pause_game": [KEY_ESCAPE],
+		"tool_1": [KEY_1, KEY_KP_1], "tool_2": [KEY_2, KEY_KP_2], "tool_3": [KEY_3, KEY_KP_3], "tool_4": [KEY_4, KEY_KP_4]
 	}
 	for action in keys:
 		if not InputMap.has_action(action):
@@ -210,6 +217,8 @@ func _bind_inputs() -> void:
 			InputMap.action_add_event(action, event)
 
 func _build_world(seed_value: int) -> void:
+	equipment.cancel()
+	equipment_visuals = null
 	traversal_checkpoint_pending = false
 	continuation_visuals = null
 	epilogue_playing = false
@@ -251,6 +260,10 @@ func _build_world(seed_value: int) -> void:
 	player.position = world_data.get("roof_spawn", Vector3(7,42.2,7))
 	player.rotation.y = 0.75
 	player.apply_comfort(preferences)
+	equipment_visuals = EquipmentPresentation.new()
+	world.add_child(equipment_visuals)
+	world_data["interactables"].append_array(equipment_visuals.build(world, player.camera, continuation.phase != "dormant"))
+	equipment_visuals.sample(equipment.snapshot(), false, incident.phase == "aftermath", reduced_motion)
 	rescue_visuals = RescuePresentation.new()
 	world.add_child(rescue_visuals)
 	rescue_visuals.build(world, player.camera)
@@ -280,6 +293,7 @@ func _show_menu_camera() -> void:
 	menu_camera.current = true
 
 func _start_new(seed_value: int) -> void:
+	equipment.reset()
 	# A new attempt does not erase the previous checkpoint until a new one is valid.
 	continuation.reset()
 	health = 100
@@ -343,6 +357,7 @@ func _continue_game() -> void:
 		_say("VARGA  /  POSTE DU TOIT", "Point sûr rétabli. Votre compte rendu est à jour. Vérifiez votre matériel avant de continuer.", 8)
 
 func _restore(data: Dictionary) -> void:
+	equipment.restore(data.get("supplies_used", []))
 	continuation.restore(data.get("continuation", Continuation.new().snapshot()))
 	incident.restore(str(data["incident_state"]))
 	observation_hold = 0
@@ -377,7 +392,7 @@ func _restore(data: Dictionary) -> void:
 	for target: Node3D in world_data.get("interactables", []):
 		var key: String = _key(target)
 		if key in rescued or key in clues or key in supplies_used:
-			if str(target.get_meta("kind", "")) != "continuation_evidence":
+			if str(target.get_meta("kind", "")) not in ["continuation_evidence", "equipment"]:
 				target.hide()
 			target.set_meta("used", true)
 	_begin_game()
@@ -472,6 +487,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			_finish_arrival()
 			get_viewport().set_input_as_handled()
 		return
+	for index: int in range(Equipment.TOOLS.size()):
+		if event.is_action_pressed("tool_%d" % (index + 1)):
+			_select_equipment(Equipment.TOOLS[index])
+			get_viewport().set_input_as_handled()
+			return
 	if event.is_action_pressed("interact"):
 		_interact()
 	elif event.is_action_pressed("jump") and player.on_rope:
@@ -550,6 +570,7 @@ func _process(delta: float) -> void:
 	_process_story_radio(quiet_radio_delta)
 	_process_horror(delta, floor_number)
 	_find_nearest()
+	_process_equipment(delta)
 	_update_hud()
 	if health <= 0:
 		_fall_recovery()
@@ -784,6 +805,8 @@ func _find_nearest() -> void:
 		if floor_number != player.nearest_floor():
 			continue
 		var distance: float = Vector2(player.position.x - object.global_position.x, player.position.z - object.global_position.z).length()
+		if str(object.get_meta("kind", "")) == "equipment" and (not _can_use_equipment() or not _equipment_target_visible(object)):
+			continue
 		if str(object.get_meta("kind", "")).begins_with("continuation_") and not _continuation_target_visible(object):
 			continue
 		if str(object.get_meta("kind", "")) == "inspect":
@@ -828,7 +851,7 @@ func _open_inspection(object: Node3D) -> void:
 	hud.show_inspection(entry)
 
 func _key(object: Node3D) -> String:
-	if str(object.get_meta("kind", "")) == "inspect" or str(object.get_meta("kind", "")).begins_with("continuation_"):
+	if str(object.get_meta("kind", "")) in ["inspect", "equipment"] or str(object.get_meta("kind", "")).begins_with("continuation_"):
 		return str(object.get_meta("id", ""))
 	return "%s_%d" % [str(object.get_meta("kind", "unknown")), int(object.get_meta("floor", 0))]
 
@@ -851,6 +874,8 @@ func _interact_node(object: Node3D) -> void:
 		_notify("La secousse continue. Restez près du rescapé ; le portage reprend dès la stabilisation.")
 		return
 	match kind:
+		"equipment":
+			_begin_equipment(object)
 		"inspect":
 			_open_inspection(object)
 		"observation":
@@ -1081,6 +1106,9 @@ func _update_hud() -> void:
 	hud.oxygen_bar.value = oxygen
 	hud.stress_bar.value = stress
 	hud.resources_label.text = "ANCRAGES %d  /  FUSÉES %d" % [anchors, flares]
+	hud.equipment_label.text = "%s  ·  %s\n1 Hache  2 Extincteur  3 Halligan  4 Coupe-boulon" % [str(Equipment.TITLES[equipment.selected]).to_upper(), "réserve %d / 3" % equipment.charges_left() if equipment.selected == "extinguisher" else "outil prêt"]
+	if not _can_use_equipment():
+		hud.equipment_label.text = "MATÉRIEL RANGÉ · MAINS LIBRES POUR LE SECOURS"
 	hud.status_label.text = "RESCAPÉS %d / 3    •    INDICES %d / 3" % [rescued.size(), clues.size()]
 	if continuation.phase != "dormant":
 		hud.status_label.text = "TOIT 3 / 3   •   REFUGE %d / 2   •   INDICES %d / 5" % [2 if continuation.escort_state == "received" else 0, clues.size()]
@@ -1136,6 +1164,8 @@ func _update_hud() -> void:
 			hud.prompt_label.text = "E  Relever · " + str(nearest.get_meta("title", "Pièce d’exposition"))
 		elif kind == "continuation_finish":
 			hud.prompt_label.text = "E  Transmettre le compte rendu de reconnaissance"
+		elif kind == "equipment":
+			hud.prompt_label.text = equipment.prompt(_key(nearest))
 		elif kind == "inspect":
 			hud.prompt_label.text = "E  Examiner · " + str(nearest.get_meta("title", "Objet d’intervention"))
 		elif kind == "observation":
@@ -1452,6 +1482,9 @@ func _open_journal() -> void:
 
 func _pause(show_panel: bool = true) -> void:
 	paused = true
+	equipment.cancel()
+	if is_instance_valid(equipment_visuals):
+		equipment_visuals.sample(equipment.snapshot(), false, incident.phase == "aftermath", reduced_motion)
 	for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect,audio_score,audio_rotors]:
 		if is_instance_valid(channel):
 			channel.stream_paused = true
@@ -1626,3 +1659,63 @@ func _exit_tree() -> void:
 	for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect,audio_score,audio_rotors]:
 		if is_instance_valid(channel):
 			channel.stop()
+
+
+func _can_use_equipment() -> bool:
+	return _can_inspect() and player.is_at_landing() and not epilogue_playing and not boot_playing
+
+func _equipment_target_visible(object: Node3D) -> bool:
+	if not is_instance_valid(object) or not object.is_visible_in_tree() or str(object.get_meta("kind", "")) != "equipment":
+		return false
+	if object not in world_data.get("interactables", []) or int(object.get_meta("floor", 0)) != player.nearest_floor():
+		return false
+	var focus: Vector3 = object.global_position + (object.get_meta("focus_offset", Vector3(0, 0.85, 0)) as Vector3)
+	var origin: Vector3 = player.camera.global_position
+	var toward: Vector3 = focus - origin
+	if toward.length() > 2.8 or toward.length_squared() < 0.001 or (-player.camera.global_basis.z).dot(toward.normalized()) < 0.86:
+		return false
+	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(origin, focus)
+	query.exclude = [player.get_rid()]
+	var hit: Dictionary = get_world_3d().direct_space_state.intersect_ray(query)
+	if hit.is_empty():
+		return true
+	var collider: Node = hit.get("collider")
+	return is_instance_valid(collider) and (collider == object or object.is_ancestor_of(collider))
+
+func _select_equipment(id: String) -> void:
+	if not _can_use_equipment():
+		_notify("Rejoignez un appui stable, les mains libres, pour sortir un outil.")
+		return
+	if equipment.select_tool(id):
+		_notify(str(Equipment.TITLES[id]) + " en main. Visez un point d’intervention puis maintenez E.")
+		equipment_visuals.sample(equipment.snapshot(), true, incident.phase == "aftermath", reduced_motion, elapsed)
+		_update_hud()
+
+func _begin_equipment(object: Node3D) -> void:
+	if not _can_use_equipment() or not _equipment_target_visible(object) or incident.phase != "aftermath":
+		return
+	var id: String = _key(object)
+	if not equipment.begin(id):
+		_notify(equipment.prompt(id))
+		return
+	_update_hud()
+
+func _process_equipment(delta: float, held_override: int = -1) -> void:
+	if not is_instance_valid(equipment_visuals):
+		return
+	var available: bool = _can_use_equipment()
+	var target: Node3D = equipment_visuals.targets.get(equipment.active_id)
+	var valid: bool = available and is_instance_valid(target) and _equipment_target_visible(target) and incident.phase == "aftermath"
+	var held: bool = Input.is_action_pressed("interact") if held_override < 0 else held_override == 1
+	var result: Dictionary = equipment.advance(delta, valid, held)
+	if not result.is_empty():
+		var id: String = str(result["id"])
+		if id not in supplies_used:
+			supplies_used.append(id)
+			match str(result["reward"]):
+				"flare": flares = mini(6, flares + 1)
+				"medical": health = minf(100.0, health + 20.0)
+		_save_checkpoint(player.nearest_floor())
+		_notify(str(result["message"]))
+	equipment_visuals.sample(equipment.snapshot(), available, incident.phase == "aftermath", reduced_motion, elapsed)
+	equipment_visuals.aim_spray(player.camera.to_global(Vector3(0.25, -0.22, -0.5)))

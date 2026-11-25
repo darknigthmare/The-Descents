@@ -5,6 +5,12 @@ const Presentation = preload("res://scripts/presentation_geometry.gd")
 const Atmosphere = preload("res://scripts/maritime_atmosphere.gd")
 const Routes = preload("res://scripts/route_catalog.gd")
 const ContinuationPresentation = preload("res://scripts/continuation_presentation.gd")
+const CinematicLighting = preload("res://scripts/cinematic_lighting.gd")
+const SurfaceMaterials = preload("res://scripts/surface_materials.gd")
+var lighting: Node
+var surface_library: RefCounted = SurfaceMaterials.new()
+var requested_lighting_profile: String = "auto"
+var affected_practicals: Array[SpotLight3D] = []
 var atmosphere: Node3D
 var reduced_motion: bool = true
 var continuation_enabled: bool = false
@@ -99,6 +105,7 @@ func build(seed_value: int, floor_specs: Array, enable_continuation: bool = fals
 	atmosphere.build(self)
 	atmosphere.sample_world(elapsed, incident_stage, reduced_motion)
 	_build_incident_effects()
+	_finalize_lighting_geometry()
 	apply_incident("intact", 0.0)
 	set_rescued_people([])
 	return {
@@ -121,6 +128,42 @@ func build(seed_value: int, floor_specs: Array, enable_continuation: bool = fals
 		"routes": Routes.all_routes(continuation_enabled),
 		"continuation_visuals": continuation_visuals
 	}
+
+## Quality selection changes supported effects, never the running graphics API.
+## A Windows fallback launcher selects Compatibility before the engine starts.
+func set_lighting_profile(profile: String = "auto") -> Dictionary:
+	requested_lighting_profile = profile if profile in CinematicLighting.VALID_PROFILES else "auto"
+	return lighting.set_profile(requested_lighting_profile) if is_instance_valid(lighting) else CinematicLighting.runtime_capabilities()
+
+func lighting_snapshot() -> Dictionary:
+	var result: Dictionary = lighting.snapshot() if is_instance_valid(lighting) else CinematicLighting.runtime_capabilities()
+	result["geometry"] = CinematicLighting.geometry_inventory(self)
+	result["materials"] = surface_library.snapshot()
+	return result
+
+func mark_dynamic_lighting_branch(branch: Node) -> void:
+	CinematicLighting.mark_dynamic_branch(branch)
+	if is_instance_valid(branch):
+		surface_library.localize_moving_branch(branch)
+
+func refresh_static_lighting(reason: String = "static_geometry_changed") -> bool:
+	return lighting.invalidate_static_lighting(reason) if is_instance_valid(lighting) else false
+
+func _finalize_lighting_geometry() -> void:
+	# These objects move, appear/disappear, deform, or contain animated shaders.
+	# They receive GI and cast direct shadows without becoming static voxels.
+	var dynamic_roots: Array = [twin_tower, rain, atmosphere, continuation_visuals,
+		continuation_access_cover, roof_medical_group, crack_group, dust_group,
+		emergency_group, broken_connection, route_obstacle, route_markers, get_node_or_null("water")]
+	dynamic_roots.append_array(helicopters)
+	dynamic_roots.append_array(arrival_wash)
+	dynamic_roots.append_array(incident_damage)
+	dynamic_roots.append_array(breakable_glass)
+	dynamic_roots.append_array(impact_fragments)
+	for branch: Node in dynamic_roots:
+		if is_instance_valid(branch):
+			mark_dynamic_lighting_branch(branch)
+	lighting.finalize_static_geometry(self)
 
 func set_continuation_state(state: Dictionary) -> void:
 	if not continuation_enabled:
@@ -160,21 +203,20 @@ func set_lightning_enabled(enabled: bool) -> void:
 	lightning_enabled = enabled
 
 func _make_materials() -> void:
-	var concrete: ShaderMaterial = ShaderMaterial.new()
-	concrete.shader = load("res://shaders/weathered_surface.gdshader")
-	concrete.set_shader_parameter("surface_color", Color("37454b"))
-	concrete.set_shader_parameter("surface_roughness", 0.94)
-	materials["concrete"] = concrete
-	materials["edge"] = _mat(Color("687273"), 0.85)
+	materials["concrete"] = surface_library.get_surface("salt_concrete", Color("a1abad"))
+	materials["edge"] = surface_library.get_surface("salt_concrete", Color("c3ccce"))
 	materials["dark"] = _mat(Color("121d25"), 0.75)
-	materials["metal"] = _mat(Color("597580"), 0.34, 0.65)
-	materials["black_metal"] = _mat(Color("10232e"), 0.45, 0.65)
+	materials["metal"] = surface_library.get_surface("brushed_steel", Color("a2b7c0"))
+	materials["black_metal"] = surface_library.get_surface("black_rubber")
 	materials["gold"] = _mat(Color("9c7650"), 0.4, 0.7)
 	materials["cream"] = _mat(Color("b5b9aa"), 0.82)
-	materials["wood"] = _mat(Color("463d38"), 0.85)
+	materials["wood"] = surface_library.get_surface("smoked_oak")
 	materials["orange"] = _mat(Color("e08343"), 0.65)
 	materials["yellow"] = _mat(Color("cfb85a"), 0.72)
-	materials["red"] = _mat(Color("924b48"), 0.78)
+	materials["red"] = surface_library.get_surface("rescue_red_paint")
+	materials["stone"] = surface_library.get_surface("dark_stone")
+	materials["carpet"] = surface_library.get_surface("teal_carpet")
+	materials["tile"] = surface_library.get_surface("porcelain_tile")
 	materials["blue"] = _mat(Color("3d687e"), 0.8)
 	materials["green"] = _mat(Color("476c5a"), 0.85)
 	materials["skin"] = _mat(Color("ad8f7b"), 0.9)
@@ -248,6 +290,10 @@ func _build_environment() -> void:
 	moon.shadow_enabled = true
 	moon.directional_shadow_max_distance = 80.0
 	add_child(moon)
+	lighting = CinematicLighting.new()
+	lighting.name = "CinematicLighting"
+	add_child(lighting)
+	lighting.configure(self, environment, moon, requested_lighting_profile)
 	var sea_mesh: PlaneMesh = PlaneMesh.new()
 	# Keep the finite water boundary beyond the aerial shots and their fog horizon.
 	sea_mesh.size = Vector2(6400, 6400)
@@ -423,6 +469,9 @@ func _glazed_pane(parent: Node3D, position_value: Vector3, size: Vector3, outwar
 	exterior.rotation.y = atan2(outward.x, outward.z)
 	exterior.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	pane.add_child(exterior)
+	# The opaque outward coat exists to compose distant facades; it must not
+	# become an opaque GI wall behind transparent interior glass.
+	mark_dynamic_lighting_branch(pane)
 	return pane
 
 func _build_floor(number: int, spec: Dictionary) -> void:
@@ -430,7 +479,8 @@ func _build_floor(number: int, spec: Dictionary) -> void:
 	floor_node.name = "Floor%d" % number
 	add_child(floor_node)
 	var y: float = floor_heights[number]
-	var floor_material: Material = materials["concrete"] if number <= 26 else materials["cream"]
+	var floor_finish: Dictionary = {30: "stone", 29: "carpet", 28: "carpet", 27: "tile", 26: "tile", 25: "concrete", 24: "carpet", 23: "stone"}
+	var floor_material: Material = materials[str(floor_finish[number])]
 	_floor_surface(floor_node, y, floor_material)
 	var default_names: Dictionary = {30:"RESTAURANT PANORAMIQUE", 29:"SUITES DE L'AUBE", 28:"BUREAUX PELAGOS", 27:"JARDIN DES ENFANTS", 26:"SPA ET BASSIN", 25:"REFUGE TECHNIQUE", 24:"CENTRE DE CONGRÈS", 23:"HISTOIRE DE NACRE"}
 	var title: String = str(spec.get("name", default_names[number])).to_upper()
@@ -445,8 +495,13 @@ func _build_floor(number: int, spec: Dictionary) -> void:
 		_box(floor_node, Vector3(xx, y + 5.35, 0), Vector3(0.7, 0.12, 20), materials["dark"])
 		_box(floor_node, Vector3(xx, y + 5.25, 0), Vector3(0.3, 0.08, 7), materials["lit_amber"] if number in [30,29] else materials["lit_blue"])
 		var floor_light: OmniLight3D = _light(floor_node, Vector3(xx, y + 3.8, 0), Color("ecb778") if number in [30,29] else Color("6da1b3"), 0.95, 11)
+		floor_light.name = "CeilingFillWest" if xx < 0 else "CeilingFillEast"
+		var practical: SpotLight3D = _ceiling_practical(floor_node, Vector3(xx, y + 5.12, -2.8 if xx < 0 else 2.8), Color("ffd6a3") if number in [30, 29] else Color("c0dfe2"), xx > 0)
 		if number in [29, 28]:
 			affected_lights.append(floor_light)
+			floor_light.light_bake_mode = Light3D.BAKE_DYNAMIC
+			affected_practicals.append(practical)
+			practical.light_bake_mode = Light3D.BAKE_DYNAMIC
 	match number:
 		30: _restaurant(floor_node, y)
 		29: _hotel(floor_node, y)
@@ -879,7 +934,9 @@ func set_rescued_people(rescued: Array) -> void:
 		roof_medical_sign.text = "MÉDICAL\n%d SUR 3 À L’ABRI" % confirmed
 
 func _make_helicopter(parent: Node3D, pos: Vector3, aircraft_name: String) -> Dictionary:
-	return Presentation.aircraft(self, parent, pos, aircraft_name)
+	var aircraft: Dictionary = Presentation.aircraft(self, parent, pos, aircraft_name)
+	mark_dynamic_lighting_branch(aircraft["helicopter"])
+	return aircraft
 
 func _build_arrival_wash() -> void:
 	for index in range(helicopter_origins.size()):
@@ -1071,6 +1128,7 @@ func apply_incident(stage: String, stage_time: float) -> void:
 	# Sampling any state twice yields the same geometry; rewind/restore is safe.
 	# Only a witnessed impact starts the cosmetic settling tail. A direct load
 	# into the stable aftermath restores an already settled dust state.
+	var previous_stage: String = incident_stage
 	if stage == "aftermath" and incident_stage != "aftermath":
 		aftermath_dust_elapsed = 0.0 if incident_stage == "impact" else AFTERMATH_DUST_DURATION
 	elif stage == "intact":
@@ -1108,6 +1166,8 @@ func apply_incident(stage: String, stage_time: float) -> void:
 		emergency_group.visible = after_contact
 	for light: OmniLight3D in affected_lights:
 		light.light_energy = 0.28 if after_contact else 0.95
+	for practical: SpotLight3D in affected_practicals:
+		practical.light_energy = 0.48 if after_contact else 1.35
 	_update_incident_dust(stage, t)
 	for index in range(impact_fragments.size()):
 		var piece: MeshInstance3D = impact_fragments[index]
@@ -1134,6 +1194,10 @@ func apply_incident(stage: String, stage_time: float) -> void:
 		if route_obstacle_body.collision_layer != new_layer:
 			route_obstacle_body.set_deferred("collision_layer", new_layer)
 			route_obstacle_body.set_deferred("collision_mask", new_layer)
+	if previous_stage != stage and stage in ["aftermath", "intact"]:
+		# Movers are excluded throughout the collapse. One bounded refresh also
+		# reconciles the stable lighting after a direct save restore or rewind.
+		refresh_static_lighting("incident_" + stage)
 
 func _sample_bravo_retreat(stage: String, sample_time: float) -> void:
 	# A single continuous prepared action follows the incident clock. Loading a
@@ -1222,7 +1286,9 @@ func _interaction(parent: Node3D, pos: Vector3, kind: String, id_value: String, 
 	return node
 
 func _human(parent: Node3D, pos: Vector3, clothing: Material, helmet: bool) -> Node3D:
-	return Presentation.human(self, parent, pos, clothing, helmet)
+	var person: Node3D = Presentation.human(self, parent, pos, clothing, helmet)
+	mark_dynamic_lighting_branch(person)
+	return person
 
 func _supply_crate(parent: Node3D, pos: Vector3) -> void:
 	_box(parent,pos+Vector3(0,0.38,0),Vector3(1.5,0.76,1.0),materials["orange"],true)
@@ -1252,7 +1318,8 @@ func _box(parent: Node3D, pos: Vector3, size_value: Vector3, material: Material,
 	var mesh: BoxMesh = BoxMesh.new()
 	mesh.size = size_value
 	node.mesh = mesh
-	node.material_override = material
+	node.gi_mode = GeometryInstance3D.GI_MODE_DISABLED
+	node.material_override = surface_library.local_variant(material) if CinematicLighting.branch_is_dynamic(parent) else material
 	parent.add_child(node)
 	node.position = pos
 	if solid:
@@ -1273,7 +1340,8 @@ func _cylinder(parent: Node3D, pos: Vector3, radius: float, height: float, mater
 	mesh.height = height
 	mesh.radial_segments = 12
 	node.mesh = mesh
-	node.material_override = material
+	node.gi_mode = GeometryInstance3D.GI_MODE_DISABLED
+	node.material_override = surface_library.local_variant(material) if CinematicLighting.branch_is_dynamic(parent) else material
 	parent.add_child(node)
 	node.position = pos
 	if solid:
@@ -1295,7 +1363,8 @@ func _sphere(parent: Node3D, pos: Vector3, scale_value: Vector3, material: Mater
 	mesh.radial_segments = 12
 	mesh.rings = 6
 	node.mesh = mesh
-	node.material_override = material
+	node.gi_mode = GeometryInstance3D.GI_MODE_DISABLED
+	node.material_override = surface_library.local_variant(material) if CinematicLighting.branch_is_dynamic(parent) else material
 	parent.add_child(node)
 	node.position = pos
 	node.scale = scale_value
@@ -1326,6 +1395,37 @@ func _light(parent: Node3D, pos: Vector3, color: Color, energy: float, light_ran
 	light.omni_range = light_range
 	light.omni_attenuation = 1.3
 	light.shadow_enabled = false
+	light.light_bake_mode = Light3D.BAKE_DISABLED if CinematicLighting.branch_is_dynamic(parent) else Light3D.BAKE_STATIC
+	light.light_indirect_energy = 0.0 if light.light_bake_mode == Light3D.BAKE_DISABLED else 0.55
+	light.light_volumetric_fog_energy = 0.15
+	light.distance_fade_enabled = true
+	light.distance_fade_begin = 30.0
+	light.distance_fade_length = 10.0
 	parent.add_child(light)
 	light.position = pos
+	return light
+
+func _ceiling_practical(parent: Node3D, pos: Vector3, color: Color, portable_shadow: bool) -> SpotLight3D:
+	var light: SpotLight3D = SpotLight3D.new()
+	light.name = "PracticalEast" if portable_shadow else "PracticalWest"
+	light.position = pos
+	light.rotation_degrees.x = -90.0
+	light.light_color = color
+	light.light_energy = 1.35
+	light.light_indirect_energy = 0.55
+	light.light_volumetric_fog_energy = 0.35
+	light.light_bake_mode = Light3D.BAKE_STATIC
+	light.spot_range = 12.0
+	light.spot_angle = 63.0
+	light.spot_angle_attenuation = 0.6
+	light.spot_attenuation = 1.2
+	light.shadow_enabled = portable_shadow
+	light.shadow_bias = 0.04
+	light.shadow_normal_bias = 0.65
+	light.distance_fade_enabled = true
+	light.distance_fade_begin = 24.0
+	light.distance_fade_shadow = 17.0
+	light.distance_fade_length = 8.0
+	light.set_meta(CinematicLighting.PRACTICAL_SHADOW, portable_shadow)
+	parent.add_child(light)
 	return light
