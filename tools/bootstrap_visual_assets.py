@@ -27,6 +27,7 @@ def record(p):
 def generate():
     request = guard()
     OUT.mkdir(parents=True, exist_ok=True)
+    subprocess.run([sys.executable, "-m", "py_compile", "tools/generate_rescue_models.py"], cwd=ROOT, check=True)
     command = ["blender", "--background", "--factory-startup", "--threads", "2",
                "--python", "tools/generate_rescue_models.py", "--", "--root", str(ROOT), "--render"]
     with (OUT / "model-generation.txt").open("w") as log:
