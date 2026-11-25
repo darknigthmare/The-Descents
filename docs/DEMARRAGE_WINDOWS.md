@@ -24,6 +24,8 @@ Le parcours alterne rappels dans les ouvertures et escaliers locaux. Chaque pass
 | S28_27 — escalier | Archives 28 → jardin 27 | Marche vers le 28 |
 | R27_26 — rappel | Jardin 27 → spa 26 | Remontée au 27 |
 | S26_25 — escalier | Spa 26 → refuge 25 | Marche vers le 26 |
+| S25_24 — escalier, après le bilan | Refuge 25 → congrès 24 | Marche et escorte vers le refuge |
+| R24_23 — rappel | Congrès 24 → exposition 23 | Remontée au congrès |
 
 Dans les escaliers, marchez avec **ZQSD / WASD**. Descendez la première volée, tournez sur le palier intermédiaire puis continuez sur la seconde. Aucun appui sur E n’est nécessaire. L’autre extrémité rejoint le plateau ; la cage ne mène pas automatiquement à un troisième étage. Le HUD indique la paire parcourue et le journal situe votre liaison.
 
@@ -124,19 +126,19 @@ La pause fige l’effondrement et le temps de stabilisation. Les mouvements de c
 
 Un enregistrement local est demandé au départ, après les treuillages, au refuge et avant/après l’incident. Si une demande survient sur une corde, pendant un raccordement ou dans un escalier, elle attend le prochain plateau stable, avec un appui sous les pieds. Elle ne crée pas de reprise suspendue ou à mi-hauteur. Le point sûr précédent reste la référence tant que cette écriture n’a pas réussi.
 
-Si vous quittez pendant l’effondrement, la reprise revient au point sûr qui le précède. Après stabilisation, les dégâts sont conservés. **Déployer Alpha** confirme une nouvelle intervention et crée un point sûr ; **Reprendre l’intervention** poursuit le précédent. Les anciennes sauvegardes de schémas 1 et 2 valides sont migrées automatiquement vers le schéma 3. Le journal conserve les 32 dernières transmissions et reste accessible dans le bilan final. Le temps et les sous-titres de l’épilogue ne sont pas ajoutés à cette sauvegarde ; sa relecture ne réécrit pas le fichier. Les données ne sont pas envoyées en ligne.
+Si vous quittez pendant l’effondrement, la reprise revient au point sûr qui le précède. Après stabilisation, les dégâts sont conservés. **Déployer Alpha** confirme une nouvelle intervention et crée un point sûr ; **Reprendre l’intervention** poursuit le précédent. Les anciennes sauvegardes valides de schémas 1, 2 et 3 sont validées puis migrées en mémoire vers le schéma 4 ; leur lecture ne réécrit pas le fichier. Le journal conserve les 32 dernières transmissions et reste accessible dans le bilan final. Le temps et les sous-titres de l’épilogue ne sont pas ajoutés à cette sauvegarde ; sa relecture ne réécrit pas le fichier. Les données ne sont pas envoyées en ligne.
 
 ## Portée de cette version
 
-Prototype solo avec un toit et six étages jouables, des hélicoptères, personnages et équipements procéduraux, réalisé avec **Godot 4.7.2**. La campagne complète, les humains hostiles, les laboratoires profonds, l’Enfer et le futur portage UE5 sont décrits dans la Bible. La corde actuelle suit des segments locaux prédéfinis ; elle ne simule pas la pose libre de tous types de relais.
+Prototype solo avec un toit et huit étages jouables, des hélicoptères, personnages et équipements procéduraux, réalisé avec **Godot 4.7.2**. Les étages 24 et 23 s’ouvrent depuis le bilan du refuge. La campagne complète, les humains hostiles, les laboratoires profonds, l’Enfer et le futur portage UE5 sont décrits dans la Bible. La corde actuelle suit des segments locaux prédéfinis ; elle ne simule pas la pose libre de tous types de relais.
 
 La vérification du paquet comprend sa construction et le chargement de ses ressources embarquées dans un dossier isolé sous Godot Linux. Ce contrôle ne constitue pas une exécution sur un PC Windows. L’état de livraison consigne les résultats ; `EXPORTS.md` décrit la méthode et sa portée.
 
 [Projet, sources et Bible sur GitHub](https://github.com/darknigthmare/The-Descents/tree/feat/live-tower-collapse)
 
-Les archives 0.1, 0.2, 0.4, 0.5, 0.6, 0.7 et **0.8** restent historiques. La 0.9 conserve leur ouverture, les secours, les observations, les réglages, le dossier, l’épilogue et la montée discrète de l’horreur, puis développe les liaisons verticales.
+Les archives 0.1, 0.2, 0.4, 0.5, 0.6, 0.7, 0.8 et **0.9** restent historiques. La 0.10 conserve leur ouverture, les secours, les observations, les réglages, le dossier, l’épilogue, la montée discrète de l’horreur et les liaisons verticales, puis prolonge l’intervention du refuge au congrès et à l’exposition.
 
-Le ZIP Sources courant contient tous les codes, assets actifs, tests, guides et rapports textuels, avec les captures et Word/PDF de la v0.9. Les anciens médias restent disponibles dans le dépôt et dans leurs archives d’origine. Les licences du moteur et de ses composants sont jointes dans `GODOT_LICENSES.txt` ; les notices Open Sans accompagnent également le paquet Windows.
+Le ZIP Sources courant contient tous les codes, assets actifs, tests, guides et rapports textuels, avec les captures de la v0.10, la Bible intégrale Word/PDF v0.9 et son supplément Word/PDF v0.10. Les autres médias historiques restent disponibles dans le dépôt et dans leurs archives d’origine. Les licences du moteur et de ses composants sont jointes dans `GODOT_LICENSES.txt` ; les notices Open Sans accompagnent également le paquet Windows.
 
 ## Réglages et présentation conservés
 

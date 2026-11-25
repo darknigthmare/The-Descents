@@ -208,6 +208,8 @@ func _build_game() -> void:
 	resources_label = _label("ANCRAGES 4  /  FUSÉES 3", 14, MUTED)
 	meters.add_child(resources_label)
 	prompt_label = _label("", 18, Color(1, 0.92, 0.75))
+	prompt_label.add_theme_color_override("font_outline_color", Color(0.025, 0.055, 0.07, 0.95))
+	prompt_label.add_theme_constant_override("outline_size", 3)
 	prompt_label.position = Vector2(365, 596)
 	prompt_label.size = Vector2(710, 106)
 	prompt_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER

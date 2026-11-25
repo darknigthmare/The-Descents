@@ -127,6 +127,8 @@ func _has_support(body: CharacterBody3D) -> bool:
 func _update_sign(player_position: Vector3 = Vector3.INF) -> void:
 	if not is_instance_valid(visual_instruction):
 		return
+	# The fixed reception sign and the individual names take over at refuge.
+	visual_instruction.visible = escort_state != "received"
 	if escort_state == "received":
 		visual_instruction.text = "LÉA + IDRIS\nREÇUS AU REFUGE 25"
 	elif escort_state == "following":
@@ -152,6 +154,7 @@ func _build_escort() -> void:
 		add_child(body)
 		body.global_position = STARTS[index]
 		var figure: Node3D = _world._human(body, Vector3.ZERO, _world.materials["green"] if index == 0 else _world.materials["cream"], false)
+		figure.rotation.y = PI
 		people.append(body)
 		figures.append(figure)
 		var label: Label3D = _world._label(body, Vector3(0, 2.18, 0), NAMES[index], 26, Color("c5eee3"), 0.0055)
@@ -163,7 +166,7 @@ func _build_escort() -> void:
 			_world._sphere(figure, Vector3(0.17, 1.68, 0), Vector3(0.045, 0.06, 0.04), _world.materials["black_metal"])
 		paths.append(_escort_path(index))
 	duo_interaction = _world._interaction(people[0], Vector3.ZERO, "continuation_escort", "continuation_duo_24", 24, "Léa Mercier et Idris Kaci", "Établissez le contact visuel. Le groupe rejoint à pied le refuge 25 par l’escalier nord. E alterne suivre et attendre ; restez à proximité.")
-	visual_instruction = _world._label(people[0], Vector3(0, 2.65, 0), "", 24, Color("b3e5d5"), 0.005, true)
+	visual_instruction = _world._label(people[0], Vector3(0, 2.45, 0), "", 21, Color("b3e5d5"), 0.0048, true)
 	visual_instruction.name = "AccessibleEscortInstruction"
 
 func _escort_path(index: int) -> Array[Vector3]:
@@ -206,7 +209,8 @@ func _build_congress(parent: Node3D) -> void:
 	_world._box(parent, Vector3(8.0, 0.9, -9.6), Vector3(4.5, 0.15, 0.9), m["metal"], true)
 	for x: float in [6.5, 8.0, 9.5]:
 		_world._box(parent, Vector3(x, 1.15, -9.6), Vector3(0.65, 0.08, 0.42), m["screen"])
-	_world._label(parent, Vector3(8.0, 3.55, -9.9), "CABINE D’INTERPRÉTATION", 34, Color("c6e2e4"), 0.007, false)
+	_world._box(parent, Vector3(8.0, 3.4, -6.25), Vector3(6.0, 0.45, 0.12), m["wood"])
+	_world._label(parent, Vector3(8.0, 3.4, -6.17), "CABINE D’INTERPRÉTATION", 30, Color("c6e2e4"), 0.006, false)
 	_world._light(parent, Vector3(8.0, 3.8, -7.5), Color("b6dfd5"), 1.1, 6.0)
 	_world._label(parent, Vector3(-0.5, 2.9, -4.2), "25  ↑  REFUGE\nESCALIER DE SERVICE NORD", 25, Color("a6e5c7"), 0.0055, true)
 	for x: float in [-0.8, 0.5, 2.0, 3.5, 5.0, 6.5]:
@@ -220,16 +224,16 @@ func _build_congress(parent: Node3D) -> void:
 func _build_exhibition(parent: Node3D) -> void:
 	var m: Dictionary = _world.materials
 	var model: Node3D = _world._interaction(parent, Vector3(7.4, -6.0, -6.3), "continuation_evidence", "continuation_model_23", 23, "Maquette des souterrains de Nacre", "Sous les deux tours, la coupe d’origine montre un ancien bassin et des galeries absentes du plan touristique actuel. Le socle de la maquette a été modifié après l’ouverture du complexe.")
-	_world._box(model, Vector3(0, 0.75, 0), Vector3(4.4, 1.5, 2.5), m["dark"], true)
-	_world._box(model, Vector3(0, 1.52, 0), Vector3(4.7, 0.12, 2.8), m["cream"])
+	_world._box(model, Vector3(0, 0.5, 0), Vector3(4.4, 1.0, 2.5), m["dark"], true)
+	_world._box(model, Vector3(0, 1.02, 0), Vector3(4.7, 0.12, 2.8), m["cream"])
 	for x: float in [-0.85, 0.85]:
-		_world._box(model, Vector3(x, 2.10, 0), Vector3(0.48, 1.06, 0.48), m["metal"])
+		_world._box(model, Vector3(x, 1.60, 0), Vector3(0.48, 1.06, 0.48), m["metal"])
 		for band in range(5):
-			_world._box(model, Vector3(x, 1.68 + band * 0.18, -0.25), Vector3(0.5, 0.04, 0.025), m["lit_blue"])
-	_world._box(model, Vector3(0, 1.585, 0.8), Vector3(2.8, 0.055, 0.2), m["lit_amber"])
-	_world._box(model, Vector3(-0.9, 1.6, 0.45), Vector3(0.2, 0.06, 0.9), m["lit_amber"])
-	_world._box(model, Vector3(0.9, 1.6, 0.45), Vector3(0.2, 0.06, 0.9), m["lit_amber"])
-	_world._label(model, Vector3(0, 3.1, 0), "NACRE — COUPE D’ORIGINE", 27, Color("e0e7d8"), 0.006, true)
+			_world._box(model, Vector3(x, 1.18 + band * 0.18, -0.25), Vector3(0.5, 0.04, 0.025), m["lit_blue"])
+	_world._box(model, Vector3(0, 1.085, 0.8), Vector3(2.8, 0.055, 0.2), m["lit_amber"])
+	_world._box(model, Vector3(-0.9, 1.1, 0.45), Vector3(0.2, 0.06, 0.9), m["lit_amber"])
+	_world._box(model, Vector3(0.9, 1.1, 0.45), Vector3(0.2, 0.06, 0.9), m["lit_amber"])
+	_world._label(model, Vector3(0, 2.6, 0), "NACRE — COUPE D’ORIGINE", 27, Color("e0e7d8"), 0.006, true)
 	var photo: Node3D = _world._interaction(parent, Vector3(-7.4, -6.0, 7.5), "continuation_evidence", "continuation_photo_23", 23, "Photographie des anciens bains", "Photographie antérieure au complexe Pelagos : les anciens bains municipaux encadrent une porte haute à double voussure. Sa silhouette correspond à celle dessinée par Alma avant le typhon. La date et le lieu sont visibles sur la légende.")
 	_world._box(photo, Vector3(0, 1.5, 0), Vector3(4.3, 3.0, 0.20), m["wood"], true)
 	_world._box(photo, Vector3(0, 1.6, -0.12), Vector3(3.9, 2.45, 0.03), m["cream"])
@@ -238,7 +242,7 @@ func _build_exhibition(parent: Node3D) -> void:
 	for x: float in [-1.55, -0.75, 0.75, 1.55]:
 		_world._box(photo, Vector3(x, 1.45, -0.16), Vector3(0.13, 1.8, 0.04), m["metal"])
 	_world._box(photo, Vector3(0, 2.46, -0.17), Vector3(3.5, 0.13, 0.03), m["metal"])
-	var photo_caption: Label3D = _world._label(photo, Vector3(0, 0.32, -0.18), "LES ANCIENS BAINS — NACRE, 1964", 25, Color("193039"), 0.0058, false)
+	var photo_caption: Label3D = _world._label(photo, Vector3(0, 2.87, -0.18), "LES ANCIENS BAINS — NACRE, 1964", 23, Color("e0e7d8"), 0.0057, false)
 	photo_caption.rotation.y = PI
 	photo.rotation.y = PI
 	_world._label(parent, Vector3(-7.3, -2.4, 10.8), "HISTOIRE DE NACRE", 55, Color("e1d5b9"), 0.012, false)

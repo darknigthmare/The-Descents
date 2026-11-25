@@ -69,7 +69,7 @@ func _capture() -> void:
 	visual.people[1].position = Vector3(-1.3, 1.28, -7.59)
 	mission.world._pose_human_walk(visual.figures[0], 0.8, 0.7)
 	mission.world._pose_human_walk(visual.figures[1], 2.4, 0.7)
-	_view(Vector3(1.3, 3.12, -10.8), Vector3(-1.3, 2.5, -7.8))
+	_view(Vector3(-1.3, 3.12, -10.8), Vector3(-1.3, 2.3, -7.6))
 	await _shot("05_escorte_escalier", "États préparés des deux personnes sur la volée nord, vers le refuge")
 	mission.continuation.state["escort_state"] = "received"
 	mission.world.set_continuation_state(mission.continuation.snapshot())
@@ -98,7 +98,7 @@ func _capture() -> void:
 	await _shot("07_rappel_24_23", "Nouvelle ligne entre congrès et exposition avec descendeur et mesures actives")
 	mission.player.teleport_to_floor(23)
 	mission.seen_floors.append(23)
-	_view(Vector3(4.4, -5.90, -2.9), Vector3(7.4, -4.0, -6.3))
+	_view(Vector3(7.4, -5.90, -3.6), Vector3(7.4, -4.85, -6.3))
 	await _shot("08_maquette_souterrains", "Maquette des deux tours et volumes absents du plan touristique actuel")
 	_view(Vector3(-7.4, -5.90, 10.3), Vector3(-7.4, -4.5, 7.5))
 	await _shot("09_archive_bains", "Panneau d’archive procédural des anciens bains, forme de porte et légende")
@@ -110,7 +110,9 @@ func _capture() -> void:
 	mission.clues = ["evidence_29", "evidence_27", "evidence_26", "continuation_model_23", "continuation_photo_23"]
 	mission._open_journal()
 	mission.hud.journal_panel.select_tab("clues")
-	mission.hud.journal_text.scroll_to_line(18)
+	await get_tree().process_frame
+	await get_tree().process_frame
+	mission.hud.journal_text.get_v_scroll_bar().value = mission.hud.journal_text.get_v_scroll_bar().max_value
 	await _shot("11_dossier_nacre", "Dossier des cinq pièces effectivement présentes dans l’instantané préparé")
 	mission._resume()
 	_freeze()
@@ -141,6 +143,9 @@ func _view(position_value: Vector3, target: Vector3) -> void:
 	mission.player.camera.current = true
 	mission.player.camera.look_at(target)
 	mission.hud.show_game()
+	mission.hud.notify_label.text = ""
+	if is_instance_valid(mission.continuation_visuals):
+		mission.continuation_visuals._update_sign(mission.player.global_position)
 	mission._find_nearest()
 	mission._update_hud()
 
