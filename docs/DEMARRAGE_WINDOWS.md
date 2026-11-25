@@ -1,26 +1,68 @@
-# The Tower Descent — prototype 0.8
+# The Tower Descent — prototype 0.9
 
-Ce guide décrit les commandes du paquet v0.8. [Télécharger Windows x64 v0.8](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.8-Windows-x64.zip) ou [les sources complètes v0.8](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.8-Sources.zip). Le statut des archives et les résultats de vérification se trouvent dans [l’état de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md).
+Ce guide décrit les commandes du paquet v0.9. [Télécharger Windows x64 v0.9](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.9-Windows-x64.zip) ou [les sources et documents v0.9](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.9-Sources.zip). Le statut des archives et les résultats de vérification figurent dans [l’état de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md).
 
 ## Lancer l’intervention
 
-1. Extraire tout le ZIP **The-Tower-Descent-v0.8-Windows-x64.zip** dans un dossier.
+1. Extraire tout le ZIP **The-Tower-Descent-v0.9-Windows-x64.zip** dans un dossier.
 2. Ouvrir **TheTowerDescent.exe**. Aucune installation de Godot n’est nécessaire.
 3. Passer ou regarder la signature du studio, ouvrir **Commencer l’intervention**, puis confirmer **Déployer Alpha**. La disposition proposée convient pour une première partie.
 
 La signature de 15 secondes précède un accueil lié à votre dernier point sûr. L’approche en jeu de 28 secondes montre la ville, les deux tours encore droites et les équipes de secours en quatre plans. Les deux hélicoptères approchent et se posent ; les portes s’ouvrent pendant le déploiement des équipes, puis se referment avant la prise de contrôle. **E**, **Entrée** ou le bouton **Passer** permettent de passer la séquence. **Échap** met l’approche en pause. Le chronomètre de mission démarre après le raccord au joueur. Vous prenez ensuite le contrôle sur le toit d’Aube ; Bravo se déploie sur Hespérie.
 
-Rejoignez la balise orange au bord du puits, appuyez sur **E**, puis descendez avec **S**. À hauteur d’une dalle, **E** vous fait quitter le rappel.
+Sur le toit, rejoignez le **repère bleu du rappel personnel**, puis appuyez sur **E**. Laissez se terminer le raccordement de la longe avant de descendre avec **S**. Le premier segment mène seulement au restaurant du 30. Les **balises orange** servent à l’évacuation des rescapés vers le toit.
+
+## Trouver le passage vers l’étage voisin
+
+Le parcours alterne rappels dans les ouvertures et escaliers locaux. Chaque passage permet le retour entre les deux niveaux indiqués.
+
+| Liaison | Descente | Retour |
+| --- | --- | --- |
+| R31_30 — rappel | Toit → restaurant 30 | Remontée au toit |
+| S30_29 — escalier | Restaurant 30 → suites 29 | Marche vers le 30 |
+| R29_28 — rappel | Suites 29 → archives 28 | Remontée au 29 |
+| S28_27 — escalier | Archives 28 → jardin 27 | Marche vers le 28 |
+| R27_26 — rappel | Jardin 27 → spa 26 | Remontée au 27 |
+| S26_25 — escalier | Spa 26 → refuge 25 | Marche vers le 26 |
+
+Dans les escaliers, marchez avec **ZQSD / WASD**. Descendez la première volée, tournez sur le palier intermédiaire puis continuez sur la seconde. Aucun appui sur E n’est nécessaire. L’autre extrémité rejoint le plateau ; la cage ne mène pas automatiquement à un troisième étage. Le HUD indique la paire parcourue et le journal situe votre liaison.
+
+Une arrivée d’étage n’est confirmée que lorsque vous retrouvez un plateau stable. Le palier à mi-hauteur ne devient pas un nouveau point sûr. Les repères de station permettent de retrouver le prochain passage et de revenir au toit si un objectif a été oublié.
+
+## Maîtriser le rappel
+
+Le rappel personnel exige les mains libres. Si vous portez une personne, ramenez-la d’abord à la balise orange de son étage et lancez le treuil. Le raccordement à une station bleue ne consomme aucun ancrage facultatif.
+
+| Geste | Commande | Effet |
+| --- | --- | --- |
+| Engager la longe | E près du repère bleu | Raccordement de 0,85 s, si l’accès est libre |
+| Descendre | S | Vitesse cible 2,8 m/s |
+| Remonter | Z ou W | Vitesse cible 1,6 m/s ; consomme de l’endurance |
+| Approcher précisément | Ctrl et une direction | Vitesse cible 0,75 m/s ; prioritaire sur Maj |
+| Descendre rapidement | Maj + S | Vitesse cible 4,2 m/s ; consomme de l’endurance |
+| Corriger le balancement | Q/A ou D | Recentre la suspension dans l’ouverture |
+| Freiner | Relâcher la direction | Freinage automatique jusqu’à l’arrêt |
+| Garder la hauteur | Espace | Verrouille le descendeur ; un nouvel appui le libère |
+| Stabiliser | X | Seize secondes, contre un ancrage si l’usage est accepté |
+| Quitter la corde | E près d’un terminal | Demande une vitesse presque nulle, un recentrage et un passage dégagé |
+
+Relâchez la direction ou verrouillez pour récupérer de l’endurance. La remontée et la descente rapide en dépensent ; les descentes normale et précise n’en dépensent pas mais ne la régénèrent pas en mouvement. À zéro, Alex reste assuré, se repose et retrouve la disponibilité de mouvement à 20 points. Si vous maintenez encore la direction, il pourra alors repartir : gardez le verrou si vous souhaitez continuer à attendre.
+
+Le HUD précise le mode, la vitesse, l’endurance, le câble déployé et les mètres jusqu’au terminal bas. Une stabilisation déjà active refuse un nouvel usage de X, sans consommer une autre unité. Vous pouvez effectuer l’itinéraire sans ce consommable.
+
+Pour sortir, rejoignez le niveau de la dalle, relâchez la direction, corrigez le balancement si nécessaire puis utilisez **E**. **Ctrl** aide à approcher et **Espace** à garder la hauteur. La sortie conserve la longe pendant un transfert de 0,85 s. Si l’accès est encombré, le message explique le refus et Alex reste assuré. Une sortie ne permet pas de choisir un autre étage que les deux extrémités du segment.
+
+La pause, le journal et les panneaux de lecture suspendent la mission et le rappel. Le regard reste sous votre contrôle ; les mouvements réduits atténuent les mouvements cosmétiques du matériel et de la caméra.
 
 ## Objectif
 
-Retrouvez les trois personnes aux étages **30, 28 et 26**. Appuyez sur **E** à proximité pour les prendre en charge, puis revenez à la balise de l’étage et utilisez **E** pour lancer le treuil. Attendez la confirmation du toit.
+Retrouvez les trois personnes aux étages **30, 28 et 26**. Appuyez sur **E** à proximité pour les prendre en charge, puis revenez à la balise orange du même étage et utilisez **E** pour lancer le treuil. Attendez la confirmation du toit.
 
 Après le sauvetage d’**Ana au 30** et le départ des hélicoptères, rejoignez la **baie Est du 29**. Regardez Bravo dans Hespérie pendant **0,8 seconde**, ou appuyez sur **E** près de la balise d’observation. L’alerte, la réplique, l’effondrement et l’impact se déroulent en 25 secondes ; vous gardez le contrôle. Éloignez-vous des vitres et gardez le noyau intérieur à portée.
 
-Après l’impact, le couloir Est du **28** est condamné : contournez-le par le noyau pour atteindre Samuel, puis ramenez-le au treuil. Les rescapés déjà arrivés au toit restent en sécurité. Une fois les trois sauvetages confirmés et la scène terminée, activez le relais du refuge **25**.
+Après l’impact, le couloir Est du **28** est condamné : contournez-le par le noyau pour atteindre Samuel, puis ramenez-le à la balise orange du 28. Les rescapés déjà arrivés au toit restent en sécurité. Une fois les trois sauvetages confirmés et la scène terminée, activez le relais du refuge **25**.
 
-Les lueurs bleues signalent les indices ; les caisses fournissent du matériel. Les apparitions du premier secteur restent des manifestations perceptives : elles ne poursuivent pas Alex et ne lui infligent pas de dégâts. Gardez les secours et la lecture des lieux comme priorité ; lampe et fusées restent à votre disposition.
+Les documents de preuve restent sur les plateaux ; les caisses fournissent du matériel. Les stations bleues de traversée se reconnaissent à la paire d’étages indiquée. Les apparitions du premier secteur restent des manifestations perceptives : elles ne poursuivent pas Alex et ne lui infligent pas de dégâts. Gardez les secours et la lecture des lieux comme priorité ; lampe et fusées restent à votre disposition.
 
 ## Examiner les lieux
 
@@ -46,35 +88,48 @@ Le bilan reprend les personnes sauvées, les documents recueillis, le temps et l
 
 | Action | Touche |
 | --- | --- |
-| Déplacement | ZQSD ou WASD |
-| Regard | Souris ou flèches |
-| Interaction / examiner un objet / passer l’approche ou l’épilogue | E |
-| Défiler dans une fiche de terrain | Molette / Page ↑ / Page ↓ |
-| Fermer une fiche et reprendre | Échap ou bouton de fermeture |
+| Marcher et emprunter les escaliers | ZQSD ou WASD |
+| Regarder | Souris ou flèches |
+| Interagir, examiner, engager ou quitter un rappel | E |
 | Descendre / remonter sur corde | S / Z ou W |
-| Ancrage secondaire sur corde | X |
+| Équilibrer le rappel | Q/A et D |
+| Progression précise sur corde | Ctrl avec une direction |
+| Descente rapide sur corde | Maj + S |
+| Verrouiller / libérer le descendeur | Espace, sur corde |
+| Stabiliser seize secondes | X, sur corde |
+| Courir / s’accroupir / sauter à pied | Maj / Ctrl / Espace |
 | Lampe / fusée | F / G |
 | Radio / journal à quatre onglets | R / J |
 | Changer d’onglet du journal | Flèches sur un onglet ; Tab pour parcourir les contrôles |
-| Courir / s’accroupir / sauter | Maj / Ctrl / Espace |
+| Défiler dans une fiche ou le dossier | Molette / Page ↑ / Page ↓ |
+| Fermer une fiche et reprendre | Échap ou bouton de fermeture |
+| Passer l’approche ou l’épilogue | E, Entrée ou bouton affiché |
 | Pause et options | Échap |
 
-La pause fige l’effondrement. Les mouvements de caméra sont réduits par défaut ; les éclairs lumineux sont facultatifs. Les réglages sont accessibles avant la partie et conservés sur cet appareil. **Revoir l’introduction** relance la signature sans modifier la sauvegarde.
+L’aide **Commandes et mission**, accessible depuis l’accueil et la pause, reprend l’itinéraire et les commandes contextuelles. Espace sert au saut à pied et au verrouillage sur la corde.
 
-Un enregistrement local est demandé au départ, après les treuillages, au refuge et avant/après l’incident. Le point sûr précédent reste la référence tant que cette écriture n’a pas réussi. Si vous quittez pendant l’effondrement, la reprise revient au point sûr qui le précède. Après stabilisation, les dégâts sont conservés. **Déployer Alpha** confirme une nouvelle intervention et crée un point sûr ; **Reprendre l’intervention** poursuit le précédent. Les anciennes sauvegardes de schémas 1 et 2 valides sont migrées automatiquement vers le schéma 3. Le journal conserve les 32 dernières transmissions et reste accessible dans le bilan final. Le temps et les sous-titres de l’épilogue ne sont pas ajoutés à cette sauvegarde ; sa relecture ne réécrit pas le fichier. Les données ne sont pas envoyées en ligne.
+La pause fige l’effondrement et le temps de stabilisation. Les mouvements de caméra sont réduits par défaut ; les éclairs lumineux sont facultatifs. Les réglages sont accessibles avant la partie et conservés sur cet appareil. **Revoir l’introduction** relance la signature sans modifier la sauvegarde.
+
+## Points sûrs et reprise
+
+Un enregistrement local est demandé au départ, après les treuillages, au refuge et avant/après l’incident. Si une demande survient sur une corde, pendant un raccordement ou dans un escalier, elle attend le prochain plateau stable, avec un appui sous les pieds. Elle ne crée pas de reprise suspendue ou à mi-hauteur. Le point sûr précédent reste la référence tant que cette écriture n’a pas réussi.
+
+Si vous quittez pendant l’effondrement, la reprise revient au point sûr qui le précède. Après stabilisation, les dégâts sont conservés. **Déployer Alpha** confirme une nouvelle intervention et crée un point sûr ; **Reprendre l’intervention** poursuit le précédent. Les anciennes sauvegardes de schémas 1 et 2 valides sont migrées automatiquement vers le schéma 3. Le journal conserve les 32 dernières transmissions et reste accessible dans le bilan final. Le temps et les sous-titres de l’épilogue ne sont pas ajoutés à cette sauvegarde ; sa relecture ne réécrit pas le fichier. Les données ne sont pas envoyées en ligne.
 
 ## Portée de cette version
 
-Prototype solo avec un toit et six étages jouables, des hélicoptères et personnages procéduraux, réalisé avec **Godot 4.7.2**. La campagne complète et le futur portage UE5 sont décrits dans la bible. La vérification du paquet comprend sa construction et le chargement de ses ressources embarquées dans un dossier isolé sous Godot Linux. Ce contrôle ne constitue pas une exécution sur un PC Windows. L’état de livraison consigne les résultats ; `EXPORTS.md` décrit la méthode et sa portée.
+Prototype solo avec un toit et six étages jouables, des hélicoptères, personnages et équipements procéduraux, réalisé avec **Godot 4.7.2**. La campagne complète, les humains hostiles, les laboratoires profonds, l’Enfer et le futur portage UE5 sont décrits dans la Bible. La corde actuelle suit des segments locaux prédéfinis ; elle ne simule pas la pose libre de tous types de relais.
 
-[Projet, sources et bible sur GitHub](https://github.com/darknigthmare/The-Descents/tree/feat/live-tower-collapse)
+La vérification du paquet comprend sa construction et le chargement de ses ressources embarquées dans un dossier isolé sous Godot Linux. Ce contrôle ne constitue pas une exécution sur un PC Windows. L’état de livraison consigne les résultats ; `EXPORTS.md` décrit la méthode et sa portée.
 
-Les archives 0.1, 0.2, 0.4, 0.5, 0.6 et 0.7 restent historiques. La **0.8** conserve l’ouverture, les sauvetages, les observations, les réglages, le dossier et l’épilogue du refuge. Elle ajoute une progression plus discrète des manifestations dans le premier secteur.
+[Projet, sources et Bible sur GitHub](https://github.com/darknigthmare/The-Descents/tree/feat/live-tower-collapse)
 
-Les licences du moteur et de ses composants sont jointes dans `GODOT_LICENSES.txt`. La notice et la licence des polices Open Sans accompagnent également cette archive.
+Les archives 0.1, 0.2, 0.4, 0.5, 0.6, 0.7 et **0.8** restent historiques. La 0.9 conserve leur ouverture, les secours, les observations, les réglages, le dossier, l’épilogue et la montée discrète de l’horreur, puis développe les liaisons verticales.
+
+Le ZIP Sources courant contient tous les codes, assets actifs, tests, guides et rapports textuels, avec les captures et Word/PDF de la v0.9. Les anciens médias restent disponibles dans le dépôt et dans leurs archives d’origine. Les licences du moteur et de ses composants sont jointes dans `GODOT_LICENSES.txt` ; les notices Open Sans accompagnent également le paquet Windows.
 
 ## Réglages et présentation conservés
 
 Accueil → Options et confort, ou Échap → Options et confort pendant l’intervention. Volume 0–100 %, sensibilité ×0,25–×2,5, champ de vision 65–100° et regard vertical inversé sont appliqués immédiatement. Fermer ce panneau en partie retourne à la pause ; Reprendre rend le contrôle. Les réglages restent distincts du point sûr.
 
-Le portage montre le harnais et les mains d’Alex. Le treuil conserve ses cinq secondes, puis l’équipe prend la personne en charge au toit. La pluie et la mer suivent la pause ; les mouvements réduits conservent une ambiance fixe.
+Le portage montre le harnais et les mains d’Alex. Le treuil conserve ses cinq secondes, puis l’équipe prend la personne en charge au toit. La pluie et la mer suivent la pause ; les mouvements réduits conservent une ambiance fixe. Le matériel de rappel possède sa propre présentation, liée à la vitesse, au verrou et à l’état d’attache.

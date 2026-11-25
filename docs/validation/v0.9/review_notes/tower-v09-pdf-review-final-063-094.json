@@ -1,0 +1,367 @@
+{
+  "reviewer": "AI — /root/v09_rope",
+  "reviewer_type": "AI",
+  "source_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
+  "evidence_checkout_commit": "3aa6e462576d0ca71dcf39b414917621d12007d8",
+  "pdf_file": "docs/The-Tower-Descent-Bible-v0.9.pdf",
+  "pdf_sha256": "25776d758dfb7070afb4157f15859864c6f991809fba71f78cf6f442cbe61121",
+  "page_count": 186,
+  "assigned_range": {
+    "first": 63,
+    "last": 94
+  },
+  "reviewed_page_count": 32,
+  "method": "Chaque PNG exact produit par la CI a été ouvert séparément à sa taille native avec view_image ; au plus deux images par appel. Revue visuelle de la lisibilité, des marges, des titres, des tableaux, des continuations de page et des corrections spécifiées. Aucune planche-contact, image proxy ou extraction textuelle utilisée à la place de cette observation.",
+  "all_pass": true,
+  "pages": [
+    {
+      "page": 63,
+      "status": "pass",
+      "notes": "Tableau Invariants de la descente complet : six colonnes, toit et six étages, cellules longues lisibles. Les paragraphes sous le tableau restent séparés du pied de page 63/186.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-063.png",
+      "sha256": "ab947835d13c7bd1eee879c582fe7d4bfcd02fbe8a12f57a9e7d61410a598aef",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 64,
+      "status": "pass",
+      "notes": "Suite des invariants, événement majeur et reproductibilité lisibles. Les identifiants et le lien de documentation tiennent dans les marges ; le titre des tests et sa première commande sont accompagnés de contenu.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-064.png",
+      "sha256": "904b6a225f4e777c00e00b4412d9ecd7faeb227ca64c622d584b5426b56a0d4d",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 65,
+      "status": "pass",
+      "notes": "Sections de tests physiques et de transitions verticales lisibles. La longue commande Godot reste entière ; titres et descriptions des contrôles se distinguent, sans rognage du paragraphe continué en page suivante.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-065.png",
+      "sha256": "5136daed39032e78c9f1e537d22417580b95e2cad046c087bc45f0a85db44c8c",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 66,
+      "status": "pass",
+      "notes": "Les cinq passes de génération sont présentées dans une liste numérotée complète. Contraintes de progression et début du stockage des checkpoints bien espacés ; deux lignes accompagnent le dernier titre, sans chevauchement du pied.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-066.png",
+      "sha256": "c636595adac5a34359d0483a77e036d3210f2088efa1a8de407e2fea10ab4609",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 67,
+      "status": "pass",
+      "notes": "Le schéma de sauvegarde et le tableau des huit situations de reprise sont lisibles en entier. Les cellules longues restent dans leurs bordures et le tableau laisse une marge nette avant le pied de page.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-067.png",
+      "sha256": "83c8290c78f3bab8e43dab17fcaab6f89d10f591563819ba4b78f85df9833b1a",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 68,
+      "status": "pass",
+      "notes": "Migration, écriture atomique, tests et perspectives de campagne sont lisibles. Les deux sous-titres sont suivis de leurs paragraphes ; la continuation de phrase en bas n’est ni coupée ni masquée.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-068.png",
+      "sha256": "1c5e2eecf19e3818a3e70536a9329bd34c68435499b315f14d8858d442880b0e",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 69,
+      "status": "pass",
+      "notes": "Les trois lignes finales de l’annexe sont présentes et lisibles. Observation mineure de pagination : le saut de section suivant laisse presque toute la page blanche ; aucune perte de contenu ni coupure.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-069.png",
+      "sha256": "31d42de2b891f101de2fe9bdd87d7ae4082df94daa8721526ea523e4aa784d7b",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 70,
+      "status": "pass",
+      "notes": "Ouverture de l’annexe B et tableau des responsabilités lisibles. Les onze premières lignes, dont catalogue de routes et deux modules de rappel, sont entières et correctement délimitées ; la dernière reste au-dessus du pied.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-070.png",
+      "sha256": "d021275172342ee272f30b742d9525c50fb4b5f11ad572a43c32dd23e5dc23b2",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 71,
+      "status": "pass",
+      "notes": "Le tableau reprend son en-tête et affiche les douze responsabilités restantes sans cellule tronquée. La section sur les horloges commence clairement ; son dernier paragraphe poursuit normalement sur la page suivante.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-071.png",
+      "sha256": "9b962c3f3bf9333cb072d261c7e98af6266a947a9c1e03973e3bf9d40c29fe40",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 72,
+      "status": "pass",
+      "notes": "Page dense mais nette : paragraphes de présentation, préférences, son et limites spatiales entièrement dans les marges. Les liens et identifiants longs se répartissent sans déborder ; le pied reste séparé.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-072.png",
+      "sha256": "6e47357a8328506c5b9f5f092e3f9b0428435775b6be609ae9a7f1870f8bb907",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 73,
+      "status": "pass",
+      "notes": "Le développement sur les rappels locaux, escaliers, collisions et checkpoints est entièrement lisible. Distances et durée de transfert ressortent correctement ; le nouveau titre en fin de page dispose de son texte.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-073.png",
+      "sha256": "bde1b0c2c70a218a7a68304bc15c3f6f2f67769dd0bf2c108b15f9df2503bc83",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 74,
+      "status": "pass",
+      "notes": "Les sections persistance, incident et air respirable sont bien hiérarchisées. Les emphases et liens s’affichent correctement ; aucune ligne ne franchit la marge ni le pied de page.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-074.png",
+      "sha256": "6c9d09aaa8c358a9baa0551c42c70aeb519f0349fc90ab7a3609004fb17245dd",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 75,
+      "status": "pass",
+      "notes": "Tableau de répartition UE5 complet et lisible, y compris les longs noms de composants. L’avertissement sur le statut proposé, les commandes et le début du portage rappel ne débordent pas.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-075.png",
+      "sha256": "c3cc68a5e67f5b90786060b38fa651dde50f6b0e3b536bff5f080eca4559d162",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 76,
+      "status": "pass",
+      "notes": "Sections câble, chargement des étages et procédural bien rendues. Les citations en liens, titres et paragraphes ont un espacement régulier ; la dernière phrase se poursuit sans perte visible.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-076.png",
+      "sha256": "e27a6cd92a9e3c91f2e6fb72b380dcb1d0e093f231f22ad352db7893b46cab3b",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 77,
+      "status": "pass",
+      "notes": "Correction requise confirmée visuellement : « Les fiches P01 à P64 » apparaît dans le contrat de contenu. Les titres, paragraphes et la première ligne du tableau des jalons restent entiers et lisibles.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-077.png",
+      "sha256": "b00630f40e6af744de38b8a3aa1df8fa9f17cc7f67504234035bf624587cf1a8",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 78,
+      "status": "pass",
+      "notes": "Suite du tableau des jalons avec en-tête répété et six lignes lisibles. Les paragraphes du contrat perceptif et de l’extension future sont complets, sans débordement ni recouvrement.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-078.png",
+      "sha256": "8000f6c7280009f6f4e1feb266e57b1b85256d6e6df3063a21e1f74429c06817",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 79,
+      "status": "pass",
+      "notes": "Ouverture de l’annexe historique C clairement datée 0.8.0. Titre, décision de direction et tableau du périmètre sont nets ; les lignes affichées gardent l’intégralité de leurs textes.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-079.png",
+      "sha256": "cff5d8514ea4ae06d22d934f43a03d0ec117676e9112be56a7ffc3179c84816a",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 80,
+      "status": "pass",
+      "notes": "Dernière ligne du tableau de périmètre correctement reprise sous son en-tête. Géographie des deux tours et étapes 1 à 5 du parcours sont lisibles, avec numérotation et retraits réguliers.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-080.png",
+      "sha256": "f78bfabbc981a273af7cb152b7ad1464166280a64ffc9231d4084ea96294bacb",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 81,
+      "status": "pass",
+      "notes": "Les étapes 6 et 7 et les cinq phases du tableau temporel sont intégralement lisibles. En-têtes multilignes et cellules de mise en scène respectent leurs bordures ; notes de pause et de collisions bien séparées.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-081.png",
+      "sha256": "cd12907546f4c5272e527084ce0be2d6af0a1f7fa248380a584148dac29262e5",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 82,
+      "status": "pass",
+      "notes": "Le tableau à six séquences d’arrivée et le début du script radio sont correctement composés. Les cellules longues et les deux premières lignes ARR-01/ARR-02 sont entières, avec une marge basse suffisante.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-082.png",
+      "sha256": "0ff102acc07f7f158e53b12f844873874dec32fc8dba9ff7ac0e289117109843",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 83,
+      "status": "pass",
+      "notes": "Le tableau radio poursuit les lignes ARR-03 à AMB-02 sous l’en-tête répété. Répliques, accents, guillemets et cellules multilignes sont entiers ; le paragraphe sous le tableau demeure lisible jusqu’en bas.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-083.png",
+      "sha256": "64a987e4fefc1a155d5d1f83346b8da30b529959f878e3d96c640949cdc1e160",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 84,
+      "status": "pass",
+      "notes": "Tableau des huit conséquences complet et lisible. Le début du tableau de migration garde son en-tête et deux lignes intactes ; aucune superposition avec les paragraphes ou le pied.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-084.png",
+      "sha256": "ec6f33bf81353ac9f7176f29b4d4c13d91a5a7eb145a9e9e4f50a35c884d4988",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 85,
+      "status": "pass",
+      "notes": "Les sept lignes restantes du tableau de migration sont entières sous l’en-tête répété. Les sections de confort et de portage affichent des paragraphes bien séparés, sans rognage des dernières lignes.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-085.png",
+      "sha256": "57881d6e9c50461e18852061248f77530090f66a8cc640223897c738e0c4037a",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 86,
+      "status": "pass",
+      "notes": "Liste des critères de revue et section de cohérence horrifique lisibles. Puces, accents et hiérarchie des titres corrects ; la fin d’annexe conserve une marge basse ample.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-086.png",
+      "sha256": "d9b88743fc04ae49993a9b48d1f6b4f121e034e2008731c22fbcbbb43cdaba09",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 87,
+      "status": "pass",
+      "notes": "Ouverture de l’annexe D, historique des communications et tableau des six groupes lisibles. Le titre principal tient sur une ligne ; les cellules de responsabilité sont entières et le paragraphe final ne touche pas le pied.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-087.png",
+      "sha256": "1e8cb7022a3999637e6598f8b6b48d1f05ca91ecdd644162235a9f03c952b729",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 88,
+      "status": "pass",
+      "notes": "Repli de Bravo, réception des trois personnes et tableau nominatif bien rendus. Les identifiants ne débordent pas ; le dernier titre sur les sous-titres est accompagné de son paragraphe.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-088.png",
+      "sha256": "449fcd846b89b7cd74d2cdda610d1f24e8f49557c73152d9936df0b65bcbd9d0",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 89,
+      "status": "pass",
+      "notes": "Tableau d’ordonnancement à sept cas complet. Le journal et le compte rendu sont expliqués sous des titres lisibles ; les noms d’onglets en gras et la fin du texte ne sont pas coupés.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-089.png",
+      "sha256": "87046cfeb2ff30f813f793abeeaac5225078261d48059c5914d2648631e61e14",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 90,
+      "status": "pass",
+      "notes": "L’écho facultatif et ses cinq conditions sont bien rendus. Le second tableau conserve ses quatre schémas de migration et toutes les cellules ; le paragraphe final continue normalement sur la page suivante.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-090.png",
+      "sha256": "cf7608c39ac70e045551ace0597a81a71320bd0c376b64e88f4672a181fb8989",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 91,
+      "status": "pass",
+      "notes": "Fin de l’annexe D lisible : direction du doublage, liens vers les sources et distinction entre incertitude et faits établis. Aucun titre isolé ni texte hors marge.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-091.png",
+      "sha256": "c960145c413e4f5309be0265dc91e5de51015a23f940781f215fe32451ecba72",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 92,
+      "status": "pass",
+      "notes": "Annexe E bien titrée « Version 0.9.0 — 64 fiches de référence et 12 observations jouables ». L’historique 60 puis 64 fiches est explicite ; conventions et règles de placement sont nettes et non tronquées.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-092.png",
+      "sha256": "5f625e15542a22cfda6adf5c4ee6fe10ae6fefe9b7ba5db7cee5db23ccecb6ed",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 93,
+      "status": "pass",
+      "notes": "Fiches P01 à P03 présentes et lisibles, avec rubriques en gras distinctes. Les mises à jour sur treuil, séparation des lignes et stabilisation de 16 s sont visibles ; aucun bloc n’est tronqué.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-093.png",
+      "sha256": "5fc2d93380c5b815c5968b03782e699979536054c1a3434f7a61faea2903b6be",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 94,
+      "status": "pass",
+      "notes": "Fiches P04 à P06 et début de P07 correctement composés. Les vitesses du rappel, les touches et les limites géométriques sont lisibles ; la dernière rubrique de P07 se poursuit sans chevaucher le pied.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-094.png",
+      "sha256": "cf6db6fcdb9d7a90ca09cfd7dde75563c009d0eee25a211197c62032f068a273",
+      "native_width": 1415,
+      "native_height": 2000
+    }
+  ],
+  "blocking_findings": [],
+  "non_blocking_findings": [
+    {
+      "page": 69,
+      "category": "pagination",
+      "notes": "Trois lignes de conclusion occupent seulement le haut de cette page avant le saut d’annexe suivant. Présentation peu dense, mais texte complet et lisible."
+    }
+  ],
+  "required_corrections_observed": [
+    {
+      "page": 77,
+      "notes": "« Les fiches P01 à P64 » est visible ; l’ancien total P60 n’apparaît plus dans cette phrase."
+    }
+  ],
+  "limitations": [
+    "Cette revue approuve uniquement la présentation visuelle des pages 63 à 94 du PDF exact identifié ci-dessus ; elle ne vaut pas revue des autres pages.",
+    "Le lot initial 63–124 a été réattribué en cours de tâche : le parent examine les pages 95–124 dans un rapport distinct. La correction « Mêmes preuves » de la page 122 n’est donc pas certifiée par ce rapport.",
+    "Les anciennes revues du PDF de 184 pages et du Word canonique sont des observations distinctes et n’ont pas été utilisées pour remplacer l’ouverture des présentes images.",
+    "Cette revue visuelle ne remplace pas le contrôle automatisé de complétude du document, les essais du jeu, une revue linguistique exhaustive ou l’examen d’un export imprimé."
+  ],
+  "manifest_file": "docs/validation/v0.9/DOCUMENT_BUILD.json",
+  "manifest_sha256": "45d8775382cacdf3e3caea08fafe5f88c59769d9e4d993c184411decf95387f6",
+  "completed_utc": "2026-11-25T14:33:49.281341+00:00",
+  "image_identity_verification": {
+    "status": "pass",
+    "pages": 32,
+    "dimensions": "1415x2000",
+    "each_image_matches_document_build_sha256": true
+  }
+}

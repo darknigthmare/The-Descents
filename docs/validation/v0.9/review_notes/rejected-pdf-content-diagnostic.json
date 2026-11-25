@@ -1,0 +1,1468 @@
+{
+  "schema": 1,
+  "report_type": "docx_pdf_content_completeness_diagnostic",
+  "reviewerAI": "OpenAI /root/v09_routes",
+  "checked_utc": "2026-11-25T14:04:48.541190+00:00",
+  "status": "old_ci_pdf_incomplete_canonical_complete",
+  "conclusion": "The old 184-page CI PDF omits exactly five ordered table rows (20 cells) from table 16, rows 3–7. All other nonempty body paragraphs and table rows are present in source order. The 186-page canonical PDF contains every checked paragraph, row and cell from the same DOCX.",
+  "inputs": {
+    "docx": {
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/The-Tower-Descent-Bible-v0.9.docx",
+      "snapshot": "/tmp/tower-v09-completeness-work/docx.docx",
+      "bytes": 319653,
+      "sha256": "67934e980591433241cf6b200376d1524ee09d4421c8dcf6f7339e6db861a6c6"
+    },
+    "ci_pdf": {
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/The-Tower-Descent-Bible-v0.9.pdf",
+      "snapshot": "/tmp/tower-v09-completeness-work/ci_pdf.pdf",
+      "bytes": 2812851,
+      "sha256": "325ce9baaaa367ae8a84062830f4c078e35498a1decf7a69e389cb4d958782fd",
+      "page_count": 184
+    },
+    "canonical_pdf": {
+      "file": "/tmp/tower-v09-exact-ci-word/The-Tower-Descent-Bible-v0.9.pdf",
+      "snapshot": "/tmp/tower-v09-completeness-work/canonical_pdf.pdf",
+      "bytes": 3064704,
+      "sha256": "af1398a8632cc6230d646a28b98d43a6a0fad9223786e58a7703a55cf124a00e",
+      "page_count": 186
+    }
+  },
+  "source_counts": {
+    "body_paragraphs": 2045,
+    "cell_paragraphs": 2068,
+    "all_paragraphs": 4113,
+    "tables": 71,
+    "nonempty_table_rows": 655,
+    "nonempty_cells": 2068,
+    "ordered_blocks": 2700,
+    "punctuation_only_body_paragraphs": 0
+  },
+  "comparisons": {
+    "old_ci_pdf": {
+      "status": "fail",
+      "pages": 184,
+      "ordered_counts": {
+        "ordered_blocks_checked": 2700,
+        "ordered_blocks_matched": 2695,
+        "body_paragraphs_checked": 2045,
+        "body_paragraphs_matched": 2045,
+        "table_rows_checked": 655,
+        "table_rows_matched": 650,
+        "cells_checked": 2068,
+        "cells_matched_in_expected_row": 2048,
+        "cell_paragraphs_checked": 2068,
+        "cell_paragraphs_matched_in_expected_cell": 2048,
+        "cell_texts_absent_everywhere": 10
+      },
+      "global_presence_counts": {
+        "units_exact_matched": 4103,
+        "units_not_exact_matched": 10,
+        "by_kind_missing": {
+          "cell": 10
+        },
+        "rows_exact_matched": 650
+      }
+    },
+    "canonical_pdf": {
+      "status": "pass",
+      "pages": 186,
+      "ordered_counts": {
+        "ordered_blocks_checked": 2700,
+        "ordered_blocks_matched": 2700,
+        "body_paragraphs_checked": 2045,
+        "body_paragraphs_matched": 2045,
+        "table_rows_checked": 655,
+        "table_rows_matched": 655,
+        "cells_checked": 2068,
+        "cells_matched_in_expected_row": 2068,
+        "cell_paragraphs_checked": 2068,
+        "cell_paragraphs_matched_in_expected_cell": 2068,
+        "cell_texts_absent_everywhere": 0
+      },
+      "global_presence_counts": {
+        "units_exact_matched": 4113,
+        "units_not_exact_matched": 0,
+        "by_kind_missing": {},
+        "rows_exact_matched": 655
+      }
+    }
+  },
+  "missing_content": [
+    {
+      "id": "t16r3",
+      "table_1_based": 16,
+      "row_1_based_including_header": 3,
+      "source_body_block": 380,
+      "heading_path": [
+        "Partie 2 Catalogue des étages et des profondeurs",
+        "3 Toit et premiers étages",
+        "Liaisons jouables de la version 0.9"
+      ],
+      "canonical_pages": [
+        36,
+        36
+      ],
+      "ci_previous_matched_block": {
+        "id": "t16r2",
+        "pages": [
+          35,
+          35
+        ],
+        "normalized_characters": 88
+      },
+      "ci_location": "Table begins on page 35; PDF page 36 resumes after the table without the five remaining rows.",
+      "cells": [
+        {
+          "id": "t16r3c1",
+          "column": 1,
+          "text": "S30_29",
+          "same_normalized_text_elsewhere_in_ci": true
+        },
+        {
+          "id": "t16r3c2",
+          "column": 2,
+          "text": "Restaurant 30 et suites 29",
+          "same_normalized_text_elsewhere_in_ci": false
+        },
+        {
+          "id": "t16r3c3",
+          "column": 3,
+          "text": "Deux volées et un palier",
+          "same_normalized_text_elsewhere_in_ci": true
+        },
+        {
+          "id": "t16r3c4",
+          "column": 4,
+          "text": "Sortie dans les suites ; baie Est puis rappel vers le 28",
+          "same_normalized_text_elsewhere_in_ci": false
+        }
+      ]
+    },
+    {
+      "id": "t16r4",
+      "table_1_based": 16,
+      "row_1_based_including_header": 4,
+      "source_body_block": 380,
+      "heading_path": [
+        "Partie 2 Catalogue des étages et des profondeurs",
+        "3 Toit et premiers étages",
+        "Liaisons jouables de la version 0.9"
+      ],
+      "canonical_pages": [
+        36,
+        36
+      ],
+      "ci_previous_matched_block": {
+        "id": "t16r2",
+        "pages": [
+          35,
+          35
+        ],
+        "normalized_characters": 88
+      },
+      "ci_location": "Table begins on page 35; PDF page 36 resumes after the table without the five remaining rows.",
+      "cells": [
+        {
+          "id": "t16r4c1",
+          "column": 1,
+          "text": "R29_28",
+          "same_normalized_text_elsewhere_in_ci": true
+        },
+        {
+          "id": "t16r4c2",
+          "column": 2,
+          "text": "Suites 29 et archives 28",
+          "same_normalized_text_elsewhere_in_ci": false
+        },
+        {
+          "id": "t16r4c3",
+          "column": 3,
+          "text": "Segment de rappel à l’ouest",
+          "same_normalized_text_elsewhere_in_ci": true
+        },
+        {
+          "id": "t16r4c4",
+          "column": 4,
+          "text": "Sortie sur dalle et secours de Samuel ; escalier vers le 27",
+          "same_normalized_text_elsewhere_in_ci": false
+        }
+      ]
+    },
+    {
+      "id": "t16r5",
+      "table_1_based": 16,
+      "row_1_based_including_header": 5,
+      "source_body_block": 380,
+      "heading_path": [
+        "Partie 2 Catalogue des étages et des profondeurs",
+        "3 Toit et premiers étages",
+        "Liaisons jouables de la version 0.9"
+      ],
+      "canonical_pages": [
+        36,
+        36
+      ],
+      "ci_previous_matched_block": {
+        "id": "t16r2",
+        "pages": [
+          35,
+          35
+        ],
+        "normalized_characters": 88
+      },
+      "ci_location": "Table begins on page 35; PDF page 36 resumes after the table without the five remaining rows.",
+      "cells": [
+        {
+          "id": "t16r5c1",
+          "column": 1,
+          "text": "S28_27",
+          "same_normalized_text_elsewhere_in_ci": true
+        },
+        {
+          "id": "t16r5c2",
+          "column": 2,
+          "text": "Archives 28 et jardin 27",
+          "same_normalized_text_elsewhere_in_ci": false
+        },
+        {
+          "id": "t16r5c3",
+          "column": 3,
+          "text": "Deux volées et un palier",
+          "same_normalized_text_elsewhere_in_ci": true
+        },
+        {
+          "id": "t16r5c4",
+          "column": 4,
+          "text": "Sortie dans le jardin ; preuve d’Alma puis rappel vers le 26",
+          "same_normalized_text_elsewhere_in_ci": false
+        }
+      ]
+    },
+    {
+      "id": "t16r6",
+      "table_1_based": 16,
+      "row_1_based_including_header": 6,
+      "source_body_block": 380,
+      "heading_path": [
+        "Partie 2 Catalogue des étages et des profondeurs",
+        "3 Toit et premiers étages",
+        "Liaisons jouables de la version 0.9"
+      ],
+      "canonical_pages": [
+        36,
+        36
+      ],
+      "ci_previous_matched_block": {
+        "id": "t16r2",
+        "pages": [
+          35,
+          35
+        ],
+        "normalized_characters": 88
+      },
+      "ci_location": "Table begins on page 35; PDF page 36 resumes after the table without the five remaining rows.",
+      "cells": [
+        {
+          "id": "t16r6c1",
+          "column": 1,
+          "text": "R27_26",
+          "same_normalized_text_elsewhere_in_ci": true
+        },
+        {
+          "id": "t16r6c2",
+          "column": 2,
+          "text": "Jardin 27 et spa 26",
+          "same_normalized_text_elsewhere_in_ci": false
+        },
+        {
+          "id": "t16r6c3",
+          "column": 3,
+          "text": "Segment de rappel à l’ouest",
+          "same_normalized_text_elsewhere_in_ci": true
+        },
+        {
+          "id": "t16r6c4",
+          "column": 4,
+          "text": "Sortie sur dalle et secours de Nora ; escalier vers le 25",
+          "same_normalized_text_elsewhere_in_ci": false
+        }
+      ]
+    },
+    {
+      "id": "t16r7",
+      "table_1_based": 16,
+      "row_1_based_including_header": 7,
+      "source_body_block": 380,
+      "heading_path": [
+        "Partie 2 Catalogue des étages et des profondeurs",
+        "3 Toit et premiers étages",
+        "Liaisons jouables de la version 0.9"
+      ],
+      "canonical_pages": [
+        36,
+        36
+      ],
+      "ci_previous_matched_block": {
+        "id": "t16r2",
+        "pages": [
+          35,
+          35
+        ],
+        "normalized_characters": 88
+      },
+      "ci_location": "Table begins on page 35; PDF page 36 resumes after the table without the five remaining rows.",
+      "cells": [
+        {
+          "id": "t16r7c1",
+          "column": 1,
+          "text": "S26_25",
+          "same_normalized_text_elsewhere_in_ci": true
+        },
+        {
+          "id": "t16r7c2",
+          "column": 2,
+          "text": "Spa 26 et refuge 25",
+          "same_normalized_text_elsewhere_in_ci": false
+        },
+        {
+          "id": "t16r7c3",
+          "column": 3,
+          "text": "Deux volées et un palier",
+          "same_normalized_text_elsewhere_in_ci": true
+        },
+        {
+          "id": "t16r7c4",
+          "column": 4,
+          "text": "Dalle sûre, bilan et relais de fin de tranche",
+          "same_normalized_text_elsewhere_in_ci": false
+        }
+      ]
+    }
+  ],
+  "exact_route_identifier_occurrences": [
+    {
+      "route_id": "R31_30",
+      "old_ci_pdf": 10,
+      "canonical_pdf": 10
+    },
+    {
+      "route_id": "S30_29",
+      "old_ci_pdf": 8,
+      "canonical_pdf": 9
+    },
+    {
+      "route_id": "R29_28",
+      "old_ci_pdf": 8,
+      "canonical_pdf": 9
+    },
+    {
+      "route_id": "S28_27",
+      "old_ci_pdf": 6,
+      "canonical_pdf": 7
+    },
+    {
+      "route_id": "R27_26",
+      "old_ci_pdf": 7,
+      "canonical_pdf": 8
+    },
+    {
+      "route_id": "S26_25",
+      "old_ci_pdf": 6,
+      "canonical_pdf": 7
+    }
+  ],
+  "multiplicity_finding": "Ten of the twenty omitted cells have text that also occurs elsewhere in the PDF. Global presence of cell strings alone therefore undercounts the loss. Ordered row matching and cell matching inside the corresponding row detects all twenty omitted cells.",
+  "method": {
+    "scope": "DOCX body text, table rows, cells and their paragraphs in source order",
+    "extraction": "pdftotext -raw -enc UTF-8 PDF -",
+    "normalization": "NFKC; Unicode casefold; retain alphanumeric characters only",
+    "algorithm": "Read body paragraphs and table rows in DOCX XML order. Match each normalized body paragraph or complete table row after the preceding matched block. Verify every cell inside its expected row and every paragraph inside its cell. Skip only known running header/footer lines derived from DOCX margin XML. Preserve source occurrence counts by advancing the search cursor after every match.",
+    "cross_checks": [
+      "Unordered presence of all 4,113 source paragraphs/cells in plain, raw and layout text.",
+      "Ordered matching of 2,700 paragraph/row blocks against each PDF.",
+      "Independent route-identifier occurrence counts.",
+      "SHA-256 verification of all frozen input snapshots."
+    ],
+    "extraction_mode_comparison": {
+      "ci_pdf": {
+        "plain": {
+          "matched": 2666,
+          "missing": 34
+        },
+        "raw": {
+          "matched": 2695,
+          "missing": 5
+        },
+        "layout": {
+          "matched": 2215,
+          "missing": 485
+        }
+      },
+      "canonical_pdf": {
+        "plain": {
+          "matched": 2671,
+          "missing": 29
+        },
+        "raw": {
+          "matched": 2700,
+          "missing": 0
+        },
+        "layout": {
+          "matched": 2220,
+          "missing": 480
+        }
+      }
+    },
+    "selected_mode_reason": "Raw preserves the intended row/cell sequence in these files. Plain and layout extractions interleave columns and create false missing blocks even in the complete canonical PDF."
+  },
+  "source_xml_observation": {
+    "tables_checked": 71,
+    "tblW_count_distribution": {
+      "2": 71
+    },
+    "duplicate_table_widths": [
+      {
+        "table": 1,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 2,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 3,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 4,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 5,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 6,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 7,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 8,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 9,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 10,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 11,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 12,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 13,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 14,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 15,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 16,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 17,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 18,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 19,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 20,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 21,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 22,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 23,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 24,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 25,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 26,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 27,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 28,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 29,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 30,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 31,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 32,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 33,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 34,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 35,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 36,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 37,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 38,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 39,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 40,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 41,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 42,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 43,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 44,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 45,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 46,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 47,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 48,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 49,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 50,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 51,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 52,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 53,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 54,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 55,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 56,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 57,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 58,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 59,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 60,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 61,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 62,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 63,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 64,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 65,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 66,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 67,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 68,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 69,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 70,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      },
+      {
+        "table": 71,
+        "tblW_count": 2,
+        "values": [
+          {
+            "type": "auto",
+            "w": "0"
+          },
+          {
+            "w": "9638",
+            "type": "dxa"
+          }
+        ]
+      }
+    ],
+    "interpretation": "All 71 tables in this frozen DOCX have two tblW properties, auto width 0 and fixed width 9638. This is an observed structural defect and a candidate for renderer-sensitive pagination. The comparison alone does not establish causality. The parent is normalizing table properties and validating a fresh CI export."
+  },
+  "gate": {
+    "file": "/workspace/scratch/d0ef31297958/The-Descents/tools/verify_document_content.py",
+    "sha256": "f16b6938eddc7aefb9504cbc93edae3ac1712a0213c8eee2f9e31319cd6ca334",
+    "cli": "python3 tools/verify_document_content.py --docx PATH --pdf PATH --output REPORT.json",
+    "exit_codes": {
+      "0": "All checked body text found in source order",
+      "1": "Missing source paragraph, table row or cell",
+      "2": "Input, extraction or unsupported structure error"
+    },
+    "dependencies": [
+      "Python 3 standard library",
+      "Poppler pdftotext"
+    ],
+    "actual_regression_tests": [
+      {
+        "file": "/tmp/tower-v09-completeness-work/gate-old-ci.json",
+        "sha256": "04892a61d422d9c142470c7025531eb7c83f9d521c724d0bbc4f5880c802234e",
+        "expected_exit_code": 1,
+        "observed_exit_code": 1,
+        "status": "fail",
+        "docx_sha256": "67934e980591433241cf6b200376d1524ee09d4421c8dcf6f7339e6db861a6c6",
+        "pdf_sha256": "325ce9baaaa367ae8a84062830f4c078e35498a1decf7a69e389cb4d958782fd"
+      },
+      {
+        "file": "/tmp/tower-v09-completeness-work/gate-canonical.json",
+        "sha256": "e651deb8aa54ab545181e562bbe8503880e61c10de2f621706016f3070ff79ec",
+        "expected_exit_code": 0,
+        "observed_exit_code": 0,
+        "status": "pass",
+        "docx_sha256": "67934e980591433241cf6b200376d1524ee09d4421c8dcf6f7339e6db861a6c6",
+        "pdf_sha256": "af1398a8632cc6230d646a28b98d43a6a0fad9223786e58a7703a55cf124a00e"
+      }
+    ]
+  },
+  "limitations": [
+    "Unicode NFKC, case folding and removal of non-alphanumeric characters make line wrapping, spacing and punctuation differences insignificant. This check therefore does not certify punctuation, signs, units or typography.",
+    "Ordered matching preserves the multiplicity of source paragraphs and table rows. Each cell and its paragraphs are checked inside its matched row; a copy of the same text elsewhere cannot validate a missing row.",
+    "Extra PDF text, including repeated table headings, is allowed. This is a source-content inclusion check, not a byte-for-byte or semantic comparison.",
+    "DOCX running headers, footers and page fields are excluded from body-text matching. Images, drawing content and hyperlink destinations require other checks. Nested tables or unenumerated body paragraphs fail closed.",
+    "A successful text check does not prove that text is visible, unclipped or legible. A separate visual review of every final page remains required."
+  ],
+  "visual_review": {
+    "performed_for_this_diagnostic": false,
+    "required_separately": true,
+    "note": "This report certifies text inclusion under the stated normalization only. Earlier assigned-page visual reviews do not certify content completeness of the entire document."
+  },
+  "repository_mutations": "Only new tools/verify_document_content.py was written for the authorized gate task. Diagnostic artifacts are under /tmp; source documents and PDFs were not edited by this reviewer."
+}

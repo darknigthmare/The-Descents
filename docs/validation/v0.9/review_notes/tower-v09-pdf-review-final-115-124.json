@@ -1,0 +1,141 @@
+{
+  "reviewer": "AI — /root/v09_rope",
+  "reviewer_type": "AI",
+  "source_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
+  "evidence_checkout_commit": "3aa6e462576d0ca71dcf39b414917621d12007d8",
+  "pdf_file": "docs/The-Tower-Descent-Bible-v0.9.pdf",
+  "pdf_sha256": "25776d758dfb7070afb4157f15859864c6f991809fba71f78cf6f442cbe61121",
+  "page_count": 186,
+  "assigned_range": {
+    "first": 115,
+    "last": 124
+  },
+  "reviewed_page_count": 10,
+  "method": "Chaque PNG exact produit par la CI a été ouvert séparément à sa taille native avec view_image ; au plus deux images par appel. Revue visuelle de la lisibilité, des marges, des titres, des tableaux, des continuations de page et de la correction spécifiée page 122. Aucune planche-contact, image proxy ou extraction textuelle utilisée à la place de cette observation.",
+  "all_pass": true,
+  "pages": [
+    {
+      "page": 115,
+      "status": "pass",
+      "notes": "Fiches E02 Le Répondant et E03 Le Noyé sec intégralement lisibles. Titres, rubriques en gras, valeurs et paragraphes sont bien séparés ; aucune ligne n’approche le pied de page.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-115.png",
+      "sha256": "8e891a9806aa46c99636038e736c1e10d1f55ccdd44991fd01e8533de0b37f68",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 116,
+      "status": "pass",
+      "notes": "Fiches E04 Le Porteur et E05 Les Veilleurs correctement composées. Le début de E06 dispose de plusieurs lignes après son titre ; textes et valeurs restent dans les marges sans chevauchement.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-116.png",
+      "sha256": "3ca4028234d2561b1baa9e2003b90b8f6e82f78a625985bc3fc2e178ba34e234",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 117,
+      "status": "pass",
+      "notes": "Suite de E06, fiche E07 Les Déliés et début de E08 Le Contremaître lisibles. Les changements de fiche et les valeurs restent distincts ; aucun paragraphe ne dépasse les marges.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-117.png",
+      "sha256": "4ebc32251f24b455f36feb0e74b682b9d13d756100999d7a4f02152f51c0e619",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 118,
+      "status": "pass",
+      "notes": "Fin de E08, fiche E09 La Chambre qui écoute et début de E10 Le Chœur bas bien rendus. Accents, rubriques et nombres sont nets ; les dernières lignes sont au-dessus du pied.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-118.png",
+      "sha256": "ac3d59e16035c71a767980de10a88c7510828384574b1ad9268930a4e34adce6",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 119,
+      "status": "pass",
+      "notes": "Fin de E10 et fiches E11 Le Retranché humain/E12 Le Débusqueur humain lisibles en entier. Rubriques, accents et valeurs ont un contraste uniforme ; dernière fiche terminée avant le pied.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-119.png",
+      "sha256": "388a3a23cdb6d746c340e3c170445accf58292beecf4540d2999ea03687d9c62",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 120,
+      "status": "pass",
+      "notes": "Fiches E13, E14 et début de E15 rendues sans débordement. Les titres longs restent dans la largeur utile et les paragraphes conservent leurs lignes ; la dernière rubrique continue normalement.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-120.png",
+      "sha256": "d55781acd679b1929690f18d75c0e9abe568aaff6c632a3ef3f77383ae236ba2",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 121,
+      "status": "pass",
+      "notes": "Fin de E15, fiche E16 Le Gardien de brèche et contraintes communes complètes et lisibles. Les titres longs, valeurs et rubriques gardent un espacement net ; aucune troncature.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-121.png",
+      "sha256": "2da674c6dc2a7b397dbca488de0798de567964418f573d9a777198bdff89ed9e",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 122,
+      "status": "pass",
+      "notes": "Correction requise confirmée visuellement dans le tableau : « Mêmes preuves, aide plus tardive ». Les six lignes et quatre colonnes du tableau de difficulté sont complètes ; les paragraphes de production et les liens sont lisibles.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-122.png",
+      "sha256": "2e00e509c6e844f716d7361dec8b7761b02679e71f38e61e7da3f5677949fbb5",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 123,
+      "status": "pass",
+      "notes": "Ouverture de l’annexe G clairement identifiée en version 0.9.0. Intentions, titre SC00 et trois premières lignes du tableau de lancement lisibles ; textes en gras et références correctement rendus.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-123.png",
+      "sha256": "fac2fd1fda6b7bb92e4ea5edc4c10e18a0c5ae311e73016ca9ada0987e279866",
+      "native_width": 1415,
+      "native_height": 2000
+    },
+    {
+      "page": 124,
+      "status": "pass",
+      "notes": "Dernière ligne du tableau de lancement reprise avec son en-tête. Sections caméra et accueil, puis six premières lignes du tableau de contexte, sont entières ; cellules multilignes nettes et marge basse conservée.",
+      "opened_individually": true,
+      "file": "docs/validation/v0.9/rendered/page-124.png",
+      "sha256": "9193b4e76bd73e05bcac82d347bfdf00d516ec7d14d7cf54dbd1e38d36fee8b9",
+      "native_width": 1415,
+      "native_height": 2000
+    }
+  ],
+  "blocking_findings": [],
+  "non_blocking_findings": [],
+  "required_corrections_observed": [
+    {
+      "page": 122,
+      "notes": "« Mêmes preuves, aide plus tardive » est visible dans la colonne Pression de la ligne Vérification des indices du tableau de profils de difficulté."
+    }
+  ],
+  "limitations": [
+    "Cette revue approuve uniquement la présentation visuelle des pages 115 à 124 du PDF exact identifié ci-dessus ; elle ne vaut pas revue des autres pages.",
+    "Ce lot a été attribué séparément après la revue 63–94. Le parent couvre les pages 95–114 dans son propre rapport. Aucun rapport antérieur n’a été modifié.",
+    "Les anciennes revues du PDF de 184 pages et du Word canonique sont des observations distinctes et n’ont pas été utilisées pour remplacer l’ouverture des présentes images.",
+    "Cette revue visuelle ne remplace pas le contrôle automatisé de complétude du document, les essais du jeu, une revue linguistique exhaustive ou l’examen d’un export imprimé."
+  ],
+  "manifest_file": "docs/validation/v0.9/DOCUMENT_BUILD.json",
+  "manifest_sha256": "45d8775382cacdf3e3caea08fafe5f88c59769d9e4d993c184411decf95387f6",
+  "completed_utc": "2026-11-25T14:35:37.627987+00:00",
+  "image_identity_verification": {
+    "status": "pass",
+    "pages": 10,
+    "dimensions": "1415x2000",
+    "each_image_matches_document_build_sha256": true
+  }
+}

@@ -1,28 +1,71 @@
 # The Tower Descent
 
-**Version 0.8 — montée progressive de l’horreur et premières manifestations perceptives.**
+**Version 0.9 — escaliers entre étages voisins et rappel contrôlé.**
 
 Deux tours encore debout, une ville noyée, deux équipes de secours. Alex descend dans Aube pour ramener trois personnes au toit. Après le premier sauvetage, Hespérie bascule contre la façade : les lieux changent et Bravo ne répond plus. Les anomalies d’abord discrètes amorcent une campagne qui révélera des expériences avec une dimension infernale réelle.
 
-Le dépôt contient une tranche jouable sous **Godot 4.7.2**, du toit au refuge du 25, et une bible détaillée de la campagne. Les personnages et décors restent procéduraux. Les assets et animations définitifs, les humains hostiles, les profondeurs infernales, la campagne complète et UE5 restent à produire.
+Le dépôt contient une tranche jouable sous **Godot 4.7.2**, du toit au refuge du 25, et une bible détaillée de la campagne. La 0.9 donne une géographie précise à cette descente : trois rappels locaux alternent avec trois escaliers physiques, tous réversibles entre deux étages voisins. Personnages, décors, matériel et animations restent procéduraux. Les humains hostiles, les profondeurs infernales, la campagne complète et UE5 restent à produire.
 
 ## État de la version et accès au projet
 
-**Version 0.8.0 — sources, exports et revues validés**. La vérification du runtime compte **5 019 contrôles dans 26 suites** ; les ressources des deux exports totalisent **108 contrôles supplémentaires**. Le dossier de livraison réunit **33 captures natives** et une bible de **168 pages** issue de **15 sources**. Les verdicts de revue et leurs empreintes sont consignés dans [le suivi de livraison](docs/ETAT_DE_LIVRAISON.md).
+**Version 0.9.0.** Le contrat de livraison comprend **29 suites**, **42 captures natives**, **16 sources documentaires** et **64 fiches de props**. Les résultats mesurés doivent être lus avec les preuves du candidat exact :
 
-- [Windows x64 — version 0.8](releases/The-Tower-Descent-v0.8-Windows-x64.zip)
-- [Sources complètes — version 0.8](releases/The-Tower-Descent-v0.8-Sources.zip)
-- [Bible Word v0.8](docs/The-Tower-Descent-Bible-v0.8.docx) · [Bible PDF v0.8](docs/The-Tower-Descent-Bible-v0.8.pdf)
+| Vérification | Résultat v0.9 | Preuve |
+| --- | --- | --- |
+| Runtime | Validés — 6 989 contrôles dans 29 suites | [Rapport source](docs/validation/v0.9/VERIFICATION.json) |
+| Ressources Windows et Web | Conformes — 140 contrôles | [Rapport des packs](docs/validation/v0.9/EXPORTED_PACK_VERIFICATION.json) |
+| Présentation du jeu | 42 vues réalisées — 42/42 examinées individuellement par l’assistant | [Revue des captures](docs/validation/v0.9/VISUAL_REVIEW.json) |
+| Bible complète | 186 pages PDF — 186/186 pages PDF examinées ; Word contrôlé séparément sur 186 pages | [Construction](docs/validation/v0.9/DOCUMENT_BUILD.json) · [Complétude du texte](docs/validation/v0.9/DOCUMENT_CONTENT.json) · [Revue documentaire](docs/validation/v0.9/DOCUMENT_REVIEW.json) |
+| Archives | Mesures et résultat consignés après emballage | [Vérification finale](releases/VERIFICATION_V0.9.json) |
+
+- [Windows x64 — version 0.9](releases/The-Tower-Descent-v0.9-Windows-x64.zip)
+- [Sources actives et documents — version 0.9](releases/The-Tower-Descent-v0.9-Sources.zip)
+- [Bible Word v0.9](docs/The-Tower-Descent-Bible-v0.9.docx) · [Bible PDF v0.9](docs/The-Tower-Descent-Bible-v0.9.pdf)
 - [Démarrage Windows et commandes](docs/DEMARRAGE_WINDOWS.md)
 - [État de livraison et limites vérifiées](docs/ETAT_DE_LIVRAISON.md)
-- [Exports, moteur et licences](docs/EXPORTS.md)
-- [Empreintes des archives](releases/SHA256SUMS.txt) · [Rapport des ZIP v0.8](releases/VERIFICATION_V0.8.json)
+- [Exports, moteur, contenu des archives et licences](docs/EXPORTS.md)
+- [Empreintes des archives](releases/SHA256SUMS.txt)
 
-![Accueil contextuel de la version 0.8](docs/captures/v0.8/01_menu_arrivee.png)
+![Accueil contextuel de la version 0.9](docs/captures/v0.9/01_menu_arrivee.png)
 
-[Consulter les 33 captures v0.8 et leur revue](docs/CAPTURES_V0.8.md). Le projet source se lance depuis `prototype/project.godot`.
+[Consulter le catalogue des 42 captures v0.9](docs/CAPTURES_V0.9.md). Le projet source se lance depuis `prototype/project.godot`. Le statut des revues porte sur les fichiers identifiés dans les rapports ; une capture prévue ne vaut pas approbation.
 
-La livraison v0.7 reste conservée : [Windows x64](releases/The-Tower-Descent-v0.7-Windows-x64.zip), [Sources](releases/The-Tower-Descent-v0.7-Sources.zip), [Word](docs/The-Tower-Descent-Bible-v0.7.docx), [PDF](docs/The-Tower-Descent-Bible-v0.7.pdf), [trente captures](docs/CAPTURES_V0.7.md) et [rapport d’archives](releases/VERIFICATION_V0.7.json). Ses 24 suites, 4 840 contrôles sources, 90 contrôles de packs et 149 pages issues de 14 sources appartiennent à ses fichiers historiques.
+La **v0.8** reste conservée avec ses **26 suites, 5 019 contrôles sources, 108 contrôles de packs, 33 captures et 168 pages issues de 15 sources** : [Windows](releases/The-Tower-Descent-v0.8-Windows-x64.zip), [Sources](releases/The-Tower-Descent-v0.8-Sources.zip), [Word](docs/The-Tower-Descent-Bible-v0.8.docx), [PDF](docs/The-Tower-Descent-Bible-v0.8.pdf), [captures](docs/CAPTURES_V0.8.md) et [rapport d’archives](releases/VERIFICATION_V0.8.json). Ces résultats appartiennent à ses fichiers historiques.
+
+La **v0.7** reste également accessible : [Windows](releases/The-Tower-Descent-v0.7-Windows-x64.zip), [Sources](releases/The-Tower-Descent-v0.7-Sources.zip), [Word](docs/The-Tower-Descent-Bible-v0.7.docx), [PDF](docs/The-Tower-Descent-Bible-v0.7.pdf), [trente captures](docs/CAPTURES_V0.7.md) et [rapport](releases/VERIFICATION_V0.7.json).
+
+## Ce que la 0.9 ajoute au parcours
+
+### Six liaisons à lire dans les lieux
+
+Chaque rappel traverse une ouverture entre deux dalles voisines. Chaque escalier comporte deux volées et un palier intermédiaire, parcourus avec les commandes de marche. L’accès s’arrête à la paire annoncée ; pour continuer, Alex rejoint le plateau puis l’autre passage. Le retour utilise exactement les mêmes liaisons dans l’ordre inverse.
+
+| Liaison | Descente | Retour |
+| --- | --- | --- |
+| R31_30 — rappel | Toit → restaurant 30 | Remontée au toit |
+| S30_29 — escalier | Restaurant 30 → suites 29 | Marche vers le 30 |
+| R29_28 — rappel | Suites 29 → archives 28 | Remontée au 29 |
+| S28_27 — escalier | Archives 28 → jardin 27 | Marche vers le 28 |
+| R27_26 — rappel | Jardin 27 → spa 26 | Remontée au 27 |
+| S26_25 — escalier | Spa 26 → refuge 25 | Marche vers le 26 |
+
+Les stations **bleues** servent au rappel personnel. Les balises **orange** servent au treuil des rescapés. Les dalles d’arrêt et garde-corps organisent le puits en conservant la montée du panier de secours vers le toit. L’impact transforme le passage Est des archives, tout en préservant les six liaisons et l’accès aux objectifs.
+
+### Un rappel avec des décisions jouables
+
+**E** engage la longe au repère bleu. Le raccordement de 0,85 seconde utilise la capsule du joueur et vérifie le passage. **S** descend à une vitesse cible de 2,8 m/s ; **Z/W** remonte à 1,6 m/s. **Ctrl** donne une progression précise à 0,75 m/s et **Maj + S** une descente rapide à 4,2 m/s. **Q/A et D** permettent de corriger le balancement.
+
+Relâcher la direction freine automatiquement. **Espace** verrouille le descendeur jusqu’au prochain appui. La remontée et la descente rapide consomment de l’endurance ; l’arrêt récupère 12 points par seconde. Une jauge vide impose le repos assuré et redevient disponible à 20 points, sans chute forcée. **X** stabilise pendant seize secondes en consommant un ancrage seulement lorsque l’activation réussit ; une stabilisation déjà active refuse un second usage.
+
+La sortie par **E** demande un terminal proche, une vitesse presque nulle et un balancement recentré. Le transfert de sortie dure 0,85 seconde, conserve la longe et confronte la capsule au décor. Un passage obstrué ne détache pas le joueur. Le HUD affiche les étages liés, le mode, la vitesse, l’endurance, le câble déployé et la distance verticale jusqu’au terminal bas. Le descendeur, son levier, le mousqueton et les mains rendent ces états visibles dans la vue subjective.
+
+### Des arrivées et des sauvegardes stables
+
+Les escaliers se franchissent à pied. Le palier intermédiaire ne valide pas la visite d’un nouvel étage. L’arrivée de mission exige le plateau, un appui réel sous les pieds et une vitesse verticale stable. Les manifestations, les échanges facultatifs et les interactions attendent un contexte compatible avec la traversée.
+
+Une demande de sauvegarde pendant une liaison attend le prochain palier valide ; le point sûr précédent reste la référence jusque-là. La sauvegarde de schéma 3 conserve les états stables et ne restaure pas Alex suspendu ou au milieu d’un transfert. Le rappel exige les mains libres : une personne portée doit être confiée à la balise orange de son propre étage. La confirmation du toit reste seule à valider son sauvetage.
+
+La [nouvelle annexe de traversée](docs/TRAVERSEE_ET_RAPPEL_V0.9.md) détaille géométrie, commandes, endurance, collisions, pause, sauvegarde, props, scènes, tests et prolongements de campagne.
 
 ## Ouverture et accueil
 
@@ -32,7 +75,7 @@ L’accueil montre le monde 3D au dernier point sûr : approche, toit, restauran
 
 L’arrivée en quatre plans dure vingt-huit secondes. Deux hélicoptères approchent, se posent, ouvrent leurs portes et déposent leurs équipes. Les six membres de toit gagnent leurs postes. Pause, passage et reprise du point initial convergent vers le même état de mission.
 
-## Ce que la 0.8 développe
+## Horreur progressive conservée depuis la v0.8
 
 ### Une ouverture plus discrète
 
@@ -70,7 +113,7 @@ Le [dossier de conception v0.7](docs/DOSSIER_ET_EPILOGUE_V0.7.md) décrit les sc
 
 Une personne sécurisée apparaît dans le harnais de première personne, avec sangles, poignée et mains d’Alex. Une seule personne est transportée et le centre de visée reste destiné à la route.
 
-La balise engage cinq secondes de transfert : verrouillage, remontée et dépose. Le panier, le câble tendu et l’opérateur matérialisent le geste. L’objectif affiche phase et avancement. Seule la fin confirme le sauvetage et demande l’enregistrement d’un point sûr ; son écriture reste soumise aux conditions de sauvegarde.
+La balise orange de l’étage du rescapé engage cinq secondes de transfert : verrouillage, remontée et dépose. Le panier, le câble tendu et l’opérateur matérialisent le geste. L’objectif affiche phase et avancement. Seule la fin confirme le sauvetage et demande l’enregistrement d’un point sûr ; son écriture reste soumise aux conditions de sauvegarde.
 
 Une prise en charge de 4,2 secondes accompagne ensuite la personne déjà reçue jusqu’à l’abri. Les équipiers existants retrouvent leurs postes. Le rechargement installe les personnes confirmées à leur place finale. Le [dossier de sauvetage](docs/SAUVETAGE_V0.6.md) décrit scène, props, durées et continuité.
 
@@ -97,7 +140,7 @@ Le panneau complet est accessible depuis l’accueil et **Pause → Options et c
 
 ## Intervention jouable
 
-Le toit et les étages 30–25 proposent trois rescapés nommés, trois preuves, deux réserves, rappel guidé, ancrages, fusées, lampe, journal et refuge. Douze objets examinables donnent un constat adapté aux lieux et au bilan humain.
+Le toit et les étages 30–25 proposent trois rescapés nommés, trois preuves, deux réserves, rappels locaux, escaliers, ancrages, fusées, lampe, journal et refuge. Douze objets examinables donnent un constat adapté aux lieux et au bilan humain.
 
 Ana Rios attend au restaurant du 30, Samuel Breton aux archives du 28 et Nora Haddad au spa du 26. Leurs réceptions restent visibles et nominatives au médical.
 
@@ -107,11 +150,13 @@ La radio gère priorités, file et trente-deux dernières transmissions. Le sile
 
 ## Bible complète et dossiers de production
 
-La bible v0.8 réunit intégralement les **15 sources** ci-dessous : **83 314 mots sources, 168 pages, 1 947 paragraphes et 62 tableaux**. La nouvelle annexe précise la montée de l’horreur et la réalité de la dimension infernale. Le corpus comprend **60 fiches de props** et **E00 plus 16 archétypes de campagne**. Les paragraphes et tableaux sont comptés au niveau principal du Word ; les paragraphes internes aux cellules ne sont pas ajoutés à ce total.
+La bible v0.9 reprend intégralement les **16 sources** ci-dessous : **93 871 mots sources, 186 pages PDF, 2 116 paragraphes et 71 tableaux principaux du Word**. Le catalogue comprend **64 fiches de props**, dont les nouvelles références d’escalier, station, dalle d’arrêt et descendeur, ainsi qu’**E00 et 16 archétypes de campagne**. Les paragraphes internes aux cellules ne sont pas ajoutés au compte des paragraphes principaux du Word.
 
-- [Bible Word v0.8](docs/The-Tower-Descent-Bible-v0.8.docx)
-- [Bible PDF v0.8](docs/The-Tower-Descent-Bible-v0.8.pdf)
-- [Construction du volume](docs/validation/v0.8/DOCUMENT_BUILD.json) · [Revue des pages finales](docs/validation/v0.8/DOCUMENT_REVIEW.json)
+- [Bible Word v0.9](docs/The-Tower-Descent-Bible-v0.9.docx)
+- [Bible PDF v0.9](docs/The-Tower-Descent-Bible-v0.9.pdf)
+- [Construction du volume](docs/validation/v0.9/DOCUMENT_BUILD.json) · [Complétude du texte](docs/validation/v0.9/DOCUMENT_CONTENT.json) · [Revue des pages finales](docs/validation/v0.9/DOCUMENT_REVIEW.json)
+
+Le PDF canonique préparé est lié par [manifeste](.review/v0.9/canonical-document.json) aux seize sources, au générateur et aux fichiers internes du Word. La CI vérifie ces empreintes, rend les pages du PDF exact et contrôle dans l’ordre tous les paragraphes, lignes et cellules. Ce contrôle du texte complète la revue visuelle de chaque page ; il ne la remplace pas.
 
 | Source | Contenu |
 | --- | --- |
@@ -121,7 +166,7 @@ La bible v0.8 réunit intégralement les **15 sources** ci-dessous : **83 314 mo
 | [Architecture et UE5](docs/ARCHITECTURE_ET_PORTAGE_UE5.md) | Architecture réelle et proposition de portage |
 | [Effondrement](docs/EFFONDREMENT_EN_DIRECT.md) | Déclencheurs, chronologie, conséquences et reprise |
 | [Communications et équipes](docs/COMMUNICATIONS_ET_EQUIPES.md) | Radio, secours, sauvetages et journal |
-| [Props et interactions](docs/PROPS_INTERACTIONS.md) | 60 fiches de référence et douze observations jouables |
+| [Props et interactions](docs/PROPS_INTERACTIONS.md) | 64 fiches de référence et douze observations jouables |
 | [Ennemis et statistiques](docs/ENNEMIS_STATISTIQUES.md) | E00 perceptif et seize archétypes de campagne |
 | [Scènes et cinématiques](docs/SCENES_CINEMATIQUES.md) | Ouverture, accueil, arrivée, sauvetage, clôture et scènes futures |
 | [Gameplay détaillé](docs/GAMEPLAY_DETAILLE.md) | Règles, ressources, progression, envies, motivations et peurs |
@@ -130,15 +175,24 @@ La bible v0.8 réunit intégralement les **15 sources** ci-dessous : **83 314 mo
 | [Confort v0.6](docs/CONFORT_V0.6.md) | Réglages, migration, pause, focus et valeurs |
 | [Dossier et épilogue v0.7](docs/DOSSIER_ET_EPILOGUE_V0.7.md) | Quatre onglets, faits de mission, bilan, trois plans, reprise et relecture |
 | [Progression de l’horreur v0.8](docs/PROGRESSION_HORREUR_V0.8.md) | Doute, persistance, humains dangereux, expériences, brèche et traversée de l’Enfer |
+| [Traversée et rappel v0.9](docs/TRAVERSEE_ET_RAPPEL_V0.9.md) | Six liaisons, escaliers physiques, descendeur, endurance, collisions, sauvegardes, props et critères de recette |
 
-Les fonctions programmées et les cibles de campagne sont distinguées. Alma, la piscine, l’intérieur d’Hespérie, les humains hostiles, les laboratoires profonds, les cavernes, le bunker, le seuil 666, l’Enfer, les fins et Mountain Hole ne sont pas jouables dans cette tranche.
+Les fonctions programmées et les cibles de campagne sont distinguées. Les retrouvailles et l’accompagnement d’Alma, la chute dans l’ancien bassin enfoui, l’intérieur d’Hespérie, les humains hostiles, les laboratoires profonds, les cavernes, le bunker, le seuil 666, l’Enfer, les fins et Mountain Hole ne sont pas jouables dans cette tranche.
+
+## Contenu du ZIP Sources et conservation
+
+Le ZIP Sources v0.9 comprend tous les modules, assets actifs, tests, sources de Bible, guides, scripts, workflows et demandes de construction, ainsi que les rapports historiques textuels. Il embarque **les captures et les Word/PDF de la version courante uniquement**. Les anciens médias restent intacts dans le dépôt GitHub et dans les archives historiques ; ils ne sont plus recopiés dans chaque nouveau ZIP.
+
+Le constructeur et le vérificateur partagent une sélection unique des fichiers. La livraison exige le même ensemble exact de membres, puis la même empreinte pour chacun. Les deux ZIP courants doivent rester strictement sous **100 Mio — 104 857 600 octets**. Caches, rendus PNG de travail des pages, autres ZIP et distribution Web `dist/` restent exclus de l’archive Sources. La [procédure v0.9](docs/VALIDATION_V0.9.md) décrit cette portée et les contrôles.
 
 ## Développer et vérifier
 
-Ouvrir prototype/project.godot avec Godot 4.7.2, puis lancer la scène principale. Les scripts de validation utilisent Python 3 et l’exécutable Godot.
+Ouvrir `prototype/project.godot` avec Godot 4.7.2, puis lancer la scène principale. Les scripts de validation utilisent Python 3 et l’exécutable Godot.
 
-Commande : python3 tools/run_validation.py --godot /chemin/vers/godot
+```bash
+python3 tools/run_validation.py --godot /chemin/vers/godot
+```
 
-La [procédure v0.8](docs/VALIDATION_V0.8.md) décrit construction figée, exports, contrôles des ressources embarquées, captures natives et revue des documents. Une erreur moteur reste bloquante même si le processus renvoie zéro.
+Les 29 suites obligatoires comprennent le modèle de rappel, les routes physiques et leur intégration avec la mission. Le workflow **release-v09** sépare la construction de revue et la livraison : sources figées, exports, contrôle des ressources embarquées, captures natives, documents complets, puis approbations des fichiers exacts avant empaquetage. Une erreur moteur reste bloquante même si le processus renvoie zéro.
 
-Les captures sont des vues du moteur natif Linux à partir d’états préparés. Elles ne constituent pas une partie humaine sous Windows ou dans un navigateur, ni une mesure de performances. La PR reste en brouillon ; main conserve son état précédent.
+Les captures sont des vues du moteur natif Linux à partir d’états préparés. Elles ne constituent pas une partie humaine sous Windows ou dans un navigateur, ni une mesure de performances. La PR reste en brouillon sur `feat/live-tower-collapse` ; ce workflow ne fusionne pas `main`. Les résultats, les exécutions et les commits de la livraison sont reliés dans [État de livraison](docs/ETAT_DE_LIVRAISON.md).

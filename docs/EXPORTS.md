@@ -1,40 +1,70 @@
-# Exports du prototype 0.8
+# Exports du prototype 0.9
 
-**Moteur fixé : Godot 4.7.2 stable officiel — rendu Compatibility.** Ce guide présente les formats, le contenu et la vérification des paquets v0.8. Le statut de livraison et les résultats sont consignés dans [État de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md).
+**Moteur fixé : Godot 4.7.2 stable officiel — rendu Compatibility.** Ce guide décrit les formats, le contenu et les contrôles de la v0.9. Les résultats observés et les limites figurent dans [État de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md).
 
 ## Formats de distribution
 
 | Format | Emplacement de livraison | Usage et contenu |
 | --- | --- | --- |
-| Windows x64 | [ZIP Windows v0.8](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.8-Windows-x64.zip) | Extraire puis lancer TheTowerDescent.exe ; instructions et notices jointes |
-| Sources | [ZIP Sources v0.8](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.8-Sources.zip) | Ouvrir prototype/project.godot ; code, tests, documents complets et preuves de livraison |
+| Windows x64 | [ZIP Windows v0.9](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.9-Windows-x64.zip) | Extraire puis lancer TheTowerDescent.exe ; guide et notices joints |
+| Sources | [ZIP Sources v0.9](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.9-Sources.zip) | Code, assets actifs, tests, guides, Bible source et preuves ; captures et Word/PDF courants |
 | Web | dist/ | Chargeur, WebAssembly, paquet de ressources et licences à servir ensemble |
-| Bible | [Word v0.8](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/docs/The-Tower-Descent-Bible-v0.8.docx) · [PDF v0.8](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/docs/The-Tower-Descent-Bible-v0.8.pdf) | Volume complet issu de quinze sources, 168 pages ; verdict dans la revue documentaire |
+| Bible | [Word v0.9](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/docs/The-Tower-Descent-Bible-v0.9.docx) · [PDF v0.9](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/docs/The-Tower-Descent-Bible-v0.9.pdf) | Volume complet de seize sources ; 186 pages PDF ; 186/186 pages PDF examinées ; Word contrôlé séparément sur 186 pages |
 
-Windows embarque son paquet de ressources dans l’exécutable. Le dossier Web n’établit pas à lui seul qu’un site public a été déployé. Les archives, documents et preuves des versions précédentes restent conservés. La distribution Web figure dans `dist/` au commit de livraison ; elle n’est pas incluse dans le ZIP Sources. Le rapport final des archives est produit après l’emballage et reste accessible séparément dans `releases/VERIFICATION_V0.8.json`.
+Windows embarque son paquet de ressources dans l’exécutable. La distribution Web figure dans `dist/` au commit de livraison ; elle n’est pas incluse dans le ZIP Sources. Ce dossier n’établit pas à lui seul qu’un site public a été déployé. Le [rapport final des archives](../releases/VERIFICATION_V0.9.json) est produit après l’emballage et reste accessible séparément.
 
 ## Construction et vérification
 
-Le workflow **release-v08** reçoit une demande explicite après la source figée. Le commit de demande modifie uniquement `.review/v0.8/build-request.json` et désigne son propre parent. La branche reste `feat/live-tower-collapse` ; aucune fusion de la branche principale n’est effectuée par ce workflow.
+Le workflow **release-v09** reçoit une demande explicite après la source figée. Le commit de demande modifie uniquement `.review/v0.9/build-request.json` et désigne son propre parent. La branche reste `feat/live-tower-collapse` ; le workflow ne fusionne pas `main`. Le workflow v0.8 et ses preuves restent dans le dépôt.
 
-La phase **review** exécute les 26 suites obligatoires, exporte Windows et Web, puis charge les deux paquets depuis des dossiers neufs et vides sous Godot Linux. Le test externe n’est pas inclus dans les ressources du jeu. Il doit notamment retrouver `horror_director.gd` et `horror_presentation.gd`, exercer la garde hors mission, les trois ancrages sans collider, leur affichage et leur effacement, et charger le son positionnel `uncertain_steps.wav`. Les contrôles du dossier, de l’épilogue et des secours restent présents depuis les ressources réellement embarquées. Le rapport source consigne **5 019 contrôles dans 26 suites** ; le rapport des deux packs consigne **108 contrôles**. Les verdicts sont repris dans l’état de livraison.
+La phase **review** exécute les **29 suites obligatoires**, exporte Windows et Web, puis charge les deux paquets séparément depuis des dossiers neufs et vides sous Godot Linux. Les trois domaines ajoutés sont `rope_traversal`, `vertical_routes` et `traversal_integration`. Ils couvrent le modèle de rappel, la topologie et les collisions physiques, puis les effets sur la mission, les paliers, les secours et les sauvegardes. Les résultats consolidés sont **Validés — 6 989 contrôles sources** et **Conformes — 140 contrôles des packs**.
 
-Les modèles d’export sont ceux de Godot 4.7.2 stable officiel. Le pipeline vérifie tailles et SHA256 contre `EXPORT_TEMPLATE_PROVENANCE.json`. Version du moteur, commandes, empreintes du runtime et sorties doivent figurer dans les rapports v0.8. Toute erreur moteur détectée fait échouer le contrôle, même si le processus retourne zéro.
+Le test externe n’est pas inclus dans les ressources du jeu. Lancé avec `--main-pack`, il doit retrouver et charger `route_catalog.gd`, `rope_traversal.gd` et `rope_presentation.gd` depuis chacun des packs. Il vérifie les six liens, l’alternance, le déplacement suspendu, le verrou, la pause, la stabilisation et les bornes locales. Il instancie également la présentation du descendeur, échantillonne ses états et vérifie l’absence de collider. Cette inspection structurelle ne constitue pas une approbation visuelle.
 
-La construction produit aussi les **33 captures natives** et le Word/PDF complet. Chaque capture et chaque page finale nécessitent une revue explicite de leurs fichiers exacts. La phase **release** conserve ces octets approuvés, reconstruit les exports, teste à nouveau leurs ressources et vérifie les archives. Une source ou une image modifiée ne peut pas réutiliser une approbation qui porte sur d’autres empreintes.
+Les contrôles déjà présents conservent menus, cinématiques, secours, dossier, épilogue, manifestations perceptives, sauvegardes, préférences et sons importés. Les modules d’horreur et le son positionnel `uncertain_steps.wav` restent requis. Une réussite du modèle isolé ne remplace pas le contrôle des ressources réellement embarquées.
 
-L’archive Sources doit contenir les deux nouveaux modules, les deux suites correspondantes, les quinze sources de bible, les deux formats du volume et les 33 captures examinées avec leurs preuves. Chaque membre est comparé au fichier dont il provient. Caches, fichiers temporaires et pages PNG de revue documentaire sont exclus ; les PNG natifs du jeu restent inclus.
+Les modèles d’export sont ceux de Godot 4.7.2 stable officiel. Le pipeline vérifie tailles et SHA256 contre `EXPORT_TEMPLATE_PROVENANCE.json`. Version du moteur, commandes, empreintes du runtime et sorties figurent dans les rapports v0.9. Toute erreur moteur détectée fait échouer le contrôle, même si le processus retourne zéro.
+
+## Captures et documents exacts
+
+La construction produit **42 captures natives**, reconstruit le Word issu des **16 sources** et vérifie le PDF canonique préparé pour ce Word. Les 33 états de la 0.8 sont recapturés avec le runtime courant ; neuf vues supplémentaires couvrent station, descente, verrou, remontée, trois escaliers, palier intermédiaire et aide des commandes.
+
+L’entrée [`.review/v0.9/canonical-document.json`](../.review/v0.9/canonical-document.json) fixe les empreintes des seize sources, du script générateur, de chaque fichier interne décompressé du Word et du PDF préparé à son emplacement de livraison. La CI exige les ensembles exacts et les mêmes empreintes : aucun fichier interne ajouté, retiré ou modifié n’est toléré. Tout écart interrompt la construction. Poppler rend ensuite les PNG des pages du PDF exact ; `DOCUMENT_BUILD.json` identifie ce PDF préparé, son manifeste et son moteur d’origine.
+
+[DOCUMENT_CONTENT.json](validation/v0.9/DOCUMENT_CONTENT.json) consigne le contrôle exhaustif et ordonné de tous les paragraphes du corps et de toutes les lignes de tableau, avec vérification de chaque cellule dans sa ligne et de ses paragraphes dans sa cellule. Ce contrôle conserve les multiplicités : un texte présent ailleurs ne remplace pas une ligne manquante. Une absence bloque la construction. La normalisation Unicode, de casse, d’espacement et de ponctuation facilite la comparaison après mise en page ; elle ne valide ni la typographie ni la visibilité du texte.
+
+Chaque capture et chaque page finale nécessitent une revue explicite de leurs fichiers exacts. Les résultats restent **42/42 examinées individuellement par l’assistant** pour les images du jeu et **186/186 pages PDF examinées ; Word contrôlé séparément sur 186 pages** pour les documents. Le générateur, le convertisseur et le vérificateur d’empreintes ne créent aucune approbation à la place d’un lecteur.
+
+La phase **release** exige ces revues, conserve les octets approuvés du Word, du PDF et des captures, revérifie le manifeste documentaire et réexécute le contrôle de complétude sur les fichiers finaux. Elle reconstruit les exports, teste à nouveau leurs ressources, crée les archives et les vérifie. Une source, une image ou un document modifié ne peut pas réutiliser une approbation portant sur une autre empreinte. La revue du Word et celle des PNG rendus en CI depuis le PDF préparé identifient leurs supports exacts ; aucune conversion ou comparaison textuelle ne vaut approbation visuelle.
+
+## Portée exacte du ZIP Sources v0.9
+
+Le ZIP Sources comprend l’ensemble des éléments actifs du projet et son historique textuel :
+
+| Inclus | Détail |
+| --- | --- |
+| Projet Godot | Tous les scripts, scènes, assets actifs, configuration et tests ; notamment catalogue de routes, modèle et présentation du rappel |
+| Documentation source | Les seize sources intégrales de Bible, tous les guides Markdown et les annexes historiques |
+| Construction | Scripts Python, workflows conservés et demandes de revue/livraison |
+| Rapports | Rapports et revues textuels courants et historiques |
+| Médias courants | Word et PDF v0.9, 42 PNG natifs v0.9, provenance et éventuels JPEG de lecture v0.9 |
+
+Les **captures des versions antérieures** et les **anciennes Bibles Word/PDF** ne sont plus recopiées dans chaque nouveau ZIP. Elles restent intégralement conservées dans GitHub et dans les archives historiques. Cette politique retire une duplication de médias ; elle conserve le code actif, les sources documentaires, les tests et les guides nécessaires à la modification du jeu.
+
+`source_package_paths()` dans `tools/qa_common.py` définit la sélection commune. Le constructeur et le vérificateur utilisent cette même fonction. Le contrôle final exige l’égalité de l’ensemble complet des membres, puis compare chaque membre à son fichier d’origine. Les exclusions usuelles restent les caches Godot et Python, les sorties visuelles temporaires, les journaux temporaires et les PNG de rendu des pages. Les autres archives ZIP et `dist/` ne font pas partie du ZIP Sources.
+
+Les ZIP Windows et Sources doivent rester chacun strictement sous **100 Mio — 104 857 600 octets**. Une archive atteignant cette limite bloque la livraison. Le [rapport final des archives](../releases/VERIFICATION_V0.9.json) consigne le nombre de membres Sources, les tailles, les empreintes et le résultat de la comparaison exacte après emballage.
 
 ## Portée des contrôles
 
-Une suite source vérifie ses invariants. Le chargement d’un paquet vérifie ses ressources embarquées depuis un répertoire isolé. Les captures montrent Godot Linux avec des états préparés. La revue des pages examine les documents construits. Les résultats de ces étapes sont conservés séparément afin de ne pas confondre logique, contenu exporté, rendu et mise en page.
+Une suite source vérifie ses invariants. Un parcours physique exerce la capsule dans les passages. Le chargement d’un pack vérifie ses ressources depuis un répertoire isolé. Les captures montrent Godot Linux avec des états préparés. La revue des pages examine les documents construits. Les rapports conservent séparément ces résultats de logique, de contenu exporté, de rendu et de mise en page.
 
-Ces étapes ne constituent pas une partie humaine de l’EXE sous Windows, une partie Web dans un navigateur ou une mesure de fréquence d’images. Ces essais restent séparés et doivent être identifiés lorsqu’ils sont réalisés. Aucun doublage enregistré ni mixage final n’est certifié par le simple chargement des ressources audio.
+Ces étapes ne constituent pas une partie humaine de l’EXE sous Windows, une partie Web dans un navigateur ou une mesure de fréquence d’images. Ces essais restent à identifier lorsqu’ils sont réalisés. Aucun doublage enregistré ni mixage final n’est certifié par le simple chargement des ressources audio. Les assets et poses du jeu restent procéduraux.
 
-## Licences et conservation
+## Licences, publication et conservation
 
-Godot et Open Sans accompagnent les exports avec leurs notices. Les archives 0.1, 0.2, 0.4, 0.5, 0.6 et 0.7 restent conservées. `SHA256SUMS.txt` couvre les archives effectivement présentes ; il est réécrit après la fabrication des nouveaux ZIP sans supprimer les anciennes entrées.
+Godot et Open Sans accompagnent les exports avec leurs notices. Les archives 0.1, 0.2, 0.4, 0.5, 0.6, 0.7 et **0.8** restent conservées avec leurs médias et preuves d’origine. `SHA256SUMS.txt` couvre les archives effectivement présentes ; il est réécrit après la fabrication des nouveaux ZIP sans supprimer les anciennes entrées.
 
-Le pipeline conserve les preuves et les fichiers de plateforme dans un artefact Actions avant publication. Il ne pousse ses sorties que si la branche pointe encore sur le commit demandé. Une évolution concurrente conserve cet artefact sans forcer l’historique.
+Le pipeline conserve les preuves et les fichiers de plateforme dans un artefact Actions avant publication. Il ne pousse ses sorties que si la branche pointe encore sur le commit demandé. Une évolution concurrente conserve cet artefact sans forcer l’historique. L’exécutable Windows reste dans l’artefact et le ZIP Windows ; il n’est pas ajouté individuellement au dépôt.
 
-La [procédure complète](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/VALIDATION_V0.8.md), le [catalogue des captures](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/CAPTURES_V0.8.md) et [l’état de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md) décrivent les rapports dans `docs/validation/v0.8` et le contrôle final `releases/VERIFICATION_V0.8.json`.
+La [procédure complète v0.9](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/VALIDATION_V0.9.md), le [catalogue des captures](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/CAPTURES_V0.9.md) et [l’état de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md) relient les rapports dans `docs/validation/v0.9` et le contrôle final `releases/VERIFICATION_V0.9.json`.
