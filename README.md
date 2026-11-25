@@ -1,17 +1,20 @@
 # The Tower Descent
 
-**Version 0.12 — galerie, cuisines et refuge du 20.**
+**Version 0.12.0 — galerie, cuisines et refuge du 20. Revue de la candidature achevée.**
 
 La descente se poursuit du bilan de l’exposition au 23 jusqu’au refuge de logistique du 20. Trois personnes supplémentaires — Mina Bensaïd, Théo Lenoir et Sofia Renard — rejoignent les cinq secours déjà présents. Le nouveau secteur combine des interventions de secours, trois escaliers locaux, un rappel facultatif, deux constats et une première rencontre humaine tendue, sans révéler prématurément les expériences profondes ni l’Enfer.
 
 ## Accès et documentation v0.12
 
-- [Guide de démarrage et commandes](docs/DEMARRAGE_WINDOWS.md) · [État de livraison](docs/ETAT_DE_LIVRAISON.md).
+- [Guide de démarrage et commandes](docs/DEMARRAGE_WINDOWS.md) · [État de livraison](docs/ETAT_DE_LIVRAISON.md) · [Formats et contenu des exports](docs/EXPORTS.md).
 - [Supplément de Bible Word](docs/The-Tower-Descent-Continuation-v0.12.docx) · [PDF](docs/The-Tower-Descent-Continuation-v0.12.pdf) · [Source détaillée A22–A20](docs/CONTINUATION_A22_A20_V0.12.md).
 - [Douze nouveaux modèles éditables](docs/assets/v0.12/MODELS.md) · [Deux matières originales](docs/assets/v0.12/TEXTURES.md).
-- [Protocole de vérification](docs/VALIDATION_V0.12.md) · [Contrôles sources](docs/validation/v0.12/VERIFICATION.json).
+- [21 captures natives examinées](docs/CAPTURES_V0.12.md) · [Observations de revue](docs/validation/v0.12/VISUAL_REVIEW.json).
+- [Protocole de vérification](docs/VALIDATION_V0.12.md) · [Contrôles sources](docs/validation/v0.12/VERIFICATION.json) · [Ressources des exports](docs/validation/v0.12/EXPORTED_PACK_VERIFICATION.json).
 
-Le projet éditable s’ouvre avec **Godot 4.7.2** depuis `prototype/project.godot`. Les archives Windows, Sources et Captures natives sont établies après revue des images et contrôle de leurs fichiers ; le rapport de livraison précise leur disponibilité. Le workflow de candidature produit les preuves et les exports sans publier ni fusionner la PR.
+Le projet éditable s’ouvre avec **Godot 4.7.2** depuis `prototype/project.godot`. La revue est achevée : **8 291 contrôles sources dans 43 suites**, **572 contrôles de packs** — 286 pour Windows et 286 pour le Web —, **21 PNG examinés individuellement par trois agents** et **neuf pages du supplément revues**. Les images comprennent 18 vues Compatibilité et trois vues Forward+ effectivement obtenues. Les rapports portent sur la candidature `9756f0b707c1ffc72284754ec1f1ff301ffdd960`, issue de la source `2e4de42ce85a42c80dae97a1de9985194430d9b6`.
+
+**Archives :** [Windows x64 v0.12](releases/The-Tower-Descent-v0.12-Windows-x64.zip), [Sources v0.12](releases/The-Tower-Descent-v0.12-Sources.zip) et [Captures natives v0.12](releases/The-Tower-Descent-v0.12-Captures-native.zip). Leur disponibilité et leur assemblage vérifié sont attestés par la présence du [manifeste final v0.12](releases/VERIFICATION_V0.12.json), qui donne les tailles et empreintes des trois fichiers. La PR reste en brouillon sur `feat/live-tower-collapse`.
 
 ## Ce qui devient jouable
 
@@ -48,9 +51,16 @@ Les interactions historiques vérifient désormais portée, visée et obstacles 
 
 Le parcours jouable s’arrête au **20**. Le Retranché est un humain en détresse avec dialogue et pression de proximité ; il n’a pas encore de système de combat. Les niveaux 19 à 1, les laboratoires SILLAGE, la traversée physique de l’Enfer, Alma, l’intérieur d’Hespérie et le portage UE5 appartiennent à la campagne à produire. Les tours commencent intactes et l’effondrement d’Hespérie se produit toujours pendant l’intervention initiale.
 
-Les contrôles de logique et de collisions s’exécutent sous Godot Linux. Les captures natives montrent des états préparés ; les exports Windows/Web sont inspectés comme packs de ressources. Ces preuves ne remplacent pas une partie humaine complète sur ces plateformes ni des mesures sur un GPU de joueur. Les rapports identifient les fichiers exacts vérifiés.
+Les contrôles de logique et de collisions s’exécutent sous Godot Linux. Les captures natives montrent des états préparés ; Godot Linux monte le paquet embarqué dans l’EXE Windows et le PCK Web, sans lancer Windows ni un navigateur. Ces preuves ne remplacent pas une partie humaine complète sur ces plateformes ni des mesures sur un GPU de joueur. La revue conserve des réserves non bloquantes : personnages, feu et fumée stylisés, quelques superpositions de libellés 3D et notifications, aide parfois peu contrastée. Les rapports identifient les fichiers exacts vérifiés.
 
 La Bible intégrale [Word v0.9](docs/The-Tower-Descent-Bible-v0.9.docx) / [PDF](docs/The-Tower-Descent-Bible-v0.9.pdf), le supplément [Word v0.10](docs/The-Tower-Descent-Continuation-v0.10.docx) / [PDF](docs/The-Tower-Descent-Continuation-v0.10.pdf) et les anciennes livraisons restent conservés.
+
+## Versions antérieures
+
+Les livraisons et résultats ci-dessous sont conservés comme historique ; ils ne décrivent pas le périmètre courant de la v0.12.
+
+<details>
+<summary>Consulter les livraisons historiques v0.11, v0.10 et précédentes</summary>
 
 ## Historique de la version 0.11
 
@@ -101,7 +111,7 @@ Les résultats, captures et liens de cette section appartiennent à la livraison
 
 Le prototype Godot poursuit maintenant la descente jusqu’au **23**. Après les trois secours et le bilan du refuge 25, une action explicite ouvre le centre de congrès du 24, son escorte à pied, puis l’exposition du 23. Les tours commencent toujours intactes ; l’effondrement en cours d’intervention, les réceptions au toit, le rappel contrôlé et les cinématiques précédentes restent présents.
 
-## Jouer et consulter la livraison courante
+## Jouer et consulter la livraison historique v0.10
 
 - [Windows x64 v0.10](releases/The-Tower-Descent-v0.10-Windows-x64.zip) · [Sources et documents v0.10](releases/The-Tower-Descent-v0.10-Sources.zip).
 - [Commandes et démarrage Windows](docs/DEMARRAGE_WINDOWS.md) · [État de livraison](docs/ETAT_DE_LIVRAISON.md) · [Archives et empreintes vérifiées](releases/VERIFICATION_V0.10.json).
@@ -145,7 +155,7 @@ La progression conserve le doute et les répétitions avant les rencontres humai
 
 ## Dossier historique de la version 0.9
 
-Les mesures, liens et descriptions ci-dessous appartiennent à la version 0.9 conservée. Le périmètre actuel est celui décrit plus haut et dans le supplément v0.10.
+Les mesures, liens et descriptions ci-dessous appartiennent à la version 0.9 conservée. Le périmètre actuel est celui décrit en tête de ce README et dans le supplément v0.12.
 
 **Version 0.9 — escaliers entre étages voisins et rappel contrôlé.**
 
@@ -343,3 +353,5 @@ python3 tools/run_validation.py --godot /chemin/vers/godot
 Les 29 suites obligatoires comprennent le modèle de rappel, les routes physiques et leur intégration avec la mission. Le workflow **release-v09** sépare la construction de revue et la livraison : sources figées, exports, contrôle des ressources embarquées, captures natives, documents complets, puis approbations des fichiers exacts avant empaquetage. Une erreur moteur reste bloquante même si le processus renvoie zéro.
 
 Les captures sont des vues du moteur natif Linux à partir d’états préparés. Elles ne constituent pas une partie humaine sous Windows ou dans un navigateur, ni une mesure de performances. La PR reste en brouillon sur `feat/live-tower-collapse` ; ce workflow ne fusionne pas `main`. Les résultats, les exécutions et les commits de la livraison sont reliés dans [État de livraison](docs/ETAT_DE_LIVRAISON.md).
+
+</details>

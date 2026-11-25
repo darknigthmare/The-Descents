@@ -4,7 +4,23 @@
 
 La source 0.12 prolonge le parcours par trois étages et trois escortes individuelles. Mina Bensaïd, Théo Lenoir et Sofia Renard doivent arriver physiquement au refuge 20. Le Halligan, la coupure du réchauffeur, la couverture et le relais ont des actions contextuelles. Le Retranché du 22 peut être apaisé à distance, lampe baissée ; il ne possède pas encore de combat. Les deux constats maintiennent une enquête progressive sur les événements antérieurs à la catastrophe.
 
-**Statut : candidat en cours de revue.** Les résultats sources, exports, captures et archives sont consignés séparément, avec les SHA256 des fichiers exacts. Une validation de parcours physique ne vaut pas une revue du rendu. Le workflow de candidature dispose uniquement de droits de lecture sur le dépôt et ne produit aucune approbation visuelle ni publication.
+**Statut : revue de la candidature achevée, sans blocage identifié sur son périmètre vérifié.** Les résultats sources, exports, captures et document sont consignés ci-dessous avec leurs preuves. La présence du [manifeste final des archives v0.12](../releases/VERIFICATION_V0.12.json), accompagné des trois ZIP dont il précise les tailles et empreintes, atteste leur assemblage vérifié et leur disponibilité.
+
+La candidature examinée est [`9756f0b707c1ffc72284754ec1f1ff301ffdd960`](https://github.com/darknigthmare/The-Descents/commit/9756f0b707c1ffc72284754ec1f1ff301ffdd960), issue de la source [`2e4de42ce85a42c80dae97a1de9985194430d9b6`](https://github.com/darknigthmare/The-Descents/commit/2e4de42ce85a42c80dae97a1de9985194430d9b6). Les verdicts s’appliquent aux fichiers dont les empreintes figurent dans les rapports ; les anciens résultats ne sont pas réutilisés comme preuves du nouveau chapitre.
+
+## Résultats vérifiés de la candidature v0.12
+
+| Domaine | Résultat observé | Preuve |
+| --- | --- | --- |
+| Import, logique et intégration | **8 291 contrôles réussis dans 43 suites** ; runtime inchangé pendant les essais | [VERIFICATION.json](validation/v0.12/VERIFICATION.json) |
+| Exports construits | Windows x64 et Web, avec modèles officiels Godot 4.7.2 vérifiés | [CANDIDATE_EXPORTS.json](validation/v0.12/CANDIDATE_EXPORTS.json) · [Modèles du moteur](validation/v0.12/CANDIDATE_TEMPLATES.json) |
+| Ressources embarquées | **572 contrôles réussis : 286 par pack**, montés séparément depuis des répertoires vides sous Godot Linux | [EXPORTED_PACK_VERIFICATION.json](validation/v0.12/EXPORTED_PACK_VERIFICATION.json) |
+| Captures et revue visuelle | **21 PNG ouverts et examinés par trois agents : 18 Compatibilité et 3 Forward+** ; aucune vue demandée n’a été remplacée par un autre moteur | [Catalogue des captures](CAPTURES_V0.12.md) · [VISUAL_REVIEW.json](validation/v0.12/VISUAL_REVIEW.json) |
+| Document de continuation | **Neuf pages PDF examinées**, avec contrôle ordonné du texte du Word, des tableaux et de leur présence dans le PDF | [DOCUMENT_REVIEW.json](validation/v0.12/DOCUMENT_REVIEW.json) · [DOCUMENT_CONTENT.json](validation/v0.12/DOCUMENT_CONTENT.json) |
+| Modèles du chapitre | **Douze GLB**, source Blender éditable et manifeste ; chargement des modèles également exercé dans les packs | [Guide et source Blender](assets/v0.12/MODELS.md) · [Manifeste GLB](../prototype/assets/models/commerce_v012/manifest.json) |
+| Archives de distribution | Noms et contenu prévus ci-dessous ; tailles, membres et empreintes à lire dans le manifeste publié après assemblage | [VERIFICATION_V0.12.json](../releases/VERIFICATION_V0.12.json) |
+
+Le [rapport automatique de candidature](validation/v0.12/CANDIDATE.json) conserve son état antérieur à la revue visuelle. La décision d’examen des images est portée séparément par `VISUAL_REVIEW.json`. Le workflow de candidature dispose uniquement de droits de lecture sur le dépôt ; il ne fabrique aucune approbation visuelle ni publication. Les contrôles des packs ne sont pas compris dans les 8 291 contrôles sources.
 
 ## Contenu de la candidature
 
@@ -21,7 +37,17 @@ La source 0.12 prolonge le parcours par trois étages et trois escortes individu
 | Sauvegarde | Schéma 5, migrations 1–4, progression antérieure et réceptions conservées |
 | Corrections | Interaction à portée et sans obstacle, annulation de transfert de rappel bloqué, protection du checkpoint vivant |
 
-Les [contrôles sources](validation/v0.12/VERIFICATION.json), la [preuve de candidature](validation/v0.12/CANDIDATE.json), les ressources montées des exports et la revue individuelle des captures établissent leurs résultats effectifs. La [procédure v0.12](VALIDATION_V0.12.md) décrit les limites et les étapes. Le [guide Windows](DEMARRAGE_WINDOWS.md) présente l’itinéraire et les commandes ; le [supplément de Bible](CONTINUATION_A22_A20_V0.12.md) sépare les fonctions intégrées des scènes de campagne à produire.
+La [procédure v0.12](VALIDATION_V0.12.md) décrit les étapes et leurs limites. Le [guide Windows](DEMARRAGE_WINDOWS.md) présente l’itinéraire et les commandes ; le [supplément de Bible](CONTINUATION_A22_A20_V0.12.md) sépare les fonctions intégrées des scènes de campagne à produire.
+
+## Disponibilité et contenu des archives
+
+Les liens suivants désignent les archives produites par `tools/package_release.py`. Le [manifeste final v0.12](../releases/VERIFICATION_V0.12.json), publié avec les ZIP après réussite du contrôle de livraison, établit leur disponibilité, leurs tailles et leurs SHA-256.
+
+- [The-Tower-Descent-v0.12-Windows-x64.zip](../releases/The-Tower-Descent-v0.12-Windows-x64.zip) : EXE avec paquet embarqué, deux lanceurs, guide et licences.
+- [The-Tower-Descent-v0.12-Sources.zip](../releases/The-Tower-Descent-v0.12-Sources.zip) : projet éditable, modèles et sources Blender, matières, tests, guides, rapports et documents.
+- [The-Tower-Descent-v0.12-Captures-native.zip](../releases/The-Tower-Descent-v0.12-Captures-native.zip) : les 21 PNG examinés, deux manifestes et deux provenances, aux chemins d’origine.
+
+Les trois archives ont pour racine `The-Tower-Descent/`. Sources et Captures-native peuvent être extraites dans le même dossier parent. Les captures sont facultatives pour ouvrir le projet. Le [guide des exports](EXPORTS.md) décrit les membres attendus, la limite de 100 Mio par archive et la vérification des fichiers Web.
 
 ## Limites du chapitre
 
@@ -30,6 +56,8 @@ Le parcours s’arrête au 20. Les humains ont encore des silhouettes et poses p
 Les parcours utilisent les vrais corps et collisions. Le test des civils emploie un guide de sauvetage synthétique, sans téléporter les civils pendant leur marche. Les captures préparent des états de mission et d’interface. Les exports sont montés et interrogés par Godot Linux, sans exécuter l’application sous Windows ni le WebAssembly dans un navigateur. Le rendu Vulkan logiciel de CI ne mesure pas les performances d’un GPU de joueur.
 
 Les éléments mobiles sont exclus de la géométrie statique de l’éclairage global. L’intention lumineuse de Lumen reste adaptée aux fonctions Godot, sans parité revendiquée. La disparition de la fumée du réchauffeur est immédiate à la validation de la couverture dans cette version.
+
+La revue visuelle conserve des réserves non bloquantes : personnages, flammes et fumée géométriques et stylisés ; certains libellés 3D passent derrière le HUD ou chevauchent une notification ; l’aide de commandes est parfois peu contrastée sur le sol clair. Les comptes rendus, les compteurs et les commandes principales restent lisibles, y compris dans les deux vues à 1024 × 640. Deux formulations d’interface restent perfectibles : la règle générale sur une personne encore portée apparaît même au bilan 8/8, et le menu achevé propose encore « Reprendre l’intervention ». Les observations par image figurent dans [la revue exacte](validation/v0.12/VISUAL_REVIEW.json).
 
 ## Historique de livraison v0.11
 

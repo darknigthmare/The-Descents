@@ -1,24 +1,37 @@
 # Exports du prototype 0.12
 
-La candidature 0.12 utilise **Godot 4.7.2 stable officiel** et ses modèles d’export vérifiés par empreinte. Le workflow **commerce-review** produit les validations sources, les exports Windows/Web, les contrôles de leurs packs et les captures préparées. Il ne publie aucun fichier dans la branche et ne crée aucune approbation.
+La candidature 0.12 utilise **Godot 4.7.2 stable officiel** et ses modèles d’export vérifiés par empreinte. **Sa revue est achevée** : 43 suites et 8 291 contrôles sources, 572 contrôles de packs, 21 PNG natifs examinés et neuf pages de document revues. Les preuves concernent la demande `9756f0b707c1ffc72284754ec1f1ff301ffdd960` et sa source `2e4de42ce85a42c80dae97a1de9985194430d9b6`. Le workflow **commerce-review** construit les exports et preuves ; il ne publie aucun fichier dans la branche et ne crée aucune approbation.
 
 Le rendu Windows utilise Forward+ par défaut. Les lanceurs **JOUER_CINEMATIQUE.cmd** et **JOUER_COMPATIBILITE.cmd** demandent respectivement Vulkan/Forward+ et OpenGL/Compatibility. Le Web utilise Compatibility. Les modèles, matières, parcours et règles de secours sont communs.
 
-## Archives de la version 0.12
+## Archives et manifeste de livraison
+
+Les chemins suivants sont ceux de [package_release.py](../tools/package_release.py). La disponibilité des archives est attestée par la présence de leur [manifeste final `releases/VERIFICATION_V0.12.json`](../releases/VERIFICATION_V0.12.json), publié avec les trois ZIP après réussite du contrôle de livraison. Le manifeste donne les tailles, les empreintes et les membres effectivement vérifiés.
 
 | Archive | Contenu |
 | --- | --- |
-| `The-Tower-Descent-v0.12-Windows-x64.zip` | Exécutable avec son paquet embarqué, deux lanceurs, guide et licences |
-| `The-Tower-Descent-v0.12-Sources.zip` | Projet éditable, dix albedos originaux, vingt-huit GLB, deux sources Blender, tests, outils, guides, rapports et documents |
-| `The-Tower-Descent-v0.12-Captures-native.zip` | Images natives du nouveau chapitre et manifestes, aux chemins d’origine |
+| [The-Tower-Descent-v0.12-Windows-x64.zip](../releases/The-Tower-Descent-v0.12-Windows-x64.zip) | Exécutable avec son paquet embarqué, deux lanceurs, guide et licences |
+| [The-Tower-Descent-v0.12-Sources.zip](../releases/The-Tower-Descent-v0.12-Sources.zip) | Projet éditable, dix albedos originaux, vingt-huit GLB, deux sources Blender, tests, outils, guides, rapports et documents |
+| [The-Tower-Descent-v0.12-Captures-native.zip](../releases/The-Tower-Descent-v0.12-Captures-native.zip) | 21 PNG examinés et quatre fichiers de manifeste/provenance, aux chemins d’origine |
 
-Les trois ZIP utilisent la racine `The-Tower-Descent/`. Extraire Sources et Captures-native dans le même dossier parent réunit le projet et les preuves visuelles. Les captures restent facultatives pour jouer ou modifier le projet. La Bible complète v0.9 et les suppléments v0.10 et v0.12 sont inclus avec leurs Word/PDF. Les anciennes archives et captures restent dans leurs livraisons historiques.
+Le contrat des trois ZIP utilise la racine `The-Tower-Descent/`. Extraire Sources et Captures-native dans le même dossier parent réunit le projet et les preuves visuelles. Les captures restent facultatives pour jouer ou modifier le projet. Le ZIP Sources doit conserver la Bible complète v0.9 et les suppléments v0.10 et v0.12 en Word/PDF. Les anciennes archives et captures restent rattachées à leurs livraisons historiques.
 
-La revue v0.12 comprend dix-huit cadrages Compatibility, dont deux fenêtres de 1024 × 640, et trois cadrages comparables Forward+ lorsque la sonde Vulkan native est disponible. Une indisponibilité est déclarée ; un rendu échoué après une sonde réussie ne passe pas silencieusement. Chaque image doit être ouverte puis consignée avec ses octets exacts avant validation des archives. Les aperçus Blender et les pages du supplément ont leurs propres revues.
+Le ZIP Windows doit contenir exactement huit fichiers : `TheTowerDescent.exe`, `JOUER_CINEMATIQUE.cmd`, `JOUER_COMPATIBILITE.cmd`, `README.md` issu du guide de démarrage, `EXPORTS.md`, `GODOT_LICENSES.txt`, `fonts/LICENSE.txt` et `fonts/NOTICE.txt`. Les deux sources éditables de modèles sont `docs/assets/v0.11/rescue_equipment.blend` et `docs/assets/v0.12/commerce_equipment.blend` dans le ZIP Sources. Le projet s’ouvre depuis `prototype/project.godot`.
 
-`tools/verify_commerce_release.py` exige les tests, packs, provenance, revue des images et revue des neuf pages, puis compare les membres exacts et octets des ZIP avec leurs sources. Les empreintes et tailles figurent dans `releases/VERIFICATION_V0.12.json`. Chaque archive doit rester strictement sous **100 Mio**. Les fichiers Web de `dist/` doivent correspondre exactement à l’export vérifié ; ce dossier n’établit pas à lui seul la publication d’un site public.
+## Exports et captures réellement vérifiés
 
-La procédure détaillée est dans [Validation v0.12](VALIDATION_V0.12.md). Le [rapport de livraison](ETAT_DE_LIVRAISON.md) donne le statut réel des fichiers. Les captures natives sous Linux et les packs montés ne constituent pas une partie humaine sous Windows ou dans un navigateur, ni un benchmark de GPU.
+| Élément construit | Chemin dans l’espace de construction | Contrôle réalisé |
+| --- | --- | --- |
+| Windows x64 | `builds/windows/TheTowerDescent.exe` | Paquet embarqué monté par Godot Linux : **286 contrôles** ; l’application Windows n’a pas été exécutée |
+| Web | `builds/web/index.html`, `index.js`, `index.wasm`, `index.pck` et notices | PCK monté par Godot Linux : **286 contrôles** ; aucun lancement WebAssembly dans un navigateur |
+| Compatibilité | `docs/captures/v0.12/commerce/compatibility/` | **18 PNG ouverts et examinés**, dont 16 en 1440 × 900 et deux en 1024 × 640 |
+| Forward+ | `docs/captures/v0.12/commerce/forward_plus/` | **Trois PNG ouverts et examinés** en 1440 × 900 ; Vulkan était disponible et ce moteur a réellement produit ces vues |
+
+Les [exports construits](validation/v0.12/CANDIDATE_EXPORTS.json), les [572 contrôles de packs](validation/v0.12/EXPORTED_PACK_VERIFICATION.json), le [catalogue des 21 images](CAPTURES_V0.12.md) et [leur revue](validation/v0.12/VISUAL_REVIEW.json) relient ces résultats aux fichiers exacts. Chaque groupe de captures possède un `MANIFEST.json` et un `PROVENANCE.json`. Les 21 images ont été réparties entre trois agents pour examen effectif ; ce sont des états préparés du moteur. La [revue des neuf pages](validation/v0.12/DOCUMENT_REVIEW.json) et le [contrôle du texte Word/PDF](validation/v0.12/DOCUMENT_CONTENT.json) sont distincts.
+
+Le vérificateur [verify_commerce_release.py](../tools/verify_commerce_release.py) exige les tests, packs, provenances et revues, puis compare les membres et octets exacts des ZIP avec leurs sources. Il écrit `releases/VERIFICATION_V0.12.json` seulement après réussite de ces contrôles. Chaque archive doit rester strictement sous **100 Mio — 104 857 600 octets**. Les fichiers Web destinés à `dist/` doivent correspondre exactement à l’export vérifié ; ce dossier n’établit pas à lui seul la publication d’un site public.
+
+La procédure détaillée est dans [Validation v0.12](VALIDATION_V0.12.md). Le [rapport de livraison](ETAT_DE_LIVRAISON.md) distingue revue et disponibilité. Les captures natives sous Linux et les packs montés ne constituent pas une partie humaine sous Windows ou dans un navigateur, ni un benchmark de GPU. Personnages, feu et fumée restent stylisés ; quelques superpositions de libellés 3D et de notifications ainsi qu’une aide parfois peu contrastée sont consignées dans la revue.
 
 ## Contrat historique v0.11
 
