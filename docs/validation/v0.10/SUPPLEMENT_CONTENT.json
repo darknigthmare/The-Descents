@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "tool": "verify_document_content.py",
-  "checked_utc": "2026-11-25T15:41:25.572635+00:00",
+  "checked_utc": "2026-11-25T15:54:53.297181+00:00",
   "status": "pass",
   "scope": "DOCX body text, table rows, cells and their paragraphs in source order",
   "docx": {

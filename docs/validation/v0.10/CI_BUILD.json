@@ -1,9 +1,9 @@
 {
   "version": "0.10.0",
   "phase": "review",
-  "request_id": "tower-v010-review-01",
-  "source_commit": "2cc18de7308f7a441558cfae53ff9b3ebdcf77c3",
-  "request_commit": "ac32f5f876ad22717c9c04a01beb129803e3e6a7",
+  "request_id": "tower-v010-review-02",
+  "source_commit": "5d6e3878b0e103216d995f8b49944d847b834b79",
+  "request_commit": "39144444ea6f7b57f5fe341d8cd25b8bf08d48dc",
   "runtime_sha256": {
     "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
     "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
@@ -31,14 +31,14 @@
     "prototype/scripts/cinematic_overlay.gd": "2b9c9d3f1b2368380fb92ef82b3949b6c90c863bbd02184c89ddc9df6c33050b",
     "prototype/scripts/collapse_director.gd": "3d9dce62a1b99c68aba41dc7f447a1ced40041ab64f2fb07f16802af5cdd8ee7",
     "prototype/scripts/continuation_director.gd": "fadf17cfdf6e86d4e92632d9b0cd5519ac01555156ee914ca12251584e7dc3a8",
-    "prototype/scripts/continuation_presentation.gd": "de5b354d2ba36dbb9a7eb1e25100dc8407eaf8a708eec19dc23f88768e695a35",
+    "prototype/scripts/continuation_presentation.gd": "992d938ada694b400ea2381c3907146063a4a68b279c45ea4c5582278da0ddb7",
     "prototype/scripts/epilogue_director.gd": "4a8da32affe5bf27d616f6d289f41b83121b37f4d60a41b71e069f732408d972",
     "prototype/scripts/field_props.gd": "cc1d0ff0137f69678beb35622c6607d71700307490096b13e98a7e49960d3fd7",
     "prototype/scripts/floor_generator.gd": "0ae0f3e796e0e219fb505ba688488661848434c5fc4e46278b030a257f399779",
     "prototype/scripts/frontend_menu.gd": "db9cb05c2f820fd5f4201e154b1051cedaa1de823bb5af70a6fbb9933015e1fc",
     "prototype/scripts/horror_director.gd": "03b49075109baa5c3951044bc25f5d7a07f61ece9bba3e4c61f6fcb90b319e0c",
     "prototype/scripts/horror_presentation.gd": "4dc010cef8b8e350d26a19f7682154b8b772b65ab07297e4445465c4d11ca3c1",
-    "prototype/scripts/hud.gd": "7053f7e7253e9e7504812087664198028818293f3b0e7f38ebc1f4a024459d78",
+    "prototype/scripts/hud.gd": "6e35c9c159d661ec3f931642d92ad7392b7b317a12e8ddbff13b1e5ea742a25d",
     "prototype/scripts/inspection_panel.gd": "37c8c06327a8e97f955381bd36564eddabb686bd053e0af1b99c2b7895d49cbd",
     "prototype/scripts/main.gd": "60e2078c2efe04a58c6d9dd3001ce32dcc255f3cc4eac4b4d507763a35601e81",
     "prototype/scripts/maritime_atmosphere.gd": "ccce77223a8aea0888ae660fb5a32facc89440afb4edbaf57f68834da84d33a5",
@@ -63,9 +63,9 @@
     "prototype/shaders/weathered_surface.gdshader": "e71f62962863bc3e3fe64e73c1b2b53098ec2c354eb46464a32eba0db0a62d3d",
     "prototype/web_shell.html": "2153408b1c07a7cdac170f9f87fdb99617fd61f82c523902a11658e17d2e54fd"
   },
-  "completed_utc": "2026-11-25T15:41:28.489848+00:00",
+  "completed_utc": "2026-11-25T15:54:57.376079+00:00",
   "automated_steps_passed": true,
   "manual_visual_review_required": true,
-  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45647035685",
+  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45648920894",
   "pipeline_sha256": "ea5da40bf3bc4d88b85fc305659bd97e24301453e79a0386e06cbb436a754ba9"
 }

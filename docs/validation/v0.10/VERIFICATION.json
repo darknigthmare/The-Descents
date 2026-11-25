@@ -1,10 +1,10 @@
 {
   "version": "0.10.0",
   "label": "v0.10 continuation after refuge 25, physical duo escort, adjacent-floor traversal and two-proof reconnaissance",
-  "validated_utc": "2026-11-25T15:38:01.612459+00:00",
+  "validated_utc": "2026-11-25T15:50:22.080156+00:00",
   "engine": "4.7.2.stable.official.ed1daf0bf",
-  "runtime_freeze_commit": "ac32f5f876ad22717c9c04a01beb129803e3e6a7",
-  "git_head": "ac32f5f876ad22717c9c04a01beb129803e3e6a7",
+  "runtime_freeze_commit": "39144444ea6f7b57f5fe341d8cd25b8bf08d48dc",
+  "git_head": "39144444ea6f7b57f5fe341d8cd25b8bf08d48dc",
   "import": {
     "command": [
       "/home/runner/work/_temp/godot/Godot_v4.7.2-stable_linux.x86_64",
@@ -16,7 +16,7 @@
       "--quit"
     ],
     "returncode": 0,
-    "duration_seconds": 7.079,
+    "duration_seconds": 4.668,
     "error_lines": [],
     "checks": 0,
     "pass_markers": 0,
@@ -70,7 +70,7 @@
         "res://tests/test_arrival_staging.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.894,
+      "duration_seconds": 1.095,
       "error_lines": [],
       "checks": 126,
       "pass_markers": 1,
@@ -91,7 +91,7 @@
         "res://tests/test_atmosphere.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.337,
+      "duration_seconds": 0.445,
       "error_lines": [],
       "checks": 44,
       "pass_markers": 1,
@@ -112,7 +112,7 @@
         "res://tests/test_cinematic_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.545,
+      "duration_seconds": 2.534,
       "error_lines": [],
       "checks": 103,
       "pass_markers": 1,
@@ -133,7 +133,7 @@
         "res://tests/test_cinematics.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.149,
+      "duration_seconds": 1.173,
       "error_lines": [],
       "checks": 109,
       "pass_markers": 1,
@@ -154,7 +154,7 @@
         "res://tests/test_collapse.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.149,
+      "duration_seconds": 0.167,
       "error_lines": [],
       "checks": 27,
       "pass_markers": 1,
@@ -175,7 +175,7 @@
         "res://tests/test_comfort.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.802,
+      "duration_seconds": 1.007,
       "error_lines": [],
       "checks": 152,
       "pass_markers": 1,
@@ -196,7 +196,7 @@
         "res://tests/test_continuation.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.15,
+      "duration_seconds": 0.263,
       "error_lines": [],
       "checks": 202,
       "pass_markers": 1,
@@ -219,7 +219,7 @@
         "res://tests/test_continuation_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.082,
+      "duration_seconds": 1.469,
       "error_lines": [],
       "checks": 40,
       "pass_markers": 1,
@@ -242,7 +242,7 @@
         "res://tests/test_continuation_routes.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.71,
+      "duration_seconds": 1.191,
       "error_lines": [],
       "checks": 84,
       "pass_markers": 1,
@@ -263,7 +263,7 @@
         "res://tests/test_epilogue.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.431,
+      "duration_seconds": 0.538,
       "error_lines": [],
       "checks": 161,
       "pass_markers": 1,
@@ -284,7 +284,7 @@
         "res://tests/test_epilogue_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.897,
+      "duration_seconds": 1.096,
       "error_lines": [],
       "checks": 50,
       "pass_markers": 1,
@@ -305,7 +305,7 @@
         "res://tests/test_field_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.454,
+      "duration_seconds": 1.656,
       "error_lines": [],
       "checks": 125,
       "pass_markers": 1,
@@ -326,7 +326,7 @@
         "res://tests/test_field_props.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.523,
+      "duration_seconds": 0.633,
       "error_lines": [],
       "checks": 477,
       "pass_markers": 1,
@@ -347,7 +347,7 @@
         "res://tests/test_generation.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.243,
+      "duration_seconds": 0.257,
       "error_lines": [],
       "checks": 820,
       "pass_markers": 1,
@@ -368,7 +368,7 @@
         "res://tests/test_horror.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.523,
+      "duration_seconds": 0.63,
       "error_lines": [],
       "checks": 140,
       "pass_markers": 1,
@@ -389,7 +389,7 @@
         "res://tests/test_horror_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.896,
+      "duration_seconds": 1.188,
       "error_lines": [],
       "checks": 39,
       "pass_markers": 1,
@@ -410,7 +410,7 @@
         "res://tests/test_incident_effects.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.616,
+      "duration_seconds": 0.724,
       "error_lines": [],
       "checks": 29,
       "pass_markers": 1,
@@ -431,7 +431,7 @@
         "res://tests/test_incident_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.803,
+      "duration_seconds": 1.004,
       "error_lines": [],
       "checks": 64,
       "pass_markers": 1,
@@ -454,7 +454,7 @@
         "res://tests/test_incident_routes.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.894,
+      "duration_seconds": 1.559,
       "error_lines": [],
       "checks": 130,
       "pass_markers": 1,
@@ -475,7 +475,7 @@
         "res://tests/test_mission.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.804,
+      "duration_seconds": 1.097,
       "error_lines": [],
       "checks": 89,
       "pass_markers": 1,
@@ -496,7 +496,7 @@
         "res://tests/test_mission_dossier.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.894,
+      "duration_seconds": 0.998,
       "error_lines": [],
       "checks": 110,
       "pass_markers": 1,
@@ -517,7 +517,7 @@
         "res://tests/test_preferences.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.149,
+      "duration_seconds": 0.163,
       "error_lines": [],
       "checks": 80,
       "pass_markers": 1,
@@ -538,7 +538,7 @@
         "res://tests/test_radio.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.15,
+      "duration_seconds": 0.16,
       "error_lines": [],
       "checks": 33,
       "pass_markers": 1,
@@ -559,7 +559,7 @@
         "res://tests/test_radio_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.896,
+      "duration_seconds": 1.189,
       "error_lines": [],
       "checks": 60,
       "pass_markers": 1,
@@ -580,7 +580,7 @@
         "res://tests/test_rescue_presentation.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.803,
+      "duration_seconds": 1.006,
       "error_lines": [],
       "checks": 1005,
       "pass_markers": 1,
@@ -601,7 +601,7 @@
         "res://tests/test_rope_traversal.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.336,
+      "duration_seconds": 0.44,
       "error_lines": [],
       "checks": 98,
       "pass_markers": 1,
@@ -624,7 +624,7 @@
         "res://tests/test_routes.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.802,
+      "duration_seconds": 1.379,
       "error_lines": [],
       "checks": 205,
       "pass_markers": 1,
@@ -645,7 +645,7 @@
         "res://tests/test_save.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.244,
+      "duration_seconds": 0.256,
       "error_lines": [],
       "checks": 288,
       "pass_markers": 1,
@@ -666,7 +666,7 @@
         "res://tests/test_team_reactions.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.337,
+      "duration_seconds": 0.347,
       "error_lines": [],
       "checks": 27,
       "pass_markers": 1,
@@ -689,7 +689,7 @@
         "res://tests/test_traversal_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.805,
+      "duration_seconds": 1.001,
       "error_lines": [],
       "checks": 826,
       "pass_markers": 1,
@@ -712,7 +712,7 @@
         "res://tests/test_vertical_routes.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.64,
+      "duration_seconds": 2.954,
       "error_lines": [],
       "checks": 1040,
       "pass_markers": 1,
@@ -733,7 +733,7 @@
         "res://tests/test_world_presentation.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.337,
+      "duration_seconds": 0.347,
       "error_lines": [],
       "checks": 534,
       "pass_markers": 1,
@@ -775,14 +775,14 @@
     "prototype/scripts/cinematic_overlay.gd": "2b9c9d3f1b2368380fb92ef82b3949b6c90c863bbd02184c89ddc9df6c33050b",
     "prototype/scripts/collapse_director.gd": "3d9dce62a1b99c68aba41dc7f447a1ced40041ab64f2fb07f16802af5cdd8ee7",
     "prototype/scripts/continuation_director.gd": "fadf17cfdf6e86d4e92632d9b0cd5519ac01555156ee914ca12251584e7dc3a8",
-    "prototype/scripts/continuation_presentation.gd": "de5b354d2ba36dbb9a7eb1e25100dc8407eaf8a708eec19dc23f88768e695a35",
+    "prototype/scripts/continuation_presentation.gd": "992d938ada694b400ea2381c3907146063a4a68b279c45ea4c5582278da0ddb7",
     "prototype/scripts/epilogue_director.gd": "4a8da32affe5bf27d616f6d289f41b83121b37f4d60a41b71e069f732408d972",
     "prototype/scripts/field_props.gd": "cc1d0ff0137f69678beb35622c6607d71700307490096b13e98a7e49960d3fd7",
     "prototype/scripts/floor_generator.gd": "0ae0f3e796e0e219fb505ba688488661848434c5fc4e46278b030a257f399779",
     "prototype/scripts/frontend_menu.gd": "db9cb05c2f820fd5f4201e154b1051cedaa1de823bb5af70a6fbb9933015e1fc",
     "prototype/scripts/horror_director.gd": "03b49075109baa5c3951044bc25f5d7a07f61ece9bba3e4c61f6fcb90b319e0c",
     "prototype/scripts/horror_presentation.gd": "4dc010cef8b8e350d26a19f7682154b8b772b65ab07297e4445465c4d11ca3c1",
-    "prototype/scripts/hud.gd": "7053f7e7253e9e7504812087664198028818293f3b0e7f38ebc1f4a024459d78",
+    "prototype/scripts/hud.gd": "6e35c9c159d661ec3f931642d92ad7392b7b317a12e8ddbff13b1e5ea742a25d",
     "prototype/scripts/inspection_panel.gd": "37c8c06327a8e97f955381bd36564eddabb686bd053e0af1b99c2b7895d49cbd",
     "prototype/scripts/main.gd": "60e2078c2efe04a58c6d9dd3001ce32dcc255f3cc4eac4b4d507763a35601e81",
     "prototype/scripts/maritime_atmosphere.gd": "ccce77223a8aea0888ae660fb5a32facc89440afb4edbaf57f68834da84d33a5",
@@ -834,14 +834,14 @@
     "prototype/scripts/cinematic_overlay.gd": "2b9c9d3f1b2368380fb92ef82b3949b6c90c863bbd02184c89ddc9df6c33050b",
     "prototype/scripts/collapse_director.gd": "3d9dce62a1b99c68aba41dc7f447a1ced40041ab64f2fb07f16802af5cdd8ee7",
     "prototype/scripts/continuation_director.gd": "fadf17cfdf6e86d4e92632d9b0cd5519ac01555156ee914ca12251584e7dc3a8",
-    "prototype/scripts/continuation_presentation.gd": "de5b354d2ba36dbb9a7eb1e25100dc8407eaf8a708eec19dc23f88768e695a35",
+    "prototype/scripts/continuation_presentation.gd": "992d938ada694b400ea2381c3907146063a4a68b279c45ea4c5582278da0ddb7",
     "prototype/scripts/epilogue_director.gd": "4a8da32affe5bf27d616f6d289f41b83121b37f4d60a41b71e069f732408d972",
     "prototype/scripts/field_props.gd": "cc1d0ff0137f69678beb35622c6607d71700307490096b13e98a7e49960d3fd7",
     "prototype/scripts/floor_generator.gd": "0ae0f3e796e0e219fb505ba688488661848434c5fc4e46278b030a257f399779",
     "prototype/scripts/frontend_menu.gd": "db9cb05c2f820fd5f4201e154b1051cedaa1de823bb5af70a6fbb9933015e1fc",
     "prototype/scripts/horror_director.gd": "03b49075109baa5c3951044bc25f5d7a07f61ece9bba3e4c61f6fcb90b319e0c",
     "prototype/scripts/horror_presentation.gd": "4dc010cef8b8e350d26a19f7682154b8b772b65ab07297e4445465c4d11ca3c1",
-    "prototype/scripts/hud.gd": "7053f7e7253e9e7504812087664198028818293f3b0e7f38ebc1f4a024459d78",
+    "prototype/scripts/hud.gd": "6e35c9c159d661ec3f931642d92ad7392b7b317a12e8ddbff13b1e5ea742a25d",
     "prototype/scripts/inspection_panel.gd": "37c8c06327a8e97f955381bd36564eddabb686bd053e0af1b99c2b7895d49cbd",
     "prototype/scripts/main.gd": "60e2078c2efe04a58c6d9dd3001ce32dcc255f3cc4eac4b4d507763a35601e81",
     "prototype/scripts/maritime_atmosphere.gd": "ccce77223a8aea0888ae660fb5a32facc89440afb4edbaf57f68834da84d33a5",
