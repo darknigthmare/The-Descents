@@ -1,10 +1,10 @@
-# Captures natives prévues — The Tower Descent 0.8
+# Captures natives — The Tower Descent 0.8
 
-Ce document définit les **33 captures natives à produire et à examiner** pour la v0.8. Il ne vaut ni résultat de construction ni approbation visuelle. Les liens désignent les emplacements attendus ; l’[état de livraison](ETAT_DE_LIVRAISON.md) sera renseigné après l’exécution et la revue des fichiers finaux.
+Ce catalogue rassemble les **33 captures natives v0.8**. **Revue : Toutes les 33 images finales examinées ; aucun défaut bloquant relevé.** La provenance, les empreintes et les observations de chaque fichier figurent dans les rapports ci-dessous ; l’[état de livraison](ETAT_DE_LIVRAISON.md) rassemble les résultats du runtime, des exports et des documents.
 
-Le contrat utilise **Godot 4.7.2 officiel**, rendu **Compatibility / OpenGL 3**, en **1440 × 900**, sous Linux avec Xvfb et Mesa. Les états sont préparés puis rendus par le véritable moteur. Les 30 vues de la v0.7 doivent être recapturées avec le runtime v0.8, auxquelles s’ajoutent les trois manifestations du premier secteur. Aucun PNG historique ne doit être réétiqueté comme une nouvelle capture.
+Le lot utilise **Godot 4.7.2 officiel**, rendu **Compatibility / OpenGL 3**, en **1440 × 900**, sous Linux avec Xvfb et Mesa. Les états sont préparés puis rendus par le véritable moteur. Les 30 vues de la v0.7 sont recapturées avec le runtime v0.8, auxquelles s’ajoutent les trois manifestations du premier secteur ; leurs fichiers historiques restent séparés.
 
-## Provenance exigée
+## Provenance des images
 
 | Preuve | Rôle |
 | --- | --- |
@@ -63,7 +63,7 @@ Les PNG sont les preuves originales. Les dérivés JPEG éventuels conservent la
 
 ## Manifestations du premier secteur
 
-| Capture | État à présenter |
+| Capture | État présenté |
 | --- | --- |
 | [26 — Présence aux suites](captures/v0.8/26_suites_presence.png) | Silhouette humaine périphérique au 29 ; échelle crédible, faible présence, aucune mise en scène démoniaque ni obstruction du trajet |
 | [27 — Traces aux archives](captures/v0.8/27_archives_traces.png) | Traces humides après impact au 28, lisibles dans l’espace et sans ajout de collision ou de preuve automatiquement recueillie |
@@ -71,9 +71,17 @@ Les PNG sont les preuves originales. Les dérivés JPEG éventuels conservent la
 
 Ces trois images exposent les états perceptifs du prototype. Elles ne montrent ni PNJ hostile de campagne, ni laboratoire profond jouable, ni traversée de l’Enfer. La progression future est détaillée dans [Progression de l’horreur](PROGRESSION_HORREUR_V0.8.md).
 
+Les états de manifestations sont préparés après le véritable treuillage d’Ana et un intervalle calme, jusqu’à expiration de la notification de début. Le constat sur le repère d’étage et les observations de présentation restent attachés aux PNG finaux :
+
+| Point examiné | Observation de la revue |
+| --- | --- |
+| Repère d’étage et manifestations | Le repère d’étage, réduit et rehaussé, dégage le décor et les manifestations. La notification de début est expirée dans les trois états et le HUD confirme le premier sauvetage. |
+| Portage d’Ana | Ana visible dans le harnais au premier plan droit ; balise et axe central de déplacement dégagés, objectif de transport et compteur 0/3 lisibles. Pose procédurale de prototype. |
+| Premier plan de l’épilogue | Trois personnes reçues identifiables : Samuel et Nora pleinement visibles, Ana sur la civière dont une partie proche/gauche est masquée par un équipier au premier plan. Carton, attribution, sous-titre et commande de bilan lisibles. |
+
 ## Critères de revue
 
-La liste de `tools/capture_evidence.py` constitue le contrat machine : exactement 33 noms, PNG natifs complets de 1440 × 900 et même runtime que les tests. Chaque image de ce catalogue doit être reliée à une entrée de provenance puis à une décision de revue portant sur ses octets finaux. Le ZIP Sources final conserve les trente-trois PNG approuvés et leurs rapports.
+La liste de `tools/capture_evidence.py` constitue le contrat machine : exactement 33 noms, PNG natifs complets de 1440 × 900 et même runtime que les tests. Chaque image de ce catalogue doit être reliée à une entrée de provenance puis à une décision de revue portant sur ses octets finaux. Le ZIP Sources final conserve les PNG examinés et leurs rapports ; le vérificateur exige des verdicts favorables portant sur ces mêmes empreintes.
 
 Les vues d’ouverture doivent conserver la géographie des deux tours, les silhouettes sur le ciel, la cohérence du point sûr, les quatre instants d’arrivée et des commandes lisibles. Les plans de terrain contrôlent les fiches, la lecture du harnais et du câble, la réception réelle, les raccords de l’horizon et les options depuis une pause. Leurs défauts éventuels doivent être corrigés dans le jeu puis recapturés.
 

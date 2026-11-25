@@ -1,0 +1,1909 @@
+{
+  "format": 1,
+  "version": "0.8.0",
+  "all_pass": true,
+  "reviewed_utc": "2026-11-25T07:52:42.599461+00:00",
+  "source_commit": "90c7c23d1f00c1c007967083bc73364a4f34debe",
+  "evidence_commit": "8f0ffc5fc65d11384353a295d492cebc382e14fd",
+  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45569546416",
+  "method": "Every final CI PDF page opened individually at full native size by the assigned AI reviewers. Exact final Word separately rendered with the canonical document skill renderer; all 168 canonical PNGs are byte-identical to individually reviewed pages.",
+  "source_count": 15,
+  "source_words": 83314,
+  "sources": [
+    {
+      "file": "docs/BIBLE_DU_JEU.md",
+      "bytes": 96420,
+      "sha256": "51133202ab873da5c15dec8db1f3029ec99f2f4f278c05633854c2722140165b"
+    },
+    {
+      "file": "docs/CATALOGUE_ETAGES.md",
+      "bytes": 87574,
+      "sha256": "96a9abe47f104f4891dd1f365c5107f891a676fdb78dfc0affad1a18c35d741f"
+    },
+    {
+      "file": "docs/SYSTEMES_PROCEDURAUX.md",
+      "bytes": 27193,
+      "sha256": "733f1104dc137d5f5bde629a24feb1021d12df28f407acded5e248225f597c13"
+    },
+    {
+      "file": "docs/ARCHITECTURE_ET_PORTAGE_UE5.md",
+      "bytes": 30157,
+      "sha256": "74928ee09ec5f5a6572c10555c45b7872c5145d4d78469095be5b5fe0dcaed13"
+    },
+    {
+      "file": "docs/EFFONDREMENT_EN_DIRECT.md",
+      "bytes": 24335,
+      "sha256": "2edf417356bffeee149fcbe62353615108a8bb2d73c64d462c2361da422f6e9f"
+    },
+    {
+      "file": "docs/COMMUNICATIONS_ET_EQUIPES.md",
+      "bytes": 15178,
+      "sha256": "cdd3a5d4126f0c62bb235662a57c10842acf9392cf1daf4359ea9dcf4204da0b"
+    },
+    {
+      "file": "docs/PROPS_INTERACTIONS.md",
+      "bytes": 66318,
+      "sha256": "80a308f85b053f856213073d9efef45f2cf97b9d28f48832a8032aed86cc7ca2"
+    },
+    {
+      "file": "docs/ENNEMIS_STATISTIQUES.md",
+      "bytes": 37635,
+      "sha256": "6ce3de9eba1bb8ffbeea0ec21d357997b17afebb6e0b6bc25ca5d3d2af0ef78b"
+    },
+    {
+      "file": "docs/SCENES_CINEMATIQUES.md",
+      "bytes": 44371,
+      "sha256": "35cff66a22ff575194bfcab234c15d036112ba30b435ba2094c50111ea3ad3fc"
+    },
+    {
+      "file": "docs/GAMEPLAY_DETAILLE.md",
+      "bytes": 38645,
+      "sha256": "1a60aaef243f924d9b4ffdbff9f282948d28769d9bb7f6e5bed8ca801b67c209"
+    },
+    {
+      "file": "docs/SAUVETAGE_V0.6.md",
+      "bytes": 16322,
+      "sha256": "a2df21a6974262c1024e027a3a5b38ff35024722e406fb4bca4d052cf13552eb"
+    },
+    {
+      "file": "docs/AMBIANCE_V0.6.md",
+      "bytes": 9780,
+      "sha256": "11d0e639631deb639a48beeff3d7047395fee333f2f33eefa6890640b01c3dc7"
+    },
+    {
+      "file": "docs/CONFORT_V0.6.md",
+      "bytes": 10835,
+      "sha256": "38f6f01f567c4c6c5986e9bd73d5ff8e8e4bbc4122a5bb8d2ff3d3aeaa0ca2b5"
+    },
+    {
+      "file": "docs/DOSSIER_ET_EPILOGUE_V0.7.md",
+      "bytes": 20860,
+      "sha256": "b6e6d0f98fb804b5036910bc828e40cf0e348b4ef2efc66745129609effc9386"
+    },
+    {
+      "file": "docs/PROGRESSION_HORREUR_V0.8.md",
+      "bytes": 26045,
+      "sha256": "8c376a2f97d4090d4d61a3e8a40fff68d063c0539d3abbcdedc02ac3614ca277"
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "docs/The-Tower-Descent-Bible-v0.8.docx",
+      "bytes": 290284,
+      "sha256": "ab70f7cd87ee83daba8889da416e4bdc93b3aa429945af1c9c3b3472ed820e81"
+    },
+    {
+      "file": "docs/The-Tower-Descent-Bible-v0.8.pdf",
+      "bytes": 2529936,
+      "sha256": "8ce29b7e99aa9753e9f39175586ce741ebaff569ffc27fc08c36365f647e088c"
+    }
+  ],
+  "page_count": 168,
+  "paragraph_count": 1947,
+  "table_count": 62,
+  "document_build_sha256": "424bf466d2f554016f81015663f57b40e8ca7c8f01c840a48e8c7c9daaa3140f",
+  "review_batches": [
+    {
+      "range": "001-042",
+      "reviewer": "/root/v08_bible",
+      "report_sha256": "fb26b3d9d844895d0eed71de25993693fd71acbcc663eeaedb58923cea538dda",
+      "pages_reviewed": 42
+    },
+    {
+      "range": "043-056",
+      "reviewer": "/root/v08_manifestations",
+      "report_sha256": "94da7722dc23a8b99b544b05a19843a20a4674d37788229003bf3ed7a3ca7a88",
+      "pages_reviewed": 14
+    },
+    {
+      "range": "057-112",
+      "reviewer": "/root/v08_manifestations",
+      "report_sha256": "a1e6a25c6afe54ba34ea1e98d5067e47c4dd49fd73aab9654f92d3008ef9610e",
+      "pages_reviewed": 56
+    },
+    {
+      "range": "113-168",
+      "reviewer": "/root/v08_delivery",
+      "report_sha256": "95dbc1112e9dbc2bccebf11f0040bfb489b1c38a961516145a9f2c6173bc7325",
+      "pages_reviewed": 56
+    }
+  ],
+  "canonical_word_review": {
+    "file": "docs/validation/v0.8/CANONICAL_WORD_REVIEW.json",
+    "sha256": "586f88be7057e10193583393e57efc2ef14bbefebca16edacb9b4ac07ac9df2f",
+    "canonical_page_count": 168,
+    "canonical_pngs_identical_to_visually_reviewed_pages": 168,
+    "changed_pages": []
+  },
+  "pages": [
+    {
+      "page": 1,
+      "file": "docs/validation/v0.8/rendered/page-001.png",
+      "sha256": "5dbe7224de9451be4d4698e61c61ecea7c4b9b854c12e709d2eec028598c2ee0",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Couverture intégrale lisible ; table du périmètre contenue dans les marges, cellules sans clipping ; absence de pied sur la couverture cohérente."
+      ]
+    },
+    {
+      "page": 2,
+      "file": "docs/validation/v0.8/rendered/page-002.png",
+      "sha256": "458a059c15b43695ac98f0a2d463745769ede0b47249597412a19a9099250fcd",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Sommaire et liens entièrement visibles ; titres, paragraphes de lecture et pied 2 / 168 nets, sans chevauchement."
+      ]
+    },
+    {
+      "page": 3,
+      "file": "docs/validation/v0.8/rendered/page-003.png",
+      "sha256": "00a6cbf4fbcd4b79840eb64066ca561141c3a12d7781b75ee4676163bacc3d42",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Ouverture de partie dense mais lisible ; titre sur deux lignes sans rognage, liens nets ; réouverture confirme marges et pied complets."
+      ]
+    },
+    {
+      "page": 4,
+      "file": "docs/validation/v0.8/rendered/page-004.png",
+      "sha256": "346b07cbbe05bc92c39320042441c45e47a6dd18584fab86db2578b408e492f7",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Fiche de direction à deux colonnes entièrement contenue ; dernière ligne de table et pied de page correctement séparés."
+      ]
+    },
+    {
+      "page": 5,
+      "file": "docs/validation/v0.8/rendered/page-005.png",
+      "sha256": "ceb283102a5ffdf271dce87c9c2c6a4f84d2471fcb3b66a06ceb5b2e5708be2a",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Table poursuivie avec en-tête répété ; principes et sous-titres lisibles, dernière ligne au-dessus du pied sans clipping."
+      ]
+    },
+    {
+      "page": 6,
+      "file": "docs/validation/v0.8/rendered/page-006.png",
+      "sha256": "12735524231d0708db25840b35b10a336b83b94b89d90ac6a7d4ada227cb52e5",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Texte de géographie et catastrophe correctement composé ; titres non isolés, marges et pied 6 / 168 lisibles."
+      ]
+    },
+    {
+      "page": 7,
+      "file": "docs/validation/v0.8/rendered/page-007.png",
+      "sha256": "d3a5f0c278e53986cee186cd5a4ee8f21b1b11e2ea6b5a16e92acd4d40d0f7ee",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Chronologie à deux colonnes bien cadrée ; lignes et glyphes accentués lisibles ; sous-titre SILLAGE accompagné de texte, pied dégagé."
+      ]
+    },
+    {
+      "page": 8,
+      "file": "docs/validation/v0.8/rendered/page-008.png",
+      "sha256": "7f65b0ef9b8f86a8e66951a05fe377979a2da385aca9635fb7a23bf54a19bdb0",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Registre de vérité à trois colonnes bien aligné, textes contenus dans chaque cellule ; paragraphe final et pied restent séparés."
+      ]
+    },
+    {
+      "page": 9,
+      "file": "docs/validation/v0.8/rendered/page-009.png",
+      "sha256": "757fec46daa9c00b5e3a1f2728ffe03a14bb5b2a147edaf5c622412dc3a95aae",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Fiches Alex, Varga, Malik et Inès lisibles ; titre Alma conserve deux lignes avant la suite, sans orphelin ni débordement."
+      ]
+    },
+    {
+      "page": 10,
+      "file": "docs/validation/v0.8/rendered/page-010.png",
+      "sha256": "6af69577e39f2b9d30b04d45fb28efb36ccebc719826dc41081e46458799399a",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Fiches Alma/Sorel et équipes propres ; ouverture de l’acte un accompagnée de son paragraphe, sans collision avec le pied."
+      ]
+    },
+    {
+      "page": 11,
+      "file": "docs/validation/v0.8/rendered/page-011.png",
+      "sha256": "6f602c17026211332e9c6272d2716f99684f3cd96f3951fd09afe2ab8ec4724e",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Actes de campagne correctement hiérarchisés ; paragraphes longs restent dans les marges, aucun chevauchement avec en-tête ou pied."
+      ]
+    },
+    {
+      "page": 12,
+      "file": "docs/validation/v0.8/rendered/page-012.png",
+      "sha256": "bb52535bf3bfb25d27b708d438987c9babb9bcd8a7d81e838a6b3a1b2777e1a2",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Acte cinq, épilogue et tableau des quatre fins lisibles ; cellules et paragraphes conclusifs respectent les marges et le pied."
+      ]
+    },
+    {
+      "page": 13,
+      "file": "docs/validation/v0.8/rendered/page-013.png",
+      "sha256": "eda3dfbbbfa52d09bbdfb8008994fa6bfb441f7e82446686e58af0ce5b979088",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Boucle de jeu et rappel lisibles ; tableau des déplacements se termine sur une ligne entière, sans empiéter sur le pied."
+      ]
+    },
+    {
+      "page": 14,
+      "file": "docs/validation/v0.8/rendered/page-014.png",
+      "sha256": "94cba7f1f62ed3a50057daa96f04958fff41304d1664ba6423d146f86f3339b7",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Suite de tableau avec en-tête répété ; second tableau à quatre colonnes lisible, aucune cellule débordante ni pied recouvert."
+      ]
+    },
+    {
+      "page": 15,
+      "file": "docs/validation/v0.8/rendered/page-015.png",
+      "sha256": "5ca255a2bfd0aec1b0da331a085d05c4493aabe558d48f2387643a898e45b313",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Table de matériel poursuivie proprement ; listes numérotées bien alignées et séparées du pied, glyphes français intacts."
+      ]
+    },
+    {
+      "page": 16,
+      "file": "docs/validation/v0.8/rendered/page-016.png",
+      "sha256": "eb1a9416e673842725ab512683a6fbbe61b685fa8de5eb2f343f7e1bcfd77857",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Suite de liste, sections perception et présences lisibles ; première ligne du tableau à cinq colonnes complète, pied dégagé."
+      ]
+    },
+    {
+      "page": 17,
+      "file": "docs/validation/v0.8/rendered/page-017.png",
+      "sha256": "a4d8fb16e48757de2fc6f7b7981c74846e2f80b5b0a1cabf72dfd157d2b58671",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Grand tableau de présences à cinq colonnes net ; chaque cellule garde son texte et ses limites ; paragraphes finaux et pied sans chevauchement."
+      ]
+    },
+    {
+      "page": 18,
+      "file": "docs/validation/v0.8/rendered/page-018.png",
+      "sha256": "03bca31d44682623a7a2ce928335afc6e54c88325adeb8e6dac55c6eb1612bbe",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Titres de génération et liste de dix étapes lisibles ; retrait des numéros cohérent, texte final et pied suffisamment espacés."
+      ]
+    },
+    {
+      "page": 19,
+      "file": "docs/validation/v0.8/rendered/page-019.png",
+      "sha256": "f165847870698fecfc4fd9209c549932cb660173604ebd95148025741ae6f906",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Table des rôles et rythmes à trois colonnes correctement répartie ; liens et titres de section nets, bas de page dégagé."
+      ]
+    },
+    {
+      "page": 20,
+      "file": "docs/validation/v0.8/rendered/page-020.png",
+      "sha256": "9b15339a368736922f5ac86d2d61bbdd0b59dd620f462580e2f1c5cccb61e272",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Tableau d’événements occupant la page : trois colonnes lisibles, lignes complètes et pied 20 / 168 séparé, aucun clipping."
+      ]
+    },
+    {
+      "page": 21,
+      "file": "docs/validation/v0.8/rendered/page-021.png",
+      "sha256": "d5f7da424bdbf24a0351ec527ed4b75b1aa0837debacfcc8699537823e97ec58",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Suite du catalogue avec en-tête répété ; tableau des familles modulaires propre, cellules de dernière ligne complètes et pied visible."
+      ]
+    },
+    {
+      "page": 22,
+      "file": "docs/validation/v0.8/rendered/page-022.png",
+      "sha256": "3dcf90a6ae5f945fd5ff24e52035d90e2a2c06d7875da224308bc4e0fbec0969",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Suite du tableau des familles avec en-tête répété ; section visuelle et sonore lisible, marges et pied de page nets."
+      ]
+    },
+    {
+      "page": 23,
+      "file": "docs/validation/v0.8/rendered/page-023.png",
+      "sha256": "ba13b221e82dc2159ea2a1b8caa15ddb72ba956748ed7109a0b235dc1acae5f6",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Sections son, musique et accessibilité lisibles ; puces correctement alignées et aucun débordement en marge ou vers le pied."
+      ]
+    },
+    {
+      "page": 24,
+      "file": "docs/validation/v0.8/rendered/page-024.png",
+      "sha256": "0514660144dfc5e038888507f0123c7a6b584df3ce4ef4a001f00275d8a5d8e8",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Texte de persistance, identifiants monospace et lien affichés correctement ; titres d'ouverture avec leurs paragraphes, pied séparé du texte."
+      ]
+    },
+    {
+      "page": 25,
+      "file": "docs/validation/v0.8/rendered/page-025.png",
+      "sha256": "437a1b19d889a36cdc8620558bd6c7d5fc3617e5a63d6141b3c0c793ce2e73c8",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Ouverture et premières contradictions tiennent dans les marges ; titre du prototype suivi de son paragraphe, footer dégagé."
+      ]
+    },
+    {
+      "page": 26,
+      "file": "docs/validation/v0.8/rendered/page-026.png",
+      "sha256": "2343839e97f894c7daa937fbe63cf4fc5620d7a746ba544bbc86e9e792b917de",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Tableau du périmètre à trois colonnes propre, numéros d'étage et lignes complètes ; limites et puces restent dans le cadre de page."
+      ]
+    },
+    {
+      "page": 27,
+      "file": "docs/validation/v0.8/rendered/page-027.png",
+      "sha256": "51b4f90f34439672bcbae97fb9417eb7168e4bb7119d49fda147aa04dcd1e4f5",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Liste de validation et architecture bien espacées ; tableau des composants à deux colonnes intégralement lisible, dernière ligne et pied sans collision."
+      ]
+    },
+    {
+      "page": 28,
+      "file": "docs/validation/v0.8/rendered/page-028.png",
+      "sha256": "d30b795b8f627638693f9f502c37af68834798ce057cae9b32bd47432a4035ab",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Plan de production avec six sous-titres correctement liés aux paragraphes ; texte, accents et pied de page sans anomalie visible."
+      ]
+    },
+    {
+      "page": 29,
+      "file": "docs/validation/v0.8/rendered/page-029.png",
+      "sha256": "6cc7017ee73e548fb52b68b2099fc0f220368df241d070654e9673486d7b1f35",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Tableau risques à trois colonnes bien délimité ; paragraphes Mountain Hole et guide de ton lisibles, titre final non isolé, marges respectées."
+      ]
+    },
+    {
+      "page": 30,
+      "file": "docs/validation/v0.8/rendered/page-030.png",
+      "sha256": "2c0bbafe9883e10fff33dfbd03098b083a64f4c5e015f8b2e344a4635e975982",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Dialogues et guillemets bien rendus ; gras des décomptes et liens lisibles, paragraphes d'historique sans clipping ni intrusion dans le footer."
+      ]
+    },
+    {
+      "page": 31,
+      "file": "docs/validation/v0.8/rendered/page-031.png",
+      "sha256": "835bfb6bd3d9ee50f875903888282832e0dea08eca708cfff9f577acb78ff326",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Fin de la partie Bible bien composée ; continuation 0.8, décomptes et limites lisibles, grande marge inférieure propre et footer présent."
+      ]
+    },
+    {
+      "page": 32,
+      "file": "docs/validation/v0.8/rendered/page-032.png",
+      "sha256": "82b0df92a127da07993ab9311b469b1ffdeaa818166e5ff30f747788fcb8d45e",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Ouverture Partie 2 bien hiérarchisée ; tableau à cinq colonnes commence par un en-tête et une ligne entière, code A-TOIT correctement renvoyé à la ligne."
+      ]
+    },
+    {
+      "page": 33,
+      "file": "docs/validation/v0.8/rendered/page-033.png",
+      "sha256": "630adf3b227cc1e68a433f054b3262a7413cf67f6fa5364d536f0f7a0f029370",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Suite de coupe générale en tableau cinq colonnes ; en-tête répété, codes et numéros A30 à A12 nets, cellules et dernière ligne contenues."
+      ]
+    },
+    {
+      "page": 34,
+      "file": "docs/validation/v0.8/rendered/page-034.png",
+      "sha256": "43f9bb09f5f53a798f53c192ac00d2d7bb66682bdbc775c5812e99badac39909",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Tableau A11 à A00 avec en-tête répété et retours à la ligne lisibles ; transition vers le toit sans titre isolé ni chevauchement."
+      ]
+    },
+    {
+      "page": 35,
+      "file": "docs/validation/v0.8/rendered/page-035.png",
+      "sha256": "98b2c0a9ba89ef40e831b87c1a10fea62d8b1db4c821ada8f4866bdd51eb691c",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Fiches toit, A30 et début A29 lisibles ; rubriques en gras nettes, aucun texte coupé malgré la page dense, footer dégagé."
+      ]
+    },
+    {
+      "page": 36,
+      "file": "docs/validation/v0.8/rendered/page-036.png",
+      "sha256": "7e70c44986e27bcae4f0b7e77c605781a3f214f99c5b465940d35a1256663bab",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Fiches A29 à A27 continues et lisibles ; titres conservés avec leur contenu, dernière ligne suffisamment séparée du pied."
+      ]
+    },
+    {
+      "page": 37,
+      "file": "docs/validation/v0.8/rendered/page-037.png",
+      "sha256": "39d82be2266cb2a153298fd3464810f414e2b618afc5b49cdc1ae67ab7046ec2",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Fiches A26 et A25 avec rubriques nettes ; texte dense jusqu'en bas sans clipping, pied 37/168 entièrement visible."
+      ]
+    },
+    {
+      "page": 38,
+      "file": "docs/validation/v0.8/rendered/page-038.png",
+      "sha256": "e5eb476d1b3a20084f04918b44fc84291853c7f65184d5fbd7a7031404a7c793",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Section des étages publics et fiches A24 à A22 correctement hiérarchisées ; accents et ligature œ lisibles, marges régulières."
+      ]
+    },
+    {
+      "page": 39,
+      "file": "docs/validation/v0.8/rendered/page-039.png",
+      "sha256": "cc27f947321e04824a7b7259cb97b1f58c36e72383c1cebd1f4c4c1afd838d2d",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Fiches A21 à A19 et début A18 propres ; dernier titre accompagné de deux lignes de texte, aucun chevauchement des marges ou du footer."
+      ]
+    },
+    {
+      "page": 40,
+      "file": "docs/validation/v0.8/rendered/page-040.png",
+      "sha256": "bf8ae670dc75c26ea25c69af7e242d56dfe03c82b519825df8a6576725d6cec2",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Suite A18 et fiches A17 à A15 lisibles, sous-titres sans veuvage ; aucune ligne tronquée, footer correctement positionné."
+      ]
+    },
+    {
+      "page": 41,
+      "file": "docs/validation/v0.8/rendered/page-041.png",
+      "sha256": "9e301b7b4998fe6bb5f61ad0082952473823af2b5bcd728280fe4c8faaff4995",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Section des niveaux du secret et fiches A14 à A12 lisibles ; paragraphes et rubriques dans les marges, caractères accentués et pied nets."
+      ]
+    },
+    {
+      "page": 42,
+      "file": "docs/validation/v0.8/rendered/page-042.png",
+      "sha256": "c9422156b43ae194e853d701922a46ccfcabac6e4ecccdda27fcc56fe94017f6",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": [
+        "Fiches A11, A10 et A09 nettes ; début A08 avec son paragraphe, aucun glyphe manquant, clipping ou collision avec le pied."
+      ]
+    },
+    {
+      "page": 43,
+      "file": "docs/validation/v0.8/rendered/page-043.png",
+      "sha256": "c9a8a7d39a8c96ef405dbc6501e6a69830a5f619fd1e84ec38f99af8338c4967",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Continuation de la fiche précédente, fiches A07/A06 et début A05 bien composés ; rubriques en gras et accents lisibles, titre A05 gardé avec son premier paragraphe. Dernière ligne et pied 43 / 168 dégagés."
+    },
+    {
+      "page": 44,
+      "file": "docs/validation/v0.8/rendered/page-044.png",
+      "sha256": "83b29c6631d3ac282ebe931b1e8ccefb1f13383595ff1894d294b375e6929742",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fin A05 puis section 6, fiches A04/A03 et début A02 lisibles ; hiérarchie des titres claire et texte contenu dans les marges. Dernier paragraphe complet avant le pied, aucune ligne tronquée."
+    },
+    {
+      "page": 45,
+      "file": "docs/validation/v0.8/rendered/page-045.png",
+      "sha256": "8c9911f01ae6b7c3ca20fcacfa8c89de16c63489a36c1a4d3e39813a66307d6b",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fiches A01/A00, section 7 et H JONCTION entièrement lisibles ; rubriques en gras distinctes et paragraphes bien contenus. Dernière phrase complète avant le pied 45 / 168, pas de glyphes manquants."
+    },
+    {
+      "page": 46,
+      "file": "docs/validation/v0.8/rendered/page-046.png",
+      "sha256": "52567e8b83a0fc853b7b9deff8a14fd90a04d3e8e8d9e7540fdcb848ae8cb0f8",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Cinq fiches H puis section 8 et S01 lisibles ; titres longs et accents tiennent sans débordement. S01 se termine sur la page avec marge basse nette, en-tête et pied 46 / 168 présents."
+    },
+    {
+      "page": 47,
+      "file": "docs/validation/v0.8/rendered/page-047.png",
+      "sha256": "92ef464a63354f445a5bda523e8de6efedaf51d19b65449a5d0a2c4701291e64",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fiches S02–S07 intégrales avec titres bien distincts ; apostrophes, accents et paragraphes lisibles. Aucun débordement latéral ou bas, espace de fin de page et pied conservés."
+    },
+    {
+      "page": 48,
+      "file": "docs/validation/v0.8/rendered/page-048.png",
+      "sha256": "7f6813656318316abfcad0c367556575e91d9d93f2de22a5cad3c55667a15440",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Section 9 et fiches B01–B06 lisibles ; texte dense mais aligné, titres accompagnés de leurs paragraphes. Dernière phrase B06 complète et pagination 48 / 168 dégagée."
+    },
+    {
+      "page": 49,
+      "file": "docs/validation/v0.8/rendered/page-049.png",
+      "sha256": "856bd04f231d818852c7b13c8f9a4de323e515c65aa024d2482313e85b6c207f",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Section P666, traversée I01–I04 et sortie lisibles, lien souligné et ligature Chœur corrects. Titre Extension Mountain Hole gardé avec son paragraphe introductif ; marges et pied nets."
+    },
+    {
+      "page": 50,
+      "file": "docs/validation/v0.8/rendered/page-050.png",
+      "sha256": "d374ec8b2c80b9f2ad5019555b056af6c704179319765effb30034e18e5a56c1",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Tableau Mountain Hole à quatre colonnes complet, cellules M01–M06 sans clipping. Sections 12 et 13 bien hiérarchisées, passages en gras et liens lisibles ; dernière phrase entière au-dessus du pied."
+    },
+    {
+      "page": 51,
+      "file": "docs/validation/v0.8/rendered/page-051.png",
+      "sha256": "8dabbc73e1b307b7813ab6b4d8e037316f6fd558051fcdab1814b8ceb8334730",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Assemblages A30–A27 lisibles avec dimensions ×, références P/E et paragraphes de manifestations distincts. A26 commence avec deux lignes de contenu et continue en 52 ; aucune ligne coupée ni titre seul."
+    },
+    {
+      "page": 52,
+      "file": "docs/validation/v0.8/rendered/page-052.png",
+      "sha256": "26ad48e299883efb9adbdff50d69d09b37a56486042719e9796542fed67fd142",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite A26 puis A25–A22 et début A21 bien composés ; statut perceptif sans poursuite lisible. Dimensions, ligatures et retours corrects ; A21 conserve son paragraphe introductif et le pied reste dégagé."
+    },
+    {
+      "page": 53,
+      "file": "docs/validation/v0.8/rendered/page-053.png",
+      "sha256": "f671846b4c6152919074c4e52c698c14f1f3e5323d1bc7787691ae12259ed19d",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite A21 puis assemblages A20–A17 complets ; titres longs et paragraphes de campagne lisibles. Dimensions et références E/P correctement rendues, aucune coupe dans la dernière phrase."
+    },
+    {
+      "page": 54,
+      "file": "docs/validation/v0.8/rendered/page-054.png",
+      "sha256": "cabf11a4afbc2a5b267f35725d7989c2e470197d9cf9c41c152aca1dde7dbb41",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Assemblages A16–A12 puis début A11 lisibles ; titres, retours et signes × restent dans les marges. La dernière phrase A11 continue en 55 sans clipping ni chevauchement du pied 54 / 168."
+    },
+    {
+      "page": 55,
+      "file": "docs/validation/v0.8/rendered/page-055.png",
+      "sha256": "02f46160695ecb4dfd1079a7ab3f6437e208f140ffb31bc19f30a44ced78c6cc",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite A11 puis A10–A07 et A06 ; titres longs, dimensions et références lisibles, texte dense sans chevauchement. La dernière phrase A06 continue en 56, dernière ligne entière et pied 55 / 168 séparé."
+    },
+    {
+      "page": 56,
+      "file": "docs/validation/v0.8/rendered/page-056.png",
+      "sha256": "9ac49a1b2023bf7c93318b26b796c9e6f4ffb195b7102784f4fd16f07319c12d",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fin A06 puis assemblages A05–A01 lisibles, rubriques distinctes et dimensions correctement rendues. Dernière fiche complète avec marge basse confortable ; pas de texte coupé ni de collision avec la pagination."
+    },
+    {
+      "page": 57,
+      "file": "docs/validation/v0.8/rendered/page-057.png",
+      "sha256": "ee3d6b7237b656446086446f912d747d8c6631dafc015a8f1f534d743b64fc84",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Titre de section 14 et deux paragraphes intégralement lisibles. Accents, marges, en-tête et pied 57 / 168 intacts ; espace blanc de fin de section."
+    },
+    {
+      "page": 58,
+      "file": "docs/validation/v0.8/rendered/page-058.png",
+      "sha256": "7eb9c9483fe70d0ac8adbdd26c189a7f75d49868f37a110408f0e3e7030179a2",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Ouverture annexe A, sous-titres, code monospace et liens nets. Paragraphes denses contenus dans les marges ; aucune coupure de dernière ligne ni collision avec le pied."
+    },
+    {
+      "page": 59,
+      "file": "docs/validation/v0.8/rendered/page-059.png",
+      "sha256": "2321f1077522df4ba1b274a978fe681eeb7aea714506b92e766c1849a78f1885",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Signatures de fonctions monospace lisibles, retours à la ligne contenus. Table Champ/Type/Usage propre jusqu’à evidence_title ; marges et pied dégagés."
+    },
+    {
+      "page": 60,
+      "file": "docs/validation/v0.8/rendered/page-060.png",
+      "sha256": "25f092c728e6b6c0603605b4a57308a25c9b0c9a9a0737ec1c98ab7595d932e2",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite du tableau avec en-tête répété puis grand tableau des niveaux à six colonnes ; toutes les cellules lisibles. Deux lignes du paragraphe final entières, pied séparé."
+    },
+    {
+      "page": 61,
+      "file": "docs/validation/v0.8/rendered/page-061.png",
+      "sha256": "ad158972a71f79fee2ef40850759585a4e7166ac8870c3143e67baeedc6e59a8",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Continuation puis titres Événement/Reproductibilité clairement séparés. Code en ligne, liens et accents nets ; aucune ligne coupée ou marge dépassée, pied propre."
+    },
+    {
+      "page": 62,
+      "file": "docs/validation/v0.8/rendered/page-062.png",
+      "sha256": "dbb6583c9864186b4003217b982b64c39b50e692244e0e87841e49389c81b3a6",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Les deux commandes monospace tiennent dans la largeur. Sections de vérification et début de liste numérotée lisibles ; dernier item complet avant le pied."
+    },
+    {
+      "page": 63,
+      "file": "docs/validation/v0.8/rendered/page-063.png",
+      "sha256": "19bc41950fca711586def5df90ade63ffb9128223823474900943b633ec98e3f",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Liste 3–5 alignée puis sections progression et stockage lisibles. Les noms de champs monospace se replient proprement ; accolades, accents et pied intacts."
+    },
+    {
+      "page": 64,
+      "file": "docs/validation/v0.8/rendered/page-064.png",
+      "sha256": "33aedcfff0b9961a14f53f6579b8c38ec74a5512224f9c3df89090e3fdba4f2b",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Table des checkpoints à trois colonnes complète et lisible. Cellules multi-lignes, liens en bas, glyphes techniques et pied ne présentent aucun clipping ni collision."
+    },
+    {
+      "page": 65,
+      "file": "docs/validation/v0.8/rendered/page-065.png",
+      "sha256": "edf7a66b4dd6cafb325d1e926a8a6a72a774c058fd04bcac8ee5697c79c2188e",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Commande de test repliée sans troncature ; deux titres et paragraphes de fin d’annexe nets. Grande zone finale blanche, marges et pied intacts."
+    },
+    {
+      "page": 66,
+      "file": "docs/validation/v0.8/rendered/page-066.png",
+      "sha256": "389898e2c244a2ff845f64826489ddd0f79acab31060b779b8a4ff7c72a2d6f1",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Titre long de l’annexe B contenu ; tableau de responsabilités lisible jusque preferences_store.gd. Identifiants monospace dans leurs cellules et pied bien séparé."
+    },
+    {
+      "page": 67,
+      "file": "docs/validation/v0.8/rendered/page-067.png",
+      "sha256": "f075eb81662da60ec3687a80bfdc941b868be15dd33b4d944d53e97e7778ec12",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "En-tête répété et toutes les lignes du tableau, y compris mission_dossier_panel.gd, contenus dans les cellules. Section Présentation dense mais sans troncature ; pied intact."
+    },
+    {
+      "page": 68,
+      "file": "docs/validation/v0.8/rendered/page-068.png",
+      "sha256": "5c1f08cb017144f1bd81587a35e034e92016af3d2df77ade16cf68e3c0a3559d",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Les appels techniques monospace et l’équation de hauteur se replient correctement. Sections et paragraphes lisibles ; dernière ligne, marges et pied dégagés."
+    },
+    {
+      "page": 69,
+      "file": "docs/validation/v0.8/rendered/page-069.png",
+      "sha256": "3457587c9850522d64880451e857d10f754d30968c67bc7a7d74260afff76fc6",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Texte dense, titres et références monospace lisibles ; dernière ligne complète et pied 69 / 168 séparé. La phrase poursuivie page 70 reste correctement paginée."
+    },
+    {
+      "page": 70,
+      "file": "docs/validation/v0.8/rendered/page-070.png",
+      "sha256": "3259711aa10941db700f294ee3c32a1fa40f614131423364e4adfa4e80ed02e5",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Sections Air respirable et portage UE5 lisibles ; tableau à deux colonnes intégral, y compris les longs noms de classes ; marges et pied 70 / 168 sans collision. Réouverture individuelle : en-tête et pied auteur/date visibles ; première impression d’absence due à l’affichage répété de l’outil."
+    },
+    {
+      "page": 71,
+      "file": "docs/validation/v0.8/rendered/page-071.png",
+      "sha256": "147740c3b4d7faecf564b3b11795618042f637545d688cc0651fdd1b2990aa03",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Texte et liens complets, titres longs contenus dans la largeur ; dernière ligne lisible avant le pied 71 / 168. En-tête et pied gauche présents dans les pixels du fichier, malgré leur masquage dans l’affichage répété de l’outil ; absence de défaut du PNG."
+    },
+    {
+      "page": 72,
+      "file": "docs/validation/v0.8/rendered/page-072.png",
+      "sha256": "b289dbb4843701e94583ece1dbdef219fe598225ce5fd751ff1c7390d3e23b46",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Trois niveaux de titres distincts et lisibles, paragraphes techniques bien contenus ; section Jalons proposée avec phrase introductive complète en bas ; en-tête et pied gauche présents, pied 72 / 168 sans collision."
+    },
+    {
+      "page": 73,
+      "file": "docs/validation/v0.8/rendered/page-073.png",
+      "sha256": "43169c8d27d29bd0d7422ce1e7ea114b4915b8bee986c5cead45b5e752d26306",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Tableau Phase/Livrable intégral et lisible ; texte du contrat perceptif et noms monospace sans débordement. Dernière phrase continue en 74. Numéro 73 / 168 présent ; les zones d’en-tête et d’auteur/date sont intactes dans le fichier (affichage répété de l’outil partiel)."
+    },
+    {
+      "page": 74,
+      "file": "docs/validation/v0.8/rendered/page-074.png",
+      "sha256": "5a9fe7771f8dbc1c7dcd70ccdb80b6de563d28ea51b51062f02e67b5638254d3",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fin de l’annexe B : deux lignes de continuation complètes ; grande zone blanche de fin de section, sans perte de contenu ni chevauchement. En-tête, auteur/date et pied 74 / 168 présents."
+    },
+    {
+      "page": 75,
+      "file": "docs/validation/v0.8/rendered/page-075.png",
+      "sha256": "5edacefa69e2cf9bc57d31f97d4cad00584a8ca38d9b4c2ba4e1d1570beb3eac",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Ouverture de l’annexe C : titre, version/date, sous-titres et tableau de périmètre lisibles ; aucune ligne de tableau coupée ; bas du tableau distinct du numéro 75 / 168."
+    },
+    {
+      "page": 76,
+      "file": "docs/validation/v0.8/rendered/page-076.png",
+      "sha256": "abca68d75049721106ffda91a4c15f313f96e6c2b878b5ce8f0f421fcb133ee4",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "En-tête du tableau répété correctement pour sa dernière ligne ; sections géographie et liste numérotée 1–5 lisibles, accents et guillemets intacts ; bas de page et marges sans clipping."
+    },
+    {
+      "page": 77,
+      "file": "docs/validation/v0.8/rendered/page-077.png",
+      "sha256": "1ad2cf9080800ba2e1310e8fedca74714849e989b782a3dc5c6fc9354232695f",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Liste 6–7 et tableau à cinq colonnes du découpage lisibles ; états monospace warning/quake/collapse/impact/aftermath contenus dans leur cellule. Paragraphes finaux complets, pied 77 / 168 dégagé."
+    },
+    {
+      "page": 78,
+      "file": "docs/validation/v0.8/rendered/page-078.png",
+      "sha256": "1cad4d476d69e562d34e050449bdbc7933c223677491ae902246391ba6da7c4e",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Deux tableaux distincts, premier complet puis radio ARR-01/ARR-02 ; toutes les cellules et citations restent dans les marges. Titres 6 et 7 et pied 78 / 168 lisibles."
+    },
+    {
+      "page": 79,
+      "file": "docs/validation/v0.8/rendered/page-079.png",
+      "sha256": "45bc452ca11c3cc2cbb2d259944bf8fc123c95c7056864bc441b8c391fe38bfc",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Tableau radio dense à quatre colonnes lisible intégralement, avec en-tête répété, citations et identifiants sans collision ; paragraphe final complet avant le pied 79 / 168."
+    },
+    {
+      "page": 80,
+      "file": "docs/validation/v0.8/rendered/page-080.png",
+      "sha256": "e1eb483be802ab5b18252161e1b8846016992117498f468b5ab05871fc7ced32",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Tableau des conséquences à trois colonnes complet et aéré ; section sauvegarde et deux premières lignes du tableau suivant bien contenues ; aucune coupe de cellule ou de glyphe."
+    },
+    {
+      "page": 81,
+      "file": "docs/validation/v0.8/rendered/page-081.png",
+      "sha256": "e46a6802e8d12589c598806bbf65de2eee096fdc29d96de2454ebff160290437",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite du tableau de migration avec en-tête répété ; états et chemin monospace lisibles. Sections 10/11 correctement hiérarchisées, dernière ligne entière et pied 81 / 168 séparé."
+    },
+    {
+      "page": 82,
+      "file": "docs/validation/v0.8/rendered/page-082.png",
+      "sha256": "c937ef3ee4cbd8ca6c1d1c4ad4c39b367e54baedbe377fc1dd170948f65d6ff7",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Liste à puces des critères de revue alignée, tous les accents et retours lisibles ; section de cohérence de l’horreur complète avec espace blanc de fin d’annexe, sans titre isolé ni clipping."
+    },
+    {
+      "page": 83,
+      "file": "docs/validation/v0.8/rendered/page-083.png",
+      "sha256": "e5ba1bf3b2a6026334d15679886d580884508ec4d45047494f73c3cfe7c250a1",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Long titre de l’annexe D tient sur la ligne ; paragraphes et tableau des responsabilités à trois colonnes lisibles. Dernier paragraphe complet, sans collision avec la pagination."
+    },
+    {
+      "page": 84,
+      "file": "docs/validation/v0.8/rendered/page-084.png",
+      "sha256": "a1c9774e147e0cd4d89566f78a39d04f24fd77b36b2ebcafd6b4aed07b00080b",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Sections Repli et Réception bien séparées ; tableau des trois survivants intégral, identifiants monospace et signature world.set_rescued_people lisibles. Titre final accompagné de son paragraphe, pied dégagé."
+    },
+    {
+      "page": 85,
+      "file": "docs/validation/v0.8/rendered/page-085.png",
+      "sha256": "b247bb4df46bdf5942185672309385495a9b2dcb5a2af321b1da9469616135d9",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Tableau Cas/Affichage/Historique bien aligné ; section Journal et compte rendu dense mais lisible, gras et accents intacts ; dernière ligne complète avant continuation en 86."
+    },
+    {
+      "page": 86,
+      "file": "docs/validation/v0.8/rendered/page-086.png",
+      "sha256": "facc0a83cc0c15d0b96716b9dac42668811492baff711f5f2031c198de889a50",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Citation de l’écho, tableau des conditions et tableau de migration lisibles ; longs identifiants monospace et guillemets corrects ; dernière ligne de tableau et pied 86 / 168 séparés."
+    },
+    {
+      "page": 87,
+      "file": "docs/validation/v0.8/rendered/page-087.png",
+      "sha256": "46f7b3cf04e99af4080c278c6bc9a5e2afab46737f0e10b089cdabaefc8efedb",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fin de l’annexe D : titres, liens soulignés, identifiants et guillemets lisibles ; paragraphes terminés avec espace de fin de section ; en-tête et pied 87 / 168 nets."
+    },
+    {
+      "page": 88,
+      "file": "docs/validation/v0.8/rendered/page-088.png",
+      "sha256": "2c03a3323a21e43c2419874e13d180b3025f23f957fec51be81f90c1bc66e16d",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Ouverture annexe E, longue ligne de version/date contenue dans les marges ; glyphes × et accents corrects, titres distincts. Dernière phrase de production artistique complète avant le pied."
+    },
+    {
+      "page": 89,
+      "file": "docs/validation/v0.8/rendered/page-089.png",
+      "sha256": "09abe7dc27869c63fca07550a9b3712262f5b651c2a3cdc405d19446432743f1",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fiches P01–P04 : titres et trois rubriques en gras distincts, dimensions × et valeurs correctement rendues ; quatrième fiche complète jusqu’au bas de page sans chevauchement."
+    },
+    {
+      "page": 90,
+      "file": "docs/validation/v0.8/rendered/page-090.png",
+      "sha256": "1ebab47fe5976f05fac26e484d60af610f4aa6bc494099486a070c8603fd88e4",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fiches P05–P08 lisibles et complètes. Correction P05 vérifiée visuellement : « Elle aide à lire les indices, les obstacles et les appuis du trajet de secours. » La phrase n’attribue plus de ralentissement d’approche à la lampe. Glyphes °, ×, identifiant supplies_used et pied 90 / 168 corrects."
+    },
+    {
+      "page": 91,
+      "file": "docs/validation/v0.8/rendered/page-091.png",
+      "sha256": "6715f615a8dbddd51c639e4ef269104821f024baa93d7ca648deb2876309d83e",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fiches P09–P12 complètes ; rubriques en gras et dimensions lisibles, champ rescued correctement en monospace. Aucune ligne coupée, marge basse confortable et pagination nette."
+    },
+    {
+      "page": 92,
+      "file": "docs/validation/v0.8/rendered/page-092.png",
+      "sha256": "c3fdfa96ceb65f176548d44991c27e4dcad29c60558a1bcce4b0a92e87f30f28",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Rubrique Architecture et fiches P13–P16 bien hiérarchisées ; caractères ×, accents et valeurs décimales corrects ; fiche P16 se termine entièrement avant le pied 92 / 168."
+    },
+    {
+      "page": 93,
+      "file": "docs/validation/v0.8/rendered/page-093.png",
+      "sha256": "cc4e0bbb4c91b5d3cbdf24c692a961fb11c1f14a5d3c681f67756297e45852a9",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fiches P17–P20 complètes puis titre et premier paragraphe P21 gardés ensemble ; dimensions, caractères accentués et rubriques lisibles ; aucune coupe au bas de page."
+    },
+    {
+      "page": 94,
+      "file": "docs/validation/v0.8/rendered/page-094.png",
+      "sha256": "c632d20273933c7328e6a54d6280fd0baeeddf20d407309ebe0585970c83ec62",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Continuation P21 cohérente puis P22–P24 ; titre Mobilier bien distinct et accompagné de contenu. Paragraphes et dimensions restent dans les marges, dernière phrase entièrement visible."
+    },
+    {
+      "page": 95,
+      "file": "docs/validation/v0.8/rendered/page-095.png",
+      "sha256": "cbd52acb3148fa65f2e6eb613c25dcd5dc9915e9f73e90e1ea0122966e86c229",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fiches P25–P28 complètes, dimensions et textes de consultation lisibles ; titre P27 distinct du paragraphe précédent. Dernière phrase P28 et numéro de page ne se chevauchent pas."
+    },
+    {
+      "page": 96,
+      "file": "docs/validation/v0.8/rendered/page-096.png",
+      "sha256": "856239c0a0f8c728d62798b4faaffb1e0c8e0df40e8effdf2f91c670f85eccf9",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fiches P29–P32 denses mais entièrement lisibles ; séparations de rubriques nettes, dimensions × et accents intacts ; aucune coupe de ligne ni de marge, pied 96 / 168 dégagé."
+    },
+    {
+      "page": 97,
+      "file": "docs/validation/v0.8/rendered/page-097.png",
+      "sha256": "d22ed5a111b6696ed293b4eaf2ce3650ed24d084594e5c2fb572e5fbd4f76c6a",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fiches P33–P36 complètes, rubriques et dimensions lisibles. Correction P35 vérifiée visuellement : « Il structure le niveau 26 et donne un repère stable à la présence stationnaire. » Plus de référence à une apparition mobile ; aucune coupe de texte ni de pied."
+    },
+    {
+      "page": 98,
+      "file": "docs/validation/v0.8/rendered/page-098.png",
+      "sha256": "349ac6679ac4d87fbf0f6c271db506a3e9279fb178311b9afe25ff8c7529115a",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Titre Réseaux et fiches P37–P40 lisibles, longs libellés de statut bien repliés ; dernière rubrique P40 poursuit sa phrase en page suivante sans ligne tronquée. Marges et pied 98 / 168 corrects."
+    },
+    {
+      "page": 99,
+      "file": "docs/validation/v0.8/rendered/page-099.png",
+      "sha256": "f154cd9683d195b0dd644f788eb4d29514f9a7a9cdebf772054539ef7973a28c",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Continuation P40 puis fiches P41–P43 et début P44 lisibles ; titre P44 conservé avec son premier paragraphe. Glyphes accentués, dimensions et marges corrects, pied 99 / 168 net."
+    },
+    {
+      "page": 100,
+      "file": "docs/validation/v0.8/rendered/page-100.png",
+      "sha256": "a72f681497bd4f5d03e2ac7d445cbcf264e61387f2033b4ec9f6f9a4e5bb90d4",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Continuation P44 et rubrique Recherche bien articulées ; fiches P45–P47 complètes, P48 commence avec son premier paragraphe. Aucun texte ou titre tronqué, dernière ligne séparée du pied 100 / 168."
+    },
+    {
+      "page": 101,
+      "file": "docs/validation/v0.8/rendered/page-101.png",
+      "sha256": "d566297135c82bceacf3f6fb06903ed5dcee79784cf1b77b6f5e494d2d90ec0b",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite P48 puis P49–P52 ; titres et rubriques correctement espacés, × et identifiants de secteurs lisibles. La dernière phrase P52 se poursuit en 102 sans clipping et conserve son interligne avant le pied."
+    },
+    {
+      "page": 102,
+      "file": "docs/validation/v0.8/rendered/page-102.png",
+      "sha256": "0383273ec24c7c5717140e45cb35e7a4291b4ccd9b1f9cbd76bdd29e196ab7bb",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Continuation P52 puis long titre des accessoires infernaux entièrement contenu dans la largeur ; fiches P53–P55 complètes, emphases et dimensions lisibles, marge basse dégagée."
+    },
+    {
+      "page": 103,
+      "file": "docs/validation/v0.8/rendered/page-103.png",
+      "sha256": "9539343728e21dba0a8fa9b6efc445547663b5e44b4df36ac871337f6f645e04",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fiches P56–P59 et début P60 bien disposés ; longs titres tiennent dans la largeur, dimensions et ligature du Chœur lisibles. Dernière phrase P60 continue en 104, sans coupe de ligne."
+    },
+    {
+      "page": 104,
+      "file": "docs/validation/v0.8/rendered/page-104.png",
+      "sha256": "8c17bf058be9404d2e8814ac3dcc8c2192ea733da4cebb6835b42e4fb1c572d3",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fin P60 et tableau des douze observations à quatre colonnes intégralement lisibles ; nombres et références alignés. Sous-titre des conditions maintenu avec son paragraphe, dernier texte complet avant le pied."
+    },
+    {
+      "page": 105,
+      "file": "docs/validation/v0.8/rendered/page-105.png",
+      "sha256": "5c1282240739de38011635dababb8aa35575d33241811b7bb91110e9a4812dec",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Sections d’observation et de recette lisibles, longs identifiants inspect_roof_register/inspect_25_extinguisher contenus dans les lignes. Hiérarchie de titres nette, dernière phrase et pied sans collision."
+    },
+    {
+      "page": 106,
+      "file": "docs/validation/v0.8/rendered/page-106.png",
+      "sha256": "bae44dd22bd36539b05a75b0ac37abc493c8a8efe91ff2da307b0f3267f94b8b",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fin de l’annexe E : paragraphe et références locales entièrement visibles, liens correctement renvoyés à la ligne ; grande zone blanche de fin d’annexe sans perte de contenu, pagination 106 / 168 intacte."
+    },
+    {
+      "page": 107,
+      "file": "docs/validation/v0.8/rendered/page-107.png",
+      "sha256": "6eade2e04db29c5e335fd124993ab37b6de31b8fe8a62838783668a0874047f0",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Ouverture annexe F lisible ; la date se replie proprement avec 2026 sur une seconde ligne. Correction vérifiée visuellement : « La simulation de mission et la présentation restent suspendues pendant la lecture du journal et après la clôture de mission. » Tableau E00–E04 et pied 107 / 168 complets."
+    },
+    {
+      "page": 108,
+      "file": "docs/validation/v0.8/rendered/page-108.png",
+      "sha256": "3526ca74cf3fb1397fc72a0e642fd8a373b312fdf484cf47054e86eb0c303306",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite du tableau E05–E16 avec en-tête répété, toutes les cellules lisibles ; titre E00 accompagné du texte et du début de tableau de paramètres. Ligne Poursuite complète, aucune collision avec le pied."
+    },
+    {
+      "page": 109,
+      "file": "docs/validation/v0.8/rendered/page-109.png",
+      "sha256": "e5790325b0cd121076f2cb833cef8647fcf6fa7b5346ce8042475243e56b5b3f",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Tableau E00 répété et complet, valeurs de dommages et persistance lisibles ; historique distinct puis fiche E01 complète. Monospace horror_director.gd, accents et pied 109 / 168 corrects."
+    },
+    {
+      "page": 110,
+      "file": "docs/validation/v0.8/rendered/page-110.png",
+      "sha256": "76e450b755e0c06bacd03f26b0e7f6485b39106338704c6b9a26fda6bc13a99a",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Deux fiches E02/E03 complètes et bien séparées ; longues phrases de statistiques, symbole ° et valeurs décimales lisibles ; dernier paragraphe intégral sans clipping ni collision avec le pied."
+    },
+    {
+      "page": 111,
+      "file": "docs/validation/v0.8/rendered/page-111.png",
+      "sha256": "51f7f599b3d49a0abdcaf4ba59cbd1ebadf010578f60d210999aa8a46db29278",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fiches E04/E05 complètes et début E06 accompagné de son paragraphe ; valeurs, unités, symboles ° et niveaux de titres lisibles. Pied 111 / 168 et marges exempts de chevauchement."
+    },
+    {
+      "page": 112,
+      "file": "docs/validation/v0.8/rendered/page-112.png",
+      "sha256": "831087b062607c2947e752080d32a376eb17e1d1a7af988e282c0dff40de94b9",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite E06 puis E07 et début E08 lisibles ; paragraphes de statistiques et d’états correctement repliés. La dernière ligne est complète avant continuation de la fiche, sans clipping ni glyphes manquants."
+    },
+    {
+      "page": 113,
+      "file": "docs/validation/v0.8/rendered/page-113.png",
+      "sha256": "34a13ed378e7e686bcebd91015893dfb9f1d62da102f1b9d828f7c291657de60",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Page PDF CI ouverte à taille native. Fiches E09 et E10 lisibles ; niveaux de titre, paragraphes en gras et corps distincts. Aucun clipping, chevauchement ou glyphe manquant ; marges et pied 113 / 168 dégagés."
+    },
+    {
+      "page": 114,
+      "file": "docs/validation/v0.8/rendered/page-114.png",
+      "sha256": "7c673174cd0e24ea29ef3592dbacc39d8defc96c2c7dead4bb89b49652cb2f8a",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fiches E11 et E12, puis début E13, correctement composées. Titres gardés avec leur texte ; valeurs, accents et unités visibles. La dernière ligne reste au-dessus de la marge de pied, sans coupure."
+    },
+    {
+      "page": 115,
+      "file": "docs/validation/v0.8/rendered/page-115.png",
+      "sha256": "38400a94039d33f57fded8080bb1c323bf0d14379adbb09c5c46f636b0d3ea24",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite E13 puis fiches E14 et E15 : texte dense mais entièrement dans les marges. Titres longs sur une ligne, unités et degrés lisibles, aucune superposition. Dernier paragraphe complet avant le pied de page."
+    },
+    {
+      "page": 116,
+      "file": "docs/validation/v0.8/rendered/page-116.png",
+      "sha256": "5f47a681e64a0df5036cb39a99b45868dddcf348fca7985d8162fd192224afcf",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fiche E16 et contraintes communes lisibles. Tableau de difficulté à quatre colonnes commencé avec en-tête et deux lignes entières ; aucun texte débordant des cellules. Espaces sous tableau et autour du pied suffisants."
+    },
+    {
+      "page": 117,
+      "file": "docs/validation/v0.8/rendered/page-117.png",
+      "sha256": "44b0991e74897fb6122d6b77d408cf25cb21baad8cd1a8017866bf8fab5f9702",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite du tableau de difficulté avec en-tête répété et quatre lignes complètes ; retours de ligne contenus dans chaque cellule. Section production et liens lisibles. Blanc de fin d’annexe régulier, sans élément tronqué."
+    },
+    {
+      "page": 118,
+      "file": "docs/validation/v0.8/rendered/page-118.png",
+      "sha256": "0a340137ce131ed35c962d0e8a85b5d886e244611d28f06b51d0ada7ba779eef",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Ouverture de l’annexe G et titres SC00 bien hiérarchisés. Tableau chronologique à trois colonnes commencé avec trois lignes entières ; nom du studio et texte d’attribution restent dans les cellules. Marges et pagination intactes."
+    },
+    {
+      "page": 119,
+      "file": "docs/validation/v0.8/rendered/page-119.png",
+      "sha256": "e2a449f8cefbf22005fde96ac3ef9890c4c69749ba81cf6ee1eab6ec033d6f9e",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fin du tableau SC00 et début du tableau d’accueil correctement séparés par la prose. En-têtes répétés, six lignes d’accueil entières, dernière ligne 27 au-dessus du pied. Aucune cellule ni aucun titre coupé."
+    },
+    {
+      "page": 120,
+      "file": "docs/validation/v0.8/rendered/page-120.png",
+      "sha256": "5c54a25452d1a4ea878ce37a4409834dd1957e8b96020ccc6db8d9bbacf4eb07",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Tableau d’accueil poursuivi avec en-tête et deux lignes complètes. Paragraphes et sous-titres lisibles jusqu’à la dernière ligne ; multiplication × et plages numériques correctes. Aucun chevauchement avec la pagination."
+    },
+    {
+      "page": 121,
+      "file": "docs/validation/v0.8/rendered/page-121.png",
+      "sha256": "c482a12d52e03cb83b512c566390190cb33385daaa74c83a009e5c94bcce2a80",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "SC02 et tableau des quatre plans lisibles, degrés et capitales accentuées corrects. Le tableau des événements commence en bas avec son en-tête et une première ligne entière ; aucune rupture dans une cellule ni collision avec le pied."
+    },
+    {
+      "page": 122,
+      "file": "docs/validation/v0.8/rendered/page-122.png",
+      "sha256": "940d28140f0a7f8b1d6b92f02d5db682f71bc8e9a339411ef0095edd769a4f79",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Chronologie poursuivie sur huit lignes avec en-tête répété. Texte long et deux premières communications entièrement lisibles, gras et guillemets bien rendus. Marges régulières et pagination dégagée."
+    },
+    {
+      "page": 123,
+      "file": "docs/validation/v0.8/rendered/page-123.png",
+      "sha256": "281f739c19acf494e6827846ffccc0bacf9a0706b8413322be8a412cdfaf9ea4",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Communications, sauvetage SC03 et début SC04 lisibles. Long titre de l’effondrement tient dans la largeur ; code survivor_30 et liens s’intègrent sans déborder. Aucun texte coupé au bas de page."
+    },
+    {
+      "page": 124,
+      "file": "docs/validation/v0.8/rendered/page-124.png",
+      "sha256": "d1a2a748b1cf4c0987736319a2c55d4fb7a1d1459f528c6451862826c2f0ce50",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite SC04, SC05 et début SC06 composés sans collision. Gras, texte courant et identifiants inline distincts ; paragraphes de clôture complets. Pied de page et marges propres."
+    },
+    {
+      "page": 125,
+      "file": "docs/validation/v0.8/rendered/page-125.png",
+      "sha256": "19f7d6b47178b6549f26c8a25c9d50981ef4e4509325b5309f81d3e821e0b61c",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Les trois plans de clôture tiennent dans un tableau complet à trois colonnes. Sous-titres, code radio.history, commandes en gras et liens lisibles. Les sections passage et bilan respirent, sans clipping ni pied encombré."
+    },
+    {
+      "page": 126,
+      "file": "docs/validation/v0.8/rendered/page-126.png",
+      "sha256": "3d714c6f97e53b4472c1001fa6907ff6c4faa23300989fea7fcbb2e47a962e49",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Storyboards SC07 à SC10 correctement hiérarchisés, paragraphes serrés mais lisibles. Début SC10 gardé avec plusieurs lignes de contenu ; sa dernière phrase continue normalement à la page suivante. Aucun débordement."
+    },
+    {
+      "page": 127,
+      "file": "docs/validation/v0.8/rendered/page-127.png",
+      "sha256": "504a17d2b9004e6ccf1c06f9eedda3f420bc20210f833e3928d68ead19f37374",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite SC10, scène de seuil SC11 et rencontre humaine SC12 entièrement lisibles. Longs paragraphes dans les marges, ligature œ correctement rendue dans Chœur. Aucun clipping au bas du dernier paragraphe."
+    },
+    {
+      "page": 128,
+      "file": "docs/validation/v0.8/rendered/page-128.png",
+      "sha256": "7f198a3c5c5ea03d08828451900c51e1146e063b28366ec05669619408bfb574",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "SC13, SC14 et SC15 : titres et amorces en gras bien différenciés du corps. Cadre de page respecté malgré le texte dense ; fin de SC15 se poursuit en page suivante sans ligne isolée ou tronquée."
+    },
+    {
+      "page": 129,
+      "file": "docs/validation/v0.8/rendered/page-129.png",
+      "sha256": "bdea2246ef02174844cef42ebf0359d4e3fee669bd37b3e8265aa6ddc3bd0f67",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fin SC15 et sections de réalisation et de sources lisibles. Liens de fichiers longs s’enroulent proprement dans la largeur ; titres et paragraphes ne se chevauchent pas. Aucun défaut bloquant de marge ou de pagination."
+    },
+    {
+      "page": 130,
+      "file": "docs/validation/v0.8/rendered/page-130.png",
+      "sha256": "4f03399e562181166c58cea391ae0ea1c7dcaa9c359df7cb5af730727a32bf5a",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Titre long de l’annexe H tient dans la largeur. Texte de boucle de jeu et début du tableau de déplacement lisibles ; en-tête et lignes Marche/Course entières. Pied 130 / 168 dégagé."
+    },
+    {
+      "page": 131,
+      "file": "docs/validation/v0.8/rendered/page-131.png",
+      "sha256": "029b7187768852a5255854e71f0aeea1e008b5dd2be730fb35543329b33205fe",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Tableau de déplacement poursuivi avec en-tête et neuf lignes complètes ; unités m/s², symbole ±, × et degrés corrects. Cellules longues lisibles, prose sous tableau et sous-titre bien séparés, aucune collision."
+    },
+    {
+      "page": 132,
+      "file": "docs/validation/v0.8/rendered/page-132.png",
+      "sha256": "88ad904ce042da514aedf2f033c573a7ed3a706e16f28200106a26046e0760d8",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Sections rappel, interaction et amorce des sauvetages lisibles. Titres conservés avec leur contenu ; valeurs et états en gras correctement rendus. Paragraphe final continue normalement à la page suivante, au-dessus du pied."
+    },
+    {
+      "page": 133,
+      "file": "docs/validation/v0.8/rendered/page-133.png",
+      "sha256": "11aead048c76d6a04e73c39fde6eff640c406a13614f07be22459b0ea3f8214f",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Tableau des trois personnes à quatre colonnes complet et lisible, identifiants contenus dans leurs cellules. Tableau des ressources amorcé avec en-tête et une ligne entière. Titres et pied de page dégagés."
+    },
+    {
+      "page": 134,
+      "file": "docs/validation/v0.8/rendered/page-134.png",
+      "sha256": "065f858b8089e575d9785d4a659ee391d1704fc8a05c46f1637c25b78457d4d9",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite du tableau des ressources avec sept lignes et en-tête répété ; aucun débordement. Texte corrigé sur la fusée lisible et explicite sur le masque perceptif. Section dangers et amorce d’équilibrage sans clipping ; dernière phrase se poursuit normalement."
+    },
+    {
+      "page": 135,
+      "file": "docs/validation/v0.8/rendered/page-135.png",
+      "sha256": "60eef02eea76ebe3f6eff23c06b39dcb46bd11992fffe9f208d03a6d13261cf4",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Sections radio/preuves et sauvegarde lisibles en pleine page. Titres bien espacés, guillemets et accents corrects, aucun bloc ne dépasse la largeur ou n’empiète sur le pied."
+    },
+    {
+      "page": 136,
+      "file": "docs/validation/v0.8/rendered/page-136.png",
+      "sha256": "00a87e676f334fe1cd8adc15ef01cd07adae8c79f3e4047bb73a78c6f2602a6e",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fin des règles de reprise puis fiches Alex, Varga et Ana lisibles. Long titre de section et sous-titres de personnages tiennent dans les marges. Dernier paragraphe complet avec espace conservé avant la pagination."
+    },
+    {
+      "page": 137,
+      "file": "docs/validation/v0.8/rendered/page-137.png",
+      "sha256": "7c2e439f0ae0646fe62c73296b166180ac6f116f2a7e54c2a7569955e0324dc0",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fiches Samuel, Nora, Malik et Inès lisibles, avec titres et amorces en gras nets. Texte de Nora indique bien la kinésithérapie. Dernière phrase d’Inès se poursuit sans clipping ; marges et pied conservés."
+    },
+    {
+      "page": 138,
+      "file": "docs/validation/v0.8/rendered/page-138.png",
+      "sha256": "095ee5f00498691aafd7cdee090e209f47f3fde039d2dd13d47d900fdaa0033c",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite Inès, Alma, Sorel et équipes, puis section difficulté correctement composées. Aucun chevauchement entre le texte des équipes et le titre 10. Dernier paragraphe poursuivi à la page suivante, pagination dégagée."
+    },
+    {
+      "page": 139,
+      "file": "docs/validation/v0.8/rendered/page-139.png",
+      "sha256": "19e63ce3cb56152d75b3d9001630fc7800cfb843736536e8685444c5377b9325",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Sources et responsabilités, puis extension de campagne, entièrement lisibles. Noms de scripts et liens restent dans la largeur, titre 12 long sans clipping. Aucun chevauchement ni défaut de pied."
+    },
+    {
+      "page": 140,
+      "file": "docs/validation/v0.8/rendered/page-140.png",
+      "sha256": "a907e1d1bd290add5d3a4959ad1371715ea7927ff87e482ca845fda383178d82",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fin de l’annexe H, paragraphes et sous-titre sur la dimension infernale bien espacés. Grande réserve blanche après la fin de section normale ; aucune page vide parasite ni contenu tronqué. En-tête et pied propres."
+    },
+    {
+      "page": 141,
+      "file": "docs/validation/v0.8/rendered/page-141.png",
+      "sha256": "3203caef85a319aaaa7c1fc3a0661248d86495b1ac4b4db95900e729dbf2e267",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Titre long de l’annexe I rendu sur une ligne sans débordement. Tableau des états de secours à trois colonnes complet ; cellules et paragraphes inférieurs lisibles. Aucun chevauchement avec le pied."
+    },
+    {
+      "page": 142,
+      "file": "docs/validation/v0.8/rendered/page-142.png",
+      "sha256": "fe8f2c1130781c295425041b10afda1aa91fcc5af7d950e67a9a2a1d3da2cbd0",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Portage et géométrie du treuil lisibles, signes de coordonnées et valeurs correctement rendus. Tableau chronologique commencé avec en-tête et première ligne entière ; dernière bordure reste au-dessus de la marge de pied."
+    },
+    {
+      "page": 143,
+      "file": "docs/validation/v0.8/rendered/page-143.png",
+      "sha256": "409c34388b2b147acaf8791422d460bad1a72b25f76b5b49256a2c71c92e476c",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Chronologie poursuivie avec quatre lignes entières et en-tête répété. Retours d’information et équipe au toit entièrement lisibles ; dernière ligne et pied restent séparés. Aucun débordement de cellule."
+    },
+    {
+      "page": 144,
+      "file": "docs/validation/v0.8/rendered/page-144.png",
+      "sha256": "a3137284f199fd3b629c6452ab8349bcce918050e08e993a7b7f554da08d90fd",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Section continuité puis tableau technique complet à trois colonnes. Noms de scripts, responsabilités et cellules multilignes propres. Texte après tableau, marges et pagination lisibles sans superposition."
+    },
+    {
+      "page": 145,
+      "file": "docs/validation/v0.8/rendered/page-145.png",
+      "sha256": "3847b69d23166735c66698dd14c0e471ebc3296e2e69a1653c1e4475102e52d6",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Recette, production SC03 et priorité des secours correctement hiérarchisées. Texte entièrement lisible, aucune ligne coupée ni pied encombré. Rappel explicite de l’absence de poursuite/dommage dans le premier secteur."
+    },
+    {
+      "page": 146,
+      "file": "docs/validation/v0.8/rendered/page-146.png",
+      "sha256": "165c7c313eebf1dd020461ace1930b153ec873d4a2202464f6f95eb1b0eee0bd",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Ouverture de l’annexe J et tableau maritime à trois colonnes bien composés. Valeurs hexadécimales, × et signe moins visibles ; sept lignes entières sans débordement. Marges et pied réguliers."
+    },
+    {
+      "page": 147,
+      "file": "docs/validation/v0.8/rendered/page-147.png",
+      "sha256": "e3259e37d7f1793ae3f479e0e2ad6e2cc8c9babb611fb9e1d7573b302fe365ea",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Dernière ligne du tableau maritime avec en-tête répété, puis sections confort et fonctionnement. Nom de classe monospace lisible et retours de ligne réguliers. Aucun chevauchement ni défaut de marge ou de pied."
+    },
+    {
+      "page": 148,
+      "file": "docs/validation/v0.8/rendered/page-148.png",
+      "sha256": "163d6914de9b690fbe9bde666177ed80e55d92317ab48b8b847da4632fe688ad",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Tableau de fichiers à deux colonnes lisible ; chemins coupés aux séparateurs et contenus dans leur cellule. Puces et liens techniques corrects. Titre sur le contraste gardé avec deux lignes de texte en bas, sans clipping."
+    },
+    {
+      "page": 149,
+      "file": "docs/validation/v0.8/rendered/page-149.png",
+      "sha256": "9eb07dccbd7ea8f3f13f56ddc00e4c18237e6bfc438957604b431766ca995047",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fin courte de l’annexe J, deux paragraphes lisibles en haut et grande réserve blanche de fin d’annexe. Tirets et accents corrects ; en-tête et pied complets. Aucun texte manquant ou tronqué constaté."
+    },
+    {
+      "page": 150,
+      "file": "docs/validation/v0.8/rendered/page-150.png",
+      "sha256": "a4ad74a9029ac1e886aa8c129cf9c054fb244c53b160d4ffffa215c7b40a8fce",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Annexe K et début du tableau de réglages à quatre colonnes lisibles. La longue cellule de champ de vision tient entièrement dans sa ligne ; valeurs et symboles ×/° corrects. Aucune collision avec le pied."
+    },
+    {
+      "page": 151,
+      "file": "docs/validation/v0.8/rendered/page-151.png",
+      "sha256": "b547fdd18932dd825e9f20e04c16c0dfdc62e212238e3ae40efba29c33361539",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite du tableau de réglages avec quatre lignes entières et en-tête répété. Listes numérotées, commandes en gras et flèches Page ↑ / Page ↓ correctement rendues. Sous-titre final gardé avec deux lignes, pied dégagé."
+    },
+    {
+      "page": 152,
+      "file": "docs/validation/v0.8/rendered/page-152.png",
+      "sha256": "aa70894837e6d22daec23ddd0b22a91ef2ceed36dccab2c9feddbfa740e69c1a",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Listes de navigation, données et API d’intégration lisibles. Chemins user:// et identifiants monospace restent dans les marges ; puces régulières, aucun glyphe manquant. Dernier bloc complet au-dessus du pied."
+    },
+    {
+      "page": 153,
+      "file": "docs/validation/v0.8/rendered/page-153.png",
+      "sha256": "e8f8e4584bbff8ce53c7f8e3cdcb6a3e44b073906c2df921348f7b7b8341cc5c",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Code d’interface, liste des contrôles et section manifestations clairement lisibles. Puces alignées et paragraphes à bonne distance des titres. Aucun glyphage défectueux, clipping ou chevauchement."
+    },
+    {
+      "page": 154,
+      "file": "docs/validation/v0.8/rendered/page-154.png",
+      "sha256": "c36e4c04095f599a50172feef702fac548ccb134351b485b68ddc1f879452b9b",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Ouverture de l’annexe L et tableau des quatre onglets complets. Texte des cellules contenu dans les bordures, titres lisibles et sous-section 2.1 accompagnée de son paragraphe. Dernière ligne reste dégagée du pied."
+    },
+    {
+      "page": 155,
+      "file": "docs/validation/v0.8/rendered/page-155.png",
+      "sha256": "ccf58203df2985b91212d40d5584a34e71ee1bc41a0ba4b2e885dadba4dd46b2",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite du journal, tableau des personnes et listes d’états entièrement lisibles. Identifiants monospace et horodatages contenus dans la largeur. La fermeture du guillemet de « ÉVAC » reprend en tête avec la phrase, sans perte de texte ; aucun défaut bloquant."
+    },
+    {
+      "page": 156,
+      "file": "docs/validation/v0.8/rendered/page-156.png",
+      "sha256": "052e124174631f40005c30b20eefb37c541ce520d73168f0ad76d2bf0ae5caef",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Bilan : tableau complet à deux colonnes et neuf lignes, avec identifiants supply lisibles. Actions numérotées et paragraphes de sauvegarde bien composés. Aucun clipping, débordement de cellule ou chevauchement avec le pied."
+    },
+    {
+      "page": 157,
+      "file": "docs/validation/v0.8/rendered/page-157.png",
+      "sha256": "fb999f640aaae833cddb5323237ea88494c4ecc5e9174d191b4a8f196ff712d4",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Deux tableaux d’épilogue complets et tableau de caméra à cinq colonnes amorcé avec deux lignes. Toutes les cellules et coordonnées restent lisibles malgré certains retours à la ligne ; aucun débordement ni bordure coupée."
+    },
+    {
+      "page": 158,
+      "file": "docs/validation/v0.8/rendered/page-158.png",
+      "sha256": "d079b74b95dd894123419441dc2f0b7665367ec376d7657e5d48731d9e3253ec",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Dernière ligne du tableau de caméra avec en-tête répété. Sections temps, accessibilité et responsabilités lisibles ; signes ×, unités et identifiants monospace corrects. Aucun clipping de titre ou de pied."
+    },
+    {
+      "page": 159,
+      "file": "docs/validation/v0.8/rendered/page-159.png",
+      "sha256": "e84573ca48d9dfc22948b263e6c68b72ff0a36485b4ae86d9e16f53278d8308d",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Tableau du snapshot à deux colonnes complet, clés et exemples de structures monospace lisibles. API et section de tests restent dans la largeur ; dernière phrase se poursuit normalement, sans clipping au pied."
+    },
+    {
+      "page": 160,
+      "file": "docs/validation/v0.8/rendered/page-160.png",
+      "sha256": "814ff1204db14aff53018fdd8db10846231571c0a0516529f2ec0e88f9593416",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fin de l’annexe L avec liens et section de continuité. Titres et texte lisibles ; grande réserve blanche après la conclusion normale. Le texte distingue bien manifestations actuelles et révélation infernale future, sans défaut de mise en page."
+    },
+    {
+      "page": 161,
+      "file": "docs/validation/v0.8/rendered/page-161.png",
+      "sha256": "2b8b7bc1371b76e7ed7a555cb886c5391c15084ef24860746ac4631cfd473eed",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Ouverture de l’annexe M : titre long et ligne de version intacts, corps lisible. Tableau du périmètre à trois colonnes et cinq lignes complet, avec retour à la ligne propre. Aucun débordement de marge ou pied."
+    },
+    {
+      "page": 162,
+      "file": "docs/validation/v0.8/rendered/page-162.png",
+      "sha256": "1157ceebc63e33bdc7131610e54bcab7d00d6c6050690ab088bfd4516b62cc57",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Carte de l’escalade à quatre colonnes complète et lisible. Tableau des manifestations commencé avec lignes Suites 29 et Archives 28 entières ; durées et distances lisibles. Aucun clipping ni rupture à l’intérieur d’une ligne."
+    },
+    {
+      "page": 163,
+      "file": "docs/validation/v0.8/rendered/page-163.png",
+      "sha256": "4490d392b6414de14507849dcfdecc305b9821937db229edf0501e94f19824ec",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Dernière ligne du tableau des manifestations avec en-tête répété : silhouette du spa explicitement immobile, durée et récurrence lisibles. Paragraphes et section sur les priorités, la pause et la continuité contenus dans les marges. Noms de fichiers et accents nets ; dernière ligne dégagée du pied de page. Aucun débordement ni contradiction avec l’ouverture perceptive constaté."
+    },
+    {
+      "page": 164,
+      "file": "docs/validation/v0.8/rendered/page-164.png",
+      "sha256": "957217c749566fb49b6ea029d1a2ae55b27e8824973bbf2d384a4d1aa1217d5e",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Sections 6 à 8 lisibles ; titres et paragraphes bien séparés, marges régulières et pied de page dégagé. La progression future distingue les humains réels, les preuves du paranormal et les expériences infernales sans confirmer rétroactivement la présence du spa. Aucun glyphe manquant ni texte tronqué."
+    },
+    {
+      "page": 165,
+      "file": "docs/validation/v0.8/rendered/page-165.png",
+      "sha256": "d6160a26b718e74ab7a614f85ca2f9011d62aa649f8f18814e21bea5623c9f3b",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Tableau des cinq programmes fictifs à quatre colonnes entièrement visible ; cellules, retours à la ligne et traits restent dans les marges. Sections du bunker et du premier espace infernal nettes. Le paragraphe final se poursuit normalement page 166 ; trois lignes restent sous le titre et le pied de page est dégagé."
+    },
+    {
+      "page": 166,
+      "file": "docs/validation/v0.8/rendered/page-166.png",
+      "sha256": "1539a71fe2e487db35aa1ae2be7c4118d576081b04ae71054626a6fbe14a420d",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Suite du premier espace infernal, puis titres et textes des secteurs I02 à I04 clairement composés. Ligatures de « Chœur », accents, codes P58/P59/P60 et numérotation lisibles. Début de la section 14 avec deux lignes sous le titre, sans collision avec le pied de page ; continuité de texte vers la page suivante normale."
+    },
+    {
+      "page": 167,
+      "file": "docs/validation/v0.8/rendered/page-167.png",
+      "sha256": "82dc39750ac56300b69bbf7fca3e71051297f74ac336437a4cfefcc138b2a076",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Paragraphes des personnages, du gameplay et de la direction visuelle entièrement dans les marges ; titres clairement espacés. Tirets des plages E11–E13/E14–E16, accents et ligatures lisibles. La distinction entre E00 perceptif actuel et les créatures physiques futures est explicite. Le dernier paragraphe se poursuit normalement page 168, sans toucher le pied de page."
+    },
+    {
+      "page": 168,
+      "file": "docs/validation/v0.8/rendered/page-168.png",
+      "sha256": "ead05a1e9f40d19ea93a709c24e89357a400b047c70c69e9e174d06b7c245b04",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "method": "Original final CI PDF page opened directly through view_image at native 1415 by 2000.",
+      "notes": "Fin du paragraphe de direction visuelle avec lien lisible, puis section 17 et conclusion du catalogue. Les mentions en gras « 60 props P01–P60 » et « E00 perceptif et 16 archétypes de campagne E01–E16 » sont nettes et contenues. Grande zone blanche normale de fin de document ; numéro final 168 / 168 visible, aucun contenu tronqué."
+    }
+  ],
+  "non_blocking_observations": [
+    "Page 149 closes an annex with a short continuation; remaining whitespace is deliberate pagination.",
+    "A closing French quotation mark continues at the start of page 155; the quotation is complete and legible.",
+    "Page 168 ends with normal unused space after the final production criteria."
+  ]
+}

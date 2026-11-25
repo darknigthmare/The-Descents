@@ -1,6 +1,6 @@
 # The Tower Descent — prototype 0.8
 
-Ce guide décrit les commandes du paquet v0.8. Le statut des archives et les résultats de vérification se trouvent dans [l’état de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md).
+Ce guide décrit les commandes du paquet v0.8. [Télécharger Windows x64 v0.8](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.8-Windows-x64.zip) ou [les sources complètes v0.8](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.8-Sources.zip). Le statut des archives et les résultats de vérification se trouvent dans [l’état de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md).
 
 ## Lancer l’intervention
 
@@ -65,7 +65,7 @@ Un enregistrement local est demandé au départ, après les treuillages, au refu
 
 ## Portée de cette version
 
-Prototype solo avec un toit et six étages jouables, des hélicoptères et personnages procéduraux, réalisé avec **Godot 4.7.2**. La campagne complète et le futur portage UE5 sont décrits dans la bible. Le contrat de livraison exige la construction Windows et le chargement de ses ressources embarquées dans un dossier isolé sous Godot Linux. Ce contrôle ne constitue pas une exécution sur un PC Windows. Les résultats réels doivent être lus dans l’état de livraison ; `EXPORTS.md` décrit la méthode et sa portée.
+Prototype solo avec un toit et six étages jouables, des hélicoptères et personnages procéduraux, réalisé avec **Godot 4.7.2**. La campagne complète et le futur portage UE5 sont décrits dans la bible. La vérification du paquet comprend sa construction et le chargement de ses ressources embarquées dans un dossier isolé sous Godot Linux. Ce contrôle ne constitue pas une exécution sur un PC Windows. L’état de livraison consigne les résultats ; `EXPORTS.md` décrit la méthode et sa portée.
 
 [Projet, sources et bible sur GitHub](https://github.com/darknigthmare/The-Descents/tree/feat/live-tower-collapse)
 

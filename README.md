@@ -8,22 +8,21 @@ Le dépôt contient une tranche jouable sous **Godot 4.7.2**, du toit au refuge 
 
 ## État de la version et accès au projet
 
-La branche prépare la **0.8**. Son contrat de livraison exige **26 suites sources**, le chargement isolé des ressources des deux exports, **33 captures natives** et une bible complète issue de **15 sources**, avec revue de chaque page finale. Les nombres de contrôles réussis, de mots et de pages restent à renseigner après l’exécution et la revue. Voir [le suivi de livraison](docs/ETAT_DE_LIVRAISON.md) et [la procédure v0.8](docs/VALIDATION_V0.8.md).
+**Version 0.8.0 — sources, exports et revues validés**. La vérification du runtime compte **5 019 contrôles dans 26 suites** ; les ressources des deux exports totalisent **108 contrôles supplémentaires**. Le dossier de livraison réunit **33 captures natives** et une bible de **168 pages** issue de **15 sources**. Les verdicts de revue et leurs empreintes sont consignés dans [le suivi de livraison](docs/ETAT_DE_LIVRAISON.md).
 
-Les liens suivants correspondent à la **dernière livraison validée, la v0.7**, conservée pendant cette préparation. Le projet source courant se lance depuis `prototype/project.godot`.
-
-- [Windows x64 — version 0.7](releases/The-Tower-Descent-v0.7-Windows-x64.zip)
-- [Sources complètes — version 0.7](releases/The-Tower-Descent-v0.7-Sources.zip)
+- [Windows x64 — version 0.8](releases/The-Tower-Descent-v0.8-Windows-x64.zip)
+- [Sources complètes — version 0.8](releases/The-Tower-Descent-v0.8-Sources.zip)
+- [Bible Word v0.8](docs/The-Tower-Descent-Bible-v0.8.docx) · [Bible PDF v0.8](docs/The-Tower-Descent-Bible-v0.8.pdf)
 - [Démarrage Windows et commandes](docs/DEMARRAGE_WINDOWS.md)
 - [État de livraison et limites vérifiées](docs/ETAT_DE_LIVRAISON.md)
 - [Exports, moteur et licences](docs/EXPORTS.md)
-- [Empreintes des archives](releases/SHA256SUMS.txt)
+- [Empreintes des archives](releases/SHA256SUMS.txt) · [Rapport des ZIP v0.8](releases/VERIFICATION_V0.8.json)
 
-La v0.7 conservée a passé 24 suites et 4 840 contrôles sources, puis 90 contrôles de packs. Ses 30 captures et ses 149 pages de bible issues de 14 sources sont couvertes par leurs revues propres. Son [rapport d’archives](releases/VERIFICATION_V0.7.json) reste historique et ne valide pas le candidat v0.8.
+![Accueil contextuel de la version 0.8](docs/captures/v0.8/01_menu_arrivee.png)
 
-![Accueil contextuel de la livraison v0.7 conservée](docs/captures/v0.7/01_menu_arrivee.png)
+[Consulter les 33 captures v0.8 et leur revue](docs/CAPTURES_V0.8.md). Le projet source se lance depuis `prototype/project.godot`.
 
-[Consulter les trente captures validées de la v0.7](docs/CAPTURES_V0.7.md), ou [le contrat des trente-trois captures v0.8](docs/CAPTURES_V0.8.md). L’image ci-dessus appartient à la livraison v0.7.
+La livraison v0.7 reste conservée : [Windows x64](releases/The-Tower-Descent-v0.7-Windows-x64.zip), [Sources](releases/The-Tower-Descent-v0.7-Sources.zip), [Word](docs/The-Tower-Descent-Bible-v0.7.docx), [PDF](docs/The-Tower-Descent-Bible-v0.7.pdf), [trente captures](docs/CAPTURES_V0.7.md) et [rapport d’archives](releases/VERIFICATION_V0.7.json). Ses 24 suites, 4 840 contrôles sources, 90 contrôles de packs et 149 pages issues de 14 sources appartiennent à ses fichiers historiques.
 
 ## Ouverture et accueil
 
@@ -108,10 +107,11 @@ La radio gère priorités, file et trente-deux dernières transmissions. Le sile
 
 ## Bible complète et dossiers de production
 
-La bible v0.8 doit réunir intégralement les **15 sources** ci-dessous. La nouvelle annexe précise la montée de l’horreur et la réalité de la dimension infernale. Le corpus passe à **60 fiches de props** et **E00 plus 16 archétypes de campagne**. Le nombre de pages et de mots du volume v0.8 sera établi lors de sa construction ; les liens ci-dessous donnent accès aux documents de la dernière livraison validée, la v0.7.
+La bible v0.8 réunit intégralement les **15 sources** ci-dessous : **83 314 mots sources, 168 pages, 1 947 paragraphes et 62 tableaux**. La nouvelle annexe précise la montée de l’horreur et la réalité de la dimension infernale. Le corpus comprend **60 fiches de props** et **E00 plus 16 archétypes de campagne**. Les paragraphes et tableaux sont comptés au niveau principal du Word ; les paragraphes internes aux cellules ne sont pas ajoutés à ce total.
 
-- [Bible Word v0.7](docs/The-Tower-Descent-Bible-v0.7.docx)
-- [Bible PDF v0.7](docs/The-Tower-Descent-Bible-v0.7.pdf)
+- [Bible Word v0.8](docs/The-Tower-Descent-Bible-v0.8.docx)
+- [Bible PDF v0.8](docs/The-Tower-Descent-Bible-v0.8.pdf)
+- [Construction du volume](docs/validation/v0.8/DOCUMENT_BUILD.json) · [Revue des pages finales](docs/validation/v0.8/DOCUMENT_REVIEW.json)
 
 | Source | Contenu |
 | --- | --- |

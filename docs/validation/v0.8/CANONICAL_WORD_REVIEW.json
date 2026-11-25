@@ -1,0 +1,2597 @@
+{
+  "format": 1,
+  "version": "0.8.0",
+  "scope": "Exact final CI Word rendered by the canonical document skill renderer; this file does not approve the separate CI PDF pages.",
+  "page_count": 168,
+  "all_pages_visually_reviewed": true,
+  "batches": [
+    {
+      "report": "/tmp/tower-v08-canonical-review-001-056.json",
+      "sha256": "a43f7e961ce070babda6da268ca722214b9ff9ab26a8bfc0dfc53059ad304e3d",
+      "reviewer": "/root/v08_bible",
+      "page_count": 56
+    },
+    {
+      "report": "/tmp/tower-v08-canonical-review-057-112.json",
+      "sha256": "4ecb97da4f7ba07fc21f994af2e7d5a59c98d2bfebecf9995838cad592ece57f",
+      "reviewer": "/root/v08_manifestations",
+      "page_count": 56
+    },
+    {
+      "report": "/tmp/tower-v08-canonical-review-113-168.json",
+      "sha256": "0b89d401f8766f54a2364c0e601a1a7565758eb1867265f67bd787e732ae8db5",
+      "reviewer": "/root/v08_delivery",
+      "page_count": 56
+    }
+  ],
+  "directly_reexamined_changed_pages": [
+    90,
+    97,
+    107
+  ],
+  "unchanged_pages_verified_by_exact_png_sha256": 165,
+  "pages": [
+    {
+      "page": 1,
+      "sha256": "6c0045bb40dc2a307152ba57d436ec6eec4c35a87308daff3b191b506b43c161",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Couverture lisible ; tableau de périmètre entier, bordures et retours propres ; absence de pied de page cohérente avec la couverture."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "6c0045bb40dc2a307152ba57d436ec6eec4c35a87308daff3b191b506b43c161",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 2,
+      "sha256": "d8d4e2c79efc3f6cae0e646d5bc44b700a46f0cfb017b7729b750bea934e5c4b",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Sommaire et liens lisibles ; en-tête et pied de page 2 / 168 correctement placés ; aucun débordement."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "d8d4e2c79efc3f6cae0e646d5bc44b700a46f0cfb017b7729b750bea934e5c4b",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 3,
+      "sha256": "afd840debe9aa3fde9d5645dc2105cf6e693595c22b7247fcb43c75922d5c095",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Titre de partie et introduction denses mais lisibles ; fin de texte au-dessus du pied, aucun chevauchement ni glyphe manquant."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "afd840debe9aa3fde9d5645dc2105cf6e693595c22b7247fcb43c75922d5c095",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 4,
+      "sha256": "cec5213322b2686498550508ce51314d6fe81d79d4eaedab76cf68c30dafbbc3",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau de direction complet ; cellules correctement enveloppées, marges et pied 4 / 168 dégagés."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "cec5213322b2686498550508ce51314d6fe81d79d4eaedab76cf68c30dafbbc3",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 5,
+      "sha256": "638a3170a7e20010e2ada4a7fc374135be6f06921c2ee351c23620f655631340",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite du tableau avec en-tête répété ; titres et guillemets corrects ; paragraphe poursuivi proprement à la page suivante."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "638a3170a7e20010e2ada4a7fc374135be6f06921c2ee351c23620f655631340",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 6,
+      "sha256": "7dee87088a3aad7d17c5fe40d344a0e2671b7f22f6b5c0dc4db9cba85be80bcd",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Sections et sous-titres lisibles ; fins de lignes et accents propres ; aucun chevauchement avec en-tête ou pagination."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "7dee87088a3aad7d17c5fe40d344a0e2671b7f22f6b5c0dc4db9cba85be80bcd",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 7,
+      "sha256": "0a00c02fb0ff1428323c7ad7a1899231d94bd0b3ee88de740b353590fc00c791",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Chronologie à deux colonnes entière, lignes séparées et texte correctement centré dans les cellules ; sous-titre final accompagné de texte."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "0a00c02fb0ff1428323c7ad7a1899231d94bd0b3ee88de740b353590fc00c791",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 8,
+      "sha256": "537a2a2fa3245383e533815eb2a19358b63c7df31bb988cfdef801b2f6695b3e",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Registre de vérité à trois colonnes lisible, toutes les lignes et bordures visibles ; bas du tableau séparé du pied."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "537a2a2fa3245383e533815eb2a19358b63c7df31bb988cfdef801b2f6695b3e",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 9,
+      "sha256": "21c249a0f34129b54e83c545428b02b7774e24025b29f8b086f25f7ae6b8fce9",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches de personnages et niveaux de titres réguliers ; paragraphes entièrement lisibles, bas de page dégagé."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "21c249a0f34129b54e83c545428b02b7774e24025b29f8b086f25f7ae6b8fce9",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 10,
+      "sha256": "6bc0c8a00461c6fa44fd1c0c4551504987296cbed7d2f53ab2cd5767a6d4258b",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Sous-titres, caractères accentués et début d’acte lisibles ; titres du bas accompagnés de plusieurs lignes, pied correct."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "6bc0c8a00461c6fa44fd1c0c4551504987296cbed7d2f53ab2cd5767a6d4258b",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 11,
+      "sha256": "78a031cd73726a5d257a837e71fd36abfb5115a6b625a3e707df0fa08f6763af",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Actes de campagne nettement séparés ; corps de texte et caractères spéciaux lisibles, sans texte tronqué."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "78a031cd73726a5d257a837e71fd36abfb5115a6b625a3e707df0fa08f6763af",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 12,
+      "sha256": "48468d2f127ed91e72be17d2765fab02d54fc8fa8c6583cb16576c3f2ad4f9a2",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau des fins lisible sur trois colonnes, aucune ligne coupée ; paragraphe suivant et pagination dégagés."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "48468d2f127ed91e72be17d2765fab02d54fc8fa8c6583cb16576c3f2ad4f9a2",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 13,
+      "sha256": "5bd9206b7193e0af63333bed7d27eeed4abf50673dfe28ffe686fc91331d1e25",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Boucle de jeu et début du tableau des déplacements lisibles ; tableau se termine sur une ligne entière avant le pied."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "5bd9206b7193e0af63333bed7d27eeed4abf50673dfe28ffe686fc91331d1e25",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 14,
+      "sha256": "7de8a89be1fb45a0f9fbbdc12ae3c6863969e8cc5dd4393595e75e4a51a2a285",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite du tableau avec en-tête répété ; tableau matériel à quatre colonnes correctement enveloppé, aucune cellule tronquée."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "7de8a89be1fb45a0f9fbbdc12ae3c6863969e8cc5dd4393595e75e4a51a2a285",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 15,
+      "sha256": "0028d8a1a37dc225df8cb6a92609fefbb245795f2600ef3561639137f46486e0",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau matériel poursuivi avec en-tête ; textes longs bien enveloppés ; début de liste numérotée clair, sans clipping."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "0028d8a1a37dc225df8cb6a92609fefbb245795f2600ef3561639137f46486e0",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 16,
+      "sha256": "cb11e9b78a808d1f04abdce83cf7c3a75a85c50c731640bedffd2591b8e7c6d3",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Numérotation de la liste poursuivie correctement ; sous-titres et corps homogènes, pied 16 / 168 intact."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "cb11e9b78a808d1f04abdce83cf7c3a75a85c50c731640bedffd2591b8e7c6d3",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 17,
+      "sha256": "d11aee2182fed30254280777923a689dc6d389eb00ac9786e521f47bd7223566",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Bestiaire synthétique à cinq colonnes entièrement lisible ; noms longs enveloppés, lignes et en-têtes sans clipping."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "d11aee2182fed30254280777923a689dc6d389eb00ac9786e521f47bd7223566",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 18,
+      "sha256": "3b79ce886350eb8fbff8c7aa2e06331ffcbe5899f010d4ba31c146038f1f0dda",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Liste de dix étapes correctement alignée ; titres et paragraphes distincts, aucun débordement vers le pied."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "3b79ce886350eb8fbff8c7aa2e06331ffcbe5899f010d4ba31c146038f1f0dda",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 19,
+      "sha256": "9fdd22165b05973eb50e0c26412fd307f17d9696e038b4b84d5f16276e939818",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau de rythme à trois colonnes et titres suivants lisibles ; aucune anomalie de marge ou de pied."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "9fdd22165b05973eb50e0c26412fd307f17d9696e038b4b84d5f16276e939818",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 20,
+      "sha256": "f102d483ee4c0a5250ccf9f7827f6b78352e14538c569301580a2e97e6b94d54",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Grand tableau d’événements entièrement contenu dans la page ; cellules longues sans clipping, en-tête et bordures nets."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "f102d483ee4c0a5250ccf9f7827f6b78352e14538c569301580a2e97e6b94d54",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 21,
+      "sha256": "1e2ef27169248be179c73a84ba7df277c83568d306d3d42a8729270eb440e82e",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "En-tête répété du tableau des événements et tableau modulaire lisibles ; réouverture individuelle confirme le haut de page intact ; pied dégagé."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "1e2ef27169248be179c73a84ba7df277c83568d306d3d42a8729270eb440e82e",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 22,
+      "sha256": "6a7a1e525eb66cfd7f50c3ecd0c1d99aadb08ff11aa8ec797f444920f93f9639",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite du tableau modulaire correctement répétée ; sections visuelles et sonores nettes, aucun débordement ni glyphe manquant."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "6a7a1e525eb66cfd7f50c3ecd0c1d99aadb08ff11aa8ec797f444920f93f9639",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 23,
+      "sha256": "d03eeb8496a835cc21445bef762272efc83ae4e12b5a4aec556baae0cbbe885d",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Liste à puces bien alignée avec retours cohérents ; titres, liens et glyphes français lisibles."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "d03eeb8496a835cc21445bef762272efc83ae4e12b5a4aec556baae0cbbe885d",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 24,
+      "sha256": "7a26fb9e4ef217c2be7c27fcfa0620c45249d1e24c0f916e9e77098e0ccaeef9",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Identifiants techniques et paragraphes de sauvegarde lisibles ; sous-titre final accompagné de texte, pied sans chevauchement."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "7a26fb9e4ef217c2be7c27fcfa0620c45249d1e24c0f916e9e77098e0ccaeef9",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 25,
+      "sha256": "b5386f36cd87a49f52059935d94760d672dad0e1767a4efd56a86f68e86acdb0",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Sous-sections de l’ouverture bien hiérarchisées ; textes et liens sans chevauchement, fin de page lisible."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "b5386f36cd87a49f52059935d94760d672dad0e1767a4efd56a86f68e86acdb0",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 26,
+      "sha256": "3145615f1e34910b98b5f7c7e6c149bbaac050b4167242c9d9890d7b4d7964fc",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau de périmètre propre, numéros d’étage centrés et cellules intégrales ; puces finales et pied corrects."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "3145615f1e34910b98b5f7c7e6c149bbaac050b4167242c9d9890d7b4d7964fc",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 27,
+      "sha256": "825eac34e8fe9211d722d93bf00e81e03192098e3f38ab2e9b7b707bc12c836f",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Puces de validation et tableau des composants bien alignés ; dernier rang entièrement visible au-dessus du pied."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "825eac34e8fe9211d722d93bf00e81e03192098e3f38ab2e9b7b707bc12c836f",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 28,
+      "sha256": "b819fcf9076231a19e05c663e0012ac43129f852f89f642c6b223878efe88022",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "En-tête de tableau répété correctement ; six jalons distincts, paragraphes et pagination sans clipping."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "b819fcf9076231a19e05c663e0012ac43129f852f89f642c6b223878efe88022",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 29,
+      "sha256": "aa6d9f438de7d3bdfdef61901b9b1c83c05b90a2c66c7458688a1f73f00f8626",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau des risques intégral, alternance des fonds et séparations nettes ; extension et pied entièrement lisibles."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "aa6d9f438de7d3bdfdef61901b9b1c83c05b90a2c66c7458688a1f73f00f8626",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 30,
+      "sha256": "80548e7978f5578e31b37784a7633d2497ad24fb124b49ee129054312d28fab5",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Dialogues, gras et guillemets rendus correctement ; titres et paragraphe historique restent dans les marges."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "80548e7978f5578e31b37784a7633d2497ad24fb124b49ee129054312d28fab5",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 31,
+      "sha256": "2f38fa249e6c792ce07f2928224e22e795531c2f91bd85de3c120b2445a57aa2",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin de partie propre, espace inférieur cohérent avant nouvelle partie ; titres et chiffres en gras lisibles."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "2f38fa249e6c792ce07f2928224e22e795531c2f91bd85de3c120b2445a57aa2",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 32,
+      "sha256": "9f49058e41a551bbc710af07b73f3f059900b34d1353f623a4089ad5b76c17b2",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Titre de partie et introduction du catalogue contenus ; tableau commence avec une ligne entière, code A-TOIT enveloppé lisiblement."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "9f49058e41a551bbc710af07b73f3f059900b34d1353f623a4089ad5b76c17b2",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 33,
+      "sha256": "8076a8e69c7c5eb66a06e7ad9e6ba659fcd818e618171b93087115a15e97e0fd",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau des étages à cinq colonnes lisible, codes et lignes entiers ; pied séparé."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "8076a8e69c7c5eb66a06e7ad9e6ba659fcd818e618171b93087115a15e97e0fd",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 34,
+      "sha256": "5bf4252141b2a1ad4fc66860ec863b3536789d99d3e3e80dee45120d5293a97e",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite du tableau et début du toit propres ; réouverture individuelle confirme en-tête, bord supérieur et pagination intacts."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "5bf4252141b2a1ad4fc66860ec863b3536789d99d3e3e80dee45120d5293a97e",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 35,
+      "sha256": "4a86a47918fb7ec5513df14de2fb7548053fd4740f7f7eb08668862659ebcf47",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches toit, A30 et A29 structurées par amorces en gras ; tous les paragraphes et le pied sont lisibles."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "4a86a47918fb7ec5513df14de2fb7548053fd4740f7f7eb08668862659ebcf47",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 36,
+      "sha256": "36349878148fdb1397f4bfbeece4b9e58d3d958d9d4f7ad974cd17c11e6fa7fd",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches A28 et A27 bien séparées ; aucune ligne coupée ou superposée, accents et apostrophes corrects."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "36349878148fdb1397f4bfbeece4b9e58d3d958d9d4f7ad974cd17c11e6fa7fd",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 37,
+      "sha256": "e136e9bea0329fa9308d6fcf262debf5eedb134ab3bd448c6e8f431eb19e5e70",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches A26 et A25 lisibles, amorces en gras et texte sans chevauchement ; marge du pied maintenue."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "e136e9bea0329fa9308d6fcf262debf5eedb134ab3bd448c6e8f431eb19e5e70",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 38,
+      "sha256": "b391470cb9b03d8ed8a076a29b36c87cb744de1076717f1c33d54f87edb89d12",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Titre de section et fiches A24–A22 bien hiérarchisés ; glyphes français et derniers paragraphes intacts."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "b391470cb9b03d8ed8a076a29b36c87cb744de1076717f1c33d54f87edb89d12",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 39,
+      "sha256": "c9cbb9deb916850d0fcefda7cfcde269fa6d91a556335ab2ef9a00e2e078033c",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches A21–A18 lisibles, sections séparées ; début d’A18 conserve du texte sous son titre, pied intact."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "c9cbb9deb916850d0fcefda7cfcde269fa6d91a556335ab2ef9a00e2e078033c",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 40,
+      "sha256": "d3dcae8b7eebfbaae90eef2d8e3dea77cb4662ca7e816d17a83b6278893e8a38",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches A17, A16 et début A15 proprement composées ; marges et glyphes corrects, aucune collision typographique."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "d3dcae8b7eebfbaae90eef2d8e3dea77cb4662ca7e816d17a83b6278893e8a38",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 41,
+      "sha256": "aed265114f8495192b7938fde2de51d308dbad769aaa64e214ec9475a25e91f7",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Section des niveaux du secret et fiches A14–A12 propres ; caractères accentués et amorces en gras lisibles."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "aed265114f8495192b7938fde2de51d308dbad769aaa64e214ec9475a25e91f7",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 42,
+      "sha256": "4280d97a73d8109ec05b41d8b48e6476a5b58d815421e1669f2b725982f77323",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches A11–A09 et début A08 bien composés ; aucun titre isolé ni texte tronqué, pagination intacte."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "4280d97a73d8109ec05b41d8b48e6476a5b58d815421e1669f2b725982f77323",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 43,
+      "sha256": "bb1751389e695147b2c97a13e862bd021a7f4b51723f3e532122fb5e00024b85",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches laboratoire, archives et liaison basse lisibles ; aucun clipping ; début du refuge accompagné de son texte."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "bb1751389e695147b2c97a13e862bd021a7f4b51723f3e532122fb5e00024b85",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 44,
+      "sha256": "e4e41908558b63b7b26c3589330227bf308b36c1f2ab3386851a47e2760739ff",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Réouverture individuelle confirme la page entière ; titre du socle, fiches A04–A02, en-tête et pied correctement placés."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "e4e41908558b63b7b26c3589330227bf308b36c1f2ab3386851a47e2760739ff",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 45,
+      "sha256": "bacecaf9dc555b457aa95ea01de76eeb6e5c8c5aad164490b3dd18935260d982",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches du socle et entrée Hespérie entièrement lisibles ; titres accompagnés de texte, marges et pied de page respectés."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "bacecaf9dc555b457aa95ea01de76eeb6e5c8c5aad164490b3dd18935260d982",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 46,
+      "sha256": "c0c1c89232c0ed08db845d9c6d52118286140151c8cf90b56b4cfca2da3235be",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Réouverture individuelle confirme en-tête et pied ; fiches Hespérie et début des souterrains sans chevauchement ni glyphes manquants."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "c0c1c89232c0ed08db845d9c6d52118286140151c8cf90b56b4cfca2da3235be",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 47,
+      "sha256": "74d7021275d54e3a80380014f60a5afe9c5b1b36bca3630698b665d1b78a0f32",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Sept fiches souterraines disposées régulièrement ; texte et pied lisibles, aucune coupure de ligne hors page."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "74d7021275d54e3a80380014f60a5afe9c5b1b36bca3630698b665d1b78a0f32",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 48,
+      "sha256": "1752de3dc167ef49572ae95e2e55d5b97683a7ce1e957fa599e17ce5b82deabb",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Ouverture bunker et fiches B01–B06 sans chevauchement ; contrôle sur copie byte-identique confirme marges, en-tête et pied complets."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "1752de3dc167ef49572ae95e2e55d5b97683a7ce1e957fa599e17ce5b82deabb",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 49,
+      "sha256": "8b7a1721fc5679c3065bc5bc6885dee1690b6fa0c83f0cb55b1bdfcc1c124ae3",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Le seuil, les quatre secteurs infernaux et la sortie sont lisibles ; dernier titre conserve son introduction, pied dégagé."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "8b7a1721fc5679c3065bc5bc6885dee1690b6fa0c83f0cb55b1bdfcc1c124ae3",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 50,
+      "sha256": "f9bc0e862defd2a36e3415e493f166b4747161952caa5967c0f6e38d76f3924d",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Table de l’extension à quatre colonnes intégralement contenue ; titres, renvois et paragraphes suivants lisibles, marges et pied corrects."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "f9bc0e862defd2a36e3415e493f166b4747161952caa5967c0f6e38d76f3924d",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 51,
+      "sha256": "b7033db29b85403a5f8cb81406f613b0f1b5f18807030d67589994ec150f2ff2",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches d’assemblage A30–A26 lisibles ; signes ×, accents et renvois intacts ; continuation A26 conserve un premier paragraphe avant la pagination."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "b7033db29b85403a5f8cb81406f613b0f1b5f18807030d67589994ec150f2ff2",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 52,
+      "sha256": "67091454edfbb510fed9d10237ff884c51111dcf6e808e31e29620ff5c31dd27",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Continuation A26 et fiches A25–A21 correctement espacées ; le texte de présence perceptive est net, en-tête et pied intacts."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "67091454edfbb510fed9d10237ff884c51111dcf6e808e31e29620ff5c31dd27",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 53,
+      "sha256": "61dfe94ebebf537954673d8f534af5c467baf52ff24a86ee23b4d89c5aba01c8",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Réouverture intégrale confirme l’espacement normal du titre A19 ; fiches A20–A17 et footer sans chevauchement ni clipping."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "61dfe94ebebf537954673d8f534af5c467baf52ff24a86ee23b4d89c5aba01c8",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 54,
+      "sha256": "00e997eb3cca1c3c0d5af917bc2650a7e2039cb5e28f31500fc7b8a681016b20",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches A16–A11 lisibles, espacements de titres réguliers ; fin de paragraphe poursuivie à la page suivante sans débordement."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "00e997eb3cca1c3c0d5af917bc2650a7e2039cb5e28f31500fc7b8a681016b20",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 55,
+      "sha256": "1f60f6b2168787859a8cc6050bd6189cb206fa6e973d5129f6a61a95ab702156",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches refuge, clinique, laboratoire et liaison basse entièrement lisibles ; marges, titres et pied de page vérifiés sur image intégrale."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "1f60f6b2168787859a8cc6050bd6189cb206fa6e973d5129f6a61a95ab702156",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 56,
+      "sha256": "e9b44a96307a3dcc8bec8ec16e81ce5e7c7f93dc0c5e956a8379d6d479b57abb",
+      "status": "pass",
+      "reviewer": "/root/v08_bible",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches A05–A01 propres ; dernier paragraphe complet au-dessus du pied, aucun titre isolé ni glyphe manquant."
+      ],
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "e9b44a96307a3dcc8bec8ec16e81ce5e7c7f93dc0c5e956a8379d6d479b57abb",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 57,
+      "sha256": "0b6d647141a320ebf0e81fe297948e86f2fbb053bc3641231af397e10ea08742",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Titre de section 14 et deux paragraphes nets, sans débordement. En-tête, accents et pied 57 / 168 intacts. Espace libre de fin de section.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "0b6d647141a320ebf0e81fe297948e86f2fbb053bc3641231af397e10ea08742",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 58,
+      "sha256": "a45deebc73dc709bc8ae6566b57a142dcb84bbdf06a21c1a44b482a6cc976658",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Ouverture annexe A, titres et longs paragraphes lisibles. Liens soulignés et caractères accentués intacts ; dernière ligne au-dessus du pied, sans clipping.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "a45deebc73dc709bc8ae6566b57a142dcb84bbdf06a21c1a44b482a6cc976658",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 59,
+      "sha256": "80e2c7efe601904f0a9dfb51048a0fdaf90e0a4c316ceed0599d3f04dafb8de2",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Table Champ / Type / Usage complète et alignée ; retours internes lisibles, fonds alternés et bordures nets. Titres, code en ligne et pied 59 / 168 non coupés.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "80e2c7efe601904f0a9dfb51048a0fdaf90e0a4c316ceed0599d3f04dafb8de2",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 60,
+      "sha256": "0c7d64e4759a35d0ec426b9f472b432ec5ae4c198fc21b7dbb2a618c56637e1d",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Suite de table avec en-tête répété ; tableau des niveaux à six colonnes entièrement lisible, aucune cellule tronquée. Paragraphe final continue à la page suivante ; pied dégagé.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "0c7d64e4759a35d0ec426b9f472b432ec5ae4c198fc21b7dbb2a618c56637e1d",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 61,
+      "sha256": "b3ba4979ae79bcc67563004bc104ae3c284948711835be0009fe6dde5a2b7585",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Continuation propre puis deux titres bien espacés. Paragraphes, liens et identifiants techniques sans collision ni glyphes manquants ; marges et pied intacts.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "b3ba4979ae79bcc67563004bc104ae3c284948711835be0009fe6dde5a2b7585",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 62,
+      "sha256": "733d9e7cc523a7d97fb4725a0c54d99b029ec9f5c91022aceb101d6e02bffb80",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Titres de validation, commandes et début de liste numérotée lisibles. Les lignes de commande restent dans les marges ; dernier item intact avant le pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "733d9e7cc523a7d97fb4725a0c54d99b029ec9f5c91022aceb101d6e02bffb80",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 63,
+      "sha256": "88ef2bcd92c9cdf8264414cf2c516548b2642b5070e2530d40d1c3fd3ed2dd12",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Suite de liste 3 à 5 correctement alignée ; sections progression et sauvegardes denses mais nettes. Accolades, underscores, accents et pied visibles sans chevauchement.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "88ef2bcd92c9cdf8264414cf2c516548b2642b5070e2530d40d1c3fd3ed2dd12",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 64,
+      "sha256": "72f5fd86e0dff926a86ad173ae8d4e86763be5d7c6a1bd80e70001c6b159350e",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Table des checkpoints à trois colonnes entièrement contenue ; lignes et textes multi-lignes lisibles. Liens en bas de page et pied distincts, aucun glyphage défectueux.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "72f5fd86e0dff926a86ad173ae8d4e86763be5d7c6a1bd80e70001c6b159350e",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 65,
+      "sha256": "5e2c9a891177b6c1742f69de324ddd183f6176bc51b2dab52333cef37b81fc51",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fin d’annexe avec deux titres, paragraphes et identifiants de campagne nets. Espace final cohérent ; pied 65 / 168 et en-tête propres.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "5e2c9a891177b6c1742f69de324ddd183f6176bc51b2dab52333cef37b81fc51",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 66,
+      "sha256": "f1068afdea7437634bf6d79b9567e71b8f02d70ca1806325cad169a66b7dcb46",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Titre long de l’annexe B tient dans la largeur. Tableau des responsabilités lisible jusqu’à preferences_store.gd ; bordures et pied ne se touchent pas.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "f1068afdea7437634bf6d79b9567e71b8f02d70ca1806325cad169a66b7dcb46",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 67,
+      "sha256": "98bfba5efe39930327fc5e9431784ca9f0d7ac5fbe285ab50e59c7d59c51754b",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "En-tête répété du tableau et toutes les lignes, dont les deux scripts d’horreur, lisibles. Section présentation dense sans débordement ; dernière ligne et pied séparés.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "98bfba5efe39930327fc5e9431784ca9f0d7ac5fbe285ab50e59c7d59c51754b",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 68,
+      "sha256": "4fbd7d69381f2ee69565f7c3ef1b98c51e340d1959e21458057c6d5238233f28",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Longs paragraphes techniques, équation de hauteur et section Espace entièrement lisibles. Aucun caractère absent ni ligne dépassant les marges ; fin de phrase se poursuit normalement.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "4fbd7d69381f2ee69565f7c3ef1b98c51e340d1959e21458057c6d5238233f28",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 69,
+      "sha256": "10e2526fa58a4e6358e2a4d75c7ceaf3da30cec3daef0be6b075f4eda510b642",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Titres Génération et Incident bien détachés. Liens, chiffres et code en ligne nets ; continuation du dernier paragraphe sans clipping, pied complet.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "10e2526fa58a4e6358e2a4d75c7ceaf3da30cec3daef0be6b075f4eda510b642",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 70,
+      "sha256": "fc81507db1971277fde3ba983a2d9ebec035da48a6aee8bfec2895574134a0c3",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Sections Air et Répartition puis tableau UE5 à deux colonnes propres. Identifiants longs contenus dans leurs cellules ; aucun défaut de glyphes ou de pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "fc81507db1971277fde3ba983a2d9ebec035da48a6aee8bfec2895574134a0c3",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 71,
+      "sha256": "f55acab51a0091e993306780b9ab1523e003745b0fc3f2169bd6040878e94a9b",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Trois titres et liens officiels lisibles, retraits constants. Paragraphes et dernière référence restent dans la zone de texte ; pied 71 / 168 intact.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "f55acab51a0091e993306780b9ab1523e003745b0fc3f2169bd6040878e94a9b",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 72,
+      "sha256": "ec765acf6a800eea1c9c3a38f773fc608556ebeb421c59fd092eb76e4fbf8345",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Hiérarchie Sauvegarde / Phases / Contrats clairement rendue. Texte, liens et termes techniques contenus ; aucune coupure de titre ou collision avec le pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "ec765acf6a800eea1c9c3a38f773fc608556ebeb421c59fd092eb76e4fbf8345",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 73,
+      "sha256": "3830cda281dc970f7ba2140d11c93aab9b3f33a3038231029d83ef9089405273",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Table des jalons à deux colonnes propre, cellules longues correctement repliées. Section du contrat perceptif lisible jusqu’au dernier paragraphe ; pied dégagé.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "3830cda281dc970f7ba2140d11c93aab9b3f33a3038231029d83ef9089405273",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 74,
+      "sha256": "59d9713bfd5972d4067c75d79327ae03287bfa3c3bb799ffb12291c1a648d2b6",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Dernier paragraphe de l’annexe B entièrement visible, identifiants longs et accents nets. Grande zone blanche de fin d’annexe ; en-tête et pied 74 / 168 intacts.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "59d9713bfd5972d4067c75d79327ae03287bfa3c3bb799ffb12291c1a648d2b6",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 75,
+      "sha256": "f7896eb9595ade718fc26eedcfbcf43e06e23cb17ef16b5564bb20319bcec000",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Ouverture de l’annexe C, titres et tableau Périmètre à deux colonnes bien rendus. Dernière ligne du tableau complète, sans débordement ni contact avec le pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "f7896eb9595ade718fc26eedcfbcf43e06e23cb17ef16b5564bb20319bcec000",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 76,
+      "sha256": "13a5b5c44f5320761c5287ffc693da6ab75a2b64071d2f71643560ba93bd2ab3",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Suite de tableau avec en-tête répété, sous-sections géographiques et liste 1 à 5 bien alignées. Dernier item lisible jusqu’au bas ; aucun clipping.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "13a5b5c44f5320761c5287ffc693da6ab75a2b64071d2f71643560ba93bd2ab3",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 77,
+      "sha256": "c8736ccc986fbac7d852425be5a22e2b96762e2af159294ca7032afc99e73156",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Suite de liste 6 et 7 puis tableau des phases à cinq colonnes ; tous les contenus et durées restent dans leurs cellules. Paragraphes finaux et pied intacts.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "c8736ccc986fbac7d852425be5a22e2b96762e2af159294ca7032afc99e73156",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 78,
+      "sha256": "2c2207f6a638784f0c38b6350c3214a8827d949e403d3e28a1804d11ef51fbeb",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Table de mise en scène à trois colonnes et début du script radio à quatre colonnes nets. Les deux lignes radio restent entières ; titres et pied propres.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "2c2207f6a638784f0c38b6350c3214a8827d949e403d3e28a1804d11ef51fbeb",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 79,
+      "sha256": "57528ea6e84f9f2a165226ffe9cf6bc7d13f00e61d81d54362b3d263b2d1dadb",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Grande suite du tableau radio avec en-tête répété, repères ARR/RES/INC/SAM/AMB tous lisibles. Guillemets, ellipses et accents intacts ; paragraphe de bas de page non coupé.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "57528ea6e84f9f2a165226ffe9cf6bc7d13f00e61d81d54362b3d263b2d1dadb",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 80,
+      "sha256": "e6b73934f30a6c97f8223edbcdaa5b302f094366ac4ef8757c05380f0195847c",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Table Conséquences et début de table Sauvegarde correctement alignés, en-têtes foncés lisibles. Texte des cellules, titres et pied sans défaut visible.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "e6b73934f30a6c97f8223edbcdaa5b302f094366ac4ef8757c05380f0195847c",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 81,
+      "sha256": "6799a715d1dc174eb9a24d759e07d7dce47d526f6604422b61e671cfaa23d77e",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Suite de table Situation / Résultat avec en-tête répété ; sections 10 et 11 lisibles. Dernière phrase continue après une ligne complète ; pied séparé.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "6799a715d1dc174eb9a24d759e07d7dce47d526f6604422b61e671cfaa23d77e",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 82,
+      "sha256": "8b28956ac7134668022b4ad41702ce50f7b219c1ed2b8b0b72239aa33297e269",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Liste à puces de revue alignée et intégralement lisible. Titres et deux paragraphes de cohérence d’horreur propres ; aucune collision ou coupure de pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "8b28956ac7134668022b4ad41702ce50f7b219c1ed2b8b0b72239aa33297e269",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 83,
+      "sha256": "a8e153c0eeb0f71c1d35b2b53dc5cb0c3af59cc48392eeb58b8f0a1e4c06abcb",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Titre long de l’annexe D contenu sur une ligne. Table de responsabilités à trois colonnes, liens et paragraphes sans clipping ; pied 83 / 168 intact.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "a8e153c0eeb0f71c1d35b2b53dc5cb0c3af59cc48392eeb58b8f0a1e4c06abcb",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 84,
+      "sha256": "21b01d1565f580a8cd9d1a690dc729725e5c2e10711dcdf0cba69c6080d74fa6",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Sections Repli, Réception et Ordonnancement bien hiérarchisées. Table des trois rescapés et identifiants lisible ; pied et marges nets.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "21b01d1565f580a8cd9d1a690dc729725e5c2e10711dcdf0cba69c6080d74fa6",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 85,
+      "sha256": "433a413643db472f328f30a071f23749bc44f05750a22675b9d9633861b6f618",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Table Cas / Affichage / Historique complète ; section Journal et texte en gras correctement rendus. Page dense mais aucune ligne coupée au bas ni pied masqué.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "433a413643db472f328f30a071f23749bc44f05750a22675b9d9633861b6f618",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 86,
+      "sha256": "7456d2e09895dc27ede3cb3fecc52c8048e9e4d4af5cd9094ba76f26168a97dc",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Titre Écho avec capitales accentuées correctes ; tableaux des conditions et migrations lisibles, sans cellule coupée. Début du paragraphe final entier, pied intact.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "7456d2e09895dc27ede3cb3fecc52c8048e9e4d4af5cd9094ba76f26168a97dc",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 87,
+      "sha256": "f0dd857def28ced4bb61f2d0a56b2ed3eabaac6c3d40f483bd18db17d79e9c4c",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fin de communications : titres, liens des sources et paragraphes propres. Guillemets français et accents nets ; espace libre final et pied sans anomalie.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "f0dd857def28ced4bb61f2d0a56b2ed3eabaac6c3d40f483bd18db17d79e9c4c",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 88,
+      "sha256": "5d9096677b0aee30ff6b5fccdfb0de256d8aed4f4ef0ba914d2097f232d5f0c6",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Annexe E et sous-titre long entièrement visibles. Sections Convention et Règles, signe de multiplication et accents bien rendus ; dernier paragraphe ne touche pas le pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "5d9096677b0aee30ff6b5fccdfb0de256d8aed4f4ef0ba914d2097f232d5f0c6",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 89,
+      "sha256": "c504fd62e89aefa1f09d58b05ad2fdaae1dcf9dfecfe744d1c4e1859516c30e6",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fiches P01 à P04, sous-titres en gras et dimensions lisibles. Aucun titre isolé, aucune ligne tronquée ; pied 89 / 168 présent.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "c504fd62e89aefa1f09d58b05ad2fdaae1dcf9dfecfe744d1c4e1859516c30e6",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 90,
+      "sha256": "559550a5e77621baa3c9ee61ca73b62627d48a7173f51ba1de94936bef88b791",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "La phrase corrigée est effectivement visible dans le premier paragraphe. Elle ne décrit plus de ralentissement de la silhouette du spa. Fiches P05 à P08, titres, paragraphes, glyphes et pied 90 / 168 intacts ; aucun clipping ou chevauchement.",
+      "verified_sentence": "Elle aide à lire les indices, les obstacles et les appuis du trajet de secours.",
+      "review_basis": "corrected local canonical render opened directly",
+      "canonical_final_sha256": "559550a5e77621baa3c9ee61ca73b62627d48a7173f51ba1de94936bef88b791",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 91,
+      "sha256": "70c7a162925fe197f6b95ca1bcdb83091afefc44c6a332cee7c6e74d37425b46",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fiches P09 à P12 correctement hiérarchisées, paragraphes et dimensions nets. Aucun clipping, glyphe absent ou chevauchement du pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "70c7a162925fe197f6b95ca1bcdb83091afefc44c6a332cee7c6e74d37425b46",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 92,
+      "sha256": "d27a8afd47ce50f31f3e7f661684e920fdf1735462ddc3e6be29588fc69c7bc6",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Architecture et fiches P13 à P16 : titres, dimensions et paragraphes clairement lisibles. Aucun débordement ou glyphe manquant ; pied dégagé.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "d27a8afd47ce50f31f3e7f661684e920fdf1735462ddc3e6be29588fc69c7bc6",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 93,
+      "sha256": "e819ff843a360e4b21ba22592172c47ae749859a87dd37733c4285f608d20127",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fiches P17 à P20 et début de P21 propres. Le titre P21 conserve son paragraphe introductif ; page et pied sans clipping.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "e819ff843a360e4b21ba22592172c47ae749859a87dd37733c4285f608d20127",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 94,
+      "sha256": "e8ad6802f5aadaf5422874f1037faf3914e50bc787bfb4f833ec2d43b1be1420",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Suite P21, fiche P22 puis section Mobilier et P23–P24 bien espacées. Texte et dimensions sans coupure, titre de section non isolé ; pied lisible.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "e8ad6802f5aadaf5422874f1037faf3914e50bc787bfb4f833ec2d43b1be1420",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 95,
+      "sha256": "7b779bf85932c8914e0663765a940676d70a2d8959240c5c6efdb54d95913b26",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fiches P25 à P28 lisibles, sous-titres gras et dimensions correctement rendus. Aucun débordement dans les marges ni collision avec le pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "7b779bf85932c8914e0663765a940676d70a2d8959240c5c6efdb54d95913b26",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 96,
+      "sha256": "14f25a0619003f8fe9bbde83c3f71ff1ce1afc83321b9929c45ffcbbeadd23b5",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fiches P29 à P32 nettes, identifiants et dimensions lisibles. Les titres restent avec leur texte ; marges et pied sans débordement.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "14f25a0619003f8fe9bbde83c3f71ff1ce1afc83321b9929c45ffcbbeadd23b5",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 97,
+      "sha256": "191308a84006698e4a0a45202fe4b7499fd6cbf7ebbdeae8597742ed176631b7",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "La présence est explicitement stationnaire dans le premier paragraphe de P35. Le mot mobile a disparu de cette description. Fiches P33 à P36, titres, glyphes et pied 97 / 168 propres ; aucun débordement.",
+      "verified_sentence": "Il structure le niveau 26 et donne un repère stable à la présence stationnaire.",
+      "review_basis": "corrected local canonical render opened directly",
+      "canonical_final_sha256": "191308a84006698e4a0a45202fe4b7499fd6cbf7ebbdeae8597742ed176631b7",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 98,
+      "sha256": "1e92bd8fb303aa153b4da63b50e0e95a3d9703ff50105a04e0509515a035bf90",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Titre Réseaux, fiches P37–P40 et leurs dimensions lisibles. Continuation normale de P40 après deux lignes complètes ; aucun clipping ni collision du pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "1e92bd8fb303aa153b4da63b50e0e95a3d9703ff50105a04e0509515a035bf90",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 99,
+      "sha256": "dea2c89790905450a452c2b1e3df0accb31f10b23bf428ae2a7aa4b6d7d9a34c",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fin P40 puis P41–P44 propres ; le titre P44 est suivi de son paragraphe. Glyphes et dimensions intacts, pied 99 / 168 bien dégagé.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "dea2c89790905450a452c2b1e3df0accb31f10b23bf428ae2a7aa4b6d7d9a34c",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 100,
+      "sha256": "787b51e7bbe6112b3bf3abeb8b0e3be86c705a126b1760ac4ae55fc4d6272a5d",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fin P44 puis section Recherche et fiches P45–P48 lisibles. Le titre P48 conserve son introduction ; derniers caractères et pied non coupés.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "787b51e7bbe6112b3bf3abeb8b0e3be86c705a126b1760ac4ae55fc4d6272a5d",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 101,
+      "sha256": "bbef19ebb37d8f451787c970557f7cddca6a307b0d7678e2c3d7f1ab2dfdb9f5",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Suite P48 puis P49–P52, caractères accentués et dimensions nets. Retour de paragraphe normal en bas ; aucun chevauchement de pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "bbef19ebb37d8f451787c970557f7cddca6a307b0d7678e2c3d7f1ab2dfdb9f5",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 102,
+      "sha256": "9e4a5fac4a36127387fbd23eb6524c915f7573cae0667bc2e2903a8f3ee56044",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Titre long des accessoires infernaux contenu ; P53 à P55 et avertissement en gras lisibles. Aucun glyphe manquant ni ligne coupée, pied correct.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "9e4a5fac4a36127387fbd23eb6524c915f7573cae0667bc2e2903a8f3ee56044",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 103,
+      "sha256": "3c1e2add8b63ca779f0fb3e998d97939e2225aea21462ebd91f6a7edfad35695",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "P56 à P59 et ouverture P60 nettes. Accents, apostrophes, signes de multiplication et dimensions propres ; titre P60 accompagné de son introduction, pied libre.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "3c1e2add8b63ca779f0fb3e998d97939e2225aea21462ebd91f6a7edfad35695",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 104,
+      "sha256": "003141082a516aa824a79c1b816c294b2ae1c6be484516db4bf7d57b2f2b1369",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fin P60 puis tableau des douze observations à quatre colonnes, tous les objets et références lisibles. Titre Conditions suivi de deux lignes ; marges et pied non touchés.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "003141082a516aa824a79c1b816c294b2ae1c6be484516db4bf7d57b2f2b1369",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 105,
+      "sha256": "5297634b721a00e461fb7c008c23fbbcfaa3a6e399cad095a8dae37d81675313",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Paragraphes techniques et sous-sections Continuité / Présentation / Priorité bien rendus. Identifiants longs contenus ; dernier paragraphe continue sans ligne coupée, pied intact.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "5297634b721a00e461fb7c008c23fbbcfaa3a6e399cad095a8dae37d81675313",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 106,
+      "sha256": "03bb73d6ceaec14918a7aa2cd26b2030da8d66d4643000bf9e23d9dd8cbf325b",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fin d’annexe E, paragraphes et références locales soulignées intégralement lisibles. Grande zone blanche finale sans anomalie ; en-tête et pied complets.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "03bb73d6ceaec14918a7aa2cd26b2030da8d66d4643000bf9e23d9dd8cbf325b",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 107,
+      "sha256": "11d24c94813ae0edab3765f720158b8d1603f90683ad746296e2987e0a07f23e",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "La formulation simulation de mission et présentation est effectivement visible ; elle remplace simulation hostile. Titre, sous-titre sur deux lignes, paragraphes et tableau E00 à E04 lisibles, cellules et pied 107 / 168 non coupés.",
+      "verified_sentence": "La simulation de mission et la présentation restent suspendues pendant la lecture du journal et après la clôture de mission.",
+      "review_basis": "corrected local canonical render opened directly",
+      "canonical_final_sha256": "11d24c94813ae0edab3765f720158b8d1603f90683ad746296e2987e0a07f23e",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 108,
+      "sha256": "13d69207cd023796dee9884b367aa7bacb42ea42ffad94c2f3441a7bfd99af5d",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Table E05–E16 avec en-tête répété et début du tableau E00 propres. Texte des cellules et titre de présence lisibles ; ligne Poursuite entière et pied dégagé.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "13d69207cd023796dee9884b367aa7bacb42ea42ffad94c2f3441a7bfd99af5d",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 109,
+      "sha256": "cca4de44e1e061ab452e05f4dadb979a9d27d74602d7110d476f25f2b212e0d7",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Suite du tableau E00, historique et fiche E01 entièrement lisibles. Accents, valeurs décimales et identifiants nets ; aucune collision avec le pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "cca4de44e1e061ab452e05f4dadb979a9d27d74602d7110d476f25f2b212e0d7",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 110,
+      "sha256": "18a4ddc0bedcf25bc69c550b3386e24a7028b1a92377005f715adc9bdda9cb37",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fiches E02 et E03 entièrement lisibles, valeurs de distances, durées et angles propres. Titres bien séparés ; pied 110 / 168 sans chevauchement.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "18a4ddc0bedcf25bc69c550b3386e24a7028b1a92377005f715adc9bdda9cb37",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 111,
+      "sha256": "1abaf5aa41edd575890d7633da5f0a3b4ee956654a6aee2183416a89aca4f534",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fiches E04, E05 et début E06 lisibles, valeurs et capitales intactes. Titre E06 accompagné de son paragraphe ; dernière ligne et pied nettement séparés.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "1abaf5aa41edd575890d7633da5f0a3b4ee956654a6aee2183416a89aca4f534",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 112,
+      "sha256": "e072bd5c88eea46692f485dc673ef487bfd00113985d057f1d646bca2a055e70",
+      "status": "pass",
+      "reviewer": "/root/v08_manifestations",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Suite E06, fiche E07 et début E08 lisibles ; valeurs, degrés et accents rendus correctement. Aucun titre orphelin, clipping ou chevauchement du pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "e072bd5c88eea46692f485dc673ef487bfd00113985d057f1d646bca2a055e70",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 113,
+      "sha256": "10178eb31128255917bd21af9db335dbe1eaf5bab671927bd2632218ff7a43e9",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fin E08 puis E09 et début E10 : titres, corps et valeurs lisibles ; aucun débordement ; en-tête et pied 113/168 dégagés.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "10178eb31128255917bd21af9db335dbe1eaf5bab671927bd2632218ff7a43e9",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 114,
+      "sha256": "a867647be8bd74510cba475bef1f2660cd16f8b33c897b2e471ef8ab8558a010",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Suite E10 et fiches E11/E12 : blocs et titres bien séparés ; accents et chiffres nets ; pied 114/168 intact.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "a867647be8bd74510cba475bef1f2660cd16f8b33c897b2e471ef8ab8558a010",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 115,
+      "sha256": "23bf370326baf34c45a616653d5505dfe0fea60f5905c93f442d8d84f0b318ce",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fiches E13/E14/E15 : hiérarchie lisible et glyphes complets ; paragraphe E15 se poursuit normalement page suivante, sans coupe de ligne ni empiètement sur le pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "23bf370326baf34c45a616653d5505dfe0fea60f5905c93f442d8d84f0b318ce",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 116,
+      "sha256": "ba041d4a9db9f68054ee5501828ea739a1d073de489d13f82ba1221afae32e83",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Continuation E15, E16 et contraintes communes : raccord de texte propre ; titres espacés ; marges et pied 116/168 nets.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "ba041d4a9db9f68054ee5501828ea739a1d073de489d13f82ba1221afae32e83",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 117,
+      "sha256": "a712163c21a7bb3643b47a3418e6cbd4d9bd70bb69271c15e2daee034a36fbbb",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Tableau des profils : quatre colonnes lisibles, cellules et bordures sans débordement ; liens et section de recette lisibles ; pied correct.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "a712163c21a7bb3643b47a3418e6cbd4d9bd70bb69271c15e2daee034a36fbbb",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 118,
+      "sha256": "16a9489c04e82d009b046a523cc1c9c48174ccb7c7acd355d4f96153367d401d",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Ouverture Annexe G et SC00 : titre complet, paragraphes et liens nets ; début de tableau en bas de page avec trois lignes entières, continuation à contrôler page suivante.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "16a9489c04e82d009b046a523cc1c9c48174ccb7c7acd355d4f96153367d401d",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 119,
+      "sha256": "e7b2cfcdd4c49bf7778a41658025947858ec4edcbf5692496528b713cf344675",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Tableau SC00 poursuivi avec en-tête répété ; tableau d’accueil démarre proprement, lignes entières et colonnes lisibles ; pied dégagé.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "e7b2cfcdd4c49bf7778a41658025947858ec4edcbf5692496528b713cf344675",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 120,
+      "sha256": "26e3647a2e3d9b1e12e18752bf7ac6617f948c3cde3e12f063fbb1e5f7c5ba72",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Suite du tableau d’accueil avec en-tête répété ; paragraphes d’actions et composition sans collision ni texte coupé ; pied 120/168 lisible.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "26e3647a2e3d9b1e12e18752bf7ac6617f948c3cde3e12f063fbb1e5f7c5ba72",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 121,
+      "sha256": "c924e88de119da5d8b63a8103bca7c7f2c10939b860c5ec13fa27935542a340a",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "SC02 : tableau des quatre plans entièrement lisible ; second tableau commence avec sa première ligne complète ; titres, degrés et durées rendus correctement.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "c924e88de119da5d8b63a8103bca7c7f2c10939b860c5ec13fa27935542a340a",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 122,
+      "sha256": "460f62e913e5760fe6c18555cea8456c1485f5949eba2e952a0de59179434d8d",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Tableau de séquence continué avec en-tête répété ; communications et paragraphes complets jusqu’au bas de page ; aucun chevauchement de pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "460f62e913e5760fe6c18555cea8456c1485f5949eba2e952a0de59179434d8d",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 123,
+      "sha256": "3dfe501d9c07aacc77d37fe8dff167d7de98c0cd7673ea89ac1a9d86a218c0c2",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fin des communications, SC03 et début SC04 : titres longs tiennent sans clipping ; paragraphes et lien répartis proprement ; continuation normale en fin de page.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "3dfe501d9c07aacc77d37fe8dff167d7de98c0cd7673ea89ac1a9d86a218c0c2",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 124,
+      "sha256": "d61aec9c7aea872adc73a4f753aec22f1a5c3b049b23f8c834c402d0eb6359ea",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Suite SC04, SC05 et SC06 : niveaux de titres cohérents, caractères accentués et termes techniques nets ; texte arrêté avant le pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "d61aec9c7aea872adc73a4f753aec22f1a5c3b049b23f8c834c402d0eb6359ea",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 125,
+      "sha256": "68a5801486f746dd1130942fde4567b298050c1a6a44a54954595eae12b522fe",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Tableau des trois plans SC06 bien aligné ; rubriques et début SC07 lisibles ; aucun mot tronqué dans les cellules ou le pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "68a5801486f746dd1130942fde4567b298050c1a6a44a54954595eae12b522fe",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 126,
+      "sha256": "f77b46ebbd78c8a36a619a9c2d2750e425e34dc755bab5932376637a7e775d32",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Storyboards SC07 à SC10 : intertitres, valeurs de durée et paragraphes continus bien rendus ; aucun chevauchement ni glyphes manquants.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "f77b46ebbd78c8a36a619a9c2d2750e425e34dc755bab5932376637a7e775d32",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 127,
+      "sha256": "194003d0fc17b2519e418a1d4640ead4b8641733d993ba50be91ed8d94817b9e",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "SC11/SC12 et début SC13 : texte dense mais net, intertitres non isolés ; aucune sortie des marges ; pied 127/168 correct.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "194003d0fc17b2519e418a1d4640ead4b8641733d993ba50be91ed8d94817b9e",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 128,
+      "sha256": "03ccd895204c203f872e1ad7a415b76328e9c5535ddf7afd93a4ef984dff6878",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "SC13 à SC15 : lignes longues correctement repliées, accents et codes P/I visibles ; pas de collision entre rubriques ni avec le pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "03ccd895204c203f872e1ad7a415b76328e9c5535ddf7afd93a4ef984dff6878",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 129,
+      "sha256": "296d452ff47bd8eee39ee59b197db9e16ac06d4c2153d4e54205762644d16ba6",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Contrats et sources : liens longs correctement repliés, soulignements nets, titres espacés ; aucun dépassement du corps ou du pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "296d452ff47bd8eee39ee59b197db9e16ac06d4c2153d4e54205762644d16ba6",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 130,
+      "sha256": "480d50f856dab7355dd04d847b37baabc4d872f5014a79e0f12d00f566161b6a",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Annexe H : titre complet, texte et caractères accentués lisibles ; tableau de déplacement commence par deux lignes entières, bordures propres.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "480d50f856dab7355dd04d847b37baabc4d872f5014a79e0f12d00f566161b6a",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 131,
+      "sha256": "10f8f43629ccbb8e1c970df35e39725fd2ca8b761fd88c4e44eed5510d4c7392",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Tableau de déplacement poursuivi proprement ; unités m/s², degrés et ± affichées ; paragraphes et pied sans défaut.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "10f8f43629ccbb8e1c970df35e39725fd2ca8b761fd88c4e44eed5510d4c7392",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 132,
+      "sha256": "f1811ab702086827ee4c8b8546abd697cc383a289778e5554e7e00f8fe897d08",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Sections rappel/interactions/sauvetages : titres distincts, texte aligné dans les marges ; début de chaîne livré conservé avec plusieurs lignes avant la coupure.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "f1811ab702086827ee4c8b8546abd697cc383a289778e5554e7e00f8fe897d08",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 133,
+      "sha256": "1c0041dcca3d3c8f165ad1c991ae5bbbce3ee2a8bd6efc5fea77dc074439a25e",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Tableau des trois rescapés lisible sur quatre colonnes ; identifiants complets ; nouveau tableau de ressources démarre sans ligne coupée ni pied chevauché.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "1c0041dcca3d3c8f165ad1c991ae5bbbce3ee2a8bd6efc5fea77dc074439a25e",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 134,
+      "sha256": "936b5a534851229924164acaaca1a9a6c0db9647b0ab0114ae2ae381c7eb8457",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Tableau des ressources poursuivi avec en-tête répété ; signes, valeurs et descriptions lisibles ; fin de paragraphe continue proprement page suivante.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "936b5a534851229924164acaaca1a9a6c0db9647b0ab0114ae2ae381c7eb8457",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 135,
+      "sha256": "0202934666f5d70e21aca53698644ef482e4c1cc2030920fb4b03b435a0c6046",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Radio, preuves et sauvegarde : flux de paragraphes lisible, titres complets, pas de veuve isolée ni de débordement ; pied 135/168 intact.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "0202934666f5d70e21aca53698644ef482e4c1cc2030920fb4b03b435a0c6046",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 136,
+      "sha256": "4d2faf2532c55d12d2a637862ffcd077c6f058bcb7584b8ab5703ac5079b8338",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Personnages Alex, Varga et début Ana : intertitres et blocs en gras distincts ; accents nets ; aucun texte coupé en fin de page.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "4d2faf2532c55d12d2a637862ffcd077c6f058bcb7584b8ab5703ac5079b8338",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 137,
+      "sha256": "c56a50e0f3d57ec9f22f8823821ed8f25ae5336a55c9697a1d7a42ece0800f4f",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fiches Ana/Samuel/Nora/Malik/Inès : blocs distincts, caractères et accents lisibles ; aucun intertitre isolé ou pied obstrué.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "c56a50e0f3d57ec9f22f8823821ed8f25ae5336a55c9697a1d7a42ece0800f4f",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 138,
+      "sha256": "384ec649a2ff453425d661b5af2548720059c5e06c1b780fa1e9b5bcba3f2db0",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fiches Inès/Alma/Sorel/équipes puis réglage : séparation claire, titre final suivi de texte ; marges et pied 138/168 propres.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "384ec649a2ff453425d661b5af2548720059c5e06c1b780fa1e9b5bcba3f2db0",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 139,
+      "sha256": "b7535a373e976393fd1d08176245241802bae082c187a7f7bf74b819012cbe12",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Sources et extension de campagne : titre long et hyperliens dans les marges ; corps régulier et pied net, sans clipping.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "b7535a373e976393fd1d08176245241802bae082c187a7f7bf74b819012cbe12",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 140,
+      "sha256": "ec2e405278b1ac2ced6c3dde68d4598214c08810c136f3076417b0e8f7889a2c",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fin de l’Annexe H : deux intertitres et leurs paragraphes entièrement lisibles ; espace blanc de fin d’annexe cohérent, pied correctement positionné.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "ec2e405278b1ac2ced6c3dde68d4598214c08810c136f3076417b0e8f7889a2c",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 141,
+      "sha256": "6a58e0e5fbe6ace7892239508d633e69e8f4c5eed8187cd414d98a649edd9cf6",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Annexe I : long titre complet sur une ligne ; tableau des états de secours sans clipping, colonnes lisibles ; pied dégagé.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "6a58e0e5fbe6ace7892239508d633e69e8f4c5eed8187cd414d98a649edd9cf6",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 142,
+      "sha256": "b26f996ce820371db89b7cde294817737f63bb9ad4fa50bb9302b74759a89836",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Portage et géométrie du treuil : coordonnées et signes visibles ; début du tableau chronologique avec première ligne entière ; pas de chevauchement de pied.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "b26f996ce820371db89b7cde294817737f63bb9ad4fa50bb9302b74759a89836",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 143,
+      "sha256": "446c6e799b466005664c635728a05557baaa1c8feb01e831e782fb30baa0ac8f",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Suite de chronologie avec en-tête répété ; corps dense mais net ; dernière ligne complète et séparée du pied 143/168.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "446c6e799b466005664c635728a05557baaa1c8feb01e831e782fb30baa0ac8f",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 144,
+      "sha256": "ba694c5eb933fc8b90cd3174372f57df70082d00aaa812868d26fafc99247a00",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Sauvegarde et contrat technique : tableau à trois colonnes lisible, noms de scripts contenus dans leurs cellules ; rubriques et pied nets.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "ba694c5eb933fc8b90cd3174372f57df70082d00aaa812868d26fafc99247a00",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 145,
+      "sha256": "73f6e0537a4953766b45ac3adc7c28777789dedc127f02041415f3911e1982ad",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fin Annexe I : titres et paragraphes de recette/production bien séparés ; texte lisible et pied 145/168 sans chevauchement.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "73f6e0537a4953766b45ac3adc7c28777789dedc127f02041415f3911e1982ad",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 146,
+      "sha256": "838ff8e7f6eabeba372a1471188dd1c27cc6e794bdda717e3f3cc581e20ffbf5",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Annexe J : titre complet ; tableau d’atmosphère lisible, valeurs et coordonnées intactes ; toutes les lignes restent dans les cellules.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "838ff8e7f6eabeba372a1471188dd1c27cc6e794bdda717e3f3cc581e20ffbf5",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 147,
+      "sha256": "8c4519499aee6459dfe6dedf05ecfe43144109eb5d1915cc8f3c76a1de85b6ca",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Suite du tableau d’atmosphère avec rappel d’en-tête ; rubriques confort/fonctionnement lisibles ; aucun caractère manquant ni dépassement.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "8c4519499aee6459dfe6dedf05ecfe43144109eb5d1915cc8f3c76a1de85b6ca",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 148,
+      "sha256": "c4751741a9f9568b7679e60bc185bae5e84a8b3c8b510eeaaa4bf8d3abf68ea7",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Tableau des fichiers : chemins repliés dans les cellules, responsabilités lisibles ; liens de références et titre de contraste complets ; continuation normale en bas.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "c4751741a9f9568b7679e60bc185bae5e84a8b3c8b510eeaaa4bf8d3abf68ea7",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 149,
+      "sha256": "fe23b4b6699947a514513f3dd780e0ee83496037f237b012d2690012dca287c4",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Courte conclusion de l’Annexe J, sept lignes visibles puis grand blanc de fin d’annexe ; aucun contenu coupé ; en-tête et pied 149/168 corrects.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "fe23b4b6699947a514513f3dd780e0ee83496037f237b012d2690012dca287c4",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 150,
+      "sha256": "154b5e4e8fbb7994556d8e3c0c919615c1448f05af9fdb1a3a455456f6a4f1ae",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Annexe K : titre et présentation lisibles ; tableau des réglages sur quatre colonnes, longue cellule FOV entièrement rendue et bordures intactes.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "154b5e4e8fbb7994556d8e3c0c919615c1448f05af9fdb1a3a455456f6a4f1ae",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 151,
+      "sha256": "e46dae09d0142621a4bf1a5342e61ac954edfbfbba43febacb78deb5a850c370",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Réglages continués avec en-tête répété ; listes numérotées, flèches Page haut/bas et unités lisibles ; titre final suivi de texte, pied dégagé.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "e46dae09d0142621a4bf1a5342e61ac954edfbfbba43febacb78deb5a850c370",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 152,
+      "sha256": "d6198fed117f5572f4edc89b5778690f97e1f08119f57f1d738728b043d71093",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Navigation, données et intégration : puces et chaînes techniques visibles, retours à la ligne réguliers ; aucun dépassement ni glyphes manquants.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "d6198fed117f5572f4edc89b5778690f97e1f08119f57f1d738728b043d71093",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 153,
+      "sha256": "27e85497758a8c57e076b2e266b7385c7a1bb3e42190982f372188c9b04b7fbf",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fin Annexe K : liste de vérification clairement espacée et textes techniques lisibles ; manifestations décrites sans problème de pagination ; pied net.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "27e85497758a8c57e076b2e266b7385c7a1bb3e42190982f372188c9b04b7fbf",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 154,
+      "sha256": "d421bcdf637948ccd66a2f4c7ec2ec0c65205c9cb4c064a03f2c6d9f83cdc23e",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Annexe L : titre complet et tableau des quatre onglets lisible ; ligne de sous-section 2.1 suivie de son texte, sans débordement.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "d421bcdf637948ccd66a2f4c7ec2ec0c65205c9cb4c064a03f2c6d9f83cdc23e",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 155,
+      "sha256": "f855a1cec0b218dc869e433b8e5657f281bab30e76802595b956762cb0e5811c",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "États des personnes et indices : tableau, puces et sous-sections alignés ; identifiants complets ; dernier paragraphe continue sans ligne tronquée.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "f855a1cec0b218dc869e433b8e5657f281bab30e76802595b956762cb0e5811c",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 156,
+      "sha256": "d869a6b3f507b5ab026cbbb0a2af5dcd0040b1d88fe62fe8589f5e5b94652474",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Bilan du refuge : tableau de données complet, texte en gras et liste numérotée lisibles ; pied 156/168 net et éloigné du corps.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "d869a6b3f507b5ab026cbbb0a2af5dcd0040b1d88fe62fe8589f5e5b94652474",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 157,
+      "sha256": "23a7f8e0c502a9d0c64801382e61a3c0b121971336e28367842e20438e0239ee",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Épilogue : deux tableaux narratifs et début du tableau de caméra lisibles ; chiffres, guillemets et colonnes restent dans les bordures ; pied intact.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "23a7f8e0c502a9d0c64801382e61a3c0b121971336e28367842e20438e0239ee",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 158,
+      "sha256": "3e1eab6d054d30997a23433cc084a578dccc6f0743584059125e2a9327546619",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Dernière ligne du tableau caméra avec en-tête répété ; sections de confort et données sans débordement ; aucune contradiction avec l’ouverture perceptive repérée.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "3e1eab6d054d30997a23433cc084a578dccc6f0743584059125e2a9327546619",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 159,
+      "sha256": "95fbcf28e87e595fbb4a392a1f05fb2f205df5d9e77d62c66a2bdc8fc0a61556",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Tableau des entrées snapshot : noms techniques repliés dans les cellules ; corps API et vérification lisible ; pied sans collision.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "95fbcf28e87e595fbb4a392a1f05fb2f205df5d9e77d62c66a2bdc8fc0a61556",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 160,
+      "sha256": "dbae6ccbd41773a997a283f21fe7d0e83242c42713bc9f14041a23562a6c8d25",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fin Annexe L : liens correctement repliés et rubrique de continuité claire ; aucune révélation prématurée du canon présentée comme jouable ; grand blanc de fin d’annexe sans contenu manquant.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "dbae6ccbd41773a997a283f21fe7d0e83242c42713bc9f14041a23562a6c8d25",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 161,
+      "sha256": "bec9a3bb398e0cee1fd7abbbacb1040145be1904f31e0bdfd6efa586e3f6bf62",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Annexe M : titre long complet, distinction canon/futur clairement lisible ; tableau de périmètre entier sans débordement, absence de poursuite/dégâts explicitée.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "bec9a3bb398e0cee1fd7abbbacb1040145be1904f31e0bdfd6efa586e3f6bf62",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 162,
+      "sha256": "51253eb2df0066a8899acfd62ede0728c95dfc3fa7a0f7a27f22a4d39c6bb1e5",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Carte d’escalade lisible sur quatre colonnes ; tableau des manifestations commence avec deux lignes entières ; valeurs et texte sans clipping ; progression précoce cohérente.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "51253eb2df0066a8899acfd62ede0728c95dfc3fa7a0f7a27f22a4d39c6bb1e5",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 163,
+      "sha256": "118fd5fb009a26468d6308bb3e1ab786049350e618fecbfecb437cbd9373face",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Tableau de manifestation poursuivi avec en-tête répété ; cellule Spa 26 entièrement lisible. Texte dense sans clipping, titre et pied de page dégagés. La présence est explicitement immobile, sans poursuite ni dégâts ; fusée décrite comme masque perceptif, arrêt des sons et restauration des traces conformes au contrat.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "118fd5fb009a26468d6308bb3e1ab786049350e618fecbfecb437cbd9373face",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 164,
+      "sha256": "f54974b5de703b02ac3c0a96a793681d4dd6f67b41973256ea89158d464fd29b",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Sections 6 à 8 entièrement lisibles, titres hiérarchisés et espacés, sans chevauchement ni ligne coupée. Progression explicitement située après l’ouverture : humains A21/A18, corroboration A17–A13 puis expériences ; aucune menace physique prématurée ajoutée au spa.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "f54974b5de703b02ac3c0a96a793681d4dd6f67b41973256ea89158d464fd29b",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 165,
+      "sha256": "8cc430d2c8be4076a222a039f4ec91f065daf6ea5a1aa695a03941660e68db96",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Tableau des cinq programmes de fiction à quatre colonnes lisible, avec retours de ligne contenus dans les cellules. Sections bunker et I01 dégagées ; dernière phrase poursuit normalement en page suivante. Destination infernale réelle et secours conservés décrits sans contradiction avec le doute initial.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "8cc430d2c8be4076a222a039f4ec91f065daf6ea5a1aa695a03941660e68db96",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 166,
+      "sha256": "fd342ef7b187915f1cfe556a19b5fa4aa8fde1ddcb5636ebea89bbc0b22e96aa",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Suite de phrase correctement positionnée en tête. Titres I02, I03, I04 et personnages distincts, aucune superposition ni clipping. Sections infernales et retour à Nacre lisibles, séparées du périmètre actuel ; paragraphe final poursuivi en page suivante.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "fd342ef7b187915f1cfe556a19b5fa4aa8fde1ddcb5636ebea89bbc0b22e96aa",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 167,
+      "sha256": "9000469ae004409388b012303dba9be244f55ece9a82195873a331911183ee14",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Texte dense et titres 15–16 entièrement lisibles ; glyphes accentués, tirets des plages E11–E13 et E14–E16 corrects. Aucune collision avec le pied de page. Combat humain explicitement futur et créatures matérielles distinguées du perceptif E00 ; aucune contradiction avec l’ouverture discrète relevée.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "9000469ae004409388b012303dba9be244f55ece9a82195873a331911183ee14",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    },
+    {
+      "page": 168,
+      "sha256": "6db1666af3b4fad113d2e840bdf2da26fe239277fcb7f8f47275b26ad57e7221",
+      "status": "pass",
+      "reviewer": "/root/v08_delivery",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": "Fin de phrase depuis la page précédente et lien documentaire lisibles. Titre 17, catalogue en gras et dernier paragraphe bien espacés, sans clipping. Grande réserve blanche normale en fin de document ; pied 168 / 168 dégagé. Les 60 props, E00 et 16 archétypes futurs sont clairement distingués du périmètre effectivement intégré.",
+      "review_basis": "initial local canonical render; exact PNG identity with corrected local render verified",
+      "canonical_final_sha256": "6db1666af3b4fad113d2e840bdf2da26fe239277fcb7f8f47275b26ad57e7221",
+      "canonical_final_dimensions": [
+        1414,
+        2000
+      ]
+    }
+  ],
+  "all_pass": true,
+  "reviewed_utc": "2026-11-25T07:47:44.451959+00:00",
+  "source_commit": "90c7c23d1f00c1c007967083bc73364a4f34debe",
+  "evidence_commit": "8f0ffc5fc65d11384353a295d492cebc382e14fd",
+  "word_file": "docs/The-Tower-Descent-Bible-v0.8.docx",
+  "word_sha256": "ab70f7cd87ee83daba8889da416e4bdc93b3aa429945af1c9c3b3472ed820e81",
+  "local_reviewed_word_sha256": "58d3199114ca911410c9ac77243276a6d2c9df6c0d61c87e8add11ad67724bfe",
+  "uncompressed_docx_members_identical": true,
+  "docx_members_compared": 19,
+  "canonical_renderer": "/home/agent/.codex/skills/builtins/documents/render_docx.py",
+  "canonical_final_page_count": 168,
+  "canonical_final_pngs_identical_to_reviewed_local_pngs": 168,
+  "changed_canonical_pages": [],
+  "source_count": 15,
+  "sources": [
+    {
+      "file": "docs/BIBLE_DU_JEU.md",
+      "bytes": 96420,
+      "sha256": "51133202ab873da5c15dec8db1f3029ec99f2f4f278c05633854c2722140165b"
+    },
+    {
+      "file": "docs/CATALOGUE_ETAGES.md",
+      "bytes": 87574,
+      "sha256": "96a9abe47f104f4891dd1f365c5107f891a676fdb78dfc0affad1a18c35d741f"
+    },
+    {
+      "file": "docs/SYSTEMES_PROCEDURAUX.md",
+      "bytes": 27193,
+      "sha256": "733f1104dc137d5f5bde629a24feb1021d12df28f407acded5e248225f597c13"
+    },
+    {
+      "file": "docs/ARCHITECTURE_ET_PORTAGE_UE5.md",
+      "bytes": 30157,
+      "sha256": "74928ee09ec5f5a6572c10555c45b7872c5145d4d78469095be5b5fe0dcaed13"
+    },
+    {
+      "file": "docs/EFFONDREMENT_EN_DIRECT.md",
+      "bytes": 24335,
+      "sha256": "2edf417356bffeee149fcbe62353615108a8bb2d73c64d462c2361da422f6e9f"
+    },
+    {
+      "file": "docs/COMMUNICATIONS_ET_EQUIPES.md",
+      "bytes": 15178,
+      "sha256": "cdd3a5d4126f0c62bb235662a57c10842acf9392cf1daf4359ea9dcf4204da0b"
+    },
+    {
+      "file": "docs/PROPS_INTERACTIONS.md",
+      "bytes": 66318,
+      "sha256": "80a308f85b053f856213073d9efef45f2cf97b9d28f48832a8032aed86cc7ca2"
+    },
+    {
+      "file": "docs/ENNEMIS_STATISTIQUES.md",
+      "bytes": 37635,
+      "sha256": "6ce3de9eba1bb8ffbeea0ec21d357997b17afebb6e0b6bc25ca5d3d2af0ef78b"
+    },
+    {
+      "file": "docs/SCENES_CINEMATIQUES.md",
+      "bytes": 44371,
+      "sha256": "35cff66a22ff575194bfcab234c15d036112ba30b435ba2094c50111ea3ad3fc"
+    },
+    {
+      "file": "docs/GAMEPLAY_DETAILLE.md",
+      "bytes": 38645,
+      "sha256": "1a60aaef243f924d9b4ffdbff9f282948d28769d9bb7f6e5bed8ca801b67c209"
+    },
+    {
+      "file": "docs/SAUVETAGE_V0.6.md",
+      "bytes": 16322,
+      "sha256": "a2df21a6974262c1024e027a3a5b38ff35024722e406fb4bca4d052cf13552eb"
+    },
+    {
+      "file": "docs/AMBIANCE_V0.6.md",
+      "bytes": 9780,
+      "sha256": "11d0e639631deb639a48beeff3d7047395fee333f2f33eefa6890640b01c3dc7"
+    },
+    {
+      "file": "docs/CONFORT_V0.6.md",
+      "bytes": 10835,
+      "sha256": "38f6f01f567c4c6c5986e9bd73d5ff8e8e4bbc4122a5bb8d2ff3d3aeaa0ca2b5"
+    },
+    {
+      "file": "docs/DOSSIER_ET_EPILOGUE_V0.7.md",
+      "bytes": 20860,
+      "sha256": "b6e6d0f98fb804b5036910bc828e40cf0e348b4ef2efc66745129609effc9386"
+    },
+    {
+      "file": "docs/PROGRESSION_HORREUR_V0.8.md",
+      "bytes": 26045,
+      "sha256": "8c376a2f97d4090d4d61a3e8a40fff68d063c0539d3abbcdedc02ac3614ca277"
+    }
+  ],
+  "source_words": 83314,
+  "paragraph_count": 1947,
+  "table_count": 62,
+  "method": "The exact CI Word was rendered with the canonical document renderer. Every final canonical PNG has the same SHA256 as an individually inspected local PNG; the three corrected pages 90, 97 and 107 were separately reopened after correction. No approval is inferred from text extraction or page count."
+}
