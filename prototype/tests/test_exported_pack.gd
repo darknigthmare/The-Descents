@@ -7,8 +7,11 @@ const Store = preload("res://scripts/save_store.gd")
 const Preferences = preload("res://scripts/preferences_store.gd")
 const Director = preload("res://scripts/cinematic_director.gd")
 const FieldProps = preload("res://scripts/field_props.gd")
-const TEST_PATH: String = "user://qa_v06_external_pack.json"
-const PREFS_PATH: String = "user://qa_v06_external_pack.cfg"
+const Dossier = preload("res://scripts/mission_dossier.gd")
+const DossierPanel = preload("res://scripts/mission_dossier_panel.gd")
+const Epilogue = preload("res://scripts/epilogue_director.gd")
+const TEST_PATH: String = "user://qa_v07_external_pack.json"
+const PREFS_PATH: String = "user://qa_v07_external_pack.cfg"
 var failures: Array[String] = []
 var checks: int = 0
 
@@ -19,7 +22,7 @@ func _initialize() -> void:
 
 func _run() -> void:
 	_cleanup()
-	_check(ProjectSettings.get_setting("application/config/version", "") == "0.6.0", "Packed project has the wrong application version.")
+	_check(ProjectSettings.get_setting("application/config/version", "") == "0.7.0", "Packed project has the wrong application version.")
 	_check(not ResourceLoader.exists("res://tests/test_save.gd") and not ResourceLoader.exists("res://tests/test_cinematic_integration.gd"), "Developer tests unexpectedly shipped inside the pack.")
 	var scene: PackedScene = load("res://scenes/main.tscn")
 	_check(scene != null, "The mounted pack has no loadable main scene.")
@@ -38,6 +41,8 @@ func _run() -> void:
 	_check(not mission.started and mission.hud.menu.visible and not mission.hud.cinematic.visible and mission.menu_context["id"] == "approach", "Packed scene failed to enter its accessible initial menu.")
 	_check(mission.world_data.get("helicopters", []).size() == 2 and mission.world_data.get("rotors", []).size() == 2, "Mounted resources lost one of the two rescue helicopters.")
 	_check(ResourceLoader.exists("res://scripts/rescue_presentation.gd") and ResourceLoader.exists("res://scripts/maritime_atmosphere.gd"), "The mounted pack lost the v0.6 rescue or atmosphere module.")
+	_check(ResourceLoader.exists("res://scripts/mission_dossier.gd") and ResourceLoader.exists("res://scripts/mission_dossier_panel.gd") and ResourceLoader.exists("res://scripts/epilogue_director.gd"), "The mounted pack lost a v0.7 dossier or epilogue module.")
+	_check(not ResourceLoader.exists("res://tests/test_mission_dossier.gd") and not ResourceLoader.exists("res://tests/test_epilogue.gd") and not ResourceLoader.exists("res://tests/test_epilogue_integration.gd"), "The v0.7 developer tests unexpectedly shipped inside the pack.")
 	_check(mission.rescue_visuals != null and mission.rescue_visuals.is_inside_tree(), "The exported main scene did not instantiate its rescue presentation.")
 	var director = Director.new()
 	director.start("boot")
@@ -47,6 +52,16 @@ func _run() -> void:
 	var approach: Dictionary = Director.staging_sample(3.0)
 	var parked: Dictionary = Director.staging_sample(28.0)
 	_check(approach.get("aircraft", []).size() == 2 and parked.get("aircraft", []).size() == 2 and approach["aircraft"][0]["offset"].distance_to(parked["aircraft"][0]["offset"]) > 1.0, "Packed arrival has no actual aircraft approach motion.")
+	var epilogue = Epilogue.new()
+	epilogue.start()
+	_check(epilogue.active and epilogue.duration() == 15.0, "Packed closing director did not start its fifteen-second sequence.")
+	for shot: int in range(3):
+		epilogue.elapsed = float(shot) * 5.0 + 2.5
+		var card: Dictionary = epilogue.presentation()
+		var camera: Dictionary = epilogue.camera_sample()
+		_check(card["card"] == "epilogue" and card["shot"] == shot and not str(card["message"]).is_empty() and (camera["position"] as Vector3).is_finite() and (camera["target"] as Vector3).is_finite(), "Packed closing director lost a staged shot or transmission.")
+	epilogue.finish()
+	_check(not epilogue.active and epilogue.elapsed == 15.0 and epilogue.presentation()["progress"] == 1.0, "Packed closing director did not reach its stable final state.")
 	_check(ResourceLoader.exists("res://scripts/presentation_geometry.gd") and ResourceLoader.exists("res://shaders/weathered_surface.gdshader") and ResourceLoader.exists("res://shaders/rotor_wash.gdshader"), "The final procedural model or material resources are absent from the pack.")
 	_check(mission.audio_score.stream != null and mission.audio_rotors.stream != null, "Export is missing the cinematic audio resources.")
 	mission._start_new(928401)
@@ -104,6 +119,15 @@ func _run() -> void:
 	_check(mission.player.nearest_floor() == 27 and mission.incident.phase == "aftermath" and mission.rescued == ["survivor_30", "survivor_28"], "Packed loading did not reconstruct the saved floor, incident and rescue progress.")
 	_check(not mission.radio.is_busy() and mission.radio.history_snapshot() == saved["transmissions"] and mission.radio_events == saved["radio_events"], "Packed loading replayed or altered the received radio exchange.")
 	_check(mission.world.roof_rescued_people["survivor_30"].visible and mission.world.roof_rescued_people["survivor_28"].visible and not mission.world.roof_rescued_people["survivor_26"].visible, "The exported world failed to rebuild the named reception figures.")
+	var dossier: Dictionary = Dossier.build(saved)
+	_check(dossier["rescued_count"] == 2 and dossier["survivors"][0]["confirmed"] and dossier["survivors"][1]["confirmed"] and not dossier["survivors"][2]["confirmed"], "Packed dossier does not distinguish confirmed rescues from the remaining casualty.")
+	_check(dossier["transmissions"] == saved["transmissions"] and dossier["incident_state"] == "aftermath", "Packed dossier lost the received words or confirmed structural situation.")
+	_check(mission.hud.journal_panel.get_script() == DossierPanel, "The exported HUD did not instantiate the four-tab dossier panel.")
+	mission.hud.journal_panel.present(saved)
+	for tab_id: String in ["situation", "survivors", "clues", "transmissions"]:
+		mission.hud.journal_panel.select_tab(tab_id)
+		_check(mission.hud.journal_panel.selected_tab == tab_id and mission.hud.journal_panel.journal_text.text == dossier["pages"][tab_id], "Packed dossier tab does not display its matching mission projection.")
+	_check(FileAccess.get_file_as_string(TEST_PATH) == before and mission.radio.history_snapshot() == saved["transmissions"], "Reading the exported dossier rewrote the checkpoint or received-radio ledger.")
 	mission.free()
 	await process_frame
 	await process_frame
@@ -152,7 +176,7 @@ func _check(condition: bool, message: String) -> void:
 
 func _finish() -> void:
 	if failures.is_empty():
-		print("PASS exported pack: %d checks; mounted v0.5 resources, menu/cinematic directors, animated helicopters, twelve field props and paused inspection, imported audio, schema-3 radio persistence and isolated restoration. Linux headless engine loads the pack; this is not a Windows executable or browser launch." % checks)
+		print("PASS exported pack: %d checks; mounted v0.7 resources, menu/cinematic directors, animated helicopters, twelve field props and paused inspection, imported audio, schema-3 radio persistence, isolated restoration, four-tab mission dossier and three-shot rescue epilogue. Linux headless engine loads the pack; this is not a Windows executable or browser launch." % checks)
 		quit(0)
 	else:
 		for failure: String in failures:

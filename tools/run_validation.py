@@ -18,6 +18,7 @@ REQUIRED = {
     "incident_effects", "team_reactions", "radio", "radio_integration", "cinematics", "preferences",
     "cinematic_integration", "field_props", "world_presentation", "arrival_staging", "field_integration",
     "rescue_presentation", "comfort", "atmosphere",
+    "mission_dossier", "epilogue", "epilogue_integration",
 }
 
 
@@ -56,7 +57,7 @@ def main() -> None:
     after = runtime_hashes()
     report = {
         "version": version(),
-        "label": "v0.6 visible rescue, maritime atmosphere and accessible comfort settings",
+        "label": "v0.7 persistent mission dossier, contextual debrief and in-game rescue epilogue",
         "validated_utc": datetime.now(timezone.utc).isoformat(),
         "engine": engine,
         "runtime_freeze_commit": git_head(),

@@ -165,6 +165,14 @@ static func _normalize(data: Dictionary, from_json: bool, schema: int = SAVE_VER
 	if typeof(data["completed"]) != TYPE_BOOL:
 		return {}
 	result["completed"] = data["completed"]
+	if result["completed"]:
+		if result["floor"] != 25:
+			return {}
+		# A closing film names these three received people. A hand-edited or
+		# corrupt checkpoint must not turn missing receptions into a completed run.
+		for id: String in ["survivor_30", "survivor_28", "survivor_26"]:
+			if id not in result["rescued"]:
+				return {}
 	if schema >= 2:
 		if typeof(data["incident_state"]) != TYPE_STRING or data["incident_state"] not in ["intact", "aftermath"]:
 			return {}

@@ -1,10 +1,45 @@
-# État de livraison — version 0.6
+# État de livraison — version 0.7
 
-**24 novembre 2026 — version 0.6.0.**
+**25 novembre 2026 — candidat 0.7.0 en préparation.**
 
-La tranche poursuit l’ouverture cinématique et l’arrivée animée avec un portage visible, un harnais de treuil relié à son câble, une réception accompagnée au poste médical, une ambiance maritime plus cohérente et les réglages complets de confort. Le périmètre jouable reste le toit d’Aube et les étages 30–25.
+La 0.7 poursuit la tranche avec un dossier de mission à quatre onglets, un bilan issu des faits réels et un épilogue en jeu de quinze secondes. Le périmètre jouable reste le toit d’Aube et les étages 30–25. La clôture exige les trois réceptions confirmées, l’incident stabilisé et l’activation du relais ; elle n’ouvre aucun étage supplémentaire.
 
-## Résultats vérifiés
+## Statut de la 0.7
+
+Les résultats v0.7 et leurs liens d’exécution restent à compléter après les tests, les exports et la revue. Les nombres ci-dessous décrivent **le contrat à satisfaire**, et non des résultats déjà obtenus. Les preuves v0.6 conservées plus bas ne valent pas validation de ce nouveau candidat.
+
+| Élément | Contrat v0.7 | État à renseigner |
+| --- | --- | --- |
+| Suites sources | 24 suites obligatoires, dont dossier, épilogue et intégration de clôture ; journaux sans erreur moteur | Résultats de `validation/v0.7/VERIFICATION.json` attendus |
+| Exports Windows et Web | Deux constructions à partir du runtime testé et gelé | Rapport `validation/v0.7/EXPORTS.json` attendu |
+| Ressources embarquées | Deux packs montés dans des dossiers vides, avec dossier, panel et réalisateur de clôture présents | Rapport `validation/v0.7/EXPORTED_PACK_VERIFICATION.json` attendu |
+| Rendu natif | 30 captures exactes, 1440 × 900, incluant quatre onglets, trois plans de clôture et bilan | Provenance `captures/v0.7/CI_PROVENANCE.json` attendue |
+| Revue du jeu | Chaque image finale examinée et reliée à son SHA256 | Revue `validation/v0.7/VISUAL_REVIEW.json` attendue |
+| Bible complète | 14 sources intégrales, Word et PDF, chaque page rendue ; nombre de pages calculé après construction | Rapport `validation/v0.7/DOCUMENT_BUILD.json` attendu |
+| Revue documentaire | Chaque page finale examinée ; mêmes sources, Word, PDF et PNG que la construction | Revue `validation/v0.7/DOCUMENT_REVIEW.json` attendue |
+| Archives | ZIP Windows et Sources, 30 captures approuvées dans Sources, contrôle d’intégrité et de provenance | Rapport `../releases/VERIFICATION_V0.7.json` attendu |
+
+La [procédure v0.7](VALIDATION_V0.7.md) conserve deux phases : **review** construit les preuves ; **release** exige les revues correspondantes avant de reconstruire et vérifier les exports et archives. Le workflow ne produit pas d’approbation visuelle automatique. La demande de chaque phase doit être le seul fichier d’un commit distinct, après le code et les documents concernés.
+
+## Comportements ajoutés au candidat
+
+| Domaine | Contrat de la 0.7 |
+| --- | --- |
+| Dossier | Situation, Rescapés, Indices et Transmissions ; projection des ressources, de la structure et du point sûr |
+| Vérité des secours | Une personne au harnais ou au treuil reste distincte d’une réception confirmée |
+| Preuves | Aucun texte d’indice non collecté divulgué ; ordre de réception conservé pour l’historique radio |
+| Épilogue | Trois plans de cinq secondes dans le monde réel, passables et suspendus par Échap |
+| Bilan | Noms, durée, preuves et ressources de la mission ; retour au dossier, relecture et accueil |
+| Persistance | Checkpoint achevé écrit avec succès avant la présentation ; erreur réessayable au relais, schéma 3 conservé |
+| Reprise | Chargement d’une mission terminée directement au bilan ; aucune relecture automatique |
+| Relecture | Aucun nouveau sauvetage, dialogue archivé, temps consommé ou fichier réécrit |
+| Documentation | Quatorzième source intégrée à la bible ; anciennes annexes de sauvetage, ambiance et confort conservées |
+
+L’[annexe de dossier et d’épilogue](DOSSIER_ET_EPILOGUE_V0.7.md) et le [contrat des captures](CAPTURES_V0.7.md) détaillent les états à examiner. La compilation et les tests logiques ne suffisent pas à valider la composition des plans, la lisibilité du journal ou le rendu des pages.
+
+## Référence validée conservée de la v0.6
+
+La livraison précédente, datée du 24 novembre 2026, a établi le portage visible, le harnais de treuil, la réception accompagnée, l’ambiance maritime et les réglages de confort. Ses résultats et archives ci-dessous restent attribués à cette version historique.
 
 | Élément | Résultat | Preuve |
 | --- | --- | --- |
@@ -45,7 +80,7 @@ La signature du studio dure quinze secondes et l’arrivée vingt-huit secondes 
 
 Le parcours conserve Ana Rios, Samuel Breton et Nora Haddad, trois preuves, deux réserves, douze observations facultatives, rappel guidé, ancrages, radio, journal, lampe, fusées et refuge. Après le premier sauvetage et le départ des appareils, l’observation à la baie Est du 29 déclenche l’effondrement. Le détour après l’impact et le repli de Bravo restent liés à l’état stable de l’incident. La sauvegarde reste au schéma 3.
 
-## Livrables et documents
+## Livrables validés de la v0.6 conservés
 
 - [Windows x64 v0.6](../releases/The-Tower-Descent-v0.6-Windows-x64.zip) et [démarrage](DEMARRAGE_WINDOWS.md).
 - [Sources v0.6](../releases/The-Tower-Descent-v0.6-Sources.zip).
@@ -58,12 +93,12 @@ Les anciennes archives restent conservées. La PR reste ouverte en brouillon sur
 
 ## Limites des essais et de la production
 
-Le jeu et les captures utilisent **Godot 4.7.2 officiel, Compatibility**, sous Linux pour la construction. Les ressources du Windows x64 et du Web ont été chargées séparément sous Godot Linux. Ce contrôle ne constitue pas une exécution de l’EXE sur un PC Windows ni une partie Web dans un navigateur. Aucun relevé de performances sur machines cibles n’est revendiqué.
+Dans la livraison v0.6 citée ici, le jeu et les captures utilisent **Godot 4.7.2 officiel, Compatibility**, sous Linux pour la construction. Les ressources de ses Windows x64 et Web ont été chargées séparément sous Godot Linux. Ce contrôle ne constitue pas une exécution de l’EXE sur un PC Windows ni une partie Web dans un navigateur. Aucun relevé de performances sur machines cibles n’est revendiqué.
 
-La revue du document porte sur le PDF issu du Word et ses pages rendues par LibreOffice/Poppler. La police demandée Arial est résolue en Liberation Sans sur ce runner. Le rendu peut varier dans une autre installation Word. La mise en page des 139 pages produites ici a été examinée.
+La revue documentaire v0.6 porte sur son PDF issu du Word et ses pages rendues par LibreOffice/Poppler. La police demandée Arial est résolue en Liberation Sans sur ce runner. Le rendu peut varier dans une autre installation Word. La mise en page des 139 pages de cette livraison historique a été examinée ; cela ne préjuge pas de la pagination ni de la revue v0.7.
 
 Figures, hélicoptères, sangles, poses et décors sont procéduraux. La réception suit des trajectoires préparées, sans navigation autonome, contacts physiques des mains ou animation faciale. Le câble est calculé ; les cinq secondes de treuil compressent le temps de secours. Les sous-titres sont présents ; les voix ne sont pas doublées. Le remappage complet reste à produire. Le fond des options conserve une transparence légère sans gêner les contrôles.
 
 La campagne complète, Alma, la piscine, l’intérieur d’Hespérie, les cavernes, le bunker, le seuil 666, les fins, Mountain Hole et UE5 gardent leur statut de conception. Ces cibles sont décrites dans la bible et ne sont pas annoncées comme des niveaux jouables livrés.
 
-Les contrats détaillés figurent dans [Sauvetage](SAUVETAGE_V0.6.md), [Ambiance](AMBIANCE_V0.6.md), [Confort](CONFORT_V0.6.md), [Gameplay](GAMEPLAY_DETAILLE.md) et [Scènes](SCENES_CINEMATIQUES.md).
+Les contrats détaillés figurent dans [Sauvetage](SAUVETAGE_V0.6.md), [Ambiance](AMBIANCE_V0.6.md), [Confort](CONFORT_V0.6.md), [Gameplay](GAMEPLAY_DETAILLE.md), [Scènes](SCENES_CINEMATIQUES.md) et [Dossier et épilogue](DOSSIER_ET_EPILOGUE_V0.7.md). Les noms historiques des trois annexes v0.6 sont conservés ; leurs contrats restent applicables à la tranche actuelle.

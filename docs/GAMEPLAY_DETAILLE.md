@@ -1,6 +1,6 @@
 # Gameplay détaillé, réglages et personnages
 
-**The Tower Descent — version 0.6.0.** Les valeurs désignées « actuelles » proviennent du prototype. Les valeurs « cibles » sont des propositions de réglage pour une prochaine tranche et doivent être éprouvées en jeu. Une fiche de conception ne signifie pas que la fonction correspondante est déjà programmée. Cette annexe complète la bible avec des contrats utilisables par la conception, l’animation, le son et les essais.
+**The Tower Descent — version 0.7.0.** Les valeurs désignées « actuelles » proviennent du prototype. Les valeurs « cibles » sont des propositions de réglage pour une prochaine tranche et doivent être éprouvées en jeu. Une fiche de conception ne signifie pas que la fonction correspondante est déjà programmée. Cette annexe complète la bible avec des contrats utilisables par la conception, l’animation, le son et les essais.
 
 ## 1 Expérience recherchée et boucles
 
@@ -125,11 +125,15 @@ L’appel R demande une réponse contextuelle. Pendant un portage ou un treuilla
 
 L’écho facultatif de Bravo attend Samuel confirmé, l’après-impact et six secondes calmes au 27. La vérification attend ensuite deux secondes calmes au 27, au 25 ou au toit. Le portage, le treuil, la corde, la pause, l’arrivée et une radio occupée empêchent l’émission. Les événements sont enregistrés une seule fois. La progression principale ne dépend pas de leur écoute.
 
-Une preuve actuelle est une interaction collectée et mémorisée. La campagne devra distinguer document, témoignage et observation physique. Deux occurrences d’un même enregistrement ne constituent pas deux preuves indépendantes. Le journal peut proposer « confirmé », « rapporté » et « à vérifier » sans dire au joueur quelle interprétation finale adopter.
+Une preuve actuelle est une interaction collectée et mémorisée.
+
+Le dossier de la 0.7 sépare Situation, Rescapés, Indices et Transmissions. Il affiche les noms et les états réels de secours, conserve la distinction entre portage et réception, et masque le contenu des pièces non collectées. Changer de rubrique, lire ou fermer le journal ne consomme ni temps, ni ressource, ni nouvelle entrée d’historique. La campagne devra distinguer document, témoignage et observation physique. Deux occurrences d’un même enregistrement ne constituent pas deux preuves indépendantes. Le journal peut proposer « confirmé », « rapporté » et « à vérifier » sans dire au joueur quelle interprétation finale adopter.
 
 ## 8 Objectifs, sauvegarde et échec
 
 La mission initiale se termine lorsque l’incident est achevé, les trois personnes sont confirmées et le relais du refuge est activé. Atteindre le 25 trop tôt doit donner une action de retour explicite. Lire toutes les preuves ou entendre l’écho de Bravo n’est pas nécessaire à cette réussite.
+
+La première clôture exige la sauvegarde achevée au 25 puis lance un épilogue en jeu de quinze secondes, composé de trois plans de cinq secondes. Un échec d’écriture laisse le personnage et le HUD disponibles au refuge, signale l’erreur et permet de réessayer le relais ; aucun épilogue n’est lancé. E, Entrée ou le bouton de passage rejoint le bilan ; Échap suspend et reprend la séquence. Les mouvements réduits gardent chaque cadrage fixe. Le bilan montre les rescapés, les preuves collectées, le temps et les ressources de la mission, puis permet de rouvrir le journal, revoir l’épilogue ou revenir à l’accueil. Le chargement d’une mission achevée présente directement ce bilan. Aucun étage 24 jouable, ennemi final ou score de prestige n’est créé par cette clôture.
 
 Le schéma courant de sauvegarde est **3**. Il conserve le monde, les personnes, ressources et objets consommés, ainsi que le journal et les événements radio. Les anciens schémas 1 et 2 sont validés et migrés en mémoire sans réécrire le fichier à la simple lecture. Les transmissions historiques ne sont pas rejouées en file de sous-titres après reprise. Les préférences de confort sont indépendantes de la mission.
 
@@ -187,7 +191,7 @@ Les fiches suivantes servent à écrire les comportements et dialogues. Leurs mo
 
 **Peur et tension.** Il craint de devenir une charge pour l’autre équipe, ce qui peut le pousser à retarder une demande d’aide. Le joueur peut lui fournir un relais ou une route ; l’écriture doit montrer la conséquence avant une éventuelle séparation.
 
-**Fonction et cible.** Allié de mission, pas compagnon autonome livré en 0.6.0. Une première version pourrait utiliser des postes préparés et des transitions contrôlées, puis une navigation locale. Les états utiles sont engagé, contact établi, route partagée, isolé et pris en charge. Sa survie future dépend de décisions documentées, jamais d’un silence aléatoire destiné à surprendre.
+**Fonction et cible.** Allié de mission, pas compagnon autonome livré en 0.7.0. Une première version pourrait utiliser des postes préparés et des transitions contrôlées, puis une navigation locale. Les états utiles sont engagé, contact établi, route partagée, isolé et pris en charge. Sa survie future dépend de décisions documentées, jamais d’un silence aléatoire destiné à surprendre.
 
 ### Inès Valen — distinguer une estimation d’un fait
 

@@ -44,6 +44,13 @@ func _initialize() -> void:
 		var invalid: Dictionary = _fixture()
 		invalid[pair[0]] = pair[1]
 		invalid_cases.append(invalid)
+	for missing_id: String in ["survivor_30", "survivor_28", "survivor_26"]:
+		var incomplete: Dictionary = second.duplicate(true)
+		incomplete["rescued"].erase(missing_id)
+		invalid_cases.append(incomplete)
+	var misplaced: Dictionary = second.duplicate(true)
+	misplaced["floor"] = 30
+	invalid_cases.append(misplaced)
 	var missing: Dictionary = _fixture()
 	missing.erase("version")
 	invalid_cases.append(missing)
@@ -76,6 +83,23 @@ func _initialize() -> void:
 	_write_text(JSON.stringify(json_invalid))
 	_check(Store.load_data(TEST_PATH).is_empty(), "An unsupported saved schema version was silently accepted.")
 	_test_migration()
+	for schema: int in [1, 2, 3]:
+		var inconsistent: Dictionary = second.duplicate(true)
+		inconsistent["version"] = schema
+		inconsistent["rescued"] = ["survivor_30"]
+		if schema < 3:
+			inconsistent.erase("transmissions")
+			inconsistent.erase("radio_events")
+		if schema == 1:
+			inconsistent.erase("incident_state")
+		var original: String = JSON.stringify(inconsistent)
+		_write_text(original)
+		_check(Store.load_data(TEST_PATH).is_empty(), "Schema %d invented completion from an incomplete reception ledger." % schema)
+		_check(FileAccess.get_file_as_string(TEST_PATH) == original, "Rejecting an inconsistent completion rewrote its bytes.")
+		inconsistent["rescued"] = second["rescued"].duplicate()
+		inconsistent["floor"] = 30
+		_write_text(JSON.stringify(inconsistent))
+		_check(Store.load_data(TEST_PATH).is_empty(), "Schema %d accepted a final checkpoint outside refuge 25." % schema)
 	_test_radio_schema()
 	_check(Store.save_data(source, TEST_PATH) == OK, "A corrupt save could not be replaced by a valid checkpoint.")
 	var orphan: FileAccess = FileAccess.open(TEST_PATH + ".tmp", FileAccess.WRITE)

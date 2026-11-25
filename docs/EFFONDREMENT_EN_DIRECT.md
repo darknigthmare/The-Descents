@@ -1,6 +1,6 @@
 # The Tower Descent — Effondrement en direct
 
-**Version 0.6.0 — Incident, équipes et continuité cinématique — 24 novembre 2026**
+**Version 0.7.0 — Incident, équipes et continuité cinématique — 25 novembre 2026**
 
 ## 1. Décision de direction
 
@@ -10,7 +10,7 @@ L’événement doit transformer un lieu que le joueur vient de comprendre. Il a
 
 La scène est un événement réel du récit. Les incertitudes sur les hallucinations apparaissent dans ce qui suit ; elles n’effacent ni l’effondrement, ni les sauvetages confirmés.
 
-## 2. Périmètre de la version 0.6.0
+## 2. Périmètre de la version 0.7.0
 
 | Élément | Périmètre retenu |
 | --- | --- |
@@ -25,6 +25,7 @@ La scène est un événement réel du récit. Les incertitudes sur les hallucina
 | Sauvetage | Puits et noyau intérieur utilisables ; personnes confirmées visibles et nommées au poste médical |
 | Communications | Sous-titres ordonnés, alertes prioritaires, 32 transmissions conservées et écho facultatif après Samuel |
 | Sauvegarde | Schéma 3, états `intact` et `aftermath`, données radio et reprise avant ou après la scène |
+| Clôture au refuge | Dossier à quatre onglets et épilogue de 15 s conservant l’après-impact, les rescapés confirmés et l’absence de contact authentifié avec Bravo |
 | Production ultérieure | Approche aérienne complète, personnages détaillés et animés, doublage, effets finaux, campagne et portage UE5 |
 
 Ce dossier décrit le contrat de la tranche et les propositions de mise en scène. Les scripts de voix et d’acting ci-dessous ne constituent pas des enregistrements ou animations livrés. Le [rapport d’état](ETAT_DE_LIVRAISON.md) porte les résultats de vérification ; aucun résultat de test n’est annoncé dans ce document.

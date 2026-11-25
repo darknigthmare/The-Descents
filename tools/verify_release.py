@@ -13,6 +13,7 @@ from zipfile import ZipFile
 
 from capture_evidence import EXPECTED_CAPTURES
 from qa_common import DOCUMENT_SOURCES, runtime_hashes
+from run_validation import REQUIRED
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = re.search(r'config/version="([^"]+)"', (ROOT / "prototype/project.godot").read_text()).group(1)
@@ -73,11 +74,15 @@ def main() -> None:
         f"docs/validation/v{SHORT}/DOCUMENT_BUILD.json",
         "prototype/scripts/rescue_presentation.gd", "prototype/scripts/maritime_atmosphere.gd",
         "prototype/tests/test_rescue_presentation.gd", "prototype/tests/test_atmosphere.gd", "prototype/tests/test_comfort.gd",
+        "prototype/scripts/mission_dossier.gd", "prototype/scripts/mission_dossier_panel.gd",
+        "prototype/scripts/epilogue_director.gd", "prototype/tests/test_mission_dossier.gd",
+        "prototype/tests/test_epilogue.gd", "prototype/tests/test_epilogue_integration.gd",
         f".review/v{SHORT}/request.json",
         "tools/package_release.py", "tools/verify_release.py", "tools/qa_common.py",
         "tools/run_validation.py", "tools/verify_exported_packs.py", "tools/capture_evidence.py"
     }
     required.update(DOCUMENT_SOURCES)
+    required.update(f"docs/captures/v{SHORT}/{name}" for name in EXPECTED_CAPTURES)
     members = set()
     with ZipFile(source) as zipped:
         for member in zipped.namelist():
@@ -118,6 +123,7 @@ def main() -> None:
     require(set(validation["sha256_after"]) <= members, "Source archive omits an authored runtime file")
     require({row["script"] for row in validation["suites"]} <= members, "Source archive omits a verified test script")
     require(validation["total_checks"] == sum(row["checks"] for row in validation["suites"]), "Runtime count does not match its suites")
+    require(set(validation["required_suites"]) == REQUIRED, "Runtime report does not declare the complete mandatory suite set")
     require(set(validation["required_suites"]) <= {row["suite"] for row in validation["suites"]}, "A required source suite is missing")
     require(all(row["pass"] and row["checks"] > 0 and not row["error_lines"] for row in validation["suites"]), "A source suite has unresolved errors")
     for rel, expected in validation["sha256_after"].items():

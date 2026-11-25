@@ -1,6 +1,6 @@
 # Scènes, cinématiques et accueil
 
-**The Tower Descent — version 0.6.0.** Cette annexe fournit le découpage de l’ouverture livrée, les contrats de transition avec le jeu et les scènes à produire pour la campagne. La direction recherche la précision d’une présentation cinématographique : composition, rythme, lisibilité des équipes et continuité du son. Le résultat actuel reste une maquette en temps réel dans Godot, avec personnages et décors procéduraux. Il ne constitue pas une livraison de personnages, d’animations faciales ou d’assets « AAA » définitifs.
+**The Tower Descent — version 0.7.0.** Cette annexe fournit le découpage de l’ouverture, de la clôture au refuge, des transitions avec le jeu et des scènes à produire pour la campagne. La direction recherche la précision d’une présentation cinématographique : composition, rythme, lisibilité des équipes et continuité du son. Le résultat actuel reste une maquette en temps réel dans Godot, avec personnages et décors procéduraux. Il ne constitue pas une livraison de personnages, d’animations faciales ou d’assets « AAA » définitifs. Les résultats d’exécution et de revue restent documentés séparément dans l’état de livraison.
 
 ## 1 Intentions et langage visuel
 
@@ -159,11 +159,37 @@ La vérification de Varga suit après deux nouvelles secondes calmes dans un lie
 
 La cible d’habillage utilise une différence discrète de couleur sonore et une absence de réponse directe. Le texte demeure lisible sans filtre sonore. Le scénario ne tranche pas ici entre répétition technique, présence et survivant. Le joueur doit pouvoir formuler une hypothèse sans qu’une interface ne lui impose une conclusion.
 
-## 8 SC06 Refuge et compte rendu — livré
+## 8 SC06 Refuge, épilogue et compte rendu
 
-Le relais du 25 termine le périmètre de démonstration. L’écran récapitule les sauvetages et expose le journal des communications conservées. La présentation distingue personnes confirmées au treuil, informations recueillies et incertitude sur Bravo. La dernière image jouée reste un lieu sûr, sans attaque déclenchée par l’ouverture du bilan.
+### Conditions et résultat durable
 
-Le menu peut ensuite proposer de consulter cette intervention terminée. Son décor correspond au refuge et son texte à la partie achevée. Le résultat n’autorise pas la présentation d’un bunker, d’Alma retrouvée ou d’une fin de campagne : ces chapitres sont conçus mais ne sont pas jouables dans la version 0.6.0.
+Le relais du 25 termine le périmètre de démonstration lorsque l’incident est stabilisé et qu’Ana, Samuel et Nora sont toutes confirmées au poste médical. Les indices et l’écho facultatif de Bravo ne conditionnent pas cette réussite. Une arrivée prématurée conserve l’objectif de retour nécessaire. Le refuge reste sûr ; consulter le bilan ne déclenche aucune attaque.
+
+La première clôture marque la mission achevée et exige un checkpoint écrit avec succès au 25 avant d’ouvrir l’épilogue. Si l’écriture échoue, `completed` revient à `false`, le personnage et le HUD restent disponibles au refuge et le relais peut être réessayé. L’erreur est signalée, l’ancien fichier est conservé et aucune séquence ne démarre. Le réalisateur observe un monde déjà terminé. Il ne déplace pas les rescapés, ne modifie pas les ressources et n’ajoute aucune transmission au registre. Ses effets ne constituent pas de nouveaux événements de mission.
+
+### Trois plans de clôture
+
+L’épilogue de la 0.7 dure **15 secondes**, en trois plans de cinq secondes. Il utilise les lieux réels du monde et leurs identifiants de progression. La mission, ses dangers, sa météo et ses transferts restent suspendus. Les mouvements réduits fixent le point de vue de chaque plan ; le mode animé ajoute un déplacement lent calculé depuis le temps de séquence.
+
+| Intervalle | Image et intention | Texte et source affichés |
+| --- | --- | --- |
+| 0 à 5 s | Poste médical du toit d’Aube ; confirmer les trois personnes déjà reçues, avec un champ de 62° | TROIS VIES À L’ABRI ; Varga rappelle qu’Ana, Samuel et Nora sont au poste médical |
+| 5 à 10 s | Terminal réel du refuge 25 ; replacer le joueur au relais protégé, champ de 51° | LE RELAIS RÉPOND ; fragment attribué à Bravo, « On vous voit à la baie Est… » |
+| 10 à 15 s | Hespérie après impact, vue extérieure sans accès à son intérieur, champ de 56° | SOUS NOS PIEDS ; origine non confirmée du fragment évoquant de la lumière au 24 |
+
+Les cartons utilisent une entrée et une sortie de 0,65 seconde ; les fondus de changement de plan emploient 0,35 seconde. Les sous-titres restent textuels : aucun doublage enregistré n’est fourni. Leur échantillonnage n’enregistre pas un nouvel appel dans `radio.history`, y compris lors d’une relecture. La mention du 24 n’ouvre pas cet étage et n’authentifie ni l’heure ni l’origine du signal.
+
+### Passage, pause et reprise
+
+E, Entrée ou la commande de passage conduisent au bilan depuis n’importe quel plan, hors pause. Échap suspend l’épilogue ; les options et l’aide conservent la priorité de leurs écrans, puis Reprendre rend la main à la séquence. L’horloge d’intervention et ses ressources restent figées. Une fin naturelle, une longue image qui franchit la dernière borne et un passage volontaire doivent présenter le même bilan.
+
+La sauvegarde ne contient ni caméra intermédiaire, ni temps d’épilogue, ni indicateur de relecture. Consulter une mission achevée depuis l’accueil ouvre directement le bilan. **Revoir la séquence** est une action explicite de ce bilan ; elle relance les trois plans puis y revient, sans réécrire le point sûr ni ajouter des mots au journal. Aucun signal provenant d’un panneau caché ne doit lancer une séquence derrière le journal.
+
+### Bilan et dossier de mission
+
+Le bilan utilise un cadrage fixe du refuge et la même projection de données que le journal. Il montre les trois noms, le nombre de documents recueillis, le temps de mission, les ressources restantes et le signal encore à vérifier. Il propose de consulter le dossier, revoir l’épilogue ou revenir à l’accueil. Le journal sépare **Situation**, **Rescapés**, **Indices** et **Transmissions** ; il ne dévoile pas le texte des preuves non collectées. Fermer ce journal retourne au bilan, avec le personnage inactif.
+
+Le menu conserve ensuite son décor de refuge et son action de consultation. Le résultat n’autorise pas la présentation d’un bunker, d’Alma retrouvée ou d’une fin de campagne : ces chapitres ne sont pas jouables dans la version 0.7.0. Les champs, props, contrôles et cas de reprise sont détaillés dans [Dossier et épilogue](DOSSIER_ET_EPILOGUE_V0.7.md).
 
 ## 9 Storyboards de campagne à produire
 
@@ -193,6 +219,8 @@ Le menu peut ensuite proposer de consulter cette intervention terminée. Son dé
 
 ### SC10 Le premier contrôle SILLAGE
 
+Cette scène conserve son identifiant de campagne. Elle se déroule bien après le refuge du prototype et reste à produire ; l’épilogue jouable de la 0.7 appartient à SC06. Le fragment de clôture ne constitue ni une visite de SILLAGE ni le début jouable de ce contrôle.
+
 **Contexte et fonction.** Au S07 puis B01, l’architecture industrielle change la lecture de la catastrophe. Une porte et un tableau montrent que l’isolement précède le tsunami. Les informations essentielles sont réparties entre un registre, un état de porte et un témoin, pas dissimulées dans un seul long enregistrement.
 
 **Découpage cible, 15 à 25 secondes facultatives.** Regard vers le logo de contrôle, vers la porte fermée du côté intérieur, puis vers une date et un ordre d’isolement. Le joueur peut interrompre la lecture et utiliser le sas. Sorel peut répondre à la radio depuis un lieu identifié ; son objectif est de conserver les données, ce qui crée un conflit concret sans exposé complet sur le seuil.
@@ -209,16 +237,18 @@ Le menu peut ensuite proposer de consulter cette intervention terminée. Son dé
 
 ## 10 Contrats de réalisation et validation
 
-Chaque séquence doit déclarer son état d’entrée, son point de sortie, les événements qu’elle peut écrire et sa stratégie de passage. Le lancement et le menu n’écrivent pas de progression. L’arrivée initialise une mission puis rend le contrôle. L’effondrement produit un changement structurel persistant. Les transitions de campagne futures doivent disposer d’une sauvegarde avant et après leur portion non jouable.
+Chaque séquence doit déclarer son état d’entrée, son point de sortie, les événements qu’elle peut écrire et sa stratégie de passage. Le lancement et le menu n’écrivent pas de progression. L’arrivée initialise une mission puis rend le contrôle. L’effondrement produit un changement structurel persistant. La clôture exige le checkpoint achevé écrit avec succès avant son épilogue de présentation ; le réalisateur et ses relectures n’écrivent aucun fait supplémentaire. Les transitions de campagne futures doivent disposer d’une sauvegarde avant et après leur portion non jouable.
 
 Un événement narratif n’utilise pas le temps passé dans un menu comme délai caché. La pause suspend images narratives, communications et dangers. Une longue image traverse correctement les repères temporels ; un message n’est ni doublé ni sauté par erreur d’index. Une reprise applique l’état du monde sans répéter tous les sous-titres de l’intervention précédente.
 
-Les contrôles de présentation couvrent au minimum menu initial, tous les contextes de reprise, cartons de lancement, quatre plans d’arrivée, modes de mouvement, son coupé, passage immédiat et pause près de la dernière image. La revue visuelle doit aussi vérifier silhouettes sur le ciel, façades intactes avant impact, absence d’antenne devant l’objectif du dernier plan et absence d’étiquettes de gameplay dans les caméras de cinéma.
+Les contrôles de présentation couvrent au minimum menu initial, tous les contextes de reprise, cartons de lancement, quatre plans d’arrivée, trois plans de clôture, les quatre onglets et le bilan, modes de mouvement, son coupé, passage immédiat et pause près de la dernière image. La revue visuelle doit aussi vérifier silhouettes sur le ciel, façades intactes avant impact, absence d’antenne devant l’objectif du dernier plan et absence d’étiquettes de gameplay dans les caméras de cinéma. Le registre affiché doit correspondre aux personnes présentes au médical et aux faits de la sauvegarde ; aucune lisibilité de texte ne peut être déduite d’un test sans rendu.
 
 Les essais automatiques valident les durées, états, préférences, événements et garde-fous d’intégration. Une capture ne prouve pas la qualité d’une transition sonore ; un test sans fenêtre ne prouve pas la lisibilité d’une image. Les résultats de livraison et les vérifications effectivement réalisées sont consignés dans [État de livraison](ETAT_DE_LIVRAISON.md).
 
 ## 11 Sources de vérité et prochaines passes
 
 Le découpage livré est défini par [cinematic_director.gd](../prototype/scripts/cinematic_director.gd), l’accueil par [frontend_menu.gd](../prototype/scripts/frontend_menu.gd), les cartons par [cinematic_overlay.gd](../prototype/scripts/cinematic_overlay.gd) et les options par [preferences_store.gd](../prototype/scripts/preferences_store.gd). [main.gd](../prototype/scripts/main.gd) assure le changement de caméra, les horloges et la remise du contrôle. Le décor et la réception médicale viennent de [world_builder.gd](../prototype/scripts/world_builder.gd).
+
+La clôture de la 0.7 est échantillonnée par [epilogue_director.gd](../prototype/scripts/epilogue_director.gd). [mission_dossier.gd](../prototype/scripts/mission_dossier.gd) projette les faits de mission sans écrire dans le monde ; [mission_dossier_panel.gd](../prototype/scripts/mission_dossier_panel.gd) les présente dans le journal et le bilan. Le contrôleur de mission conserve la responsabilité du checkpoint final et du retour entre les écrans.
 
 La prochaine passe de production doit d’abord valider la compréhension du parcours sans commentaire extérieur, puis remplacer les silhouettes par des rigs, travailler gestes et regards, enregistrer les voix et mixer l’ambiance. Les nouvelles ressources doivent respecter les durées et les contrats de sauvegarde. Un meilleur rendu ne justifie pas l’allongement automatique de l’ouverture ni la suppression de son passage immédiat.

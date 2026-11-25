@@ -1,8 +1,10 @@
 # Props et interactions de production
 
-**Version 0.6.0 — 52 fiches de référence et 12 observations jouables — 24 novembre 2026**
+**Version 0.7.0 — 52 fiches de référence et 12 observations jouables — 25 novembre 2026**
 
 Ce catalogue donne aux équipes de niveau, d’art, de son et de gameplay des objets qui ont une fonction dans l’intervention. Il décrit les accessoires du prototype lorsqu’ils existent, puis les objets à produire pour la campagne. Une fiche de campagne n’est pas un inventaire d’assets déjà livrés. Les dimensions proposées servent au blocage et à la recette de circulation ; elles ne constituent ni des normes de construction ni des instructions de secours réels.
+
+Dans la 0.7, le dossier à quatre onglets décrit les faits issus de ces interactions ; il ne crée aucun accessoire collectable supplémentaire. Les plans de clôture observent le poste médical, le relais du 25 et la tour endommagée déjà présents dans le monde. Les 52 fiches et les douze observations conservent leur portée ; le bilan n’exige pas la lecture de tous les props facultatifs.
 
 ## Convention des fiches
 

@@ -168,6 +168,8 @@ func _run() -> void:
 	var refuge: Node3D = _find("refuge", 25)
 	_place(25)
 	mission._interact_node(refuge)
+	_check(mission.epilogue_playing and not mission.hud.end_panel.visible, "The closing sequence did not precede its final report.")
+	mission._finish_epilogue()
 	_check(mission.completed and mission.hud.end_panel.visible and not mission.player.active, "Completed rescue did not reach its accessible final report.")
 	var final_save: Dictionary = Store.load_data(TEST_PATH)
 	_check(final_save.get("completed", false) and final_save.get("radio_events") == ["bravo_echo", "bravo_verification"], "The final checkpoint lost optional reception markers.")

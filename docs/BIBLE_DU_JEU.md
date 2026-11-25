@@ -2,13 +2,13 @@
 
 ## Bible de conception du jeu
 
-**Version 0.6.0 — Mise en scène du prototype et dossier de production détaillé — 24 novembre 2026**
+**Version 0.7.0 — Dossier de mission, clôture cinématique et conception de campagne — 25 novembre 2026**
 
 **Création et direction du projet : Darknigthmare. Dépôt : The-Descents.**
 
 Cette bible développe les notes fondatrices en une campagne de sauvetage et d’horreur à la première personne. Elle décrit l’univers, les personnages, les systèmes, les possibilités du joueur, la progression des étages et les règles de génération. Les noms propres, la chronologie, les révélations et les fins ci-dessous constituent une proposition de canon originale que la direction du projet peut faire évoluer.
 
-Le prototype 3D Godot 0.6.0 conserve un toit jouable et six étages, du 30 au 25, avec rappel, exploration, trois rescapés et un refuge. Les deux tours commencent intactes ; l’effondrement d’Hespérie est observé depuis la baie Est du 29. Bravo se replie vers l’intérieur et les personnes confirmées apparaissent au poste médical du toit. La radio ordonne ses sous-titres, conserve les trente-deux dernières transmissions et peut faire revenir un fragment de Bravo après Samuel. L’ouverture de marque et l’accueil contextuel de la 0.4 sont conservés. La 0.5 anime l’approche des deux appareils, leurs portes et le débarquement des six membres de toit ; elle enrichit les volumes des hélicoptères, des sauveteurs et du littoral. Douze objets examinables donnent une lecture des lieux qui évolue avec l’incident et les réceptions médicales confirmées. La 0.6 rend le portage visible à la première personne, met en scène le panier et le câble du treuil, puis accompagne les personnes reçues jusqu’à l’abri. Elle ajoute un ciel maritime stratifié, une pluie extérieure et des réglages de volume, sensibilité, champ de vision et regard inversé accessibles avant et pendant la partie. Les annexes [Sauvetage](SAUVETAGE_V0.6.md), [Ambiance](AMBIANCE_V0.6.md) et [Confort](CONFORT_V0.6.md) précisent ces contrats. La campagne complète, les personnages et voix définitifs, les souterrains, la coopération et le portage Unreal Engine 5 restent à produire. Le [rapport de livraison](ETAT_DE_LIVRAISON.md) distingue les fonctions vérifiées, les exports et les limites des essais.
+Le prototype 3D Godot 0.7.0 conserve un toit jouable et six étages, du 30 au 25, avec rappel, exploration, trois rescapés et un refuge. Les deux tours commencent intactes ; l’effondrement d’Hespérie est observé depuis la baie Est du 29. Bravo se replie vers l’intérieur et les personnes confirmées apparaissent au poste médical du toit. La radio ordonne ses sous-titres, conserve les trente-deux dernières transmissions et peut faire revenir un fragment de Bravo après Samuel. L’ouverture de marque et l’accueil contextuel de la 0.4 sont conservés. La 0.5 anime l’approche des deux appareils, leurs portes et le débarquement des six membres de toit ; elle enrichit les volumes des hélicoptères, des sauveteurs et du littoral. Douze objets examinables donnent une lecture des lieux qui évolue avec l’incident et les réceptions médicales confirmées. La 0.6 rend le portage visible à la première personne, met en scène le panier et le câble du treuil, puis accompagne les personnes reçues jusqu’à l’abri. Elle ajoute un ciel maritime stratifié, une pluie extérieure et des réglages de volume, sensibilité, champ de vision et regard inversé accessibles avant et pendant la partie. Les annexes [Sauvetage](SAUVETAGE_V0.6.md), [Ambiance](AMBIANCE_V0.6.md) et [Confort](CONFORT_V0.6.md) précisent ces contrats. La 0.7 organise le journal en quatre onglets, présente un bilan issu des faits enregistrés et clôt la tranche par un épilogue en jeu de quinze secondes, passable et rejouable. Le relais du 25 reste la fin jouable ; sa reprise ouvre directement le bilan. L’annexe [Dossier et épilogue](DOSSIER_ET_EPILOGUE_V0.7.md) détaille états, textes, plans, commandes et critères de revue. La campagne complète, les personnages et voix définitifs, les souterrains, la coopération et le portage Unreal Engine 5 restent à produire. Le [rapport de livraison](ETAT_DE_LIVRAISON.md) distingue les fonctions vérifiées, les exports et les limites des essais.
 
 Le [Catalogue des étages](CATALOGUE_ETAGES.md) précise les trente niveaux de campagne et leur périmètre jouable. Les dossiers [Effondrement en direct](EFFONDREMENT_EN_DIRECT.md), [Communications et équipes](COMMUNICATIONS_ET_EQUIPES.md), [Props et interactions](PROPS_INTERACTIONS.md), [Ennemis et statistiques](ENNEMIS_STATISTIQUES.md), [Scènes cinématiques](SCENES_CINEMATIQUES.md) et [Gameplay détaillé](GAMEPLAY_DETAILLE.md) complètent cette bible. Les fiches d’objets, rencontres et scènes constituent des spécifications de production, avec des valeurs initiales à éprouver ; leur présence dans le document ne signifie pas qu’elles existent dans le moteur.
 
@@ -176,7 +176,7 @@ Elle peut aider concrètement à ouvrir un sas ou à stabiliser un relais. Cette
 
 ### Les autres équipes
 
-Les groupes de secours possèdent des indicatifs simples : **Corde**, **Médical**, **Échelle** et **Relais**. Corde et Médical s’installent sur Aube, sous le commandement de Varga. Le détachement **Bravo**, qui réunit Échelle et Relais, est déposé sur Hespérie pour localiser les personnels techniques et vérifier les signaux. Deux hélicoptères et des groupes visibles sur chaque toit matérialisent cette répartition dans la maquette 0.6.0 ; Bravo se replie à couvert et les sauvés sont visibles au poste médical. La 0.6 donne des poses de treuil et d’accompagnement à deux membres d’Alpha. Les rencontres détaillées, le portage des caisses, le contact des mains et les animations de travail définitives appartiennent à la production de campagne.
+Les groupes de secours possèdent des indicatifs simples : **Corde**, **Médical**, **Échelle** et **Relais**. Corde et Médical s’installent sur Aube, sous le commandement de Varga. Le détachement **Bravo**, qui réunit Échelle et Relais, est déposé sur Hespérie pour localiser les personnels techniques et vérifier les signaux. Deux hélicoptères et des groupes visibles sur chaque toit matérialisent cette répartition dans la maquette 0.7.0 ; Bravo se replie à couvert et les sauvés sont visibles au poste médical. La 0.6 donne des poses de treuil et d’accompagnement à deux membres d’Alpha. Les rencontres détaillées, le portage des caisses, le contact des mains et les animations de travail définitives appartiennent à la production de campagne.
 
 Bravo cesse de répondre lors de l’impact. Le journal porte « liaison perdue », sans déclarer les équipiers morts. Une reprise ambiguë de son indicatif plus bas pourra préparer les phénomènes d’imitation ; elle doit être distinguée d’une confirmation humaine vérifiée. Varga demeure joignable par intermittence et les victimes prises en charge restent au registre. La police sécurisera les zones d’arrivée et les archives dans la campagne lorsqu’elle le pourra.
 
@@ -214,7 +214,9 @@ Le dernier espace est désigné **666** par un ancien système de repérage SILL
 
 Dans cette profondeur, des fragments d’espaces déjà traversés se réassemblent selon une logique de réponse. Le joueur reconnaît le restaurant, le jardin d’enfants ou un refuge, mais seul le refuge réel possède la signature physique et les confirmations apprises. Un espace imité ne porte jamais le statut de refuge certifié dans l’interface.
 
-### Épilogue
+### Épilogue de campagne
+
+La clôture de la tranche au refuge 25 précède cet épilogue de campagne, encore à produire. Ses trois plans de sauvetage et de relais ne montrent ni l’évacuation de l’île ni la résolution du seuil.
 
 Une route technique permet de rejoindre une ouverture plus éloignée des tours. L’accalmie peut enfin rendre possible l’évacuation. Les personnes sauvées, les relais établis, les preuves sorties et le traitement du seuil déterminent l’épilogue. Une vue de l’île au matin montre les tours à distance et donne un sens aux chemins parcourus.
 
@@ -413,7 +415,7 @@ Pour le prototype, un sous-ensemble de ce contrat suffit. Les six fonctions d’
 
 ## 15 Catalogue d’événements
 
-La plupart de ces événements sont des modules de campagne proposés. Une entrée est sélectionnée selon son contexte, ses prérequis et le temps de récupération disponible. L’effondrement observé au 29, introduit en 0.2 et conservé en 0.6.0, constitue l’événement fixe du prototype ; sa présence ne dépend pas d’un tirage aléatoire. Le [dossier de séquence](EFFONDREMENT_EN_DIRECT.md) distingue son implémentation en maquette des enrichissements cinématiques futurs.
+La plupart de ces événements sont des modules de campagne proposés. Une entrée est sélectionnée selon son contexte, ses prérequis et le temps de récupération disponible. L’effondrement observé au 29, introduit en 0.2 et conservé en 0.7.0, constitue l’événement fixe du prototype ; sa présence ne dépend pas d’un tirage aléatoire. Le [dossier de séquence](EFFONDREMENT_EN_DIRECT.md) distingue son implémentation en maquette des enrichissements cinématiques futurs.
 
 | Événement | Conditions | Action et information offertes au joueur |
 |---|---|---|
@@ -560,6 +562,8 @@ Le passage latéral touché est remplacé par un détour. Varga confirme qu’Au
 
 Les suites conservent l’indice antérieur au désastre ; les bureaux possèdent des archives datées d’avant le typhon. Le 27 donne une respiration après la catastrophe. Si Samuel est confirmé au toit et si la radio reste libre pendant six secondes continues, un fragment de Bravo peut s’y répéter. Après cet écho, Varga attend deux secondes de calme au 27, au 25 ou au toit pour confirmer qu’elle a reçu le fragment mais qu’aucun contact direct avec Bravo n’est établi. L’échange n’est requis ni pour descendre ni pour terminer ; il attend la fin du rappel, du portage et du treuillage. Le spa fournit une anomalie plus forte. Le refuge permet de confronter les indices et, depuis le bilan, de relire les transmissions.
 
+La clôture 0.7 exige l’écriture réussie du point sûr achevé avant la présentation. En cas d’erreur, le personnage et le HUD restent disponibles au refuge ; le relais peut être réessayé et aucun épilogue ne démarre. L’épilogue observe le poste médical réel, le relais du refuge et Hespérie après impact. Il ne déplace pas les victimes, ne consomme aucune ressource et ne transforme pas son fragment de relais en nouvelle transmission enregistrée. Le bilan conserve les noms, les preuves réellement recueillies et l’incertitude du signal ; rouvrir le journal ou revoir l’épilogue ne relance pas l’intervention.
+
 ## 21 Le prototype du dépôt
 
 ### Objectif de validation
@@ -568,7 +572,7 @@ Le prototype doit répondre à des questions concrètes. Le rappel donne-t-il en
 
 ### Périmètre de la tranche
 
-| Zone | Fonction | Périmètre du prototype 0.6.0 |
+| Zone | Fonction | Périmètre du prototype 0.7.0 |
 |---|---|---|
 | Toit | Arrivée et briefing | Approche temps réel, deux tours intactes, deux appareils, équipes en maquette, réception nominative des rescapés et première ligne |
 | 30 | Restaurant panoramique | Ana Rios, maître d’hôtel, première rescapée et apprentissage de l’exploration |
@@ -576,7 +580,7 @@ Le prototype doit répondre à des questions concrètes. Le rappel donne-t-il en
 | 28 | Bureaux et archives | Samuel Breton, deuxième rescapé ; réaction et sauvetage après impact |
 | 27 | Jardin d’enfants évacué | Dessin des deux tours, respiration mécanique et écho facultatif de Bravo après Samuel |
 | 26 | Spa et piscine technique | Nora Haddad, kinésithérapeute, troisième rescapée ; Relevé SILLAGE 06 et anomalie |
-| 25 | Refuge de maintenance | Sécurité, bilan avec journal consultable, ravitaillement et balise vers le toit |
+| 25 | Refuge de maintenance | Sécurité, relais de clôture, épilogue de 15 s, bilan et journal à quatre onglets, ravitaillement et balise vers le toit |
 
 La réussite de la tranche exige l’incident achevé, les trois rescapés pris en charge et l’envoi de la balise depuis le refuge. La progression de référence comprend le sauvetage d’Ana, l’observation de Bravo et le choc du 29, puis Samuel et Nora. Un joueur qui atteint le refuge sans avoir observé Hespérie doit recevoir un objectif de retour explicite. Les trois positions de rescapés sont 30, 28 et 26. Les indices se trouvent aux 29, 27 et 26. Les ravitaillements se trouvent aux 29 et 25. Ces points doivent rester cohérents entre le code, la notice, les essais et le catalogue.
 

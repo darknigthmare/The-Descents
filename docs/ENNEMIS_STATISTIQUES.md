@@ -1,10 +1,12 @@
 # Présences ennemis et statistiques de rencontre
 
-**Version 0.6.0 — Une figure jouable et dix archétypes de campagne — 24 novembre 2026**
+**Version 0.7.0 — Une figure jouable et dix archétypes de campagne — 25 novembre 2026**
 
 Le joueur affronte des situations qu’il peut lire, vérifier et modifier. Le bestiaire sert la mission de sauvetage : il ne transforme pas chaque étage en arène à nettoyer. Une routine ancienne, une voix imitée et un animal territorial n’utilisent pas les mêmes règles, même si tous peuvent créer de la tension.
 
 Une seule menace mobile simplifiée est actuellement intégrée à la tranche : la figure du spa au 26. Les dix archétypes de campagne ci-dessous sont des spécifications, avec des valeurs initiales à tester. Aucun chiffre proposé n’est présenté comme une mesure issue d’une partie de campagne ou d’un équilibrage déjà validé.
+
+La 0.7 conserve ce périmètre. Le dossier et l’épilogue du refuge n’ajoutent ni adversaire ni combat final. Le fragment de relais laisse l’origine du signal ouverte ; il ne confirme pas la présence d’un archétype de campagne dans le secteur jouable. La simulation hostile reste suspendue pendant la lecture du journal et après la clôture de mission.
 
 ## Convention des statistiques
 

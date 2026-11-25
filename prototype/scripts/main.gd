@@ -11,6 +11,7 @@ const Cinematics = preload("res://scripts/cinematic_director.gd")
 const Preferences = preload("res://scripts/preferences_store.gd")
 const FieldProps = preload("res://scripts/field_props.gd")
 const RescuePresentation = preload("res://scripts/rescue_presentation.gd")
+const Epilogue = preload("res://scripts/epilogue_director.gd")
 
 var rescue_visuals: Node3D
 var world: Node3D
@@ -70,6 +71,9 @@ var arrival_playing: bool = false
 var arrival_time: float = 0.0
 const ARRIVAL_DURATION: float = Cinematics.ARRIVAL_DURATION
 var cinematic = Cinematics.new()
+var epilogue = Epilogue.new()
+var epilogue_playing: bool = false
+var epilogue_voice_key: String = ""
 var boot_playing: bool = false
 var menu_context: Dictionary = {}
 var menu_snapshot: Dictionary = {}
@@ -96,6 +100,7 @@ func _ready() -> void:
 	hud.setting_changed.connect(_setting_changed)
 	hud.replay_intro_requested.connect(_start_studio_intro)
 	hud.cinematic_skip_requested.connect(_skip_cinematic)
+	hud.epilogue_replay_requested.connect(_replay_epilogue)
 	hud.inspection_closed.connect(_resume)
 	hud.apply_settings(preferences)
 	_prepare_menu()
@@ -158,6 +163,8 @@ func _skip_cinematic() -> void:
 		_finish_studio_intro()
 	elif arrival_playing:
 		_finish_arrival()
+	elif epilogue_playing:
+		_finish_epilogue()
 
 func _apply_camera_sample(sample: Dictionary) -> void:
 	menu_camera.position = sample["position"]
@@ -189,6 +196,9 @@ func _bind_inputs() -> void:
 			InputMap.action_add_event(action, event)
 
 func _build_world(seed_value: int) -> void:
+	epilogue_playing = false
+	epilogue.finish()
+	epilogue_voice_key = ""
 	rescue_visuals = null
 	if is_instance_valid(world):
 		world.free()
@@ -342,7 +352,7 @@ func _restore(data: Dictionary) -> void:
 	player.teleport_to_floor(checkpoint_floor)
 	_process_departure()
 	if completed:
-		_complete_game()
+		_complete_game(false)
 
 func _save_checkpoint(floor_number: int) -> bool:
 	# During the incident the preceding safe checkpoint remains authoritative.
@@ -376,14 +386,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if not started:
 		return
-	if completed:
-		if event.is_action_pressed("journal") or event.is_action_pressed("pause_game"):
-			if hud.journal_panel.visible:
-				_resume()
-			else:
-				_open_journal()
-			get_viewport().set_input_as_handled()
-		return
 	if hud.help_panel.visible:
 		if event.is_action_pressed("pause_game"):
 			hud.close_help()
@@ -392,6 +394,25 @@ func _unhandled_input(event: InputEvent) -> void:
 	if hud.menu.standalone_settings:
 		if event.is_action_pressed("pause_game"):
 			hud.menu.close_modals()
+			get_viewport().set_input_as_handled()
+		return
+	if epilogue_playing:
+		if event.is_action_pressed("pause_game"):
+			if paused:
+				_resume()
+			else:
+				_pause()
+			get_viewport().set_input_as_handled()
+		elif not paused and (event.is_action_pressed("interact") or event.is_action_pressed("ui_accept")):
+			_finish_epilogue()
+			get_viewport().set_input_as_handled()
+		return
+	if completed:
+		if event.is_action_pressed("journal") or event.is_action_pressed("pause_game"):
+			if hud.journal_panel.visible:
+				_resume()
+			else:
+				_open_journal()
 			get_viewport().set_input_as_handled()
 		return
 	if event.is_action_pressed("pause_game"):
@@ -429,7 +450,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		_open_journal()
 
 func _process(delta: float) -> void:
-	if paused or completed:
+	if paused:
+		return
+	if epilogue_playing:
+		_process_epilogue(delta)
+		return
+	if completed:
 		return
 	menu_time += delta
 	_update_soundscape(delta)
@@ -812,12 +838,13 @@ func _interact_node(object: Node3D) -> void:
 			flares = mini(6, flares + 2)
 			_notify("Réserve récupérée  ·  Air remplacé, soins, 2 ancrages et 2 fusées")
 		"refuge":
-			_save_checkpoint(25)
 			if rescued.size() >= 3 and incident.phase == "aftermath":
 				_complete_game()
 			elif rescued.size() >= 3:
+				_save_checkpoint(25)
 				_notify("Avant de clore l’intervention, établissez le contact visuel avec Bravo à la baie Est du 29.")
 			else:
+				_save_checkpoint(25)
 				_notify("Refuge enregistré. %d personne(s) attendent encore votre aide aux étages 30, 28 ou 26." % (3 - rescued.size()))
 
 func _start_hoist(survivor: Node3D, floor_number: int) -> void:
@@ -1022,20 +1049,114 @@ func _journal_content() -> String:
 	text += "\n\nOBSERVATIONS DE TERRAIN\nDouze objets peuvent être examinés du toit au refuge. Approchez-vous et regardez-les pour afficher E. Leur fiche distingue usage, constat et consigne, selon la situation actuelle. La lecture met l’intervention en pause ; Fermer ou Échap reprend le jeu. Ces observations restent facultatives et ne consomment aucun matériel."
 	return text
 
-func _complete_game() -> void:
-	rescue_visuals.finish_reception()
+func _dossier_snapshot() -> Dictionary:
+	# Project only the records actually collected in this intervention. Unread
+	# clue titles and texts never enter the journal panel's model.
+	var records: Array[Dictionary] = []
+	for spec: Dictionary in floor_specs:
+		var id: String = "evidence_%d" % int(spec["number"])
+		if id in clues:
+			records.append({"id": id, "floor": int(spec["number"]),
+				"title": str(spec["evidence_title"]), "text": str(spec["evidence_text"])})
+	return {
+		"seed": current_seed, "floor": player.nearest_floor(), "checkpoint_floor": checkpoint_floor,
+		"rescued": rescued.duplicate(), "clues": clues.duplicate(), "clue_records": records,
+		"supplies_used": supplies_used.duplicate(), "elapsed": elapsed,
+		"health": health, "oxygen": oxygen, "stress": stress, "anchors": anchors, "flares": flares,
+		"seen_floors": seen_floors.duplicate(), "completed": completed,
+		"incident_state": incident.phase, "transmissions": radio.history_snapshot(),
+		"carried_id": _key(carried) if is_instance_valid(carried) else "",
+		"hoisting_id": _key(hoisting) if is_instance_valid(hoisting) else ""
+	}
+
+func _complete_game(play_epilogue: bool = true) -> void:
+	if not started or incident.phase != "aftermath" or player.nearest_floor() != 25:
+		return
+	for id: String in ["survivor_30", "survivor_28", "survivor_26"]:
+		if not id in rescued:
+			return
+	var first_completion: bool = not completed
 	completed = true
-	for channel: AudioStreamPlayer in [audio_score,audio_rotors]:
+	# The durable completion precedes its optional presentation. If the disk
+	# write fails, keep the playable refuge and its visible error so the player
+	# can retry; never show a successfully completed film for an unsaved ending.
+	if first_completion and not _save_checkpoint(25):
+		completed = false
+		return
+	rescue_visuals.finish_reception()
+	for channel: AudioStreamPlayer in [audio_score,audio_rotors,audio_radio,audio_effect]:
 		if is_instance_valid(channel):
 			channel.stop()
-	_save_checkpoint(25)
+	# Continuing or replaying a finished intervention never rewrites its save.
 	player.active = false
 	world.set_process(false)
 	paused = false
 	hud.set_paused(false)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	hud.end_panel.show()
-	hud.completion_text.text = "Intervention terminée en %02d min %02d s.\nTrois vies sauvées. %d indices récupérés sur trois.\n\nHespérie reste appuyée contre Aube. Le relais accroche\nune voix disparue au moment de l’impact :\n« Bravo à Aube. On vous voit à la baie Est... »\nPuis : « Nous sommes au 24. Il y a de la lumière dessous. »\n\nLe message est-il en direct ? Un enfant appelle\nà son tour depuis Hespérie." % [int(elapsed) / 60, int(elapsed) % 60, clues.size()]
+	if first_completion and play_epilogue:
+		_start_epilogue()
+	else:
+		_finish_epilogue()
+
+func _start_epilogue() -> void:
+	if not completed or paused or epilogue_playing:
+		return
+	for id: String in ["survivor_30", "survivor_28", "survivor_26"]:
+		if id not in rescued:
+			return
+	epilogue.start()
+	epilogue_playing = true
+	epilogue_voice_key = ""
+	player.active = false
+	world.set_process(false)
+	menu_camera.current = true
+	hud.game.hide()
+	hud.end_panel.hide()
+	hud.journal_panel.hide()
+	hud.pause_panel.hide()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	_render_epilogue()
+
+func _process_epilogue(delta: float) -> void:
+	if paused or not epilogue_playing:
+		return
+	epilogue.advance(delta)
+	_render_epilogue()
+	if not epilogue.active:
+		_finish_epilogue()
+
+func _render_epilogue() -> void:
+	_apply_camera_sample(epilogue.camera_sample(reduced_motion))
+	var frame: Dictionary = epilogue.presentation()
+	hud.cinematic.set_frame(frame, "epilogue")
+	var voice_key: String = str(frame.get("speaker", "")) + str(frame.get("message", ""))
+	if not voice_key.is_empty() and voice_key != epilogue_voice_key:
+		epilogue_voice_key = voice_key
+		if sound_enabled and is_instance_valid(audio_radio):
+			audio_radio.play()
+
+func _finish_epilogue() -> void:
+	if not completed or paused:
+		return
+	epilogue.finish()
+	epilogue_playing = false
+	epilogue_voice_key = ""
+	if is_instance_valid(audio_radio):
+		audio_radio.stop()
+	hud.cinematic.hide()
+	player.active = false
+	world.set_process(false)
+	menu_camera.current = true
+	_apply_camera_sample(Epilogue.debrief_camera())
+	hud.show_debrief(_dossier_snapshot())
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func _replay_epilogue() -> void:
+	# Only the visible debrief owns this action. Stale signals from another
+	# modal cannot start a sequence behind a journal or a live intervention.
+	if not started or not completed or paused or epilogue_playing or not hud.end_panel.visible:
+		return
+	_start_epilogue()
 
 func _fall_recovery() -> void:
 	var data: Dictionary = Save.load_data(save_path)
@@ -1046,14 +1167,13 @@ func _fall_recovery() -> void:
 	_say("VARGA  /  REPRISE AU POINT SÛR", "Intervention reprise au dernier point enregistré. Attachez-vous à la balise avant d’entrer dans le puits.", 10)
 
 func _open_journal() -> void:
-	if not started:
+	if not started or arrival_playing or epilogue_playing or boot_playing:
 		return
 	_pause(false)
 	hud.hide_inspection()
 	# The ending is a later sibling modal and would otherwise cover the journal.
 	hud.end_panel.hide()
-	hud.journal_text.text = _journal_content()
-	hud.journal_panel.show()
+	hud.show_journal(_dossier_snapshot())
 
 func _pause(show_panel: bool = true) -> void:
 	paused = true
@@ -1063,7 +1183,7 @@ func _pause(show_panel: bool = true) -> void:
 	player.active = false
 	world.set_process(false)
 	hud.pause_panel.visible = show_panel
-	if arrival_playing:
+	if arrival_playing or epilogue_playing:
 		hud.cinematic.hide()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
@@ -1076,9 +1196,11 @@ func _resume() -> void:
 	world.set_process(not completed)
 	hud.hide_inspection()
 	hud.set_paused(false)
-	if completed:
-		hud.end_panel.show()
-	if arrival_playing:
+	if epilogue_playing:
+		_render_epilogue()
+	elif completed:
+		hud.show_debrief(_dossier_snapshot())
+	elif arrival_playing:
 		_render_cinematic()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if completed or arrival_playing else Input.MOUSE_MODE_CAPTURED
 

@@ -7,6 +7,7 @@ signal resume_requested
 signal return_requested
 signal journal_requested
 signal replay_intro_requested
+signal epilogue_replay_requested
 signal cinematic_skip_requested
 signal inspection_closed
 signal setting_changed(setting: String, value: Variant)
@@ -51,6 +52,7 @@ var end_journal_button: Button
 var cinematic: Control
 var inspection_panel: Control
 var pause_toggles: Dictionary = {}
+var _journal_game_was_visible: bool = false
 
 func _ready() -> void:
 	layer = 10
@@ -306,30 +308,43 @@ func _comfort_settings_closed() -> void:
 		(buttons[0] as Button).grab_focus()
 
 func _build_journal() -> void:
-	var result: Array = _modal("JOURNAL D’INTERVENTION", 880)
-	journal_panel = result[0]
-	var col: VBoxContainer = result[1]
-	journal_text = RichTextLabel.new()
-	journal_text.custom_minimum_size = Vector2(880, 510)
-	journal_text.bbcode_enabled = false
-	journal_text.add_theme_font_size_override("normal_font_size", 19)
-	col.add_child(journal_text)
-	col.add_child(_button("Fermer le journal", func(): resume_requested.emit(), true))
+	journal_panel = preload("res://scripts/mission_dossier_panel.gd").new()
+	journal_panel.mode = "journal"
+	root.add_child(journal_panel)
+	journal_text = journal_panel.journal_text
+	journal_panel.close_requested.connect(func(): resume_requested.emit())
 
 func _build_end() -> void:
-	var result: Array = _modal("LE REFUGE 25", 800)
-	end_panel = result[0]
-	var col: VBoxContainer = result[1]
-	col.add_child(_label("Les trois rescapés sont arrivés au poste de secours.", 22, TEAL))
-	completion_text = RichTextLabel.new()
-	completion_text.custom_minimum_size = Vector2(800, 280)
-	completion_text.bbcode_enabled = false
-	completion_text.add_theme_font_size_override("normal_font_size", 21)
-	col.add_child(completion_text)
-	col.add_child(_label("Fin du prototype jouable. La campagne continue dans la bible du jeu.", 17, MUTED))
-	end_journal_button = _button("Consulter le compte rendu et les transmissions", func(): journal_requested.emit())
-	col.add_child(end_journal_button)
-	col.add_child(_button("Revenir au menu", func(): return_requested.emit(), true))
+	end_panel = preload("res://scripts/mission_dossier_panel.gd").new()
+	end_panel.mode = "debrief"
+	root.add_child(end_panel)
+	completion_text = end_panel.completion_text
+	end_journal_button = end_panel.journal_button
+	end_panel.journal_requested.connect(func(): journal_requested.emit())
+	end_panel.replay_requested.connect(func(): epilogue_replay_requested.emit())
+	end_panel.menu_requested.connect(func(): return_requested.emit())
+
+func show_journal(snapshot: Dictionary) -> void:
+	if not journal_panel.visible:
+		_journal_game_was_visible = game.visible
+	game.hide()
+	pause_panel.hide()
+	end_panel.hide()
+	help_panel.hide()
+	hide_inspection()
+	journal_panel.present(snapshot)
+
+func show_debrief(snapshot: Dictionary) -> void:
+	_journal_game_was_visible = false
+	menu.close_modals(false)
+	menu.hide()
+	game.hide()
+	pause_panel.hide()
+	journal_panel.hide()
+	help_panel.hide()
+	cinematic.hide()
+	hide_inspection()
+	end_panel.present(snapshot)
 
 func _build_help() -> void:
 	var result: Array = _modal("DESCENDRE. SECOURIR. REMONTER.", 900)
@@ -374,6 +389,7 @@ func show_game() -> void:
 	hide_inspection()
 
 func show_menu() -> void:
+	_journal_game_was_visible = false
 	menu.reveal()
 	cinematic.hide()
 	game.hide()
@@ -388,6 +404,8 @@ func set_paused(paused: bool) -> void:
 		menu.close_modals(false)
 	pause_panel.visible = paused
 	if not paused:
+		if journal_panel.visible:
+			game.visible = _journal_game_was_visible
 		journal_panel.hide()
 		help_panel.hide()
 		hide_inspection()

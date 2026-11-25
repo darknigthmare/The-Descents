@@ -106,6 +106,8 @@ func _run() -> void:
 	_move_to(_find("refuge", 25))
 	mission._interact_node(_find("refuge", 25))
 	_check(mission.completed and not mission.player.active, "Refuge 25 did not finish a completed rescue.")
+	_check(mission.epilogue_playing and mission.hud.cinematic.visible, "Completion did not start the closing in-game sequence.")
+	mission._finish_epilogue()
 	_check(mission.hud.end_panel.visible, "Completion did not display the end-of-slice screen.")
 	var final_save: Dictionary = Store.load_data(TEST_PATH)
 	_check(final_save.get("completed", false) and final_save.get("floor", 0) == 25, "Final completion was not persisted at refuge 25.")

@@ -18,6 +18,8 @@ EXPECTED_CAPTURES = {
     "07_pause_intro.png", "08_menu_archives.png", "09_dossier_apres.png", "10_menu_refuge.png",
     "11_inspection_toit.png", "12_inspection_archives.png", "13_inspection_apres.png", "14_toit_equipe.png",
     "15_portage.png", "16_treuillage.png", "17_reception.png", "18_meteo_toit.png", "19_options_pause.png",
+    "20_journal_situation.png", "21_journal_rescapes.png", "22_journal_indices.png", "23_journal_transmissions.png",
+    "24_epilogue_02.png", "24_epilogue_07.png", "24_epilogue_12.png", "25_bilan_refuge.png",
 }
 
 

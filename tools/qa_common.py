@@ -24,6 +24,7 @@ DOCUMENT_SOURCES = (
     "docs/SAUVETAGE_V0.6.md",
     "docs/AMBIANCE_V0.6.md",
     "docs/CONFORT_V0.6.md",
+    "docs/DOSSIER_ET_EPILOGUE_V0.7.md",
 )
 ANSI = re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
 ERROR = re.compile(r"(?:^|\s)(?:SCRIPT ERROR:|ERROR:|Parse Error:|FAIL\b)")

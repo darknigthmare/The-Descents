@@ -1,6 +1,6 @@
 # Systèmes procéduraux de The Tower Descent
 
-**Version 0.6.0 — 24 novembre 2026**
+**Version 0.7.0 — 25 novembre 2026**
 
 ## Objet et périmètre
 
@@ -11,6 +11,8 @@ La révision 0.2 conserve ce générateur et ajoute un événement de mission in
 Ce document distingue ce mécanisme livré de la génération plus ambitieuse de la campagne, décrite dans la bible. Il ne faut pas interpréter les trente étages de la bible comme trente niveaux déjà jouables. La géométrie du prototype est construite par `world_builder.gd`; `floor_generator.gd` ne prétend pas, à lui seul, prouver la traversabilité des collisions produites.
 
 La 0.4.0 rétablit le repli de Bravo, la réception nominative au toit et les communications persistantes conçus pendant la continuation 0.3. Elle ajoute une présentation cinématique et un menu contextualisé. Ces systèmes utilisent la progression de mission et des horloges de présentation, sans modifier le tirage des six étages. La 0.5 ajoute des poses d’arrivée échantillonnées et douze observations fixes. Leur construction ne consomme pas le générateur aléatoire ; leurs textes sont projetés depuis l’incident stable et les réceptions confirmées, sans nouvel état persistant.
+
+La 0.7 ajoute une projection de dossier et un réalisateur de clôture déterministes. Le journal reconstruit ses quatre pages depuis l’instantané de mission ; l’épilogue échantillonne trois plans sur quinze secondes. Ils ne tirent aucun hasard et n’ajoutent ni champ au schéma 3 ni nouvel événement radio. La liste des indices collectés gouverne la divulgation de leur texte ; un tableau de descriptions d’étages ne suffit pas à les révéler.
 
 ## Contrat d’extension du contenu
 
@@ -148,8 +150,11 @@ Le stockage n’interprète pas la géométrie : `floor = 29` désigne une repri
 | Ancienne version 1 terminée | Migration en lecture vers `aftermath` | Bilan conservé et nouvelle géométrie cohérente avec une mission terminée |
 | Ancienne version 2 valide | État d’incident conservé | Migration vers 3 avec historique et événements vides |
 | Écho ou vérification reçu en zone calme | `aftermath` et événement identifié | Checkpoint courant ; aucune répétition de l’étape après écriture réussie |
+| Relais du refuge, trois sauvetages confirmés | `completed = true`, `floor = 25`, `aftermath` | Après écriture réussie, reprise directe au bilan ; aucun état intermédiaire d’épilogue sérialisé |
 
 La migration valide d’abord le schéma exact d’origine. Les schémas 1 et 2 reçoivent des listes `transmissions` et `radio_events` vides ; aucun ancien dialogue n’est inventé. Le schéma 1 utilise l’état de fin pour choisir `intact` ou `aftermath`, tandis que le schéma 2 conserve `incident_state`. La lecture ne réécrit pas le fichier : le prochain checkpoint réussi utilise le schéma 3. La durée de jeu et les étages visités ne servent pas à deviner l’incident. La pause fige l’horloge transitoire ; la reprise restaure un état stable.
+
+La consultation du dossier et la relecture de l’épilogue ne demandent aucune nouvelle sauvegarde. La première clôture exige un checkpoint écrit avec succès avant de lancer la présentation. Une erreur d’écriture conserve l’ancien fichier, rétablit la mission active au refuge et permet de réessayer le relais, sans épilogue. Les listes de progression et de transmissions restent la source de vérité, y compris lorsque la séquence est passée.
 
 Avant toute écriture, le dictionnaire est validé et copié sans modification de l’entrée. Les données sont écrites dans un fichier temporaire voisin, vidées vers le système de fichiers, puis renommées sur le checkpoint. Le fichier précédent n’est jamais supprimé avant cette substitution. Cela évite qu’une sauvegarde normalement interrompue pendant l’écriture du temporaire remplace un fichier valide. Cette séquence ne constitue pas une garantie matérielle contre toute panne de disque ou coupure électrique.
 

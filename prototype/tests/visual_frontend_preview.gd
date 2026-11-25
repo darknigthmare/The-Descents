@@ -3,10 +3,10 @@ extends Node
 ## Capture the actual Godot renderer at prepared states. This is not a human playthrough.
 const MainScene = preload("res://scenes/main.tscn")
 const Preferences = preload("res://scripts/preferences_store.gd")
-const SAVE: String = "user://qa_visual_frontend_v06.json"
-const PREFS: String = "user://qa_visual_frontend_v06.cfg"
+const SAVE: String = "user://qa_visual_frontend_v07.json"
+const PREFS: String = "user://qa_visual_frontend_v07.cfg"
 var mission: Node3D
-var output: String = "res://../docs/captures/v0.6"
+var output: String = "res://../docs/captures/v0.7"
 var shots: Array[Dictionary] = []
 
 func _ready() -> void:
@@ -133,10 +133,34 @@ func _capture() -> void:
 	await _shot("09_dossier_apres","Dossier actualisé après l’impact confirmé")
 	mission.hud.menu.close_modals()
 	mission._continue_game()
-	mission.rescued = ["survivor_30","survivor_28","survivor_26"]
+	_disable_ticks()
+	mission._interact_node(_mission_object("evidence", 29))
+	mission._save_checkpoint(28)
+	mission._open_journal()
+	for record: Array in [["situation", "20_journal_situation"], ["survivors", "21_journal_rescapes"], ["clues", "22_journal_indices"], ["transmissions", "23_journal_transmissions"]]:
+		mission.hud.journal_panel.select_tab(str(record[0]))
+		await _shot(str(record[1]), "Journal de l’intervention en cours : " + str(record[0]) + ", une réception et un indice confirmés")
+	mission._resume()
+	_disable_ticks()
+	# Complete the remaining actual hoists before sampling the closing sequence.
+	for floor_number: int in [28, 26]:
+		mission.player.teleport_to_floor(floor_number)
+		mission._interact_node(_mission_object("survivor", floor_number))
+		mission._interact_node(_mission_object("beacon", floor_number))
+		mission._process_hoist(5.01)
+		mission.rescue_visuals.finish_reception()
+	mission._interact_node(_mission_object("evidence", 27))
 	mission.elapsed = 210.0
-	mission.completed = true
-	mission._save_checkpoint(25)
+	mission.player.teleport_to_floor(25)
+	mission._interact_node(_mission_object("refuge", 25))
+	_disable_ticks()
+	previous = 0.0
+	for moment: float in [2.0, 7.0, 12.0]:
+		mission._process_epilogue(moment - previous)
+		previous = moment
+		await _shot("24_epilogue_%02d" % int(moment), "Épilogue en jeu : plan %d à %d secondes, trois personnes réceptionnées" % [int(moment / 5.0) + 1, int(moment)])
+	mission._process_epilogue(3.01)
+	await _shot("25_bilan_refuge", "Bilan nominatif au refuge : trois réceptions, deux indices et historique de cette intervention")
 	mission._return_to_menu()
 	mission.set_process(false)
 	await _shot("10_menu_refuge","Accueil après une intervention terminée, point sûr du refuge")

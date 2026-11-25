@@ -1,6 +1,8 @@
 # Sauvetage visible, portage et réception médicale
 
-**The Tower Descent — version 0.6.0 — 24 novembre 2026**
+**The Tower Descent — version 0.7.0 — 25 novembre 2026**
+
+Ce contrat de sauvetage, introduit en 0.6, est conservé dans la 0.7. Son nom de fichier historique reste inchangé. Le dossier et l’épilogue utilisent les mêmes identifiants de rescapés et les mêmes places de réception ; aucun plan de clôture ne déclenche un nouveau transfert.
 
 ## 1. Intention de la tranche
 
@@ -121,7 +123,7 @@ Les essais de trajet physique existants gardent la responsabilité de vérifier 
 
 Les captures de recette doivent montrer le portage depuis les yeux d’Alex, une remontée réellement en cours, une réception pendant le déplacement et la pose finale. L’examen doit vérifier le centre de l’image, la lecture du panier, la continuité apparente du câble, l’absence d’un second corps et la relation entre la position affichée et le texte de mission.
 
-Les résultats exécutés, les empreintes des ressources, les images retenues et les limites matérielles figurent dans le dossier de validation v0.6. La présence de ce chapitre ne remplace pas ces preuves.
+Les résultats exécutés, les empreintes des ressources, les images retenues et les limites matérielles figurent dans le dossier de validation de chaque livraison. Les preuves v0.6 restent historiques ; la 0.7 demande ses propres tests et captures du même contrat. La présence de ce chapitre ne remplace pas ces preuves.
 
 ## 9. Prochaine production de la scène SC03
 

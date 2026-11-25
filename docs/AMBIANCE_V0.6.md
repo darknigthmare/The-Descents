@@ -1,10 +1,12 @@
-# Ambiance maritime — The Tower Descent v0.6
+# Ambiance maritime — The Tower Descent v0.7
+
+Le fichier conserve son nom historique. La 0.7 réutilise cette ambiance dans les plans de clôture ; le journal, le bilan et l’épilogue ne relancent pas la simulation météo de l’intervention terminée. La caméra animée de clôture conserve sa propre horloge de présentation.
 
 ## Intention de mise en scène
 
 L’opération Orphée commence dans une ville submergée, sous un ciel chargé, avec deux tours encore debout. La météo doit donner une profondeur à cet espace et rendre la distance sensible. Elle accompagne le menu contextualisé, l’approche des hélicoptères et les vues depuis les étages. Les informations de secours, les silhouettes de l’équipe, les balises et la ligne de rappel conservent la priorité visuelle.
 
-Cette version ajoute une composition maritime procédurale : plafond nuageux en deux nappes, bande de brume au niveau de l’horizon, voiles de pluie dans le lointain et deux volumes de précipitations à l’extérieur des bâtiments. Les couleurs appartiennent à la même gamme froide que Nacre et les façades mouillées. Les éclairages ambre et vert des équipements gardent ainsi leur fonction de repères.
+La composition maritime introduite en 0.6 est conservée dans la 0.7 : plafond nuageux en deux nappes, bande de brume au niveau de l’horizon, voiles de pluie dans le lointain et deux volumes de précipitations à l’extérieur des bâtiments. Les couleurs appartiennent à la même gamme froide que Nacre et les façades mouillées. Les éclairages ambre et vert des équipements gardent ainsi leur fonction de repères.
 
 Le ciel représente la même situation météorologique avant et après la réplique. L’effondrement modifie la tour et sa poussière, sans déclencher artificiellement un changement de saison, un lever de soleil ou une nouvelle tempête.
 

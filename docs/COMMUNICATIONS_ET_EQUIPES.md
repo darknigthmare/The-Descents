@@ -1,6 +1,6 @@
 # Communications et continuité des équipes
 
-**Version 0.6.0 — 24 novembre 2026**
+**Version 0.7.0 — 25 novembre 2026**
 
 Ce dossier fixe ce que le joueur peut conclure à partir des personnes visibles, d’un appel radio et du journal. Le poste d’Aube confirme les prises en charge. Bravo devient difficile à joindre après l’effondrement, sans que son silence prouve sa mort. Les communications peuvent être ambiguës ; le registre des personnes effectivement sauvées reste fiable.
 
@@ -65,11 +65,13 @@ Les choix de priorité ne doivent pas effacer un indice. Le journal conserve au 
 
 ## Journal et compte rendu
 
-Le journal réunit les rescapés nommés, l’état de la structure, les indices, le matériel et les transmissions. La touche J donne accès à cette lecture pendant l’intervention. Depuis la fin, le bouton de compte rendu ouvre le même contenu en maintenant le monde arrêté ; fermer le journal retourne au bilan.
+Le journal de la 0.7 présente quatre onglets : **Situation**, **Rescapés**, **Indices** et **Transmissions**. Situation réunit l’objectif, le point sûr, l’état structurel, les ressources et les derniers échanges ; Rescapés distingue personne à secourir, au harnais, au treuil et réellement reçue. Indices ne révèle le texte que des pièces collectées. Transmissions conserve les mots reçus et leurs temps de mission. La touche J ouvre le dossier pendant l’intervention et suspend la simulation. Depuis la fin, le bouton de compte rendu ouvre le même contenu en maintenant le monde arrêté ; fermer le journal retourne au bilan.
 
 Une heure de réception ne certifie pas l’heure d’émission. Le fragment Bravo porte donc un temps local dans le journal sans que celui-ci authentifie sa source. L’indicatif livré le désigne comme un écho non vérifié. Cette distinction doit être conservée dans la localisation et le futur doublage : l’incertitude concerne l’origine du signal, pas le fonctionnement de la montre d’Alex.
 
 Au chargement, le journal reprend les entrées enregistrées. La file d’attente et l’ancien sous-titre ne sont pas rejoués. Les appels de reprise donnent l’objectif courant au lieu de diffuser successivement tout ce qui avait été entendu avant l’arrêt.
+
+La clôture au refuge ajoute un épilogue de présentation après l’enregistrement réussi de la mission achevée. En cas d’échec, le relais reste réessayable et aucune séquence ne démarre. Ses sous-titres rappellent la réception d’Ana, Samuel et Nora, puis un fragment de relais dont l’origine reste non confirmée. Ils appartiennent au réalisateur de la séquence et n’ajoutent pas de ligne au journal radio. Revoir ou passer cet épilogue ne modifie donc ni les trente-deux transmissions conservées ni les marqueurs `bravo_echo` et `bravo_verification`. La consultation d’une sauvegarde achevée ouvre directement le bilan.
 
 ## Écho facultatif après Samuel
 
@@ -81,7 +83,7 @@ Le fragment livré est : « Bravo à Aube. On vous voit à la baie Est... Notre 
 | Recevoir l’écho | Joueur au 27, six secondes continues de radio libre, hors rappel, portage et treuillage |
 | Vérifier le signal | Écho déjà reçu, sous-titres terminés, deux secondes continues de calme au 27, au 25 ou au toit |
 | Persister | Identifiant ajouté et checkpoint demandé sur le niveau sûr courant |
-| Interrompre les conditions | Le compteur de calme repart de zéro ; aucun déclenchement pendant pause, arrivée ou bilan |
+| Interrompre les conditions | Le compteur de calme repart de zéro ; aucun déclenchement pendant pause, arrivée, épilogue ou bilan |
 
 La réponse livrée, sous l’indicatif « VARGA / VÉRIFICATION DU SIGNAL », est : « J’ai reçu le même fragment. Aucun contact confirmé avec Bravo. Gardez les consignes du poste d’Aube ; nous vérifions la liaison. » Sa durée prévue est de neuf secondes. Elle garde ouvertes les hypothèses d’un enregistrement et d’un appel en direct. La scène ne fait apparaître aucune menace au 27 et ne retire aucune personne du poste médical.
 

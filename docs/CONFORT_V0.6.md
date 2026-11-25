@@ -1,10 +1,12 @@
-# Options et confort — The Tower Descent v0.6
+# Options et confort — The Tower Descent v0.7
+
+Le fichier conserve son nom historique et décrit les réglages conservés en 0.7. Le dossier et le bilan ajoutent leurs propres commandes de lecture ; l’épilogue reprend le choix de mouvements réduits, la coupure sonore et la pause explicite. Ces ajouts ne modifient pas le format des préférences.
 
 ## Intention
 
 Le joueur doit pouvoir adapter son regard et son écoute avant le déploiement, puis corriger ses réglages au cours d’une intervention sans perdre son point sûr. Le menu conserve les couleurs, les polices et la hiérarchie de l’accueil cinématique : fond bleu nuit, accents or, rubriques turquoise et chiffres lisibles. Les réglages du joueur sont distincts du cadrage choisi pour les plans de cinéma.
 
-Cette version ajoute trois curseurs et l’inversion verticale, réunit l’ensemble des réglages dans une fenêtre défilante, et ouvre cette même fenêtre depuis la pause. Les réglages sont appliqués immédiatement. Le retour ferme la fenêtre ; aucune action « Appliquer » supplémentaire n’est nécessaire.
+Depuis la 0.6, le panneau propose trois curseurs et l’inversion verticale, réunit l’ensemble des réglages dans une fenêtre défilante, et ouvre cette même fenêtre depuis la pause. Les réglages sont appliqués immédiatement. Le retour ferme la fenêtre ; aucune action « Appliquer » supplémentaire n’est nécessaire.
 
 ## Réglages livrés
 
@@ -13,7 +15,7 @@ Cette version ajoute trois curseurs et l’inversion verticale, réunit l’ense
 | Activer le son | Oui | Oui / non | Coupe ou rétablit le bus principal, indépendamment du volume mémorisé. |
 | Volume général | 100 % | 0 à 100 %, pas de 5 % | Modifie le gain du bus principal ; les rapports entre ambiance, radio, effets, musique et rotors sont conservés. |
 | Sensibilité de la souris | × 1,00 | × 0,25 à × 2,50, pas de 0,05 | Multiplie la valeur de base de 0,0024 radian par pixel du contrôleur. |
-| Champ de vision en jeu | 77° | 65° à 100°, pas de 1° | Change la propriété FOV de la caméra du joueur. Les plans du menu et les trois premiers plans d’arrivée gardent leur cadrage. Le dernier raccord mobile rejoint le FOV choisi avant de rendre la main ; le plan fixe du mode à mouvements réduits garde son cadrage. |
+| Champ de vision en jeu | 77° | 65° à 100°, pas de 1° | Change la propriété FOV de la caméra du joueur. Les plans du menu, les trois premiers plans d’arrivée et les trois plans d’épilogue gardent leur cadrage. Le dernier raccord mobile rejoint le FOV choisi avant de rendre la main ; le plan fixe du mode à mouvements réduits garde son cadrage. |
 | Inverser le regard vertical | Non | Oui / non | Inverse l’axe vertical de la souris et des flèches ; l’axe horizontal et les déplacements restent identiques. |
 | Réduire les mouvements de caméra | Oui | Oui / non | Conserve les plans fixes et supprime le balancement du regard ; l’ambiance maritime suit également ce choix. |
 | Activer les éclairs lumineux | Non | Oui / non | Autorise l’effet lumineux facultatif de l’orage. |
@@ -40,6 +42,8 @@ La sensibilité de la souris ne modifie pas la vitesse des flèches. L’inversi
 4. **Retour** ou **Échap** revient à la pause. Il faut choisir **Reprendre** pour reprendre le jeu.
 
 La fenêtre ne remet pas le chronomètre en marche, ne rejoue pas l’arrivée, ne réinitialise pas l’équipe et ne crée pas de point de sauvegarde. Le fond reste figé pendant les réglages en pause.
+
+Pendant l’épilogue de la 0.7, Échap suspend la séquence. Les options restent accessibles depuis cette pause et leur fermeture y revient ; Reprendre rend la main au réalisateur. Le passage de séquence est disponible hors pause. Le journal se parcourt au clavier avec Tab, les flèches sur ses quatre onglets et Page ↑ / Page ↓ dans son lecteur ; fermer le journal final revient au bilan sans réactiver le personnage.
 
 ### Commandes et valeurs par défaut
 
