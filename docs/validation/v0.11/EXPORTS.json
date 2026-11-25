@@ -1,0 +1,261 @@
+{
+  "version": "0.11.0",
+  "all_pass": true,
+  "source_commit": "28db3e7654b9b7b523369b6990035b159babae34",
+  "build_commit": "839c502bea31d0776245dee35b237b6c2fe15118",
+  "built_utc": "2026-11-25T17:34:45.147859+00:00",
+  "runtime_sha256": {
+    "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
+    "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
+    "prototype/assets/audio/impact.wav": "e831204acdc889fa5b57a95b21edc8044748415342018720969cd6a589d58050",
+    "prototype/assets/audio/intro_sting.wav": "7920665fc873ca41cba6417e327d99f7229606634b64f2efd729b617a8c48571",
+    "prototype/assets/audio/menu_theme.wav": "42708f055e4aae61a48b07b9f6e67a3e02c7f82aade78f0907a15781478bb4a6",
+    "prototype/assets/audio/quake.wav": "869aaff278eaa264f9dfbe19801a09000d987cb9b316691876e52114f6e497b1",
+    "prototype/assets/audio/radio.wav": "7b5e25100bbd0738037ce091772325ece3ec9326c528d8e7593ee3d4ef7ade38",
+    "prototype/assets/audio/rescue.wav": "404c60cefad1f258166211024dfdbf402a0051d168efc906268afe3867bdae98",
+    "prototype/assets/audio/rotors.wav": "77fb4dcdf4248efd884ffe45c5ffad6315806f911577d51c3b9522dd38bcc78a",
+    "prototype/assets/audio/rumble.wav": "bc0e349c7dbda51573308c738b8e15c49c35d7ea4bcd2b91f07b19a81b91ebd2",
+    "prototype/assets/audio/uncertain_steps.wav": "52f8b66c082d53e293eb9a2bb69bae4eb82db2487ed084944214cbee545664f2",
+    "prototype/assets/audio/wind.wav": "e552edccc315de23a83114a6d43dfdc6ab347b925d05fa8839d0cdfda179511e",
+    "prototype/assets/fonts/LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "prototype/assets/fonts/NOTICE.txt": "94d4b78643f99d7cfa872145b38da578299f401405ca5cba66a5c95bf13933b0",
+    "prototype/assets/fonts/OpenSans-CondBold.ttf": "a859a438018739aee16c306586d91a453c208ee500c827d9e9aa063155c8a6e8",
+    "prototype/assets/fonts/OpenSans-Light.ttf": "cf5f5184c1441a1660aa52526328e9d5c2793e77b6d8d3a3ad654bdb07ab8424",
+    "prototype/assets/fonts/OpenSans-Regular.ttf": "e64e508b2aa2880f907e470c4550980ec4c0694d103a43f36150ac3f93189bee",
+    "prototype/assets/icon.svg": "6d3e2c2f34057f8c2d0c0381ba25a1a288a7145b28f17f4d4cbcdeba31c7351e",
+    "prototype/assets/materials/v011/README.md": "f457113bff4563beb1d17b3ed300785445871b942d7359f669bc14588484ea80",
+    "prototype/assets/materials/v011/black_rubber.png": "dd554c6a3ce03657395330df817e78a9c36c93de983a0ae20fc018d344c38581",
+    "prototype/assets/materials/v011/brushed_steel.png": "b182a04fc8bda2b8cd657fd6a7386233bad6b7635e7924bac6b2efccd3d5dc69",
+    "prototype/assets/materials/v011/dark_stone.png": "ea23d3a2fef5ecb13f153c65a7edb9b45c5512a75553f26923b89cfaa82babc0",
+    "prototype/assets/materials/v011/manifest.json": "cf7fbe726af5f4b4485b9b23b5d3f9171203ad4837271e310514f96e84d0c6c9",
+    "prototype/assets/materials/v011/porcelain_tile.png": "e9bd1d3e86af1f1eefb0d3679b8ff4526dd72af04575077af2fd164b1c7e632b",
+    "prototype/assets/materials/v011/rescue_red_paint.png": "adcd2865e7853a4e79ab932a09f35bfed054a2613978d8e7ea75de2276617a96",
+    "prototype/assets/materials/v011/salt_concrete.png": "7299270d824a23a54a642dd528e215047fd41173b7765b0ad6de1723b064d4c9",
+    "prototype/assets/materials/v011/smoked_oak.png": "a5b4e3bb1859b1a6b722463ea03c48de8e68649921122d768c09f1698aff8b35",
+    "prototype/assets/materials/v011/teal_carpet.png": "0c899389b28ab6169fefa09acf093aa543131e859ddc223529da076f7f426da5",
+    "prototype/assets/models/rescue_v011/bolt_cutter.glb": "1ca9720c092191f10db9c537daf2358c5411a68c6e36033db30521b13bd153d7",
+    "prototype/assets/models/rescue_v011/carabiner.glb": "baf7f4df4a47f377d719cf16e8c1e18d969b767e7ea05b243b9c88463a1bf887",
+    "prototype/assets/models/rescue_v011/descender.glb": "12d97ba55f74027750377607ff871fe93546dcf4d3f9d550b937f8f6709a5f61",
+    "prototype/assets/models/rescue_v011/emergency_beacon.glb": "c25c7b2c38d9500060e0a587c74101898490c4e3fff06c95f06f8643c141e2c1",
+    "prototype/assets/models/rescue_v011/equipment_case.glb": "c1f087b4a222e8b5b75d62c2cd7db7a66ffa84a57725182d80260488ae076f7e",
+    "prototype/assets/models/rescue_v011/extinguisher.glb": "9437897f50f2d611baafd628325347e472aeeb18afe9b5e47e2a44898506f606",
+    "prototype/assets/models/rescue_v011/fire_axe.glb": "3e1f58918d56fe9f92131eef8d389faab3849408b838cf24baab140f02430ae2",
+    "prototype/assets/models/rescue_v011/halligan.glb": "537c07642f6075639a406702f56ea896c1e1a0fcc9981697bb5244070af22c46",
+    "prototype/assets/models/rescue_v011/manifest.json": "8203c05898243ea84381eae11e0a6259d0fc3dcb7de26fb8d6dd28f59aa44e2c",
+    "prototype/assets/models/rescue_v011/oxygen_cylinder.glb": "c1490f993e6a503aa0d17e951a2252b5224c3ed2de4b664e0adecdcd97a77802",
+    "prototype/assets/models/rescue_v011/portable_worklight.glb": "e65b7a006b750e00124aa1cdb7f40a43bbd9ca5e8cd50237dc2483e392a49734",
+    "prototype/assets/models/rescue_v011/rescue_flashlight.glb": "73212e4a7445e10bc4d36b19533a6adec6bf994a60d0281223ab9467f8e4d574",
+    "prototype/assets/models/rescue_v011/rescue_helmet.glb": "a88430f9ff535a64866dc52bc10d40abc6ae213c2e2c7daa04a04c43c19769d2",
+    "prototype/assets/models/rescue_v011/rescue_radio.glb": "f4a828b9f86c5b2841f7dc582f91428aa4e788acb80916c322ddf63861ecd326",
+    "prototype/assets/models/rescue_v011/rescue_stretcher.glb": "6493fb4540944fb0ad1337810bfd7a0ac3848899e4b7c8032e4f21c56ac4a943",
+    "prototype/assets/models/rescue_v011/rope_coil.glb": "9a5d496abbb6e610b9b5fc9d471f567aa70ffcb1fa18602f2edd4e4dc3fe0f40",
+    "prototype/assets/models/rescue_v011/trauma_bag.glb": "c373771ab869ad3837fb7874b94a75c121fb0ccfcf9e45c1d4a8df64c93eea19",
+    "prototype/assets/ui/studio_mark.svg": "c452e38192adda61ef9cebfefe9759ef850e35f9b248a09a17ad818dd4e20835",
+    "prototype/export_presets.cfg": "7f3bdbfde7ff38421077283b9ee723f423b612feaf54f932dcdc648f5dea113b",
+    "prototype/project.godot": "266ffe8ba6e6ce157c31b2886c76c632a4abbf0272d243440f81f3911797f446",
+    "prototype/scenes/main.tscn": "db52bbe7b5a1df4d839ec4f721a1f09faa8272e35c387b097fa2c5b1b4ac6937",
+    "prototype/scripts/cinematic_director.gd": "1496a0564cd3faf4e30b89fef7255686f979253e108f2eef882af5b29bfe4b80",
+    "prototype/scripts/cinematic_lighting.gd": "7bb9eec0d3e928346a76265da91428c891b2f7458951958410145422cba6a1be",
+    "prototype/scripts/cinematic_overlay.gd": "2b9c9d3f1b2368380fb92ef82b3949b6c90c863bbd02184c89ddc9df6c33050b",
+    "prototype/scripts/collapse_director.gd": "3d9dce62a1b99c68aba41dc7f447a1ced40041ab64f2fb07f16802af5cdd8ee7",
+    "prototype/scripts/continuation_director.gd": "fadf17cfdf6e86d4e92632d9b0cd5519ac01555156ee914ca12251584e7dc3a8",
+    "prototype/scripts/continuation_presentation.gd": "992d938ada694b400ea2381c3907146063a4a68b279c45ea4c5582278da0ddb7",
+    "prototype/scripts/epilogue_director.gd": "4a8da32affe5bf27d616f6d289f41b83121b37f4d60a41b71e069f732408d972",
+    "prototype/scripts/equipment_director.gd": "010d075fbf8ea23107a197810f363e5811be55484b55a1a941e4671f3bc0a144",
+    "prototype/scripts/field_props.gd": "a9f6bb6e879c5dbdab0143bee832032d98a2fc2afd37f531f3900326d3a5a514",
+    "prototype/scripts/floor_generator.gd": "0ae0f3e796e0e219fb505ba688488661848434c5fc4e46278b030a257f399779",
+    "prototype/scripts/frontend_menu.gd": "db9cb05c2f820fd5f4201e154b1051cedaa1de823bb5af70a6fbb9933015e1fc",
+    "prototype/scripts/horror_director.gd": "03b49075109baa5c3951044bc25f5d7a07f61ece9bba3e4c61f6fcb90b319e0c",
+    "prototype/scripts/horror_presentation.gd": "4dc010cef8b8e350d26a19f7682154b8b772b65ab07297e4445465c4d11ca3c1",
+    "prototype/scripts/hud.gd": "39d777f64e0c328eadf1706d1f43392b56ef51c19cd127a96b87508743651f27",
+    "prototype/scripts/inspection_panel.gd": "37c8c06327a8e97f955381bd36564eddabb686bd053e0af1b99c2b7895d49cbd",
+    "prototype/scripts/main.gd": "605e8b2f892169f517f61754334f53b97651d92f1ca877e158ce1f4255f2215d",
+    "prototype/scripts/maritime_atmosphere.gd": "ccce77223a8aea0888ae660fb5a32facc89440afb4edbaf57f68834da84d33a5",
+    "prototype/scripts/mission_dossier.gd": "08e805c1724ecfcd274a8c81f9ae1932b2d6a9cffa0d5c0456bce941ba8f5897",
+    "prototype/scripts/mission_dossier_panel.gd": "d74ae8d25510d386321e70232fc95f29e3811faff4db16fda0a5024f597eca36",
+    "prototype/scripts/player_controller.gd": "85dbd0c34a27a60b2794dacdbf550320ca405077b3b9b9fb9e2be75d17209360",
+    "prototype/scripts/preferences_store.gd": "31c0a2dee0287b17fc41f1ebd13dd8060986ed431174625d6c304bdd431f5420",
+    "prototype/scripts/presentation_geometry.gd": "1d1b52a483221eb98b477fd9e90b3aeaf42fe6a87af26abf8730cf9ccfa890db",
+    "prototype/scripts/radio_director.gd": "0c3d64be528a11db8df32ca9f6afcc5ed1bd228744f28740c56ef377b9b07dab",
+    "prototype/scripts/rescue_asset_catalog.gd": "c6ff7a890b12f1d13be806f8c899211367b6d6c2742caa6d151fa4c2b0234d79",
+    "prototype/scripts/rescue_equipment.gd": "1ffcf384bfaabbf332f39ba0cf6ca32be31e4712ab72e359093d306e95bfc989",
+    "prototype/scripts/rescue_presentation.gd": "ac3e900f85615f4dedff422c3fcb5985901cd75107f17dffe876a5087565a7a8",
+    "prototype/scripts/rope_presentation.gd": "c8c5a2826a4fa1fcddaa7e37e7994a49f5981b9c2a1fea14bbcbe914a89cc731",
+    "prototype/scripts/rope_traversal.gd": "2690c1a8cd07e9ddc333bcb9002b8735ae9985bd2ec99271b2f6c6e63d060704",
+    "prototype/scripts/route_catalog.gd": "ec5dadc197f2995c8fdad9348905d0ab05eaadb000f8b0d5808d4f6fbcd73b4e",
+    "prototype/scripts/save_store.gd": "2929265b598f18a108c94feec14aea9b19410042c509fb2e98494b69d1f7f5ff",
+    "prototype/scripts/surface_materials.gd": "5e657399ab1e3016b14594a17debeb5e91acc2e9a2f392dafcc088613fd56542",
+    "prototype/scripts/world_builder.gd": "33b6f505495808c4e9b5beae4dcc60c9658710c43fb63f14ca0407382d109318",
+    "prototype/shaders/cinematic_veil.gdshader": "1aa18255935f3c9ab0d3ebb2ee49dea18d32828d21eac67eeaaf0f22a8cdfb0e",
+    "prototype/shaders/maritime_rain.gdshader": "ff3e19dca63c9bdcc79fc283f468c9213c6a93044b095c5a6e305d84ef4867cd",
+    "prototype/shaders/rotor_wash.gdshader": "8a59b620e99331970aef867ec4c847d27094eda1e7fed6a7b6bdcfe9b8ce8866",
+    "prototype/shaders/storm_curtain.gdshader": "9a359ac0bb58a46838db1d02f6a5ae33447f61b430b21ecd38343088b6e16d37",
+    "prototype/shaders/storm_sky.gdshader": "3f952ed773256f532f95fc7636c4d9ef04d0bc3363c13b1e5860e1d213e95f7a",
+    "prototype/shaders/water.gdshader": "800331fda3f273e43fa5196a26720fcc5eee80f8b80d3680842583fbba4203c5",
+    "prototype/shaders/weathered_surface.gdshader": "e71f62962863bc3e3fe64e73c1b2b53098ec2c354eb46464a32eba0db0a62d3d",
+    "prototype/web_shell.html": "2153408b1c07a7cdac170f9f87fdb99617fd61f82c523902a11658e17d2e54fd"
+  },
+  "source_verification": {
+    "file": "docs/validation/v0.11/VERIFICATION.json",
+    "bytes": 50585,
+    "sha256": "280638fdcdd0ada5593eae039465ea5f0930957a37b479ffa0924dc43f025c3b"
+  },
+  "outputs": [
+    {
+      "file": "builds/windows/TheTowerDescent.exe",
+      "bytes": 129631528,
+      "sha256": "71bfb17e9f83c7c35e45969eca74bcbc80b44daa9c1678304b387d49d2fc39b9"
+    },
+    {
+      "file": "builds/web/index.apple-touch-icon.png",
+      "bytes": 7731,
+      "sha256": "39c2de97090bef95bb749e0f627b921495000820a28681084e5099f0275a53e3"
+    },
+    {
+      "file": "builds/web/index.audio.position.worklet.js",
+      "bytes": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    {
+      "file": "builds/web/index.audio.worklet.js",
+      "bytes": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    {
+      "file": "builds/web/index.html",
+      "bytes": 6473,
+      "sha256": "d57d489f7ec9327fd6fd75ca95a496a033ce568d9a87d42d6bc9f135e7ae1ed5"
+    },
+    {
+      "file": "builds/web/index.icon.png",
+      "bytes": 7715,
+      "sha256": "c132987c1adc75a6eb63363fe2781281c7ca209abb5000ad539d219708a239e2"
+    },
+    {
+      "file": "builds/web/index.js",
+      "bytes": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    {
+      "file": "builds/web/index.pck",
+      "bytes": 20363036,
+      "sha256": "a8c7a22498c8c3ba0fa1c4f37fec47811a9053a66ab73457a80b52e270777ef0"
+    },
+    {
+      "file": "builds/web/index.png",
+      "bytes": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    {
+      "file": "builds/web/index.wasm",
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    },
+    {
+      "file": "dist/GODOT_LICENSES.txt",
+      "bytes": 110931,
+      "sha256": "88c531d4869a0ee7775ce544b32f54e638f51a1313a8156500231f1dfa89c21a"
+    },
+    {
+      "file": "dist/OPEN_SANS_LICENSE.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "dist/OPEN_SANS_NOTICE.txt",
+      "bytes": 1031,
+      "sha256": "94d4b78643f99d7cfa872145b38da578299f401405ca5cba66a5c95bf13933b0"
+    },
+    {
+      "file": "dist/index.apple-touch-icon.png",
+      "bytes": 7731,
+      "sha256": "39c2de97090bef95bb749e0f627b921495000820a28681084e5099f0275a53e3"
+    },
+    {
+      "file": "dist/index.audio.position.worklet.js",
+      "bytes": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    {
+      "file": "dist/index.audio.worklet.js",
+      "bytes": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    {
+      "file": "dist/index.html",
+      "bytes": 6473,
+      "sha256": "d57d489f7ec9327fd6fd75ca95a496a033ce568d9a87d42d6bc9f135e7ae1ed5"
+    },
+    {
+      "file": "dist/index.icon.png",
+      "bytes": 7715,
+      "sha256": "c132987c1adc75a6eb63363fe2781281c7ca209abb5000ad539d219708a239e2"
+    },
+    {
+      "file": "dist/index.js",
+      "bytes": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    {
+      "file": "dist/index.pck",
+      "bytes": 20363036,
+      "sha256": "a8c7a22498c8c3ba0fa1c4f37fec47811a9053a66ab73457a80b52e270777ef0"
+    },
+    {
+      "file": "dist/index.png",
+      "bytes": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    {
+      "file": "dist/index.wasm",
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    }
+  ],
+  "exports": [
+    {
+      "command": [
+        "/home/runner/work/_temp/godot/Godot_v4.7.2-stable_linux.x86_64",
+        "--headless",
+        "--path",
+        "/home/runner/work/The-Descents/The-Descents/prototype",
+        "--export-release",
+        "Windows Desktop",
+        "/home/runner/work/The-Descents/The-Descents/builds/windows/TheTowerDescent.exe"
+      ],
+      "returncode": 0,
+      "duration_seconds": 2.585,
+      "error_lines": [],
+      "checks": 0,
+      "pass_markers": 0,
+      "log": "export-windows.txt",
+      "sha256": "2408d0d0356cd18a4071a265c9711cc61020ec9e0281914aebc30fa28265dd05",
+      "pass": true,
+      "platform": "windows"
+    },
+    {
+      "command": [
+        "/home/runner/work/_temp/godot/Godot_v4.7.2-stable_linux.x86_64",
+        "--headless",
+        "--path",
+        "/home/runner/work/The-Descents/The-Descents/prototype",
+        "--export-release",
+        "Web",
+        "/home/runner/work/The-Descents/The-Descents/builds/web/index.html"
+      ],
+      "returncode": 0,
+      "duration_seconds": 2.396,
+      "error_lines": [],
+      "checks": 0,
+      "pass_markers": 0,
+      "log": "export-web.txt",
+      "sha256": "2408d0d0356cd18a4071a265c9711cc61020ec9e0281914aebc30fa28265dd05",
+      "pass": true,
+      "platform": "web"
+    }
+  ],
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "limitations": [
+    "Linux export construction does not execute the Windows program or the WebAssembly browser game."
+  ]
+}

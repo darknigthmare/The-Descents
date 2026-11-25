@@ -1,0 +1,263 @@
+{
+  "captures": [
+    {
+      "description": "Menu initial, deux tours intactes, aucune sauvegarde",
+      "file": "01_menu_arrivee.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Options avant la partie",
+      "file": "02_options.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Préparation de la première intervention",
+      "file": "03_nouvelle_intervention.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Signature du studio, carton à deux secondes",
+      "file": "04_signature_studio.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Révélation du titre à onze secondes",
+      "file": "05_titre.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Approche en jeu, état préparé à 3 secondes",
+      "file": "06_approche_03.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Approche en jeu, état préparé à 10 secondes",
+      "file": "06_approche_10.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Approche en jeu, état préparé à 17 secondes",
+      "file": "06_approche_17.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Approche en jeu, état préparé à 25 secondes",
+      "file": "06_approche_25.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Pause pendant l’approche",
+      "file": "07_pause_intro.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Détail du toit : Alpha posé, porte et équipe dans leur état final",
+      "file": "14_toit_equipe.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Portage d’Ana : harnais, personne et mains visibles, objectif dégagé",
+      "file": "15_portage.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Remontée d’Ana dans le puits : harnais et câble sous tension",
+      "file": "16_treuillage.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Réception confirmée, transfert d’Ana vers l’abri avec l’équipe médicale",
+      "file": "17_reception.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Atmosphère maritime : plafond nuageux, pluie extérieure et horizon de Nacre",
+      "file": "18_meteo_toit.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Réglages complets accessibles pendant une intervention suspendue",
+      "file": "19_options_pause.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Fiche du registre de réception, avant les sauvetages",
+      "file": "11_inspection_toit.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Fiche des archives, avant l’incident structurel",
+      "file": "12_inspection_archives.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Même fiche des archives après l’impact confirmé, consigne actualisée",
+      "file": "13_inspection_apres.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Accueil au point sûr du 28 après la réplique",
+      "file": "08_menu_archives.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Dossier actualisé après l’impact confirmé",
+      "file": "09_dossier_apres.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Journal de l’intervention en cours : situation, une réception et un indice confirmés",
+      "file": "20_journal_situation.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Journal de l’intervention en cours : survivors, une réception et un indice confirmés",
+      "file": "21_journal_rescapes.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Journal de l’intervention en cours : clues, une réception et un indice confirmés",
+      "file": "22_journal_indices.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Journal de l’intervention en cours : transmissions, une réception et un indice confirmés",
+      "file": "23_journal_transmissions.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Épilogue en jeu : plan 1 à 2 secondes, trois personnes réceptionnées",
+      "file": "24_epilogue_02.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Épilogue en jeu : plan 2 à 7 secondes, trois personnes réceptionnées",
+      "file": "24_epilogue_07.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Épilogue en jeu : plan 3 à 12 secondes, trois personnes réceptionnées",
+      "file": "24_epilogue_12.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Bilan nominatif au refuge : trois réceptions, deux indices et historique de cette intervention",
+      "file": "25_bilan_refuge.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Accueil après une intervention terminée, point sûr du refuge",
+      "file": "10_menu_refuge.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Manifestation des suites 29 : pose périphérique préparée, directeur avancé réellement de 3,4 s, silhouette sans dégâts",
+      "file": "26_suites_presence.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Archives 28 : huit traces humides après impact, neuf secondes de présentation réelle, sans indice ajouté au journal",
+      "file": "27_archives_traces.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Spa 26 : seconde présence après extinction, attente calme et regard détourné, sans poursuite ni dommage",
+      "file": "28_spa_remanence.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Repère bleu du rappel personnel toit–30, distinct du treuil orange ; pose initiale préparée",
+      "file": "29_station_rappel_toit.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Descente contrôlée sur R31_30 : transfert et 1,25 s de mouvement réels, capsule, descendeur et HUD du rappel",
+      "file": "30_rappel_descente.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Même liaison, verrouillage réel du descendeur : vitesse nulle, repos assuré et état visible",
+      "file": "31_rappel_verrouille.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Remontée réelle depuis l’extrémité basse du rappel toit–30 : effort, vitesse et disponibilité de corde",
+      "file": "34_rappel_remontee.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Escalier local du restaurant 30 aux suites 29 : ouverture de dalle, première volée et signalétique",
+      "file": "32_escalier_30_29.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Palier intermédiaire du 30–29 : deux volées physiques, aucune entrée d’étage déclarée à mi-hauteur",
+      "file": "33_escalier_palier.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Escalier local des archives 28 au jardin 27, vue préparée de la dalle ouverte et du passage intérieur",
+      "file": "36_escalier_28_27.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Dernier escalier local, du spa 26 au refuge 25 ; la cage s’arrête à la liaison prévue",
+      "file": "37_escalier_26_25.png",
+      "height": 900,
+      "width": 1440
+    },
+    {
+      "description": "Aide de mission : itinéraire des six liaisons, commandes de rappel, distinction des repères et treuil",
+      "file": "35_aide_deplacements.png",
+      "height": 900,
+      "width": 1440
+    }
+  ],
+  "display": "X11",
+  "engine": "4.7.2-stable (official)",
+  "human_playthrough": false,
+  "prepared_states": true,
+  "rendering_method": "gl_compatibility",
+  "version": "0.11.0",
+  "viewport": "(1440.0, 900.0)"
+}

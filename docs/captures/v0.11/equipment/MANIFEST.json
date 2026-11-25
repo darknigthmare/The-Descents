@@ -1,0 +1,160 @@
+{
+	"captures": [
+		{
+			"active_action": "",
+			"camera_lift_m": 0.0,
+			"completed_actions": [],
+			"continuation_phase": "dormant",
+			"description": "Râtelier du toit et outils de secours ; état après impact préparé.",
+			"file": "01_rack_toit.png",
+			"floor": 31,
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"rendering_method": "gl_compatibility",
+			"selected_tool": "fire_axe",
+			"sha256": "cb2204bf31daed6161450f7a9618196169536c3f8d0ab21cfc138c758b66fd31",
+			"width": 1440
+		},
+		{
+			"active_action": "",
+			"camera_lift_m": 1.09999847412109,
+			"completed_actions": [],
+			"continuation_phase": "dormant",
+			"description": "Radio, casque, sac de soins et lampe sur le comptoir ; caméra de revue relevée.",
+			"file": "02_comptoir_toit.png",
+			"floor": 31,
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"rendering_method": "gl_compatibility",
+			"selected_tool": "fire_axe",
+			"sha256": "6d4cf7cfe9eb17719a45b27f71123f6e0ed85d84948c969982bfb4dd81becf1b",
+			"width": 1440
+		},
+		{
+			"active_action": "equipment_boards_29",
+			"camera_lift_m": 0.0,
+			"completed_actions": [],
+			"continuation_phase": "dormant",
+			"description": "Hache sélectionnée et action réelle en cours sur la réserve de balisage du 29.",
+			"file": "03_hache_29.png",
+			"floor": 29,
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"rendering_method": "gl_compatibility",
+			"selected_tool": "fire_axe",
+			"sha256": "5b9c61c73b17fb17ff94473ac0a5e58372429a4391a73f2c0b08d1d828180748",
+			"width": 1440
+		},
+		{
+			"active_action": "equipment_fire_28",
+			"camera_lift_m": 0.0,
+			"completed_actions": [
+				"equipment_boards_29"
+			],
+			"continuation_phase": "dormant",
+			"description": "Extincteur sélectionné, action maintenue et jet cosmétique vers le foyer du 28.",
+			"file": "04_extincteur_28_actif.png",
+			"floor": 28,
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"rendering_method": "gl_compatibility",
+			"selected_tool": "extinguisher",
+			"sha256": "a60be5b3eb8062b952145a32e15f31b4eb2730d75970f2550463663743a02f5d",
+			"width": 1440
+		},
+		{
+			"active_action": "",
+			"camera_lift_m": 0.0,
+			"completed_actions": [
+				"equipment_boards_29",
+				"equipment_fire_28"
+			],
+			"continuation_phase": "dormant",
+			"description": "Foyer du 28 éteint par la logique d’action ; réserve de l’extincteur mise à jour.",
+			"file": "05_foyer_28_eteint.png",
+			"floor": 28,
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"rendering_method": "gl_compatibility",
+			"selected_tool": "extinguisher",
+			"sha256": "0a69eac27a574ac20dd57ac6c1f5c96a608cae22ecbf17dd239d61561eaf16ee",
+			"width": 1440
+		},
+		{
+			"active_action": "equipment_cabinet_25",
+			"camera_lift_m": 0.0,
+			"completed_actions": [
+				"equipment_boards_29",
+				"equipment_fire_28"
+			],
+			"continuation_phase": "dormant",
+			"description": "Halligan en main et intervention en cours sur l’armoire de soins du refuge.",
+			"file": "06_halligan_25.png",
+			"floor": 25,
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"rendering_method": "gl_compatibility",
+			"selected_tool": "halligan",
+			"sha256": "7826b2a53658af2e0081335dc531486e543b7d4cef2222caba2144bb760fa245",
+			"width": 1440
+		},
+		{
+			"active_action": "",
+			"camera_lift_m": 0.0,
+			"completed_actions": [
+				"equipment_boards_29",
+				"equipment_fire_28",
+				"equipment_cabinet_25",
+				"equipment_chain_24"
+			],
+			"continuation_phase": "active",
+			"description": "Coupe-boulon au congrès, chaîne ouverte et projecteur libéré après le choix réel de poursuite.",
+			"file": "07_coupe_boulon_24.png",
+			"floor": 24,
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"rendering_method": "gl_compatibility",
+			"selected_tool": "bolt_cutter",
+			"sha256": "ef24b19209735dcb2d19cf4dd15df3b94197d67f789543bdcb2c7fa21a79afe6",
+			"width": 1440
+		},
+		{
+			"active_action": "",
+			"camera_lift_m": 0.0,
+			"completed_actions": [
+				"equipment_boards_29",
+				"equipment_fire_28",
+				"equipment_cabinet_25",
+				"equipment_chain_24"
+			],
+			"continuation_phase": "active",
+			"description": "Poste matériel du refuge : brancard, sac de soins, bouteille et balise ; HUD des outils visible.",
+			"file": "08_inventaire_refuge25.png",
+			"floor": 25,
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"rendering_method": "gl_compatibility",
+			"selected_tool": "halligan",
+			"sha256": "2c47d100927c345bc49e44188296f3f0004776f0e97c91750a1c5c7cc1ffff0b",
+			"width": 1440
+		}
+	],
+	"display": "X11",
+	"engine": "4.7.2-stable (official)",
+	"height": 900,
+	"human_playthrough": false,
+	"prepared_states": true,
+	"rendering_method": "gl_compatibility",
+	"source": "res://tests/visual_equipment_v011.tscn",
+	"version": "0.11.0",
+	"warmup_frames_per_capture": 8,
+	"width": 1440
+}

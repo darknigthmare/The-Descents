@@ -1,0 +1,1332 @@
+{
+  "format": 1,
+  "version": "0.11.0",
+  "request_id": "visual-20261125-01",
+  "source_commit": "28db3e7654b9b7b523369b6990035b159babae34",
+  "request_commit": "839c502bea31d0776245dee35b237b6c2fe15118",
+  "runtime_sha256": {
+    "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
+    "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
+    "prototype/assets/audio/impact.wav": "e831204acdc889fa5b57a95b21edc8044748415342018720969cd6a589d58050",
+    "prototype/assets/audio/intro_sting.wav": "7920665fc873ca41cba6417e327d99f7229606634b64f2efd729b617a8c48571",
+    "prototype/assets/audio/menu_theme.wav": "42708f055e4aae61a48b07b9f6e67a3e02c7f82aade78f0907a15781478bb4a6",
+    "prototype/assets/audio/quake.wav": "869aaff278eaa264f9dfbe19801a09000d987cb9b316691876e52114f6e497b1",
+    "prototype/assets/audio/radio.wav": "7b5e25100bbd0738037ce091772325ece3ec9326c528d8e7593ee3d4ef7ade38",
+    "prototype/assets/audio/rescue.wav": "404c60cefad1f258166211024dfdbf402a0051d168efc906268afe3867bdae98",
+    "prototype/assets/audio/rotors.wav": "77fb4dcdf4248efd884ffe45c5ffad6315806f911577d51c3b9522dd38bcc78a",
+    "prototype/assets/audio/rumble.wav": "bc0e349c7dbda51573308c738b8e15c49c35d7ea4bcd2b91f07b19a81b91ebd2",
+    "prototype/assets/audio/uncertain_steps.wav": "52f8b66c082d53e293eb9a2bb69bae4eb82db2487ed084944214cbee545664f2",
+    "prototype/assets/audio/wind.wav": "e552edccc315de23a83114a6d43dfdc6ab347b925d05fa8839d0cdfda179511e",
+    "prototype/assets/fonts/LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "prototype/assets/fonts/NOTICE.txt": "94d4b78643f99d7cfa872145b38da578299f401405ca5cba66a5c95bf13933b0",
+    "prototype/assets/fonts/OpenSans-CondBold.ttf": "a859a438018739aee16c306586d91a453c208ee500c827d9e9aa063155c8a6e8",
+    "prototype/assets/fonts/OpenSans-Light.ttf": "cf5f5184c1441a1660aa52526328e9d5c2793e77b6d8d3a3ad654bdb07ab8424",
+    "prototype/assets/fonts/OpenSans-Regular.ttf": "e64e508b2aa2880f907e470c4550980ec4c0694d103a43f36150ac3f93189bee",
+    "prototype/assets/icon.svg": "6d3e2c2f34057f8c2d0c0381ba25a1a288a7145b28f17f4d4cbcdeba31c7351e",
+    "prototype/assets/materials/v011/README.md": "f457113bff4563beb1d17b3ed300785445871b942d7359f669bc14588484ea80",
+    "prototype/assets/materials/v011/black_rubber.png": "dd554c6a3ce03657395330df817e78a9c36c93de983a0ae20fc018d344c38581",
+    "prototype/assets/materials/v011/brushed_steel.png": "b182a04fc8bda2b8cd657fd6a7386233bad6b7635e7924bac6b2efccd3d5dc69",
+    "prototype/assets/materials/v011/dark_stone.png": "ea23d3a2fef5ecb13f153c65a7edb9b45c5512a75553f26923b89cfaa82babc0",
+    "prototype/assets/materials/v011/manifest.json": "cf7fbe726af5f4b4485b9b23b5d3f9171203ad4837271e310514f96e84d0c6c9",
+    "prototype/assets/materials/v011/porcelain_tile.png": "e9bd1d3e86af1f1eefb0d3679b8ff4526dd72af04575077af2fd164b1c7e632b",
+    "prototype/assets/materials/v011/rescue_red_paint.png": "adcd2865e7853a4e79ab932a09f35bfed054a2613978d8e7ea75de2276617a96",
+    "prototype/assets/materials/v011/salt_concrete.png": "7299270d824a23a54a642dd528e215047fd41173b7765b0ad6de1723b064d4c9",
+    "prototype/assets/materials/v011/smoked_oak.png": "a5b4e3bb1859b1a6b722463ea03c48de8e68649921122d768c09f1698aff8b35",
+    "prototype/assets/materials/v011/teal_carpet.png": "0c899389b28ab6169fefa09acf093aa543131e859ddc223529da076f7f426da5",
+    "prototype/assets/models/rescue_v011/bolt_cutter.glb": "1ca9720c092191f10db9c537daf2358c5411a68c6e36033db30521b13bd153d7",
+    "prototype/assets/models/rescue_v011/carabiner.glb": "baf7f4df4a47f377d719cf16e8c1e18d969b767e7ea05b243b9c88463a1bf887",
+    "prototype/assets/models/rescue_v011/descender.glb": "12d97ba55f74027750377607ff871fe93546dcf4d3f9d550b937f8f6709a5f61",
+    "prototype/assets/models/rescue_v011/emergency_beacon.glb": "c25c7b2c38d9500060e0a587c74101898490c4e3fff06c95f06f8643c141e2c1",
+    "prototype/assets/models/rescue_v011/equipment_case.glb": "c1f087b4a222e8b5b75d62c2cd7db7a66ffa84a57725182d80260488ae076f7e",
+    "prototype/assets/models/rescue_v011/extinguisher.glb": "9437897f50f2d611baafd628325347e472aeeb18afe9b5e47e2a44898506f606",
+    "prototype/assets/models/rescue_v011/fire_axe.glb": "3e1f58918d56fe9f92131eef8d389faab3849408b838cf24baab140f02430ae2",
+    "prototype/assets/models/rescue_v011/halligan.glb": "537c07642f6075639a406702f56ea896c1e1a0fcc9981697bb5244070af22c46",
+    "prototype/assets/models/rescue_v011/manifest.json": "8203c05898243ea84381eae11e0a6259d0fc3dcb7de26fb8d6dd28f59aa44e2c",
+    "prototype/assets/models/rescue_v011/oxygen_cylinder.glb": "c1490f993e6a503aa0d17e951a2252b5224c3ed2de4b664e0adecdcd97a77802",
+    "prototype/assets/models/rescue_v011/portable_worklight.glb": "e65b7a006b750e00124aa1cdb7f40a43bbd9ca5e8cd50237dc2483e392a49734",
+    "prototype/assets/models/rescue_v011/rescue_flashlight.glb": "73212e4a7445e10bc4d36b19533a6adec6bf994a60d0281223ab9467f8e4d574",
+    "prototype/assets/models/rescue_v011/rescue_helmet.glb": "a88430f9ff535a64866dc52bc10d40abc6ae213c2e2c7daa04a04c43c19769d2",
+    "prototype/assets/models/rescue_v011/rescue_radio.glb": "f4a828b9f86c5b2841f7dc582f91428aa4e788acb80916c322ddf63861ecd326",
+    "prototype/assets/models/rescue_v011/rescue_stretcher.glb": "6493fb4540944fb0ad1337810bfd7a0ac3848899e4b7c8032e4f21c56ac4a943",
+    "prototype/assets/models/rescue_v011/rope_coil.glb": "9a5d496abbb6e610b9b5fc9d471f567aa70ffcb1fa18602f2edd4e4dc3fe0f40",
+    "prototype/assets/models/rescue_v011/trauma_bag.glb": "c373771ab869ad3837fb7874b94a75c121fb0ccfcf9e45c1d4a8df64c93eea19",
+    "prototype/assets/ui/studio_mark.svg": "c452e38192adda61ef9cebfefe9759ef850e35f9b248a09a17ad818dd4e20835",
+    "prototype/export_presets.cfg": "7f3bdbfde7ff38421077283b9ee723f423b612feaf54f932dcdc648f5dea113b",
+    "prototype/project.godot": "266ffe8ba6e6ce157c31b2886c76c632a4abbf0272d243440f81f3911797f446",
+    "prototype/scenes/main.tscn": "db52bbe7b5a1df4d839ec4f721a1f09faa8272e35c387b097fa2c5b1b4ac6937",
+    "prototype/scripts/cinematic_director.gd": "1496a0564cd3faf4e30b89fef7255686f979253e108f2eef882af5b29bfe4b80",
+    "prototype/scripts/cinematic_lighting.gd": "7bb9eec0d3e928346a76265da91428c891b2f7458951958410145422cba6a1be",
+    "prototype/scripts/cinematic_overlay.gd": "2b9c9d3f1b2368380fb92ef82b3949b6c90c863bbd02184c89ddc9df6c33050b",
+    "prototype/scripts/collapse_director.gd": "3d9dce62a1b99c68aba41dc7f447a1ced40041ab64f2fb07f16802af5cdd8ee7",
+    "prototype/scripts/continuation_director.gd": "fadf17cfdf6e86d4e92632d9b0cd5519ac01555156ee914ca12251584e7dc3a8",
+    "prototype/scripts/continuation_presentation.gd": "992d938ada694b400ea2381c3907146063a4a68b279c45ea4c5582278da0ddb7",
+    "prototype/scripts/epilogue_director.gd": "4a8da32affe5bf27d616f6d289f41b83121b37f4d60a41b71e069f732408d972",
+    "prototype/scripts/equipment_director.gd": "010d075fbf8ea23107a197810f363e5811be55484b55a1a941e4671f3bc0a144",
+    "prototype/scripts/field_props.gd": "a9f6bb6e879c5dbdab0143bee832032d98a2fc2afd37f531f3900326d3a5a514",
+    "prototype/scripts/floor_generator.gd": "0ae0f3e796e0e219fb505ba688488661848434c5fc4e46278b030a257f399779",
+    "prototype/scripts/frontend_menu.gd": "db9cb05c2f820fd5f4201e154b1051cedaa1de823bb5af70a6fbb9933015e1fc",
+    "prototype/scripts/horror_director.gd": "03b49075109baa5c3951044bc25f5d7a07f61ece9bba3e4c61f6fcb90b319e0c",
+    "prototype/scripts/horror_presentation.gd": "4dc010cef8b8e350d26a19f7682154b8b772b65ab07297e4445465c4d11ca3c1",
+    "prototype/scripts/hud.gd": "39d777f64e0c328eadf1706d1f43392b56ef51c19cd127a96b87508743651f27",
+    "prototype/scripts/inspection_panel.gd": "37c8c06327a8e97f955381bd36564eddabb686bd053e0af1b99c2b7895d49cbd",
+    "prototype/scripts/main.gd": "605e8b2f892169f517f61754334f53b97651d92f1ca877e158ce1f4255f2215d",
+    "prototype/scripts/maritime_atmosphere.gd": "ccce77223a8aea0888ae660fb5a32facc89440afb4edbaf57f68834da84d33a5",
+    "prototype/scripts/mission_dossier.gd": "08e805c1724ecfcd274a8c81f9ae1932b2d6a9cffa0d5c0456bce941ba8f5897",
+    "prototype/scripts/mission_dossier_panel.gd": "d74ae8d25510d386321e70232fc95f29e3811faff4db16fda0a5024f597eca36",
+    "prototype/scripts/player_controller.gd": "85dbd0c34a27a60b2794dacdbf550320ca405077b3b9b9fb9e2be75d17209360",
+    "prototype/scripts/preferences_store.gd": "31c0a2dee0287b17fc41f1ebd13dd8060986ed431174625d6c304bdd431f5420",
+    "prototype/scripts/presentation_geometry.gd": "1d1b52a483221eb98b477fd9e90b3aeaf42fe6a87af26abf8730cf9ccfa890db",
+    "prototype/scripts/radio_director.gd": "0c3d64be528a11db8df32ca9f6afcc5ed1bd228744f28740c56ef377b9b07dab",
+    "prototype/scripts/rescue_asset_catalog.gd": "c6ff7a890b12f1d13be806f8c899211367b6d6c2742caa6d151fa4c2b0234d79",
+    "prototype/scripts/rescue_equipment.gd": "1ffcf384bfaabbf332f39ba0cf6ca32be31e4712ab72e359093d306e95bfc989",
+    "prototype/scripts/rescue_presentation.gd": "ac3e900f85615f4dedff422c3fcb5985901cd75107f17dffe876a5087565a7a8",
+    "prototype/scripts/rope_presentation.gd": "c8c5a2826a4fa1fcddaa7e37e7994a49f5981b9c2a1fea14bbcbe914a89cc731",
+    "prototype/scripts/rope_traversal.gd": "2690c1a8cd07e9ddc333bcb9002b8735ae9985bd2ec99271b2f6c6e63d060704",
+    "prototype/scripts/route_catalog.gd": "ec5dadc197f2995c8fdad9348905d0ab05eaadb000f8b0d5808d4f6fbcd73b4e",
+    "prototype/scripts/save_store.gd": "2929265b598f18a108c94feec14aea9b19410042c509fb2e98494b69d1f7f5ff",
+    "prototype/scripts/surface_materials.gd": "5e657399ab1e3016b14594a17debeb5e91acc2e9a2f392dafcc088613fd56542",
+    "prototype/scripts/world_builder.gd": "33b6f505495808c4e9b5beae4dcc60c9658710c43fb63f14ca0407382d109318",
+    "prototype/shaders/cinematic_veil.gdshader": "1aa18255935f3c9ab0d3ebb2ee49dea18d32828d21eac67eeaaf0f22a8cdfb0e",
+    "prototype/shaders/maritime_rain.gdshader": "ff3e19dca63c9bdcc79fc283f468c9213c6a93044b095c5a6e305d84ef4867cd",
+    "prototype/shaders/rotor_wash.gdshader": "8a59b620e99331970aef867ec4c847d27094eda1e7fed6a7b6bdcfe9b8ce8866",
+    "prototype/shaders/storm_curtain.gdshader": "9a359ac0bb58a46838db1d02f6a5ae33447f61b430b21ecd38343088b6e16d37",
+    "prototype/shaders/storm_sky.gdshader": "3f952ed773256f532f95fc7636c4d9ef04d0bc3363c13b1e5860e1d213e95f7a",
+    "prototype/shaders/water.gdshader": "800331fda3f273e43fa5196a26720fcc5eee80f8b80d3680842583fbba4203c5",
+    "prototype/shaders/weathered_surface.gdshader": "e71f62962863bc3e3fe64e73c1b2b53098ec2c354eb46464a32eba0db0a62d3d",
+    "prototype/web_shell.html": "2153408b1c07a7cdac170f9f87fdb99617fd61f82c523902a11658e17d2e54fd"
+  },
+  "source_inputs": {
+    ".github/workflows/assets-v011.yml": "1dd3395d6bd9931281900a99d78f2f40960045befa24452311b37e7d925e6928",
+    ".github/workflows/cinematic-review.yml": "cc92e54f128046017bf39154d08f4de4459d0984a885ce89a5474384db6c4d49",
+    ".github/workflows/materialize-v02.yml": "f36dfdda0d7fa8e08f9a8dab84a0f9b837b408b4d0e9ca3a9ec774dea1e9e785",
+    ".github/workflows/materialize-v04.yml": "c22b6f10f6233d7c7d682a7883607ce6faa6c5199e520a19d57259f58e79c6c9",
+    ".github/workflows/materialize-v05.yml": "0608055b2fcb12b245105d6a9755e34459e1bb199d01946615dcfcbc238dd589",
+    ".github/workflows/release-v010.yml": "d17db35c302820e5d6bdadd5529b17f365b9a8d071535d4ba80aa1b8e71994ff",
+    ".github/workflows/release-v011.yml": "bb3ba0b062605c922dad803ea070ce4141875173ca8d7eb20bf3410ff91d90c4",
+    ".github/workflows/release-v06.yml": "2b0dfca795773aa0ccc09903b109952e36e7619865dca16ba3a0239a99f0dc5c",
+    ".github/workflows/release-v07.yml": "74a1d65f47e0d0b06bd11026153e1656a8f110cb43379ce44c880cfb805b7ea0",
+    ".github/workflows/release-v08.yml": "527296600e0f059c073b447015556914a799565e5a82d67df009fd7df7f5310e",
+    ".github/workflows/release-v09.yml": "4d94ab4d533b5b38e7ae7c287efdf4cc27c807a9913048f3dd4b64babbafe6bd",
+    "docs/DEMARRAGE_WINDOWS.md": "ac4ea168496b29511aab731e567c3fbdd586431384296d40b0389a75c8acd357",
+    "docs/EXPORTS.md": "4d28d80e706f9c80403d533b5961275f90fb8c567b2d5541d1b909fa9e268b10",
+    "docs/GODOT_LICENSES.txt": "88c531d4869a0ee7775ce544b32f54e638f51a1313a8156500231f1dfa89c21a",
+    "docs/VISUELS_ET_SECOURS_V0.11.md": "6ac060f2d9cd1271f34e5bb0d57f1d7f2c61b4af775be1b7b5bf02ac7867ed2a",
+    "docs/assets/v0.11/README.md": "cd41f685b4aa6d2f04ea7102845d5bd9249f75517bf0a998940c44952b093757",
+    "docs/assets/v0.11/renders/bolt_cutter.png": "fac9acf59145d094e0436f934cd8a80ca1f730b6e54e070d9bf9b5aab30ec9a8",
+    "docs/assets/v0.11/renders/carabiner.png": "91883cc5bc491d8385a3426e8060ff9d9d706bae084308eb33d61189f16febbc",
+    "docs/assets/v0.11/renders/descender.png": "0915664f78f3166cc092a9f77d3afef9c197e059058da825a747382a7941ec85",
+    "docs/assets/v0.11/renders/detail_bolt_cutter.png": "947ba603ec9a5e23ba39d0f60555362409ebc314200abc0fac9f56055cd9ab54",
+    "docs/assets/v0.11/renders/detail_extinguisher.png": "3781e56ce7e9acf6a6960d766d391fb92331f6475f88906c1947994fd3728397",
+    "docs/assets/v0.11/renders/detail_fire_axe.png": "3f445cc3ce612dbb224cac8197bb8e31500cf72d0d36fb9f4a24b20044758535",
+    "docs/assets/v0.11/renders/detail_halligan.png": "e4660121240c8d7333a223bf1991354f32310d9f332fafca22d58fea27ee6e1c",
+    "docs/assets/v0.11/renders/emergency_beacon.png": "97b7ba33ddff993c5c432c4e36337108b105ae6d22e656ea67e90a223a9d57ad",
+    "docs/assets/v0.11/renders/equipment_case.png": "3d550c6fdf4c8b54b358bf5e3935e3db480c1687e59e2bd02531eb9b8e315e7c",
+    "docs/assets/v0.11/renders/extinguisher.png": "1929905cdfd99c87874f8ea929fd9684a00d7ccbb61860ba0de727b4258d668e",
+    "docs/assets/v0.11/renders/fire_axe.png": "18f7dcc15d25c4b551f0617e883dc4229f87cf07099c36fc144fcfb01c6b8fcb",
+    "docs/assets/v0.11/renders/halligan.png": "c296569267607ad3b4855c3cc3b22b15e821a6f5f17ac1cf4fc6600de9d04922",
+    "docs/assets/v0.11/renders/oxygen_cylinder.png": "4d457433d260136a0f5a28db2535d3cc604d6837a9708840b46ac083f4dddeb0",
+    "docs/assets/v0.11/renders/portable_worklight.png": "4b618768d838c5f7eee768f993b6681d1e692aabacb971bb8dab3a32aaed91de",
+    "docs/assets/v0.11/renders/rescue_flashlight.png": "4316b2795d206f88497c0a3598157ed6698e09c1ff601ae0bad9e1621b8c186c",
+    "docs/assets/v0.11/renders/rescue_helmet.png": "0f6b3ab654ba87c627b2d8c733037e54a1071b866d7fc17b6f3198ba64092a7b",
+    "docs/assets/v0.11/renders/rescue_radio.png": "6e4c1ddfed4ce0029b1e1bb7e5a2df1fc806a2ec8cdae6bdd665c87c8bfc7fa5",
+    "docs/assets/v0.11/renders/rescue_stretcher.png": "317497024fdecf25f85536a827ce93d584478ae27a67a8dcc6a7832bd9f51830",
+    "docs/assets/v0.11/renders/rope_coil.png": "8f9be137648e039ed35bc27bf358cdd79b913dca1f8e7b05d0b8f90e9558ba6d",
+    "docs/assets/v0.11/renders/trauma_bag.png": "0bd1e2fee71bd206bb303844115939be389e7c5eccd5c5ac379e3614e4b7bc3b",
+    "docs/assets/v0.11/rescue_equipment.blend": "818eabcbcf195a6b69d2a6d513f270b51fc7ba1bf150c327a56cd05fdb64beab",
+    "docs/assets/v0.11/rescue_equipment_contact_sheet.png": "558c7f7a623681c8811e631b8d0edeaceef24a02532be9d55f3562ac0cb93254",
+    "docs/assets/v0.11/rescue_equipment_manifest.json": "8203c05898243ea84381eae11e0a6259d0fc3dcb7de26fb8d6dd28f59aa44e2c",
+    "docs/launchers/JOUER_CINEMATIQUE.cmd": "b23af8563bca1bae7cb55ecb1c3b4763da503f41045d5a523f9086d08c70c8fb",
+    "docs/launchers/JOUER_COMPATIBILITE.cmd": "dc0bb4258927c0568368e317e89ded615a6d8fad99d13960336a8c51823ed145",
+    "prototype/assets/materials/v011/README.md": "f457113bff4563beb1d17b3ed300785445871b942d7359f669bc14588484ea80",
+    "prototype/assets/materials/v011/manifest.json": "cf7fbe726af5f4b4485b9b23b5d3f9171203ad4837271e310514f96e84d0c6c9",
+    "prototype/assets/models/rescue_v011/manifest.json": "8203c05898243ea84381eae11e0a6259d0fc3dcb7de26fb8d6dd28f59aa44e2c",
+    "prototype/tests/lighting_v011_preview.gd": "bace0193c2c4755dd83f60e80ea7fd5e6312472d4ce37dff0b9cb1ce7ba8e70e",
+    "prototype/tests/lighting_v011_preview.tscn": "59c2fd9b532fd7584f09aac59c885a4f43e04ca3da50360b4ac9fb31bab864c8",
+    "prototype/tests/test_arrival_staging.gd": "209572d5dbfe62f2e3a7865f4fb98f9aef91681e7a34655a91b477df6c5a7ecd",
+    "prototype/tests/test_atmosphere.gd": "73c5b1b15c8eedc169fd0c4b253d488a9ddce8edbc801c10d4043cb3fb1f229f",
+    "prototype/tests/test_cinematic_integration.gd": "ead0bc234b2a695c2b0f91f62efb4837803cad80b1a3810808168ebab48677ae",
+    "prototype/tests/test_cinematics.gd": "1806007e0bbc991dfe455ca48a34c9e6a2bdd44381c70f609426a8244010a62c",
+    "prototype/tests/test_collapse.gd": "2fc3f5f08cea4c8653a8194d3d5d5c48fde86934fcad5ba8bc53287975c4f6b0",
+    "prototype/tests/test_comfort.gd": "db7867c1704d1d49165664f780a3acb1e9714a63cc76fd443f1830216d0a1e27",
+    "prototype/tests/test_continuation.gd": "e336adb12b74305f9c844b78fed69b70008bf42f7875b0736ce86cf59ba0ebe4",
+    "prototype/tests/test_continuation_integration.gd": "631b807d86c12a4f1282d184bbb0e1692b13bef1ec81bec1b3c2565d70cd67c2",
+    "prototype/tests/test_continuation_routes.gd": "1a63b64d638f9724dffabf7227795aead1626dad446cc01537ee5da0f29a9b17",
+    "prototype/tests/test_epilogue.gd": "21d0686df5306f09cca5513dee260357d49a7c903aab5a7b145d41cedf224120",
+    "prototype/tests/test_epilogue_integration.gd": "5ac3520e3b33c08cafab8e83e8bbc0adac1afc8a92ef62e287e269eed98680f0",
+    "prototype/tests/test_equipment.gd": "10224171fd83c1adc46e2f01a7647986337a967f7a83804b0b31c0682d993a8c",
+    "prototype/tests/test_equipment_integration.gd": "9cdf17d1316c4669780dc9c412919de3b7ecef1609d1d9f813d46c9c3eedc195",
+    "prototype/tests/test_exported_pack.gd": "22e4266059a065b83442e93500325d9237436bc67114099acc52d672cdf4379c",
+    "prototype/tests/test_field_integration.gd": "8c5e5056ae23afa50e6c14cb34e9b27b04dbde5c3bef5b51a5f3b31905687703",
+    "prototype/tests/test_field_props.gd": "4d5ec6bb511f7c4148b1b083cdfc5029d7180b4aab9a8654ce5cbe078595d8f3",
+    "prototype/tests/test_generation.gd": "ec5926de23d3f37832990a20fccb6c19d5a32d8168326d2f81bf3bc8ff02c076",
+    "prototype/tests/test_horror.gd": "3b4e9cfc35273321146667b0bfe26c21b428cd7c166f4c7c2fa523375500fa99",
+    "prototype/tests/test_horror_integration.gd": "15edaa113a2547721c6812d35a0eceb0ef7e9f8061d68a50aab3c329bd3d6dc8",
+    "prototype/tests/test_incident_effects.gd": "64156a31eef9b951c9a4e3ae309a930afc06d4d11c512b6e9dd97723e2f5ce75",
+    "prototype/tests/test_incident_integration.gd": "d523b8b64fc779f032986cc36257e767b315bb1552b71030e11ecc7001f6b634",
+    "prototype/tests/test_incident_routes.gd": "ca245dd00ecf53ea1d58eebcbfcb0b21877a647d20b8cdf482d8ba68964808c9",
+    "prototype/tests/test_lighting_v011.gd": "d81cdf46fd73c44ceb74aa3129cec3a112fa81321cfcf43bb73049e4fd3aea52",
+    "prototype/tests/test_mission.gd": "1dc8481e07d720099239b9b6554f925d74d2d2c4e36ae2149205abe2896693d6",
+    "prototype/tests/test_mission_dossier.gd": "d7a3c79bcb6748f38ad3d007bcf5a6078d5a811fd17878455080f5beacae4863",
+    "prototype/tests/test_preferences.gd": "1fff784d57fbb96a80cc39e8f52a341594c24055144fac65ab7ff9bb47310389",
+    "prototype/tests/test_radio.gd": "f4fd5bdad029cb82347c47559d411fdf53bb0144250c0f60d80fffc53a3bff2f",
+    "prototype/tests/test_radio_integration.gd": "f59fd9c352353a8548a4135fc516a77d9a903054289b26326d776f74e53f2d16",
+    "prototype/tests/test_rescue_assets_v011.gd": "5b779f7b0422f488aa32ff3c77ad194a7d2fa59069b508cf2ac62f59969810fd",
+    "prototype/tests/test_rescue_presentation.gd": "89c1cf042efc48d1699023fdb1f0c6690e7fd8ee050540537d06e0b7e6c01d7a",
+    "prototype/tests/test_rope_traversal.gd": "032cc965fb98f97835eab9053ab6aae30f876847be06b8864b334161206bcd54",
+    "prototype/tests/test_routes.gd": "66af1543e4801959ce3f33a058e0a6018b2b437c0f4a8e04e3ffe18a3edfafc3",
+    "prototype/tests/test_save.gd": "b8e33321d19c8952858d74f072d3054e79aae3c88bc5dec6e27dd14610736aea",
+    "prototype/tests/test_surface_materials_v011.gd": "5161ac4b13a31de39b9f7aced4172cca704a1a7554359b37bc9686a52a8572ef",
+    "prototype/tests/test_team_reactions.gd": "f48e3a21537160ec95b8f33ccf5283e983d9b734b26dc5e54d7b222698d8f7e3",
+    "prototype/tests/test_traversal_integration.gd": "fe062cb7d6e895526eef751e014af233a0fcf208e371612236a04903e8526ebb",
+    "prototype/tests/test_vertical_routes.gd": "bda111657de1a0441a245a331e278038a2cd407637d058ae1a3c14fb3af6b61c",
+    "prototype/tests/test_world_presentation.gd": "9c8931e0e1f6c887af17c12315ed392c6d21ceb0224093ffb5e97a80bf1ec9e6",
+    "prototype/tests/visual_continuation_preview.gd": "1d4f1016360b6943b5ff0c5c3a341f8c087b4acee21640fe640695f0265e74dc",
+    "prototype/tests/visual_continuation_preview.tscn": "25568e7f7d60c819e00ece853e82e50dd160c415642dfba1ce6427ed61f75b69",
+    "prototype/tests/visual_equipment_v011.gd": "ad5fcb299ef480153c814d76c8dad246b68cc48bb0d385d04f3d586d7376a168",
+    "prototype/tests/visual_equipment_v011.tscn": "530c630874aad6329127f8ea1a3c0b2330abd0ddf414b2b332ea9c558ff355c5",
+    "prototype/tests/visual_frontend_preview.gd": "9eff85c2c7a5848ea1e2bef4296d30e73a7b13a747e07302ec20157d6fd57f90",
+    "prototype/tests/visual_frontend_preview.tscn": "55a9e8aabc13dc48f77942e1eea4840cbb3aa1fe17af67e0073c285bbfece9be",
+    "prototype/tests/visual_incident_preview.gd": "e79601fe0380eceb4105032b81e9986a40754e1796b422a8c48d37a85075c6d3",
+    "prototype/tests/visual_incident_preview.tscn": "8cc4e0310ace021374552c5e8170337745c181cf3509f0d296749802dbb1c5b6",
+    "tools/bootstrap_visual_assets.py": "b47eb47c2b3903965cbf30bc4652a4c41086b200c5d139facdb10c4b4cb77f78",
+    "tools/build_bible.py": "0b90555d098cbb9ae85a5e7818d64e760118c6ce852a13ce30603dcfcdd31f80",
+    "tools/build_continuation_ci.py": "ea5da40bf3bc4d88b85fc305659bd97e24301453e79a0386e06cbb436a754ba9",
+    "tools/build_continuation_document.py": "7307ac7dbe48c3985f70e3d18fc11bfcd7583bce144e2a1742ccd766b35438ad",
+    "tools/build_release_ci.py": "f5173e6b7e2160d3652d4c31258919b16e3dd2013d3cfccfb3d350848bca7ec5",
+    "tools/build_visual_ci.py": "20ffe935f74027adbd8839d013f539aebd2aae66dd3d070b4dc40edddbef6627",
+    "tools/capture_evidence.py": "51c4b7974cd2a9a0c7b0ef1f05b83064f3e3d3ff2d55fe0802193ba1dc870fa1",
+    "tools/export_licenses.gd": "84d46b3220fdefae30b5fe62f1856b5ac078b6dd2859879cd335a2b0daa74266",
+    "tools/fetch_export_templates.py": "809d9ebb1ae9a77bc37536ecb9616939ab93af3a828f2292611c260ffff8f262",
+    "tools/generate_audio.py": "d09870ad3ca570590ed0d07108e78bf01030d5e1ec9d62ede76196e930c23b5e",
+    "tools/generate_rescue_models.py": "a35c21cc09293d7bf86d5345fccdbb5ade398d6c4cecbbe9f25f66457b20a71b",
+    "tools/generate_uncertain_steps.py": "5fe9f2ca2ea85e6f6cc0bc4093758a7e0d0e8e563d9703b24d312829533d762f",
+    "tools/materialize_published_binaries.py": "778659bccb7a2ef9a529fc20e1a280463cbc97a8c85391896f869caac82c5cea",
+    "tools/package_release.py": "2e4a1d9a656e5b2e147864cad76bf599191d229ac0013400855d1ffabe23b402",
+    "tools/qa_common.py": "65cfc919fe9114f2f712bf0dd2ccfad2e7020c5af8a293b0c732378224fa1c30",
+    "tools/run_validation.py": "214872e25473363344cf4dc24c3ce3ed0d35b5ebc504be4ad7a6be95a447c4a7",
+    "tools/validate_rescue_models.py": "b041e7815216d45fb4d0420fc28d4d9ba5371f7203f6dfaa087c118f49352a1a",
+    "tools/verify_document_content.py": "f16b6938eddc7aefb9504cbc93edae3ac1712a0213c8eee2f9e31319cd6ca334",
+    "tools/verify_exported_packs.py": "2a14a2187a05118f4f52dbbc53745f68f4a14f7ecc5af06f312e8e8aebb3663b",
+    "tools/verify_release.py": "75cc6c22866755b7124dc5668af5f4c455989ae28e718be0f67dcbb00bb8abfa"
+  },
+  "source_verification": {
+    "file": "docs/validation/v0.11/VERIFICATION.json",
+    "bytes": 50585,
+    "sha256": "280638fdcdd0ada5593eae039465ea5f0930957a37b479ffa0924dc43f025c3b"
+  },
+  "expected_captures": {
+    "baseline": [
+      "01_menu_arrivee.png",
+      "02_options.png",
+      "03_nouvelle_intervention.png",
+      "04_signature_studio.png",
+      "05_titre.png",
+      "06_approche_03.png",
+      "06_approche_10.png",
+      "06_approche_17.png",
+      "06_approche_25.png",
+      "07_pause_intro.png",
+      "08_menu_archives.png",
+      "09_dossier_apres.png",
+      "10_menu_refuge.png",
+      "11_inspection_toit.png",
+      "12_inspection_archives.png",
+      "13_inspection_apres.png",
+      "14_toit_equipe.png",
+      "15_portage.png",
+      "16_treuillage.png",
+      "17_reception.png",
+      "18_meteo_toit.png",
+      "19_options_pause.png",
+      "20_journal_situation.png",
+      "21_journal_rescapes.png",
+      "22_journal_indices.png",
+      "23_journal_transmissions.png",
+      "24_epilogue_02.png",
+      "24_epilogue_07.png",
+      "24_epilogue_12.png",
+      "25_bilan_refuge.png",
+      "26_suites_presence.png",
+      "27_archives_traces.png",
+      "28_spa_remanence.png",
+      "29_station_rappel_toit.png",
+      "30_rappel_descente.png",
+      "31_rappel_verrouille.png",
+      "32_escalier_30_29.png",
+      "33_escalier_palier.png",
+      "34_rappel_remontee.png",
+      "35_aide_deplacements.png",
+      "36_escalier_28_27.png",
+      "37_escalier_26_25.png"
+    ],
+    "continuation": [
+      "01_bilan_poursuite.png",
+      "02_escalier_25_24.png",
+      "03_congres_auditorium.png",
+      "04_cabine_signes.png",
+      "05_escorte_escalier.png",
+      "06_reception_refuge.png",
+      "07_rappel_24_23.png",
+      "08_maquette_souterrains.png",
+      "09_archive_bains.png",
+      "10_remanence_exposition.png",
+      "11_dossier_nacre.png",
+      "12_bilan_reconnaissance.png",
+      "13_menu_exposition.png"
+    ],
+    "equipment": [
+      "01_rack_toit.png",
+      "02_comptoir_toit.png",
+      "03_hache_29.png",
+      "04_extincteur_28_actif.png",
+      "05_foyer_28_eteint.png",
+      "06_halligan_25.png",
+      "07_coupe_boulon_24.png",
+      "08_inventaire_refuge25.png"
+    ],
+    "lighting_forward": [
+      "01_roof_rescue.png",
+      "02_restaurant_materials.png",
+      "03_congress_lighting.png",
+      "04_archive_after_impact.png"
+    ],
+    "lighting_compat": [
+      "01_roof_rescue.png",
+      "02_restaurant_materials.png",
+      "03_congress_lighting.png",
+      "04_archive_after_impact.png"
+    ]
+  },
+  "captures": [
+    {
+      "file": "docs/captures/v0.11/baseline/01_menu_arrivee.png",
+      "bytes": 897125,
+      "sha256": "eed565055904c550ffc3962dbb9bae15c8bb048b21acfef3c604443908021d98",
+      "width": 1440,
+      "height": 900,
+      "description": "Menu initial, deux tours intactes, aucune sauvegarde",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/02_options.png",
+      "bytes": 142536,
+      "sha256": "d65fc18ebe9374c9b2227ed3ad001fab4852b5fce31431be4d24c460359c7806",
+      "width": 1440,
+      "height": 900,
+      "description": "Options avant la partie",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/03_nouvelle_intervention.png",
+      "bytes": 135664,
+      "sha256": "840d69aaa00bfcb51bbf03d00b48d7714239f39e55c0ca8ac6953562eab811c6",
+      "width": 1440,
+      "height": 900,
+      "description": "Préparation de la première intervention",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/04_signature_studio.png",
+      "bytes": 1125413,
+      "sha256": "31631edc95a43198d27f963a2bd0d10f5f076d30441cf405c85c3f87d95fec6f",
+      "width": 1440,
+      "height": 900,
+      "description": "Signature du studio, carton à deux secondes",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/05_titre.png",
+      "bytes": 1115486,
+      "sha256": "4e8eed514c5793c7206bf55da773e37aa4c4e53f125b0a61daacf65a317882f3",
+      "width": 1440,
+      "height": 900,
+      "description": "Révélation du titre à onze secondes",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/06_approche_03.png",
+      "bytes": 885343,
+      "sha256": "7a6eb615551cab1703907f3cf24204ea0c7e2695e9751fe2d4d3cbb3c8b7d07c",
+      "width": 1440,
+      "height": 900,
+      "description": "Approche en jeu, état préparé à 3 secondes",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/06_approche_10.png",
+      "bytes": 984453,
+      "sha256": "231b118cf5989b3f4034873aa34389753b3bbc08e01136b250906c8225c2fd6d",
+      "width": 1440,
+      "height": 900,
+      "description": "Approche en jeu, état préparé à 10 secondes",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/06_approche_17.png",
+      "bytes": 1059493,
+      "sha256": "9aa61a747a8080afe3a205cb6d7913f7400e2b0899334c029dc52a920d0aca0e",
+      "width": 1440,
+      "height": 900,
+      "description": "Approche en jeu, état préparé à 17 secondes",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/06_approche_25.png",
+      "bytes": 1266746,
+      "sha256": "d65d51546fb9bbc75441cf8419fe17d2b658a477ff085ef20867f683beb7beb8",
+      "width": 1440,
+      "height": 900,
+      "description": "Approche en jeu, état préparé à 25 secondes",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/07_pause_intro.png",
+      "bytes": 437857,
+      "sha256": "8ff23c7e1c7f09714695f2b0b7691f1aa5b99da59f0c2ae8a16d8271a4b861b4",
+      "width": 1440,
+      "height": 900,
+      "description": "Pause pendant l’approche",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/14_toit_equipe.png",
+      "bytes": 1017859,
+      "sha256": "28a7e3c9ec24dd221aa61ba8e95886bfb28d26b3979e4c12cce6c80aca7482a7",
+      "width": 1440,
+      "height": 900,
+      "description": "Détail du toit : Alpha posé, porte et équipe dans leur état final",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/15_portage.png",
+      "bytes": 1364281,
+      "sha256": "a9bafe46880240e6b7c8e13ec62a92359119cafaf24a67d62ff91acb5f6d8da3",
+      "width": 1440,
+      "height": 900,
+      "description": "Portage d’Ana : harnais, personne et mains visibles, objectif dégagé",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/16_treuillage.png",
+      "bytes": 1266391,
+      "sha256": "a0bc3a7d90b1c4e26a935ca6800e40496d20b8f449fe3b7ed1a0ac6dd48d072f",
+      "width": 1440,
+      "height": 900,
+      "description": "Remontée d’Ana dans le puits : harnais et câble sous tension",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/17_reception.png",
+      "bytes": 1307412,
+      "sha256": "f1d8f3c8975c02de21638849a3b6d87dfc932cb3b6e3b9df60fe37b1b7497b27",
+      "width": 1440,
+      "height": 900,
+      "description": "Réception confirmée, transfert d’Ana vers l’abri avec l’équipe médicale",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/18_meteo_toit.png",
+      "bytes": 828426,
+      "sha256": "1a5f760170a077aeab76af1d4c5abf4da6b938801cbdb00e089d477fbf4d8a31",
+      "width": 1440,
+      "height": 900,
+      "description": "Atmosphère maritime : plafond nuageux, pluie extérieure et horizon de Nacre",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/19_options_pause.png",
+      "bytes": 188670,
+      "sha256": "1ac171d6e5db2feee069951df3ee3d96ba7c2d88abbd97cad95aeddbc519d363",
+      "width": 1440,
+      "height": 900,
+      "description": "Réglages complets accessibles pendant une intervention suspendue",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/11_inspection_toit.png",
+      "bytes": 402505,
+      "sha256": "58eb08aea321ddb9a1eb1afe879f02237e364e0e62ef03e67928a8cb223307db",
+      "width": 1440,
+      "height": 900,
+      "description": "Fiche du registre de réception, avant les sauvetages",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/12_inspection_archives.png",
+      "bytes": 479829,
+      "sha256": "5bf85fdc8c77b07ab6f08b59f92fd0c29e82948966886f9aa7f13379c9ee138b",
+      "width": 1440,
+      "height": 900,
+      "description": "Fiche des archives, avant l’incident structurel",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/13_inspection_apres.png",
+      "bytes": 477364,
+      "sha256": "e739493bdd0fc3a29527329d50c256c7dcd3d95e0c7d72a448840c6b3419e727",
+      "width": 1440,
+      "height": 900,
+      "description": "Même fiche des archives après l’impact confirmé, consigne actualisée",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/08_menu_archives.png",
+      "bytes": 1640423,
+      "sha256": "67850444f6f7d7d21b08a5b0dee8f94bb3d638485c6b16bf9c6ca196e11324ae",
+      "width": 1440,
+      "height": 900,
+      "description": "Accueil au point sûr du 28 après la réplique",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/09_dossier_apres.png",
+      "bytes": 343145,
+      "sha256": "ae1f77da971943975e831ace528949737209a27ff0f0f711f052641f3a439f97",
+      "width": 1440,
+      "height": 900,
+      "description": "Dossier actualisé après l’impact confirmé",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/20_journal_situation.png",
+      "bytes": 494384,
+      "sha256": "55234d0bf79e8aeebe03ac51b4eaad7101e46be188db5fc2edeaad2b3c8a290f",
+      "width": 1440,
+      "height": 900,
+      "description": "Journal de l’intervention en cours : situation, une réception et un indice confirmés",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/21_journal_rescapes.png",
+      "bytes": 471578,
+      "sha256": "24db0a49795f63774b7228ec5f306bfe6a9e161dd877faf9abb1359a4c0804b4",
+      "width": 1440,
+      "height": 900,
+      "description": "Journal de l’intervention en cours : survivors, une réception et un indice confirmés",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/22_journal_indices.png",
+      "bytes": 485802,
+      "sha256": "bbe5e01d866be7e6c5683b20c42d7a801e40d2b109b745444a737e2342dd86b7",
+      "width": 1440,
+      "height": 900,
+      "description": "Journal de l’intervention en cours : clues, une réception et un indice confirmés",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/23_journal_transmissions.png",
+      "bytes": 475536,
+      "sha256": "94a519e83245316a04443bc389a0a366dae4f8ac8478bf5b27edf1300be66647",
+      "width": 1440,
+      "height": 900,
+      "description": "Journal de l’intervention en cours : transmissions, une réception et un indice confirmés",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/24_epilogue_02.png",
+      "bytes": 1317202,
+      "sha256": "aa925dd7c87e312798d7f66f6a368d66943ae6b17fa74b47bc188115d4668fcc",
+      "width": 1440,
+      "height": 900,
+      "description": "Épilogue en jeu : plan 1 à 2 secondes, trois personnes réceptionnées",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/24_epilogue_07.png",
+      "bytes": 1491403,
+      "sha256": "516dd2fe261c5392448eec9323ed4c04e9668b92e00b315f08c56599edad5fb7",
+      "width": 1440,
+      "height": 900,
+      "description": "Épilogue en jeu : plan 2 à 7 secondes, trois personnes réceptionnées",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/24_epilogue_12.png",
+      "bytes": 909413,
+      "sha256": "b7e02391bc4208b0b1f454ccfc2b46fa5331924ffb1b12393b4f479bd6978da1",
+      "width": 1440,
+      "height": 900,
+      "description": "Épilogue en jeu : plan 3 à 12 secondes, trois personnes réceptionnées",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/25_bilan_refuge.png",
+      "bytes": 443907,
+      "sha256": "86b9eb0ce4ea9d3db55aa837ce1271cb7f256a4eba253d2dbe2d0e0193b04fdd",
+      "width": 1440,
+      "height": 900,
+      "description": "Bilan nominatif au refuge : trois réceptions, deux indices et historique de cette intervention",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/10_menu_refuge.png",
+      "bytes": 1365940,
+      "sha256": "b75ca617606066ace498b24e5fe1a41f740d46ed755d3458ae3d6ce7de4eaff0",
+      "width": 1440,
+      "height": 900,
+      "description": "Accueil après une intervention terminée, point sûr du refuge",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/26_suites_presence.png",
+      "bytes": 1545336,
+      "sha256": "c084dc0bcaa5a653d2b1ac194954d34318a8424acaf6445a1ca995dbdd7c8ae3",
+      "width": 1440,
+      "height": 900,
+      "description": "Manifestation des suites 29 : pose périphérique préparée, directeur avancé réellement de 3,4 s, silhouette sans dégâts",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/27_archives_traces.png",
+      "bytes": 1921882,
+      "sha256": "ea5bbdd02995e545edee291c3de8d74d2f0bdb7fb1e1c0cb0954e76c8c6678a0",
+      "width": 1440,
+      "height": 900,
+      "description": "Archives 28 : huit traces humides après impact, neuf secondes de présentation réelle, sans indice ajouté au journal",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/28_spa_remanence.png",
+      "bytes": 1228662,
+      "sha256": "5185da22312e996bbfc4a2efe0ffd241ef74d62e0bc65373171702a09e4f3301",
+      "width": 1440,
+      "height": 900,
+      "description": "Spa 26 : seconde présence après extinction, attente calme et regard détourné, sans poursuite ni dommage",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/29_station_rappel_toit.png",
+      "bytes": 1572460,
+      "sha256": "7f53eb38a5b8808eb198ef150e49dd2627d286d3783a0b4655132f9e8212b112",
+      "width": 1440,
+      "height": 900,
+      "description": "Repère bleu du rappel personnel toit–30, distinct du treuil orange ; pose initiale préparée",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/30_rappel_descente.png",
+      "bytes": 1659892,
+      "sha256": "d776c15b15fdf823e80cb26879a9a4300f9d92222913bb31c86ff5162a8eebaf",
+      "width": 1440,
+      "height": 900,
+      "description": "Descente contrôlée sur R31_30 : transfert et 1,25 s de mouvement réels, capsule, descendeur et HUD du rappel",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/31_rappel_verrouille.png",
+      "bytes": 1657386,
+      "sha256": "5455bb75e772002c543f22f7beabfa5586d929b8b041069ef70fbd57a25f4e67",
+      "width": 1440,
+      "height": 900,
+      "description": "Même liaison, verrouillage réel du descendeur : vitesse nulle, repos assuré et état visible",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/34_rappel_remontee.png",
+      "bytes": 1116517,
+      "sha256": "c6ed7915ee9db4e21230a216f70f731ccd7b2cf4e7b459c2442221e281b3dd38",
+      "width": 1440,
+      "height": 900,
+      "description": "Remontée réelle depuis l’extrémité basse du rappel toit–30 : effort, vitesse et disponibilité de corde",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/32_escalier_30_29.png",
+      "bytes": 1715141,
+      "sha256": "aa716ea7e356acfc72e664e135626f26a3d43342e935d5141d443676cbc72fce",
+      "width": 1440,
+      "height": 900,
+      "description": "Escalier local du restaurant 30 aux suites 29 : ouverture de dalle, première volée et signalétique",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/33_escalier_palier.png",
+      "bytes": 1536550,
+      "sha256": "652f6217c5edfcd3fff194097ad7096ea1fafa843f95bb39489c109be7e0a5de",
+      "width": 1440,
+      "height": 900,
+      "description": "Palier intermédiaire du 30–29 : deux volées physiques, aucune entrée d’étage déclarée à mi-hauteur",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/36_escalier_28_27.png",
+      "bytes": 1897484,
+      "sha256": "60c395153d6e31f39e3e458583fc3f6c93bedee6cc488534d0c1eb9125b96e9b",
+      "width": 1440,
+      "height": 900,
+      "description": "Escalier local des archives 28 au jardin 27, vue préparée de la dalle ouverte et du passage intérieur",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/37_escalier_26_25.png",
+      "bytes": 1646432,
+      "sha256": "2643386dc9d73f611150f3c38051fe9ab70b78a1771e347eb9ca574a4071688f",
+      "width": 1440,
+      "height": 900,
+      "description": "Dernier escalier local, du spa 26 au refuge 25 ; la cage s’arrête à la liaison prévue",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/35_aide_deplacements.png",
+      "bytes": 196470,
+      "sha256": "8ab8c28ced9ac2caf4cd4451644bcaf7f2927cc787ff8b4006c1729f35889407",
+      "width": 1440,
+      "height": 900,
+      "description": "Aide de mission : itinéraire des six liaisons, commandes de rappel, distinction des repères et treuil",
+      "group": "baseline"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/01_bilan_poursuite.png",
+      "bytes": 443843,
+      "sha256": "179be5506e65311ce5f9175e8df9d78a402e2127e8671a2399e474a78001f162",
+      "width": 1440,
+      "height": 900,
+      "description": "Bilan supérieur conservé et bouton de poursuite vers le congrès",
+      "group": "continuation"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/02_escalier_25_24.png",
+      "bytes": 1511605,
+      "sha256": "cb00b65a73f55ae078ed57f0aa81cc07b9cb4e7c1ab51e5b17688c9a73aacd84",
+      "width": 1440,
+      "height": 900,
+      "description": "Accès nord à l’escalier local, séparé de la liaison 26–25",
+      "group": "continuation"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/03_congres_auditorium.png",
+      "bytes": 1545024,
+      "sha256": "2d29761f93b7eb3c39ab186aa6d6e65c81f9bb7b41757f8ed96d22435106c043",
+      "width": 1440,
+      "height": 900,
+      "description": "Auditorium du congrès et écran Pelagos incliné, foyer de secours libre",
+      "group": "continuation"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/04_cabine_signes.png",
+      "bytes": 1663176,
+      "sha256": "f3ed80c1b15f9869826d1a282b5fcd4a3e3191dbaa96eff5b71657a3709b3bd2",
+      "width": 1440,
+      "height": 900,
+      "description": "Léa Mercier et Idris Kaci attendent un signe visible dans la cabine",
+      "group": "continuation"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/05_escorte_escalier.png",
+      "bytes": 1769323,
+      "sha256": "3d61d937b67db78271b1275c5efb68b7d6280377874b9978588380b42742d067",
+      "width": 1440,
+      "height": 900,
+      "description": "États préparés des deux personnes sur la volée nord, vers le refuge",
+      "group": "continuation"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/06_reception_refuge.png",
+      "bytes": 1327508,
+      "sha256": "b939db44cc0f1d664676dbc22d18bcbb06007b61e04fd8e1d5fab417cce79dfd",
+      "width": 1440,
+      "height": 900,
+      "description": "Réception stable préparée des deux personnes dans le refuge 25",
+      "group": "continuation"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/07_rappel_24_23.png",
+      "bytes": 1814501,
+      "sha256": "884a7229885f6de2044dc3261c662567f426f216e5c6d75bbbd4c0a6143f9264",
+      "width": 1440,
+      "height": 900,
+      "description": "Nouvelle ligne entre congrès et exposition avec descendeur et mesures actives",
+      "group": "continuation"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/08_maquette_souterrains.png",
+      "bytes": 743749,
+      "sha256": "b208b0506f6565634a49d2d415b96e7167386e5ed7d70fb8e94046de34f8a7a2",
+      "width": 1440,
+      "height": 900,
+      "description": "Maquette des deux tours et volumes absents du plan touristique actuel",
+      "group": "continuation"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/09_archive_bains.png",
+      "bytes": 1507272,
+      "sha256": "a9cc18e3b6c187433377a4508734246111e168d171ab895e9e2e8cb0b8cd9659",
+      "width": 1440,
+      "height": 900,
+      "description": "Panneau d’archive procédural des anciens bains, forme de porte et légende",
+      "group": "continuation"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/10_remanence_exposition.png",
+      "bytes": 1429715,
+      "sha256": "f98447db3de37085442372058cc338d6d4468c778a47ee32adcca370704c9b58",
+      "width": 1440,
+      "height": 900,
+      "description": "Routine facultative E01 à l’écart du passage, sans attaque ni dégâts",
+      "group": "continuation"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/11_dossier_nacre.png",
+      "bytes": 436279,
+      "sha256": "9caf0edbe7076c48cfe42eb32e9a7e19a2a8de90490532f368dfa7e3c221162d",
+      "width": 1440,
+      "height": 900,
+      "description": "Dossier des cinq pièces effectivement présentes dans l’instantané préparé",
+      "group": "continuation"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/12_bilan_reconnaissance.png",
+      "bytes": 502173,
+      "sha256": "03f9685676b291c561973d89c1546ffde112978f681cdfe136901fb766ba1c3a",
+      "width": 1440,
+      "height": 900,
+      "description": "Compte rendu au 23, deux réceptions au refuge et trois au toit conservées",
+      "group": "continuation"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/13_menu_exposition.png",
+      "bytes": 1422517,
+      "sha256": "a32dfd9a2098bae283a690cda48ecbe97483f90e0590b0e2c652b135dfa90ea4",
+      "width": 1440,
+      "height": 900,
+      "description": "Accueil contextuel sur l’exposition au dernier point sûr enregistré",
+      "group": "continuation"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/01_rack_toit.png",
+      "bytes": 1385100,
+      "sha256": "cb2204bf31daed6161450f7a9618196169536c3f8d0ab21cfc138c758b66fd31",
+      "width": 1440,
+      "height": 900,
+      "description": "Râtelier du toit et outils de secours ; état après impact préparé.",
+      "group": "equipment"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/02_comptoir_toit.png",
+      "bytes": 863674,
+      "sha256": "6d4cf7cfe9eb17719a45b27f71123f6e0ed85d84948c969982bfb4dd81becf1b",
+      "width": 1440,
+      "height": 900,
+      "description": "Radio, casque, sac de soins et lampe sur le comptoir ; caméra de revue relevée.",
+      "group": "equipment"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/03_hache_29.png",
+      "bytes": 1820378,
+      "sha256": "5b9c61c73b17fb17ff94473ac0a5e58372429a4391a73f2c0b08d1d828180748",
+      "width": 1440,
+      "height": 900,
+      "description": "Hache sélectionnée et action réelle en cours sur la réserve de balisage du 29.",
+      "group": "equipment"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/04_extincteur_28_actif.png",
+      "bytes": 1856904,
+      "sha256": "a60be5b3eb8062b952145a32e15f31b4eb2730d75970f2550463663743a02f5d",
+      "width": 1440,
+      "height": 900,
+      "description": "Extincteur sélectionné, action maintenue et jet cosmétique vers le foyer du 28.",
+      "group": "equipment"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/05_foyer_28_eteint.png",
+      "bytes": 1817038,
+      "sha256": "0a69eac27a574ac20dd57ac6c1f5c96a608cae22ecbf17dd239d61561eaf16ee",
+      "width": 1440,
+      "height": 900,
+      "description": "Foyer du 28 éteint par la logique d’action ; réserve de l’extincteur mise à jour.",
+      "group": "equipment"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/06_halligan_25.png",
+      "bytes": 1555353,
+      "sha256": "7826b2a53658af2e0081335dc531486e543b7d4cef2222caba2144bb760fa245",
+      "width": 1440,
+      "height": 900,
+      "description": "Halligan en main et intervention en cours sur l’armoire de soins du refuge.",
+      "group": "equipment"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/07_coupe_boulon_24.png",
+      "bytes": 1465863,
+      "sha256": "ef24b19209735dcb2d19cf4dd15df3b94197d67f789543bdcb2c7fa21a79afe6",
+      "width": 1440,
+      "height": 900,
+      "description": "Coupe-boulon au congrès, chaîne ouverte et projecteur libéré après le choix réel de poursuite.",
+      "group": "equipment"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/08_inventaire_refuge25.png",
+      "bytes": 1563732,
+      "sha256": "2c47d100927c345bc49e44188296f3f0004776f0e97c91750a1c5c7cc1ffff0b",
+      "width": 1440,
+      "height": 900,
+      "description": "Poste matériel du refuge : brancard, sac de soins, bouteille et balise ; HUD des outils visible.",
+      "group": "equipment"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_forward/01_roof_rescue.png",
+      "bytes": 1104997,
+      "sha256": "8633e94af9405eaaff1aa710a0afbb93e253e71ba221b628e85d35b1c0389c62",
+      "width": 1440,
+      "height": 900,
+      "description": "Poste de secours sur le toit, béton salin et éclairage de tempête",
+      "group": "lighting_forward"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_forward/02_restaurant_materials.png",
+      "bytes": 1261310,
+      "sha256": "43cd56c2a942432e7c1effd4719d2746087e5a66fc9744e774889df8b893ab31",
+      "width": 1440,
+      "height": 900,
+      "description": "Restaurant 30 : pierre, bois fumé et luminaires chauds avec ombres locales",
+      "group": "lighting_forward"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_forward/03_congress_lighting.png",
+      "bytes": 1236952,
+      "sha256": "79d4aa5a5090bd2cce1003a2d00348cb7b7eb25a972563f6a5d6278604f0e25f",
+      "width": 1440,
+      "height": 900,
+      "description": "Congrès 24 : moquette, scène et trajet de service sous éclairage froid",
+      "group": "lighting_forward"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_forward/04_archive_after_impact.png",
+      "bytes": 1357531,
+      "sha256": "96f2dc37d2647b183cbc204f9986ae44690d4a1890a7b4f4ad7044061087bded",
+      "width": 1440,
+      "height": 900,
+      "description": "Archives 28 après impact : lumière de secours et Hespérie exclue du calcul statique",
+      "group": "lighting_forward"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_compat/01_roof_rescue.png",
+      "bytes": 1292892,
+      "sha256": "96abd3c2e9ebf0623285cd64a50ed498f18d41fbaa55b72839230657fbd7e846",
+      "width": 1440,
+      "height": 900,
+      "description": "Poste de secours sur le toit, béton salin et éclairage de tempête",
+      "group": "lighting_compat"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_compat/02_restaurant_materials.png",
+      "bytes": 1513238,
+      "sha256": "e8a343b4224e9ec81c44c6665c477d1b7a014ac694e1847a6ce25f323ffbd3b3",
+      "width": 1440,
+      "height": 900,
+      "description": "Restaurant 30 : pierre, bois fumé et luminaires chauds avec ombres locales",
+      "group": "lighting_compat"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_compat/03_congress_lighting.png",
+      "bytes": 1610990,
+      "sha256": "cf2d6324c1481f942902840d6a35859a558c8006e89bf26126f16ab1bf5827cc",
+      "width": 1440,
+      "height": 900,
+      "description": "Congrès 24 : moquette, scène et trajet de service sous éclairage froid",
+      "group": "lighting_compat"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_compat/04_archive_after_impact.png",
+      "bytes": 1710671,
+      "sha256": "f0e715733198378e0fe8a65cb4c166b1008743c56b387a631fc46a853bfb9eff",
+      "width": 1440,
+      "height": 900,
+      "description": "Archives 28 après impact : lumière de secours et Hespérie exclue du calcul statique",
+      "group": "lighting_compat"
+    }
+  ],
+  "capture_metadata": [
+    {
+      "file": "docs/captures/v0.11/baseline/MANIFEST.json",
+      "bytes": 8272,
+      "sha256": "4627527371ba7152bc6f2e468ac1f432bffd81e42f9367b8a88bb04a4678e70b"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/PROVENANCE.json",
+      "bytes": 26089,
+      "sha256": "4946ece6605c3e74af22da0a02f6276a04c6442d43cea80fdc5a9fcd962de04b"
+    },
+    {
+      "file": "docs/validation/v0.11/native-baseline.txt",
+      "bytes": 1493,
+      "sha256": "41e4b7e64fc6e3a207aff57aa0c8438e2dc6b9a68a89839c5167132bc0b1a7d3"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/MANIFEST.json",
+      "bytes": 3529,
+      "sha256": "e9f2e700c2a54c8805bec32e3c8b4f739060e46840f4a587d468d445b97f7ee0"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/PROVENANCE.json",
+      "bytes": 15917,
+      "sha256": "5d2cf3572cd84b3db58ee9fff0f79ad822c4238c9ecce617738efdd7b7b6e7b8"
+    },
+    {
+      "file": "docs/validation/v0.11/native-continuation.txt",
+      "bytes": 794,
+      "sha256": "d0927efad7455c611a1c9353a68382b21819258286b3e409652cee81fba9c73d"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/MANIFEST.json",
+      "bytes": 4984,
+      "sha256": "a01baf07563e240cb496f1e099c86a384128e06926a6fa7fb7e3c5e233fd71c2"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/PROVENANCE.json",
+      "bytes": 14128,
+      "sha256": "0383a7c3e379bc4ee2b8ef2a0d84d3d511c9e1da8eb44412bd2af5cd632cb468"
+    },
+    {
+      "file": "docs/validation/v0.11/native-equipment.txt",
+      "bytes": 645,
+      "sha256": "3749b838cf7c6a10a693745ef448a55cf65537e394363e710188cb1e120745c3"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_forward/MANIFEST.json",
+      "bytes": 12412,
+      "sha256": "fd09c2691b7f3aba48ffea1ec866a5a816aecad3f8cefc0ba4ab390bb4268166"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_forward/PROVENANCE.json",
+      "bytes": 12691,
+      "sha256": "bb462f2b788ad95f2b16ade4104d268fef00201de8080d25b43a9e6a444c88f9"
+    },
+    {
+      "file": "docs/validation/v0.11/native-lighting_forward.txt",
+      "bytes": 467,
+      "sha256": "da1153589ba57c10d2d4f555e25b683de57991ec955ace9fce5bb796d4f3ef59"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_compat/MANIFEST.json",
+      "bytes": 12616,
+      "sha256": "6cb4efcd3bcaf531c5cb036f2022833b13d85eb922d2e6250664043ff991269f"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_compat/PROVENANCE.json",
+      "bytes": 12686,
+      "sha256": "62bdf01bac9e49add37adb7c3fbd5aa246a8b3b2fe23135ad0901d422b8e586d"
+    },
+    {
+      "file": "docs/validation/v0.11/native-lighting_compat.txt",
+      "bytes": 701,
+      "sha256": "7c81e70f8c18ede06df631f203690051a4971babc66262fab22102a19ba85de9"
+    }
+  ],
+  "assets": {
+    "guides": [
+      {
+        "file": "docs/VISUELS_ET_SECOURS_V0.11.md",
+        "bytes": 12702,
+        "sha256": "6ac060f2d9cd1271f34e5bb0d57f1d7f2c61b4af775be1b7b5bf02ac7867ed2a"
+      },
+      {
+        "file": "prototype/assets/materials/v011/README.md",
+        "bytes": 4525,
+        "sha256": "f457113bff4563beb1d17b3ed300785445871b942d7359f669bc14588484ea80"
+      },
+      {
+        "file": "prototype/assets/materials/v011/manifest.json",
+        "bytes": 25203,
+        "sha256": "cf7fbe726af5f4b4485b9b23b5d3f9171203ad4837271e310514f96e84d0c6c9"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/manifest.json",
+        "bytes": 16267,
+        "sha256": "8203c05898243ea84381eae11e0a6259d0fc3dcb7de26fb8d6dd28f59aa44e2c"
+      }
+    ],
+    "source_files": [
+      {
+        "file": "docs/assets/v0.11/README.md",
+        "bytes": 6522,
+        "sha256": "cd41f685b4aa6d2f04ea7102845d5bd9249f75517bf0a998940c44952b093757"
+      },
+      {
+        "file": "docs/assets/v0.11/rescue_equipment.blend",
+        "bytes": 1891271,
+        "sha256": "818eabcbcf195a6b69d2a6d513f270b51fc7ba1bf150c327a56cd05fdb64beab"
+      },
+      {
+        "file": "docs/assets/v0.11/rescue_equipment_manifest.json",
+        "bytes": 16267,
+        "sha256": "8203c05898243ea84381eae11e0a6259d0fc3dcb7de26fb8d6dd28f59aa44e2c"
+      }
+    ],
+    "previews": [
+      {
+        "file": "docs/assets/v0.11/renders/bolt_cutter.png",
+        "bytes": 84159,
+        "sha256": "fac9acf59145d094e0436f934cd8a80ca1f730b6e54e070d9bf9b5aab30ec9a8"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/carabiner.png",
+        "bytes": 88747,
+        "sha256": "91883cc5bc491d8385a3426e8060ff9d9d706bae084308eb33d61189f16febbc"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/descender.png",
+        "bytes": 90982,
+        "sha256": "0915664f78f3166cc092a9f77d3afef9c197e059058da825a747382a7941ec85"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/detail_bolt_cutter.png",
+        "bytes": 765860,
+        "sha256": "947ba603ec9a5e23ba39d0f60555362409ebc314200abc0fac9f56055cd9ab54"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/detail_extinguisher.png",
+        "bytes": 804185,
+        "sha256": "3781e56ce7e9acf6a6960d766d391fb92331f6475f88906c1947994fd3728397"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/detail_fire_axe.png",
+        "bytes": 714018,
+        "sha256": "3f445cc3ce612dbb224cac8197bb8e31500cf72d0d36fb9f4a24b20044758535"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/detail_halligan.png",
+        "bytes": 666225,
+        "sha256": "e4660121240c8d7333a223bf1991354f32310d9f332fafca22d58fea27ee6e1c"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/emergency_beacon.png",
+        "bytes": 92029,
+        "sha256": "97b7ba33ddff993c5c432c4e36337108b105ae6d22e656ea67e90a223a9d57ad"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/equipment_case.png",
+        "bytes": 93737,
+        "sha256": "3d550c6fdf4c8b54b358bf5e3935e3db480c1687e59e2bd02531eb9b8e315e7c"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/extinguisher.png",
+        "bytes": 89781,
+        "sha256": "1929905cdfd99c87874f8ea929fd9684a00d7ccbb61860ba0de727b4258d668e"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/fire_axe.png",
+        "bytes": 81168,
+        "sha256": "18f7dcc15d25c4b551f0617e883dc4229f87cf07099c36fc144fcfb01c6b8fcb"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/halligan.png",
+        "bytes": 80210,
+        "sha256": "c296569267607ad3b4855c3cc3b22b15e821a6f5f17ac1cf4fc6600de9d04922"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/oxygen_cylinder.png",
+        "bytes": 87399,
+        "sha256": "4d457433d260136a0f5a28db2535d3cc604d6837a9708840b46ac083f4dddeb0"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/portable_worklight.png",
+        "bytes": 87467,
+        "sha256": "4b618768d838c5f7eee768f993b6681d1e692aabacb971bb8dab3a32aaed91de"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/rescue_flashlight.png",
+        "bytes": 79973,
+        "sha256": "4316b2795d206f88497c0a3598157ed6698e09c1ff601ae0bad9e1621b8c186c"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/rescue_helmet.png",
+        "bytes": 94968,
+        "sha256": "0f6b3ab654ba87c627b2d8c733037e54a1071b866d7fc17b6f3198ba64092a7b"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/rescue_radio.png",
+        "bytes": 89729,
+        "sha256": "6e4c1ddfed4ce0029b1e1bb7e5a2df1fc806a2ec8cdae6bdd665c87c8bfc7fa5"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/rescue_stretcher.png",
+        "bytes": 90079,
+        "sha256": "317497024fdecf25f85536a827ce93d584478ae27a67a8dcc6a7832bd9f51830"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/rope_coil.png",
+        "bytes": 99521,
+        "sha256": "8f9be137648e039ed35bc27bf358cdd79b913dca1f8e7b05d0b8f90e9558ba6d"
+      },
+      {
+        "file": "docs/assets/v0.11/renders/trauma_bag.png",
+        "bytes": 96805,
+        "sha256": "0bd1e2fee71bd206bb303844115939be389e7c5eccd5c5ac379e3614e4b7bc3b"
+      },
+      {
+        "file": "docs/assets/v0.11/rescue_equipment_contact_sheet.png",
+        "bytes": 1292030,
+        "sha256": "558c7f7a623681c8811e631b8d0edeaceef24a02532be9d55f3562ac0cb93254"
+      }
+    ],
+    "models": [
+      {
+        "file": "prototype/assets/models/rescue_v011/bolt_cutter.glb",
+        "bytes": 464136,
+        "sha256": "1ca9720c092191f10db9c537daf2358c5411a68c6e36033db30521b13bd153d7"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/carabiner.glb",
+        "bytes": 144284,
+        "sha256": "baf7f4df4a47f377d719cf16e8c1e18d969b767e7ea05b243b9c88463a1bf887"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/descender.glb",
+        "bytes": 68456,
+        "sha256": "12d97ba55f74027750377607ff871fe93546dcf4d3f9d550b937f8f6709a5f61"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/emergency_beacon.glb",
+        "bytes": 209112,
+        "sha256": "c25c7b2c38d9500060e0a587c74101898490c4e3fff06c95f06f8643c141e2c1"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/equipment_case.glb",
+        "bytes": 178240,
+        "sha256": "c1f087b4a222e8b5b75d62c2cd7db7a66ffa84a57725182d80260488ae076f7e"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/extinguisher.glb",
+        "bytes": 408388,
+        "sha256": "9437897f50f2d611baafd628325347e472aeeb18afe9b5e47e2a44898506f606"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/fire_axe.glb",
+        "bytes": 308352,
+        "sha256": "3e1f58918d56fe9f92131eef8d389faab3849408b838cf24baab140f02430ae2"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/halligan.glb",
+        "bytes": 304892,
+        "sha256": "537c07642f6075639a406702f56ea896c1e1a0fcc9981697bb5244070af22c46"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/oxygen_cylinder.glb",
+        "bytes": 339836,
+        "sha256": "c1490f993e6a503aa0d17e951a2252b5224c3ed2de4b664e0adecdcd97a77802"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/portable_worklight.glb",
+        "bytes": 433652,
+        "sha256": "e65b7a006b750e00124aa1cdb7f40a43bbd9ca5e8cd50237dc2483e392a49734"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/rescue_flashlight.glb",
+        "bytes": 410404,
+        "sha256": "73212e4a7445e10bc4d36b19533a6adec6bf994a60d0281223ab9467f8e4d574"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/rescue_helmet.glb",
+        "bytes": 206852,
+        "sha256": "a88430f9ff535a64866dc52bc10d40abc6ae213c2e2c7daa04a04c43c19769d2"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/rescue_radio.glb",
+        "bytes": 394504,
+        "sha256": "f4a828b9f86c5b2841f7dc582f91428aa4e788acb80916c322ddf63861ecd326"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/rescue_stretcher.glb",
+        "bytes": 792800,
+        "sha256": "6493fb4540944fb0ad1337810bfd7a0ac3848899e4b7c8032e4f21c56ac4a943"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/rope_coil.glb",
+        "bytes": 458776,
+        "sha256": "9a5d496abbb6e610b9b5fc9d471f567aa70ffcb1fa18602f2edd4e4dc3fe0f40"
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/trauma_bag.glb",
+        "bytes": 138640,
+        "sha256": "c373771ab869ad3837fb7874b94a75c121fb0ccfcf9e45c1d4a8df64c93eea19"
+      }
+    ],
+    "materials": [
+      {
+        "file": "prototype/assets/materials/v011/black_rubber.png",
+        "bytes": 2753044,
+        "sha256": "dd554c6a3ce03657395330df817e78a9c36c93de983a0ae20fc018d344c38581"
+      },
+      {
+        "file": "prototype/assets/materials/v011/brushed_steel.png",
+        "bytes": 2065734,
+        "sha256": "b182a04fc8bda2b8cd657fd6a7386233bad6b7635e7924bac6b2efccd3d5dc69"
+      },
+      {
+        "file": "prototype/assets/materials/v011/dark_stone.png",
+        "bytes": 3049901,
+        "sha256": "ea23d3a2fef5ecb13f153c65a7edb9b45c5512a75553f26923b89cfaa82babc0"
+      },
+      {
+        "file": "prototype/assets/materials/v011/porcelain_tile.png",
+        "bytes": 2295784,
+        "sha256": "e9bd1d3e86af1f1eefb0d3679b8ff4526dd72af04575077af2fd164b1c7e632b"
+      },
+      {
+        "file": "prototype/assets/materials/v011/rescue_red_paint.png",
+        "bytes": 2449883,
+        "sha256": "adcd2865e7853a4e79ab932a09f35bfed054a2613978d8e7ea75de2276617a96"
+      },
+      {
+        "file": "prototype/assets/materials/v011/salt_concrete.png",
+        "bytes": 3287966,
+        "sha256": "7299270d824a23a54a642dd528e215047fd41173b7765b0ad6de1723b064d4c9"
+      },
+      {
+        "file": "prototype/assets/materials/v011/smoked_oak.png",
+        "bytes": 2386981,
+        "sha256": "a5b4e3bb1859b1a6b722463ea03c48de8e68649921122d768c09f1698aff8b35"
+      },
+      {
+        "file": "prototype/assets/materials/v011/teal_carpet.png",
+        "bytes": 3803283,
+        "sha256": "0c899389b28ab6169fefa09acf093aa543131e859ddc223529da076f7f426da5"
+      }
+    ],
+    "reference_documents": [
+      {
+        "file": "docs/The-Tower-Descent-Bible-v0.9.docx",
+        "bytes": 319296,
+        "sha256": "f718404121ba6c6990cf7df6e0988455881a0aa9e4188af6e63da14b319dbe20"
+      },
+      {
+        "file": "docs/The-Tower-Descent-Bible-v0.9.pdf",
+        "bytes": 3064715,
+        "sha256": "25776d758dfb7070afb4157f15859864c6f991809fba71f78cf6f442cbe61121"
+      },
+      {
+        "file": "docs/The-Tower-Descent-Continuation-v0.10.docx",
+        "bytes": 47874,
+        "sha256": "d794de99d6c96c476c93fc1c8ad8495ee493d565cbf402933bc209bd15a2bf75"
+      },
+      {
+        "file": "docs/The-Tower-Descent-Continuation-v0.10.pdf",
+        "bytes": 145829,
+        "sha256": "5e76315b269f28d1ca8bc07652981408704524af444fcfc33528605c4e47d25c"
+      }
+    ],
+    "validation": {
+      "command": [
+        "/usr/bin/python3",
+        "/home/runner/work/The-Descents/The-Descents/tools/validate_rescue_models.py",
+        "--root",
+        "/home/runner/work/The-Descents/The-Descents",
+        "--previews"
+      ],
+      "returncode": 0,
+      "log": {
+        "file": "docs/validation/v0.11/asset-library-validation.txt",
+        "bytes": 1554,
+        "sha256": "b16fbc6c34faafa2ce30472014718de01a34f7510ff37f395755ed208b8e45fd"
+      },
+      "pass": true
+    },
+    "method": "Frozen authored PNGs, sixteen validated GLBs, editable Blender source and every prepared Blender preview are fingerprinted; the reference Word/PDF files remain untouched.",
+    "manual_visual_review": false
+  },
+  "manual_visual_review_required": true,
+  "approval_generated": false
+}
