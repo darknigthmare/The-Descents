@@ -1,10 +1,10 @@
 {
   "version": "0.9.0",
   "label": "v0.9 adjacent-floor stairs and local rope traversal with braking, lock, precision, ascent and endurance",
-  "validated_utc": "2026-11-25T13:21:40.235261+00:00",
+  "validated_utc": "2026-11-25T14:21:37.175956+00:00",
   "engine": "4.7.2.stable.official.ed1daf0bf",
-  "runtime_freeze_commit": "23f2284d2d2ce9f14744331d3ed8176797fafe02",
-  "git_head": "23f2284d2d2ce9f14744331d3ed8176797fafe02",
+  "runtime_freeze_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
+  "git_head": "96e278c0e6bcc0e756b5418129317f04d44650ff",
   "import": {
     "command": [
       "/home/runner/work/_temp/godot/Godot_v4.7.2-stable_linux.x86_64",
@@ -16,7 +16,7 @@
       "--quit"
     ],
     "returncode": 0,
-    "duration_seconds": 3.842,
+    "duration_seconds": 8.578,
     "error_lines": [],
     "checks": 0,
     "pass_markers": 0,
@@ -67,7 +67,7 @@
         "res://tests/test_arrival_staging.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.709,
+      "duration_seconds": 1.193,
       "error_lines": [],
       "checks": 126,
       "pass_markers": 1,
@@ -88,7 +88,7 @@
         "res://tests/test_atmosphere.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.334,
+      "duration_seconds": 0.449,
       "error_lines": [],
       "checks": 44,
       "pass_markers": 1,
@@ -109,7 +109,7 @@
         "res://tests/test_cinematic_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.357,
+      "duration_seconds": 2.218,
       "error_lines": [],
       "checks": 103,
       "pass_markers": 1,
@@ -130,7 +130,7 @@
         "res://tests/test_cinematics.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.142,
+      "duration_seconds": 0.26,
       "error_lines": [],
       "checks": 109,
       "pass_markers": 1,
@@ -151,7 +151,7 @@
         "res://tests/test_collapse.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.142,
+      "duration_seconds": 0.163,
       "error_lines": [],
       "checks": 27,
       "pass_markers": 1,
@@ -172,7 +172,7 @@
         "res://tests/test_comfort.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.707,
+      "duration_seconds": 1.009,
       "error_lines": [],
       "checks": 152,
       "pass_markers": 1,
@@ -193,7 +193,7 @@
         "res://tests/test_epilogue.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.333,
+      "duration_seconds": 0.54,
       "error_lines": [],
       "checks": 161,
       "pass_markers": 1,
@@ -214,7 +214,7 @@
         "res://tests/test_epilogue_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.708,
+      "duration_seconds": 1.195,
       "error_lines": [],
       "checks": 50,
       "pass_markers": 1,
@@ -235,7 +235,7 @@
         "res://tests/test_field_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.416,
+      "duration_seconds": 1.661,
       "error_lines": [],
       "checks": 125,
       "pass_markers": 1,
@@ -256,7 +256,7 @@
         "res://tests/test_field_props.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.498,
+      "duration_seconds": 0.635,
       "error_lines": [],
       "checks": 477,
       "pass_markers": 1,
@@ -277,7 +277,7 @@
         "res://tests/test_generation.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.236,
+      "duration_seconds": 0.261,
       "error_lines": [],
       "checks": 820,
       "pass_markers": 1,
@@ -298,7 +298,7 @@
         "res://tests/test_horror.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.604,
+      "duration_seconds": 0.727,
       "error_lines": [],
       "checks": 140,
       "pass_markers": 1,
@@ -319,7 +319,7 @@
         "res://tests/test_horror_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.191,
+      "duration_seconds": 1.195,
       "error_lines": [],
       "checks": 39,
       "pass_markers": 1,
@@ -340,7 +340,7 @@
         "res://tests/test_incident_effects.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.6,
+      "duration_seconds": 0.728,
       "error_lines": [],
       "checks": 29,
       "pass_markers": 1,
@@ -361,7 +361,7 @@
         "res://tests/test_incident_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.989,
+      "duration_seconds": 1.007,
       "error_lines": [],
       "checks": 64,
       "pass_markers": 1,
@@ -384,7 +384,7 @@
         "res://tests/test_incident_routes.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.796,
+      "duration_seconds": 1.565,
       "error_lines": [],
       "checks": 130,
       "pass_markers": 1,
@@ -405,7 +405,7 @@
         "res://tests/test_mission.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.707,
+      "duration_seconds": 1.102,
       "error_lines": [],
       "checks": 89,
       "pass_markers": 1,
@@ -426,7 +426,7 @@
         "res://tests/test_mission_dossier.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.889,
+      "duration_seconds": 1.004,
       "error_lines": [],
       "checks": 110,
       "pass_markers": 1,
@@ -447,7 +447,7 @@
         "res://tests/test_preferences.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.142,
+      "duration_seconds": 0.168,
       "error_lines": [],
       "checks": 80,
       "pass_markers": 1,
@@ -468,7 +468,7 @@
         "res://tests/test_radio.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.141,
+      "duration_seconds": 0.167,
       "error_lines": [],
       "checks": 33,
       "pass_markers": 1,
@@ -489,7 +489,7 @@
         "res://tests/test_radio_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.799,
+      "duration_seconds": 1.195,
       "error_lines": [],
       "checks": 60,
       "pass_markers": 1,
@@ -510,7 +510,7 @@
         "res://tests/test_rescue_presentation.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.707,
+      "duration_seconds": 1.01,
       "error_lines": [],
       "checks": 1005,
       "pass_markers": 1,
@@ -531,7 +531,7 @@
         "res://tests/test_rope_traversal.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.236,
+      "duration_seconds": 0.449,
       "error_lines": [],
       "checks": 98,
       "pass_markers": 1,
@@ -554,7 +554,7 @@
         "res://tests/test_routes.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.796,
+      "duration_seconds": 1.387,
       "error_lines": [],
       "checks": 205,
       "pass_markers": 1,
@@ -575,7 +575,7 @@
         "res://tests/test_save.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.234,
+      "duration_seconds": 0.449,
       "error_lines": [],
       "checks": 286,
       "pass_markers": 1,
@@ -596,7 +596,7 @@
         "res://tests/test_team_reactions.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.238,
+      "duration_seconds": 0.354,
       "error_lines": [],
       "checks": 27,
       "pass_markers": 1,
@@ -619,7 +619,7 @@
         "res://tests/test_traversal_integration.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.613,
+      "duration_seconds": 1.008,
       "error_lines": [],
       "checks": 826,
       "pass_markers": 1,
@@ -642,7 +642,7 @@
         "res://tests/test_vertical_routes.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 1.82,
+      "duration_seconds": 3.054,
       "error_lines": [],
       "checks": 1040,
       "pass_markers": 1,
@@ -663,7 +663,7 @@
         "res://tests/test_world_presentation.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.341,
+      "duration_seconds": 0.368,
       "error_lines": [],
       "checks": 534,
       "pass_markers": 1,

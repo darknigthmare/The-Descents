@@ -1,8 +1,8 @@
 {
   "version": "0.9.0",
-  "runtime_freeze_commit": "23f2284d2d2ce9f14744331d3ed8176797fafe02",
-  "git_head": "23f2284d2d2ce9f14744331d3ed8176797fafe02",
-  "verified_utc": "2026-11-25T13:21:58.443954+00:00",
+  "runtime_freeze_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
+  "git_head": "96e278c0e6bcc0e756b5418129317f04d44650ff",
+  "verified_utc": "2026-11-25T14:21:50.367395+00:00",
   "engine": "4.7.2.stable.official.ed1daf0bf",
   "test_script": "prototype/tests/test_exported_pack.gd",
   "test_script_sha256": "fb0790a1e7dc75a4889550581047a7f76c8e378e2bdb84be084cefc8d5b79f39",
@@ -74,7 +74,7 @@
         "/home/runner/work/The-Descents/The-Descents/prototype/tests/test_exported_pack.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.522,
+      "duration_seconds": 0.821,
       "error_lines": [],
       "checks": 70,
       "pass_markers": 1,
@@ -83,7 +83,7 @@
       "platform": "windows",
       "pack": "builds/windows/TheTowerDescent.exe",
       "pack_bytes": 110508128,
-      "pack_sha256": "e417c72c790987df45c5bb56d0999f493359463b9889912b3568231dbfbb7bb4",
+      "pack_sha256": "fda39fa6d3c7893e27920fb66cb37c83f11c61d56bec2f54439d36c93466637b",
       "pack_unchanged_during_test": true,
       "execution_directory_was_empty": true,
       "log_sha256": "d14f2c82849f316407191f7b6a5b96f4c685bb091e1129cbf43b26b1ddb8da47"
@@ -98,7 +98,7 @@
         "/home/runner/work/The-Descents/The-Descents/prototype/tests/test_exported_pack.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.52,
+      "duration_seconds": 0.823,
       "error_lines": [],
       "checks": 70,
       "pass_markers": 1,
@@ -107,7 +107,7 @@
       "platform": "web",
       "pack": "builds/web/index.pck",
       "pack_bytes": 1239632,
-      "pack_sha256": "0b9148299167e23f77c5ac5cd1a906661d5450a9e642c7656d1242be0613974f",
+      "pack_sha256": "00d74543444dbeea8a950c08b5cedd39328be6356468a34e6f9904da5906d369",
       "pack_unchanged_during_test": true,
       "execution_directory_was_empty": true,
       "log_sha256": "d14f2c82849f316407191f7b6a5b96f4c685bb091e1129cbf43b26b1ddb8da47"

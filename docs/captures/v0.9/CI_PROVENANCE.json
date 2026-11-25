@@ -1,7 +1,7 @@
 {
   "version": "0.9.0",
-  "source_commit": "23f2284d2d2ce9f14744331d3ed8176797fafe02",
-  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45622597990",
+  "source_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
+  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45632857245",
   "godot_archive_sha256": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4",
   "engine": "4.7.2-stable (official)",
   "display": "X11",
@@ -9,7 +9,7 @@
   "capture_protocol": "Native Godot Compatibility renderer via Xvfb and Mesa software rendering; prepared game states.",
   "human_playthrough": false,
   "manual_visual_review": false,
-  "request_sha256": "97b2a81f4653fefcce8168196a7e10e98ce4873b1c4ccae0dc33798e7587e6b0",
+  "request_sha256": "210764448b73a4b2ac61a181ff439efce63fecab2b2059541f1f3f6a59556bc1",
   "fixture_sha256": "c75a336a1b797e8e185bf628040c451d55854a924eff83128e7fd6d5285e3e0b",
   "runtime_sha256": {
     "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
@@ -68,7 +68,7 @@
     "prototype/shaders/weathered_surface.gdshader": "e71f62962863bc3e3fe64e73c1b2b53098ec2c354eb46464a32eba0db0a62d3d",
     "prototype/web_shell.html": "2153408b1c07a7cdac170f9f87fdb99617fd61f82c523902a11658e17d2e54fd"
   },
-  "verification_sha256": "4a6511f5a5d2b8fad7f6ec6d4e5a0b309b107510fcc15c00e5ee82b917bf5f55",
+  "verification_sha256": "79ba58a19d64cee144be05da3fc2ba60009025eedd351bb5bd4457a5266b96d6",
   "captures": [
     {
       "file": "01_menu_arrivee.png",
@@ -79,92 +79,92 @@
     },
     {
       "file": "02_options.png",
-      "bytes": 142728,
-      "sha256": "4ae80ae59996bf9ef147442e1472268e965a0f3696a7f26aab89a3785f01bc3a",
+      "bytes": 142752,
+      "sha256": "47ba7a94eb3a39d23dd63dd9af39ad3f34cfbd5bb8f997e9a639530aa0172115",
       "width": 1440,
       "height": 900
     },
     {
       "file": "03_nouvelle_intervention.png",
-      "bytes": 137783,
-      "sha256": "83a254b6b4de6275104698e12b5a7495831fe2c9cc7a1da9493428cc4e70012e",
+      "bytes": 137827,
+      "sha256": "695ee3ab5b193f75de944007a014f0e9bfacda383525a41dfebd44431d4ed408",
       "width": 1440,
       "height": 900
     },
     {
       "file": "04_signature_studio.png",
-      "bytes": 1099471,
-      "sha256": "1271c07b096f331119cf936d62b9b62a4df0c05ce40255d3d5a0350e358953b4",
+      "bytes": 1099297,
+      "sha256": "57c821d6d7eb359828e85c5f556f6ac2f7bcf1a40e152a5ef95cf576e8fb2b9b",
       "width": 1440,
       "height": 900
     },
     {
       "file": "05_titre.png",
-      "bytes": 1099697,
-      "sha256": "ea0a3596ebd9cd492591445f672e3c60571bcfcb244ae1eba32f71754bc358f7",
+      "bytes": 1099507,
+      "sha256": "a7044307787fa6b5f9c2d6740793ce05d14e5833648094e34232d406980f7111",
       "width": 1440,
       "height": 900
     },
     {
       "file": "06_approche_03.png",
-      "bytes": 877118,
-      "sha256": "76df0da23ffe808e753692c09cbecbafd5fc0ccb02803bc1c96cced769636b18",
+      "bytes": 876762,
+      "sha256": "b9701b5a380ad7b37172ca383bd758b929dadfcf59bfa2123f6f89a10c45a22c",
       "width": 1440,
       "height": 900
     },
     {
       "file": "06_approche_10.png",
-      "bytes": 880583,
-      "sha256": "57edc4ffd30c4a4848894db96c137d1d0f65a64063ce85d1452f5b5627b1aa28",
+      "bytes": 880299,
+      "sha256": "f767ef43dd39502c3a41f2121cb9284299b519b9ac097477e3789349a84b681b",
       "width": 1440,
       "height": 900
     },
     {
       "file": "06_approche_17.png",
-      "bytes": 927476,
-      "sha256": "ffdac2732f297d2d4104050ce117cd4de2bb0ade01d455bf830c7b0d54883d9a",
+      "bytes": 927514,
+      "sha256": "eda96e8f62c775015706571bd68aaa4f1e3da22df99446624666db536f356a99",
       "width": 1440,
       "height": 900
     },
     {
       "file": "06_approche_25.png",
-      "bytes": 939456,
-      "sha256": "4041dcb761b641dd351d398692fb8c65738dafb8b5337f8ed6c9560c53a22bb2",
+      "bytes": 939455,
+      "sha256": "d3ea595d6456e7da2b278b7f16ce563473dfa6d2c38a997437e2eaac3732e999",
       "width": 1440,
       "height": 900
     },
     {
       "file": "07_pause_intro.png",
-      "bytes": 220412,
-      "sha256": "2307c985ad671735a6747ca391ef425594869586d10e1118a14e59297b6b2605",
+      "bytes": 220417,
+      "sha256": "beaf9f42ad3fd680f91732c2323a8e8b264e766d156e755b26cf7738f835d0f0",
       "width": 1440,
       "height": 900
     },
     {
       "file": "14_toit_equipe.png",
-      "bytes": 684218,
-      "sha256": "d0ad1a858437e2911a6eb98d2dca2498521abe2320af8bed2ac3e0320fd093ba",
+      "bytes": 684363,
+      "sha256": "18e574f2ade8a42a966a8b6e8baa181449cef1932d8b192664d89d604f91c384",
       "width": 1440,
       "height": 900
     },
     {
       "file": "15_portage.png",
-      "bytes": 534917,
-      "sha256": "8fb694ec20332bb8e11b900ecbfcc46bc8c5ed61247ea467a623b8d7f736c579",
+      "bytes": 534896,
+      "sha256": "dd60fb0cce4ebb1fe8d8b2b25c46fcf2bb9995a9bf2ad0596ba3e795fd4e4bcc",
       "width": 1440,
       "height": 900
     },
     {
       "file": "16_treuillage.png",
-      "bytes": 539669,
-      "sha256": "b3003e0a5e33bb6e8191470712d832d6ce576aac3996b9172fecee36149b6121",
+      "bytes": 539695,
+      "sha256": "72a0a77a42f99579af9f6c28b56ecfc180e81c22bb1eca3b6ec4b17ac38398b6",
       "width": 1440,
       "height": 900
     },
     {
       "file": "17_reception.png",
-      "bytes": 662813,
-      "sha256": "8f629629c7e1681a9e606a55ad5679d049b3ec02df487dffad41fb2940b453a6",
+      "bytes": 662745,
+      "sha256": "5d63b7c27a1fd53e93358ea22f331b536b7b0b71edeae4749d64214dbb3d8257",
       "width": 1440,
       "height": 900
     },
@@ -205,15 +205,15 @@
     },
     {
       "file": "08_menu_archives.png",
-      "bytes": 750322,
-      "sha256": "e9723919e761184f11b895999fc6ab18a07da2247a9ac44af33432897542f0b8",
+      "bytes": 750314,
+      "sha256": "6ed520df786fa97ab9de74eadac686969b5f4cb063f77efd157c9db67dd2c4dc",
       "width": 1440,
       "height": 900
     },
     {
       "file": "09_dossier_apres.png",
-      "bytes": 169468,
-      "sha256": "df03f0a3b53b34f20a6dd4c3f578ce9d402a559a6f478703c3371390464c20fb",
+      "bytes": 169463,
+      "sha256": "7721f7a0818010391ad8610a0842d33312beeedcda3d25e84dd88289637ce8a6",
       "width": 1440,
       "height": 900
     },
@@ -275,8 +275,8 @@
     },
     {
       "file": "10_menu_refuge.png",
-      "bytes": 787113,
-      "sha256": "67b2cdef8dee293748378003f60a775f66e9e4fe55a196bc246313ae8c1d7370",
+      "bytes": 787084,
+      "sha256": "d734e7aebf46b899ed0a4f065470adcced26337aaef81a34f219958a210f82bc",
       "width": 1440,
       "height": 900
     },

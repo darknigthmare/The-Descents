@@ -1,10 +1,10 @@
 {
   "version": "0.9.0",
   "all_pass": true,
-  "built_utc": "2026-11-25T13:21:57.234919+00:00",
-  "build_commit": "23f2284d2d2ce9f14744331d3ed8176797fafe02",
-  "captured_source_commit": "23f2284d2d2ce9f14744331d3ed8176797fafe02",
-  "source_verification_sha256": "4a6511f5a5d2b8fad7f6ec6d4e5a0b309b107510fcc15c00e5ee82b917bf5f55",
+  "built_utc": "2026-11-25T14:21:48.477124+00:00",
+  "build_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
+  "captured_source_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
+  "source_verification_sha256": "79ba58a19d64cee144be05da3fc2ba60009025eedd351bb5bd4457a5266b96d6",
   "runtime_sha256_before": {
     "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
     "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
@@ -132,7 +132,7 @@
         "/home/runner/work/The-Descents/The-Descents/builds/windows/TheTowerDescent.exe"
       ],
       "returncode": 0,
-      "duration_seconds": 2.225,
+      "duration_seconds": 3.28,
       "error_lines": [],
       "checks": 0,
       "pass_markers": 0,
@@ -152,7 +152,7 @@
         "/home/runner/work/The-Descents/The-Descents/builds/web/index.html"
       ],
       "returncode": 0,
-      "duration_seconds": 2.038,
+      "duration_seconds": 2.995,
       "error_lines": [],
       "checks": 0,
       "pass_markers": 0,
@@ -166,7 +166,7 @@
     {
       "file": "builds/windows/TheTowerDescent.exe",
       "bytes": 110508128,
-      "sha256": "e417c72c790987df45c5bb56d0999f493359463b9889912b3568231dbfbb7bb4"
+      "sha256": "fda39fa6d3c7893e27920fb66cb37c83f11c61d56bec2f54439d36c93466637b"
     },
     {
       "file": "builds/web/index.apple-touch-icon.png",
@@ -201,7 +201,7 @@
     {
       "file": "builds/web/index.pck",
       "bytes": 1239632,
-      "sha256": "0b9148299167e23f77c5ac5cd1a906661d5450a9e642c7656d1242be0613974f"
+      "sha256": "00d74543444dbeea8a950c08b5cedd39328be6356468a34e6f9904da5906d369"
     },
     {
       "file": "builds/web/index.png",
@@ -261,7 +261,7 @@
     {
       "file": "dist/index.pck",
       "bytes": 1239632,
-      "sha256": "0b9148299167e23f77c5ac5cd1a906661d5450a9e642c7656d1242be0613974f"
+      "sha256": "00d74543444dbeea8a950c08b5cedd39328be6356468a34e6f9904da5906d369"
     },
     {
       "file": "dist/index.png",
