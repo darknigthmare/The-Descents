@@ -158,7 +158,11 @@ func _face_worksite(id: String, tool: String) -> bool:
 
 func _begin_hold(id: String, ticks: int) -> bool:
 	var target: Node3D = mission.equipment_visuals.targets.get(id)
-	mission._interact_node(target)
+	mission._find_nearest()
+	if mission.nearest != target:
+		_fail("The real E selection does not target the prepared worksite: " + id)
+		return false
+	mission._interact()
 	if mission.equipment.active_id != id:
 		_fail("The real interaction did not start equipment action: " + id)
 		return false

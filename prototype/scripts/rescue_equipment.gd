@@ -6,7 +6,8 @@ const POSITIONS: Dictionary = {
 	"equipment_boards_29": Vector3(-8.4, 30.0, 4.35),
 	"equipment_fire_28": Vector3(-6.5, 24.0, -3.8),
 	"equipment_cabinet_25": Vector3(-7.0, 6.0, -3.9),
-	"equipment_chain_24": Vector3(9.5, 0.0, 3.6)
+	# North of the first auditorium row, south of the escorted route at z=-4.5.
+	"equipment_chain_24": Vector3(9.2, 0.0, -2.4)
 }
 var targets: Dictionary = {}
 var changing: Dictionary = {}
@@ -88,8 +89,12 @@ func _build_stations() -> void:
 	_asset("carabiner", rack, Vector3(0.8, 0.93, -0.15))
 	_asset("descender", rack, Vector3(0.8, 0.58, -0.15))
 	host._label(rack, Vector3(0, 1.75, 0), "MATÉRIEL D’INTERVENTION\n1 Hache · 2 Extincteur · 3 Halligan · 4 Coupe-boulon", 24, Color("c8d9d5"), 0.0045, true)
-	_asset("rescue_stretcher", self, Vector3(-9.2, 6.03, -6.0), Vector3(0, 90, 0))
-	_asset("trauma_bag", self, Vector3(-9.4, 6.59, -6.0))
+	var refuge_stretcher: Vector3 = Vector3(-9.2, 6.03, -6.0)
+	_asset("rescue_stretcher", self, refuge_stretcher, Vector3(0, 90, 0))
+	# The central fabric top is 0.088 + 0.038/2 m above the asset origin;
+	# total model bounds include the higher headrest. Leave 2 mm of clearance.
+	var stretcher_deck_top: float = refuge_stretcher.y + 0.107 + 0.002
+	_asset("trauma_bag", self, Vector3(-9.4, stretcher_deck_top, -6.0))
 	_asset("oxygen_cylinder", self, Vector3(-10.5, 6.03, -4.0))
 	_asset("emergency_beacon", self, Vector3(-6.2, 6.03, -4.1))
 
@@ -142,9 +147,10 @@ func _build_worksite(id: String, target: Node3D) -> void:
 		for index: int in range(7):
 			var link: MeshInstance3D = host._sphere(door, Vector3(0.2 + index * 0.12, 0.65, 0.09), Vector3(0.08, 0.035, 0.025), host.materials["metal"])
 			link.rotation.z = 0.15 if index % 2 else -0.15
-		_asset("portable_worklight", target, Vector3(0.78, 0.01, -0.10), Vector3(0, 35, 0))
+		# The light stays outside the door sweep and clear of the held tool.
+		_asset("portable_worklight", target, Vector3(-0.95, 0.01, -0.10), Vector3(0, 65, 0))
 		work_light = SpotLight3D.new()
-		work_light.position = Vector3(0.78, 0.50, -0.15)
+		work_light.position = Vector3(-0.95, 0.50, -0.15)
 		work_light.rotation_degrees = Vector3(-10, 65, 0)
 		work_light.spot_range = 12
 		work_light.spot_angle = 45

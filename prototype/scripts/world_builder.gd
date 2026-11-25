@@ -875,7 +875,9 @@ func _build_roof() -> Dictionary:
 		_box(roof,Vector3(xx,43.5,0),Vector3(0.18,3,0.18),materials["orange"])
 	_make_beacon(roof,31,42)
 	_label(roof,Vector3(4.2,44.6,-2.8),"AUBE / TOIT\nTREUIL DE SECOURS",45,Color("efd4ab"),0.010,true)
-	_label(roof,Vector3(0,44.0,11.3),"ORPHÉE\nPOSTE DE SECOURS",66,Color("cedbd6"),0.014,false)
+	var roof_sign: Label3D = _label(roof,Vector3(0,44.0,11.3),"ORPHÉE\nPOSTE DE SECOURS",66,Color("cedbd6"),0.014,false)
+	# Keep its exterior-facing orientation for the approach, with no mirrored back.
+	roof_sign.double_sided = false
 	for pos in [Vector3(8,45,-6),Vector3(-7,45,7)]:
 		_light(roof,pos,Color("eabb83"),1.6,13)
 	Presentation.roof_dressing(self, roof)

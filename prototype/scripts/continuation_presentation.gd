@@ -219,7 +219,8 @@ func _build_congress(parent: Node3D) -> void:
 	for x: float in [-9.0, -6.3]:
 		_world._cylinder(parent, Vector3(x, 0.65, 7.6), 0.65, 1.3, m["dark"], true)
 		_world._cylinder(parent, Vector3(x, 1.34, 7.6), 0.95, 0.12, m["wood"])
-	_world._label(parent, Vector3(-7.3, 3.6, 10.5), "NACRE\nCENTRE DE CONGRÈS", 52, Color("d4d9cf"), 0.010, false)
+	var congress_sign: Label3D = _world._label(parent, Vector3(-7.3, 3.6, 10.5), "NACRE\nCENTRE DE CONGRÈS", 52, Color("d4d9cf"), 0.010, false)
+	congress_sign.double_sided = false
 
 func _build_exhibition(parent: Node3D) -> void:
 	var m: Dictionary = _world.materials

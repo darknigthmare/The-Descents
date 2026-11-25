@@ -37,6 +37,8 @@ func _run() -> void:
 	mission.player.camera.rotate_y(PI)
 	mission._interact_node(boards)
 	_check(mission.equipment.active_id.is_empty(), "Action began facing away.")
+	mission._find_nearest()
+	_check(mission.nearest != boards, "An unaimed worksite retained the interaction prompt.")
 	mission.player.camera.look_at(boards.global_position + Vector3(0, 0.85, 0))
 	var obstacle: StaticBody3D = StaticBody3D.new()
 	var collider: CollisionShape3D = CollisionShape3D.new()
@@ -49,11 +51,37 @@ func _run() -> void:
 	await physics_frame
 	mission._interact_node(boards)
 	_check(mission.equipment.active_id.is_empty(), "Work ignored an intervening wall.")
+	mission._find_nearest()
+	_check(mission.nearest != boards, "An occluded worksite replaced the visible interaction prompt.")
 	obstacle.free()
 	await physics_frame
-	mission._interact_node(boards)
+	var beacon: Node3D
+	for candidate: Node3D in mission.world_data.get("interactables", []):
+		if candidate.get_meta("kind", "") == "beacon" and int(candidate.get_meta("floor", 0)) == 29:
+			beacon = candidate
+			break
+	_check(is_instance_valid(beacon), "The real floor 29 rescue beacon is missing.")
+	if is_instance_valid(beacon):
+		var beacon_position: Vector3 = beacon.global_position
+		beacon.global_position = mission.player.global_position + Vector3(0.65, 0, 0)
+		await physics_frame
+		mission._find_nearest()
+		mission._update_hud()
+		_check(mission.nearest == beacon and "Balise orange" in mission.hud.prompt_label.text, "Aimed optional equipment displaced an immediate rescue control.")
+		mission._interact()
+		_check(mission.equipment.active_id.is_empty() and "évacuation des rescapés" in mission.hud.notify_label.text, "E did not route to the nearby rescue beacon.")
+		beacon.global_position = beacon_position
+		await physics_frame
+	mission._find_nearest()
+	mission._update_hud()
+	_check(mission.nearest == boards, "A nearby legacy supply crate stole the aimed axe worksite.")
+	_check(mission.hud.prompt_label.text.begins_with("Maintenir E") and "réserve de balisage" in mission.hud.prompt_label.text, "Aimed axe worksite did not show its hold instruction.")
+	mission._interact()
 	_check(mission.equipment.active_id == "equipment_boards_29", "Valid close stable visible worksite did not begin.")
 	mission._process_equipment(0.25, 1)
+	mission._find_nearest()
+	mission._update_hud()
+	_check(mission.nearest == boards and "14 %" in mission.hud.prompt_label.text, "Active axe operation lost its progress prompt to a neighboring interaction.")
 	mission._pause()
 	_check(mission.equipment.active_id.is_empty() and not mission.equipment_visuals.view_root.visible, "Pause did not stow and cancel.")
 	mission._resume()

@@ -346,6 +346,11 @@ func _traversal_capture_failure(message: String) -> bool:
 	return false
 
 func _shot(name_value: String, description: String) -> void:
+	if mission.started and mission.player.camera.current and mission.hud.game.visible:
+		# Main ticks are frozen: sample the same equipment gates as gameplay.
+		# Zero delta preserves timing; rope, stairs and rescue keep hands free.
+		mission._process_equipment(0.0, 0)
+		mission._update_hud()
 	if mission.hud.menu.visible:
 		mission.hud.menu._process(1.0)
 	for frame in range(5):

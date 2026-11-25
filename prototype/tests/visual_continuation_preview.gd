@@ -150,6 +150,12 @@ func _view(position_value: Vector3, target: Vector3) -> void:
 	mission._update_hud()
 
 func _shot(name_value: String, description: String) -> void:
+	# The fixture freezes the mission tick, so prepared poses must refresh the
+	# real equipment presentation before drawing. Its usual restrictions also
+	# hide a previously held tool on the stairs or rope, without advancing time.
+	if mission.started and mission.player.camera.current and mission.hud.game.visible:
+		mission._process_equipment(0.0, 0)
+		mission._update_hud()
 	for frame in range(5):
 		await get_tree().process_frame
 		await RenderingServer.frame_post_draw

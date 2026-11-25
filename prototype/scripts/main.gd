@@ -798,9 +798,18 @@ func _find_nearest() -> void:
 	nearest = null
 	if player.on_rope or not player.is_at_landing():
 		return
+	# A held, still-visible operation owns its prompt until completion or cancellation.
+	# An adjacent supply crate must not replace the tool's instruction/progress.
+	if _can_use_equipment() and incident.phase == "aftermath" and is_instance_valid(equipment_visuals):
+		var active_worksite: Node3D = equipment_visuals.targets.get(equipment.active_id)
+		if is_instance_valid(active_worksite) and _equipment_target_visible(active_worksite):
+			nearest = active_worksite
+			return
 	var best: float = 3.0
 	var inspection: Node3D
 	var inspection_distance: float = 2.4
+	var worksite: Node3D
+	var worksite_distance: float = 2.8
 	for object: Node3D in world_data.get("interactables", []):
 		if not is_instance_valid(object) or object.get_meta("used", false) or not object.is_visible_in_tree():
 			continue
@@ -808,7 +817,10 @@ func _find_nearest() -> void:
 		if floor_number != player.nearest_floor():
 			continue
 		var distance: float = Vector2(player.position.x - object.global_position.x, player.position.z - object.global_position.z).length()
-		if str(object.get_meta("kind", "")) == "equipment" and (not _can_use_equipment() or not _equipment_target_visible(object)):
+		if str(object.get_meta("kind", "")) == "equipment":
+			if _can_use_equipment() and _equipment_target_visible(object) and distance < worksite_distance:
+				worksite = object
+				worksite_distance = distance
 			continue
 		if str(object.get_meta("kind", "")).begins_with("continuation_") and not _continuation_target_visible(object):
 			continue
@@ -820,6 +832,12 @@ func _find_nearest() -> void:
 		if distance < best:
 			best = distance
 			nearest = object
+	# A deliberately aimed worksite takes priority over nearby supplies/readings.
+	# Immediate rescue and traversal controls retain their existing close-range priority.
+	var close_rescue_control: bool = is_instance_valid(nearest) and best < 1.5 and str(nearest.get_meta("kind", "")) in ["survivor", "beacon", "rappel", "refuge", "continuation_escort"]
+	if is_instance_valid(worksite) and not close_rescue_control:
+		nearest = worksite
+		return
 	# Rescue controls retain their close-range priority; optional reading requires aim.
 	if is_instance_valid(inspection) and best >= 1.5:
 		nearest = inspection
