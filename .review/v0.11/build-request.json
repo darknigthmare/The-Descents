@@ -2,8 +2,8 @@
   "format": 1,
   "version": "0.11.0",
   "phase": "review",
-  "request_id": "review-20261125-02",
-  "source_commit": "1e0a2b578ddea616fe2c2dda15fc4de29f87c88d",
+  "request_id": "review-20261125-03",
+  "source_commit": "edd0d935204b276e9671270b9993d87373534b34",
   "runtime_sha256": {
     "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
     "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
