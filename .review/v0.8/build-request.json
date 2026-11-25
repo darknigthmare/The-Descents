@@ -1,7 +1,7 @@
 {
   "format": 1,
   "version": "0.8.0",
-  "phase": "review",
-  "request_id": "v08-review-20261125-horror-02",
-  "source_commit": "08d4de979ab405e113183df3f0fcacadd3031382"
+  "phase": "release",
+  "request_id": "v08-release-20261125-01",
+  "source_commit": "0f729b25265f304d5a07cc139658d224602848a8"
 }
