@@ -615,16 +615,45 @@ def finalize_asset(asset):
 
 
 def export_asset(asset,output):
+    # Keep the editable source separated, but merge runtime geometry by material.
+    # This avoids hundreds of individual MeshInstance3D/draw submissions on a rack.
+    export_collection = bpy.data.collections.new("TEMP_EXPORT")
+    bpy.context.scene.collection.children.link(export_collection)
+    export_root = bpy.data.objects.new(asset["id"],None)
+    export_collection.objects.link(export_root)
+    export_root["asset_id"] = asset["id"]
+    export_root["units"] = "metres"
+    export_root["grip_godot_m"] = list(asset["grip_godot"])
+    copies,temporary_mesh_names = [],[]
     deselect()
-    asset["root"].select_set(True)
-    for obj in asset["parts"]:
-        obj.select_set(True)
-    bpy.context.view_layer.objects.active = asset["root"]
+    for part in asset["parts"]:
+        clone = part.copy()
+        clone.data = part.data.copy()
+        temporary_mesh_names.append(clone.data.name)
+        export_collection.objects.link(clone)
+        clone.parent = export_root
+        clone.matrix_parent_inverse.identity()
+        clone.matrix_world = part.matrix_world.copy()
+        clone.select_set(True)
+        copies.append(clone)
+    bpy.context.view_layer.objects.active = copies[0]
+    bpy.ops.object.join()
+    joined = bpy.context.object
+    joined.name = asset["id"]+"_render_mesh"
+    export_root.select_set(True)
+    bpy.context.view_layer.objects.active = export_root
     path = output/f"{asset['id']}.glb"
     bpy.ops.export_scene.gltf(filepath=str(path),export_format="GLB",use_selection=True,
         export_apply=True,export_yup=True,export_texcoords=True,export_normals=True,
         export_tangents=False,export_materials="EXPORT",export_cameras=False,
         export_lights=False,export_animations=False,export_extras=True)
+    for obj in list(export_collection.objects):
+        bpy.data.objects.remove(obj,do_unlink=True)
+    bpy.data.collections.remove(export_collection)
+    for name in temporary_mesh_names:
+        data = bpy.data.meshes.get(name)
+        if data is not None and data.users == 0:
+            bpy.data.meshes.remove(data)
     return {
         "id":asset["id"],"label_fr":asset["label"],
         "path":f"res://assets/models/rescue_v011/{asset['id']}.glb",
@@ -632,7 +661,8 @@ def export_asset(asset,output):
         "dimensions_m":{axis:round(v,6) for axis,v in zip("xyz",asset["dimensions_godot"])},
         "source_dimensions_m":{axis:round(v,6) for axis,v in zip("xyz",asset["dimensions_source"])},
         "pivot":"bottom bounding-box centre","grip_offset_m":[round(v,6) for v in asset["grip_godot"]],
-        "triangles":asset["triangles"],"mesh_parts":len(asset["parts"]),"materials":asset["materials"],
+        "triangles":asset["triangles"],"mesh_parts":len(asset["parts"]),
+        "source_mesh_parts":len(asset["parts"]),"runtime_meshes":1,"materials":asset["materials"],
         "uv":"UVMap: Smart UV atlas, non-overlapping islands per asset","embedded_images":0,
     }
 
@@ -648,6 +678,13 @@ def write_catalog(records,path):
 ## Metres; +Y up, -Z front. Origin is the bottom bounding-box centre.
 
 const ASSET_ROOT := "res://assets/models/rescue_v011/"
+
+const MATERIAL_ALBEDOS := {
+	"steel_brushed": "brushed_steel",
+	"paint_rescue_red": "rescue_red_paint",
+	"rubber_black": "black_rubber",
+}
+const MATERIAL_TEXTURE_ROOT := "res://assets/materials/v011/"
 const MODELS := {
 '''
     footer = '''
@@ -688,7 +725,38 @@ static func instantiate(id: String) -> Node3D:
 \tmodel.set_meta("rescue_asset_id", id)
 \tmodel.set_meta("grip_offset", grip_offset(id))
 \tmodel.set_meta("authored_model", true)
+\t_apply_shared_albedos(model)
 \treturn model
+
+static func _apply_shared_albedos(node: Node) -> void:
+\tif node is MeshInstance3D:
+\t\tvar instance := node as MeshInstance3D
+\t\tif instance.mesh != null:
+\t\t\tfor surface in range(instance.mesh.get_surface_count()):
+\t\t\t\tvar original := instance.get_surface_override_material(surface)
+\t\t\t\tif original == null:
+\t\t\t\t\toriginal = instance.mesh.surface_get_material(surface)
+\t\t\t\tif not original is StandardMaterial3D:
+\t\t\t\t\tcontinue
+\t\t\t\tvar texture_id: String = MATERIAL_ALBEDOS.get(original.resource_name, "")
+\t\t\t\tif texture_id.is_empty():
+\t\t\t\t\tcontinue
+\t\t\t\tvar path := MATERIAL_TEXTURE_ROOT + texture_id + ".png"
+\t\t\t\tif not ResourceLoader.exists(path):
+\t\t\t\t\tcontinue
+\t\t\t\tvar texture := ResourceLoader.load(path) as Texture2D
+\t\t\t\tif texture == null:
+\t\t\t\t\tcontinue
+\t\t\t\tvar material := original.duplicate() as StandardMaterial3D
+\t\t\t\tmaterial.albedo_texture = texture
+\t\t\t\tmaterial.albedo_color = Color.WHITE
+\t\t\t\tmaterial.uv1_triplanar = true
+\t\t\t\tmaterial.uv1_world_triplanar = false
+\t\t\t\tvar repeats := 6.0 if texture_id == "black_rubber" else 4.0
+\t\t\t\tmaterial.uv1_scale = Vector3.ONE * repeats
+\t\t\t\tinstance.set_surface_override_material(surface, material)
+\tfor child in node.get_children():
+\t\t_apply_shared_albedos(child)
 '''
     path.write_text(header+",\n".join(rows)+","+footer,encoding="utf-8")
 
