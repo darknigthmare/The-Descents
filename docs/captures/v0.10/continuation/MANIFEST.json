@@ -1,0 +1,101 @@
+{
+	"captures": [
+		{
+			"description": "Bilan supérieur conservé et bouton de poursuite vers le congrès",
+			"file": "01_bilan_poursuite.png",
+			"height": 900,
+			"sha256": "c235e0c3cc1196151e3db6064469d000794bed98a469113205c469024fa8ba65",
+			"width": 1440
+		},
+		{
+			"description": "Accès nord à l’escalier local, séparé de la liaison 26–25",
+			"file": "02_escalier_25_24.png",
+			"height": 900,
+			"sha256": "e30ffa9f5ea8f07722785099029079e2c3ebad4445e775569d4604e837f241f9",
+			"width": 1440
+		},
+		{
+			"description": "Auditorium du congrès et écran Pelagos incliné, foyer de secours libre",
+			"file": "03_congres_auditorium.png",
+			"height": 900,
+			"sha256": "7058cfa13e3835ab690d8d1ddfaf64f37cf3d85f73c1cfc1932361b411a4cc36",
+			"width": 1440
+		},
+		{
+			"description": "Léa Mercier et Idris Kaci attendent un signe visible dans la cabine",
+			"file": "04_cabine_signes.png",
+			"height": 900,
+			"sha256": "5b3db7bbe0cdcbd11272d676f52c8ecfe52e84413ef104fc6f7a9bcb10791112",
+			"width": 1440
+		},
+		{
+			"description": "États préparés des deux personnes sur la volée nord, vers le refuge",
+			"file": "05_escorte_escalier.png",
+			"height": 900,
+			"sha256": "d34e13d8a8c709dd5d18612f63c2b3523c9f265db520e92c198d62a342f93b07",
+			"width": 1440
+		},
+		{
+			"description": "Réception stable préparée des deux personnes dans le refuge 25",
+			"file": "06_reception_refuge.png",
+			"height": 900,
+			"sha256": "1b907dea70ab55d47339dc863279c41294d35e49e5ced16f793ae04f9678cabe",
+			"width": 1440
+		},
+		{
+			"description": "Nouvelle ligne entre congrès et exposition avec descendeur et mesures actives",
+			"file": "07_rappel_24_23.png",
+			"height": 900,
+			"sha256": "5e1d72bc15e02a0a858af58b4553481c5eb4c6c7d339a3b3ca72d08d9bae617d",
+			"width": 1440
+		},
+		{
+			"description": "Maquette des deux tours et volumes absents du plan touristique actuel",
+			"file": "08_maquette_souterrains.png",
+			"height": 900,
+			"sha256": "74a7d7aa296cc94bfd20ede8361b422a93a73598303b29f483d63a9674ba12f1",
+			"width": 1440
+		},
+		{
+			"description": "Panneau d’archive procédural des anciens bains, forme de porte et légende",
+			"file": "09_archive_bains.png",
+			"height": 900,
+			"sha256": "4b912ae4d0ae6d5d4e16e5ee8bc37faa86c075efbddc2ecb0ae3387b50d61e11",
+			"width": 1440
+		},
+		{
+			"description": "Routine facultative E01 à l’écart du passage, sans attaque ni dégâts",
+			"file": "10_remanence_exposition.png",
+			"height": 900,
+			"sha256": "53d7ffe065e9316d8786a1d0b0620766191c87a32df8a42d69addbf619f62124",
+			"width": 1440
+		},
+		{
+			"description": "Dossier des cinq pièces effectivement présentes dans l’instantané préparé",
+			"file": "11_dossier_nacre.png",
+			"height": 900,
+			"sha256": "35c2e95e86eb11ac801cf4c2524e4b43b576c6ed21ffee011f4054b70d7bbc6f",
+			"width": 1440
+		},
+		{
+			"description": "Compte rendu au 23, deux réceptions au refuge et trois au toit conservées",
+			"file": "12_bilan_reconnaissance.png",
+			"height": 900,
+			"sha256": "553b7b37bfa23f151bebb05e3c974565589f1002bfd192f77f5f7ec896ddc6cb",
+			"width": 1440
+		},
+		{
+			"description": "Accueil contextuel sur l’exposition au dernier point sûr enregistré",
+			"file": "13_menu_exposition.png",
+			"height": 900,
+			"sha256": "6fd78933a586f5b27d33727a460e3f0b145875a435280bf90046293d681f1c2c",
+			"width": 1440
+		}
+	],
+	"display": "X11",
+	"engine": "4.7.2-stable (official)",
+	"human_playthrough": false,
+	"prepared_states": true,
+	"rendering_method": "gl_compatibility",
+	"version": "0.10.0"
+}

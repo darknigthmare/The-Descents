@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS traversal integration: 826 checks; 670 real capsule rope samples; three adjacent links both ways, timed transfers, brakes, lock, anchors, obstacles, pause/journal, stable checkpoints, stair HUD and rescue priorities.
