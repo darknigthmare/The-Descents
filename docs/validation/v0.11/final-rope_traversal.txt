@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS rope_traversal: 98 checks; adjacent local belays, two-way travel, precision, fast descent, persistent lock, exhaustion recovery, safe landings, collision reconciliation and frozen pause.

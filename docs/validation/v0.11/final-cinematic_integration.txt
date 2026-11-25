@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS cinematic integration: 103 checks; real menu buttons, preserved checkpoints, validated contexts, persisted comfort, studio replay, timed arrival and pause/skip/control handoff. Logic checks; rendered presentation requires separate visual QA.
