@@ -1,0 +1,413 @@
+{
+  "format": 1,
+  "version": "0.10.0",
+  "reviewed_utc": "2026-11-25T15:59:57.243880+00:00",
+  "reviewer": "assistant",
+  "review_manifest_sha256": "5afbbddab943cc96c208c23aab809e5ee46c1eebbad0c8f54e4673393c077e1f",
+  "source_commit": "5d6e3878b0e103216d995f8b49944d847b834b79",
+  "request_commit": "39144444ea6f7b57f5fe341d8cd25b8bf08d48dc",
+  "review_evidence_commit": "ad15fe3a325a623b364d9cde1de87f519a05ffcc",
+  "all_pass": true,
+  "capture_count": 55,
+  "individual_image_review": true,
+  "human_playthrough": false,
+  "methods": [
+    "Revue visuelle réelle de chaque PNG ouvert individuellement avec view_image : lisibilité, chevauchements et cohérence de l’interface du prototype procédural. Après la seconde CI (HEAD ad15fe3a), les treize captures modifiées ont toutes été rouvertes et leurs observations actualisées ; la revue de 11_inspection_toit.png est conservée après vérification que ses octets sont identiques. Les empreintes SHA-256 identifient précisément les images examinées.",
+    "Examen visuel réel et individuel des 14 PNG baseline triés lexicographiquement, indices 14 à 27 inclus, pour la lisibilité, les chevauchements et la cohérence du prototype procédural. Lors de la seconde revue CI ad15fe3a, les quatre captures modifiées (14_toit_equipe, 15_portage, 16_treuillage, 17_reception) ont été rouvertes séparément avec view_image ; les dix autres verdicts et observations ont été conservés après vérification de leur égalité SHA-256. Aucun fichier du dépôt modifié.",
+    "Première revue : chaque capture baseline triée aux indices 28 à 41 et chacune des 6 pages finales CI ont été ouvertes individuellement via view_image et examinées. Seconde revue CI au HEAD ad15fe3 : les neuf captures modifiées 29 à 37 ont toutes été rouvertes individuellement via view_image ; leurs empreintes et observations ont été actualisées. Les cinq autres captures, les six pages CI, le DOCX et le PDF sont strictement identiques aux empreintes précédentes : leurs verdicts ont été conservés. Revue statique de lisibilité, chevauchements et cohérence du prototype procédural ; aucun test de déplacement ou de performance déduit de ces images.",
+    "Les 13 PNG finaux de la seconde CI ont été ouverts individuellement avec view_image ; revue de lisibilité, cadrage, cohérence des états et limites du prototype. Les corrections viennent de l’examen des premières captures."
+  ],
+  "captures": [
+    {
+      "file": "docs/captures/v0.10/baseline/01_menu_arrivee.png",
+      "sha256": "4115567ba534ef1b06e14dbbf1156f17ed841c7baa6c7e9a31105759ca5bb264",
+      "status": "pass",
+      "observation": "Le titre, les cinq commandes et la version 0.10.0 sont lisibles ; le contexte de première intervention et les deux tours intactes apparaissent sans recouvrement des textes."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/02_options.png",
+      "sha256": "f57baafb7b984437f165e4e4fd50e113ca9135ed2b17b4368e2375d486ff1ff8",
+      "status": "pass",
+      "observation": "Les réglages, leurs valeurs et les commandes de retour sont distincts sur le fond assombri ; la barre de défilement rend visible la présence d’options supplémentaires."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/03_nouvelle_intervention.png",
+      "sha256": "e6e6764306630166db2a74305ce908cbb1e617f94363470b0690eac8077eece0",
+      "status": "pass",
+      "observation": "Le briefing identifie clairement les trois personnes et leurs étages ; le champ de disposition et le bouton Déployer Alpha restent lisibles et correctement espacés."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/04_signature_studio.png",
+      "sha256": "1599c4f690bccdb9a44669ab4abb9fafd3746a070ad9ab7a1e582af5239605a2",
+      "status": "pass",
+      "observation": "La couronne et la signature du studio sont centrées et contrastées ; la barre de progression et la commande pour passer sont dégagées dans la bande basse."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/05_titre.png",
+      "sha256": "db1447f54604da16e5c71ca206e3471fbb8f1b7d333bfee0edab149627250d98",
+      "status": "pass",
+      "observation": "Le titre sur deux lignes et la devise sont entièrement visibles devant les deux tours debout ; la progression et la commande pour passer ne recouvrent aucun texte."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/06_approche_03.png",
+      "sha256": "b461ef9e7e524639fcb26abbcd0caa469cd8217877c34a72b1e8c7a297b562ac",
+      "status": "pass",
+      "observation": "Le plan large situe les deux tours et les appareils en approche ; le carton de lieu et le sous-titre sur la ville submergée sont lisibles, sans chevauchement entre textes."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/06_approche_10.png",
+      "sha256": "80feb523215a864cf0bb38ced9980f4bbab00b0425f273538b0105194a0a5cdf",
+      "status": "pass",
+      "observation": "Le cadrage distingue les deux toits et leurs hélicoptères ; l’identification Aube/Hespérie et le sous-titre de coordination sont entièrement lisibles."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/06_approche_17.png",
+      "sha256": "ae1b2d87663d25a5b9dffca963ae47797cb17bde5a7ec791de5cf3c52932b313",
+      "status": "pass",
+      "observation": "Les deux équipes et le poste de secours sont identifiables dans le plan rapproché ; titre, attribution de parole et sous-titre restent séparés et lisibles."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/06_approche_25.png",
+      "sha256": "8a70cea3dd5f5f3171df8454b1fd38b66e1b1a99faefccaf9c08f5e91de9d4ba",
+      "status": "pass",
+      "observation": "Le poste de secours, le treuil et les équipiers procéduraux sont identifiables ; la consigne vers le repère bleu et Ana au restaurant 30 tient entièrement dans l’image."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/07_pause_intro.png",
+      "sha256": "45451ae2c4d70e1d6ad5244eb749e4d26f056998e7b621c75c93150e81547895",
+      "status": "pass",
+      "observation": "Le panneau de pause se détache clairement du décor assombri ; boutons, interrupteurs et explication des sauvegardes sont visibles sans recouvrement."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/08_menu_archives.png",
+      "sha256": "085a58fcbb6a8eb0f2bcdba1f014173197beb4deb5433c97d2d0978ae3381cfc",
+      "status": "pass",
+      "observation": "L’étage 28, la vie sauvée et le contexte Archives sont cohérents et lisibles ; une cloison masque une partie de la signalétique 3D sans affecter les commandes du menu."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/09_dossier_apres.png",
+      "sha256": "68af70f11bd371fef76e3402f36dbecebc3581448bd5edfeb35826f95c36b865",
+      "status": "pass",
+      "observation": "Le dossier expose lisiblement l’après-impact et le détour du 28 ; la zone défilante contient le parcours et laisse les boutons Commandes et matériel et Retour dégagés."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/10_menu_refuge.png",
+      "sha256": "ad373df27825333a178dc221a58a98a787fdb898194a3dcffae5323dd1d4bb63",
+      "status": "pass",
+      "observation": "Le menu affiche trois vies sauvées, le refuge 25 et la consultation de l’intervention terminée ; les textes d’interface restent lisibles malgré la signalétique 3D partiellement occultée par le décor."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/11_inspection_toit.png",
+      "sha256": "f5dd81284d8977e1ce2f20c9223aa831c720915871c300b409be37f0be24d010",
+      "status": "pass",
+      "observation": "Le registre médical affiche correctement zéro réception et les trois noms attendus ; contenu défilant, indication de reprise et bouton de fermeture restent lisibles et séparés."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/12_inspection_archives.png",
+      "sha256": "6b6dcd9e0f0fef15a2f1be5d7f7640b2456c0641fcf9fe792397f30757c8906a",
+      "status": "pass",
+      "observation": "La fiche avant le choc est entièrement lisible : hiérarchie claire, paragraphes espacés et bouton de reprise dégagé, sans chevauchement."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/13_inspection_apres.png",
+      "sha256": "915b2ebecf3cf20ca268b2d2290c24197fbe6aa6089efb06827bb17460b8a2e6",
+      "status": "pass",
+      "observation": "Le titre après le choc et les consignes de détour sont cohérents et lisibles, avec les commandes de fermeture entièrement visibles."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/14_toit_equipe.png",
+      "sha256": "d19991939f24ed86a78fca554332fefb3e5ab7f8e60192f342b4d5508da43716",
+      "status": "pass",
+      "observation": "Seconde ouverture individuelle : hélicoptère, poste médical, secouristes et accès central protégé restent clairement identifiables ; aucune obstruction nouvelle de la lecture du toit."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/15_portage.png",
+      "sha256": "42057f79a292f0abd9d904c0a01b94824ee87d8a0410ff956245caad17ede477",
+      "status": "pass",
+      "observation": "Seconde ouverture individuelle : le message de portage détouré, la balise et l’objectif sont lisibles sans collision de panneaux ; la réplique radio antérieure reste un décalage non bloquant."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/16_treuillage.png",
+      "sha256": "b7bdcb3b10aca76eeaaa78b28b08a540feeeae86a2a250acd7710a260fd6f537",
+      "status": "pass",
+      "observation": "Seconde ouverture individuelle : la personne suspendue et son dispositif de levage sont visibles, avec progression de 36 % et réception encore attendue cohérentes ; la réplique radio antérieure reste non bloquante."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/17_reception.png",
+      "sha256": "03bca6b8fb6f74cd5922d95c3ed9fdbf8cba55e41b0231aced9748225482bfb7",
+      "status": "pass",
+      "observation": "Seconde ouverture individuelle : le brancard, la personne prise en charge et les deux secouristes demeurent distincts et bien cadrés dans le poste médical du toit, sans problème de superposition."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/18_meteo_toit.png",
+      "sha256": "a76bbfb72e3fd6e4f46fdb2d4dfb3067fb61c9c5b14af1be9e6d179348bf3241",
+      "status": "pass",
+      "observation": "La météo assombrit le ciel sans masquer les deux tours, les équipes ni les appareils ; les silhouettes et la séparation des bâtiments restent lisibles."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/19_options_pause.png",
+      "sha256": "c41a6f7c3c9a747761c5a4a356b21c45b610c70e3ea14626b0262aaddc2ec356",
+      "status": "pass",
+      "observation": "Les intitulés, valeurs, curseurs, défilement et boutons sont lisibles et espacés ; le fond assombri ne concurrence pas les commandes principales."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/20_journal_situation.png",
+      "sha256": "a852ed4c6f69ceeca2c5401ec2e7925e1d9592d91e73e7fa92b97fe2761e36df",
+      "status": "pass",
+      "observation": "Les compteurs, la position au 28 et les consignes après impact sont lisibles et cohérents ; le panneau défilant contient le texte sans débordement."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/21_journal_rescapes.png",
+      "sha256": "87330502d1380065111c1f45e2d21f3bdb29a3232a34dfd807d00d8ecb680bc9",
+      "status": "pass",
+      "observation": "Le bilan 1 sur 3 et les statuts individuels sont lisibles ; le cadre de focus demeure sur Situation, mais le fond sélectionné et le titre identifient clairement Rescapés."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/22_journal_indices.png",
+      "sha256": "a8622f581cd19c94f6aa2d872a61a02a646c0b0503225bbf61b6594ea5ab2f32",
+      "status": "pass",
+      "observation": "L’indice récupéré et les deux documents restant à examiner sont distincts, lisibles et cohérents avec le compteur 1 sur 3, sans révéler les textes encore inconnus."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/23_journal_transmissions.png",
+      "sha256": "b5a5b95e00d5e351ec0f2f1a64d05e7ef9be266c208a5e51ea125c3cc408ce1b",
+      "status": "pass",
+      "observation": "Les horodatages, interlocuteurs et messages sont lisibles dans le panneau, avec navigation et fermeture dégagées et aucune collision typographique."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/24_epilogue_02.png",
+      "sha256": "8b1bf3d5b6ed113c333fa57ec8b6a289b3a8fd7d8ecd66a63ecfb534df3f55fa",
+      "status": "pass",
+      "observation": "Le titre Trois vies à l’abri, les trois personnes prises en charge et les sous-titres concordent ; la barre de progression et le raccourci du bilan restent dégagés."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/24_epilogue_07.png",
+      "sha256": "0c0f4e181689ae211f6c8b75e8488c52218139dcb0d3708b127a15742a4b0cfe",
+      "status": "pass",
+      "observation": "Le relais, le refuge 25, le titre et le sous-titre identifient clairement la séquence ; le libellé doré du locuteur est discret sur le sol clair mais demeure lisible."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/24_epilogue_12.png",
+      "sha256": "2cac92fe4d05ec10a88a6c9e62a113ce2043daa868c678e4f5a612f3292454f4",
+      "status": "pass",
+      "observation": "Le titre, l’origine incertaine du signal, le sous-titre et la commande de bilan restent lisibles autour des tours procédurales, sans chevauchement de l’interface."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/25_bilan_refuge.png",
+      "sha256": "2bb119263e6d2e773ab831ce1b5838d566601bbb3a8d363be90014963c36b7d5",
+      "status": "pass",
+      "observation": "Les quatre métriques, trois cartes de personnes, extrait défilant et quatre boutons tiennent dans le cadre ; Poursuivre au congrès est clairement accessible."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/26_suites_presence.png",
+      "sha256": "34d20e1d950271fd774d830370bd959bbef7b9c709b05f6ec5901c71e67a325c",
+      "status": "pass",
+      "observation": "La présence des suites et le rappel local sont identifiables avec des panneaux principaux nets ; l’aide inférieure perd un peu de contraste sur le balisage clair, sans défaut bloquant."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/27_archives_traces.png",
+      "sha256": "6a53dab6e90cb21ec39ff272eeda0155d5aeb0f26a49cf6f47bdc22c8a0ae648",
+      "status": "pass",
+      "observation": "Les empreintes au sol sont distinctes dans les bureaux et le HUD indique correctement le secteur 28 ; aucun panneau essentiel ne recouvre les traces."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/28_spa_remanence.png",
+      "sha256": "20e33dd4330b140d99b19ea592cb7b162bddb158d33ca24d70f36284a7524d51",
+      "status": "pass",
+      "observation": "La silhouette et le bassin restent reconnaissables ; plusieurs enseignes du décor se superposent au fond à droite, sans masquer les panneaux de mission et d’état."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/29_station_rappel_toit.png",
+      "sha256": "0c86d27ac15ee69b5dec9a0aa9114f29188c661410cfb63dba41ef5675e4bc27",
+      "status": "pass",
+      "observation": "La consigne centrale d’engagement 31–30 dispose désormais d’un contour sombre qui reste lisible sur le sol éclairé ; station personnelle, garde-corps et treuil restent distincts."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/30_rappel_descente.png",
+      "sha256": "b67b65f7fa2a72931ff4f6c7134877d48a7cc9f9d56ff2b96dea1ae10ca121c2",
+      "status": "pass",
+      "observation": "Le panneau Descente contrôlée reste net ; les trois lignes de commandes centrales, maintenant bordées de sombre, se lisent sur la corde et le bras sans chevauchement des panneaux."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/31_rappel_verrouille.png",
+      "sha256": "7c2b54e63b028d3ae600fbcf84696f0d0ac61aab950f8213754919ea600efda5",
+      "status": "pass",
+      "observation": "Descendeur verrouillé, vitesse nulle et voyant vert restent cohérents ; le contour sombre préserve la lecture des commandes devant le dispositif jaune."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/32_escalier_30_29.png",
+      "sha256": "9fdd0cd4106876d4fa9cde08cee7677fcaaa039470c9e9672ef9beba6004e543",
+      "status": "pass",
+      "observation": "La consigne centrale 30–29 est maintenant bordée de sombre et se lit sur les bandes jaunes ; deux volées, palier et panneau de retour restent clairement identifiables."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/33_escalier_palier.png",
+      "sha256": "74d69a5652ee5b0927c8ad1065ab6e5a26764f83baeda29af315b69e72853d8a",
+      "status": "pass",
+      "observation": "Depuis le palier, la volée de retour et le débouché restent visibles ; les deux lignes centrales bordées sont lisibles malgré les marches et enseignes en arrière-plan."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/34_rappel_remontee.png",
+      "sha256": "fac9bd6c07834610fd9ea70110d4529e8e7845e97c5c383f1c0b700fb1b276b6",
+      "status": "pass",
+      "observation": "Le panneau Remontée conserve vitesse 1,6 m/s et endurance 90 % lisibles ; les commandes bordées restent nettes devant le dispositif, sans recouvrir les panneaux de mission."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/35_aide_deplacements.png",
+      "sha256": "bc698c5a1ca6063bd6eff6d56a9eebd17fd9b1b856094ceef50602d7bdc12924",
+      "status": "pass",
+      "observation": "Le texte d’aide, la barre de défilement et le bouton Compris restent lisibles dans cette nouvelle capture ; la fin du texte appartient à la zone défilante et l’arrière-plan est assombri."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/36_escalier_28_27.png",
+      "sha256": "3271f4d34bf52466d1b6441b8737c76c96f0bb768c65705bd77aefa830f8ae4a",
+      "status": "pass",
+      "observation": "La liaison 28–27 et le retour possible restent explicites ; le contour sombre rend les deux lignes centrales lisibles sur les marches claires, sans collision entre panneaux."
+    },
+    {
+      "file": "docs/captures/v0.10/baseline/37_escalier_26_25.png",
+      "sha256": "44b277d85e950b5be251b70c425882637c124de011fc55f1ba64f9a2ea31f9ea",
+      "status": "pass",
+      "observation": "La liaison 26–25 et son palier demeurent reconnaissables ; les consignes centrales bordées restent lisibles sur le jaune des marches et le HUD conserve ses zones distinctes."
+    },
+    {
+      "file": "docs/captures/v0.10/continuation/01_bilan_poursuite.png",
+      "sha256": "c235e0c3cc1196151e3db6064469d000794bed98a469113205c469024fa8ba65",
+      "status": "pass",
+      "observation": "Le bilan supérieur conserve ses trois personnes et ses quatre boutons ; Poursuivre au congrès est entier et distinct. Aucun chevauchement des panneaux."
+    },
+    {
+      "file": "docs/captures/v0.10/continuation/02_escalier_25_24.png",
+      "sha256": "573c336c58701138c122b68cda6a68264063d81bec6bb06c010a3607f4a94409",
+      "status": "pass",
+      "observation": "L’ouverture nord, les deux volées et les repères d’accès sont visibles. La grande enseigne du décor est coupée par le cadrage ; le lieu et l’objectif restent explicités par le HUD."
+    },
+    {
+      "file": "docs/captures/v0.10/continuation/03_congres_auditorium.png",
+      "sha256": "c89dfce5209b0901367ddd09b399003d3f4e9d89fde6c97c77f0d84f05cc06de",
+      "status": "pass",
+      "observation": "Les rangées, l’écran Pelagos incliné et la circulation sont reconnaissables. Les panneaux du HUD restent lisibles ; les matériaux et le mobilier sont ceux du prototype procédural."
+    },
+    {
+      "file": "docs/captures/v0.10/continuation/04_cabine_signes.png",
+      "sha256": "e760d0fffde7be487aebe1319a3a349d10d966b46f979b52f92e0e3966d5be2c",
+      "status": "pass",
+      "observation": "Léa et Idris font face au foyer ; noms, état d’attente, instruction visuelle et commande E se lisent séparément. Le chevauchement avec l’enseigne de la cabine est supprimé."
+    },
+    {
+      "file": "docs/captures/v0.10/continuation/05_escorte_escalier.png",
+      "sha256": "824a3ee0dd7389e9e77d669444799e9707f410313d8404bc40a3a73a4f539ef8",
+      "status": "pass",
+      "observation": "La volée et Léa sont nettes ; Idris est partiellement masqué par l’alignement des deux personnes. Le libellé 3D déborde sous le HUD, mais l’objectif et l’aide de marche restent lisibles. Ces poses préparées ne certifient ni le sens de marche ni une escorte en temps réel."
+    },
+    {
+      "file": "docs/captures/v0.10/continuation/06_reception_refuge.png",
+      "sha256": "b1971cf9ba0afe3de1179d117375136f1f4afbdebd04c9559bcc01f50179fe07",
+      "status": "pass",
+      "observation": "Les deux personnes occupent leurs repères ; noms et enseigne du refuge sont séparés. Le compteur affiche deux personnes au refuge et l’objectif passe à l’exposition."
+    },
+    {
+      "file": "docs/captures/v0.10/continuation/07_rappel_24_23.png",
+      "sha256": "0a7cd527de780fdc1a8d6e924b27a65395a02160e2b0589a023ec2f244413cff",
+      "status": "pass",
+      "observation": "La corde, le descendeur, la liaison 24–23, la distance, l’endurance et les commandes se lisent. Le contour sombre maintient le contraste des instructions sur le matériel clair."
+    },
+    {
+      "file": "docs/captures/v0.10/continuation/08_maquette_souterrains.png",
+      "sha256": "d26bfe38d4836a5810ebbdb89b8e5303d7cdf7155fa684a6ebadab77153cf68c",
+      "status": "pass",
+      "observation": "Le plateau abaissé rend visibles les deux tours miniatures et leurs connexions. La commande de relevé est lisible ; le début du titre 3D est partiellement derrière le HUD, sans masquer l’identification de l’objet dans le prompt."
+    },
+    {
+      "file": "docs/captures/v0.10/continuation/09_archive_bains.png",
+      "sha256": "ffced65f89f54f4d0174dfbc5c0388cc1f68e043409ebe36747bca3b75d66680",
+      "status": "pass",
+      "observation": "Le lieu et la date de la légende sont lisibles au-dessus du panneau ; la lampe ne les masque plus. Le prompt est contrasté sur la zone claire. La représentation reste géométrique et provisoire."
+    },
+    {
+      "file": "docs/captures/v0.10/continuation/10_remanence_exposition.png",
+      "sha256": "e21e499201308b1f1fc30715cad775509ca3eaaa28758c96035699e271ed8699",
+      "status": "pass",
+      "observation": "La silhouette est identifiable près du panneau latéral dans une zone dégagée. L’image montre un instant du geste préparé ; elle ne démontre pas sa durée ou son comportement."
+    },
+    {
+      "file": "docs/captures/v0.10/continuation/11_dossier_nacre.png",
+      "sha256": "b94a5a0d3b6808567f5f827a1e5cc0a2bed311b55a06853d87712af346bd2b57",
+      "status": "pass",
+      "observation": "Les deux nouveaux constats du 23 et leurs textes complets sont visibles après défilement. Le total de cinq pièces et les neuf niveaux du parcours restent lisibles."
+    },
+    {
+      "file": "docs/captures/v0.10/continuation/12_bilan_reconnaissance.png",
+      "sha256": "4d84bd70f2f0fcf4e50184198350f5d54bfadebf22e63e8be9db806ab234d876",
+      "status": "pass",
+      "observation": "Le compte rendu distingue Léa et Idris au refuge des trois personnes au toit ; métriques, texte et deux boutons tiennent dans leurs panneaux. La limite au 23 est explicite."
+    },
+    {
+      "file": "docs/captures/v0.10/continuation/13_menu_exposition.png",
+      "sha256": "7820754ffbf0dba933098af1c0c5bb2b726ecdd6cf5f3fb03ee2ff461a195f07",
+      "status": "pass",
+      "observation": "Le menu montre la reconnaissance terminée, cinq vies sauvées, le point sûr du 23 et la version 0.10.0. Les actions, le contexte et le décor restent lisibles sans recouvrement bloquant."
+    }
+  ],
+  "supplement_pages": [
+    {
+      "page": 1,
+      "file": "docs/validation/v0.10/rendered/page-1.png",
+      "sha256": "ab0ddb0ca8c73a426a591d1dd3dadf978bf8b1bb483246fa5550659cbdf235ec",
+      "status": "pass",
+      "observation": "Titre, introduction et tableau de périmètre complets ; les noms, liens et cellules restent lisibles sans débordement."
+    },
+    {
+      "page": 2,
+      "file": "docs/validation/v0.10/rendered/page-2.png",
+      "sha256": "584f01a43cc4a126526b3a08cdffabd94f94a4e75a2b17c9346c740a00435dee",
+      "status": "pass",
+      "observation": "Entrée dans le secteur et tableau des deux liaisons lisibles ; les quatre colonnes restent dans les marges et la continuité de paragraphe est claire."
+    },
+    {
+      "page": 3,
+      "file": "docs/validation/v0.10/rendered/page-3.png",
+      "sha256": "0baa1bd85c140ab4657f56072cdf96cd3a22d5fd9bfc1d5c8aae2f488dddff42",
+      "status": "pass",
+      "observation": "Consignes du duo, paramètres de déplacement et début de réception lisibles ; titres noirs, texte en gras et caractères accentués correctement rendus."
+    },
+    {
+      "page": 4,
+      "file": "docs/validation/v0.10/rendered/page-4.png",
+      "sha256": "9c7670345454250e7cc41e1d3e126e23d52ef56643e57cef4166ada8979eb2d5",
+      "status": "pass",
+      "observation": "Fin de réception et section exposition complètes ; distinction entre maquette et archive procédurale lisible, sans coupe de ligne ou superposition."
+    },
+    {
+      "page": 5,
+      "file": "docs/validation/v0.10/rendered/page-5.png",
+      "sha256": "fb17f40f6d6e9ae1bc3f22e1ba1b0a8ae0705ebf5da7688bc672f955ac51004b",
+      "status": "pass",
+      "observation": "Sections E01, terminal et introduction de la persistance lisibles ; hiérarchie des titres et espacement réguliers."
+    },
+    {
+      "page": 6,
+      "file": "docs/validation/v0.10/rendered/page-6.png",
+      "sha256": "c325714880518670e8ac919b4ea5a00844a4f3724e893b57600d35cfa16598a3",
+      "status": "pass",
+      "observation": "Schéma v4, checkpoint de premier contact, reprise et limites de production complets ; dernière ligne et pagination visibles."
+    }
+  ],
+  "word_review": {
+    "reviewed": true,
+    "artifact_sha256": "d794de99d6c96c476c93fc1c8ad8495ee493d565cbf402933bc209bd15a2bf75",
+    "method": "Le DOCX exact a été rendu par le script canonique Documents render_docx.py ; ses 6 pages finales ont été ouvertes individuellement et revues, comme consigné dans docs/validation/v0.10/DOCUMENT_SUPPLEMENT.json. Lors des deux revues CI, le DOCX et le PDF sont restés identiques aux empreintes validées. Les 6 pages du PDF CI ont été examinées lors de la première revue et leurs empreintes sont inchangées lors de cette seconde revue."
+  },
+  "corrections_after_first_review": [
+    "Séparation des enseignes de cabine et de réception des indications du duo ; attente face au foyer.",
+    "Maquette abaissée pour voir les connexions depuis une vue à hauteur humaine.",
+    "Légende de l’archive déplacée en haut ; contour sombre des consignes pour leur contraste.",
+    "Défilement du journal après sa mise en page afin de montrer les deux nouveaux relevés."
+  ],
+  "limitations": [
+    "Images de situations préparées sous Godot Linux, et non enregistrement d’une partie humaine.",
+    "Les poses fixes ne certifient pas le sens du mouvement, les animations ou les performances.",
+    "Des libellés 3D peuvent être occultés par le décor ou les panneaux à proximité ; les informations et commandes essentielles restent lisibles.",
+    "Personnages et accessoires procéduraux ; le panneau d’archive ne constitue pas une photographie artistique définitive."
+  ]
+}

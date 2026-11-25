@@ -8,12 +8,17 @@ Le prototype Godot poursuit maintenant la descente jusqu’au **23**. Après les
 
 - [Windows x64 v0.10](releases/The-Tower-Descent-v0.10-Windows-x64.zip) · [Sources et documents v0.10](releases/The-Tower-Descent-v0.10-Sources.zip).
 - [Commandes et démarrage Windows](docs/DEMARRAGE_WINDOWS.md) · [État de livraison](docs/ETAT_DE_LIVRAISON.md) · [Archives et empreintes vérifiées](releases/VERIFICATION_V0.10.json).
+- [Catalogue des 55 captures natives v0.10](docs/CAPTURES_V0.10.md) · [Observations de revue visuelle](docs/validation/v0.10/VISUAL_REVIEW.json).
 - [Supplément de Bible Word v0.10](docs/The-Tower-Descent-Continuation-v0.10.docx) · [PDF v0.10](docs/The-Tower-Descent-Continuation-v0.10.pdf) · [Source complète de l’extension](docs/CONTINUATION_A24_A23_V0.10.md).
 - La [Bible intégrale Word v0.9](docs/The-Tower-Descent-Bible-v0.9.docx) et son [PDF](docs/The-Tower-Descent-Bible-v0.9.pdf) restent le volume de référence conservé. Le supplément précise les changements de la 0.10 ; les sources Markdown de la campagne sont réconciliées avec cette extension.
 
 Les résultats appartiennent au candidat identifié dans les rapports : [32 suites sources](docs/validation/v0.10/VERIFICATION.json), [packs Windows et Web](docs/validation/v0.10/EXPORTED_PACK_VERIFICATION.json), [manifeste de rendu](docs/validation/v0.10/REVIEW_MANIFEST.json), [revue explicite](.review/v0.10/approval.json). Le workflow sépare construction, examen des images et livraison. Une source sur la branche ne constitue pas à elle seule un nouvel export validé.
 
+La revue finale compte **7 317 contrôles sources réussis**, **212 contrôles des packs exportés**, **55 images examinées individuellement** et un **supplément de 6 pages vérifié en Word et PDF**. Les observations visuelles et les limites des essais restent consignées dans les rapports.
+
 ## Ce qui est jouable dans cette extension
+
+![Le centre de congrès au 24, rendu du prototype v0.10](docs/captures/v0.10/continuation/03_congres_auditorium.png)
 
 | Élément | Comportement |
 | --- | --- |

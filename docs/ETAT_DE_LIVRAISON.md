@@ -6,17 +6,19 @@ La version 0.10 ouvre deux niveaux après le bilan initial : le congrès du 24 e
 
 ## Preuves du candidat exact
 
-| Domaine | Rapport de référence |
-| --- | --- |
-| Compilation et 32 suites sources | [VERIFICATION.json](validation/v0.10/VERIFICATION.json) |
-| Exports Windows x64 et Web | [EXPORTS.json](validation/v0.10/EXPORTS.json) |
-| Ressources chargées depuis les deux packs isolés | [EXPORTED_PACK_VERIFICATION.json](validation/v0.10/EXPORTED_PACK_VERIFICATION.json) |
-| 42 vues du secteur initial et 13 vues de continuation | [REVIEW_MANIFEST.json](validation/v0.10/REVIEW_MANIFEST.json) |
-| Supplément Word et PDF | [Revue du document](validation/v0.10/DOCUMENT_SUPPLEMENT.json) · [complétude du texte](validation/v0.10/SUPPLEMENT_CONTENT.json) |
-| Examen explicite des captures et pages exactes | [approval.json](../.review/v0.10/approval.json) |
-| Archives et comparaison des membres octet par octet | [VERIFICATION_V0.10.json](../releases/VERIFICATION_V0.10.json) |
+| Domaine | Résultat mesuré | Rapport de référence |
+| --- | --- | --- |
+| Compilation et sources | 7 317 contrôles réussis dans 32 suites ; runtime inchangé pendant les essais | [VERIFICATION.json](validation/v0.10/VERIFICATION.json) |
+| Exports Windows x64 et Web | Deux exports construits avec les modèles officiels vérifiés | [EXPORTS.json](validation/v0.10/EXPORTS.json) |
+| Ressources chargées depuis les deux packs isolés | 212 contrôles réussis : 106 par pack | [EXPORTED_PACK_VERIFICATION.json](validation/v0.10/EXPORTED_PACK_VERIFICATION.json) |
+| 42 vues du secteur initial et 13 vues de continuation | 55 PNG natifs produits et examinés individuellement ; observations mineures consignées | [Catalogue](CAPTURES_V0.10.md) · [manifeste](validation/v0.10/REVIEW_MANIFEST.json) · [revue visuelle](validation/v0.10/VISUAL_REVIEW.json) |
+| Supplément Word et PDF | 6 pages Word et 6 pages PDF examinées ; 69 blocs et 28 cellules vérifiés sans omission | [Revue du document](validation/v0.10/DOCUMENT_SUPPLEMENT.json) · [complétude du texte](validation/v0.10/SUPPLEMENT_CONTENT.json) |
+| Approbation des fichiers exacts | 55 captures et 6 pages finales, Word contrôlé séparément ; empreintes vérifiées | [approval.json](../.review/v0.10/approval.json) |
+| Archives et comparaison des membres octet par octet | Tailles, empreintes et verdict final consignés après assemblage | [VERIFICATION_V0.10.json](../releases/VERIFICATION_V0.10.json) |
 
 Les nombres de contrôles, empreintes, versions du moteur et dates d’exécution sont consignés par ces rapports. Un verdict vaut uniquement pour les fichiers qu’il identifie. Le workflow ne crée aucune approbation visuelle et ne fusionne pas la PR.
+
+La [seconde construction de revue](https://github.com/darknigthmare/The-Descents/actions/runs/45648920894) contrôle la source [`5d6e3878b0e1`](https://github.com/darknigthmare/The-Descents/commit/5d6e3878b0e103216d995f8b49944d847b834b79). L’examen de la première série a entraîné des corrections de signalétique, de cadrage de la maquette, de placement de la légende et de contraste des consignes. Les images modifiées ont été rouvertes après reconstruction ; seuls les verdicts de fichiers strictement identiques ont été conservés.
 
 ## Continuité et contenu
 
