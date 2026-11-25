@@ -53,6 +53,12 @@ var cinematic: Control
 var inspection_panel: Control
 var pause_toggles: Dictionary = {}
 var _journal_game_was_visible: bool = false
+var traversal_panel: PanelContainer
+var traversal_title: Label
+var traversal_state: Label
+var traversal_metrics: Label
+var traversal_stamina_title: Label
+var traversal_stamina: ProgressBar
 
 func _ready() -> void:
 	layer = 10
@@ -200,9 +206,9 @@ func _build_game() -> void:
 	stress_bar = _meter(meters, "TENSION", Color(0.74, 0.68, 0.9))
 	resources_label = _label("ANCRAGES 4  /  FUSÉES 3", 14, MUTED)
 	meters.add_child(resources_label)
-	prompt_label = _label("", 20, Color(1, 0.92, 0.75))
-	prompt_label.position = Vector2(365, 620)
-	prompt_label.size = Vector2(710, 68)
+	prompt_label = _label("", 18, Color(1, 0.92, 0.75))
+	prompt_label.position = Vector2(365, 596)
+	prompt_label.size = Vector2(710, 106)
 	prompt_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	prompt_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	game.add_child(prompt_label)
@@ -233,6 +239,7 @@ func _build_game() -> void:
 	floor_map.position = Vector2(1245, 265)
 	floor_map.add_theme_constant_override("line_spacing", 10)
 	game.add_child(floor_map)
+	_build_traversal_panel()
 	var keys: Label = _label("ZQSD / WASD  Marcher     E  Interagir     F  Lampe     R  Radio     G  Fusée     J  Journal     ÉCHAP  Pause", 14, MUTED)
 	keys.position = Vector2(382, 865)
 	game.add_child(keys)
@@ -241,6 +248,57 @@ func _build_game() -> void:
 	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	overlay.color = Color(0.7, 0.12, 0.04, 0)
 	game.add_child(overlay)
+
+func _build_traversal_panel() -> void:
+	traversal_panel = PanelContainer.new()
+	traversal_panel.position = Vector2(28, 170)
+	traversal_panel.size = Vector2(320, 210)
+	traversal_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	traversal_panel.add_theme_stylebox_override("panel", _box())
+	game.add_child(traversal_panel)
+	var content := VBoxContainer.new()
+	content.add_theme_constant_override("separation", 9)
+	traversal_panel.add_child(content)
+	traversal_title = _label("LIAISON LOCALE", 16, TEAL)
+	content.add_child(traversal_title)
+	traversal_state = _label("", 18, AMBER)
+	traversal_state.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	traversal_state.custom_minimum_size.x = 280
+	content.add_child(traversal_state)
+	traversal_metrics = _label("", 14, PALE)
+	traversal_metrics.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	content.add_child(traversal_metrics)
+	traversal_stamina_title = _label("ENDURANCE", 13, MUTED)
+	content.add_child(traversal_stamina_title)
+	traversal_stamina = ProgressBar.new()
+	traversal_stamina.custom_minimum_size = Vector2(274, 10)
+	traversal_stamina.show_percentage = false
+	traversal_stamina.add_theme_stylebox_override("background", _box(Color(0.10, 0.18, 0.2), Color.TRANSPARENT))
+	traversal_stamina.add_theme_stylebox_override("fill", _box(TEAL, TEAL))
+	content.add_child(traversal_stamina)
+	traversal_panel.hide()
+
+func set_traversal_context(data: Dictionary) -> void:
+	if data.is_empty():
+		traversal_panel.hide()
+		return
+	var is_rope: bool = str(data.get("kind", "")) == "rope"
+	traversal_panel.show()
+	traversal_title.text = "%s %d ↔ %d" % ["RAPPEL" if is_rope else "ESCALIER", int(data.get("upper", 0)), int(data.get("lower", 0))]
+	traversal_stamina_title.visible = is_rope
+	traversal_stamina.visible = is_rope
+	if not is_rope:
+		traversal_state.text = "DEUX ÉTAGES SEULEMENT"
+		traversal_metrics.text = "Deux volées et un palier intermédiaire.\nRetour possible par le même passage.\nLe prochain tronçon se rejoint à pied."
+		return
+	var names := {"attach": "ENGAGEMENT ASSURÉ", "exit": "SORTIE SUR PALIER", "hold": "FREIN AUTOMATIQUE", "locked": "DESCENDEUR VERROUILLÉ", "descend": "DESCENTE CONTRÔLÉE", "ascend": "REMONTÉE", "precision": "PROGRESSION PRÉCISE", "rapid": "DESCENTE RAPIDE", "rest": "REPOS ASSURÉ"}
+	traversal_state.text = str(names.get(str(data.get("mode", "hold")), "LIGNE ASSURÉE"))
+	if bool(data.get("obstructed", false)):
+		traversal_state.text = "PASSAGE ENCOMBRÉ"
+	var distance: float = float(data.get("distance_remaining", 0.0))
+	traversal_metrics.text = "%.1f m/s · %.1f m vers le palier bas\nCorde : %.1f / %.1f m\n%s" % [float(data.get("speed", 0.0)), distance, float(data.get("deployed", 0.0)), float(data.get("rope_length", 0.0)), "Stabilisation : %.0f s" % float(data.get("secured_time", 0.0)) if float(data.get("secured_time", 0.0)) > 0.0 else "Relâchez les touches pour freiner"]
+	traversal_stamina.value = float(data.get("stamina", 100.0))
+	traversal_stamina_title.text = "ENDURANCE  %d %%" % roundi(traversal_stamina.value)
 
 func _meter(parent: VBoxContainer, title: String, color: Color) -> ProgressBar:
 	parent.add_child(_label(title, 13, MUTED))
@@ -355,8 +413,9 @@ func _build_help() -> void:
 	var text: RichTextLabel = RichTextLabel.new()
 	text.custom_minimum_size = Vector2(900, 485)
 	text.add_theme_font_size_override("normal_font_size", 20)
-	text.text = "MISSION\nRejoignez la balise orange près du puits central. E vous attache à la corde.\nRetrouvez les trois rescapés aux étages 30, 28 et 26. Sécurisez-les avec E,\npuis rapportez-les à la balise du même étage pour les évacuer au treuil.\nAprès les trois évacuations, rejoignez le refuge de l’étage 25.\n\nÀ PIED\nZQSD ou WASD : marcher   •   Souris : regarder   •   Flèches : regarder\nMaj : courir   •   Ctrl : s’accroupir   •   Espace : sauter   •   E : interagir\n\nSUR LA CORDE\nS : descendre   •   Z / W : remonter   •   Q / A et D : balancement\nE à hauteur d’un étage : se poser   •   X : ancrage secondaire (consommable)\n\nMATÉRIEL\nF : lampe   •   G : fusée lumineuse   •   R : appeler le commandement\nJ : indices et mission   •   Échap : pause et confort visuel\n\nL’air de réserve diminue seulement dans les zones enfumées.\nLa silhouette du spa recule devant une fusée. Le refuge reste sûr."
-	text.text += "\n\nLECTURE DU TERRAIN\nApprochez un objet et regardez-le : E ouvre sa fiche quand « Examiner » apparaît.\nLa lecture met l’intervention en pause. Molette ou Page ↑↓ : défiler.\nFermer ou Échap : reprendre. Ces observations restent facultatives."
+	text.focus_mode = Control.FOCUS_ALL
+	text.selection_enabled = true
+	text.text = "MISSION\nSecourez Ana au 30, Samuel au 28 et Nora au 26. E fixe leur harnais.\nRamenez chaque personne à la balise ORANGE de son étage pour le treuil.\nAprès les trois réceptions et l’incident, rejoignez le refuge 25.\n\nITINÉRAIRE LOCAL\nRappel toit–30 · Escalier 30–29 · Rappel 29–28 · Escalier 28–27\nRappel 27–26 · Escalier 26–25. Chaque passage permet aussi le retour.\n\nÀ PIED ET DANS LES ESCALIERS\nZQSD / WASD : marcher · Souris / flèches : regarder · Maj : courir\nCtrl : s’accroupir · Espace : sauter · E : interagir au repère BLEU du rappel\n\nSUR LA CORDE\nS : descendre · Z/W : remonter · Q/A et D : équilibrer le balancement\nCtrl : progression précise · Maj + S : descente rapide\nEspace : verrouiller / libérer le descendeur · Relâcher : frein automatique\nX : stabiliser 16 s (un ancrage) · E : sortir, arrêté et centré au palier\nRemontée et descente rapide demandent de l’endurance. Reposez-vous assuré.\nLe rappel personnel exige les mains libres ; évacuez d’abord votre rescapé.\n\nMATÉRIEL ET LECTURE\nF : lampe · G : fusée · R : radio · J : dossier · Échap : pause et options\nE devant un objet « Examiner » ouvre sa fiche et suspend l’intervention.\nMolette / Page ↑↓ : défiler. Fermer ou Échap : reprendre.\nL’air de réserve diminue dans les fumées. Le refuge reste sûr."
 	col.add_child(text)
 	help_close_button = _button("Compris", close_help, true)
 	col.add_child(help_close_button)

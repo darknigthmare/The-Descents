@@ -14,6 +14,7 @@ const RescuePresentation = preload("res://scripts/rescue_presentation.gd")
 const Epilogue = preload("res://scripts/epilogue_director.gd")
 const Horror = preload("res://scripts/horror_director.gd")
 const HorrorPresentation = preload("res://scripts/horror_presentation.gd")
+const Routes = preload("res://scripts/route_catalog.gd")
 
 var rescue_visuals: Node3D
 var horror_visuals: Node3D
@@ -83,6 +84,7 @@ var menu_context: Dictionary = {}
 var menu_snapshot: Dictionary = {}
 var preferences_path: String = Preferences.FILE
 var preferences: Dictionary = Preferences.DEFAULTS.duplicate()
+var traversal_checkpoint_pending: bool = false
 
 func _ready() -> void:
 	_bind_inputs()
@@ -200,6 +202,7 @@ func _bind_inputs() -> void:
 			InputMap.action_add_event(action, event)
 
 func _build_world(seed_value: int) -> void:
+	traversal_checkpoint_pending = false
 	epilogue_playing = false
 	epilogue.finish()
 	epilogue_voice_key = ""
@@ -232,6 +235,7 @@ func _build_world(seed_value: int) -> void:
 	world.set_reduced_motion(reduced_motion)
 	player = Player.new()
 	add_child(player)
+	player.traversal_notice.connect(_notify)
 	player.position = world_data.get("roof_spawn", Vector3(7,42.2,7))
 	player.rotation.y = 0.75
 	player.apply_comfort(preferences)
@@ -373,6 +377,11 @@ func _save_checkpoint(floor_number: int) -> bool:
 	if incident.is_active():
 		_notify("La structure bouge. Le point sûr précédent est conservé jusqu’à la stabilisation.")
 		return false
+	if player.on_rope or not player.is_at_landing():
+		traversal_checkpoint_pending = true
+		_notify("Rejoignez un palier stable pour enregistrer. Le point sûr précédent est conservé.")
+		return false
+	traversal_checkpoint_pending = false
 	var data: Dictionary = {
 		"version": 3, "seed": current_seed, "floor": floor_number,
 		"health": health, "oxygen": oxygen, "stress": stress,
@@ -444,15 +453,21 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if event.is_action_pressed("interact"):
 		_interact()
+	elif event.is_action_pressed("jump") and player.on_rope:
+		if player.toggle_rope_lock():
+			_notify("Descendeur verrouillé · Repos assuré" if bool(player.rope_snapshot().get("locked", false)) else "Descendeur libéré · S pour descendre, Z/W pour remonter")
+		get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("flashlight"):
 		player.lamp_enabled = not player.lamp_enabled
 	elif event.is_action_pressed("flare"):
 		_use_flare()
 	elif event.is_action_pressed("anchor"):
 		if player.on_rope and anchors > 0:
-			anchors -= 1
-			player.secure_anchor()
-			_notify("Ancrage secondaire posé  ·  Balancement stabilisé pendant 16 secondes")
+			if player.secure_anchor():
+				anchors -= 1
+				_notify("Ancrage secondaire posé  ·  Balancement stabilisé pendant 16 secondes")
+			else:
+				_notify("Stabilisation déjà active ou transfert en cours · Aucun ancrage consommé")
 		elif not player.on_rope:
 			_notify("Les ancrages secondaires se posent pendant le rappel.")
 		else:
@@ -504,9 +519,11 @@ func _process(delta: float) -> void:
 	rescue_visuals.advance(delta, reduced_motion)
 	_process_hoist(delta)
 	var floor_number: int = player.nearest_floor()
-	if not player.on_rope and floor_number != last_floor:
+	if player.is_at_landing() and floor_number != last_floor:
 		last_floor = floor_number
 		_enter_floor(floor_number)
+	if traversal_checkpoint_pending and player.is_at_landing() and not incident.is_active():
+		_save_checkpoint(floor_number)
 	_process_incident(delta)
 	_process_hazards(delta, floor_number)
 	_process_story_radio(quiet_radio_delta)
@@ -696,7 +713,7 @@ func _process_horror(delta: float, floor_number: int) -> void:
 	var context: Dictionary = {
 		"floor": floor_number,
 		"running": started and not paused and not completed and not arrival_playing and not boot_playing and not epilogue_playing,
-		"on_rope": player.on_rope, "carrying": is_instance_valid(carried),
+		"on_rope": player.on_rope or not player.stair_context().is_empty(), "carrying": is_instance_valid(carried),
 		"hoisting": is_instance_valid(hoisting), "incident_active": incident.is_active(),
 		"incident_state": incident.stable_state(), "radio_busy": radio.is_busy(),
 		"player_position": player.global_position, "camera_position": player.camera.global_position,
@@ -726,7 +743,7 @@ func _horror_line_of_sight(floor_number: int) -> bool:
 
 func _find_nearest() -> void:
 	nearest = null
-	if player.on_rope:
+	if player.on_rope or not player.is_at_landing():
 		return
 	var best: float = 3.0
 	var inspection: Node3D
@@ -787,9 +804,9 @@ func _key(object: Node3D) -> String:
 func _interact() -> void:
 	if player.on_rope:
 		if player.can_exit_rope():
-			player.leave_rope(player.nearest_floor())
+			player.leave_rope(int(player.rope_snapshot().get("exit_floor", 0)))
 		else:
-			_notify("Alignez-vous sur une dalle avant de quitter la corde.")
+			_notify("Arrêtez-vous au palier et recentrez la longe avant de sortir · Espace verrouille le descendeur")
 		return
 	if is_instance_valid(nearest):
 		_interact_node(nearest)
@@ -821,12 +838,25 @@ func _interact_node(object: Node3D) -> void:
 				if hoisting != null:
 					_notify("Le treuil est déjà en mouvement.")
 					return
+				if int(carried.get_meta("floor", 0)) != floor_number:
+					_notify("Ramenez %s à la balise de l’étage %d." % [str(carried.get_meta("title", "le rescapé")), int(carried.get_meta("floor", 0))])
+					return
 				_start_hoist(carried, floor_number)
 			elif is_instance_valid(hoisting):
 				_notify("Attendez que le treuil ait déposé le rescapé au toit.")
 			else:
-				player.engage_rope(floor_number)
-				_notify("S : descendre  ·  Z/W : remonter  ·  E : se poser à hauteur d’un étage")
+				_notify("Balise orange : évacuation des rescapés. Pour descendre, suivez les repères bleus ou l’escalier signalé.")
+		"rappel":
+			if is_instance_valid(carried):
+				_notify("Évacuez d’abord le rescapé à la balise orange de son étage. Le rappel personnel reste libre.")
+			elif is_instance_valid(hoisting):
+				_notify("Attendez la réception du rescapé avant d’engager une nouvelle liaison.")
+			elif incident.is_active():
+				_notify("Attendez la fin de la secousse sur le palier avant de vous engager.")
+			elif player.engage_rope(floor_number, str(object.get_meta("route_id", ""))):
+				_notify("Longe engagée · S descendre · Z/W remonter · Espace verrouiller · E sortir au palier")
+			else:
+				_notify("Rejoignez le repère bleu de cette ouverture depuis un appui stable.")
 		"survivor":
 			if is_instance_valid(carried) or is_instance_valid(hoisting):
 				_notify("Une personne à la fois. Rejoignez d’abord la balise orange.")
@@ -867,6 +897,8 @@ func _interact_node(object: Node3D) -> void:
 				_notify("Refuge enregistré. %d personne(s) attendent encore votre aide aux étages 30, 28 ou 26." % (3 - rescued.size()))
 
 func _start_hoist(survivor: Node3D, floor_number: int) -> void:
+	if not is_instance_valid(survivor) or int(survivor.get_meta("floor", 0)) != floor_number:
+		return
 	hoisting = survivor
 	hoist_floor = floor_number
 	hoist_progress = 0
@@ -941,13 +973,13 @@ func _call_radio() -> void:
 	elif "survivor_30" in rescued:
 		_say("BRAVO  /  HESPÉRIE", "Bravo à Alpha. Ana est à l’abri ? On vous attend à la baie Est du 29. Regardez vers nos lumières.", 9)
 	else:
-		_say("VARGA  /  POSTE DU TOIT", "Signaux confirmés au restaurant 30, aux archives 28 et au spa 26. La balise orange vous ramène à la corde.", 9)
+		_say("VARGA  /  POSTE DU TOIT", "Signaux confirmés au restaurant 30, aux archives 28 et au spa 26. Les balises orange servent au treuil ; suivez les repères bleus et les escaliers pour progresser.", 9)
 
 func _process_story_radio(quiet_delta: float) -> void:
 	if not started or paused or completed or arrival_playing or incident.phase != "aftermath" or "survivor_28" not in rescued:
 		radio_quiet_time = 0.0
 		return
-	if player.on_rope or is_instance_valid(carried) or is_instance_valid(hoisting) or radio.is_busy():
+	if not player.is_at_landing() or is_instance_valid(carried) or is_instance_valid(hoisting) or radio.is_busy():
 		radio_quiet_time = 0.0
 		return
 	var floor_number: int = player.nearest_floor()
@@ -970,13 +1002,19 @@ func _process_story_radio(quiet_delta: float) -> void:
 
 func _update_hud() -> void:
 	var floor_number: int = player.nearest_floor()
+	var stair_route: Dictionary = player.stair_context()
+	var rope_state: Dictionary = player.rope_snapshot() if player.on_rope else {}
 	var spec: Dictionary = _floor_spec(floor_number)
 	var display_names: Dictionary = {31:"Poste de commandement",30:"Restaurant panoramique",29:"Suites de Nacre",28:"Bureaux et archives",27:"Jardin des enfants",26:"Spa et piscine",25:"Refuge technique"}
 	var name_text: String = display_names.get(floor_number, "Puits de rappel")
 	hud.location_label.text = ("TOIT" if floor_number == 31 else "ÉTAGE %02d" % floor_number) + "  ·  " + name_text
+	if not stair_route.is_empty():
+		hud.location_label.text = "ESCALIER %d ↔ %d  ·  Liaison locale" % [int(stair_route["upper"]), int(stair_route["lower"])]
 	var atmosphere: String = "LIAISON RADIO ACTIVE"
 	if player.on_rope:
-		atmosphere = "RAPPEL  /  FREIN ENGAGÉ"
+		atmosphere = "RAPPEL %d ↔ %d  /  %s" % [int(rope_state.get("upper", 0)), int(rope_state.get("lower", 0)), "DESCENDEUR VERROUILLÉ" if bool(rope_state.get("locked", false)) else "LIGNE LOCALE"]
+	elif not stair_route.is_empty():
+		atmosphere = "ESCALIER PRATICABLE  /  RETOUR POSSIBLE"
 	elif spec.get("hazard", "none") == "smoke":
 		atmosphere = "FUMÉES  /  AIR DE RÉSERVE ACTIF"
 	elif spec.get("hazard", "none") == "water":
@@ -997,12 +1035,19 @@ func _update_hud() -> void:
 	hud.stress_bar.value = stress
 	hud.resources_label.text = "ANCRAGES %d  /  FUSÉES %d" % [anchors, flares]
 	hud.status_label.text = "RESCAPÉS %d / 3    •    INDICES %d / 3" % [rescued.size(), clues.size()]
+	if player.on_rope:
+		rope_state["kind"] = "rope"
+		hud.set_traversal_context(rope_state)
+	elif not stair_route.is_empty():
+		hud.set_traversal_context(stair_route)
+	else:
+		hud.set_traversal_context({})
 	if arrival_playing:
 		hud.mission_label.text = "Approche des deux tours  ·  Alpha sur Aube, Bravo sur Hespérie."
 	elif incident.is_active():
 		hud.mission_label.text = "Éloignez-vous des vitres. Le noyau et la ligne de rappel tiennent."
 	elif is_instance_valid(carried):
-		hud.mission_label.text = "Ramener %s à la balise orange de cet étage." % str(carried.get_meta("title", "le rescapé"))
+		hud.mission_label.text = "Ramener %s à la balise orange du %d." % [str(carried.get_meta("title", "le rescapé")), int(carried.get_meta("floor", floor_number))]
 	elif is_instance_valid(hoisting):
 		var phase_text: String = "Verrouillage du harnais" if hoist_progress < 0.45 else ("Dépose au toit" if hoist_progress >= 4.2 else "Remontée vers le toit")
 		hud.mission_label.text = "%s  ·  %d %%\nAttendre la réception confirmée." % [phase_text, int(clampf(hoist_progress / RescuePresentation.HOIST_DURATION, 0.0, 1.0) * 100)]
@@ -1015,11 +1060,21 @@ func _update_hud() -> void:
 	if arrival_playing:
 		hud.prompt_label.text = "E  Passer l’approche et rejoindre l’équipe sur le toit"
 	elif player.on_rope:
-		hud.prompt_label.text = "S  Descendre   •   Z/W  Remonter   •   X  Ancrage\n" + ("E  Se poser au " + ("toit" if floor_number == 31 else "niveau %d" % floor_number) if player.can_exit_rope() else "Alignez-vous sur un étage pour quitter la corde")
+		var rope_exit: String = "E  Rejoindre le palier %d" % int(rope_state.get("exit_floor", 0)) if player.can_exit_rope() else "Freinez au palier et recentrez la longe pour sortir"
+		if not str(rope_state.get("transfer", "")).is_empty():
+			rope_exit = "Transfert assuré vers le puits" if str(rope_state["transfer"]) == "attach" else "Retour assuré sur le palier"
+		if bool(rope_state.get("obstructed", false)):
+			rope_exit = "Passage encombré · Maintien de la longe"
+		hud.prompt_label.text = "S  Descendre  •  Z/W  Remonter  •  Q/D  Équilibrer\nCtrl  Précis  •  Maj  Rapide  •  Espace  Verrou  •  X  Ancrage\n" + rope_exit
+	elif not stair_route.is_empty():
+		hud.prompt_label.text = "Escalier %d ↔ %d · ZQSD / WASD pour progresser\nCette volée ne dessert que ces deux étages" % [int(stair_route["upper"]), int(stair_route["lower"])]
 	elif is_instance_valid(nearest):
 		var kind: String = nearest.get_meta("kind", "")
 		if kind == "beacon":
-			hud.prompt_label.text = "Treuillage en cours  ·  Attendre la réception" if is_instance_valid(hoisting) else ("E  Confirmer le treuillage du rescapé" if is_instance_valid(carried) else "E  S’attacher à la corde de rappel")
+			hud.prompt_label.text = "Treuillage en cours  ·  Attendre la réception" if is_instance_valid(hoisting) else ("E  Confirmer le treuillage du rescapé" if is_instance_valid(carried) else "Balise orange · Évacuation des rescapés uniquement")
+		elif kind == "rappel":
+			var route: Dictionary = Routes.for_id(str(nearest.get_meta("route_id", "")))
+			hud.prompt_label.text = "E  Engager le rappel %d ↔ %d\nUne liaison locale · Sortie sur le palier opposé" % [int(route.get("upper", floor_number)), int(route.get("lower", floor_number - 1))]
 		elif kind == "survivor":
 			hud.prompt_label.text = "Attendez la fin de la secousse avant de déplacer le rescapé" if incident.is_active() else "E  Sécuriser %s au harnais" % nearest.get_meta("title", "le rescapé")
 		elif kind == "refuge":
@@ -1064,7 +1119,7 @@ func _journal_content() -> String:
 	for transmission: Dictionary in radio.history:
 		var stamp: int = int(transmission["elapsed"])
 		text += "[%02d:%02d] %s\n%s\n\n" % [stamp / 60, stamp % 60, transmission["speaker"], transmission["message"]]
-	text += "\nMATÉRIEL\nLa lampe ne consomme pas de pile dans ce prototype. L’air diminue dans la fumée. Une fusée éclaire et repousse la silhouette pendant 20 secondes. X stabilise le balancement sur corde sans couper votre ligne principale.\n\nPOINTS SÛRS\nUn rescapé treuillé crée un point de reprise. Le refuge 25 enregistre également votre progression."
+	text += "\nMATÉRIEL\nLa lampe ne consomme pas de pile dans ce prototype. L’air diminue dans la fumée. Une fusée éclaire pendant 20 secondes et masque les manifestations. X stabilise le balancement sur une liaison locale. Espace verrouille le descendeur ; reposez-vous assuré pour récupérer de l’endurance.\n\nPOINTS SÛRS\nUn rescapé reçu déclenche une tentative de point sûr. Si vous êtes encore sur une liaison, l’écriture attend le prochain palier stable. Le refuge 25 enregistre également votre progression."
 	text += "\n\nOBSERVATIONS DE TERRAIN\nDouze objets peuvent être examinés du toit au refuge. Approchez-vous et regardez-les pour afficher E. Leur fiche distingue usage, constat et consigne, selon la situation actuelle. La lecture met l’intervention en pause ; Fermer ou Échap reprend le jeu. Ces observations restent facultatives et ne consomment aucun matériel."
 	return text
 
@@ -1072,13 +1127,15 @@ func _dossier_snapshot() -> Dictionary:
 	# Project only the records actually collected in this intervention. Unread
 	# clue titles and texts never enter the journal panel's model.
 	var records: Array[Dictionary] = []
+	var active_route: Dictionary = player.rope_snapshot() if player.on_rope else player.stair_context()
 	for spec: Dictionary in floor_specs:
 		var id: String = "evidence_%d" % int(spec["number"])
 		if id in clues:
 			records.append({"id": id, "floor": int(spec["number"]),
 				"title": str(spec["evidence_title"]), "text": str(spec["evidence_text"])})
 	return {
-		"seed": current_seed, "floor": player.nearest_floor(), "checkpoint_floor": checkpoint_floor,
+		"seed": current_seed, "floor": player.nearest_floor() if player.is_at_landing() else last_floor, "checkpoint_floor": checkpoint_floor,
+		"traversal_id": str(active_route.get("route_id", active_route.get("id", ""))),
 		"rescued": rescued.duplicate(), "clues": clues.duplicate(), "clue_records": records,
 		"supplies_used": supplies_used.duplicate(), "elapsed": elapsed,
 		"health": health, "oxygen": oxygen, "stress": stress, "anchors": anchors, "flares": flares,
@@ -1187,7 +1244,7 @@ func _fall_recovery() -> void:
 		_start_new(current_seed)
 	else:
 		_restore(data)
-	_say("VARGA  /  REPRISE AU POINT SÛR", "Intervention reprise au dernier point enregistré. Attachez-vous à la balise avant d’entrer dans le puits.", 10)
+	_say("VARGA  /  REPRISE AU POINT SÛR", "Intervention reprise au dernier point enregistré. Engagez la longe au repère bleu avant d’entrer dans une ouverture.", 10)
 
 func _open_journal() -> void:
 	if not started or arrival_playing or epilogue_playing or boot_playing:

@@ -1,8 +1,8 @@
 # Architecture du prototype et portage vers Unreal Engine 5
 
-Version de conception 0.8.0 — Présentation cinématique et continuité de mission — 25 novembre 2026
+Version de conception 0.9.0 — Traversées locales et continuité de mission — 25 novembre 2026
 
-Ce document décrit le prototype Godot 0.8.0 et propose une trajectoire vers Unreal Engine 5. La tranche solo en vue subjective comprend un toit, six étages de 30 à 25, trois sauvetages, trois indices et un refuge. Les deux tours commencent intactes, deux hélicoptères et des groupes de secours sont visibles en maquette, puis un effondrement partiel se déroule pendant l’observation depuis le 29. La campagne complète et le portage UE5 restent à produire.
+Ce document décrit le prototype Godot 0.9.0 et propose une trajectoire vers Unreal Engine 5. La tranche solo en vue subjective comprend un toit, six étages de 30 à 25, trois sauvetages, trois indices et un refuge. Les deux tours commencent intactes, deux hélicoptères et des groupes de secours sont visibles en maquette, puis un effondrement partiel se déroule pendant l’observation depuis le 29. La campagne complète et le portage UE5 restent à produire.
 
 Le projet déclare une base de fonctionnalités Godot 4.7. Les exécutables, versions de moteur effectivement utilisées et résultats de vérification sont décrits dans le rapport de livraison du dépôt. Ce document ne constitue pas un rapport d’exécution d’Unreal Engine. La coopération en réseau n’est pas implémentée.
 
@@ -13,7 +13,10 @@ La scène d'entrée `prototype/scenes/main.tscn` instancie le contrôleur princi
 | Fichier dans prototype/scripts | Responsabilité réelle |
 | --- | --- |
 | `main.gd` | Cycle menu et partie, objectifs, interactions, ressources, événements, treuillage, points de reprise et coordination des autres scripts |
-| `player_controller.gd` | `CharacterBody3D`, caméra, marche, course, saut, déplacement lent accroupi, rappel guidé, lampe et tracé de corde |
+| `player_controller.gd` | Capsule physique, caméra, marche et escaliers, rappel local, transferts d’entrée/sortie, collisions, lampe et tracé de corde |
+| `route_catalog.gd` | Six liaisons locales protégées, trois escaliers et trois rappels ; points, volumes et validation du graphe sans tirage |
+| `rope_traversal.gd` | Modèle pur de vitesse, frein, verrou, endurance, stabilisation, limites et conditions géométriques de sortie |
+| `rope_presentation.gd` | Descendeur et mains gantées de première personne, poses échantillonnées sans autorité sur le mouvement |
 | `floor_generator.gd` | Production déterministe des six descriptions d'étage et validation des invariants de contenu |
 | `world_builder.gd` | Géométrie et collisions, repli préparé de Bravo, réception nominative des sauvés, appareils, rupture, détour et points interactifs |
 | `collapse_director.gd` | Phases et durées de l’incident, transitions et restauration de ses états stables |
@@ -63,9 +66,19 @@ Le monde utilise le mètre. Une dalle jouable se trouve à `y = (numéro − 24)
 
 Chaque plateau mesure 24 m de côté et laisse un puits central de 5,4 m. Les points d'entrée de corde, de secours et de collecte occupent des emplacements protégés. Les variantes déplacent une portion de mobilier et la décoration sans déplacer les éléments nécessaires à l'objectif. Il existe donc une variation procédurale contrainte, pas encore une génération complète de plans architecturaux.
 
-Le rappel actuel guide directement la position dans le puits, ajoute une oscillation latérale et affiche une ligne. L'ancrage secondaire amortit le balancement pendant une durée limitée. Ce dispositif n'est pas une simulation de corde segmentée ni un calcul d'efforts d'un système de sauvetage.
+Le rappel de la 0.9 parcourt trois segments locaux, entre 31–30, 29–28 et 27–26. `DescentRopeTraversal` est un `RefCounted` sans scène, accès disque, horloge système ou générateur aléatoire. Il reçoit route et commandes, produit un état indépendant et conserve le temps local du vent. Les demandes invalides ne remplacent pas une connexion existante. La pause ne transmet aucun temps de progression.
 
-Le sauvetage reste simplifié : sécuriser le rescapé ralentit le joueur ; rejoindre la balise déclenche une remontée animée. Après confirmation, `world.set_rescued_people(rescued)` projette le registre au poste médical du toit. Les figures, noms, couvertures et la civière sont préconstruits, sans collision ni nouvel interactable. La méthode peut être rappelée après chargement et reçoit une liste vide à chaque nouvelle partie. Elle ne constitue ni une IA de blessé ni une animation complète de transfert. L’accroupissement abaisse la caméra et réduit la vitesse, sans réduire la capsule.
+Le personnage applique le déplacement proposé avec `move_and_collide()` et réconcilie le modèle avec la position effectivement acceptée lorsqu’un obstacle est rencontré. Les transferts d’entrée et de sortie durent actuellement 0,85 s et suivent eux aussi les collisions de la capsule. Un passage bloqué suspend le transfert avec la longe conservée. Un état de sortie valide dans le modèle ne suffit pas : le contrôleur vérifie également le dégagement physique vers la dalle. Il ne désactive pas les collisions pour atteindre la destination.
+
+La corde reste guidée sur un axe et représentée par une ligne ; le descendeur et les mains sont des volumes procéduraux échantillonnés depuis la vitesse et le verrou. Le système n’effectue ni calcul d’efforts réel, ni enroulement autour des obstacles, ni simulation de corde libre. La distinction entre longueur disponible, longueur déployée et déplacement vertical du segment sert au HUD ; ces mesures ne remplacent pas les faits de mission.
+
+Trois escaliers en U relient les paires complémentaires 30–29, 28–27 et 26–25. Chaque volée franchit trois mètres sur 4,4 m de course. Vingt marches visuelles par volée coïncident avec une collision inclinée continue ; le joueur les traverse par `move_and_slide()` et les règles de marche ordinaires. Le palier intermédiaire n’est pas une dalle numérotée. Les ouvertures et sorties sont protégées des variantes de mobilier ; aucun escalier ne poursuit vers une troisième paire.
+
+La moitié occidentale du puits contient l’axe personnel et ses surfaces d’arrêt. La moitié orientale conserve le corridor continu du panier de treuil à x = 1,8 m. Les deux géométries sont indépendantes : ajouter une dalle d’arrêt personnelle ne doit pas interrompre l’extraction d’une personne jusqu’au toit.
+
+Le sauvetage reste simplifié : sécuriser le rescapé ralentit le joueur ; rejoindre la balise de son étage d’origine déclenche une remontée animée. Le portage autorise les escaliers mais refuse le rappel personnel ; une balise située sur un autre étage rappelle le retour nécessaire. Après confirmation, `world.set_rescued_people(rescued)` projette le registre au poste médical du toit. Les figures, noms, couvertures et la civière sont préconstruits, sans collision ni nouvel interactable. La méthode peut être rappelée après chargement et reçoit une liste vide à chaque nouvelle partie. Elle ne constitue ni une IA de blessé ni une animation complète de transfert. L’accroupissement abaisse la caméra et réduit la vitesse, sans réduire la capsule.
+
+Les nouvelles horloges de déplacement restent transitoires. Un rappel, une demi-volée et un transfert d’entrée ou de sortie ne créent aucun checkpoint libre. L’arrivée de mission à un étage exige une hauteur à ±0,35 m de sa dalle et une position hors du volume de l’escalier ; le temps de passage et l’identifiant du segment ne sont pas de nouvelles preuves ou de nouveaux champs de sauvegarde. Une requête de checkpoint pendant une traversée reste différée jusqu’à la prochaine dalle admissible, avec l’ancien point sûr conservé jusque-là. Les contrats détaillés figurent dans [Traversée et rappel v0.9](TRAVERSEE_ET_RAPPEL_V0.9.md).
 
 ## Génération déterministe et persistance
 
@@ -113,11 +126,13 @@ La structure suivante est une recommandation de portage, pas une liste de classe
 | Blueprints de modules | Pièces, portes, points d'ancrage, accessoires et mise en scène |
 | Widgets UMG | Interface, radio, journal et réglages |
 
-Créer des actions Enhanced Input pour marcher, regarder, s'attacher, monter, descendre, poser un ancrage, utiliser le matériel et ouvrir le journal. Des contextes distincts « marche », « rappel » et « interface » clarifieront les commandes. Epic documente précisément les actions, contextes et changements de contexte à l'exécution. [Documentation Epic Enhanced Input](https://dev.epicgames.com/documentation/en-us/unreal-engine/enhanced-input-in-unreal-engine)
+Créer des actions Enhanced Input pour marcher, regarder, s’attacher, monter, descendre, choisir la précision ou la descente rapide, verrouiller la corde, stabiliser, utiliser le matériel et ouvrir le journal. Des contextes distincts « marche », « rappel » et « interface » clarifieront les commandes. Epic documente précisément les actions, contextes et changements de contexte à l'exécution. [Documentation Epic Enhanced Input](https://dev.epicgames.com/documentation/en-us/unreal-engine/enhanced-input-in-unreal-engine)
 
 ## Portage du rappel
 
-La première étape UE doit reproduire le rappel guidé actuel avant d'ajouter une physique plus libre. Utiliser un mode de mouvement personnalisé associé au personnage, avec une longueur de corde, un point d'ancrage, une vitesse de descente et une limite latérale explicites. Le mouvement de la capsule doit vérifier les collisions ; quitter la corde nécessite une surface d'appui et un volume libre.
+La première étape UE doit reproduire le contrat de la 0.9 avant d’ajouter une physique plus libre : graphe de liaisons locales, escaliers physiques, entrée et sortie contrôlées, montée, descente, précision, frein, verrou et repos en cas d’épuisement. Utiliser un mode de mouvement personnalisé associé au personnage, avec longueur de corde, point d’ancrage, vitesse et limite latérale explicites. Le mouvement de la capsule doit vérifier les collisions ; quitter la corde nécessite un terminal, une vitesse basse, un recentrage et un volume libre.
+
+Séparer le modèle des commandes, le composant de mouvement et la représentation du câble permet de comparer les états entre Godot et UE5. Un test de portage doit utiliser les mêmes liaisons 31–30 à 26–25, la même règle de refus pendant le portage d’une personne et les mêmes points de reprise. Le Cable Component ne doit pas décider qu’un segment saute un étage ou qu’un garde-corps disparaît.
 
 Le Character Movement Component fournit les modes standards et le cadre des mouvements personnalisés. Son intégration réseau ne rend cependant pas automatiquement répliquée une nouvelle mécanique de corde : les états et commandes supplémentaires devront être traités lors d'une phase dédiée. [Documentation Epic Character Movement](https://dev.epicgames.com/documentation/en-us/unreal-engine/understanding-networked-movement-in-the-character-movement-component-for-unreal-engine)
 
@@ -139,7 +154,7 @@ Le générateur de campagne doit d'abord assembler un graphe praticable : entré
 
 Le framework PCG d'Unreal constitue une option pour distribuer végétation, gravats et accessoires à partir de règles. Il ne doit pas remplacer les invariants de sauvetage ou décider seul de la progression narrative. Cette utilisation est une proposition adaptée au rôle de génération procédurale décrit par Epic. [Documentation Epic PCG](https://dev.epicgames.com/documentation/en-us/unreal-engine/procedural-content-generation-framework-in-unreal-engine)
 
-Dans le prototype 0.8.0, Hespérie passe d’un état vertical intact à un état partiellement effondré pendant le jeu. Son état final, le détour et les communications sont persistants. Le portage UE5 proposé doit d’abord reproduire ce contrat, avec trajectoires préparées, zone d’observation, commandes libres, pause réelle et reprises avant/après. Des débris et effets plus détaillés pourront ensuite enrichir la scène sans décider de la praticabilité du trajet de secours.
+Dans le prototype 0.9.0, Hespérie passe d’un état vertical intact à un état partiellement effondré pendant le jeu. Son état final, le détour et les communications sont persistants. Le portage UE5 proposé doit d’abord reproduire ce contrat, avec trajectoires préparées, zone d’observation, commandes libres, pause réelle et reprises avant/après. Des débris et effets plus détaillés pourront ensuite enrichir la scène sans décider de la praticabilité du trajet de secours.
 
 Pour la production UE5, prévoir des groupes distincts : structure intacte, volume mobile de rupture, façade haute endommagée, débris décoratifs et collisions finales. Le contrôleur narratif resterait responsable du passage d’état ; une éventuelle simulation de débris ne serait pas la source de vérité des routes. L’approche en hélicoptère et le jeu d’acteurs de l’équipe opposée constituent des séquences supplémentaires à produire. Ces choix sont des propositions d’architecture, pas du code UE5 livré.
 
@@ -155,7 +170,7 @@ La coopération constitue un chantier distinct. Définir d'abord l'autorité sur
 
 ### Contrats de contenu avant extension
 
-Les fiches P01 à P60 doivent devenir des données séparant représentation, interaction et état persistant. Chaque instance porte un identifiant stable, un volume d’usage, des états autorisés et des points de pose. Un modèle artistique ne doit pas créer sa propre collision de route par défaut ; le niveau décide quelles surfaces bloquent réellement le joueur et les personnes transportées.
+Les fiches P01 à P64 doivent devenir des données séparant représentation, interaction et état persistant. Chaque instance porte un identifiant stable, un volume d’usage, des états autorisés et des points de pose. Un modèle artistique ne doit pas créer sa propre collision de route par défaut ; le niveau décide quelles surfaces bloquent réellement le joueur et les personnes transportées.
 
 Les archétypes E01 à E16 décrivent des règles de campagne, tandis qu’E00 documente la silhouette actuelle. La future interface d’une présence doit recevoir des faits observables : cible, distance, ligne de vue, bruit ou émission. Elle ne doit pas lire arbitrairement le contenu caché d’une sauvegarde pour deviner le joueur. Les limites de territoires, refuges et transferts restent des contraintes imposées par la mission.
 

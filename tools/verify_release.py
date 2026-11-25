@@ -12,7 +12,7 @@ import struct
 from zipfile import ZipFile
 
 from capture_evidence import EXPECTED_CAPTURES
-from qa_common import DOCUMENT_SOURCES, runtime_hashes
+from qa_common import DOCUMENT_SOURCES, MAX_ARCHIVE_BYTES, SOURCE_ARCHIVE_SCOPE, historical_source_media, runtime_hashes, source_package_paths
 from run_validation import REQUIRED
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -79,6 +79,10 @@ def main() -> None:
         "prototype/tests/test_epilogue.gd", "prototype/tests/test_epilogue_integration.gd",
         "prototype/scripts/horror_director.gd", "prototype/scripts/horror_presentation.gd",
         "prototype/tests/test_horror.gd", "prototype/tests/test_horror_integration.gd",
+        "prototype/scripts/route_catalog.gd", "prototype/scripts/rope_traversal.gd",
+        "prototype/scripts/rope_presentation.gd", "prototype/tests/test_rope_traversal.gd",
+        "prototype/tests/test_vertical_routes.gd", "prototype/tests/test_traversal_integration.gd",
+        "docs/TRAVERSEE_ET_RAPPEL_V0.9.md", "docs/VALIDATION_V0.9.md",
         f".review/v{SHORT}/request.json",
         "tools/package_release.py", "tools/verify_release.py", "tools/qa_common.py",
         "tools/run_validation.py", "tools/verify_exported_packs.py", "tools/capture_evidence.py"
@@ -95,8 +99,14 @@ def main() -> None:
             require(digest(zipped.read(member)) == digest(actual.read_bytes()), "Stale source member: " + rel)
             members.add(rel)
     require(required <= members, "Missing required source members: " + ", ".join(sorted(required - members)))
+    expected_members = {path.relative_to(ROOT).as_posix() for path in source_package_paths()}
+    require(members == expected_members,
+            "Source archive differs from its exact current-version contract; missing=" + ", ".join(sorted(expected_members - members)) +
+            "; extra=" + ", ".join(sorted(members - expected_members)))
+    require(not any(historical_source_media(Path(name), SHORT) for name in members), "Historical compiled media leaked into the current source archive")
 
     windows = ROOT / "releases" / f"The-Tower-Descent-v{SHORT}-Windows-x64.zip"
+    require(source.stat().st_size < MAX_ARCHIVE_BYTES and windows.stat().st_size < MAX_ARCHIVE_BYTES, "A current archive exceeds the strict 100 MiB publication limit")
     with ZipFile(windows) as zipped:
         executable = zipped.read("The-Tower-Descent/TheTowerDescent.exe")
         require(digest(executable) == digest((ROOT / "builds/windows/TheTowerDescent.exe").read_bytes()), "Stale Windows executable")
@@ -207,8 +217,10 @@ def main() -> None:
 
     print(json.dumps({"status": "PASS", "version": VERSION, "archives": archive_results,
                       "source_members_verified": len(members), "runtime_checks": validation["total_checks"], "exported_pack_checks": exported["total_checks"],
+                      "source_archive_scope": SOURCE_ARCHIVE_SCOPE, "source_member_set_exact": True,
+                      "historical_media_retained_in_repository": True, "archive_limit_bytes_exclusive": MAX_ARCHIVE_BYTES,
                       "document_pages_reviewed": document_review["page_count"], "document_sources_verified": document_review["source_count"],
-                      "checks": ["ZIP integrity", "SHA256 manifest", "every source member equals local source", "required deliverables", "PE x64 and embedded executable bytes", "Windows guide and font license", "Web sizes and distribution equality", "frozen runtime hashes and test logs", f"{len(EXPECTED_CAPTURES)} native captures against CI provenance and runtime hashes", "complete document review and final Word/PDF/source hashes", "Web font notices"]}, indent=2))
+                      "checks": ["ZIP integrity", "SHA256 manifest", "every source member equals local source", "exact source-member set and current-version media policy", "current archives below 100 MiB", "required deliverables", "PE x64 and embedded executable bytes", "Windows guide and font license", "Web sizes and distribution equality", "frozen runtime hashes and test logs", f"{len(EXPECTED_CAPTURES)} native captures against CI provenance and runtime hashes", "complete document review and final Word/PDF/source hashes", "Web font notices"]}, indent=2))
 
 
 if __name__ == "__main__":

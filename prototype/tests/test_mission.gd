@@ -44,7 +44,7 @@ func _run() -> void:
 	_check(mission.player.nearest_floor() == 31, "New mission did not start at the rooftop.")
 	_check(Store.load_data(TEST_PATH).get("floor", 0) == 31, "The initial rooftop checkpoint was not written.")
 
-	_test_rope()
+	await _test_rope()
 	_test_pause()
 	var refuge: Node3D = _find("refuge", 25)
 	_move_to(refuge)
@@ -138,32 +138,45 @@ func _run() -> void:
 func _test_rope() -> void:
 	_move_to(_find("beacon", 31))
 	mission._interact_node(_find("beacon", 31))
-	_check(mission.player.on_rope, "The rooftop beacon did not attach the player to the rope.")
+	_check(not mission.player.on_rope, "The orange rescue beacon still starts a personal rappel.")
+	_move_to(_find("rappel", 31))
+	await physics_frame
+	var approach: Vector3 = mission.player.position
+	mission._interact_node(_find("rappel", 31))
+	_check(mission.player.on_rope and mission.player.rope_transfer == "attach", "The blue rooftop station did not begin a local belayed transfer.")
+	_check(mission.player.position.is_equal_approx(approach), "Attaching teleported the capsule into the shaft.")
+	mission.player._process_rope(0.85)
+	_check(mission.player.rope_transfer.is_empty(), "The 0.85-second entry transfer did not finish.")
 	var before_y: float = mission.player.position.y
 	Input.action_press("move_back")
 	mission.player._process_rope(1.0)
 	Input.action_release("move_back")
-	_check(is_equal_approx(before_y - mission.player.position.y, 2.8), "S / move_back did not descend by the expected amount.")
+	_check(before_y - mission.player.position.y > 1.5 and before_y - mission.player.position.y < 2.8, "S / move_back did not accelerate into a controlled descent.")
+	_check(not mission.player.can_exit_rope(), "The rope allowed dismounting halfway between its two floors.")
+	mission._interact()
+	_check(mission.player.on_rope and mission.player.rope_transfer.is_empty(), "Interact bypassed the between-floor dismount restriction.")
+	var old_anchors: int = mission.anchors
+	_send_action("anchor")
+	_check(mission.anchors == old_anchors - 1 and mission.player.secured_time > 0.0, "An anchor did not consume one item and stabilize the rope.")
+	_send_action("anchor")
+	_check(mission.anchors == old_anchors - 1, "Repeated anchoring consumed another item while stabilization was active.")
 	Input.action_press("move_back")
 	mission.player._process_rope(100.0)
 	Input.action_release("move_back")
-	_check(is_equal_approx(mission.player.position.y, 6.04), "Rope descent escaped the bottom floor clamp.")
+	_check(is_equal_approx(mission.player.position.y, 36.04), "The rooftop rope escaped its local floor-30 arrival clamp.")
 	Input.action_press("move_forward")
 	mission.player._process_rope(100.0)
 	Input.action_release("move_forward")
 	_check(is_equal_approx(mission.player.position.y, 42.04), "Rope ascent escaped the rooftop clamp.")
-	mission.player.position.y = 33.04
-	_check(not mission.player.can_exit_rope(), "The rope allowed dismounting halfway between floors.")
-	mission._interact()
-	_check(mission.player.on_rope, "Interact bypassed the between-floor dismount restriction.")
-	mission.player.engage_rope(30)
-	var old_anchors: int = mission.anchors
-	_send_action("anchor")
-	_check(mission.anchors == old_anchors - 1 and mission.player.secured_time > 0.0, "An anchor did not consume one item and stabilize the rope.")
+	Input.action_press("move_back")
+	mission.player._process_rope(100.0)
+	Input.action_release("move_back")
 	_check(mission.player.can_exit_rope(), "A level-aligned player could not leave the rope.")
 	mission._interact()
+	_check(mission.player.on_rope and mission.player.rope_transfer == "exit", "Dismount skipped its belayed return transfer.")
+	mission.player._process_rope(0.85)
 	_check(not mission.player.on_rope and mission.player.nearest_floor() == 30, "Aligned dismount failed to land on floor 30.")
-	_check(mission.player.position.x > 2.7, "Dismount left the player inside the shaft opening.")
+	_check(mission.player.position.x < -2.7, "Dismount left the player inside the west shaft opening.")
 	old_anchors = mission.anchors
 	_send_action("anchor")
 	_check(mission.anchors == old_anchors, "Trying to anchor on foot consumed an item.")
@@ -231,7 +244,7 @@ func _move_to(target: Node3D) -> void:
 		return
 	var number: int = int(target.get_meta("floor", 31))
 	mission.player.teleport_to_floor(number)
-	mission.player.position = target.global_position + Vector3(1.1, 0.06, 0.0)
+	mission.player.position = target.global_position + Vector3(0.0 if target.get_meta("kind", "") == "rappel" else 1.1, 0.06, 0.0)
 	mission._enter_floor(number)
 	mission.last_floor = number
 

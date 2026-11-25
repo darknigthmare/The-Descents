@@ -4,10 +4,11 @@ extends Node
 const MainScene = preload("res://scenes/main.tscn")
 const Preferences = preload("res://scripts/preferences_store.gd")
 const Horror = preload("res://scripts/horror_director.gd")
-const SAVE: String = "user://qa_visual_frontend_v08.json"
-const PREFS: String = "user://qa_visual_frontend_v08.cfg"
+const Routes = preload("res://scripts/route_catalog.gd")
+const SAVE: String = "user://qa_visual_frontend_v09.json"
+const PREFS: String = "user://qa_visual_frontend_v09.cfg"
 var mission: Node3D
-var output: String = "res://../docs/captures/v0.8"
+var output: String = "res://../docs/captures/v0.9"
 var shots: Array[Dictionary] = []
 
 func _ready() -> void:
@@ -167,6 +168,8 @@ func _capture() -> void:
 	await _shot("10_menu_refuge","Accueil après une intervention terminée, point sûr du refuge")
 	if not await _capture_early_manifestations():
 		return
+	if not await _capture_local_traversal():
+		return
 	var manifest: Dictionary = {"version":ProjectSettings.get_setting("application/config/version"), "engine":Engine.get_version_info().get("string"),"display":DisplayServer.get_name(),"rendering_method":RenderingServer.get_current_rendering_method(),"viewport":str(get_viewport().get_visible_rect().size),"prepared_states":true,"human_playthrough":false,"captures":shots}
 	var file: FileAccess = FileAccess.open(output.path_join("MANIFEST.json"),FileAccess.WRITE)
 	file.store_string(JSON.stringify(manifest,"  ")+"\n")
@@ -247,6 +250,100 @@ func _capture_early_manifestations() -> bool:
 	mission._update_hud()
 	await _shot("28_spa_remanence", "Spa 26 : seconde présence après extinction, attente calme et regard détourné, sans poursuite ni dommage")
 	return true
+
+func _capture_local_traversal() -> bool:
+	mission._start_new(271104)
+	mission._finish_arrival()
+	_disable_ticks()
+	_quiet_traversal_frame()
+	var route: Dictionary = Routes.for_id("R31_30")
+	mission.player.position = route["top_entry"] + Vector3(-0.6, 0.04, 1.8)
+	mission.player.camera.look_at(Vector3(-1.3, 42.8, 0))
+	await get_tree().physics_frame
+	mission._find_nearest()
+	mission._update_hud()
+	await _shot("29_station_rappel_toit", "Repère bleu du rappel personnel toit–30, distinct du treuil orange ; pose initiale préparée")
+	mission.player.position = route["top_entry"]
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	mission._interact_node(_mission_object("rappel", 31))
+	if not mission.player.on_rope:
+		return _traversal_capture_failure("The roof station did not engage its actual local rope.")
+	await _drive_rope(0.9)
+	if not str(mission.player.rope_transfer).is_empty():
+		return _traversal_capture_failure("The physical entry transfer did not reach the rope.")
+	await _drive_rope(1.25, "move_back")
+	mission.player.camera.look_at(Vector3(-3.3, 36.8, 1.2))
+	_quiet_traversal_frame()
+	mission._update_hud()
+	await _shot("30_rappel_descente", "Descente contrôlée sur R31_30 : transfert et 1,25 s de mouvement réels, capsule, descendeur et HUD du rappel")
+	mission.player.toggle_rope_lock()
+	await _drive_rope(0.25)
+	mission._update_hud()
+	await _shot("31_rappel_verrouille", "Même liaison, verrouillage réel du descendeur : vitesse nulle, repos assuré et état visible")
+	mission.player.toggle_rope_lock()
+	await _drive_rope(2.5, "move_back")
+	await _drive_rope(0.7)
+	await _drive_rope(1.1, "move_forward")
+	mission.player.camera.look_at(Vector3(-2.3, 42.3, -0.8))
+	mission._update_hud()
+	await _shot("34_rappel_remontee", "Remontée réelle depuis l’extrémité basse du rappel toit–30 : effort, vitesse et disponibilité de corde")
+	await _prepare_stair_view(30)
+	await _shot("32_escalier_30_29", "Escalier local du restaurant 30 aux suites 29 : ouverture de dalle, première volée et signalétique")
+	mission.player.position = Vector3(0, 33.08, 10.8)
+	mission.player.camera.look_at(Vector3(-1.3, 36.6, 6.3))
+	await _settle_stair_pose()
+	mission._update_hud()
+	await _shot("33_escalier_palier", "Palier intermédiaire du 30–29 : deux volées physiques, aucune entrée d’étage déclarée à mi-hauteur")
+	await _prepare_stair_view(28)
+	await _shot("36_escalier_28_27", "Escalier local des archives 28 au jardin 27, vue préparée de la dalle ouverte et du passage intérieur")
+	await _prepare_stair_view(26)
+	await _shot("37_escalier_26_25", "Dernier escalier local, du spa 26 au refuge 25 ; la cage s’arrête à la liaison prévue")
+	mission._pause()
+	mission.hud.show_help()
+	await _shot("35_aide_deplacements", "Aide de mission : itinéraire des six liaisons, commandes de rappel, distinction des repères et treuil")
+	return true
+
+func _drive_rope(seconds: float, action: String = "") -> void:
+	_release_traversal_actions()
+	if not action.is_empty():
+		Input.action_press(action)
+	for frame in range(ceili(seconds * 60.0)):
+		mission.player._process_rope(1.0 / 60.0)
+		await get_tree().physics_frame
+	_release_traversal_actions()
+
+func _release_traversal_actions() -> void:
+	for action: String in ["move_forward", "move_back", "move_left", "move_right", "crouch", "sprint"]:
+		Input.action_release(action)
+
+func _prepare_stair_view(upper: int) -> void:
+	_release_traversal_actions()
+	mission.player.teleport_to_floor(upper)
+	_disable_ticks()
+	mission.player.active = true
+	var y: float = Routes.floor_height(upper)
+	mission.player.position = Vector3(-1.3, y - 0.12, 6.05)
+	mission.player.camera.look_at(Vector3(-1.3, y - 2.3, 9.8))
+	await _settle_stair_pose()
+	_quiet_traversal_frame()
+	mission._update_hud()
+
+func _settle_stair_pose() -> void:
+	for frame in range(12):
+		await get_tree().physics_frame
+		mission.player._process_walk(1.0 / 60.0)
+
+func _quiet_traversal_frame() -> void:
+	mission.notify_time = 0.0
+	mission.hud.notify_label.hide()
+	mission.radio.reset()
+	mission._sync_radio()
+
+func _traversal_capture_failure(message: String) -> bool:
+	push_error(message)
+	get_tree().quit(1)
+	return false
 
 func _shot(name_value: String, description: String) -> void:
 	if mission.hud.menu.visible:

@@ -3,6 +3,7 @@ class_name DescentWorld
 
 const Presentation = preload("res://scripts/presentation_geometry.gd")
 const Atmosphere = preload("res://scripts/maritime_atmosphere.gd")
+const Routes = preload("res://scripts/route_catalog.gd")
 var atmosphere: Node3D
 var reduced_motion: bool = true
 
@@ -75,6 +76,7 @@ func build(seed_value: int, floor_specs: Array) -> Dictionary:
 		floor_heights[number] = float(number - 24) * 6.0
 		_build_floor(number, specs_by_floor.get(number, {}))
 	var roof: Dictionary = _build_roof()
+	_build_vertical_routes()
 	_build_arrival_wash()
 	_build_rain()
 	atmosphere = Atmosphere.new()
@@ -100,7 +102,8 @@ func build(seed_value: int, floor_specs: Array) -> Dictionary:
 		"roof_spawn": Vector3(7, 42.2, 7),
 		"floor_y": floor_heights,
 		"sea_level": -132.0,
-		"specs": specs_by_floor
+		"specs": specs_by_floor,
+		"routes": Routes.all_routes()
 	}
 
 func _process(delta: float) -> void:
@@ -327,11 +330,21 @@ func _build_lower_shell() -> void:
 		_box(shell, Vector3(xx, -66, -12), Vector3(0.15, 144, 0.25), materials["metal"])
 
 func _floor_surface(parent: Node3D, y: float, floor_material: Material, enclosed: bool = true) -> void:
-	# Four slabs make the 5.4 m square shaft genuinely open at every level.
+	# The east side of the core remains open for the rescue hoist. Authored
+	# west-side landings below are separate from that continuous evacuation path.
 	_box(parent, Vector3(-7.35, y - 0.3, 0), Vector3(9.3, 0.6, 24), floor_material, true)
 	_box(parent, Vector3(7.35, y - 0.3, 0), Vector3(9.3, 0.6, 24), floor_material, true)
 	_box(parent, Vector3(0, y - 0.3, -7.35), Vector3(5.4, 0.6, 9.3), floor_material, true)
-	_box(parent, Vector3(0, y - 0.3, 7.35), Vector3(5.4, 0.6, 9.3), floor_material, true)
+	var number: int = roundi(y / 6.0) + 24
+	if number in [30, 28, 26]:
+		# A real 5 x 5.6 m cut-out admits the two flights. No solid full slab
+		# remains hidden beneath the staircase presentation.
+		_box(parent, Vector3(0, y - 0.3, 4.25), Vector3(5.4, 0.6, 3.1), floor_material, true)
+		_box(parent, Vector3(0, y - 0.3, 11.7), Vector3(5.4, 0.6, 0.6), floor_material, true)
+		for side: float in [-2.6, 2.6]:
+			_box(parent, Vector3(side, y - 0.3, 8.6), Vector3(0.2, 0.6, 5.6), floor_material, true)
+	else:
+		_box(parent, Vector3(0, y - 0.3, 7.35), Vector3(5.4, 0.6, 9.3), floor_material, true)
 	# A fixed amber strip identifies the entry lip; it remains clear of collisions.
 	_box(parent, Vector3(2.76, y + 0.015, 0), Vector3(0.16, 0.025, 3.6), materials["lit_amber"])
 	for xx in [-12.0, 12.0]:
@@ -452,6 +465,147 @@ VISUEL BRAVO", 30, Color("a8e9d7"), 0.010)
 		_label(refuge, Vector3(0, 2.5, 0), "REFUGE 25\nLIAISON SÉCURISÉE", 36, Color("98efc9"), 0.01)
 		_light(refuge, Vector3(0, 2.7, 0), Color("6eddb3"), 1.4, 9)
 
+func _build_vertical_routes() -> void:
+	var network: Node3D = Node3D.new()
+	network.name = "TraversalNetwork"
+	add_child(network)
+	# The west half stops on the arrival floors; the east hoist envelope around
+	# x=1.8 stays clear from every rescued person to the roof docking manoeuvre.
+	for number: int in [30, 28, 26, 25]:
+		var cap: MeshInstance3D = _box(network, Vector3(-1.0, Routes.floor_height(number) - 0.3, 0), Vector3(3.4, 0.6, 5.4), materials["concrete"], true)
+		cap.name = "RappelLanding%d" % number
+		cap.set_meta("floor", number)
+	for number: int in [31, 30, 29, 28, 27, 26, 25]:
+		_build_core_guards(network, number)
+	for route: Dictionary in Routes.all_routes():
+		if route["kind"] == "rope":
+			_build_rappel_link(network, route)
+		else:
+			_build_local_stair(network, route)
+
+
+func _build_core_guards(parent: Node3D, number: int) -> void:
+	var y: float = Routes.floor_height(number)
+	var guards: Node3D = Node3D.new()
+	guards.name = "CoreGuards%d" % number
+	parent.add_child(guards)
+	# The personal rappel exit crosses the west edge at z=0. This 2.2 m gap
+	# deliberately stays free of beams, posts and invisible collision panels.
+	for side: float in [-1.0, 1.0]:
+		var a: Vector3 = Vector3(-2.76, y, side * 1.15)
+		var b: Vector3 = Vector3(-2.76, y, side * 2.76)
+		_traversal_rail(guards, a, b, materials["orange"])
+		_traversal_rail(guards, Vector3(-2.76, y, side * 2.76), Vector3(0.72, y, side * 2.76), materials["orange"])
+	_traversal_rail(guards, Vector3(0.72, y, -2.76), Vector3(0.72, y, 2.76), materials["metal"])
+	# The hoist is not a pedestrian descent opening. On the roof its north-east
+	# docking arc remains open for the arriving harness and medical reception.
+	_traversal_rail(guards, Vector3(2.76, y, 0.8 if number == 31 else -2.76), Vector3(2.76, y, 2.76), materials["metal"])
+
+
+func _build_rappel_link(parent: Node3D, route: Dictionary) -> void:
+	var link: Node3D = Node3D.new()
+	link.name = str(route["id"])
+	link.set_meta("route_id", route["id"])
+	parent.add_child(link)
+	var top_y: float = Routes.floor_height(int(route["upper"]))
+	var anchor: Vector3 = route["anchor"]
+	# A cantilever attached beside the opening leaves the approach at z=0 clear.
+	# Its rear offset also preserves the inspected sightline into the suites.
+	_box(link, Vector3(-3.05, top_y + 1.3, -2.1), Vector3(0.16, 2.6, 0.16), materials["metal"], true)
+	_traversal_beam(link, Vector3(-3.05, top_y + 2.6, -2.1), Vector3(Routes.ROPE_X, top_y + 2.6, -2.1), 0.16, materials["metal"], true)
+	_traversal_beam(link, Vector3(Routes.ROPE_X, top_y + 2.6, -2.1), anchor, 0.16, materials["metal"], true)
+	_sphere(link, anchor + Vector3(0, -0.12, 0), Vector3(0.12, 0.15, 0.12), materials["gold"])
+	for number: int in [int(route["upper"]), int(route["lower"])]:
+		var entry: Vector3 = route["top_entry"] if number == int(route["upper"]) else route["bottom_entry"]
+		var station: Node3D = _interaction(link, Vector3(entry.x, Routes.floor_height(number), entry.z), "rappel", "%s_%d" % [str(route["id"]), number], number, str(route["title"]), "Ligne personnelle vers le palier adjacent. Le treuil orange reste réservé à l’évacuation des rescapés.")
+		station.set_meta("route_id", route["id"])
+		station.set_meta("endpoint", "upper" if number == int(route["upper"]) else "lower")
+		# Flat identification paint cannot catch a capsule or a carried person.
+		_box(station, Vector3(0, 0.016, 0), Vector3(1.1, 0.025, 1.1), materials["blue"])
+		_box(station, Vector3(0, 0.032, 0), Vector3(0.72, 0.018, 0.09), materials["lit_blue"])
+		_label(station, Vector3(0, 2.35, -0.8), "%s\nLIGNE PERSONNELLE" % str(route["title"]).to_upper(), 29, Color("a8d6e3"), 0.0065, true)
+		for xx: float in [-3.35, -2.9]:
+			_box(link, Vector3(xx, Routes.floor_height(number) + 0.02, 0), Vector3(0.22, 0.025, 0.12), materials["lit_blue"])
+
+
+func _build_local_stair(parent: Node3D, route: Dictionary) -> void:
+	var stairs: Node3D = Node3D.new()
+	stairs.name = str(route["id"])
+	stairs.set_meta("route_id", route["id"])
+	parent.add_child(stairs)
+	var top_y: float = Routes.floor_height(int(route["upper"]))
+	var bottom_y: float = Routes.floor_height(int(route["lower"]))
+	_stair_flight(stairs, "UpperFlight", -Routes.STAIR_SIDE, top_y, bottom_y + 3.0)
+	_stair_flight(stairs, "LowerFlight", Routes.STAIR_SIDE, bottom_y, bottom_y + 3.0)
+	var landing: MeshInstance3D = _box(stairs, Vector3(0, bottom_y + 2.85, 10.8), Vector3(5.0, 0.3, 1.2), materials["edge"], true)
+	landing.name = "HalfLanding"
+	# Rails on the half landing and on the upper slab leave exactly the upper
+	# left and lower right entries open. There is no continuation below the pair.
+	_traversal_rail(stairs, Vector3(-2.45, bottom_y + 3.0, 10.2), Vector3(-2.45, bottom_y + 3.0, 11.4), materials["metal"])
+	_traversal_rail(stairs, Vector3(2.45, bottom_y + 3.0, 10.2), Vector3(2.45, bottom_y + 3.0, 11.4), materials["metal"])
+	_traversal_rail(stairs, Vector3(-2.45, bottom_y + 3.0, 11.4), Vector3(2.45, bottom_y + 3.0, 11.4), materials["metal"])
+	for side: float in [-2.53, 2.53]:
+		_traversal_rail(stairs, Vector3(side, top_y, 5.8), Vector3(side, top_y, 11.4), materials["green"])
+	_traversal_rail(stairs, Vector3(-2.53, top_y, 11.4), Vector3(2.53, top_y, 11.4), materials["green"])
+	_traversal_rail(stairs, Vector3(0.0, top_y, 5.8), Vector3(2.53, top_y, 5.8), materials["green"])
+	for end: String in ["top_entry", "bottom_entry"]:
+		var p: Vector3 = route[end]
+		_label(stairs, p + Vector3(0, 2.3, 0.1), "%s\nACCÈS LOCAL" % str(route["title"]).to_upper(), 30, Color("b4e0ce"), 0.0065, true)
+		for zz: float in [4.6, 5.0, 5.4]:
+			_box(stairs, Vector3(p.x, p.y - 0.035, zz), Vector3(0.65, 0.025, 0.09), materials["lit_green"])
+	_light(stairs, Vector3(0, bottom_y + 5.3, 10.8), Color("b4cece"), 0.75, 7.5)
+
+
+func _stair_flight(parent: Node3D, flight_name: String, x: float, start_y: float, end_y: float) -> void:
+	var flight: Node3D = Node3D.new()
+	flight.name = flight_name
+	parent.add_child(flight)
+	var start_z: float = Routes.STAIR_FRONT
+	var end_z: float = Routes.STAIR_BACK
+	var base_y: float = minf(start_y, end_y) - 0.24
+	# Twenty visible 15 cm risers per flight. A continuous, equally bounded
+	# 34.3 degree collision slope lets CharacterBody3D walk without jump spam.
+	for index in range(20):
+		var t0: float = float(index) / 20.0
+		var t1: float = float(index + 1) / 20.0
+		var tread_y: float = maxf(lerpf(start_y, end_y, t0), lerpf(start_y, end_y, t1))
+		var tread: MeshInstance3D = _box(flight, Vector3(x, (base_y + tread_y) * 0.5, lerpf(start_z, end_z, (t0 + t1) * 0.5)), Vector3(2.2, tread_y - base_y, (end_z - start_z) / 20.0), materials["edge"])
+		tread.name = "Tread%02d" % index
+		_box(flight, Vector3(x, tread_y + 0.012, lerpf(start_z, end_z, t0 if start_y < end_y else t1)), Vector3(2.12, 0.02, 0.035), materials["yellow"])
+	var body: StaticBody3D = StaticBody3D.new()
+	body.name = "WalkableFlight"
+	var collider: CollisionShape3D = CollisionShape3D.new()
+	var prism: ConvexPolygonShape3D = ConvexPolygonShape3D.new()
+	var points: PackedVector3Array = PackedVector3Array()
+	for side: float in [x - 1.1, x + 1.1]:
+		points.append(Vector3(side, base_y, start_z))
+		points.append(Vector3(side, base_y, end_z))
+		points.append(Vector3(side, start_y, start_z))
+		points.append(Vector3(side, end_y, end_z))
+	prism.points = points
+	collider.shape = prism
+	body.add_child(collider)
+	flight.add_child(body)
+	for side: float in [x - 1.13, x + 1.13]:
+		_traversal_rail(flight, Vector3(side, start_y, start_z), Vector3(side, end_y, end_z), materials["metal"])
+
+
+func _traversal_rail(parent: Node3D, a: Vector3, b: Vector3, material: Material) -> void:
+	for lift: float in [0.55, 1.12]:
+		_traversal_beam(parent, a + Vector3.UP * lift, b + Vector3.UP * lift, 0.075, material, true)
+	var intervals: int = maxi(1, ceili(a.distance_to(b) / 1.5))
+	for index in range(intervals + 1):
+		var p: Vector3 = a.lerp(b, float(index) / float(intervals))
+		_box(parent, p + Vector3(0, 0.56, 0), Vector3(0.07, 1.12, 0.07), material, true)
+
+
+func _traversal_beam(parent: Node3D, a: Vector3, b: Vector3, width: float, material: Material, solid: bool) -> MeshInstance3D:
+	var direction: Vector3 = b - a
+	var beam: MeshInstance3D = _box(parent, (a + b) * 0.5, Vector3(width, direction.length(), width), material, solid)
+	beam.quaternion = Quaternion(Vector3.UP, direction.normalized())
+	return beam
+
+
 func _restaurant(parent: Node3D, y: float) -> void:
 	for pos in [Vector3(-7,y,-7), Vector3(-7,y,7), Vector3(7,y,8)]:
 		_cylinder(parent, pos + Vector3(0,1.0,0), 1.4, 0.12, materials["cream"], true)
@@ -543,7 +697,7 @@ func _maintenance(parent: Node3D, y: float) -> void:
 		_box(parent, Vector3(xx,y+0.015,3.3), Vector3(0.45,0.03,0.12), materials["yellow"])
 
 func _make_beacon(parent: Node3D, number: int, y: float) -> void:
-	var beacon: Node3D = _interaction(parent, Vector3(3.6,y,0), "beacon", "beacon_%d" % number, number, "Balise de treuil", "Point de raccordement au rappel et d'évacuation des rescapés vers le toit.")
+	var beacon: Node3D = _interaction(parent, Vector3(3.6,y,0), "beacon", "beacon_%d" % number, number, "Balise de treuil", "Point orange d’évacuation des rescapés vers le toit. Le rappel personnel utilise les stations bleues à l’ouest du noyau.")
 	_cylinder(beacon, Vector3(0,0.18,0), 0.34, 0.36, materials["metal"])
 	_cylinder(beacon, Vector3(0,0.9,0), 0.06, 1.3, materials["orange"])
 	_sphere(beacon, Vector3(0,1.6,0), Vector3(0.18,0.18,0.18), materials["lit_green"])
@@ -607,7 +761,7 @@ func _build_roof() -> Dictionary:
 	for xx in [-3.4,3.4]:
 		_box(roof,Vector3(xx,43.5,0),Vector3(0.18,3,0.18),materials["orange"])
 	_make_beacon(roof,31,42)
-	_label(roof,Vector3(4.2,44.6,-2.8),"AUBE / TOIT\nPOINT DE DESCENTE",45,Color("efd4ab"),0.010,true)
+	_label(roof,Vector3(4.2,44.6,-2.8),"AUBE / TOIT\nTREUIL DE SECOURS",45,Color("efd4ab"),0.010,true)
 	_label(roof,Vector3(0,44.0,11.3),"ORPHÉE\nPOSTE DE SECOURS",66,Color("cedbd6"),0.014,false)
 	for pos in [Vector3(8,45,-6),Vector3(-7,45,7)]:
 		_light(roof,pos,Color("eabb83"),1.6,13)

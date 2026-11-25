@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a frozen v0.8 candidate, then package it only after explicit visual review.
+"""Build a frozen v0.9 candidate, then package it only after explicit visual review.
 
 The GitHub workflow accepts a separate request-only commit. Review builds run the
 actual source suites, native renderer, platform exports and document renderer.
@@ -24,15 +24,15 @@ import tempfile
 from qa_common import DOCUMENT_SOURCES, ROOT, git_head, godot_binary, run, runtime_hashes, sha256, version
 
 BRANCH = "feat/live-tower-collapse"
-VERSION = "0.8.0"
-SHORT = "0.8"
-REQUEST = ROOT / ".review/v0.8/build-request.json"
-CAPTURE_REQUEST = ROOT / ".review/v0.8/request.json"
-VALIDATION = ROOT / "docs/validation/v0.8"
-CAPTURES = ROOT / "docs/captures/v0.8"
+VERSION = "0.9.0"
+SHORT = "0.9"
+REQUEST = ROOT / ".review/v0.9/build-request.json"
+CAPTURE_REQUEST = ROOT / ".review/v0.9/request.json"
+VALIDATION = ROOT / "docs/validation/v0.9"
+CAPTURES = ROOT / "docs/captures/v0.9"
 RENDERED = VALIDATION / "rendered"
-BIBLE_DOCX = ROOT / "docs/The-Tower-Descent-Bible-v0.8.docx"
-BIBLE_PDF = ROOT / "docs/The-Tower-Descent-Bible-v0.8.pdf"
+BIBLE_DOCX = ROOT / "docs/The-Tower-Descent-Bible-v0.9.docx"
+BIBLE_PDF = ROOT / "docs/The-Tower-Descent-Bible-v0.9.pdf"
 
 
 def require(condition: bool, message: str) -> None:
@@ -224,13 +224,13 @@ def build_review_derivatives() -> None:
 def build_documents() -> None:
     from build_bible import PARTS
 
-    require(tuple("docs/" + part[0] for part in PARTS) == DOCUMENT_SOURCES, "Bible builder does not include exactly the fifteen required sources in order.")
+    require(tuple("docs/" + part[0] for part in PARTS) == DOCUMENT_SOURCES, "Bible builder does not include exactly the sixteen required sources in order.")
     sources = [record(ROOT / name) for name in DOCUMENT_SOURCES]
     tool("build_bible.py", "--output", str(BIBLE_DOCX))
     if RENDERED.exists():
         shutil.rmtree(RENDERED)
     RENDERED.mkdir(parents=True)
-    with tempfile.TemporaryDirectory(prefix="tower-v08-document-") as temporary:
+    with tempfile.TemporaryDirectory(prefix="tower-v09-document-") as temporary:
         directory = Path(temporary)
         converted = directory / "pdf"
         converted.mkdir()
@@ -278,7 +278,7 @@ def build_documents() -> None:
             "method": "Repository DOCX builder, LibreOffice PDF conversion, Poppler PNG rendering at 2000 px.",
             "libreoffice": subprocess.check_output(["libreoffice", "--version"], text=True).strip(),
             "requested_body_font": "Arial", "resolved_body_font": subprocess.check_output(["fc-match", "Arial", "--format=%{family}"], text=True).strip(),
-            "font_report": "docs/validation/v0.8/document-fonts.txt",
+            "font_report": "docs/validation/v0.9/document-fonts.txt",
             "canonical_local_skill_renderer_used": False,
         },
         "limitations": ["A successful conversion and page count do not approve visual layout. Every final page requires a separate visual review."],
@@ -348,7 +348,7 @@ def build(binary: str, request: dict) -> None:
         "completed_utc": datetime.now(timezone.utc).isoformat(),
         "runtime_sha256": before, "automated_steps_passed": True,
         "manual_visual_review_required": request["phase"] == "review",
-        "archive_verification_report": "releases/VERIFICATION_V0.8.json" if request["phase"] == "release" else None,
+        "archive_verification_report": "releases/VERIFICATION_V0.9.json" if request["phase"] == "release" else None,
         "pipeline_sha256": sha256(Path(__file__)),
     })
     if request["phase"] == "release":
@@ -359,7 +359,7 @@ def build(binary: str, request: dict) -> None:
         require(result.returncode == 0, "Release verification failed.")
         report = json.loads(result.stdout)
         require(report.get("status") == "PASS", "Release verifier did not return PASS.")
-        write_json(ROOT / "releases/VERIFICATION_V0.8.json", report)
+        write_json(ROOT / "releases/VERIFICATION_V0.9.json", report)
     print(json.dumps({"phase": request["phase"], "automated_steps_passed": True, "manual_visual_review_required": request["phase"] == "review"}), flush=True)
 
 
@@ -372,18 +372,18 @@ def publish(request: dict) -> None:
         print("The branch advanced. Generated files remain available in the workflow artifact; no branch update was attempted.")
         return
     require(git_head() == expected, "The publication checkout advanced unexpectedly.")
-    paths = ["docs/validation/v0.8"]
+    paths = ["docs/validation/v0.9"]
     if request["phase"] == "review":
-        paths += ["docs/captures/v0.8", "docs/The-Tower-Descent-Bible-v0.8.docx",
-                  "docs/The-Tower-Descent-Bible-v0.8.pdf", ".review/v0.8/request.json"]
+        paths += ["docs/captures/v0.9", "docs/The-Tower-Descent-Bible-v0.9.docx",
+                  "docs/The-Tower-Descent-Bible-v0.9.pdf", ".review/v0.9/request.json"]
         # Godot assigns stable identifiers to newly imported authored resources.
         for value in git("ls-files", "--others", "--exclude-standard", "--", "prototype").splitlines():
             if value.endswith(".uid"):
                 paths.append(value)
     else:
-        paths += ["dist", "releases/The-Tower-Descent-v0.8-Windows-x64.zip",
-                  "releases/The-Tower-Descent-v0.8-Sources.zip", "releases/SHA256SUMS.txt",
-                  "releases/VERIFICATION_V0.8.json"]
+        paths += ["dist", "releases/The-Tower-Descent-v0.9-Windows-x64.zip",
+                  "releases/The-Tower-Descent-v0.9-Sources.zip", "releases/SHA256SUMS.txt",
+                  "releases/VERIFICATION_V0.9.json"]
     subprocess.run(["git", "add", "--", *paths], cwd=ROOT, check=True)
     staged = git("diff", "--cached", "--name-only").splitlines()
     require(all(any(name == path or name.startswith(path + "/") for path in paths) for name in staged), "Unexpected staged path outside generated outputs.")
@@ -392,7 +392,7 @@ def publish(request: dict) -> None:
         return
     git("config", "user.name", "github-actions[bot]")
     git("config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com")
-    git("commit", "-m", "Build v0.8 " + request["phase"] + " evidence from frozen source " + expected[:12])
+    git("commit", "-m", "Build v0.9 " + request["phase"] + " evidence from frozen source " + expected[:12])
     result = subprocess.run(["git", "push", "origin", "HEAD:" + target], cwd=ROOT)
     if result.returncode:
         current = git("ls-remote", "origin", target).split()[0]

@@ -5,6 +5,8 @@ import hashlib
 import shutil
 import re
 
+from qa_common import MAX_ARCHIVE_BYTES, source_package_paths
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "releases"
 VERSION = re.search(r'config/version="([^"]+)"', (ROOT / "prototype/project.godot").read_text()).group(1)
@@ -26,20 +28,11 @@ def main():
             z.write(ROOT / "prototype/assets/fonts" / name, "The-Tower-Descent/fonts/" + name)
     source = OUT / f"The-Tower-Descent-v{SHORT_VERSION}-Sources.zip"
     with ZipFile(source, "w", ZIP_DEFLATED, compresslevel=9) as z:
-        for directory in ["prototype", "docs", "tools"]:
-            for file in sorted((ROOT / directory).rglob("*")):
-                rel = file.relative_to(ROOT)
-                if not file.is_file() or any(p in {".godot", "rendered", "__pycache__", "visual_output"} for p in rel.parts):
-                    continue
-                if file.suffix in {".log", ".tmp"}:
-                    continue
-                z.write(file, "The-Tower-Descent/" + str(rel))
-        for workflow in sorted((ROOT / ".github/workflows").glob("*.yml")):
-            z.write(workflow, "The-Tower-Descent/" + workflow.relative_to(ROOT).as_posix())
-        for request in sorted((ROOT / ".review").rglob("*.json")):
-            z.write(request, "The-Tower-Descent/" + request.relative_to(ROOT).as_posix())
-        for name in ["README.md", "JOUER_WINDOWS.cmd", "jouer.sh", ".gitignore"]:
-            z.write(ROOT / name, "The-Tower-Descent/" + name)
+        for file in source_package_paths():
+            z.write(file, "The-Tower-Descent/" + file.relative_to(ROOT).as_posix())
+    for archive in [windows, source]:
+        if archive.stat().st_size >= MAX_ARCHIVE_BYTES:
+            raise SystemExit("Archive exceeds the strict 100 MiB publication limit: " + archive.name)
     hashes = []
     for file in sorted(OUT.glob("*.zip")):
         digest = hashlib.sha256(file.read_bytes()).hexdigest()

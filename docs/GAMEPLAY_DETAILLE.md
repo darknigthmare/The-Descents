@@ -1,6 +1,6 @@
 # Gameplay détaillé, réglages et personnages
 
-**The Tower Descent — version 0.8.0.** Les valeurs désignées « actuelles » proviennent du prototype. Les valeurs « cibles » sont des propositions de réglage pour une prochaine tranche et doivent être éprouvées en jeu. Une fiche de conception ne signifie pas que la fonction correspondante est déjà programmée. Cette annexe complète la bible avec des contrats utilisables par la conception, l’animation, le son et les essais.
+**The Tower Descent — version 0.9.0.** Les valeurs désignées « actuelles » proviennent du prototype. Les valeurs « cibles » sont des propositions de réglage pour une prochaine tranche et doivent être éprouvées en jeu. Une fiche de conception ne signifie pas que la fonction correspondante est déjà programmée. Cette annexe complète la bible avec des contrats utilisables par la conception, l’animation, le son et les essais.
 
 ## 1 Expérience recherchée et boucles
 
@@ -27,7 +27,7 @@ La campagne étend cette boucle avec des personnes mobiles, des points de transf
 | Accélération horizontale | 25 m/s² | Réponse rapide dans la maquette, à reprendre avec les animations |
 | Gravité et impulsion de saut | 16 m/s² ; 5,6 m/s | Franchissement simple ; saut interdit pendant le portage |
 | Endurance | 0 à 100 | Course autorisée au-dessus de 5 ; consommation de 14 points/s en mouvement |
-| Récupération | 11 points/s hors course ; 8 points/s sur corde | Le rappel ne consomme pas encore d’endurance |
+| Récupération | 11 points/s hors course ; 12 points/s au repos sur corde | La montée et la descente rapide ont désormais un coût distinct |
 | Capsule | Rayon 0,34 m, hauteur 1,72 m | Enveloppe réelle à utiliser pour les collisions du prototype |
 | Regard | Caméra à 1,62 m, abaissée vers 1,12 m | Ne pas produire un tunnel bas en supposant une capsule accroupie |
 | Caméra jouable | Champ de vision 77° par défaut, réglable de 65 à 100° | Référence des vues de lecture et de la transition depuis l’arrivée |
@@ -42,21 +42,68 @@ Conserver une marche de 3,4 à 3,8 m/s et un portage de 2,2 à 2,6 m/s comme pre
 
 Une capsule réellement basse, des franchissements courts et des animations de manipulation sont des travaux distincts. Chaque mouvement doit annoncer sa destination et permettre de revenir avant engagement. Les itinéraires portant une personne doivent être validés avec l’enveloppe la plus large et la caméra la moins mobile ; un effet de tête ne doit pas être nécessaire à la compréhension d’un appui.
 
-## 3 Rappel, balises et ancrages
+## 3 Traversée entre étages, rappel et ancrages
 
-Le prototype utilise une ligne centrale guidée. La vitesse verticale est de **2,8 m/s**, dans l’intervalle de hauteur 6,04 à 42,04 mètres. Les étages sont espacés de six mètres ; le toit correspond à l’étage logique 31. La sortie est autorisée à moins de 0,8 m de la hauteur d’un palier et replace Alex sur un point d’arrivée préparé. Il ne s’agit pas encore d’une corde physique libre qui peut s’enrouler autour du décor.
+La 0.9 remplace le déplacement libre sur une ligne globale par **six liaisons locales réversibles**. Les escaliers et le rappel alternent : une ouverture ne permet pas de traverser tous les étages sans quitter la corde. Le toit porte le numéro logique 31 ; les dalles sont espacées de six mètres. Les transferts des trois rescapés conservent leur montée vers le toit dans un corridor distinct.
 
-Le déplacement latéral commande un balancement limité à ±1,8 m. Un ancrage secondaire consomme une unité et stabilise la ligne pendant **16 secondes** ; l’amplitude de l’excitation de vent passe de 0,5 à 0,14 dans le modèle de contrôle. L’action remet le balancement et sa vitesse à zéro. Cette protection aide à se placer, sans supprimer la route ni déclencher une chute scriptée à son expiration.
+| Liaison | Passage | Retour disponible |
+| --- | --- | --- |
+| R31_30 | Rappel du toit vers le restaurant | Remontée sur le même segment jusqu’au toit |
+| S30_29 | Escalier entre restaurant et suites | Marche en sens inverse vers le 30 |
+| R29_28 | Rappel entre suites et archives | Remontée sur le même segment vers le 29 |
+| S28_27 | Escalier entre archives et jardin des enfants | Marche en sens inverse vers le 28 |
+| R27_26 | Rappel entre jardin et spa | Remontée sur le même segment vers le 27 |
+| S26_25 | Escalier entre spa et refuge | Marche en sens inverse vers le 26 |
 
-La ligne doit se voir depuis chaque palier et la balise de transfert doit être trouvée sans consulter la carte. Le joueur peut remonter du 25 au toit, sous réserve des états ordinaires de la mission. L’effondrement ne condamne pas ce noyau. Aucun nouvel accessoire ne doit apparaître dans le volume de sortie de corde ou entre la personne portée et sa balise.
+### Escaliers locaux
 
-La cible de campagne introduit des segments de rappel préparés, des points d’appui distincts et un transfert local vers un équipier. Elle conserve une surface d’arrivée visible et une reprise sûre en cas d’échec. Avant de produire des cordes dynamiques, l’équipe doit décider si une simulation ajoute un choix utile ou seulement des coincements difficiles à lire. La réponse technique peut rester une spline animée avec états et collisions soigneusement bornés.
+Chaque escalier relie uniquement la paire indiquée. Deux volées et un palier de demi-niveau dessinent une circulation en U au sud du noyau. Les marches sont visibles ; une collision inclinée continue porte la véritable capsule du joueur. Le changement de hauteur provient du déplacement physique, sans bouton qui téléporte vers un autre étage. Les prolongements ne donnent pas accès au niveau suivant : la sortie conduit au plateau, où il faut rejoindre la prochaine liaison.
+
+Alex peut monter et descendre ces escaliers, seul ou en portant une personne, avec les vitesses de marche correspondantes. La confirmation d’un nouvel étage exige une hauteur située à ±0,35 m de sa dalle, une position hors du volume de l’escalier, un support physique sous les pieds et une vitesse verticale absolue d’au plus 0,15 m/s. Il faut donc regagner le plateau : le milieu d’une volée, son haut et son bas encore dans la cage ne sont ni une arrivée confirmée ni un nouveau point sûr. La lecture du palier permet de retrouver son chemin sans devoir sauter au-dessus du puits.
+
+### Engagement et commandes sur corde
+
+Les stations de rappel personnel se trouvent du côté ouest du puits ; les balises orange de l’est servent au treuil des rescapés. E engage le segment local depuis l’un de ses deux terminaux lorsque le joueur est seul et que le dégagement permet le transfert. Une transition contrôlée rejoint la corde. Le changement de segment passe par la sortie sur une dalle puis l’approche de la station suivante.
+
+| Commande | Comportement sur la corde | Valeur actuelle |
+| --- | --- | --- |
+| S | Descendre | 2,8 m/s |
+| Z ou W | Remonter | 1,6 m/s ; dépense de 10 points d’endurance/s |
+| Ctrl avec une direction verticale | Approche précise dans les deux sens | 0,75 m/s ; montée précise à 5 points/s |
+| Maj avec S | Descente rapide | 4,2 m/s ; dépense de 8 points/s |
+| A ou Q, D | Décalage latéral borné | Axe Z, limite de ±0,65 m autour du segment |
+| Aucune direction verticale | Frein automatique | Décélération jusqu’à l’arrêt ; aucune chute libre |
+| Espace | Verrouiller ou libérer la corde | Verrou persistant, vitesse nulle immédiatement |
+| X | Stabiliser le balancement | 16 s ; un ancrage consommé seulement si la pose est acceptée |
+| E | Quitter la corde vers un palier | Seulement si les conditions de sortie sont réunies |
+
+La vitesse atteint progressivement sa cible avec une accélération de 7,5 m/s². Le frein automatique emploie 16 m/s² ; Espace constitue un arrêt explicite et persistant. Le verrou a priorité sur les directions, puis viennent l’arrêt pour fatigue, Ctrl et enfin la descente rapide. Maj ne crée pas de remontée rapide. La descente normale et l’approche précise descendante ne consomment pas d’endurance.
+
+À l’arrêt, la récupération est de 12 points/s. Épuiser l’endurance immobilise la corde ; le personnage ne lâche pas prise. Le mouvement redevient possible après récupération de 20 points. Attendre peut donc être un choix utile avant de remonter. Le joueur ne doit pas multiplier les appuis pour empêcher une chute ni subir une perte de vie parce qu’il lit les commandes.
+
+### Sortie, longueur et limites
+
+Le segment actif reste borné par ses deux étages. Le déplacement latéral se fait autour de l’axe ouest x = −1,3 m, z = 0. Le joueur retrouve la station sur la dalle à x = −3,8 m ; il ne se détache pas au centre du vide. Les surfaces d’arrêt à l’ouest interrompent la continuité entre les segments, tandis que le couloir du treuil des personnes demeure libre à l’est.
+
+E autorise la sortie à moins de **0,45 m** de la hauteur du terminal, avec une vitesse verticale inférieure ou égale à **0,05 m/s**, un décalage latéral inférieur ou égal à **0,25 m** et un dégagement suffisant pour la capsule. Le transfert de sortie dure 0,85 s et reste contrôlé physiquement. Une demande refusée laisse Alex attaché et indique le geste utile : rejoindre le terminal, s’arrêter, se recentrer ou attendre le dégagement. Un appui en pleine descente ne devient jamais une chute volontaire non annoncée.
+
+Le HUD indique le segment, les étages reliés, la progression, la longueur ou distance de segment, la vitesse, l’endurance, l’état de freinage et les commandes disponibles. Ces valeurs concernent le modèle de jeu ; elles ne constituent ni un calcul d’efforts réel ni une simulation de corde segmentée autour des obstacles. La caméra conserve le regard du joueur. Le mode de mouvements réduits ne doit pas masquer la géométrie ou les conditions de sortie.
+
+### Stabilisation, secours et reprise
+
+X garde sa fonction d’aide facultative. Il stabilise la ligne pendant seize secondes sans remplacer le segment ni déplacer sa destination. Un stock nul ou une stabilisation déjà active refuse l’usage sans consommer d’ancrage. Son expiration rend le balancement ordinaire ; elle ne provoque ni rupture, ni chute, ni disparition du passage. La route principale demeure praticable avec zéro ancrage consommable.
+
+Le rappel personnel est **indisponible pendant le portage**. La personne doit rejoindre sa balise de treuil à son étage d’origine ; emprunter l’escalier en la portant reste possible, mais ne déplace pas le point de transfert autorisé. La balise d’un autre étage explique le retour nécessaire. Le treuil des personnes monte toujours jusqu’au toit, indépendamment des segments de déplacement d’Alex.
+
+Pause, options, journal et toute suspension de la mission figent le temps du rappel, la vitesse, le verrou, la stabilisation et l’excitation du vent. La reprise continue le même état de session. Une interruption complète de la partie recharge le dernier palier validé : ni position suspendue, ni demi-escalier, ni transfert d’entrée ou de sortie ne deviennent une sauvegarde libre. Une demande de checkpoint pendant ce mouvement est différée jusqu’à la prochaine dalle admissible, hors du volume de l’escalier, sans remplacer entre-temps le point sûr précédent. Le schéma 3 reste inchangé.
+
+L’annexe [Traversée et rappel v0.9](TRAVERSEE_ET_RAPPEL_V0.9.md) développe le graphe, les gestes d’apprentissage, la signalétique, les critères physiques et les extensions de campagne. Les franchissements obliques, relais persistants, personnes accompagnantes sur corde et cordes libres restent des cibles distinctes.
 
 ## 4 Interaction et lisibilité
 
 Pour les interactions de mission, le jeu cherche l’objet utilisable le plus proche au même étage, à moins de **trois mètres en distance horizontale**. Un objet consommé est ignoré. La sélection de ces commandes de mission ne vérifie pas encore une ligne de vue par rayon : un objet peut donc être proposé à travers une cloison si son placement est trop proche. Le catalogue de props doit tenir compte de cette limite et réserver des volumes sans concurrence autour des interactions essentielles.
 
-E déclenche l’action contextuelle : corde, rescapé, balise, preuve, ravitaillement ou terminal. Le texte doit nommer la conséquence : « sécuriser », « confirmer le treuillage », « lire » ou « transmettre ». Un verbe générique identique pour tous les objets réduit la capacité du joueur à anticiper ce qui va se passer.
+E déclenche l’action contextuelle : station de rappel personnel, rescapé, balise de treuil, preuve, ravitaillement ou terminal. Les deux systèmes de corde disposent de repères distincts ; une balise de treuil ne raccorde plus Alex à une ligne globale. Le texte doit nommer la conséquence : « sécuriser », « confirmer le treuillage », « lire » ou « transmettre ». Un verbe générique identique pour tous les objets réduit la capacité du joueur à anticiper ce qui va se passer.
 
 Pour les actions de secours, la cible prévoit une distance de manipulation adaptée à l’objet, de 1,4 à 2,2 m pour une action manuelle ordinaire, avec vérification de visibilité et priorité au regard. Il s’agit d’une plage de prototypage, pas d’un changement déjà appliqué. Les grandes balises peuvent conserver une portée plus généreuse. Toute nouvelle durée d’appui doit être testée avec annulation, clavier et options de maintien simplifié.
 
@@ -123,7 +170,7 @@ La radio sert d’abord à l’opération : localiser, demander une confirmation
 
 L’appel R demande une réponse contextuelle. Pendant un portage ou un treuillage, il rappelle l’action utile avec priorité. Pendant l’incident actif, il ne concurrence pas le canal de secours. Après les trois transferts, il indique l’observation encore nécessaire ou le refuge. Au spa, avec suffisamment d’indices, une source non identifiée peut mentir sur l’état du toit ; cette phrase ne modifie ni les sauvés ni le monde.
 
-L’écho facultatif de Bravo attend Samuel confirmé, l’après-impact et six secondes calmes au 27. La vérification attend ensuite deux secondes calmes au 27, au 25 ou au toit. Le portage, le treuil, la corde, la pause, l’arrivée et une radio occupée empêchent l’émission. Les événements sont enregistrés une seule fois. La progression principale ne dépend pas de leur écoute.
+L’écho facultatif de Bravo attend Samuel confirmé, l’après-impact et six secondes calmes au 27. La vérification attend ensuite deux secondes calmes au 27, au 25 ou au toit. Le portage, le treuil, la pause, l’arrivée et une radio occupée empêchent l’émission. Ces échanges exigent aussi un palier admissible : support sous les pieds, vitesse verticale absolue d’au plus 0,15 m/s, hauteur de dalle et position hors escalier. La corde, une volée ou un saut ne laissent donc pas avancer leur temps de calme. Les événements sont enregistrés une seule fois. La progression principale ne dépend pas de leur écoute.
 
 Une preuve actuelle est une interaction collectée et mémorisée.
 
@@ -137,9 +184,9 @@ La première clôture exige la sauvegarde achevée au 25 puis lance un épilogue
 
 Le schéma courant de sauvegarde est **3**. Il conserve le monde, les personnes, ressources et objets consommés, ainsi que le journal et les événements radio. Les anciens schémas 1 et 2 sont validés et migrés en mémoire sans réécrire le fichier à la simple lecture. Les transmissions historiques ne sont pas rejouées en file de sous-titres après reprise. Les préférences de confort sont indépendantes de la mission.
 
-Les points sûrs sont destinés aux paliers et aux confirmations de transfert. Une phase mobile de l’effondrement, une personne suspendue et une position de corde ne sont pas des états de reprise libre. L’incident est reconstruit dans un état stable. L’état médical au toit est dérivé du registre ; il ne dépend pas de la survie d’une animation.
+Les points sûrs sont destinés aux paliers stables et aux confirmations de transfert. La progression d’étage attend l’arrivée à hauteur de sa dalle ; traverser une demi-volée ne suffit pas. Une phase mobile de l’effondrement, une personne suspendue, une position de corde et un transfert d’entrée ou de sortie ne sont pas des états de reprise libre. L’incident est reconstruit dans un état stable. L’état médical au toit est dérivé du registre ; il ne dépend pas de la survie d’une animation.
 
-La santé nulle ou une chute hors de l’espace jouable conduit à un échec. Le prototype détecte notamment une position verticale inférieure à deux mètres. La reprise doit restaurer les réussites du dernier point sûr et présenter le contexte. La cible de campagne pourra proposer une récupération par une équipe dans certains espaces, mais cette possibilité ne doit pas être promise dans la tranche actuelle.
+La santé nulle conduit à l’échec prévu par la mission. Une chute hors de l’espace jouable reprend le dernier point enregistré ; le prototype la détecte sous deux mètres de hauteur ou après une chute à pied de plus de 3,5 m sous le dernier appui. Sauter dans le puits ne constitue donc pas un raccourci vers un étage inférieur. La reprise doit restaurer les réussites du dernier point sûr et présenter le contexte. La cible de campagne pourra proposer une récupération par une équipe dans certains espaces, mais cette possibilité ne doit pas être promise dans la tranche actuelle.
 
 ## 9 Personnages : envies, objectifs, peurs et fonctions
 
@@ -191,7 +238,7 @@ Les fiches suivantes servent à écrire les comportements et dialogues. Leurs mo
 
 **Peur et tension.** Il craint de devenir une charge pour l’autre équipe, ce qui peut le pousser à retarder une demande d’aide. Le joueur peut lui fournir un relais ou une route ; l’écriture doit montrer la conséquence avant une éventuelle séparation.
 
-**Fonction et cible.** Allié de mission, pas compagnon autonome livré en 0.8.0. Une première version pourrait utiliser des postes préparés et des transitions contrôlées, puis une navigation locale. Les états utiles sont engagé, contact établi, route partagée, isolé et pris en charge. Sa survie future dépend de décisions documentées, jamais d’un silence aléatoire destiné à surprendre.
+**Fonction et cible.** Allié de mission, pas compagnon autonome livré en 0.9.0. Une première version pourrait utiliser des postes préparés et des transitions contrôlées, puis une navigation locale. Les états utiles sont engagé, contact établi, route partagée, isolé et pris en charge. Sa survie future dépend de décisions documentées, jamais d’un silence aléatoire destiné à surprendre.
 
 ### Inès Valen — distinguer une estimation d’un fait
 
@@ -242,7 +289,7 @@ Le [catalogue des étages](CATALOGUE_ETAGES.md) détermine où les boucles se co
 
 ## 12 Extension de campagne : confrontation, preuve et traversée
 
-Cette section définit des **cibles futures**, sans ajouter de commande ou d’IA au prototype 0.8. La progression suit [l’annexe de l’horreur](PROGRESSION_HORREUR_V0.8.md). Alex reste un secouriste : ses moyens principaux sont l’observation, la communication, le déplacement, l’équipement et les routes de retour. La découverte de l’Enfer ne le transforme pas instantanément en combattant surhumain.
+Cette section définit des **cibles futures**, sans ajouter de commande ou d’IA au prototype 0.9. La progression suit [l’annexe de l’horreur](PROGRESSION_HORREUR_V0.8.md). Alex reste un secouriste : ses moyens principaux sont l’observation, la communication, le déplacement, l’équipement et les routes de retour. La découverte de l’Enfer ne le transforme pas instantanément en combattant surhumain.
 
 ### Corps humain, distance et défense
 

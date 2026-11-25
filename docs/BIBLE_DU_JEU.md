@@ -2,15 +2,17 @@
 
 ## Bible de conception du jeu
 
-**Version 0.8.0 — Hallucinations progressives, menace humaine et dimension infernale — 25 novembre 2026**
+**Version 0.9.0 — Traversées locales, rappel contrôlé et descente infernale — 25 novembre 2026**
 
 **Création et direction du projet : Darknigthmare. Dépôt : The-Descents.**
 
 Cette bible développe les notes fondatrices en une campagne de sauvetage et d’horreur à la première personne. Elle décrit l’univers, les personnages, les systèmes, les possibilités du joueur, la progression des étages et les règles de génération. La direction confirmée le 25 novembre 2026 fixe une progression précise : perceptions discrètes, phénomènes persistants, humains dangereux, révélation d’expériences sur une dimension infernale, puis traversée réelle de l’Enfer. L’incertitude appartient à ce qu’Alex peut savoir au début ; la destination finale est un fait du récit. Les noms et les variantes de production restent des propositions originales à éprouver.
 
-Le prototype 3D Godot 0.8.0 conserve un toit jouable et six étages, du 30 au 25, avec rappel, exploration, trois rescapés et un refuge. Les deux tours commencent intactes ; l’effondrement d’Hespérie est observé depuis la baie Est du 29. Bravo se replie vers l’intérieur et les personnes confirmées apparaissent au poste médical du toit. La radio ordonne ses sous-titres, conserve les trente-deux dernières transmissions et peut faire revenir un fragment de Bravo après Samuel. L’ouverture de marque et l’accueil contextuel de la 0.4 sont conservés. La 0.5 anime l’approche des deux appareils, leurs portes et le débarquement des six membres de toit ; elle enrichit les volumes des hélicoptères, des sauveteurs et du littoral. Douze objets examinables donnent une lecture des lieux qui évolue avec l’incident et les réceptions médicales confirmées. La 0.6 rend le portage visible à la première personne, met en scène le panier et le câble du treuil, puis accompagne les personnes reçues jusqu’à l’abri. Elle ajoute un ciel maritime stratifié, une pluie extérieure et des réglages de volume, sensibilité, champ de vision et regard inversé accessibles avant et pendant la partie. Les annexes [Sauvetage](SAUVETAGE_V0.6.md), [Ambiance](AMBIANCE_V0.6.md) et [Confort](CONFORT_V0.6.md) précisent ces contrats. La 0.7 organise le journal en quatre onglets, présente un bilan issu des faits enregistrés et clôt la tranche par un épilogue en jeu de quinze secondes, passable et rejouable. Le relais du 25 reste la fin jouable ; sa reprise ouvre directement le bilan. L’annexe [Dossier et épilogue](DOSSIER_ET_EPILOGUE_V0.7.md) détaille états, textes, plans, commandes et critères de revue. La campagne complète, les personnages et voix définitifs, les souterrains, la coopération et le portage Unreal Engine 5 restent à produire. Le [rapport de livraison](ETAT_DE_LIVRAISON.md) distingue les fonctions vérifiées, les exports et les limites des essais.
+Le prototype 3D Godot 0.9.0 conserve un toit jouable et six étages, du 30 au 25, avec rappel, exploration, trois rescapés et un refuge. Les deux tours commencent intactes ; l’effondrement d’Hespérie est observé depuis la baie Est du 29. Bravo se replie vers l’intérieur et les personnes confirmées apparaissent au poste médical du toit. La radio ordonne ses sous-titres, conserve les trente-deux dernières transmissions et peut faire revenir un fragment de Bravo après Samuel. L’ouverture de marque et l’accueil contextuel de la 0.4 sont conservés. La 0.5 anime l’approche des deux appareils, leurs portes et le débarquement des six membres de toit ; elle enrichit les volumes des hélicoptères, des sauveteurs et du littoral. Douze objets examinables donnent une lecture des lieux qui évolue avec l’incident et les réceptions médicales confirmées. La 0.6 rend le portage visible à la première personne, met en scène le panier et le câble du treuil, puis accompagne les personnes reçues jusqu’à l’abri. Elle ajoute un ciel maritime stratifié, une pluie extérieure et des réglages de volume, sensibilité, champ de vision et regard inversé accessibles avant et pendant la partie. Les annexes [Sauvetage](SAUVETAGE_V0.6.md), [Ambiance](AMBIANCE_V0.6.md) et [Confort](CONFORT_V0.6.md) précisent ces contrats. La 0.7 organise le journal en quatre onglets, présente un bilan issu des faits enregistrés et clôt la tranche par un épilogue en jeu de quinze secondes, passable et rejouable. Le relais du 25 reste la fin jouable ; sa reprise ouvre directement le bilan. L’annexe [Dossier et épilogue](DOSSIER_ET_EPILOGUE_V0.7.md) détaille états, textes, plans, commandes et critères de revue. La campagne complète, les personnages et voix définitifs, les souterrains, la coopération et le portage Unreal Engine 5 restent à produire. Le [rapport de livraison](ETAT_DE_LIVRAISON.md) distingue les fonctions vérifiées, les exports et les limites des essais.
 
 La 0.8 remplace la poursuite agressive précoce du spa par une présence perceptive sans dégâts. Une silhouette périphérique aux suites du 29 et des traces humides aux archives du 28 préparent cette récurrence ; les secours, l’incident, les pauses et les refuges gardent la priorité. Les humains hostiles, les laboratoires profonds et l’Enfer ne deviennent pas jouables dans cette tranche. L’annexe [Progression de l’horreur](PROGRESSION_HORREUR_V0.8.md) fixe les paliers, leurs preuves, les rencontres, les expériences et le passage physique.
+
+La 0.9 développe les passages entre les niveaux déjà jouables. Trois rappels par des ouvertures de service alternent avec trois escaliers locaux : toit–30, escalier 30–29, rappel 29–28, escalier 28–27, rappel 27–26 puis escalier 26–25. Chaque liaison est réversible et ne relie qu’une paire d’étages. La corde personnelle dispose de vitesses distinctes, d’un frein, d’un verrou, d’une stabilisation facultative et de règles de sortie sur la dalle. Le treuil des rescapés conserve sa propre ligne jusqu’au toit. Les règles, les commandes et les limites actuelles figurent dans [Traversée et rappel v0.9](TRAVERSEE_ET_RAPPEL_V0.9.md).
 
 Le [Catalogue des étages](CATALOGUE_ETAGES.md) précise les trente niveaux de campagne et leur périmètre jouable. Les dossiers [Effondrement en direct](EFFONDREMENT_EN_DIRECT.md), [Communications et équipes](COMMUNICATIONS_ET_EQUIPES.md), [Props et interactions](PROPS_INTERACTIONS.md), [Ennemis et statistiques](ENNEMIS_STATISTIQUES.md), [Scènes cinématiques](SCENES_CINEMATIQUES.md) et [Gameplay détaillé](GAMEPLAY_DETAILLE.md) complètent cette bible. Les fiches d’objets, rencontres et scènes constituent des spécifications de production, avec des valeurs initiales à éprouver ; leur présence dans le document ne signifie pas qu’elles existent dans le moteur.
 
@@ -179,7 +181,7 @@ Elle peut aider concrètement à ouvrir un sas ou à stabiliser un relais. Cette
 
 ### Les autres équipes
 
-Les groupes de secours possèdent des indicatifs simples : **Corde**, **Médical**, **Échelle** et **Relais**. Corde et Médical s’installent sur Aube, sous le commandement de Varga. Le détachement **Bravo**, qui réunit Échelle et Relais, est déposé sur Hespérie pour localiser les personnels techniques et vérifier les signaux. Deux hélicoptères et des groupes visibles sur chaque toit matérialisent cette répartition dans la maquette 0.8.0 ; Bravo se replie à couvert et les sauvés sont visibles au poste médical. La 0.6 donne des poses de treuil et d’accompagnement à deux membres d’Alpha. Les rencontres détaillées, le portage des caisses, le contact des mains et les animations de travail définitives appartiennent à la production de campagne.
+Les groupes de secours possèdent des indicatifs simples : **Corde**, **Médical**, **Échelle** et **Relais**. Corde et Médical s’installent sur Aube, sous le commandement de Varga. Le détachement **Bravo**, qui réunit Échelle et Relais, est déposé sur Hespérie pour localiser les personnels techniques et vérifier les signaux. Deux hélicoptères et des groupes visibles sur chaque toit matérialisent cette répartition dans la maquette 0.9.0 ; Bravo se replie à couvert et les sauvés sont visibles au poste médical. La 0.6 donne des poses de treuil et d’accompagnement à deux membres d’Alpha. Les rencontres détaillées, le portage des caisses, le contact des mains et les animations de travail définitives appartiennent à la production de campagne.
 
 Bravo cesse de répondre lors de l’impact. Le journal porte « liaison perdue », sans déclarer les équipiers morts. Une reprise ambiguë de son indicatif plus bas pourra préparer les phénomènes d’imitation ; elle doit être distinguée d’une confirmation humaine vérifiée. Varga demeure joignable par intermittence et les victimes prises en charge restent au registre. La police sécurisera les zones d’arrivée et les archives dans la campagne lorsqu’elle le pourra.
 
@@ -260,24 +262,30 @@ Les grands franchissements sont préparés et lisibles. Le jeu ne demande pas un
 
 ## 9 Le rappel et les points d’appui
 
-La corde constitue un système de déplacement et un élément visuel central. Le joueur voit la ligne, son point de départ et les changements de direction. Au début, elle relie directement au toit. Plus bas, les relais créent une chaîne de segments dont l’état peut être consulté.
+La corde constitue un système de déplacement et un élément visuel central. La 0.9 distingue deux usages. Le treuil des personnes relie les balises d’extraction au poste médical du toit. Le rappel personnel relie seulement deux terminaux proches par un segment identifié, à l’ouest du puits. Le joueur voit son point de départ, sa destination et la dalle où il doit sortir ; la ligne ne permet pas de sauter plusieurs étages.
 
-Le prototype teste une descente contrôlée dans un axe vertical avec balancement latéral limité. La campagne pourra ajouter des franchissements obliques, des changements de ligne et des transferts de personnes. Le modèle physique doit privilégier une commande prévisible, compatible avec le clavier et les options contre le mal des transports.
+Les escaliers praticables sont des fragments locaux du bâtiment. Ceux du prototype relient 30–29, 28–27 et 26–25 dans les deux sens. Une cage ne devient pas automatiquement un accès continu jusqu’au rez-de-chaussée : après chaque paire, la route quitte l’escalier et traverse un plateau jusqu’au prochain point de rappel. Ces passages existent physiquement, avec deux volées et un palier, sans transition qui téléporte d’une salle à une autre.
 
-### États de déplacement proposés
+Le rappel actuel propose descente normale, remontée, approche précise, descente rapide, frein automatique, verrouillage volontaire et stabilisation facultative. Monter ou descendre vite demande de l’endurance ; être à court impose un repos attaché sans lâcher la corde. Le joueur doit s’arrêter et se recentrer près d’un terminal avant de sortir. Pause et reprise conservent l’état de session ; le checkpoint reste un palier stable.
 
-| État | Action du joueur | Limite et retour visuel |
-|---|---|---|
-| Au sol | Marcher, courir, s’accroupir, examiner | Vitesse réduite en portant du matériel ou en accompagnant |
-| Préparation | Choisir un point utilisable et connecter la ligne | Validation claire de la surface et du trajet |
-| En suspension | Descendre, remonter, freiner, se décaler | Longueur, angle et vitesse représentés sans encombrer l’écran |
-| En appui | Stabiliser contre une paroi ou une plateforme | Mouvement amorti ; accès à certaines interactions |
-| Changement de relais | Confirmer le nouveau segment | Transition protégée ; aucune rupture par un double clic accidentel |
-| Accompagnement | Guider une personne vers un relais sécurisé | Limitation de vitesse et surveillance de sa progression |
+### États de déplacement et statut
 
-Les ancrages fixes du bâtiment ne consomment pas d’objet. Un point improvisé utilise un consommable de jeu et exige une surface marquée comme adaptée par le système. Une façade décorative ne devient pas un appui valable uniquement parce que le joueur possède un piton. Les limites de simulation sont assumées : les valeurs d’effort et la pose sont des abstractions, pas un tutoriel d’intervention réelle.
+| État | Action du joueur | Limite et retour visuel | Statut |
+|---|---|---|---|
+| Au sol | Marcher, courir, s’accroupir, examiner | Vitesse réduite en portant une personne | Présent |
+| Escalier local | Monter ou descendre les deux volées | Une paire d’étages ; sol et parois physiques | Présent |
+| Engagement | Rejoindre un point de rappel puis confirmer | Personnage seul, destination nommée et passage dégagé | Présent |
+| En suspension | Descendre, remonter, freiner, se décaler | Segment borné, vitesse et endurance visibles | Présent |
+| Corde verrouillée | Libérer volontairement le verrou | Hauteur arrêtée, récupération d’endurance | Présent |
+| Approche et sortie | Se recentrer près d’un terminal puis quitter la corde | Arrêt, tolérance de hauteur et dégagement de capsule | Présent |
+| Relais persistant | Poser et confirmer une nouvelle liaison | Identifiant, état sauvegardé et retour préparé | Campagne future |
+| Accompagnement sur corde | Guider une personne équipée vers un relais | Animation et capacité propres, transfert confirmé | Campagne future |
 
-Un indicateur de tension signale une combinaison défavorable d’angle, de mouvement ou d’appui. Les premières occurrences enseignent la correction. La rupture d’une ligne pour cause de ressource manquante ne peut survenir si la génération a rendu obligatoire une dépense supérieure au matériel accessible.
+La première tranche ne permet pas d’engager le rappel avec une personne portée. L’escalier reste utilisable pendant le portage, mais le treuil ne reçoit cette personne qu’à sa balise d’origine. Cette règle évite de transformer la ligne personnelle en moyen d’extraction implicite. La campagne pourra ajouter des franchissements obliques et des transferts accompagnés lorsque leur animation, leur collision et leur persistance seront réellement produits.
+
+Les ancrages fixes du bâtiment ne consomment pas d’objet. Dans la campagne future, un point improvisé utilisera un consommable de jeu et exigera une surface marquée comme adaptée par le système. Une façade décorative ne devient pas un appui valable uniquement parce que le joueur possède un piton. Les limites de simulation sont assumées : les valeurs d’effort et la pose sont des abstractions, pas un tutoriel d’intervention réelle.
+
+Pour la campagne, un indicateur de tension pourra signaler une combinaison défavorable d’angle, de mouvement ou d’appui. Il ne constitue pas encore un calcul d’efforts dans le prototype. Les premières occurrences devront enseigner la correction. La rupture d’une ligne pour cause de ressource manquante ne peut survenir si la génération a rendu obligatoire une dépense supérieure au matériel accessible.
 
 La progression conserve toujours un trajet sûr vers le dernier refuge pendant les actes supérieurs, sauf événement narratif annoncé. Les grands changements structurels possèdent une sauvegarde préalable et une solution secondaire validée. Après la chute, le nouveau réseau de retour est reconstruit dans un autre espace.
 
@@ -289,8 +297,8 @@ L’inventaire distingue le matériel permanent et les consommables. Les objets 
 |---|---|---|---|
 | Lampe de casque | Lire les pièces et les marquages | Éclairage orienté ; panne ponctuelle écrite, évitable dans les modes confort | Faisceau, témoin, réglage d’intensité |
 | Radio | Appels, confirmation, triangulation narrative | Portée dépendant des relais ; messages mémorisables | Indicatif, horodatage, transcription |
-| Harnais et corde | Descente, remontée et ligne de retour | Distance et état des appuis | Segment actif et prochain point sûr |
-| Ancrages consommables | Créer un relais autorisé | Stock limité ; alternative garantie sur route principale | Nombre et prévisualisation |
+| Harnais et corde | Descente, remontée et ligne de retour | Segment borné ; endurance de montée ou de descente rapide | Segment actif, état de freinage et prochain point sûr |
+| Ancrages consommables | Stabiliser seize secondes dans le prototype ; relais autorisé dans la campagne future | Stock limité ; aucune dépense obligatoire sur la route actuelle | Stock et stabilisation active ; prévisualisation future du relais |
 | Hache de secours | Dégager une ouverture légère et se défendre | Temps, bruit, matériaux compatibles | Icône d’action et durée prévue |
 | Extincteur | Franchir un foyer limité, dégager une visibilité | Charge ; incapable d’éteindre tout incendie | Charge et zone d’effet |
 | Fusée de signalisation | Éclairer, attirer un regard, repousser certaines présences | Usage unique et durée courte | Halo, minuterie discrète |
@@ -424,7 +432,7 @@ Pour le prototype, un sous-ensemble de ce contrat suffit. Les six fonctions d’
 
 ## 15 Catalogue d’événements
 
-La plupart de ces événements sont des modules de campagne proposés. Une entrée est sélectionnée selon son contexte, ses prérequis et le temps de récupération disponible. L’effondrement observé au 29, introduit en 0.2 et conservé en 0.8.0, constitue l’événement fixe du prototype ; sa présence ne dépend pas d’un tirage aléatoire. Le [dossier de séquence](EFFONDREMENT_EN_DIRECT.md) distingue son implémentation en maquette des enrichissements cinématiques futurs.
+La plupart de ces événements sont des modules de campagne proposés. Une entrée est sélectionnée selon son contexte, ses prérequis et le temps de récupération disponible. L’effondrement observé au 29, introduit en 0.2 et conservé en 0.9.0, constitue l’événement fixe du prototype ; sa présence ne dépend pas d’un tirage aléatoire. Le [dossier de séquence](EFFONDREMENT_EN_DIRECT.md) distingue son implémentation en maquette des enrichissements cinématiques futurs.
 
 | Événement | Conditions | Action et information offertes au joueur |
 |---|---|---|
@@ -581,7 +589,7 @@ Le prototype doit répondre à des questions concrètes. Le rappel donne-t-il en
 
 ### Périmètre de la tranche
 
-| Zone | Fonction | Périmètre du prototype 0.8.0 |
+| Zone | Fonction | Périmètre du prototype 0.9.0 |
 |---|---|---|
 | Toit | Arrivée et briefing | Approche temps réel, deux tours intactes, deux appareils, équipes en maquette, réception nominative des rescapés et première ligne |
 | 30 | Restaurant panoramique | Ana Rios, maître d’hôtel, première rescapée et apprentissage de l’exploration |
@@ -720,7 +728,7 @@ La personnalisation complète d’Alex, le nombre exact de survivants de la camp
 
 La révision ajoute des spécifications transversales assez précises pour préparer une nouvelle tranche sans confondre conception et livraison. Le catalogue fournit trente fiches d’assemblage : volumes proposés, circulation, accessoires, rythme, sauvegarde et contrôle du retour. Les étages 24 à 1 restent à construire ; la fiche d’un étage déjà représenté décrit aussi des enrichissements non intégrés.
 
-Le dossier de props comportait **52 entrées P01 à P52** à cette étape. La 0.8 le porte à **60 fiches P01 à P60**, en ajoutant huit accessoires d’expérimentation, de franchissement et de retour infernal, encore à produire. Chaque fiche donne fonction, dimensions, état actuel, interaction cible, états, retour sonore, placement et points de validation. Le dossier de menaces sépare **E00**, silhouette réellement programmée au spa, de **seize archétypes de campagne E01 à E16** dans l’état actuel de la conception, avec comportements, valeurs initiales, signaux, contre-jeu, limites de génération et persistance. L’absence de points de vie sur une voix ou une empreinte est un choix fonctionnel, pas une fiche incomplète.
+Le dossier de props comportait **52 entrées P01 à P52** à cette étape. La 0.8 le porte à **60 fiches P01 à P60**, en ajoutant huit accessoires d’expérimentation, de franchissement et de retour infernal, encore à produire. La 0.9 ajoute quatre références de traversée P61–P64 et porte le catalogue courant à 64 fiches. Chaque fiche donne fonction, dimensions, état actuel, interaction cible, états, retour sonore, placement et points de validation. Le dossier de menaces sépare **E00**, silhouette réellement programmée au spa, de **seize archétypes de campagne E01 à E16** dans l’état actuel de la conception, avec comportements, valeurs initiales, signaux, contre-jeu, limites de génération et persistance. L’absence de points de vie sur une voix ou une empreinte est un choix fonctionnel, pas une fiche incomplète.
 
 Le gameplay détaillé consignait à cette étape les paramètres de déplacement, corde, ressources, portée d’interaction, treuillage et dangers. Ses simplifications de l’époque comprenaient l’absence de capsule basse, les interactions de mission sélectionnées par proximité, les inspections soumises à la visée et à la visibilité, le portage abstrait, une menace au mouvement direct et une fusée à effet global. La 0.6 a ajouté la présentation du portage et la 0.8 retire cette poursuite précoce : la fusée masque désormais les silhouettes perceptives sans déplacer un ennemi. Les plages proposées pour l’accompagnement et les nouvelles interactions restent à essayer. Les motivations, objectifs et peurs des personnages relient leur rôle mécanique à leurs décisions narratives, sans leur inventer des statistiques psychologiques déjà simulées.
 
@@ -735,3 +743,11 @@ La ligne directrice reste stable : une opération humaine et méthodique descend
 La progression n’est plus laissée ouverte entre rêve et Enfer symbolique. Le début entretient un doute perceptif ; les phénomènes deviennent persistants ; des humains dangereux occupent les secteurs intermédiaires ; les expériences de SILLAGE révèlent une dimension infernale ; la campagne franchit cette frontière. La subtilité des étages hauts et la réalité du dernier acte sont compatibles parce que le savoir du joueur évolue.
 
 La tranche v0.8 réalise seulement les prémices dans les lieux 29, 28 et 26, avec secours et effondrement prioritaires. Les nouveaux catalogues portent **60 props** et **E00 plus 16 archétypes de campagne**. Les nouvelles fiches détaillent l’intention, les paramètres proposés, les scènes, les interactions et la reprise ; elles ne valent pas livraison d’IA humaines, de combat complet ou de niveaux infernaux. Les choix de persistance et les valeurs exécutées sont ceux du code et des rapports de cette version.
+
+## 30 Traversées locales et continuation 0.9
+
+La 0.9 met en pratique la variété de descente dans le secteur existant : trois rappels par des ouvertures alternent avec trois escaliers praticables sur une seule paire d’étages. Les six liaisons sont réversibles. Le personnage retrouve un plateau entre deux segments ; le treuil des rescapés conserve sa ligne continue et indépendante jusqu’au toit.
+
+Le rappel développe les gestes de montée, descente, approche précise, descente rapide, freinage, verrouillage, repos et stabilisation facultative. Les vitesses, l’endurance et les conditions de sortie sont indiquées dans le gameplay détaillé. La collision du personnage reste active pendant les transferts de station ; la pause fige le mouvement. Les points sûrs exigent une arrivée sur dalle hors escalier, et le schéma 3 reste inchangé.
+
+Le catalogue courant comporte **64 props P01 à P64**, avec les quatre nouvelles fiches de traversée et les états présents ou futurs clairement séparés. SC03 développe l’apprentissage joué sans déplacer les scènes suivantes. La nouvelle annexe [Traversée et rappel](TRAVERSEE_ET_RAPPEL_V0.9.md) précise le graphe, les volumes, les gestes, les priorités, la reprise et les critères de production. Les résultats de tests et d’exports restent consignés dans les rapports de livraison, sans être déduits de la seule présence de cette conception.

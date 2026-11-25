@@ -62,7 +62,11 @@ func _run() -> void:
 	mission.elapsed = 35.9
 	_check(not mission._can_observe_incident() and not mission._start_incident(), "The incident can start before the aircraft leave.")
 	mission.elapsed = 40.0
-	mission.player.engage_rope(29)
+	_move_to(_find("rappel", 29))
+	await physics_frame
+	mission._interact_node(_find("rappel", 29))
+	mission.player._process_rope(0.85)
+	_check(mission.player.on_rope and mission.player.rope_snapshot().get("route_id", "") == "R29_28", "The incident fixture did not engage the local 29–28 rope.")
 	_check(not mission._can_observe_incident() and not mission._start_incident(), "A player suspended in the shaft can trigger the window incident.")
 	_to_observation(false)
 	_check(not mission._can_observe_incident(), "Looking away satisfies the observation gate.")
@@ -207,7 +211,7 @@ func _move_to(target: Node3D) -> void:
 		return
 	var number: int = int(target.get_meta("floor", 31))
 	mission.player.teleport_to_floor(number)
-	mission.player.position = target.global_position + Vector3(1.1, 0.06, 0.0)
+	mission.player.position = target.global_position + Vector3(0.0 if target.get_meta("kind", "") == "rappel" else 1.1, 0.06, 0.0)
 	mission.last_floor = number
 
 

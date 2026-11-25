@@ -9,7 +9,7 @@ const ARRIVAL_CUES: Array = [
 	{"at": 0.6, "speaker": "HÉLIX 2  /  APPROCHE NACRE", "message": "Nacre en vue. La ville est sous les eaux. Les deux tours sont toujours debout.", "duration": 6.4},
 	{"at": 7.2, "speaker": "VARGA  /  OPÉRATION ORPHÉE", "message": "Alpha sur Aube, Bravo sur Hespérie. On vérifie chaque signal. Aucun étage n’est déclaré sûr.", "duration": 6.4},
 	{"at": 14.2, "speaker": "BRAVO  /  ÉQUIPE HESPÉRIE", "message": "Bravo posé. Nous voyons votre équipe de l’autre côté. On reste en contact.", "duration": 6.0},
-	{"at": 21.0, "speaker": "VARGA  /  POSTE D’AUBE", "message": "Alex, rejoignez la ligne de rappel. Ana Rios vous attend au restaurant du 30. On tient votre corde.", "duration": 7.0}
+	{"at": 21.0, "speaker": "VARGA  /  POSTE D’AUBE", "message": "Alex, le repère bleu à l’ouest engage le rappel vers le 30. Ana Rios vous attend au restaurant.", "duration": 7.0}
 ]
 
 var mode: String = ""

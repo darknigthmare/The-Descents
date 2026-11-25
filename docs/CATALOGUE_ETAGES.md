@@ -2,11 +2,11 @@
 
 ## Catalogue des étages et des espaces de campagne
 
-**Version 0.8.0 — Assemblage des niveaux et dossier de production — 25 novembre 2026**
+**Version 0.9.0 — Assemblage des niveaux et dossier de production — 25 novembre 2026**
 
 Ce catalogue développe les lieux de la [Bible du jeu](BIBLE_DU_JEU.md). Chaque étage possède une fonction fixe, une scène reconnaissable et un objectif de rythme. La génération fait varier des passages, des objets, des personnes secondaires et des détails compatibles ; elle ne déplace pas les révélations principales au hasard.
 
-**Périmètre du prototype Godot 0.8.0 :** toit jouable d’Aube, Hespérie visible à distance, deux hélicoptères et équipes en maquette, étages 30 à 25, trois rescapés aux 30, 28 et 26, indices aux 29, 27 et 26, ravitaillement aux 29 et 25, anomalie au 26 et balise de fin au refuge 25. Les tours commencent intactes. La baie Est du 29 accueille l’effondrement en temps réel et les conséquences persistantes décrits dans [Effondrement en direct](EFFONDREMENT_EN_DIRECT.md). L’approche temps réel de la 0.5.0 anime les posés, les portes latérales et le déploiement des six membres de toit. Douze observations facultatives sont réparties sur les niveaux jouables. La 0.7 donne au refuge un épilogue en trois plans, un bilan contextuel et le journal à quatre onglets, sans ouvrir d’étage supplémentaire. Le jeu d’acteurs et le doublage détaillés restent des cibles de campagne. Le README et le rapport de validation établissent l’état logiciel et les vérifications.
+**Périmètre du prototype Godot 0.9.0 :** toit jouable d’Aube, Hespérie visible à distance, deux hélicoptères et équipes en maquette, étages 30 à 25, trois rescapés aux 30, 28 et 26, indices aux 29, 27 et 26, ravitaillement aux 29 et 25, anomalie au 26 et balise de fin au refuge 25. Les tours commencent intactes. La baie Est du 29 accueille l’effondrement en temps réel et les conséquences persistantes décrits dans [Effondrement en direct](EFFONDREMENT_EN_DIRECT.md). L’approche temps réel de la 0.5.0 anime les posés, les portes latérales et le déploiement des six membres de toit. Douze observations facultatives sont réparties sur les niveaux jouables. La 0.7 donne au refuge un épilogue en trois plans, un bilan contextuel et le journal à quatre onglets, sans ouvrir d’étage supplémentaire. Le jeu d’acteurs et le doublage détaillés restent des cibles de campagne. Le README et le rapport de validation établissent l’état logiciel et les vérifications.
 
 Les étages 24 à 1, la traversée d’Hespérie, les sous-sols, le seuil 666, les secteurs infernaux et Mountain Hole sont conçus ici mais ne font pas partie de cette première tranche jouable. Les personnes et les incidents supplémentaires restent des propositions de contenu, pas des acteurs déjà intégrés au prototype.
 
@@ -61,11 +61,28 @@ Les numéros décrivent les espaces de la tour, pas une équidistance obligatoir
 
 ## 3 Toit et premiers étages
 
+### Liaisons jouables de la version 0.9
+
+Le noyau de circulation alterne trois rappels personnels et trois escaliers. Une liaison nomme toujours ses deux terminaux ; la présence d’un escalier à un étage ne permet pas de poursuivre automatiquement vers tous les suivants. Les six passages sont réversibles et conservent leur géométrie utile après l’impact. La ligne des rescapés occupe séparément l’est du puits et monte jusqu’au poste médical.
+
+| Identifiant | Paire desservie | Passage réel | Suite après la descente |
+| --- | --- | --- | --- |
+| R31_30 | Toit et restaurant 30 | Segment de rappel à l’ouest | Sortie sur dalle et secours d’Ana ; escalier vers le 29 |
+| S30_29 | Restaurant 30 et suites 29 | Deux volées et un palier | Sortie dans les suites ; baie Est puis rappel vers le 28 |
+| R29_28 | Suites 29 et archives 28 | Segment de rappel à l’ouest | Sortie sur dalle et secours de Samuel ; escalier vers le 27 |
+| S28_27 | Archives 28 et jardin 27 | Deux volées et un palier | Sortie dans le jardin ; preuve d’Alma puis rappel vers le 26 |
+| R27_26 | Jardin 27 et spa 26 | Segment de rappel à l’ouest | Sortie sur dalle et secours de Nora ; escalier vers le 25 |
+| S26_25 | Spa 26 et refuge 25 | Deux volées et un palier | Dalle sûre, bilan et relais de fin de tranche |
+
+Les stations personnelles, les escaliers et leurs sorties sont des points fixes hors des variantes de mobilier. Les surfaces d’arrêt à l’ouest interdisent de prolonger un segment au-delà de son terminal ; elles ne bouchent pas le corridor du panier à l’est. Les appuis, les commandes et les critères de collision sont détaillés dans [Traversée et rappel v0.9](TRAVERSEE_ET_RAPPEL_V0.9.md), avec les props P61–P64.
+
 ### A TOIT Le poste qui attend le retour
 
-**Fonction et image.** Hélisurface, groupes techniques et terrasse de maintenance. Deux appareils et des groupes de secours sont visibles dans la maquette 0.8.0, répartis sur les deux tours. Aube et Hespérie sont droites, séparées et visiblement intactes. Le poste de commandement et le treuil principal sont sur Aube ; Bravo est déposé sur Hespérie. La campagne enrichira les gestes des équipiers, la tente médicale et les transferts de matériel.
+**Fonction et image.** Hélisurface, groupes techniques et terrasse de maintenance. Deux appareils et des groupes de secours sont visibles dans la maquette 0.9.0, répartis sur les deux tours. Aube et Hespérie sont droites, séparées et visiblement intactes. Le poste de commandement et le treuil principal sont sur Aube ; Bravo est déposé sur Hespérie. La campagne enrichira les gestes des équipiers, la tente médicale et les transferts de matériel.
 
 **Traversée et action.** Le joueur reçoit son objectif, consulte le repérage du bâtiment et rejoint l’ancrage marqué du puits de service. L’ouverture constitue un accès de travail identifié. Le passage enseigne l’observation et l’interaction sans présenter le toit comme déjà effondré.
+
+**Liaison locale 0.9.** R31_30 part de la station personnelle occidentale et atteint uniquement le restaurant. La balise orange de l’autre côté du puits reste consacrée au treuil. La première lecture doit faire reconnaître ces deux fonctions avant de demander une descente ; le retour par R31_30 reste possible.
 
 **Danger et contrejeu.** Vent et débris restent principalement une mise en scène dans le tutoriel. Les limites de déplacement sont nettes. Aucun faux pas non enseigné ne supprime immédiatement la partie.
 
@@ -83,6 +100,8 @@ Les retours confirmés sont visibles au poste médical : Ana sur une civière de
 
 **Traversée et danger.** Une courte descente conduit sur un palier dégagé, à côté du puits de service. La première lecture du vide concerne cette ouverture architecturale et la ligne de rappel. Le trajet vers Ana reste calme et praticable. Des obstacles secondaires de campagne pourront être ajoutés sans détruire la façade avant l’effondrement.
 
+**Liaisons locales 0.9.** L’arrivée et le retour au toit utilisent R31_30. La poursuite vers les suites passe par S30_29, un escalier au sud du noyau qui s’arrête au 29. Un prolongement fictif vers le 28 ne doit pas être suggéré par une volée décorative sans accès. Ana peut être portée à pied et dans l’escalier, mais son transfert reste attaché à la balise du 30 ; le rappel personnel est indisponible tant qu’elle est portée.
+
 **Personne et indice.** Ana Rios, maître d’hôtel, est la première rescapée. Elle sait où des clients ont été déplacés. Une table préparée trop récemment introduit un doute discret, sans interrompre le sauvetage.
 
 **Variables.** Chemin à gauche ou à droite du bar, position de trois groupes de tables et accessoires de service. La façade intacte au départ et le trajet du premier sauvetage sont fixes.
@@ -94,6 +113,8 @@ Les retours confirmés sont visibles au poste médical : Ana sur une civière de
 **Fonction et image.** Couloir feutré, chambres communicantes, valises ouvertes et baie Est intacte face à Hespérie. Avant le choc, la vue permet de repérer le détachement déposé sur l’autre tour. Après le choc, le vitrage, les débris et la silhouette inclinée d’Hespérie racontent une transformation vécue par le joueur.
 
 **Traversée et danger.** Après le sauvetage d’Ana et le départ des hélicoptères, l’objectif dirige le joueur vers la baie Est pour repérer Bravo. L’approche et le regard vers Hespérie arment l’événement. Avertissement de 8 s, réplique de 6 s, effondrement de 7 s et impact de 4 s se succèdent avec déplacement et regard libres. Le passage latéral touché devient un détour intérieur lisible. Le puits et le retour vers le toit restent utilisables. Les accessoires ne peuvent obstruer ni la baie d’observation ni ce détour.
+
+**Liaisons locales 0.9.** S30_29 ramène au restaurant. R29_28 descend vers les archives et s’y termine. Les deux points restent distincts de la baie Est et des limites de l’incident. L’événement ne condamne aucun des deux : quitter le noyau pour observer Bravo doit conserver une voie de retour lisible, avant et après le choc.
 
 **Personne et indice.** La chambre 2908 contient le premier indice stable de la tranche : une trace datée qui ne correspond pas aux explications de fermeture. Les occupants ont quitté cette chambre ; leur absence n’est pas assimilée automatiquement à un décès.
 
@@ -111,6 +132,8 @@ Les deux silhouettes de la galerie Bravo se tournent et rentrent à couvert. Les
 
 **Traversée et danger.** Des cloisons créent deux chemins courts vers le même noyau. Le trajet principal reste large pour un transfert. Le danger de campagne peut être un câble sous tension identifiable ; il faut un circuit isolable et une voie d’attente sûre.
 
+**Liaisons locales 0.9.** R29_28 revient aux suites ; S28_27 relie le jardin au niveau immédiatement inférieur. Le détour après impact conserve l’accès à ces deux points et à la balise de Samuel. Une personne portée ne peut pas être engagée sur R29_28 ; si elle suit Alex dans l’escalier, il faut revenir au 28 pour confirmer son transfert.
+
 **Personne et indice.** Samuel Breton, technicien des archives, est la deuxième personne à prendre en charge. Dans la progression normale, il réagit au choc qui vient d’avoir lieu puis signale que les ordres de fermeture sont antérieurs au typhon. S’il est rejoint avant le déclenchement, sa réplique doit rester compatible avec des tours encore intactes. Son sauvetage reste possible dans les deux états. La campagne pourra lui permettre d’aider Inès à interpréter les plans.
 
 **Variables.** Cloisons ouvertes, bureaux déplacés, emplacement de Samuel dans la zone de travail accessible, piles de dossiers et portes vitrées.
@@ -122,6 +145,8 @@ Les deux silhouettes de la galerie Bravo se tournent et rentrent à couvert. Les
 **Fonction et image.** Espace d’activités, salle calme, sanitaires adaptés et petit jardin intérieur. Les meubles bas, les dessins et les manteaux montrent la vie du lieu. Il n’y a plus d’enfants sur cet étage.
 
 **Traversée et danger.** Un passage entre les salles demande surtout de lire les traces d’évacuation. Une source sonore ordinaire peut être coupée. Le silence qui suit doit durer ; l’étage n’exige pas d’apparition agressive.
+
+**Liaisons locales 0.9.** L’escalier S28_27 permet le retour aux archives ; R27_26 rejoint le spa. Le palier et les stations restent mécaniquement protégés. La séquence radio facultative attend la fin d’un rappel ou d’un portage et ne pousse pas le joueur à agir pendant une manœuvre.
 
 **Personne et indice.** Un dessin signé par Alma relie les deux tours sous la mer et évoque une voix dans les tuyaux. Le registre confirme que les enfants ont été déplacés vers des zones plus basses avant la mission. Cette preuve garantit l’existence d’Alma en dehors des perceptions d’Alex.
 
@@ -137,6 +162,8 @@ Depuis la 0.5.0, le retour facultatif d’une phrase de Bravo peut suivre six se
 
 **Traversée et danger.** Une passerelle sèche contourne le bassin. Dans la campagne, un circuit électrique ou une conduite doivent être isolés avant une traversée secondaire. Le trajet obligatoire du prototype reste réalisable avec les moyens disponibles.
 
+**Liaisons locales 0.9.** R27_26 donne le retour au jardin ; S26_25 rejoint le refuge. La présence perceptive du spa ne ferme pas les stations et ne crée pas d’ennemi sur une volée. Nora conserve sa balise d’origine au 26, même si Alex emprunte l’escalier en la portant.
+
 **Personne et indice.** Nora Haddad, kinésithérapeute, constitue la troisième rescapée. Elle a entendu un appel dans un local condamné. Le Relevé SILLAGE 06 fournit une première mention explicite du programme.
 
 **Anomalie.** Une rémanence perceptive est prévue à cet étage, après que le joueur a pu reconnaître un objectif humain. Les séquences de secours et les interruptions peuvent en reporter la présentation ; elle n’est pas une condition de réussite. Elle ne poursuit pas Alex, ne le blesse pas et ne rend jamais Nora inaccessible.
@@ -150,6 +177,8 @@ Depuis la 0.5.0, le retour facultatif d’une phrase de Bravo peut suivre six se
 **Fonction et image.** Atelier, local de sécurité et palier protégé par une séparation coupe-feu. L’éclairage chaud tranche avec les étages ouverts. Du matériel de maintenance a été organisé en point de secours.
 
 **Traversée et action.** Le joueur rejoint un espace stable, fait le bilan des trois personnes et active la balise vers le toit. La campagne permet ensuite de poursuivre ; la tranche du prototype se conclut ici lorsque ses conditions sont remplies.
+
+**Liaison locale 0.9.** S26_25 est l’accès au refuge et le chemin de retour au spa. Le bas de cette cage ne mène pas au 24. La dalle de refuge et les limites de circulation restent cohérentes avec cette fin de tranche ; aucune touche de rappel ne donne accès à un niveau de campagne encore absent.
 
 **Danger.** Aucun ennemi, aucune attaque surprise, aucune dépense de survie pendant le repos. Des bruits peuvent venir du dehors, sans altérer ce contrat.
 
@@ -614,7 +643,7 @@ Une feuille de suivi de production pourra ajouter, pour chaque code, les statuts
 
 Les fiches suivantes traduisent les intentions précédentes en blocs à construire. **Toutes les dimensions, durées et interactions supplémentaires de cette section sont des cibles de production**, même pour les étages 30 à 25 déjà représentés. Le plateau actuel mesure 24 × 24 m, avec une hauteur d’étage régulière de 6 m ; les volumes proposés n’affirment pas qu’une nouvelle architecture a été intégrée. Les durées sont des budgets de rythme à tester, sans limite imposée au joueur.
 
-Les identifiants P renvoient aux [60 props](PROPS_INTERACTIONS.md), les identifiants E aux [présences et adversaires](ENNEMIS_STATISTIQUES.md). Un objet inscrit dans une fiche peut exister seulement comme cible. Les zones de transfert exigent un volume libre de 1,8 m de largeur proposé ; les retours principaux visent au moins 1,4 m, avec essais sur les capsules et animations retenues. Ces mesures sont des critères de jeu à vérifier, pas des normes de bâtiment.
+Les identifiants P renvoient aux [64 props](PROPS_INTERACTIONS.md), les identifiants E aux [présences et adversaires](ENNEMIS_STATISTIQUES.md). Un objet inscrit dans une fiche peut exister seulement comme cible. Les zones de transfert exigent un volume libre de 1,8 m de largeur proposé ; les retours principaux visent au moins 1,4 m, avec essais sur les capsules et animations retenues. Ces mesures sont des critères de jeu à vérifier, pas des normes de bâtiment.
 
 ### A30 Assemblage du premier sauvetage
 

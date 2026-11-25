@@ -1,6 +1,6 @@
 # Systèmes procéduraux de The Tower Descent
 
-**Version 0.8.0 — 25 novembre 2026**
+**Version 0.9.0 — 25 novembre 2026**
 
 ## Objet et périmètre
 
@@ -14,9 +14,11 @@ La 0.4.0 rétablit le repli de Bravo, la réception nominative au toit et les co
 
 La 0.7 ajoute une projection de dossier et un réalisateur de clôture déterministes. Le journal reconstruit ses quatre pages depuis l’instantané de mission ; l’épilogue échantillonne trois plans sur quinze secondes. Ils ne tirent aucun hasard et n’ajoutent ni champ au schéma 3 ni nouvel événement radio. La liste des indices collectés gouverne la divulgation de leur texte ; un tableau de descriptions d’étages ne suffit pas à les révéler.
 
+La 0.9 ajoute un graphe de traversée fixe, séparé des variantes de pièces : R31_30, S30_29, R29_28, S28_27, R27_26 et S26_25. Les trois rappels personnels et les trois escaliers ne desservent chacun qu’une paire d’étages, dans les deux sens. Les ouvertures, surfaces d’arrêt, volées et stations sont construits avant l’habillage qui pourrait encombrer leur accès. Leur présence ne dépend pas d’un tirage aléatoire et ne déplace aucun objectif de mission.
+
 ## Contrat d’extension du contenu
 
-Les trente fiches d’assemblage du [catalogue](CATALOGUE_ETAGES.md), les 60 [props](PROPS_INTERACTIONS.md) et les archétypes du [bestiaire](ENNEMIS_STATISTIQUES.md) sont des spécifications de campagne. Ils ne sont pas tous inscrits dans le générateur actuel. Leur intégration doit commencer par des variantes préparées d’un petit nombre de niveaux, avec validation du chemin avant ajout de décoration.
+Les trente fiches d’assemblage du [catalogue](CATALOGUE_ETAGES.md), les 64 [props](PROPS_INTERACTIONS.md) et les archétypes du [bestiaire](ENNEMIS_STATISTIQUES.md) sont des spécifications de campagne. Ils ne sont pas tous inscrits dans le générateur actuel. Leur intégration doit commencer par des variantes préparées d’un petit nombre de niveaux, avec validation du chemin avant ajout de décoration.
 
 Une future description d’étage doit séparer quatre couches : graphe de circulation, états narratifs autorisés, interactions requises et habillage. Le graphe indique entrée, sortie, palier sûr et voie de transfert. Les états narratifs déterminent ce que le joueur peut déjà savoir. Les interactions déclarent outils, durée proposée et conséquence persistante. L’habillage peut choisir des tables ou des gravats compatibles sans déplacer les points nécessaires à la mission.
 
@@ -49,6 +51,25 @@ Pour un portage, conserver le manifeste des modules retenus en plus de la graine
 | `evidence_title` | chaîne | Titre de l’indice, sinon chaîne vide |
 | `evidence_text` | chaîne | Texte complet de l’indice, sinon chaîne vide |
 
+## Contrat des liaisons verticales
+
+Les descriptions de traversée possèdent une identité stable et des extrémités explicites. Elles ne sont pas dérivées d’un nom d’étage traduit ni de l’ordre des nœuds créés. Le tableau complet figure dans [Traversée et rappel v0.9](TRAVERSEE_ET_RAPPEL_V0.9.md). Une route `rope` impose deux étages adjacents, un axe vertical cohérent et des coordonnées finies ; elle ne peut pas être remplacée par une simple hauteur minimale et maximale de toute la tour.
+
+| Donnée de rappel | Rôle dans le contrat actuel |
+| --- | --- |
+| `id`, `kind` | Identifiant de liaison et type `rope` ; une route d’escalier ne peut être engagée comme corde |
+| `upper`, `lower` | Étages adjacents, dans le périmètre 31 à 25 |
+| `top_entry`, `bottom_entry` | Points de station sur les dalles, distincts de l’axe suspendu |
+| `rope_top`, `rope_bottom` | Limites physiques du déplacement vertical du modèle |
+| `anchor` | Appui fixe au-dessus du terminal haut et du harnais |
+| `max_sway` | Limite latérale positive, au plus 0,65 m |
+
+Le modèle `DescentRopeTraversal` valide son entrée avant de remplacer un état existant et copie les données de route. Les commandes non finies, les types incorrects ou un segment qui saute un étage ne doivent pas armer un mouvement. Ses instantanés exposent les valeurs de présentation sans partager le registre de mission ni modifier une sauvegarde. La longueur visible, la distance parcourue et la réserve géométrique de ligne sont des grandeurs distinctes ; aucune n’est utilisée comme compteur d’étages déjà visités.
+
+Le contrôle physique reste au personnage. Il doit vérifier les déplacements, reporter la position effectivement acceptée au modèle et conserver la capsule lors de l’entrée comme lors de la sortie. Une validation de dictionnaire ne prouve pas qu’une trémie est libre dans la scène. Le contrôleur ne confirme un nouvel étage qu’à ±0,35 m de la hauteur de sa dalle et hors du volume d’un escalier ; la proximité numérique d’une demi-volée ou du milieu d’un rappel ne suffit pas.
+
+L’escalier possède deux volées, un palier intermédiaire et deux sorties sur plateau. Sa collision continue doit coïncider avec ses marches visibles. Il n’existe aucune commande de changement d’étage propre à l’escalier : marche, gravité, pentes et collisions produisent la trajectoire. Les trois cages n’offrent aucun prolongement vers une troisième dalle. Leur fonction reste différente d’un réseau complet de circulation de campagne.
+
 ## Invariants de la descente
 
 | Niveau | Fonction fixe | Sauvetage | Indice | Ressources | Variation autorisée |
@@ -71,7 +92,7 @@ La baie Est du 29, sa vue sur Hespérie, le passage intérieur et les emplacemen
 
 Le directeur de scène déroule `warning` pendant 8 s, `quake` pendant 6 s, `collapse` pendant 7 s et `impact` pendant 4 s, puis atteint `aftermath`. Les paramètres `phase` et `phase_elapsed` décrivent la session en cours. La pause arrête la progression de cette horloge ; le regard et le déplacement restent libres lorsque le jeu est actif. Le contrôleur attend un état compatible avec la scène : aucune victime portée ou en cours de transfert ne doit être perdue par un changement de phase.
 
-L’état initial et l’état après impact doivent chacun posséder un chemin praticable vers les balises, les survivants, les indices, les réserves et le refuge. Un passage latéral change ; le puits intérieur et sa ligne restent utilisables. Les débris de présentation ne peuvent devenir des obstacles aléatoires sur le trajet nécessaire. Les dangers secondaires générés au 29 doivent respecter la zone et le temps d’observation protégés. La validation des seuls dictionnaires d’étage ne suffit pas à établir ces propriétés de scène.
+L’état initial et l’état après impact doivent chacun posséder un chemin praticable vers les balises, les survivants, les indices, les réserves et le refuge. Un passage latéral change ; les six liaisons locales du noyau restent utilisables. Les surfaces d’arrêt à l’ouest bornent les rappels personnels ; le corridor oriental du treuil des personnes reste continu jusqu’au toit. Les débris de présentation ne peuvent devenir des obstacles aléatoires sur le trajet nécessaire. Les dangers secondaires générés au 29 doivent respecter la zone et le temps d’observation protégés. La validation des seuls dictionnaires d’étage ne suffit pas à établir ces propriétés de scène.
 
 Le [dossier de séquence](EFFONDREMENT_EN_DIRECT.md) définit la mise en scène, les informations radio et les comportements attendus lors d’une reprise.
 
@@ -107,6 +128,16 @@ Les graines 3, 47 et 69 forment un ensemble couvrant les variantes de modules 0,
 
 Ces trajets forment un corpus de vérification, pas une couverture de toutes les positions, des sauts, de toutes les graines ou de la campagne. La validation courante comprend également une traversée après impact et une vérification de la baie Est. La logique de mission, les pauses et les reprises relèvent de `tests/test_mission.gd` et des tests de l’incident ; l’interface et la visibilité des chemins exigent une inspection visuelle. Les résultats d’exécution appartiennent au rapport de validation du dépôt ; aucun total de la version précédente ne vaut validation de cette révision.
 
+## Vérification verticale et transitions de la 0.9
+
+La nouvelle géométrie exige de compléter les trajets horizontaux par des parcours entre dalles. Vérifier les trois escaliers dans les deux sens avec la capsule réelle, puis avec les contraintes de portage. Les tests ne doivent pas déplacer artificiellement le personnage à chaque marche, désactiver une paroi ou ignorer les collisions pour réussir. Le palier intermédiaire doit permettre un arrêt et une reprise ; les extrémités ne doivent pas accrocher la capsule.
+
+Pour chaque rappel, éprouver les deux engagements, l’arrêt sans commande, le verrou persistant, la montée, la précision, la descente rapide, l’épuisement et la récupération. Les critères de sortie associent hauteur, vitesse, recentrage et dégagement. Une obstruction introduite pour l’essai doit être refusée, puis le passage doit redevenir utilisable après son retrait. L’échec ne consomme pas une ressource et ne valide pas une arrivée.
+
+La vérification d’intégration doit aussi couvrir le portage refusé sur la corde, le retour par escalier à la balise d’origine, la pause en suspension et pendant un transfert, les priorités de radio et de manifestation, le retour à l’accueil et le chargement d’un ancien checkpoint de schéma 3. Les états avant et après l’incident doivent conserver la route. La reconstruction du monde doit produire les mêmes liaisons sans partager de dictionnaire mutable entre deux parties.
+
+Les preuves visuelles doivent montrer les escaliers, leurs sorties, l’ouverture de service, le descendeur et le HUD dans des états lisibles. Les chiffres d’exécution, captures effectivement produites et éventuelles limites matérielles appartiennent aux rapports de la livraison ; ce chapitre fixe les critères sans déclarer un résultat de test avant son exécution.
+
 ## Extension prévue pour la campagne
 
 La campagne doit conserver un squelette conçu à la main : déploiement sur deux toits intacts, premier sauvetage, choc vécu au 29, refuges, liaison basse du 6, sauvetage d’Alma, chute dans le bassin, sous-sols, cavernes, bunker, seuil 666, traversée infernale I01–I04 et retour physique à Nacre. La génération peut choisir les pièces secondaires et l’état des connexions, mais ne doit pas effacer ces événements ou les placer hors de leur ordre narratif.
@@ -139,7 +170,7 @@ La version 3 exige exactement les champs `version`, `seed`, `floor`, `health`, `
 
 `radio_events` contient au plus deux identifiants uniques : `bravo_echo` et `bravo_verification`. La vérification exige l’écho ; les deux exigent `aftermath` et `survivor_28` dans le registre. Les compteurs de silence repartent de zéro au chargement. Le détail de la priorité radio figure dans [Communications et équipes](COMMUNICATIONS_ET_EQUIPES.md).
 
-Le stockage n’interprète pas la géométrie : `floor = 29` désigne une reprise à l’emplacement choisi par le contrôleur, pas la preuve que tout l’étage est sans danger. Le contrôleur crée le checkpoint au point autorisé et restaure un emplacement stable. Le magasin ne sauvegarde pas une position arbitraire au milieu d’une corde ou d’un effondrement.
+Le stockage n’interprète pas la géométrie : `floor = 29` désigne une reprise à l’emplacement choisi par le contrôleur, pas la preuve que tout l’étage est sans danger. Le contrôleur crée le checkpoint au point autorisé et restaure un emplacement stable. Le magasin ne sauvegarde pas une position arbitraire au milieu d’une corde, d’un escalier, d’un transfert d’engagement ou d’un effondrement. Une demande de checkpoint en traversée est différée jusqu’à une dalle admissible ; le point sûr précédent reste la référence tant que l’écriture n’a pas réussi. Les nouveaux états de rappel restent transitoires : verrou, inertie, stabilisation, fatigue sur corde et excitation du vent ne sont pas de nouveaux champs du schéma 3.
 
 | Moment | Valeur persistante | Comportement de reprise |
 | --- | --- | --- |

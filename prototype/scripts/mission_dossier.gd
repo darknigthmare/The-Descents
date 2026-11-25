@@ -2,6 +2,7 @@ extends RefCounted
 class_name DescentMissionDossier
 ## Read-only projection of a mission snapshot. No I/O, random draws or clocks.
 ## In particular, an attached casualty is never counted as a confirmed rescue.
+const Routes = preload("res://scripts/route_catalog.gd")
 
 const ROSTER: Array = [
 	{"id": "survivor_30", "name": "Ana Rios", "floor": 30, "location": "Restaurant panoramique"},
@@ -40,7 +41,7 @@ static func build(snapshot: Dictionary) -> Dictionary:
 			row["detail"] = "Remontée en cours. Attendre la réception du toit."
 		elif person["id"] == carried_id:
 			row["status"] = "AU HARNAIS"
-			row["detail"] = "Prise en charge en cours. Rejoindre la balise de cet étage."
+			row["detail"] = "Prise en charge en cours. Rejoindre la balise orange du %d." % int(person["floor"])
 		survivors.append(row)
 
 	var collected_records: Dictionary = {}
@@ -79,6 +80,7 @@ static func build(snapshot: Dictionary) -> Dictionary:
 					break
 		route.append({"floor": level, "title": FLOOR_NAMES[level], "current": level == floor_number, "seen": seen, "confirmed": "survivor_%d" % level in rescued})
 	var situation: Dictionary = _structural_situation(phase)
+	var current_link: Dictionary = Routes.for_id(_string(snapshot.get("traversal_id", ""), 32))
 	var result: Dictionary = {
 		"seed": int(_number(snapshot, "seed", 271104, 1, 999999)), "floor": floor_number,
 		"checkpoint_floor": checkpoint, "location": FLOOR_NAMES[floor_number],
@@ -93,6 +95,9 @@ static func build(snapshot: Dictionary) -> Dictionary:
 		"relay_title": "SIGNAL DU RELAIS · ORIGINE NON CONFIRMÉE" if complete else "LIAISON DE SECOURS",
 		"relay_text": "Le relais du refuge accroche un fragment attribué à Bravo :\n\n« Nous sommes au 24. Il y a de la lumière dessous. »\n\nUne voix d’enfant suit le signal. L’origine et l’heure de cette émission restent à vérifier. Ce fragment ne confirme ni un contact en direct, ni le sort de l’équipe." if complete else "Le poste d’Aube coordonne les secours. Les mots reçus sont consignés dans les transmissions ; leur présence au journal ne prouve pas à elle seule la situation de leur source."
 	}
+	result["traversal_id"] = str(current_link.get("id", ""))
+	if not current_link.is_empty():
+		result["location"] = str(current_link["title"])
 	result["pages"] = {
 		"situation": _situation_text(result), "survivors": _survivors_text(survivors),
 		"clues": _clues_text(evidence), "transmissions": _transmissions_text(transmissions)
@@ -116,6 +121,10 @@ static func _situation_text(model: Dictionary) -> String:
 		text += "%s — %s\n%s\n" % [row["name"], row["status"], row["detail"]]
 	text += "\nRESSOURCES À CET INSTANT\nÉtat physique %d %% · Air %d %% · Tension %d %%\nAncrages %d · Fusées %d · Réserves ouvertes %d / 2\n" % [roundi(model["health"]), roundi(model["oxygen"]), roundi(model["stress"]), model["anchors"], model["flares"], model["supplies_count"]]
 	text += "\nPOINT SÛR\n%s · %s. La consultation ne remplace pas ce point de reprise.\n" % [_floor_label(model["checkpoint_floor"]), FLOOR_NAMES[model["checkpoint_floor"]]]
+	text += "\nPASSAGES ENTRE LES ÉTAGES\nChaque liaison est réversible et limitée à deux niveaux. Les repères bleus indiquent les rappels personnels ; les balises orange servent au treuil des rescapés.\n"
+	for link: Dictionary in Routes.all_routes():
+		text += "%s%s\n" % ["EN COURS · " if str(link["id"]) == str(model.get("traversal_id", "")) else "", str(link["title"])]
+	text += "Espace verrouille le descendeur ; relâcher les touches freine. Reposez-vous assuré avant de remonter. Une reprise charge un palier stable, jamais le milieu d’une corde ou d’un escalier.\n"
 	text += "\nTRANSMISSIONS REÇUES · DERNIERS ÉCHANGES\n"
 	var history: Array = model["transmissions"]
 	if history.is_empty():
@@ -159,7 +168,7 @@ static func _structural_situation(phase: String) -> Dictionary:
 	if phase == "aftermath":
 		return {"title": "APRÈS L’IMPACT", "text": "Hespérie reste appuyée contre Aube. Le passage Est du 28 est condamné : emprunter le détour intérieur. Le noyau, le treuil et le poste d’Aube restent opérationnels. Bravo ne répond plus ; son sort n’est pas confirmé."}
 	if phase in ["warning", "quake", "collapse", "impact", "alert", "shaking", "falling"]:
-		return {"title": "RÉPLIQUE EN COURS", "text": "Éloignez-vous des vitres et restez près du noyau. La ligne principale tient. Le point sûr précédant la secousse reste la référence jusqu’à la stabilisation."}
+		return {"title": "RÉPLIQUE EN COURS", "text": "Éloignez-vous des vitres et restez près du noyau. Le treuil et les passages intérieurs tiennent. Le point sûr précédant la secousse reste la référence jusqu’à la stabilisation."}
 	return {"title": "DEUX TOURS DEBOUT", "text": "Alpha intervient sur Aube ; Bravo vérifie des signaux dans Hespérie. Après la réception d’Ana au 30, rejoindre la baie Est du 29 pour établir le contact visuel. Les hélicoptères attendent une accalmie."}
 
 

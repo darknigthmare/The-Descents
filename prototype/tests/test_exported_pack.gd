@@ -12,8 +12,11 @@ const DossierPanel = preload("res://scripts/mission_dossier_panel.gd")
 const Epilogue = preload("res://scripts/epilogue_director.gd")
 const Horror = preload("res://scripts/horror_director.gd")
 const HorrorPresentation = preload("res://scripts/horror_presentation.gd")
-const TEST_PATH: String = "user://qa_v08_external_pack.json"
-const PREFS_PATH: String = "user://qa_v08_external_pack.cfg"
+const Routes = preload("res://scripts/route_catalog.gd")
+const Rope = preload("res://scripts/rope_traversal.gd")
+const RopePresentation = preload("res://scripts/rope_presentation.gd")
+const TEST_PATH: String = "user://qa_v09_external_pack.json"
+const PREFS_PATH: String = "user://qa_v09_external_pack.cfg"
 var failures: Array[String] = []
 var checks: int = 0
 
@@ -24,7 +27,7 @@ func _initialize() -> void:
 
 func _run() -> void:
 	_cleanup()
-	_check(ProjectSettings.get_setting("application/config/version", "") == "0.8.0", "Packed project has the wrong application version.")
+	_check(ProjectSettings.get_setting("application/config/version", "") == "0.9.0", "Packed project has the wrong application version.")
 	_check(not ResourceLoader.exists("res://tests/test_save.gd") and not ResourceLoader.exists("res://tests/test_cinematic_integration.gd"), "Developer tests unexpectedly shipped inside the pack.")
 	var scene: PackedScene = load("res://scenes/main.tscn")
 	_check(scene != null, "The mounted pack has no loadable main scene.")
@@ -85,6 +88,40 @@ func _run() -> void:
 	perception_visuals.free()
 	var uncertain_steps: AudioStream = load("res://assets/audio/uncertain_steps.wav")
 	_check(uncertain_steps != null and uncertain_steps.get_length() > 0.0, "The mounted pack is missing the imported positional footstep cue.")
+	_check(ResourceLoader.exists("res://scripts/route_catalog.gd") and ResourceLoader.exists("res://scripts/rope_traversal.gd") and ResourceLoader.exists("res://scripts/rope_presentation.gd"), "The mounted pack lost a v0.9 route, rope control or descender-presentation module.")
+	_check(not ResourceLoader.exists("res://tests/test_rope_traversal.gd") and not ResourceLoader.exists("res://tests/test_vertical_routes.gd") and not ResourceLoader.exists("res://tests/test_traversal_integration.gd"), "The v0.9 developer tests unexpectedly shipped inside the pack.")
+	var local_routes: Array[Dictionary] = Routes.all_routes()
+	_check(local_routes.size() == 6 and Routes.validate(local_routes).is_empty(), "The packed route catalogue does not preserve its six adjacent links.")
+	var route_kinds: Array[String] = []
+	for route: Dictionary in local_routes:
+		route_kinds.append(str(route["kind"]))
+	_check(route_kinds == ["rope", "stairs", "rope", "stairs", "rope", "stairs"], "The packed route catalogue no longer alternates local holes and stairs.")
+	_check(mission.world_data.get("routes", []).size() == 6, "The exported scene failed to build the catalogue's six local routes.")
+	_check(is_instance_valid(mission.player.rope_presentation) and mission.player.rope_presentation.get_script() == RopePresentation, "The packed player is missing its sampled descender and hands.")
+	var belay = Rope.new()
+	var upper_route: Dictionary = Routes.for_id("R31_30")
+	_check(belay.attach(upper_route,31,80.0), "A packed local rope cannot attach at its upper landing.")
+	var moving_rope: Dictionary = belay.advance(0.5,{"running":true,"vertical":1.0,"wind_strength":0.0})
+	_check(moving_rope["position"].y < upper_route["rope_top"].y and moving_rope["speed"] > 0.0 and not moving_rope["can_exit"], "The packed descender does not move under control or allows a moving dismount.")
+	_check(belay.toggle_lock() and belay.snapshot()["locked"] and belay.snapshot()["speed"] == 0.0, "Packed persistent lock does not hold immediately.")
+	var locked_rope: Dictionary = belay.snapshot()
+	_check(belay.advance(20.0,{"running":false,"vertical":1.0}) == locked_rope, "A paused exported belay advances position, time or endurance.")
+	_check(belay.secure() and not belay.secure(), "Packed stabilizer can be refreshed while active or refuses its first use.")
+	belay.toggle_lock()
+	var lower_rope: Dictionary = belay.advance(20.0,{"running":true,"vertical":1.0,"wind_strength":0.0})
+	_check(lower_rope["position"] == upper_route["rope_bottom"] and lower_rope["exit_floor"] == 30 and lower_rope["landing"] == upper_route["bottom_entry"], "The packed personal rope bypasses its one-floor limit or loses its safe landing.")
+	var rope_visuals = RopePresentation.new()
+	mission.player.camera.add_child(rope_visuals)
+	rope_visuals.sample(lower_rope,true)
+	_check(rope_visuals.visible and is_instance_valid(rope_visuals.lever) and is_instance_valid(rope_visuals.left_hand) and is_instance_valid(rope_visuals.right_hand), "Packed descender presentation cannot instantiate and sample its geometry.")
+	_check(_perception_colliders(rope_visuals) == 0, "Packed camera-space rope presentation adds a gameplay collider.")
+	belay.toggle_lock()
+	rope_visuals.sample(belay.snapshot(),true)
+	_check(is_zero_approx(rope_visuals.lever.rotation.z), "Packed descender lever ignores the persistent locked state.")
+	belay.detach()
+	rope_visuals.sample(belay.snapshot(),true)
+	_check(not rope_visuals.visible and not belay.active, "Packed detach leaves a live belay or visible descender presentation.")
+	rope_visuals.free()
 	_check(ResourceLoader.exists("res://scripts/presentation_geometry.gd") and ResourceLoader.exists("res://shaders/weathered_surface.gdshader") and ResourceLoader.exists("res://shaders/rotor_wash.gdshader"), "The final procedural model or material resources are absent from the pack.")
 	_check(mission.audio_score.stream != null and mission.audio_rotors.stream != null, "Export is missing the cinematic audio resources.")
 	mission._start_new(928401)
@@ -206,7 +243,7 @@ func _check(condition: bool, message: String) -> void:
 
 func _finish() -> void:
 	if failures.is_empty():
-		print("PASS exported pack: %d checks; mounted v0.8 resources, menu/cinematic directors, animated helicopters, twelve field props and paused inspection, imported audio, schema-3 radio persistence, isolated restoration, four-tab mission dossier three-shot rescue epilogue, isolated non-damaging perception director and collision-free manifestation anchors. Linux headless engine loads the pack; this is not a Windows executable or browser launch." % checks)
+		print("PASS exported pack: %d checks; mounted v0.9 resources, menu/cinematic directors, animated helicopters, twelve field props and paused inspection, imported audio, schema-3 radio persistence, isolated restoration, four-tab mission dossier, three-shot rescue epilogue, isolated non-damaging perceptions, six adjacent stair/rope routes, lock and pause, safe local landings and sampled descender geometry. Linux headless engine loads the pack; this is not a Windows executable or browser launch or a visual approval." % checks)
 		quit(0)
 	else:
 		for failure: String in failures:

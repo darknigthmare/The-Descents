@@ -237,7 +237,8 @@ func _test_presentation() -> void:
 			var y: float = subject.position.y
 			var origin: Vector3 = Vector3(0.7, y + 1.65, 0.2)
 			var target: Vector3 = subject.position + Vector3(0,1.2,0)
-			_check(_opaque_obstruction(world, origin, target, visuals).is_empty(), "A fixed figure anchor is hidden behind an opaque world prop for seed %d." % seed_value)
+			var obstruction: String = _opaque_obstruction(world, origin, target, visuals)
+			_check(obstruction.is_empty(), "A fixed figure anchor is hidden behind an opaque world prop for seed %d: %s." % [seed_value, obstruction])
 		for footprint: Node3D in visuals.trace_root.get_children():
 			_check(absf(footprint.position.x) > 4.3 and footprint.position.x < 0 and footprint.position.z > 0.5 and footprint.position.z < 5.0, "A wet print entered the shaft or east rescue corridor.")
 		visuals.sample({"suites_alpha":NAN,"spa_alpha":INF,"trace_alpha":-2.0,"trace_progress":100.0})

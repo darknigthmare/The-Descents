@@ -26,6 +26,7 @@ DOCUMENT_SOURCES = (
     "docs/CONFORT_V0.6.md",
     "docs/DOSSIER_ET_EPILOGUE_V0.7.md",
     "docs/PROGRESSION_HORREUR_V0.8.md",
+    "docs/TRAVERSEE_ET_RAPPEL_V0.9.md",
 )
 ANSI = re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
 ERROR = re.compile(r"(?:^|\s)(?:SCRIPT ERROR:|ERROR:|Parse Error:|FAIL\b)")
@@ -46,6 +47,45 @@ def version() -> str:
 
 def evidence_root() -> Path:
     return ROOT / "docs/validation" / ("v" + ".".join(version().split(".")[:2]))
+
+
+SOURCE_ARCHIVE_SCOPE = "All project sources and textual history; current-version captures and Word/PDF only."
+MAX_ARCHIVE_BYTES = 100 * 1024 * 1024
+
+
+def historical_source_media(relative: Path, short_version: str) -> bool:
+    """Only versioned native media are excluded; their repository files stay intact."""
+    parts = relative.parts
+    if len(parts) >= 4 and parts[:2] == ("docs", "captures") and re.fullmatch(r"v\d+\.\d+", parts[2]):
+        return parts[2] != "v" + short_version
+    if len(parts) == 2 and parts[0] == "docs":
+        match = re.fullmatch(r"The-Tower-Descent-Bible-v(\d+\.\d+)\.(?:docx|pdf)", parts[1])
+        return match is not None and match.group(1) != short_version
+    return False
+
+
+def source_package_paths() -> list[Path]:
+    """One exact archive contract shared by the packager and release verifier.
+
+    Every authored module, asset, test and guide stays included. Historical
+    captures and compiled Bibles remain in Git and their earlier releases;
+    copying them into each new source ZIP would eventually exceed GitHub's
+    per-file limit without adding any current project source.
+    """
+    short_version = ".".join(version().split(".")[:2])
+    selected: set[Path] = set()
+    for directory in ["prototype", "docs", "tools"]:
+        for path in (ROOT / directory).rglob("*"):
+            relative = path.relative_to(ROOT)
+            if not path.is_file() or any(part in {".godot", "rendered", "__pycache__", "visual_output"} for part in relative.parts):
+                continue
+            if path.suffix in {".log", ".tmp"} or historical_source_media(relative, short_version):
+                continue
+            selected.add(path)
+    selected.update(path for path in (ROOT / ".github/workflows").glob("*.yml") if path.is_file())
+    selected.update(path for path in (ROOT / ".review").rglob("*.json") if path.is_file())
+    selected.update(ROOT / name for name in ["README.md", "JOUER_WINDOWS.cmd", "jouer.sh", ".gitignore"])
+    return sorted(selected)
 
 
 def runtime_hashes() -> dict[str, str]:

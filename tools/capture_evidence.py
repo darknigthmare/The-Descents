@@ -21,6 +21,9 @@ EXPECTED_CAPTURES = {
     "20_journal_situation.png", "21_journal_rescapes.png", "22_journal_indices.png", "23_journal_transmissions.png",
     "24_epilogue_02.png", "24_epilogue_07.png", "24_epilogue_12.png", "25_bilan_refuge.png",
     "26_suites_presence.png", "27_archives_traces.png", "28_spa_remanence.png",
+    "29_station_rappel_toit.png", "30_rappel_descente.png", "31_rappel_verrouille.png",
+    "32_escalier_30_29.png", "33_escalier_palier.png", "34_rappel_remontee.png",
+    "35_aide_deplacements.png", "36_escalier_28_27.png", "37_escalier_26_25.png",
 }
 
 

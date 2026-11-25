@@ -1,6 +1,6 @@
 # Scènes, cinématiques et accueil
 
-**The Tower Descent — version 0.8.0.** Cette annexe fournit le découpage de l’ouverture, de la clôture au refuge, des transitions avec le jeu et des scènes à produire pour la campagne. La direction recherche la précision d’une présentation cinématographique : composition, rythme, lisibilité des équipes et continuité du son. Le résultat actuel reste une maquette en temps réel dans Godot, avec personnages et décors procéduraux. Il ne constitue pas une livraison de personnages, d’animations faciales ou d’assets « AAA » définitifs. Les résultats d’exécution et de revue restent documentés séparément dans l’état de livraison.
+**The Tower Descent — version 0.9.0.** Cette annexe fournit le découpage de l’ouverture, de la clôture au refuge, des transitions avec le jeu et des scènes à produire pour la campagne. La direction recherche la précision d’une présentation cinématographique : composition, rythme, lisibilité des équipes et continuité du son. Le résultat actuel reste une maquette en temps réel dans Godot, avec personnages et décors procéduraux. Il ne constitue pas une livraison de personnages, d’animations faciales ou d’assets « AAA » définitifs. Les résultats d’exécution et de revue restent documentés séparément dans l’état de livraison.
 
 ## 1 Intentions et langage visuel
 
@@ -133,11 +133,36 @@ L’horloge de mission demeure suspendue pendant l’arrivée. La caméra de cin
 
 ## 5 SC03 Le premier sauvetage et sa réception
 
-Cette scène est jouée. L’ouverture s’achève au poste, le joueur apprend la corde puis atteint le restaurant du 30. Les accessoires P01, P02, P04 et P11 forment une chaîne visuelle : ligne, balise, treuil et réception médicale. Aucun plan forcé ne doit cacher la commande au moment de sortir de la corde.
+Cette scène est jouée. L’ouverture s’achève au poste, le joueur apprend la corde puis atteint le restaurant du 30. Les accessoires P62, P04 et P64 forment la chaîne du rappel personnel ; P01, P02 et P11 portent ensuite le transfert et la réception médicale. Les stations bleues de déplacement sont distinctes des balises orange de treuil. Aucun plan forcé ne doit cacher la commande au moment de sortir de la corde.
 
 La 0.6 permet de sécuriser Ana avec E, puis montre le harnais et les mains d’Alex pendant le retour à la balise. La remontée de cinq secondes comprend verrouillage, montée et dépose sur le toit ; le panier, les sangles, le câble et l’opérateur matérialisent ce transfert. La fin du treuil inscrit `survivor_30` parmi les personnes sauvées et demande l’écriture du point sûr ; le dernier checkpoint réussi reste la référence tant que cette écriture n’a pas abouti. Un accompagnement cosmétique de 4,2 secondes rejoint ensuite la place médicale d’Ana. Samuel et Nora utilisent la même chaîne, avec leur nom, leur pose ou leur couverture. La caméra du joueur n’est pas déplacée vers le toit. Le chapitre [Sauvetage visible](SAUVETAGE_V0.6.md) décrit les coordonnées, les durées, les props, la pause et la reprise.
 
 La cible de production ajoute un regard d’Alex vers la ligne tendue, un geste d’accueil de l’équipier et une réponse courte de la personne recueillie. Ces inserts doivent pouvoir être désactivés et ne jamais masquer une sortie. Ils ne demandent pas une caméra externe obligatoire : le mouvement de la corde et l’équipe au-dessus peuvent suffire. La priorité demeure la certitude qu’une personne a été prise en charge.
+
+### Apprentissage jouable de la traversée en 0.9
+
+SC03 conserve son identifiant et son caractère joué. La séquence de 28 s s’achève avant la manipulation de la corde ; le joueur apprend depuis la caméra subjective et les commandes contextuelles. Aucun film supplémentaire ne remplace la descente ni ne donne automatiquement le terminal suivant.
+
+| Moment de SC03 | Action réellement disponible | Fonction de mise en scène |
+| --- | --- | --- |
+| Repérage au toit | Rejoindre la station R31_30, lire la destination et engager E | Distinguer un trajet personnel de la balise de treuil des personnes |
+| Première suspension | Descendre avec S, relâcher pour freiner, utiliser Espace pour verrouiller | Faire éprouver un arrêt fiable avant toute pression narrative |
+| Approche du 30 | Utiliser Ctrl pour la précision, se recentrer puis sortir avec E | Associer le texte de sortie à une véritable dalle accessible |
+| Contact avec Ana | La sécuriser et rejoindre sa balise orange au 30 | Montrer pourquoi la ligne de transfert n’est pas la corde personnelle |
+| Poursuite vers le 29 | Marcher dans S30_29 et sortir dans les suites | Enseigner qu’une cage peut rester praticable sur une seule paire |
+| Retour volontaire | Remonter l’escalier puis R31_30 | Vérifier que le chemin appris constitue aussi une voie de repli |
+
+La descente rapide, la remontée et la stabilisation sont disponibles sans imposer un exercice chronométré à chaque partie. Le joueur peut prendre le temps de lire le HUD. Une ressource épuisée sur la corde conduit au repos attaché, ce qui maintient la continuité du geste. La reprise du mouvement et la sortie doivent être expliquées par l’état affiché, sans voix obligatoire ni dépendance au volume sonore.
+
+Le descendeur et les mains gantées donnent un premier geste visible. Le levier réagit à la vitesse et l’état arrêté ou verrouillé possède une lecture distincte. Les mouvements réduits retirent l’oscillation cosmétique. Les mains restent procédurales : le contact précis des doigts, l’acting du personnage et le son définitif de manipulation sont des travaux de production à poursuivre.
+
+Le passage de la station à la corde puis de la corde à la dalle dure actuellement 0,85 s, avec collision de la capsule. Le regard reste contrôlable ; l’animation de déplacement n’est pas une coupe de caméra. Un obstacle doit suspendre ou refuser le passage en conservant l’attache, sans rejouer le briefing ni pousser le personnage à travers un garde-corps. La pause fige aussi cette transition.
+
+L’escalier S30_29 conserve deux volées et un palier. La composition doit montrer la sortie dans les suites et l’absence de continuation directe vers le 28. Les stations du rappel suivant ne sont pas confondues avec le pied de la cage. Le trajet vers la baie Est reste hors de la première manipulation : l’effondrement attend ses prérequis ordinaires et ne sert pas de punition à un apprentissage lent.
+
+Pour les deux rappels suivants et les deux autres escaliers, garder la même grammaire tout en changeant le contexte : suites vers archives après le choc, archives vers jardin calme, jardin vers spa, puis spa vers refuge. Le premier secteur reste celui du doute perceptif ; aucune silhouette ne devient un ennemi pendant que le joueur apprend une commande. Les événements de présentation attendent les priorités de mission.
+
+La recette de cette scène doit vérifier la lecture des destinations, les arrêts volontaires, le refus pendant le portage d’Ana, la sortie sans saut, la réversibilité du chemin, le comportement avec les mouvements réduits et la reprise d’une sauvegarde au toit ou au restaurant. Les gestes sont utilisables dans le code ; leur compréhension par un joueur humain demande encore une séance de jeu et ne se déduit pas d’une capture préparée.
 
 ## 6 SC04 Effondrement d’Hespérie — livré et cible d’habillage
 
@@ -149,7 +174,7 @@ La caméra reste liée au joueur : elle encourage à regarder mais ne téléport
 
 Pour l’habillage final, le plan sonore commence par une oscillation du verre et des attaches, laisse une courte suspension avant la rupture principale, puis distingue contact, chute de débris et retour des appels. La cible évite une compression uniforme qui couvrirait Varga. La poussière révèle progressivement la géographie transformée ; elle ne doit pas conserver un écran opaque plus longtemps que nécessaire à la lecture du nouveau passage.
 
-Les tests doivent séparer la puissance de la scène et sa justesse mécanique : trajet survivant toujours praticable, sortie de corde libre, restauration directe de l’état final, absence de dégâts issus d’une collision de décor non prévue. Le caractère spectaculaire ne valide pas ces contrats à lui seul.
+Les tests doivent séparer la puissance de la scène et sa justesse mécanique : trajet survivant toujours praticable, sortie de corde libre, restauration directe de l’état final, absence de dégâts issus d’une collision de décor non prévue. Le caractère spectaculaire ne valide pas ces contrats à lui seul. Les rappels R29_28 et R27_26, les escaliers locaux et le corridor du treuil restent praticables après la transformation. Une caméra de présentation ne doit pas masquer une collision nouvelle dans leurs entrées.
 
 ## 7 SC05 L’écho de Bravo au 27 — livré
 
@@ -189,7 +214,7 @@ La sauvegarde ne contient ni caméra intermédiaire, ni temps d’épilogue, ni 
 
 Le bilan utilise un cadrage fixe du refuge et la même projection de données que le journal. Il montre les trois noms, le nombre de documents recueillis, le temps de mission, les ressources restantes et le signal encore à vérifier. Il propose de consulter le dossier, revoir l’épilogue ou revenir à l’accueil. Le journal sépare **Situation**, **Rescapés**, **Indices** et **Transmissions** ; il ne dévoile pas le texte des preuves non collectées. Fermer ce journal retourne au bilan, avec le personnage inactif.
 
-Le menu conserve ensuite son décor de refuge et son action de consultation. Le résultat n’autorise pas la présentation d’un bunker, d’Alma retrouvée ou d’une fin de campagne : ces chapitres ne sont pas jouables dans la version 0.8.0. Les champs, props, contrôles et cas de reprise sont détaillés dans [Dossier et épilogue](DOSSIER_ET_EPILOGUE_V0.7.md).
+Le menu conserve ensuite son décor de refuge et son action de consultation. Le résultat n’autorise pas la présentation d’un bunker, d’Alma retrouvée ou d’une fin de campagne : ces chapitres ne sont pas jouables dans la version 0.9.0. Les champs, props, contrôles et cas de reprise sont détaillés dans [Dossier et épilogue](DOSSIER_ET_EPILOGUE_V0.7.md).
 
 ## 9 Storyboards de campagne à produire
 

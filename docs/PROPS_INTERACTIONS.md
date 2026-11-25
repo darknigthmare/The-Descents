@@ -1,10 +1,10 @@
 # Props et interactions de production
 
-**Version 0.8.0 — 60 fiches de référence et 12 observations jouables — 25 novembre 2026**
+**Version 0.9.0 — 64 fiches de référence et 12 observations jouables — 25 novembre 2026**
 
 Ce catalogue donne aux équipes de niveau, d’art, de son et de gameplay des objets qui ont une fonction dans l’intervention. Il décrit les accessoires du prototype lorsqu’ils existent, puis les objets à produire pour la campagne. Une fiche de campagne n’est pas un inventaire d’assets déjà livrés. Les dimensions proposées servent au blocage et à la recette de circulation ; elles ne constituent ni des normes de construction ni des instructions de secours réels.
 
-Dans la 0.7, le dossier à quatre onglets décrit les faits issus de ces interactions ; il ne crée aucun accessoire collectable supplémentaire. Les plans de clôture observent le poste médical, le relais du 25 et la tour endommagée déjà présents dans le monde. La 0.8 porte le catalogue à 60 fiches avec huit props de campagne liés aux expériences et à l’Enfer. Les douze observations jouables conservent leur portée ; le bilan n’exige pas la lecture de tous les props facultatifs.
+Dans la 0.7, le dossier à quatre onglets décrit les faits issus de ces interactions ; il ne crée aucun accessoire collectable supplémentaire. Les plans de clôture observent le poste médical, le relais du 25 et la tour endommagée déjà présents dans le monde. La 0.8 porte le catalogue à 60 fiches avec huit props de campagne liés aux expériences et à l’Enfer. La 0.9 ajoute P61 à P64 pour les escaliers locaux, les stations personnelles, les dalles d’arrêt et le descendeur, soit 64 fiches. Les douze observations jouables conservent leur portée ; le bilan n’exige pas la lecture de tous les props facultatifs.
 
 ## Convention des fiches
 
@@ -28,7 +28,7 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 
 **Présent. Fonction et gabarit.** Repère orange à chaque palier et sur le toit, au bord du puits. La base de maquette mesure 0,68 m de diamètre sur 0,36 m ; la tige et le feu atteignent environ 1,8 m. L’étiquette TREUIL reste lisible depuis la sortie de corde.
 
-**Interaction et états.** E engage la ligne lorsqu’Alex est seul, ou lance le transfert lorsqu’il porte quelqu’un. Un treuillage actif interdit un second transfert. La cible de campagne ajoute les états libre, raccordement, transfert, réception et indisponibilité expliquée, sans remplacer une prise en charge confirmée par un état inconnu.
+**Interaction et états.** Depuis la 0.9, cette balise sert uniquement au transfert des rescapés. E lance le treuil lorsque la personne portée appartient à cet étage et qu’aucun transfert n’est actif. À vide, la balise explique sa fonction ; elle n’engage plus Alex sur une corde globale. Après un déplacement par escalier avec une personne, une balise d’un autre étage demande de revenir à son étage d’origine. La cible de campagne ajoute les états libre, raccordement, transfert, réception et indisponibilité expliquée, sans remplacer une prise en charge confirmée par un état inconnu.
 
 **Son et implantation.** Bipe bref au raccordement, moteur pendant le transfert, confirmation vocale à la réception. Un socket fixe par palier jouable, aucun tirage dans les variantes de mobilier. Recette : aller et retour avec charge, reprise au checkpoint, appuis répétés et départ du palier pendant le treuil.
 
@@ -36,23 +36,23 @@ Les sons de confirmation, de refus et de fonctionnement ont des rôles distincts
 
 **Présent. Fonction et gabarit.** Traverse de maquette de 7 × 0,22 × 0,22 m au-dessus du puits, portée par deux montants. Elle montre d’où vient la ligne et relie visuellement chaque sauvetage au poste du toit. Cible artistique : ferrures et marquage d’inspection lisibles, sans ajouter des réglages techniques au joueur.
 
-**Interaction et états.** La traverse est fixe et non consommable. Le joueur agit à la balise. Elle reste en place avant et après l’impact ; une séquence de campagne qui condamne cette route exige un autre réseau, une annonce et un checkpoint propre.
+**Interaction et états.** La traverse est fixe et non consommable. Le joueur agit à la balise pour le treuil des personnes. Le couloir oriental reste continu jusqu’au toit, distinct des trois segments occidentaux de rappel personnel. Elle reste en place avant et après l’impact ; une séquence de campagne qui condamne cette route exige un autre réseau, une annonce et un checkpoint propre.
 
 **Son et implantation.** Travail métallique discret sous le vent, jamais un signal ambigu de rupture imminente sur la ligne garantie. Un seul exemplaire au toit d’Aube. La silhouette ne doit pas croiser le cadre des noms du poste médical ni masquer le puits depuis le plan final de l’introduction.
 
 ### P03 Ancrage secondaire
 
-**Présent sous forme abstraite. Fonction et gabarit.** La commande X dépense un ancrage sur la corde et stabilise le balancement pendant 16 s. Le point de maquette déplace l’origine de ligne vers le bord du puits. Cible d’objet visible : boîtier de 0,18 × 0,12 × 0,22 m sur un socket autorisé.
+**Présent sous forme abstraite. Fonction et gabarit.** La commande X dépense un ancrage accepté sur le segment personnel actif et stabilise le balancement pendant 16 s. Elle ne crée ni nouveau trajet ni relais persistant et ne remplace pas l’ancrage fixe du segment. Cible d’objet visible : boîtier de 0,18 × 0,12 × 0,22 m sur un socket autorisé.
 
-**Interaction et états.** Stock initial 4, plafond 8. Un objet de campagne passe de disponible à posé, connecté puis récupérable selon le scénario. Il ne peut être posé sur n’importe quelle texture. La réussite consomme une unité ; un emplacement refusé ne la consomme pas.
+**Interaction et états.** Stock initial 4, plafond 8. Une stabilisation déjà active ou un stock nul refuse la commande sans consommation. La pause fige les seize secondes ; l’expiration rend le balancement ordinaire sans rupture. Un objet de campagne pourra passer de disponible à posé, connecté puis récupérable selon le scénario. Il ne pourra être posé sur n’importe quelle texture. La réussite consomme une unité ; un emplacement refusé ne la consomme pas.
 
 **Son et implantation.** Clic mécanique suivi d’un son plus calme de la ligne, avec texte « ancrage établi ». Les sockets de campagne sont validés avant les dangers et ne suppriment jamais la route gratuite nécessaire. Recette : stock nul, pause, double commande et reprise d’un point déjà installé.
 
 ### P04 Ligne de rappel
 
-**Présent. Fonction et gabarit.** Trait orange entre l’ancrage et le harnais ; axe guidé au centre du puits, déplacement vertical de 2,8 m/s et décalage latéral borné à 1,8 m dans la maquette. Cible visuelle : corde de diamètre apparent 0,015 m, assez contrastée pour être suivie sans contour lumineux permanent.
+**Présent. Fonction et gabarit.** Ligne visible entre l’ancrage local et le harnais. Trois segments de six mètres relient 31–30, 29–28 et 27–26, dans la moitié ouest du puits, autour de x = −1,3 m. Le décalage latéral est limité à ±0,65 m sur Z. La descente normale atteint 2,8 m/s, la remontée 1,6 m/s, l’approche précise 0,75 m/s et la descente rapide 4,2 m/s. Cible artistique : corde de diamètre apparent 0,015 m, assez contrastée pour être suivie sans contour lumineux permanent.
 
-**Interaction et états.** Au sol, engagé, stabilisé et sortie à la dalle. E ne détache Alex qu’à proximité de la hauteur d’un palier. La campagne ajoutera des segments et des relais persistants ; aucun nœud décoratif ne doit modifier la trajectoire de la capsule.
+**Interaction et états.** Au sol, engagement contrôlé, suspension mobile, freinage, verrouillage, repos pour fatigue, stabilisation facultative et sortie contrôlée vers une dalle. Espace verrouille ou libère ; E ne détache qu’au terminal, avec faible vitesse, recentrage et dégagement physique. Le modèle distingue longueur, vitesse, endurance et état de sortie. Les segments sont locaux et réversibles ; les relais persistants et le contournement libre d’obstacles restent des cibles de campagne. Aucun nœud décoratif ne décide de la trajectoire de la capsule.
 
 **Son et implantation.** Frottement mesuré, vent et tension signalée par un changement clair. Aucun son de rupture aléatoire sur un segment garanti. La corde reste visible avec les mouvements réduits ; sa couleur est doublée par les balises et la géométrie.
 
@@ -532,6 +532,40 @@ Les huit fiches suivantes complètent P01–P52. Elles fixent des verbes et des 
 
 **Son, implantation et recette.** La réverbération infernale s’efface devant la ventilation connue et un appel authentifié. Interface unique entre I04, P666 et la route SORTIE. Tester retour partiel, partenaire retardé, abandon volontaire d’un objet facultatif, échec d’écriture et reprise de chaque côté avec les mêmes résultats humains.
 
+## Liaisons locales de la version 0.9
+
+### P61 Escalier local à deux volées
+
+**Présent. Fonction et gabarit.** Trois assemblages en U relient les paires 30–29, 28–27 et 26–25. Leur implantation se trouve au sud du noyau, entre x = −2,5 et +2,5 m et z = 5,8 à 11,4 m. Deux volées franchissent chacune trois mètres sur 4,4 m de course et rejoignent un palier intermédiaire de 5 × 1,2 m. Chaque volée comporte vingt marches visuelles de 0,15 m de hauteur et 0,22 m de course ; une liaison en comporte donc quarante. L’arrivée et le départ sont lisibles depuis la circulation du plateau.
+
+**Interaction et états.** Alex les parcourt par la marche physique, dans les deux sens, sans touche de téléportation. Les marches sont visuelles ; la capsule suit des collisions inclinées continues pour éviter que chaque arête produise un blocage. Le portage reste possible à sa vitesse ordinaire. La cage n’ouvre pas une troisième liaison : après la sortie sur la dalle, le joueur rejoint une station de rappel distincte. Ces trois assemblages restent utilisables avant et après l’incident.
+
+**Présentation, implantation et recette.** Les numéros des deux étages et le sens du chemin doivent accompagner la forme des volées. La main courante et les limites de palier servent à comprendre le passage ; une couleur seule ne certifie pas une ouverture. Vérifier l’aller et le retour avec la vraie capsule, sans saut, puis avec le portage ; tester le palier intermédiaire, la rotation, les extrémités et les collisions voisines sur les variantes de mobilier. Une marche visuellement présente sans sol physique constitue un défaut bloquant.
+
+### P62 Station de rappel personnel
+
+**Présent. Fonction et gabarit.** Chaque extrémité de R31_30, R29_28 et R27_26 possède un point d’engagement sur la dalle à l’ouest du puits. La station est bleue, avec une fonction et une destination écrites. Le point d’interaction se situe à x = −3,8 m, z = 0 ; l’axe suspendu est à x = −1,3 m. L’appui fixe est au-dessus du terminal supérieur. La station identifie la paire d’étages qu’elle relie, sans présenter la balise orange du treuil comme un moyen de déplacement personnel.
+
+**Interaction et états.** Disponible, entrée contrôlée, segment occupé par Alex, retour au terminal et sortie contrôlée. E vérifie la proximité, l’absence de personne portée et le dégagement. Un refus conserve la position et les ressources. Le segment est accessible depuis son haut ou son bas ; aucun consommable n’est requis pour la route principale. Les transferts d’entrée et de sortie ne sont pas sérialisés dans le schéma 3.
+
+**Présentation, implantation et recette.** Afficher destination, fonction et commande de façon concordante dans le monde et dans le HUD. Aucun raccordement ne déplace Alex de plusieurs étages. Tester les deux terminaux, l’usage répété, le mauvais côté, l’obstruction d’une capsule, une interruption pendant le transfert, le retour au menu et la reprise au dernier palier. L’arrêt d’une transition conserve un état cohérent ; il ne valide pas silencieusement une arrivée dans un mur.
+
+### P63 Dalle d’arrêt et ouverture de service
+
+**Présent. Fonction et gabarit.** Les ouvertures du rappel personnel occupent la moitié ouest du puits de service. Des surfaces d’arrêt locales bornent les arrivées au 30, au 28, au 26 et au refuge 25. Elles ne sont pas des trous créés artificiellement par un dommage antérieur à l’effondrement : le toit commence avec une ouverture de travail identifiable. La moitié orientale reste réservée au treuil continu des rescapés ; un garde-corps l’exclut du parcours piéton tout en laissant la dépose du toit libre.
+
+**Interaction et états.** Géométrie fixe avec collision, sans commande d’ouverture ou de destruction. La surface empêche de prolonger une descente personnelle vers le segment suivant. Le terminal autorise une sortie vers la dalle ; l’escalier voisin assure la prochaine liaison. L’état après impact conserve ces appuis, les stations et le couloir oriental de transfert.
+
+**Présentation, implantation et recette.** La lecture doit montrer où la ligne se termine, où Alex peut poser le pied et quel itinéraire reprend ensuite. Réserver le dégagement réel du corps au-dessus de chaque arrivée ; aucun bord décoratif ne peut traverser la capsule lors du transfert. Vérifier l’absence de passage direct multiétage à l’ouest, le libre passage du panier à x = 1,8 m, le contraste sans éclair et la cohérence des limites visibles avec les collisions.
+
+### P64 Descendeur et mains gantées
+
+**Présent sous forme procédurale. Fonction et gabarit.** Un descendeur, sa poignée, un mousqueton, un brin de corde et deux mains gantées apparaissent dans le cadrage de première personne pendant le rappel. Ces volumes donnent un geste identifiable au contrôle de vitesse. Leur échelle et leur placement sont des paramètres de présentation de caméra, distincts des collisions du personnage.
+
+**Interaction et états.** La pose reçoit l’état du modèle : visibilité sur corde, position du levier liée à la vitesse, indicateur de verrouillage ou d’arrêt, léger mouvement lié au déplacement. Les mouvements réduits retirent l’oscillation cosmétique. Le prop ne consomme pas d’endurance, n’applique pas le frein et n’écrit pas de sauvegarde ; il montre les décisions déjà prises par le contrôleur. Il disparaît hors rappel et ne se superpose pas au harnais d’une personne portée.
+
+**Présentation et recette.** La silhouette du matériel ne doit masquer ni le palier d’arrivée ni le texte de sortie. Les mains restent une représentation géométrique, sans capture de mouvement ni contact digital réaliste. Vérifier les poses à l’arrêt, en montée, en descente, en mode précis et verrouillé ; comparer les mouvements réduits, pause et reprise, puis le retour à la marche. Le son définitif de manipulation reste un travail de production distinct, à ne pas déduire de la présence du modèle 3D.
+
 ## Les douze observations de terrain de la version 0.5
 
 Ces objets donnent une fonction de lecture au décor déjà parcouru. Le joueur s’approche, oriente son regard vers la surface utile puis appuie sur E. Une fiche présente le rôle de l’objet, un constat lié à l’état du monde, une consigne de déplacement ou de secours et une note de l’équipe. La fiche ne demande pas de collecter l’objet. Elle peut être relue et n’ajoute ni quête secondaire, ni ressource, ni condition de fin.
@@ -541,7 +575,7 @@ Le registre médical répond à une question précise : qui a réellement été 
 | Niveau | Objet examinable | Rôle dans la lecture du lieu | Référence |
 | --- | --- | --- | --- |
 | Toit | Registre du poste médical | Noms reçus et réceptions encore attendues | P11 |
-| Toit | Carnet de la ligne principale | Route de rappel et maintien du treuil | P02 et P04 |
+| Toit | Carnet de la ligne principale | Distinguer le rappel personnel local du treuil continu des rescapés | P02, P04 et P62 |
 | 30 | Couvert resté prêt | Service interrompu avant le choc observé | P23 |
 | 30 | Registre de service | Séparer réservation, présence et évacuation | P25 |
 | 29 | Valise des suites | Trace personnelle sans localisation inventée | P28 |
