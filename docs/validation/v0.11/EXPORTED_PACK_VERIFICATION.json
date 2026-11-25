@@ -1,8 +1,8 @@
 {
   "version": "0.11.0",
   "runtime_freeze_commit": "97c606c61cf70f3604fa3869977500326593582b",
-  "git_head": "97c606c61cf70f3604fa3869977500326593582b",
-  "verified_utc": "2026-11-25T18:31:26.387114+00:00",
+  "git_head": "635639963777de0be31f320999ee3d28cc9a829d",
+  "verified_utc": "2026-11-25T18:59:02.899452+00:00",
   "engine": "4.7.2.stable.official.ed1daf0bf",
   "test_script": "prototype/tests/test_exported_pack.gd",
   "test_script_sha256": "22e4266059a065b83442e93500325d9237436bc67114099acc52d672cdf4379c",
@@ -108,7 +108,7 @@
         "/home/runner/work/The-Descents/The-Descents/prototype/tests/test_exported_pack.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 3.501,
+      "duration_seconds": 4.361,
       "error_lines": [],
       "checks": 150,
       "pass_markers": 1,
@@ -116,8 +116,8 @@
       "pass": true,
       "platform": "windows",
       "pack": "builds/windows/TheTowerDescent.exe",
-      "pack_bytes": 129632152,
-      "pack_sha256": "fa06178d9d0d44fe6952a664c6c37bf6b6a1fffb5500bd44e8ef7ff124611c82",
+      "pack_bytes": 129632168,
+      "pack_sha256": "e67bad226cc120fc1279f30802a7ae188b5ff594f9216841188bd2cadf7c4504",
       "pack_unchanged_during_test": true,
       "execution_directory_was_empty": true,
       "log_sha256": "6c45af13cad5451ba3088c07c7890f7bc0b4391b4e565a5f0234f193a82cf11e"
@@ -132,7 +132,7 @@
         "/home/runner/work/The-Descents/The-Descents/prototype/tests/test_exported_pack.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 3.5,
+      "duration_seconds": 4.36,
       "error_lines": [],
       "checks": 150,
       "pass_markers": 1,
@@ -140,8 +140,8 @@
       "pass": true,
       "platform": "web",
       "pack": "builds/web/index.pck",
-      "pack_bytes": 20363660,
-      "pack_sha256": "1c117fe8025ba2d539c2f72386b7b531e1d50c2daf6cffb49d3dae07c4238310",
+      "pack_bytes": 20363676,
+      "pack_sha256": "cd138090eb30b6d18821ce12af1f416f6227985c7538d6326aa37dd0aae4497f",
       "pack_unchanged_during_test": true,
       "execution_directory_was_empty": true,
       "log_sha256": "6c45af13cad5451ba3088c07c7890f7bc0b4391b4e565a5f0234f193a82cf11e"

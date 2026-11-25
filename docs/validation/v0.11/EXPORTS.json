@@ -2,8 +2,8 @@
   "version": "0.11.0",
   "all_pass": true,
   "source_commit": "edd0d935204b276e9671270b9993d87373534b34",
-  "build_commit": "97c606c61cf70f3604fa3869977500326593582b",
-  "built_utc": "2026-11-25T18:31:19.102687+00:00",
+  "build_commit": "635639963777de0be31f320999ee3d28cc9a829d",
+  "built_utc": "2026-11-25T18:58:53.844461+00:00",
   "runtime_sha256": {
     "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
     "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
@@ -103,8 +103,8 @@
   "outputs": [
     {
       "file": "builds/windows/TheTowerDescent.exe",
-      "bytes": 129632152,
-      "sha256": "fa06178d9d0d44fe6952a664c6c37bf6b6a1fffb5500bd44e8ef7ff124611c82"
+      "bytes": 129632168,
+      "sha256": "e67bad226cc120fc1279f30802a7ae188b5ff594f9216841188bd2cadf7c4504"
     },
     {
       "file": "builds/web/index.apple-touch-icon.png",
@@ -124,7 +124,7 @@
     {
       "file": "builds/web/index.html",
       "bytes": 6473,
-      "sha256": "0854dfeed48e0db281992af1da62e15773aaf809a2fe34015128b8f01ae380ad"
+      "sha256": "915e6e0429f72e962983110b0191f58a9296c48b953527602311dc500c0aedcf"
     },
     {
       "file": "builds/web/index.icon.png",
@@ -138,8 +138,8 @@
     },
     {
       "file": "builds/web/index.pck",
-      "bytes": 20363660,
-      "sha256": "1c117fe8025ba2d539c2f72386b7b531e1d50c2daf6cffb49d3dae07c4238310"
+      "bytes": 20363676,
+      "sha256": "cd138090eb30b6d18821ce12af1f416f6227985c7538d6326aa37dd0aae4497f"
     },
     {
       "file": "builds/web/index.png",
@@ -184,7 +184,7 @@
     {
       "file": "dist/index.html",
       "bytes": 6473,
-      "sha256": "0854dfeed48e0db281992af1da62e15773aaf809a2fe34015128b8f01ae380ad"
+      "sha256": "915e6e0429f72e962983110b0191f58a9296c48b953527602311dc500c0aedcf"
     },
     {
       "file": "dist/index.icon.png",
@@ -198,8 +198,8 @@
     },
     {
       "file": "dist/index.pck",
-      "bytes": 20363660,
-      "sha256": "1c117fe8025ba2d539c2f72386b7b531e1d50c2daf6cffb49d3dae07c4238310"
+      "bytes": 20363676,
+      "sha256": "cd138090eb30b6d18821ce12af1f416f6227985c7538d6326aa37dd0aae4497f"
     },
     {
       "file": "dist/index.png",
@@ -224,7 +224,7 @@
         "/home/runner/work/The-Descents/The-Descents/builds/windows/TheTowerDescent.exe"
       ],
       "returncode": 0,
-      "duration_seconds": 2.584,
+      "duration_seconds": 3.273,
       "error_lines": [],
       "checks": 0,
       "pass_markers": 0,
@@ -244,7 +244,7 @@
         "/home/runner/work/The-Descents/The-Descents/builds/web/index.html"
       ],
       "returncode": 0,
-      "duration_seconds": 2.397,
+      "duration_seconds": 2.99,
       "error_lines": [],
       "checks": 0,
       "pass_markers": 0,
