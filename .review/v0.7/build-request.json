@@ -1,7 +1,7 @@
 {
   "format": 1,
   "version": "0.7.0",
-  "phase": "review",
-  "source_commit": "50145b56eeb81757a6a318ec3e7a886a5b29ea42",
-  "request_id": "v07-review-01"
+  "phase": "release",
+  "source_commit": "c4ce809dd54ecddf7dea3fa8f2c307c47cc917c5",
+  "request_id": "v07-release-01"
 }
