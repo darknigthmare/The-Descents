@@ -66,13 +66,13 @@ func _build_stations() -> void:
 	station.name = "AlphaEquipmentStation"
 	add_child(station)
 	# Command counter top is at y=43.98; feet remain clear of its collision.
-	_asset("rescue_radio", station, Vector3(7.0, 44.0, 8.55), Vector3(0, 150, 0))
-	_asset("rescue_helmet", station, Vector3(7.65, 44.0, 8.6), Vector3(0, 165, 0))
-	_asset("trauma_bag", station, Vector3(8.6, 44.0, 8.65), Vector3(0, 180, 0))
+	_asset("rescue_radio", station, Vector3(7.0, 44.0, 8.55), Vector3(0, 15, 0))
+	_asset("rescue_helmet", station, Vector3(7.65, 44.0, 8.6), Vector3(0, -10, 0))
+	_asset("trauma_bag", station, Vector3(8.6, 44.0, 8.65), Vector3(0, 10, 0))
 	_asset("rescue_flashlight", station, Vector3(9.35, 44.0, 8.65), Vector3(0, 150, 0))
-	_asset("extinguisher", station, Vector3(10.5, 42.03, 7.6), Vector3(0, 155, 0))
+	_asset("extinguisher", station, Vector3(10.5, 42.03, 7.6), Vector3(0, 45, 0))
 	_asset("oxygen_cylinder", station, Vector3(10.9, 42.03, 8.4))
-	_asset("portable_worklight", station, Vector3(5.4, 42.03, 8.5), Vector3(0, 130, 0))
+	_asset("portable_worklight", station, Vector3(5.4, 42.03, 8.5), Vector3(0, -40, 0))
 	_asset("equipment_case", station, Vector3(-8.0, 42.03, 4.5))
 	_asset("rope_coil", station, Vector3(-8.0, 42.40, 4.5))
 	_asset("rescue_stretcher", station, Vector3(10.0, 42.03, -3.6), Vector3(0, 90, 0))
@@ -191,10 +191,10 @@ func _choose_view(id: String) -> void:
 	held_root.name = "HeldTool"
 	view_root.add_child(held_root)
 	var poses: Dictionary = {
-		"fire_axe": [Vector3(0.39, -0.65, -0.87), Vector3(7, -12, -17)],
-		"extinguisher": [Vector3(0.40, -0.58, -0.82), Vector3(-8, 15, 8)],
-		"halligan": [Vector3(0.43, -0.72, -0.88), Vector3(6, 15, -16)],
-		"bolt_cutter": [Vector3(0.42, -0.51, -0.86), Vector3(8, -5, -12)]}
+		"fire_axe": [Vector3(0.39, -0.65, -0.87), Vector3(7, 168, -17)],
+		"extinguisher": [Vector3(0.40, -0.58, -0.82), Vector3(-8, 195, 8)],
+		"halligan": [Vector3(0.43, -0.72, -0.88), Vector3(6, 195, -16)],
+		"bolt_cutter": [Vector3(0.42, -0.51, -0.86), Vector3(8, 175, -12)]}
 	base_view_position = poses[id][0]
 	base_view_rotation = (poses[id][1] as Vector3) * PI / 180.0
 	var asset: Node3D = Assets.instantiate(id)

@@ -769,7 +769,8 @@ static func _apply_shared_albedos(node: Node) -> void:
 def setup_studio():
     scene = bpy.context.scene
     scene.render.engine = "CYCLES"
-    scene.cycles.device,scene.cycles.samples,scene.cycles.use_denoising = "CPU",24,True
+    # Ubuntu Blender may include Cycles without OpenImageDenoiser. Avoid a hard runtime dependency.
+    scene.cycles.device,scene.cycles.samples,scene.cycles.use_denoising = "CPU",64,False
     scene.render.resolution_percentage = 100
     scene.render.image_settings.file_format,scene.render.image_settings.color_mode = "PNG","RGB"
     scene.render.film_transparent = False
@@ -851,7 +852,7 @@ def render_previews(directory,camera):
         target,ortho,direction = closeups[asset["id"]]
         point_camera(camera,target,ortho,direction)
         scene.render.resolution_x = scene.render.resolution_y = 800
-        scene.cycles.samples = 32
+        scene.cycles.samples = 96
         scene.render.filepath = str(directory/f"detail_{asset['id']}.png")
         bpy.ops.render.render(write_still=True)
     from PIL import Image,ImageDraw,ImageFont

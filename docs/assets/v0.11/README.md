@@ -13,7 +13,7 @@ blender --background --factory-startup --python tools/generate_rescue_models.py 
 python tools/validate_rescue_models.py --root . --previews
 ~~~
 
-Sans l’option --render, le générateur produit les modèles, la source, les manifestes et le catalogue. Avec --render, il produit aussi seize vues individuelles, une planche de contact 1600 × 900 et quatre vues de détail 800 × 800. Les rendus utilisent Cycles sur CPU, 24 échantillons pour les vues individuelles et 32 pour les détails.
+Sans l’option --render, le générateur produit les modèles, la source, les manifestes et le catalogue. Avec --render, il produit aussi seize vues individuelles, une planche de contact 1600 × 900 et quatre vues de détail 800 × 800. Les rendus utilisent Cycles sur CPU, 64 échantillons pour les vues individuelles et 96 pour les détails. Le débruitage est désactivé pour fonctionner aussi avec les builds Cycles dépourvus d’OpenImageDenoiser.
 
 Le générateur peut remplacer les fichiers qu’il produit. Il ne télécharge aucun élément, ne modifie aucune branche et ne lance aucun export du jeu.
 
