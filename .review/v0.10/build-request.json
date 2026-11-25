@@ -1,9 +1,9 @@
 {
   "format": 1,
   "version": "0.10.0",
-  "phase": "review",
-  "request_id": "tower-v010-review-02",
-  "source_commit": "5d6e3878b0e103216d995f8b49944d847b834b79",
+  "phase": "release",
+  "request_id": "tower-v010-release-01",
+  "source_commit": "8014e11be62d766c131827c87fd6c29ff7406ddd",
   "runtime_sha256": {
     "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
     "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
