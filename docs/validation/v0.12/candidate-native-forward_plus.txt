@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.4.318 - Forward+ - Using Device #0: Unknown - llvmpipe (LLVM 20.1.2, 256 bits)
+
+CAPTURE 02_gallery_22
+CAPTURE 07_kitchen_before
+CAPTURE 11_refuge_20
+PASS commerce integration: 49 checks; real tool actions, interruptions, dialogue, journal, stable receipts and final report. Prepared placements, not a human playthrough; 3 native captures.

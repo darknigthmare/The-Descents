@@ -1,0 +1,37 @@
+{
+	"captures": [
+		{
+			"description": "Galerie au 22 : terrazzo, vitrines importées et circulations latérales",
+			"file": "02_gallery_22.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "c3fd2e56fbda6fc5fe11e1713274ad1170c9933a308e46aec9a5676b87fff61a",
+			"width": 1440
+		},
+		{
+			"description": "Office au 21 : matériels importés, foyer local et fumée avant intervention",
+			"file": "07_kitchen_before.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "e1fd385f85c82e54bac3dc39b508bdd5c9c0b32c948b5ab251d12abcc32af50b",
+			"width": 1440
+		},
+		{
+			"description": "Refuge 20 avant réception : lits, paravents, eau et repères d’accueil",
+			"file": "11_refuge_20.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "01baf12a5beaf5a1e6e0b954e80a2771c7e3eec6cdc1cf83d84053871ae93b27",
+			"width": 1440
+		}
+	],
+	"display": "X11",
+	"engine": "4.7.2-stable (official)",
+	"human_playthrough": false,
+	"prepared_states": true,
+	"rendering_method": "forward_plus",
+	"version": "0.12.0"
+}

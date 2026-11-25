@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+COMMERCE JOURNEY mina: 2514 physics frames; max-step 0.0295 m; actual capsule arrival at (5.8, -23.94, 3.8).
+COMMERCE JOURNEY theo: 2178 physics frames; max-step 0.0295 m; actual capsule arrival at (7.4, -23.94, 3.8).
+COMMERCE JOURNEY sofia: 895 physics frames; max-step 0.0225 m; actual capsule arrival at (9.0, -23.94, 3.8).
+PASS commerce routes: 113 checks; 48 real player stair segments; 691 rope physics samples; 5587 civilian samples; three individual refuge receptions, real obstruction, distance, waiting and pause verified. Civilian lead is synthetic; all civilian movement uses move_and_slide at 60 Hz.

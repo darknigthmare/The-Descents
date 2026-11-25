@@ -1,0 +1,40 @@
+{
+  "version": "0.12.0",
+  "request": {
+    "file": ".review/v0.12/candidate-request.json",
+    "bytes": 13822,
+    "sha256": "f183878a94d8ff79435d5befbdfaed14e438f841d4659fa8cfd478f45ddd23a4"
+  },
+  "source_commit": "2e4de42ce85a42c80dae97a1de9985194430d9b6",
+  "request_commit": "9756f0b707c1ffc72284754ec1f1ff301ffdd960",
+  "isolated_request": true,
+  "runtime_matches": true,
+  "expected_captures": {
+    "compatibility": [
+      "01_bilan_23.png",
+      "02_gallery_22.png",
+      "03_mina_shutter_closed.png",
+      "04_mina_shutter_open.png",
+      "05_retranche_close.png",
+      "06_retranche_calm.png",
+      "07_kitchen_before.png",
+      "08_kitchen_after.png",
+      "09_stairs_22_21.png",
+      "10_rope_22_21.png",
+      "11_refuge_20.png",
+      "12_receptions_20.png",
+      "13_journal_people.png",
+      "14_journal_clues.png",
+      "15_bilan_20.png",
+      "16_menu_20.png",
+      "17_compact_journal.png",
+      "18_compact_bilan.png"
+    ],
+    "forward_plus": [
+      "02_gallery_22.png",
+      "07_kitchen_before.png",
+      "11_refuge_20.png"
+    ]
+  },
+  "approval_generated": false
+}

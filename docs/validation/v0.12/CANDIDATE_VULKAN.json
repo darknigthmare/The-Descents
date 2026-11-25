@@ -1,0 +1,22 @@
+{
+  "available": true,
+  "probe": {
+    "command": [
+      "xvfb-run",
+      "-a",
+      "-s",
+      "-screen 0 1440x900x24",
+      "/usr/bin/vulkaninfo",
+      "--summary"
+    ],
+    "returncode": 0,
+    "duration_seconds": 0.196,
+    "error_lines": [],
+    "checks": 0,
+    "pass_markers": 0,
+    "log": "candidate-vulkan-probe.txt",
+    "sha256": "f306f5602bdf7bd71615fa8fa129d5e03d544e4d615bd6c5b111ebb57e4002d2",
+    "pass": true
+  },
+  "reason": "Vulkan device enumeration succeeded."
+}

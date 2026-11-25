@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS commerce integration: 41 checks; real tool actions, interruptions, dialogue, journal, stable receipts and final report. Prepared placements, not a human playthrough; 0 native captures.

@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS field inspections: 477 checks; twelve optional props, coherent rescue/incident reads, collision-free detail, visible reachable targets and modal closure.

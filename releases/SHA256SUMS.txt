@@ -5,6 +5,9 @@ cdd5f2aaa3a983cd1ced132240127ebcaa16a1b65a754c4e95fa741b349ec738  The-Tower-Desc
 9f540922249e4aa122ad37027de5f01ae16132027aa51432668061c106783a8e  The-Tower-Descent-v0.11-Captures-native.zip
 17afd4c75f1ff920a8b1b052c2c99b43eb581da85b507e5acfdb621497cc070a  The-Tower-Descent-v0.11-Sources.zip
 8f82426d82430620f469097a9c76085bb79154e6d0b5ac861dc0548bd18b9d33  The-Tower-Descent-v0.11-Windows-x64.zip
+91239a1c4d55686b2fe2fa501dc7fd7d892c336cb57e629cf15e321452e559ef  The-Tower-Descent-v0.12-Captures-native.zip
+eab81047f1f4107aa8888f5400355a98e5c5e2fe4864ae17c769b3ed565c66bf  The-Tower-Descent-v0.12-Sources.zip
+0c6050d59b57a91cc4a62c8301ad91b0e3998b858bc65a635f2be9193737d853  The-Tower-Descent-v0.12-Windows-x64.zip
 51c59beac740c60f82e48800fad74e2e8cd7a8f3b9380107758daf566b929872  The-Tower-Descent-v0.2-Sources.zip
 913d439b9261c8c3318786afc46110d6d1678d1b47bc7611f23d4bc30cd3764b  The-Tower-Descent-v0.2-Windows-x64.zip
 50d1f376e439e6975d9c6f12437fa59837a3f2f12c4dc8346afd843eea3c3504  The-Tower-Descent-v0.4-Sources.zip
