@@ -1,8 +1,8 @@
 {
   "version": "0.8.0",
   "runtime_freeze_commit": "90c7c23d1f00c1c007967083bc73364a4f34debe",
-  "git_head": "90c7c23d1f00c1c007967083bc73364a4f34debe",
-  "verified_utc": "2026-11-25T07:39:13.172744+00:00",
+  "git_head": "571b59b0314d28d71fc66c46c7a5a003c0678ae8",
+  "verified_utc": "2026-11-25T07:58:19.417335+00:00",
   "engine": "4.7.2.stable.official.ed1daf0bf",
   "test_script": "prototype/tests/test_exported_pack.gd",
   "test_script_sha256": "d191c0f9ee695a38087cf830999f14ef8e71743a053072a7b68aaec3d0d32470",
@@ -71,7 +71,7 @@
         "/home/runner/work/The-Descents/The-Descents/prototype/tests/test_exported_pack.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.525,
+      "duration_seconds": 0.72,
       "error_lines": [],
       "checks": 54,
       "pass_markers": 1,
@@ -80,7 +80,7 @@
       "platform": "windows",
       "pack": "builds/windows/TheTowerDescent.exe",
       "pack_bytes": 110475824,
-      "pack_sha256": "3af88d283a07d21b7697072f620e0729fa2fd3993eed809e3e7170b66f053e3c",
+      "pack_sha256": "caf4876d587e0d93c5d0d2f124c4f1d80adfb36c38b800108be9b88a421db577",
       "pack_unchanged_during_test": true,
       "execution_directory_was_empty": true,
       "log_sha256": "9e5af5fdc9d4dd3b94b1c9f0a01b5af45f19f44502c5c81ca7a0cb1bfd7c40aa"
@@ -95,7 +95,7 @@
         "/home/runner/work/The-Descents/The-Descents/prototype/tests/test_exported_pack.gd"
       ],
       "returncode": 0,
-      "duration_seconds": 0.527,
+      "duration_seconds": 0.626,
       "error_lines": [],
       "checks": 54,
       "pass_markers": 1,
@@ -104,7 +104,7 @@
       "platform": "web",
       "pack": "builds/web/index.pck",
       "pack_bytes": 1207332,
-      "pack_sha256": "8eb9c943ac237beaf6ace9e7340f3f7baac060efebbc850f594af87c4ff2c4fe",
+      "pack_sha256": "a32cb9d9f2ebf2eef9616b2b50f0501bfb25b9dc4112ec3c0f313c6e3e063d92",
       "pack_unchanged_during_test": true,
       "execution_directory_was_empty": true,
       "log_sha256": "9e5af5fdc9d4dd3b94b1c9f0a01b5af45f19f44502c5c81ca7a0cb1bfd7c40aa"
