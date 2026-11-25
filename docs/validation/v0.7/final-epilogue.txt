@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS epilogue: 161 checks; three absolute shots, honest relay excerpts, skip/replay, reduced motion, overlay reset and real scene framing.

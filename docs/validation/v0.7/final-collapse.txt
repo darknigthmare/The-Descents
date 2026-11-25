@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS collapse director: 27 checks; one-shot progression, timing, frame gaps, pause-safe ticking and stable restores passed.
