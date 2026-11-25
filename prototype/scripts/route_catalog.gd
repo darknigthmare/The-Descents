@@ -16,42 +16,45 @@ static func floor_height(number: int) -> float:
 	return float(number - 24) * 6.0
 
 
-static func all_routes() -> Array[Dictionary]:
+static func all_routes(include_continuation: bool = false) -> Array[Dictionary]:
 	var result: Array[Dictionary] = []
 	for upper: int in [31, 30, 29, 28, 27, 26]:
 		result.append(_make_route(upper))
+	if include_continuation:
+		result.append(_make_route(25, "stairs", true))
+		result.append(_make_route(24, "rope"))
 	return result
 
 
 static func for_id(route_id: String) -> Dictionary:
-	for route: Dictionary in all_routes():
+	for route: Dictionary in all_routes(true):
 		if str(route["id"]) == route_id:
 			return route
 	return {}
 
 
-static func routes_at_floor(number: int) -> Array[Dictionary]:
+static func routes_at_floor(number: int, include_continuation: bool = false) -> Array[Dictionary]:
 	var result: Array[Dictionary] = []
-	for route: Dictionary in all_routes():
+	for route: Dictionary in all_routes(include_continuation):
 		if number == int(route["upper"]) or number == int(route["lower"]):
 			result.append(route)
 	return result
 
 
-static func stair_at_position(position_value: Vector3) -> Dictionary:
+static func stair_at_position(position_value: Vector3, include_continuation: bool = false) -> Dictionary:
 	if not position_value.is_finite():
 		return {}
-	for route: Dictionary in all_routes():
+	for route: Dictionary in all_routes(include_continuation):
 		if route["kind"] == "stairs" and (route["bounds"] as AABB).has_point(position_value):
 			return route
 	return {}
 
 
-static func _make_route(upper: int) -> Dictionary:
+static func _make_route(upper: int, authored_kind: String = "", north: bool = false) -> Dictionary:
 	var lower: int = upper - 1
 	var top_y: float = floor_height(upper)
 	var bottom_y: float = floor_height(lower)
-	var rope: bool = upper % 2 == 1
+	var rope: bool = upper % 2 == 1 if authored_kind.is_empty() else authored_kind == "rope"
 	var route: Dictionary = {
 		"id": ("R" if rope else "S") + "%d_%d" % [upper, lower],
 		"kind": "rope" if rope else "stairs",
@@ -82,13 +85,26 @@ static func _make_route(upper: int) -> Dictionary:
 			Vector3(STAIR_SIDE, bottom_y + 0.06, STAIR_FRONT),
 			route["bottom_entry"]
 		]
+		if north:
+			# A separate northern stair bay prevents the new 25–24 link from
+			# turning the southern 26–25 staircase into an open multistorey cage.
+			for key: String in ["top_entry", "bottom_entry"]:
+				var point: Vector3 = route[key]
+				route[key] = Vector3(-point.x, point.y, -point.z)
+			var points: Array = []
+			for point: Vector3 in route["path_points"]:
+				points.append(Vector3(-point.x, point.y, -point.z))
+			route["path_points"] = points
+			route["bounds"] = AABB(Vector3(-2.5, bottom_y - 0.1, -11.5), Vector3(5.0, 6.5, 6.0))
+			route["north"] = true
 	return route
 
 
-static func validate(routes: Array) -> Array[String]:
+static func validate(routes: Array, include_continuation: bool = false) -> Array[String]:
 	var errors: Array[String] = []
-	if routes.size() != ROUTE_IDS.size():
-		errors.append("Six local traversal links are required.")
+	var authored: Array[Dictionary] = all_routes(include_continuation)
+	if routes.size() != authored.size():
+		errors.append("The selected chapter requires its exact adjacent-floor traversal links.")
 		return errors
 	var required: Dictionary = {
 		"id": TYPE_STRING, "kind": TYPE_STRING, "upper": TYPE_INT, "lower": TYPE_INT,
@@ -108,7 +124,9 @@ static func validate(routes: Array) -> Array[String]:
 				valid = false
 		if not valid:
 			continue
-		var expected: Dictionary = _make_route(31 - index)
+		var expected: Dictionary = authored[index]
+		if route.get("north", false) != expected.get("north", false):
+			errors.append("Route %s changed its protected stair orientation." % str(route["id"]))
 		for key: String in required:
 			if route[key] != expected[key]:
 				errors.append("Route %s changed the protected %s contract." % [str(route["id"]), key])

@@ -1,10 +1,10 @@
-# The Tower Descent — prototype 0.9
+# The Tower Descent — prototype 0.10
 
-Ce guide décrit les commandes du paquet v0.9. [Télécharger Windows x64 v0.9](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.9-Windows-x64.zip) ou [les sources et documents v0.9](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.9-Sources.zip). Le statut des archives et les résultats de vérification figurent dans [l’état de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md).
+Ce guide décrit les commandes du paquet v0.10. [Télécharger Windows x64 v0.10](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.10-Windows-x64.zip) ou [les sources et documents v0.10](https://github.com/darknigthmare/The-Descents/raw/refs/heads/feat/live-tower-collapse/releases/The-Tower-Descent-v0.10-Sources.zip). Le statut des archives et les résultats de vérification figurent dans [l’état de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md).
 
 ## Lancer l’intervention
 
-1. Extraire tout le ZIP **The-Tower-Descent-v0.9-Windows-x64.zip** dans un dossier.
+1. Extraire tout le ZIP **The-Tower-Descent-v0.10-Windows-x64.zip** dans un dossier.
 2. Ouvrir **TheTowerDescent.exe**. Aucune installation de Godot n’est nécessaire.
 3. Passer ou regarder la signature du studio, ouvrir **Commencer l’intervention**, puis confirmer **Déployer Alpha**. La disposition proposée convient pour une première partie.
 
@@ -82,7 +82,17 @@ Après les trois réceptions et l’incident achevé, le relais du refuge 25 enr
 
 L’épilogue dure **quinze secondes** : poste médical du toit, relais du refuge puis Hespérie après impact. **E**, **Entrée** ou **Voir le bilan** permettent de passer la séquence. **Échap** la met en pause ; les options restent accessibles, puis **Reprendre** continue le film. Avec les mouvements réduits, chacun des trois plans garde un cadrage fixe.
 
-Le bilan reprend les personnes sauvées, les documents recueillis, le temps et les ressources. **Compte rendu** ouvre le dossier ; sa fermeture revient au bilan. **Revoir la séquence** relit l’épilogue, sans rejouer les secours ni modifier la sauvegarde. **Revenir à l’accueil** retrouve le menu du refuge. Charger une intervention terminée ouvre directement le bilan. Le signal évoquant le 24 ne donne pas accès à un nouvel étage.
+Le bilan reprend les personnes sauvées, les documents recueillis, le temps et les ressources. **Compte rendu** ouvre le dossier ; sa fermeture revient au bilan. **Revoir la séquence** relit l’épilogue, sans rejouer les secours ni modifier la sauvegarde. **Revenir à l’accueil** retrouve le menu du refuge. Charger une intervention terminée ouvre directement le bilan. Le bouton **Poursuivre au congrès** ouvre maintenant la suite après enregistrement. Les anciens points sûrs terminés permettent ce choix sans rejouer les secours.
+
+## Poursuivre vers le congrès et l’exposition
+
+Depuis le bilan du refuge 25, choisissez **Poursuivre au congrès**. Rejoignez l’escalier de service **au nord** : il relie uniquement le 25 au 24. L’ancien escalier vers le spa reste au sud. Au congrès, cherchez la cabine d’interprétation et placez-vous face à **Léa Mercier et Idris Kaci**.
+
+**E** donne un signe visible pour les faire suivre ; **E sur le groupe** leur demande d’attendre ou de reprendre. Restez à moins de cinq mètres et remontez à leur rythme jusqu’aux deux repères verts du refuge. Ils parcourent physiquement le foyer et l’escalier. Le rappel personnel reste indisponible tant que le groupe pris en charge n’est pas reçu. Le compteur ne passe à deux personnes au refuge qu’après leur arrivée réelle.
+
+Une fois le groupe accueilli, redescendez au 24 puis engagez le **rappel 24–23**, dans le noyau ouest. Au 23, relevez séparément la maquette et la photographie des anciens bains. Les objets restent en place après lecture ; **J → Indices** permet de relire les constats. Le relais d’exposition transmet le compte rendu lorsque les deux pièces sont relevées et le groupe reçu.
+
+L’accueil et le dossier indiquent votre dernier point sûr et la phase de mission. Une reprise remet une escorte interrompue en attente dans la cabine du 24 ; les personnes déjà reçues restent au refuge. Les réceptions initiales au toit, les ressources et l’état effondré d’Hespérie sont conservés. Le niveau 22 n’est pas encore ouvert.
 
 ## Commandes essentielles
 

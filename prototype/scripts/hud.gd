@@ -8,6 +8,7 @@ signal return_requested
 signal journal_requested
 signal replay_intro_requested
 signal epilogue_replay_requested
+signal descent_requested
 signal cinematic_skip_requested
 signal inspection_closed
 signal setting_changed(setting: String, value: Variant)
@@ -381,6 +382,7 @@ func _build_end() -> void:
 	end_panel.journal_requested.connect(func(): journal_requested.emit())
 	end_panel.replay_requested.connect(func(): epilogue_replay_requested.emit())
 	end_panel.menu_requested.connect(func(): return_requested.emit())
+	end_panel.descent_requested.connect(func(): descent_requested.emit())
 
 func show_journal(snapshot: Dictionary) -> void:
 	if not journal_panel.visible:
@@ -416,6 +418,7 @@ func _build_help() -> void:
 	text.focus_mode = Control.FOCUS_ALL
 	text.selection_enabled = true
 	text.text = "MISSION\nSecourez Ana au 30, Samuel au 28 et Nora au 26. E fixe leur harnais.\nRamenez chaque personne à la balise ORANGE de son étage pour le treuil.\nAprès les trois réceptions et l’incident, rejoignez le refuge 25.\n\nITINÉRAIRE LOCAL\nRappel toit–30 · Escalier 30–29 · Rappel 29–28 · Escalier 28–27\nRappel 27–26 · Escalier 26–25. Chaque passage permet aussi le retour.\n\nÀ PIED ET DANS LES ESCALIERS\nZQSD / WASD : marcher · Souris / flèches : regarder · Maj : courir\nCtrl : s’accroupir · Espace : sauter · E : interagir au repère BLEU du rappel\n\nSUR LA CORDE\nS : descendre · Z/W : remonter · Q/A et D : équilibrer le balancement\nCtrl : progression précise · Maj + S : descente rapide\nEspace : verrouiller / libérer le descendeur · Relâcher : frein automatique\nX : stabiliser 16 s (un ancrage) · E : sortir, arrêté et centré au palier\nRemontée et descente rapide demandent de l’endurance. Reposez-vous assuré.\nLe rappel personnel exige les mains libres ; évacuez d’abord votre rescapé.\n\nMATÉRIEL ET LECTURE\nF : lampe · G : fusée · R : radio · J : dossier · Échap : pause et options\nE devant un objet « Examiner » ouvre sa fiche et suspend l’intervention.\nMolette / Page ↑↓ : défiler. Fermer ou Échap : reprendre.\nL’air de réserve diminue dans les fumées. Le refuge reste sûr."
+	text.text += "\n\nAPRÈS LE BILAN DU 25\nChoisissez Poursuivre au congrès pour ouvrir la reconnaissance.\nEscalier de service NORD 25–24 : voie de retour pour Léa et Idris.\nPlacez-vous devant le groupe et E : signe visible Suivez-moi / Attendez.\nAvancez près d’eux ; s’ils vous perdent, ils attendent sans se téléporter.\nLes deux personnes doivent atteindre les repères du refuge pour être reçues.\nAprès réception : rappel personnel 24–23, maquette et photographie à relever.\nLe terminal du 23 transmet le compte rendu. La suite au 22 reste fermée.\nUne reprise remet une escorte inachevée à l’abri dans la cabine du 24."
 	col.add_child(text)
 	help_close_button = _button("Compris", close_help, true)
 	col.add_child(help_close_button)

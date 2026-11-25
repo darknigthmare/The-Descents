@@ -42,7 +42,7 @@ func _run() -> void:
 	_extract(30)
 	_check(mission.world.roof_rescued_people["survivor_30"].visible, "Confirmed Ana did not appear at rooftop reception.")
 	var first_save: Dictionary = Store.load_data(TEST_PATH)
-	_check(first_save.get("version") == 3 and first_save.get("rescued") == ["survivor_30"], "The first confirmed rescue was not saved as schema 3.")
+	_check(first_save.get("version") == 4 and first_save.get("rescued") == ["survivor_30"], "The first confirmed rescue was not saved as schema 4.")
 	_check(_history_has(first_save.get("transmissions", []), "Ana Rios : réception confirmée"), "Reception confirmation was saved before its received transmission existed.")
 
 	_place(27)

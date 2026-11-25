@@ -4,8 +4,12 @@ class_name DescentWorld
 const Presentation = preload("res://scripts/presentation_geometry.gd")
 const Atmosphere = preload("res://scripts/maritime_atmosphere.gd")
 const Routes = preload("res://scripts/route_catalog.gd")
+const ContinuationPresentation = preload("res://scripts/continuation_presentation.gd")
 var atmosphere: Node3D
 var reduced_motion: bool = true
+var continuation_enabled: bool = false
+var continuation_visuals: Node3D
+var continuation_access_cover: MeshInstance3D
 
 ## Self-contained, modular 3D greybox. Metres are the world unit.
 ## All gameplay corridors and interaction sockets remain outside prop jitter.
@@ -61,7 +65,8 @@ var twin_view_target: Vector3 = Vector3(34.1, 33.0, -2.5)
 const FINAL_LEAN: float = 7.2
 const FINAL_SETTLEMENT: Vector3 = Vector3(-0.8, -1.8, 0.2)
 
-func build(seed_value: int, floor_specs: Array) -> Dictionary:
+func build(seed_value: int, floor_specs: Array, enable_continuation: bool = false) -> Dictionary:
+	continuation_enabled = enable_continuation
 	rng.seed = seed_value
 	_make_materials()
 	_build_environment()
@@ -75,8 +80,18 @@ func build(seed_value: int, floor_specs: Array) -> Dictionary:
 	for number in [30, 29, 28, 27, 26, 25]:
 		floor_heights[number] = float(number - 24) * 6.0
 		_build_floor(number, specs_by_floor.get(number, {}))
+	if continuation_enabled:
+		for number: int in [24, 23]:
+			floor_heights[number] = Routes.floor_height(number)
+			specs_by_floor[number] = {"number": number, "name": "Centre de congrès" if number == 24 else "Exposition Histoire de Nacre", "hazard": "none", "survivor": false, "evidence": false, "supplies": false, "anomaly": "none"}
+			_build_floor(number, specs_by_floor[number])
 	var roof: Dictionary = _build_roof()
 	_build_vertical_routes()
+	if continuation_enabled:
+		continuation_visuals = ContinuationPresentation.new()
+		add_child(continuation_visuals)
+		continuation_visuals.build(self)
+		set_continuation_state({"phase": "dormant", "escort_state": "waiting"})
 	_build_arrival_wash()
 	_build_rain()
 	atmosphere = Atmosphere.new()
@@ -103,8 +118,23 @@ func build(seed_value: int, floor_specs: Array) -> Dictionary:
 		"floor_y": floor_heights,
 		"sea_level": -132.0,
 		"specs": specs_by_floor,
-		"routes": Routes.all_routes()
+		"routes": Routes.all_routes(continuation_enabled),
+		"continuation_visuals": continuation_visuals
 	}
+
+func set_continuation_state(state: Dictionary) -> void:
+	if not continuation_enabled:
+		return
+	var accessible: bool = str(state.get("phase", "dormant")) in ["active", "complete"]
+	if is_instance_valid(continuation_access_cover):
+		continuation_access_cover.visible = not accessible
+		for child: Node in continuation_access_cover.get_children():
+			if child is StaticBody3D:
+				child.collision_layer = 0 if accessible else 1
+				child.collision_mask = 0 if accessible else 1
+	if is_instance_valid(continuation_visuals):
+		continuation_visuals.set_escort_state(str(state.get("escort_state", "waiting")))
+		continuation_visuals.chapter_active = accessible and str(state.get("phase", "")) == "active"
 
 func _process(delta: float) -> void:
 	elapsed += delta
@@ -320,22 +350,31 @@ func _build_lower_shell() -> void:
 	var shell: Node3D = Node3D.new()
 	shell.name = "UnplayableLowerTowerFacade"
 	add_child(shell)
-	# The unplayable floors reach the level-25 slab at y=6, not y=0.
-	_box(shell, Vector3(0, -66, 0), Vector3(23.8, 144, 23.8), materials["window"])
-	for level in range(25):
+	# Stop the opaque shell below the lowest authored floor of this chapter.
+	var top: float = -6.0 if continuation_enabled else 6.0
+	var height: float = top + 138.0
+	var center: float = (top - 138.0) * 0.5
+	_box(shell, Vector3(0, center, 0), Vector3(23.8, height, 23.8), materials["window"])
+	for level in range(23 if continuation_enabled else 25):
 		var yy: float = -138.0 + float(level) * 6
 		_box(shell, Vector3(0, yy, 0), Vector3(24.5, 0.4, 24.5), materials["edge"])
 	for xx in [-11.8, -6.0, 0.0, 6.0, 11.8]:
-		_box(shell, Vector3(xx, -66, 12), Vector3(0.15, 144, 0.25), materials["metal"])
-		_box(shell, Vector3(xx, -66, -12), Vector3(0.15, 144, 0.25), materials["metal"])
+		_box(shell, Vector3(xx, center, 12), Vector3(0.15, height, 0.25), materials["metal"])
+		_box(shell, Vector3(xx, center, -12), Vector3(0.15, height, 0.25), materials["metal"])
 
 func _floor_surface(parent: Node3D, y: float, floor_material: Material, enclosed: bool = true) -> void:
 	# The east side of the core remains open for the rescue hoist. Authored
 	# west-side landings below are separate from that continuous evacuation path.
 	_box(parent, Vector3(-7.35, y - 0.3, 0), Vector3(9.3, 0.6, 24), floor_material, true)
 	_box(parent, Vector3(7.35, y - 0.3, 0), Vector3(9.3, 0.6, 24), floor_material, true)
-	_box(parent, Vector3(0, y - 0.3, -7.35), Vector3(5.4, 0.6, 9.3), floor_material, true)
 	var number: int = roundi(y / 6.0) + 24
+	if continuation_enabled and number == 25:
+		_box(parent, Vector3(0, y - 0.3, -4.25), Vector3(5.4, 0.6, 3.1), floor_material, true)
+		_box(parent, Vector3(0, y - 0.3, -11.7), Vector3(5.4, 0.6, 0.6), floor_material, true)
+		for side: float in [-2.6, 2.6]:
+			_box(parent, Vector3(side, y - 0.3, -8.6), Vector3(0.2, 0.6, 5.6), floor_material, true)
+	else:
+		_box(parent, Vector3(0, y - 0.3, -7.35), Vector3(5.4, 0.6, 9.3), floor_material, true)
 	if number in [30, 28, 26]:
 		# A real 5 x 5.6 m cut-out admits the two flights. No solid full slab
 		# remains hidden beneath the staircase presentation.
@@ -393,7 +432,7 @@ func _build_floor(number: int, spec: Dictionary) -> void:
 	var y: float = floor_heights[number]
 	var floor_material: Material = materials["concrete"] if number <= 26 else materials["cream"]
 	_floor_surface(floor_node, y, floor_material)
-	var default_names: Dictionary = {30:"RESTAURANT PANORAMIQUE", 29:"SUITES DE L'AUBE", 28:"BUREAUX PELAGOS", 27:"JARDIN DES ENFANTS", 26:"SPA ET BASSIN", 25:"REFUGE TECHNIQUE"}
+	var default_names: Dictionary = {30:"RESTAURANT PANORAMIQUE", 29:"SUITES DE L'AUBE", 28:"BUREAUX PELAGOS", 27:"JARDIN DES ENFANTS", 26:"SPA ET BASSIN", 25:"REFUGE TECHNIQUE", 24:"CENTRE DE CONGRÈS", 23:"HISTOIRE DE NACRE"}
 	var title: String = str(spec.get("name", default_names[number])).to_upper()
 	_label(floor_node, Vector3(4.6, y + 3.8, -2.9), "%02d / %s" % [number, title], 40, Color("d7ded8"), 0.009, true)
 	# Keep the landing marker above eye level and at a readable physical size.
@@ -415,6 +454,11 @@ func _build_floor(number: int, spec: Dictionary) -> void:
 		27: _children(floor_node, y)
 		26: _spa(floor_node, y)
 		25: _maintenance(floor_node, y)
+	# The two new floors are authored by the continuation presentation. No
+	# fallback hoist, corpse, archive or procedural hazard is fabricated there.
+	if number < 25:
+		floor_node.set_meta("hazard", "none")
+		return
 	_variant_module(floor_node, y, int(spec.get("layout_variant", 0)))
 	var damaged_dressing: Node3D = Node3D.new()
 	damaged_dressing.name = "AfterImpactDressing"
@@ -471,17 +515,27 @@ func _build_vertical_routes() -> void:
 	add_child(network)
 	# The west half stops on the arrival floors; the east hoist envelope around
 	# x=1.8 stays clear from every rescued person to the roof docking manoeuvre.
-	for number: int in [30, 28, 26, 25]:
+	var landing_numbers: Array[int] = [30, 28, 26, 25]
+	if continuation_enabled:
+		landing_numbers.append(23)
+	for number: int in landing_numbers:
 		var cap: MeshInstance3D = _box(network, Vector3(-1.0, Routes.floor_height(number) - 0.3, 0), Vector3(3.4, 0.6, 5.4), materials["concrete"], true)
 		cap.name = "RappelLanding%d" % number
 		cap.set_meta("floor", number)
-	for number: int in [31, 30, 29, 28, 27, 26, 25]:
+	var guard_numbers: Array[int] = [31, 30, 29, 28, 27, 26, 25]
+	if continuation_enabled:
+		guard_numbers.append_array([24, 23])
+	for number: int in guard_numbers:
 		_build_core_guards(network, number)
-	for route: Dictionary in Routes.all_routes():
+	for route: Dictionary in Routes.all_routes(continuation_enabled):
 		if route["kind"] == "rope":
 			_build_rappel_link(network, route)
 		else:
 			_build_local_stair(network, route)
+	if continuation_enabled:
+		continuation_access_cover = _box(network, Vector3(0, 5.85, -8.6), Vector3(5.4, 0.30, 5.6), materials["black_metal"], true)
+		continuation_access_cover.name = "ContinuationAccessCover"
+		continuation_access_cover.set_meta("purpose", "physical_chapter_gate")
 
 
 func _build_core_guards(parent: Node3D, number: int) -> void:
@@ -550,10 +604,14 @@ func _build_local_stair(parent: Node3D, route: Dictionary) -> void:
 	_traversal_rail(stairs, Vector3(0.0, top_y, 5.8), Vector3(2.53, top_y, 5.8), materials["green"])
 	for end: String in ["top_entry", "bottom_entry"]:
 		var p: Vector3 = route[end]
+		if bool(route.get("north", false)):
+			p = Vector3(-p.x, p.y, -p.z)
 		_label(stairs, p + Vector3(0, 2.3, 0.1), "%s\nACCÈS LOCAL" % str(route["title"]).to_upper(), 30, Color("b4e0ce"), 0.0065, true)
 		for zz: float in [4.6, 5.0, 5.4]:
 			_box(stairs, Vector3(p.x, p.y - 0.035, zz), Vector3(0.65, 0.025, 0.09), materials["lit_green"])
 	_light(stairs, Vector3(0, bottom_y + 5.3, 10.8), Color("b4cece"), 0.75, 7.5)
+	if bool(route.get("north", false)):
+		stairs.rotation.y = PI
 
 
 func _stair_flight(parent: Node3D, flight_name: String, x: float, start_y: float, end_y: float) -> void:

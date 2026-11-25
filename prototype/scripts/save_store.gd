@@ -2,7 +2,8 @@ class_name DescentSave
 extends RefCounted
 ## Versioned local checkpoint storage. Invalid input never overwrites a valid save.
 
-const SAVE_VERSION: int = 3
+const Continuation = preload("res://scripts/continuation_director.gd")
+const SAVE_VERSION: int = 4
 # Keep the original filename so a 0.1 installation can find its checkpoint.
 const DEFAULT_PATH: String = "user://save_v1.json"
 const MAX_BYTES: int = 65536
@@ -15,7 +16,7 @@ const RADIO_EVENT_IDS: Array[String] = ["bravo_echo", "bravo_verification"]
 const INTEGER_LIMITS: Dictionary = {
 	"version": [SAVE_VERSION, SAVE_VERSION],
 	"seed": [1, 999999],
-	"floor": [25, 31],
+	"floor": [23, 31],
 	"anchors": [0, 8],
 	"flares": [0, 6]
 }
@@ -29,12 +30,17 @@ const ID_FIELDS: Array[String] = ["rescued", "clues", "supplies_used"]
 const REQUIRED_KEYS: Array[String] = [
 	"version", "seed", "floor", "health", "oxygen", "stress", "anchors",
 	"flares", "rescued", "clues", "supplies_used", "elapsed", "seen_floors", "completed",
-	"incident_state", "transmissions", "radio_events"
+	"incident_state", "transmissions", "radio_events", "continuation"
 ]
 
 
 static func save_data(data: Dictionary, path: String = DEFAULT_PATH) -> Error:
-	var normalized: Dictionary = _normalize(data, false)
+	# The previous writer API remains usable by validated v3 fixtures/clients.
+	# Old bounds and exact keys are checked before adding the dormant extension.
+	var schema: int = 3 if typeof(data.get("version")) == TYPE_INT and data.get("version") == 3 else SAVE_VERSION
+	var normalized: Dictionary = _normalize(data, false, schema)
+	if not normalized.is_empty() and schema == 3:
+		normalized = _migrate_legacy(normalized, schema)
 	if normalized.is_empty():
 		return ERR_INVALID_DATA
 	if not _valid_path(path):
@@ -87,24 +93,31 @@ static func load_data(path: String = DEFAULT_PATH) -> Dictionary:
 	# JSON numbers do not preserve GDScript integer types. Only mathematically
 	# integral, bounded values are converted for the integer fields.
 	var data: Dictionary = parser.data
-	var version: Variant = data.get("version")
-	if (typeof(version) == TYPE_INT or typeof(version) == TYPE_FLOAT) and (version == 1 or version == 2):
-		# JSON numbers are floats: numerical equality here intentionally avoids
-		# type-strict Array membership rejecting otherwise valid legacy files.
-		# Migration is read-only until the next valid v3 checkpoint is saved.
-		# Validate the entire exact legacy schema before adding any new fields.
-		var legacy: Dictionary = _normalize(data, true, int(version))
-		if legacy.is_empty():
-			return {}
-		legacy["version"] = SAVE_VERSION
-		if version == 1:
-			legacy["incident_state"] = "aftermath" if legacy["completed"] else "intact"
-		# Older versions did not record received words or optional radio events.
-		# Empty records preserve that absence instead of inventing a transcript.
-		legacy["transmissions"] = []
-		legacy["radio_events"] = []
-		return legacy
-	return _normalize(data, true)
+	var stored_version: Variant = data.get("version")
+	if typeof(stored_version) != TYPE_INT and typeof(stored_version) != TYPE_FLOAT:
+		return {}
+	if not is_finite(float(stored_version)) or floorf(float(stored_version)) != float(stored_version) or stored_version < 1 or stored_version > SAVE_VERSION:
+		return {}
+	var schema: int = int(stored_version)
+	var normalized: Dictionary = _normalize(data, true, schema)
+	if normalized.is_empty():
+		return {}
+	# Reading is deliberately side-effect free: a completed legacy intervention
+	# remains its refuge debrief until the player explicitly starts reconnaissance.
+	return _migrate_legacy(normalized, schema) if schema < SAVE_VERSION else normalized
+
+
+static func _migrate_legacy(legacy: Dictionary, schema: int) -> Dictionary:
+	var migrated: Dictionary = legacy.duplicate(true)
+	migrated["version"] = SAVE_VERSION
+	if schema == 1:
+		migrated["incident_state"] = "aftermath" if migrated["completed"] else "intact"
+	if schema < 3:
+		migrated["transmissions"] = []
+		migrated["radio_events"] = []
+	migrated["continuation"] = Continuation.dormant_state()
+	return _normalize(migrated, false)
+
 
 
 static func _valid_path(path: String) -> bool:
@@ -113,6 +126,8 @@ static func _valid_path(path: String) -> bool:
 
 static func _normalize(data: Dictionary, from_json: bool, schema: int = SAVE_VERSION) -> Dictionary:
 	var required_keys: Array[String] = REQUIRED_KEYS.duplicate()
+	if schema < 4:
+		required_keys.erase("continuation")
 	if schema < 3:
 		required_keys.erase("transmissions")
 		required_keys.erase("radio_events")
@@ -129,7 +144,7 @@ static func _normalize(data: Dictionary, from_json: bool, schema: int = SAVE_VER
 		if typeof(value) != TYPE_INT:
 			if not from_json or typeof(value) != TYPE_FLOAT or not is_finite(float(value)) or floorf(float(value)) != float(value):
 				return {}
-		var limits: Array = [schema, schema] if key == "version" else INTEGER_LIMITS[key]
+		var limits: Array = [schema, schema] if key == "version" else ([25, 31] if key == "floor" and schema < 4 else INTEGER_LIMITS[key])
 		if value < limits[0] or value > limits[1]:
 			return {}
 		result[key] = int(value)
@@ -151,14 +166,14 @@ static func _normalize(data: Dictionary, from_json: bool, schema: int = SAVE_VER
 				return {}
 			ids.append(value)
 		result[field] = ids
-	if not data["seen_floors"] is Array or data["seen_floors"].size() > 7:
+	if not data["seen_floors"] is Array or data["seen_floors"].size() > (7 if schema < 4 else 9):
 		return {}
 	var seen_floors: Array[int] = []
 	for value in data["seen_floors"]:
 		if typeof(value) != TYPE_INT:
 			if not from_json or typeof(value) != TYPE_FLOAT or not is_finite(float(value)) or floorf(float(value)) != float(value):
 				return {}
-		if value < 25 or value > 31 or seen_floors.has(int(value)):
+		if value < (25 if schema < 4 else 23) or value > 31 or seen_floors.has(int(value)):
 			return {}
 		seen_floors.append(int(value))
 	result["seen_floors"] = seen_floors
@@ -166,7 +181,7 @@ static func _normalize(data: Dictionary, from_json: bool, schema: int = SAVE_VER
 		return {}
 	result["completed"] = data["completed"]
 	if result["completed"]:
-		if result["floor"] != 25:
+		if schema < 4 and result["floor"] != 25:
 			return {}
 		# A closing film names these three received people. A hand-edited or
 		# corrupt checkpoint must not turn missing receptions into a completed run.
@@ -213,4 +228,9 @@ static func _normalize(data: Dictionary, from_json: bool, schema: int = SAVE_VER
 		if not events.is_empty() and (result["incident_state"] != "aftermath" or "survivor_28" not in result["rescued"]):
 			return {}
 		result["radio_events"] = events
+	if schema >= 4:
+		var continuation_state: Dictionary = Continuation.normalize(data["continuation"], true)
+		if continuation_state.is_empty() or not Continuation.checkpoint_consistent(result, continuation_state):
+			return {}
+		result["continuation"] = continuation_state
 	return result

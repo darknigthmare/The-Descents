@@ -355,6 +355,8 @@ func set_context(value: Dictionary, valid_save: bool, seed_value: int = 271104) 
 	continue_button.visible = valid_save
 	continue_button.disabled = not valid_save
 	continue_button.text = "CONSULTER L’INTERVENTION TERMINÉE" if value.get("id") == "refuge" else "REPRENDRE L’INTERVENTION"
+	if value.get("id") in ["recon", "recon_debrief"]:
+		continue_button.text = "CONSULTER LA RECONNAISSANCE" if value.get("id") == "recon_debrief" else "REPRENDRE LA RECONNAISSANCE"
 	start_button.text = "NOUVELLE INTERVENTION" if valid_save else "COMMENCER L’INTERVENTION"
 	seed_input.value = seed_value
 	replacement_note.visible = valid_save
@@ -369,6 +371,7 @@ func set_context(value: Dictionary, valid_save: bool, seed_value: int = 271104) 
 	if value.get("incident") == "aftermath":
 		situation = "Une réplique a fait basculer Hespérie contre Aube. Le noyau et le treuil tiennent. Le passage Est du 28 est condamné ; passez par le noyau. Bravo ne répond plus."
 	mission_text.text = "SITUATION\n" + situation + "\n\nVOTRE ÉQUIPE\nVarga coordonne le poste d’Aube. Alpha tient la ligne de rappel et réceptionne les rescapés. Bravo intervient sur Hespérie.\n\nVOTRE PARCOURS\n30 · Restaurant : Ana Rios\n29 · Suites : liaison visuelle vers Hespérie\n28 · Archives : Samuel Breton\n27 · Jardin des enfants\n26 · Spa : Nora Haddad\n25 · Refuge : relais et compte rendu\n\nMÉTHODE\nDescendez par la ligne centrale. Sécurisez chaque personne et rapportez-la à la balise de son étage. Attendez la confirmation du treuil. Vous pouvez remonter au poste de secours."
+	mission_text.text += "\n\nPOURSUIVRE DEPUIS LE BILAN DU 25\n24 · Centre de congrès : Léa Mercier et Idris Kaci, accompagnement par l’escalier de service nord.\n23 · Exposition Histoire de Nacre : maquette et photographie, accès par rappel personnel.\nLes trois premiers secours restent acquis. Les consignes d’escorte sont visibles et le groupe attend quand vous vous éloignez."
 	if is_visible_in_tree():
 		focus_primary()
 

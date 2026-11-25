@@ -1,5 +1,50 @@
 # The Tower Descent
 
+**Version 0.10 — du refuge au congrès et à l’histoire de Nacre.**
+
+Le prototype Godot poursuit maintenant la descente jusqu’au **23**. Après les trois secours et le bilan du refuge 25, une action explicite ouvre le centre de congrès du 24, son escorte à pied, puis l’exposition du 23. Les tours commencent toujours intactes ; l’effondrement en cours d’intervention, les réceptions au toit, le rappel contrôlé et les cinématiques précédentes restent présents.
+
+## Jouer et consulter la livraison courante
+
+- [Windows x64 v0.10](releases/The-Tower-Descent-v0.10-Windows-x64.zip) · [Sources et documents v0.10](releases/The-Tower-Descent-v0.10-Sources.zip).
+- [Commandes et démarrage Windows](docs/DEMARRAGE_WINDOWS.md) · [État de livraison](docs/ETAT_DE_LIVRAISON.md) · [Archives et empreintes vérifiées](releases/VERIFICATION_V0.10.json).
+- [Supplément de Bible Word v0.10](docs/The-Tower-Descent-Continuation-v0.10.docx) · [PDF v0.10](docs/The-Tower-Descent-Continuation-v0.10.pdf) · [Source complète de l’extension](docs/CONTINUATION_A24_A23_V0.10.md).
+- La [Bible intégrale Word v0.9](docs/The-Tower-Descent-Bible-v0.9.docx) et son [PDF](docs/The-Tower-Descent-Bible-v0.9.pdf) restent le volume de référence conservé. Le supplément précise les changements de la 0.10 ; les sources Markdown de la campagne sont réconciliées avec cette extension.
+
+Les résultats appartiennent au candidat identifié dans les rapports : [32 suites sources](docs/validation/v0.10/VERIFICATION.json), [packs Windows et Web](docs/validation/v0.10/EXPORTED_PACK_VERIFICATION.json), [manifeste de rendu](docs/validation/v0.10/REVIEW_MANIFEST.json), [revue explicite](.review/v0.10/approval.json). Le workflow sépare construction, examen des images et livraison. Une source sur la branche ne constitue pas à elle seule un nouvel export validé.
+
+## Ce qui est jouable dans cette extension
+
+| Élément | Comportement |
+| --- | --- |
+| Bilan du refuge 25 | **Poursuivre au congrès** enregistre le nouveau départ avant d’ouvrir les accès ; l’ancien bilan reste consultable |
+| Escalier S25_24 | Deux volées au nord, parcourues dans les deux sens ; voie d’accompagnement du groupe |
+| Centre de congrès A24 | Auditorium, écran incliné, cabine d’interprétation, foyer et signalétique de secours |
+| Léa Mercier et Idris Kaci | Contact visuel puis E pour suivre/attendre ; marche réelle, attente au-delà de 5 m, réception après arrivée des deux corps au refuge |
+| Rappel R24_23 | Ligne personnelle locale dans le noyau ouest ; frein, verrou, précision, endurance, descente et remontée |
+| Exposition Histoire de Nacre A23 | Maquette des volumes enfouis, panneau d’archive des anciens bains, sculpture contournable et terminal |
+| Enquête | Deux pièces relevées séparément, conservées dans le dossier ; leurs objets restent dans la scène |
+| Rémanence E01 | Deux gestes facultatifs de 14 s au maximum, sans poursuite ni dégâts ; radio et gestes prioritaires la suspendent |
+| Compte rendu au 23 | Exige le duo reçu et les deux relevés ; les trois personnes déjà remontées restent au toit |
+
+La mission conserve cinq personnes identifiables : Ana, Samuel et Nora au poste d’Aube, puis Léa et Idris au refuge 25. L’extension porte le parcours à **huit liaisons locales** : quatre escaliers et quatre rappels. Le dossier peut contenir cinq pièces, mais seules les deux pièces de l’exposition sont nécessaires à la nouvelle clôture.
+
+## Reprendre une ancienne sauvegarde
+
+Les schémas 1, 2 et 3 sont d’abord validés avec leurs anciennes règles, puis migrés en mémoire vers le schéma 4. Une sauvegarde terminée de la 0.9 ouvre son bilan sans refaire les secours ni réécrire le fichier. Choisir la poursuite crée ensuite un point sûr au 25. Si l’écriture échoue, le bilan reste ouvert et l’extension ne démarre pas.
+
+Une escorte en cours n’est jamais restaurée au milieu d’une marche ou d’un escalier. Le checkpoint conserve son briefing et la remet en attente dans la cabine du 24. Une réception confirmée la conserve au refuge. Les indices, ressources, secours et état effondré des tours restent liés à la même intervention.
+
+## Périmètre réel
+
+Le runtime reste un **prototype procédural sous Godot 4.7.2**. Le panneau d’archive est une représentation stylisée ; les personnages, mains et décors ne sont pas des assets artistiques définitifs. L’écran du congrès est incliné et statique. Les captures du moteur montrent des états préparés ; elles ne remplacent pas une partie humaine complète sous Windows ou dans un navigateur.
+
+La progression conserve le doute et les répétitions avant les rencontres humaines. A22, le Retranché d’A21, les laboratoires SILLAGE, la traversée de l’Enfer, la campagne complète et le portage UE5 restent à produire. Le sort de Bravo n’est pas confirmé et les retrouvailles avec Alma ne sont pas avancées au congrès.
+
+## Dossier historique de la version 0.9
+
+Les mesures, liens et descriptions ci-dessous appartiennent à la version 0.9 conservée. Le périmètre actuel est celui décrit plus haut et dans le supplément v0.10.
+
 **Version 0.9 — escaliers entre étages voisins et rappel contrôlé.**
 
 Deux tours encore debout, une ville noyée, deux équipes de secours. Alex descend dans Aube pour ramener trois personnes au toit. Après le premier sauvetage, Hespérie bascule contre la façade : les lieux changent et Bravo ne répond plus. Les anomalies d’abord discrètes amorcent une campagne qui révélera des expériences avec une dimension infernale réelle.

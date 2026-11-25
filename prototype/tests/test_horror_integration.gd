@@ -135,7 +135,7 @@ func _run() -> void:
 	mission.seen_floors = [29,28,26]
 	_check(mission._save_checkpoint(28), "The unchanged schema3 failed to save a valid horror-era checkpoint.")
 	var checkpoint: Dictionary = Store.load_data(SAVE)
-	_check(checkpoint.get("version",0) == 3 and not checkpoint.has("horror_events"), "Cosmetic impression state leaked into the checkpoint schema.")
+	_check(checkpoint.get("version",0) == 4 and not checkpoint.has("horror_events"), "Cosmetic impression state leaked into the checkpoint schema.")
 	save_bytes = FileAccess.get_file_as_bytes(SAVE)
 	mission._restore(checkpoint)
 	_disable_ticks()

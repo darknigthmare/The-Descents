@@ -7,6 +7,7 @@ signal close_requested
 signal journal_requested
 signal replay_requested
 signal menu_requested
+signal descent_requested
 
 const Dossier = preload("res://scripts/mission_dossier.gd")
 const TITLE_FONT: Font = preload("res://assets/fonts/OpenSans-CondBold.ttf")
@@ -27,6 +28,7 @@ var completion_text: RichTextLabel
 var journal_button: Button
 var replay_button: Button
 var return_button: Button
+var descent_button: Button
 var close_button: Button
 var title_label: Label
 var subtitle_label: Label
@@ -169,7 +171,7 @@ func _build_journal() -> void:
 	route_box.add_theme_constant_override("separation", 7)
 	side_column.add_child(route_box)
 	route_box.add_child(_label("AXE DE DESCENTE", 12, GOLD))
-	for index in range(7):
+	for index in range(9):
 		var row: Label = _label("", 15, MUTED)
 		route_box.add_child(row)
 		route_rows.append(row)
@@ -243,32 +245,61 @@ func _build_debrief() -> void:
 	return_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	return_button.pressed.connect(func(): menu_requested.emit())
 	footer.add_child(return_button)
-	var focus_chain: Array[Control] = [journal_button, replay_button, return_button, completion_text]
+	descent_button = _button("Poursuivre au congrès", true)
+	descent_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	descent_button.pressed.connect(func(): descent_requested.emit())
+	footer.add_child(descent_button)
+	var focus_chain: Array[Control] = [journal_button, replay_button, return_button, descent_button, completion_text]
 	_wire_focus_chain(focus_chain)
 
 
 func _refresh() -> void:
 	subtitle_label.text = "TRANCHE JOUABLE TERMINÉE   ·   Le signal reste à vérifier." if mode == "debrief" and model["completed"] else "DOSSIER %06d   ·   %s   ·   Lecture au temps de mission %s" % [model["seed"], model["location"], model["duration"]]
-	metric_values[0].text = "%d / 3" % model["rescued_count"]
-	metric_values[1].text = "%d / 3" % model["clue_count"]
+	metric_values[0].text = "%d / %d" % [model["total_received"], model["roster_total"]]
+	metric_values[1].text = "%d / %d" % [model["clue_count"], model["evidence_total"]]
 	metric_values[2].text = model["duration"]
 	metric_values[3].text = "TOIT" if model["floor"] == 31 else "ÉTAGE %d" % model["floor"]
 	if mode == "debrief":
-		for index in range(model["survivors"].size()):
-			var row: Dictionary = model["survivors"][index]
+		var extended: bool = model.get("continuation_phase", "dormant") != "dormant"
+		title_label.text = "SOUS LES PLANS DE NACRE" if extended else "LE REFUGE 25"
+		subtitle_label.text = "RECONNAISSANCE A24–A23 TERMINÉE · Cinq personnes à l’abri, deux constats à approfondir." if extended else "INTERVENTION SUPÉRIEURE TERMINÉE · Le refuge ouvre la suite de la descente."
+		# Three cards remain readable on compact displays. The extension uses
+		# two named arrivals plus the preserved roof reception summary.
+		var cards: Array = model["survivors"].slice(3, 5) if extended else model["survivors"]
+		if extended:
+			cards.append({"name": "Ana · Samuel · Nora", "status": "AU POSTE DU TOIT", "floor": 31, "confirmed": true, "detail": "Les trois réceptions initiales restent confirmées. Aucun secours n’a été rejoué."})
+		for index in range(mini(cards.size(), survivor_names.size())):
+			var row: Dictionary = cards[index]
 			survivor_names[index].text = row["name"]
-			survivor_statuses[index].text = "%s · ÉTAGE %d" % [row["status"], row["floor"]]
+			survivor_statuses[index].text = str(row["status"]) if extended else "%s · ÉTAGE %d" % [row["status"], row["floor"]]
 			survivor_statuses[index].add_theme_color_override("font_color", TEAL if row["confirmed"] else GOLD)
 			survivor_details[index].text = row["detail"]
 		completion_text.text = "%s\n\n%s\n\n%s\n%s\n\nRESSOURCES AU REFUGE\nÉtat physique %d %% · Air %d %% · Tension %d %%\nAncrages %d · Fusées %d · Réserves ouvertes %d / 2\n\nCette intervention s’arrête au refuge 25. Le sort de Bravo et la suite de la descente restent ouverts." % [model["relay_title"], model["relay_text"], model["structure_title"], model["structure_text"], roundi(model["health"]), roundi(model["oxygen"]), roundi(model["stress"]), model["anchors"], model["flares"], model["supplies_count"]]
 		completion_text.scroll_to_line(0)
+		if extended:
+			completion_text.text = str(model["relay_title"]) + "\n\n" + str(model["relay_text"]) + "\n\nPOINT SÛR\nÉtage 23 · Compte rendu conservé. Le dossier permet de relire les cinq personnes prises en charge et les pièces effectivement recueillies."
+		else:
+			completion_text.text = completion_text.text.replace("Cette intervention s’arrête au refuge 25. Le sort de Bravo et la suite de la descente restent ouverts.", "Le bilan des secours supérieurs est acquis. Poursuivre au congrès ouvre l’escalier vers le 24 après enregistrement du nouveau point sûr. Le sort de Bravo reste inconnu.")
 		replay_button.disabled = not model["replay_available"]
+		replay_button.visible = not extended
+		descent_button.visible = model.get("continuation_available", false)
+		var focus_chain: Array[Control] = [journal_button]
+		if replay_button.visible:
+			focus_chain.append(replay_button)
+		focus_chain.append(return_button)
+		if descent_button.visible:
+			focus_chain.append(descent_button)
+		focus_chain.append(completion_text)
+		_wire_focus_chain(focus_chain)
 	else:
+		for row_label: Label in route_rows:
+			row_label.hide()
 		for index in range(model["route"].size()):
 			var row: Dictionary = model["route"][index]
 			var suffix: String = "  ·  ÉVAC." if row["confirmed"] else ""
 			route_rows[index].text = "%s  %02d  %s%s" % ["›" if row["current"] else "·", row["floor"], row["title"], suffix]
 			route_rows[index].add_theme_color_override("font_color", GOLD if row["current"] else (WHITE if row["seen"] else MUTED))
+			route_rows[index].show()
 		select_tab(selected_tab)
 
 
@@ -298,7 +329,7 @@ func _adapt_layout() -> void:
 			label.add_theme_font_size_override("font_size", 22 if _compact else 26)
 		for label: Label in survivor_details:
 			label.add_theme_font_size_override("font_size", 13 if _compact else 15)
-		for button: Button in [journal_button, replay_button, return_button]:
+		for button: Button in [journal_button, replay_button, return_button, descent_button]:
 			button.add_theme_font_size_override("font_size", 15 if _compact else 18)
 	else:
 		side_column.custom_minimum_size.x = 194 if _compact else 236

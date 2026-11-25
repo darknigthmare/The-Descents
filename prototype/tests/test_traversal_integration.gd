@@ -257,7 +257,7 @@ func _test_stair_checkpoint() -> void:
 	mission._process(0.01)
 	_check(mission.player.is_at_landing() and mission.last_floor == 29 and 29 in mission.seen_floors, "Reaching the lower slab did not commit the actual floor arrival.")
 	_check(not mission.traversal_checkpoint_pending and Store.load_data(SAVE).get("floor", 0) == 29, "The pending staircase checkpoint did not save on the reached lower slab.")
-	_check(Store.load_data(SAVE).get("version", 0) == 3 and not Store.load_data(SAVE).has("rope_state"), "Transient traversal state leaked into the stable schema-3 checkpoint.")
+	_check(Store.load_data(SAVE).get("version", 0) == 4 and not Store.load_data(SAVE).has("rope_state"), "Transient traversal state leaked into the stable schema-4 checkpoint.")
 	stair_driver.queue_free()
 	stair_driver = null
 	await process_frame

@@ -2,13 +2,15 @@
 
 ## Catalogue des étages et des espaces de campagne
 
-**Version 0.9.0 — Assemblage des niveaux et dossier de production — 25 novembre 2026**
+**Version 0.10 — Assemblage des niveaux et continuation A24–A23 — 25 novembre 2026**
 
 Ce catalogue développe les lieux de la [Bible du jeu](BIBLE_DU_JEU.md). Chaque étage possède une fonction fixe, une scène reconnaissable et un objectif de rythme. La génération fait varier des passages, des objets, des personnes secondaires et des détails compatibles ; elle ne déplace pas les révélations principales au hasard.
 
-**Périmètre du prototype Godot 0.9.0 :** toit jouable d’Aube, Hespérie visible à distance, deux hélicoptères et équipes en maquette, étages 30 à 25, trois rescapés aux 30, 28 et 26, indices aux 29, 27 et 26, ravitaillement aux 29 et 25, anomalie au 26 et balise de fin au refuge 25. Les tours commencent intactes. La baie Est du 29 accueille l’effondrement en temps réel et les conséquences persistantes décrits dans [Effondrement en direct](EFFONDREMENT_EN_DIRECT.md). L’approche temps réel de la 0.5.0 anime les posés, les portes latérales et le déploiement des six membres de toit. Douze observations facultatives sont réparties sur les niveaux jouables. La 0.7 donne au refuge un épilogue en trois plans, un bilan contextuel et le journal à quatre onglets, sans ouvrir d’étage supplémentaire. Le jeu d’acteurs et le doublage détaillés restent des cibles de campagne. Le README et le rapport de validation établissent l’état logiciel et les vérifications.
+**Base héritée du prototype Godot 0.9.0 :** toit jouable d’Aube, Hespérie visible à distance, deux hélicoptères et équipes en maquette, étages 30 à 25, trois rescapés aux 30, 28 et 26, indices aux 29, 27 et 26, ravitaillement aux 29 et 25, anomalie au 26 et balise de fin au refuge 25. Les tours commencent intactes. La baie Est du 29 accueille l’effondrement en temps réel et les conséquences persistantes décrits dans [Effondrement en direct](EFFONDREMENT_EN_DIRECT.md). L’approche temps réel de la 0.5.0 anime les posés, les portes latérales et le déploiement des six membres de toit. Douze observations facultatives sont réparties sur les niveaux jouables. La 0.7 donne au refuge un épilogue en trois plans, un bilan contextuel et le journal à quatre onglets, sans ouvrir d’étage supplémentaire. Le jeu d’acteurs et le doublage détaillés restent des cibles de campagne. Le README et le rapport de validation établissent l’état logiciel et les vérifications.
 
-Les étages 24 à 1, la traversée d’Hespérie, les sous-sols, le seuil 666, les secteurs infernaux et Mountain Hole sont conçus ici mais ne font pas partie de cette première tranche jouable. Les personnes et les incidents supplémentaires restent des propositions de contenu, pas des acteurs déjà intégrés au prototype.
+**Continuation 0.10 :** après le bilan du 25, un choix explicite ouvre A24 Centre de congrès puis A23 Exposition Histoire de Nacre. S25_24, au nord du noyau, permet le retour à pied de Léa Mercier et Idris Kaci jusqu’au refuge ; R24_23 est un rappel personnel dans le noyau ouest. La maquette et la photographie de l’exposition se collectent séparément. Une Rémanence E01 facultative répète sa routine sans attaque. Le terminal du 23 clôt la reconnaissance après réception du duo et collecte des deux pièces. Le [supplément A24–A23](CONTINUATION_A24_A23_V0.10.md) précise le parcours, la sauvegarde et les limites de production ; les rapports de livraison établissent les vérifications réellement effectuées.
+
+Les étages 22 à 1, la traversée d’Hespérie, les sous-sols, le seuil 666, les secteurs infernaux et Mountain Hole restent conçus pour la campagne. Les variantes, personnes et incidents supplémentaires décrits dans leurs fiches ne sont pas des acteurs déjà intégrés au prototype. Les figures et décors de la continuation restent procéduraux.
 
 ## 1 Règles communes de variation
 
@@ -22,7 +24,7 @@ Les variantes présentées dans les entrées détaillées doivent être produite
 
 ## 2 Coupe générale de la tour Aube
 
-| Code | Niveau | Fonction initiale | Rôle dominant | Statut dans la première tranche |
+| Code | Niveau | Fonction initiale | Rôle dominant | Statut de production |
 |---|---|---|---|---|
 | A-TOIT | Toit | Hélisurface et maintenance | Arrivée, commandement, évacuation différée | Dans le périmètre |
 | A30 | 30 | Restaurant panoramique | Premier sauvetage | Dans le périmètre |
@@ -30,9 +32,9 @@ Les variantes présentées dans les entrées détaillées doivent être produite
 | A28 | 28 | Bureaux et archives | Sauvetage de Samuel après impact, chronologie | Dans le périmètre |
 | A27 | 27 | Jardin d’enfants | Silence et trace d’Alma | Dans le périmètre |
 | A26 | 26 | Spa et piscine technique | Sauvetage et anomalie | Dans le périmètre |
-| A25 | 25 | Maintenance supérieure | Refuge certifié et relais | Dans le périmètre, fin de tranche |
-| A24 | 24 | Centre de congrès | Traversée et groupe isolé | Campagne conçue |
-| A23 | 23 | Exposition d’art et d’histoire | Enquête sur l’île | Campagne conçue |
+| A25 | 25 | Maintenance supérieure | Refuge certifié, bilan supérieur et accueil du duo | Base 0.9 et transition 0.10 |
+| A24 | 24 | Centre de congrès | Traversée et groupe isolé | Continuation 0.10 |
+| A23 | 23 | Exposition d’art et d’histoire | Enquête sur l’île | Continuation 0.10 |
 | A22 | 22 | Galerie de boutiques | Itinéraires et premier faux appel | Campagne conçue |
 | A21 | 21 | Cuisines et cantine | Danger matériel et entraide | Campagne conçue |
 | A20 | 20 | Logistique hôtelière | Refuge certifié et regroupement | Campagne conçue |
@@ -75,6 +77,15 @@ Le noyau de circulation alterne trois rappels personnels et trois escaliers. Une
 | S26_25 | Spa 26 et refuge 25 | Deux volées et un palier | Dalle sûre, bilan et relais de fin de tranche |
 
 Les stations personnelles, les escaliers et leurs sorties sont des points fixes hors des variantes de mobilier. Les surfaces d’arrêt à l’ouest interdisent de prolonger un segment au-delà de son terminal ; elles ne bouchent pas le corridor du panier à l’est. Les appuis, les commandes et les critères de collision sont détaillés dans [Traversée et rappel v0.9](TRAVERSEE_ET_RAPPEL_V0.9.md), avec les props P61–P64.
+
+### Liaisons supplémentaires de la version 0.10
+
+| Identifiant | Paire desservie | Passage | Usage de secours |
+| --- | --- | --- | --- |
+| S25_24 | Refuge et congrès | Escalier physique au nord | Accompagnement du duo vers A25 |
+| R24_23 | Congrès et exposition | Rappel personnel à l’ouest | Alex seul, après réception du duo si une escorte est active |
+
+S25_24 est séparé du S26_25 au sud : revenir sur le plateau du refuge permet de choisir la liaison suivante. Les nouveaux types de passage sont des décisions d’architecture explicites. La route du duo reste au sol ; un ordre d’attente ne transforme pas le rappel en voie d’évacuation collective. L’accueil exige les deux corps et un appui au refuge. Le checkpoint conserve des états stables, avec les règles de reprise du [supplément](CONTINUATION_A24_A23_V0.10.md).
 
 ### A TOIT Le poste qui attend le retour
 
@@ -176,9 +187,9 @@ Depuis la 0.5.0, le retour facultatif d’une phrase de Bravo peut suivre six se
 
 **Fonction et image.** Atelier, local de sécurité et palier protégé par une séparation coupe-feu. L’éclairage chaud tranche avec les étages ouverts. Du matériel de maintenance a été organisé en point de secours.
 
-**Traversée et action.** Le joueur rejoint un espace stable, fait le bilan des trois personnes et active la balise vers le toit. La campagne permet ensuite de poursuivre ; la tranche du prototype se conclut ici lorsque ses conditions sont remplies.
+**Traversée et action.** Le joueur rejoint un espace stable, fait le bilan des trois personnes et active la balise vers le toit. L’intervention supérieure se conclut ici lorsque ses conditions sont remplies. La 0.10 permet ensuite d’engager explicitement A24–A23 depuis le bilan.
 
-**Liaison locale 0.9.** S26_25 est l’accès au refuge et le chemin de retour au spa. Le bas de cette cage ne mène pas au 24. La dalle de refuge et les limites de circulation restent cohérentes avec cette fin de tranche ; aucune touche de rappel ne donne accès à un niveau de campagne encore absent.
+**Liaison locale 0.9.** S26_25 est l’accès au refuge et le chemin de retour au spa. Le bas de cette cage ne mène pas au 24. La 0.10 ajoute séparément S25_24 au nord après activation de la continuation ; elle ne prolonge pas la cage sud en escalier continu.
 
 **Danger.** Aucun ennemi, aucune attaque surprise, aucune dépense de survie pendant le repos. Des bruits peuvent venir du dehors, sans altérer ce contrat.
 
@@ -186,7 +197,7 @@ Depuis la 0.5.0, le retour facultatif d’une phrase de Bravo peut suivre six se
 
 **Variables.** Petits objets de travail, messages de personnes déjà sauvées et contenu décoratif. Les ressources minimales sont fixes.
 
-**Invariant.** La fin du prototype exige l’incident achevé, les trois rescapés et la balise. Si la baie du 29 a été sautée, un objectif doit indiquer le retour à effectuer. Arriver seul au 25 ne donne pas automatiquement la réussite. La certification du refuge est fiable.
+**Invariant.** La clôture de l’intervention supérieure exige l’incident achevé, les trois rescapés et la balise. Si la baie du 29 a été sautée, un objectif doit indiquer le retour à effectuer. Arriver seul au 25 ne donne pas automatiquement la réussite. La certification du refuge est fiable.
 
 Le bilan final permet de rouvrir le journal et ses transmissions sans relancer la simulation. Une vérification de l’écho de Bravo encore en attente peut arriver au 25 avant la clôture si ses conditions de calme sont remplies ; attendre cette réplique n’est pas obligatoire.
 
@@ -200,7 +211,9 @@ La 0.7 fait suivre l’activation du relais d’un épilogue de quinze secondes 
 
 **Traversée et danger.** Le trajet peut passer par le foyer ou par les coulisses. La grande salle est coupée par une structure suspendue instable, annoncée par des craquements et de la poussière. Un passage haut donne une alternative préparée.
 
-**Personne et indice.** Une interprète s’est réfugiée dans une cabine avec un visiteur malentendant. Le sauvetage enseigne l’importance des signes visuels. Une présentation Pelagos annonce un programme de bien-être proche de SILLAGE sans le nommer.
+**Personnes et indice.** Léa Mercier, interprète, s’est réfugiée dans une cabine avec Idris Kaci, visiteur malentendant. Ces deux noms originaux sont introduits par la 0.10 ; leurs rôles étaient déjà fixés dans le catalogue. Regarder le duo puis utiliser E établit le contact avec une consigne visuelle. E permet ensuite de suivre ou d’attendre. Leur route guidée rejoint physiquement le refuge 25 par S25_24 ; seule l’arrivée des deux corps sur un appui à destination confirme la réception. Une présentation Pelagos évoque un programme de bien-être proche de SILLAGE sans le nommer.
+
+**Périmètre 0.10.** Le groupe ne descend pas sur la corde personnelle et n’utilise pas le portage. Une escorte active bloque ces deux actions, y compris pendant un ordre d’attente. L’accueil au 25 conserve les trois premières réceptions au toit. Les variantes d’écran suspendu instable, de cabine occupée et d’itinéraire haut restent des cibles de production lorsqu’elles dépassent le parcours préparé actuel.
 
 **Variables.** Configuration des sièges, entrée latérale, cabine occupée, présentation affichée et état de l’éclairage.
 
@@ -212,7 +225,9 @@ La 0.7 fait suivre l’activation du relais d’un épilogue de quinze secondes 
 
 **Traversée et danger.** Le niveau privilégie l’observation. Une baie détruite oblige à contourner une sculpture couchée ; des vitrines ne servent pas toutes de barrières infranchissables. Les espaces restent plus ouverts que l’étage précédent.
 
-**Personne et indice.** Un gardien peut être présent dans une variante de sauvetage secondaire. Dans toutes les variantes, une photographie des anciens bains montre la même forme de porte que certains dessins récents. Le passé local devient concret.
+**Personnes et indices.** La 0.10 conserve la maquette et la photographie des anciens bains comme deux pièces collectables indépendantes. La première donne la relation spatiale des volumes souterrains ; la seconde montre une porte comparable aux dessins récents. Leur lecture ne confirme pas déjà l’origine infernale des phénomènes. Le gardien reste une variante future de sauvetage secondaire.
+
+**Périmètre 0.10.** E01 reproduit facultativement une routine de quatorze secondes, deux répétitions au maximum, sans poursuite ni dégâts. La collecte ne dépend pas de l’observer. Le terminal du 23 exige l’accueil de Léa et Idris au refuge et les deux pièces ; il clôt cette reconnaissance, sans ouvrir A22 ni annoncer une fin de campagne.
 
 **Variables.** Parcours de l’exposition, œuvres endommagées, présence du gardien, lumière naturelle et emplacement du document principal.
 
@@ -683,7 +698,7 @@ La cible d’habillage conserve une silhouette distante, puis une réapparition 
 
 Sur une zone de 10 × 8 m, séparer consultation, réserve et arrivée de ligne par des volumes visuels bas. P08, P11, P12 et P22 forment un poste cohérent. L’entrée doit permettre de reconnaître la zone sûre avant de lire un texte. La lumière de travail doit différer des balises d’urgence sans dépendre d’une seule couleur.
 
-Le bilan clôt la tranche actuelle. La campagne ouvrirait ensuite une nouvelle descente après choix explicite. Prévoir du temps libre pour les options et le journal ; aucune minuterie d’attaque. Vérifier qu’une personne sauvée demeure enregistrée et qu’un événement radio facultatif non encore entendu n’empêche pas la fin.
+Le bilan clôt l’intervention supérieure. La 0.10 ouvre ensuite A24–A23 après choix explicite, et le refuge reçoit physiquement Léa et Idris à leur retour du congrès. Prévoir du temps libre pour les options et le journal ; aucune minuterie d’attaque. Vérifier qu’une personne sauvée demeure enregistrée et qu’un événement radio facultatif non encore entendu n’empêche pas la fin.
 
 ### A24 Assemblage du congrès
 

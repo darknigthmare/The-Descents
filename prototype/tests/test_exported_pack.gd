@@ -15,8 +15,10 @@ const HorrorPresentation = preload("res://scripts/horror_presentation.gd")
 const Routes = preload("res://scripts/route_catalog.gd")
 const Rope = preload("res://scripts/rope_traversal.gd")
 const RopePresentation = preload("res://scripts/rope_presentation.gd")
-const TEST_PATH: String = "user://qa_v09_external_pack.json"
-const PREFS_PATH: String = "user://qa_v09_external_pack.cfg"
+const Continuation = preload("res://scripts/continuation_director.gd")
+const ContinuationPresentation = preload("res://scripts/continuation_presentation.gd")
+const TEST_PATH: String = "user://qa_v010_external_pack.json"
+const PREFS_PATH: String = "user://qa_v010_external_pack.cfg"
 var failures: Array[String] = []
 var checks: int = 0
 
@@ -27,7 +29,7 @@ func _initialize() -> void:
 
 func _run() -> void:
 	_cleanup()
-	_check(ProjectSettings.get_setting("application/config/version", "") == "0.9.0", "Packed project has the wrong application version.")
+	_check(ProjectSettings.get_setting("application/config/version", "") == "0.10.0", "Packed project has the wrong application version.")
 	_check(not ResourceLoader.exists("res://tests/test_save.gd") and not ResourceLoader.exists("res://tests/test_cinematic_integration.gd"), "Developer tests unexpectedly shipped inside the pack.")
 	var scene: PackedScene = load("res://scenes/main.tscn")
 	_check(scene != null, "The mounted pack has no loadable main scene.")
@@ -167,9 +169,9 @@ func _run() -> void:
 	mission.rescued = ["survivor_30", "survivor_28"]
 	mission.radio_events = ["bravo_echo", "bravo_verification"]
 	mission.world.set_rescued_people(mission.rescued)
-	_check(mission._save_checkpoint(27), "The mounted runtime could not create its isolated schema-3 checkpoint.")
+	_check(mission._save_checkpoint(27), "The mounted runtime could not create its isolated schema-4 checkpoint.")
 	var saved: Dictionary = Store.load_data(TEST_PATH)
-	_check(saved.get("version") == 3 and saved.get("radio_events") == mission.radio_events and saved.get("transmissions", []).size() == received_before + 3, "Packed storage lost schema-3 received words or event markers.")
+	_check(saved.get("version") == 4 and saved.get("radio_events") == mission.radio_events and saved.get("transmissions", []).size() == received_before + 3, "Packed storage lost schema-4 received words or event markers.")
 	var before: String = FileAccess.get_file_as_string(TEST_PATH)
 	var invalid: Dictionary = saved.duplicate(true)
 	invalid["radio_events"] = ["unknown_event"]
@@ -188,11 +190,122 @@ func _run() -> void:
 		mission.hud.journal_panel.select_tab(tab_id)
 		_check(mission.hud.journal_panel.selected_tab == tab_id and mission.hud.journal_panel.journal_text.text == dossier["pages"][tab_id], "Packed dossier tab does not display its matching mission projection.")
 	_check(FileAccess.get_file_as_string(TEST_PATH) == before and mission.radio.history_snapshot() == saved["transmissions"], "Reading the exported dossier rewrote the checkpoint or received-radio ledger.")
+	await _test_packed_continuation(mission)
 	mission.free()
 	await process_frame
 	await process_frame
 	_cleanup()
 	_finish()
+
+
+func _test_packed_continuation(mission: Node3D) -> void:
+	_check(Store.SAVE_VERSION == 4 and mission.continuation.phase == "dormant", "The mounted continuation or schema-4 storage is missing.")
+	_check(ResourceLoader.exists("res://scripts/continuation_director.gd") and ResourceLoader.exists("res://scripts/continuation_presentation.gd"), "The mounted pack lost a v0.10 mission or world module.")
+	for path: String in ["test_continuation.gd", "test_continuation_routes.gd", "test_continuation_integration.gd", "visual_continuation_preview.gd", "visual_continuation_preview.tscn"]:
+		_check(not ResourceLoader.exists("res://tests/" + path), "The v0.10 developer fixture unexpectedly ships in the exported pack: " + path)
+	var expanded_routes: Array[Dictionary] = Routes.all_routes(true)
+	_check(expanded_routes.size() == 8 and Routes.validate(expanded_routes, true).is_empty() and Routes.all_routes().size() == 6, "The mounted optional route graph changed the historical baseline or lacks the extension.")
+	_check(Routes.for_id("S25_24")["kind"] == "stairs" and Routes.for_id("S25_24")["top_entry"].z < 0.0 and Routes.for_id("R24_23")["kind"] == "rope", "The pack does not contain the authored north staircase and 24–23 rappel.")
+	var lower_belay = Rope.new()
+	_check(lower_belay.attach(Routes.for_id("R24_23"), 24), "The mounted rope validator still rejects the lower playable floors.")
+	var lower_state: Dictionary = lower_belay.advance(15.0, {"vertical": 1.0, "wind_strength": 0.0})
+	_check(lower_state["exit_floor"] == 23 and lower_state["position"] == Routes.for_id("R24_23")["rope_bottom"], "The packed lower belay does not stop on the exhibition landing.")
+	# Fixture preparation establishes the already-tested rescue receipts. The
+	# chapter transition itself travels through the real visible Button signal.
+	mission.hud.journal_panel.hide()
+	mission.rescued = Continuation.RESCUE_IDS.duplicate()
+	mission.seen_floors = [31, 30, 29, 28, 27, 26, 25]
+	mission.incident.restore("aftermath")
+	mission.world.set_rescued_people(mission.rescued)
+	mission.player.teleport_to_floor(25)
+	await physics_frame
+	mission._complete_game(false)
+	_disable_ticks(mission)
+	_check(mission.completed and mission.hud.end_panel.visible and mission.hud.end_panel.descent_button.visible, "The mounted rescue debrief does not expose the next-chapter button.")
+	var rescue_save: Dictionary = Store.load_data(TEST_PATH)
+	_check(rescue_save.get("completed", false) and rescue_save.get("continuation", {}).get("phase", "") == "dormant", "The rescue debrief fabricated an active continuation before the choice.")
+	var stock: Array = [mission.health, mission.oxygen, mission.stress, mission.anchors, mission.flares]
+	mission.hud.end_panel.descent_button.pressed.emit()
+	_disable_ticks(mission)
+	await physics_frame
+	await physics_frame
+	var started: Dictionary = Store.load_data(TEST_PATH)
+	_check(mission.started and not mission.completed and mission.continuation.phase == "active" and mission.player.active, "The mounted debrief button did not resume an active continuation.")
+	_check(started.get("version", 0) == 4 and started.get("floor", 0) == 25 and started.get("continuation", {}).get("started_at_refuge", false), "The mounted chapter choice did not first persist a schema-4 refuge checkpoint.")
+	_check(mission.rescued == Continuation.RESCUE_IDS and stock == [mission.health, mission.oxygen, mission.stress, mission.anchors, mission.flares], "The packed chapter transition lost earlier rescue receipts or material resources.")
+	_check(mission.player.continuation_enabled and mission.world_data.get("routes", []).size() == 8 and mission.world.get_node_or_null("Floor24") != null and mission.world.get_node_or_null("Floor23") != null, "The mounted transition failed to build the new levels or player bounds.")
+	var visuals: Node3D = mission.world_data.get("continuation_visuals")
+	_check(is_instance_valid(visuals) and visuals.get_script() == ContinuationPresentation and visuals.people.size() == 2 and visuals.escort_state == "waiting", "The exported chapter failed to instantiate its two physical waiting civilians.")
+	_check(is_instance_valid(visuals) and not mission.world.continuation_access_cover.visible and not visuals.both_arrived(), "The packed chapter either kept its access shut or invented a reception.")
+	for id: String in ["continuation_duo_24", "continuation_model_23", "continuation_photo_23", "continuation_terminal_23"]:
+		_check(is_instance_valid(_packed_object(mission, id)), "The mounted scene omitted an authored continuation interaction: " + id)
+	mission.player.teleport_to_floor(24)
+	mission.seen_floors.append(24)
+	await physics_frame
+	_check(mission.player.nearest_floor() == 24 and mission._save_checkpoint(24), "The packed runtime cannot record the supported congress landing.")
+	var active_save: Dictionary = Store.load_data(TEST_PATH)
+	mission._restore(active_save)
+	_disable_ticks(mission)
+	await physics_frame
+	_check(mission.player.nearest_floor() == 24 and mission.continuation.phase == "active" and mission.player.active and not mission.hud.end_panel.visible, "The mounted active save reloads as the old debrief or wrong floor.")
+	_check(mission.continuation_visuals.escort_state == "waiting" and not mission.continuation_visuals.both_arrived(), "The packed reload invented an escorted reception.")
+	# Read the actual packed evidence objects through normal interaction guards.
+	# These placements verify resource/integration delivery, not physical travel.
+	mission.player.teleport_to_floor(23)
+	mission.seen_floors.append(23)
+	await physics_frame
+	for id: String in Continuation.PROOF_IDS:
+		var object: Node3D = _packed_object(mission, id)
+		if not is_instance_valid(object):
+			continue
+		_check(_face_continuation(mission, object), "Packed evidence has no clear inspection approach: " + id)
+		mission._interact_node(object)
+		_check(id in mission.clues and object.is_visible_in_tree() and object.get_meta("used", false), "Reading the mounted evidence failed or removed its exhibition prop: " + id)
+	var evidence_save: Dictionary = Store.load_data(TEST_PATH)
+	_check(evidence_save.get("floor", 0) == 23 and Continuation.has_proofs(evidence_save), "The mounted evidence collection was not retained in the exhibition checkpoint.")
+	var before_reload: String = FileAccess.get_file_as_string(TEST_PATH)
+	mission._restore(evidence_save)
+	_disable_ticks(mission)
+	await physics_frame
+	_check(mission.player.nearest_floor() == 23 and mission.continuation.phase == "active" and Continuation.has_proofs(mission._dossier_snapshot()), "The mounted lower-floor reload lost its active chapter or discoveries.")
+	_check(FileAccess.get_file_as_string(TEST_PATH) == before_reload, "Reading the packed active checkpoint rewrote it.")
+	for id: String in Continuation.PROOF_IDS:
+		var object: Node3D = _packed_object(mission, id)
+		_check(is_instance_valid(object) and object.is_visible_in_tree() and object.get_meta("used", false), "Packed restoration removed or reopened a previously read exhibition prop: " + id)
+	var terminal: Node3D = _packed_object(mission, "continuation_terminal_23")
+	if is_instance_valid(terminal) and _face_continuation(mission, terminal):
+		mission._interact_node(terminal)
+		_check(not mission.completed and mission.continuation.phase == "active" and FileAccess.get_file_as_string(TEST_PATH) == before_reload, "The packed exhibition terminal accepts missing civilian reception.")
+	else:
+		_check(false, "The packed exhibition terminal has no clear interaction approach.")
+
+
+func _packed_object(mission: Node3D, id: String) -> Node3D:
+	for object: Node3D in mission.world_data.get("interactables", []):
+		if is_instance_valid(object) and str(object.get_meta("id", "")) == id:
+			return object
+	return null
+
+
+func _face_continuation(mission: Node3D, object: Node3D) -> bool:
+	var y: float = float(int(object.get_meta("floor")) - 24) * 6.0 + 0.06
+	var capsule: CapsuleShape3D = CapsuleShape3D.new()
+	capsule.radius = 0.34
+	capsule.height = 1.72
+	for offset: Vector3 in [Vector3(0,0,1.85), Vector3(0,0,-1.85), Vector3(2.65,0,0), Vector3(-2.65,0,0)]:
+		var candidate: Vector3 = Vector3(object.global_position.x,y,object.global_position.z) + offset
+		var query: PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
+		query.shape = capsule
+		query.transform = Transform3D(Basis.IDENTITY,candidate + Vector3(0,0.87,0))
+		query.exclude = [mission.player.get_rid()]
+		if not mission.get_world_3d().direct_space_state.intersect_shape(query).is_empty():
+			continue
+		mission.player.global_position = candidate
+		mission.player.velocity = Vector3.ZERO
+		mission.player.camera.look_at(object.global_position + Vector3(0,1.2,0))
+		if mission._valid_continuation_interaction(object):
+			return true
+	return false
 
 
 func _face_field(mission: Node3D, object: Node3D) -> bool:
@@ -224,6 +337,7 @@ func _perception_colliders(parent: Node) -> int:
 
 func _disable_ticks(mission: Node3D) -> void:
 	mission.set_process(false)
+	mission.set_physics_process(false)
 	mission.player.set_process(false)
 	mission.player.set_physics_process(false)
 	mission.world.set_process(false)
@@ -243,7 +357,7 @@ func _check(condition: bool, message: String) -> void:
 
 func _finish() -> void:
 	if failures.is_empty():
-		print("PASS exported pack: %d checks; mounted v0.9 resources, menu/cinematic directors, animated helicopters, twelve field props and paused inspection, imported audio, schema-3 radio persistence, isolated restoration, four-tab mission dossier, three-shot rescue epilogue, isolated non-damaging perceptions, six adjacent stair/rope routes, lock and pause, safe local landings and sampled descender geometry. Linux headless engine loads the pack; this is not a Windows executable or browser launch or a visual approval." % checks)
+		print("PASS exported pack: %d checks; mounted v0.10 resources, historical rescue/menu/cinematic/audio/rope checks, schema-4 persistence, real debrief-button continuation, optional eight-route world, physical civilian resources, lower-floor reload and retained exhibition readings. Developer tests remain excluded. Linux headless engine loads the pack; this is not a Windows executable or browser launch or a visual approval." % checks)
 		quit(0)
 	else:
 		for failure: String in failures:

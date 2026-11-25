@@ -109,7 +109,13 @@ static func menu_context(data: Dictionary) -> Dictionary:
 	var floor_number: int = int(data.get("floor",31))
 	var after: bool = str(data.get("incident_state","intact")) == "aftermath"
 	var complete: bool = bool(data.get("completed",false))
-	var names: Dictionary = {31:"POSTE DU TOIT",30:"RESTAURANT PANORAMIQUE",29:"SUITES DE NACRE",28:"ARCHIVES D’AUBE",27:"JARDIN DES ENFANTS",26:"SPA DE NACRE",25:"REFUGE TECHNIQUE"}
+	var names: Dictionary = {31:"POSTE DU TOIT",30:"RESTAURANT PANORAMIQUE",29:"SUITES DE NACRE",28:"ARCHIVES D’AUBE",27:"JARDIN DES ENFANTS",26:"SPA DE NACRE",25:"REFUGE TECHNIQUE",24:"CENTRE DE CONGRÈS",23:"HISTOIRE DE NACRE"}
+	var continuation: Dictionary = data.get("continuation", {})
+	if continuation.get("phase", "dormant") != "dormant":
+		return {"id": "recon_debrief" if complete else "recon", "floor": floor_number,
+			"title": "RECONNAISSANCE TERMINÉE" if complete else names.get(floor_number, "POINT SÛR"),
+			"detail": "Deux personnes reçues au refuge. Les volumes enfouis restent à explorer." if complete else "Le secours du congrès et les traces de l’ancien Nacre.",
+			"incident": "aftermath", "rescued": 3 + (2 if continuation.get("escort_state") == "received" else 0), "elapsed": float(data.get("elapsed", 0.0))}
 	return {"id":"refuge" if complete else "roof" if floor_number == 31 else "floor", "floor":floor_number, "title": "INTERVENTION TERMINÉE" if complete else names.get(floor_number,"POINT SÛR"), "detail":"Le relais tient. La suite vous attend." if complete else "Signal dégradé. Les secours continuent." if after else "Alpha et Bravo sont en liaison.", "incident":"aftermath" if after else "intact", "rescued":data.get("rescued",[]).size(), "elapsed":float(data.get("elapsed",0.0))}
 
 static func menu_camera(context: Dictionary, time: float, reduced_motion: bool) -> Dictionary:
@@ -122,7 +128,7 @@ static func menu_camera(context: Dictionary, time: float, reduced_motion: bool) 
 			position = Vector3(21,52,21)
 			target = Vector3(1,43.5,-5)
 			fov = 59.0
-		"floor", "refuge":
+		"floor", "refuge", "recon", "recon_debrief":
 			var y: float = float(floor_number - 24) * 6.0
 			position = Vector3(10.2,y+2.3,8.9)
 			target = Vector3(-5.0,y+1.8,-4.5)

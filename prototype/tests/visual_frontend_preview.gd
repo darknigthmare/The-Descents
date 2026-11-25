@@ -8,7 +8,7 @@ const Routes = preload("res://scripts/route_catalog.gd")
 const SAVE: String = "user://qa_visual_frontend_v09.json"
 const PREFS: String = "user://qa_visual_frontend_v09.cfg"
 var mission: Node3D
-var output: String = "res://../docs/captures/v0.9"
+var output: String = "res://../docs/captures/v0.10/baseline"
 var shots: Array[Dictionary] = []
 
 func _ready() -> void:

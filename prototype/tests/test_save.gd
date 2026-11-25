@@ -30,7 +30,7 @@ func _initialize() -> void:
 
 	var invalid_cases: Array[Dictionary] = []
 	for pair in [
-		["version", 1], ["version", 2], ["version", 4], ["version", "3"], ["seed", 0], ["seed", 1000000],
+		["version", 1], ["version", 2], ["version", 3], ["version", 5], ["version", "4"], ["seed", 0], ["seed", 1000000],
 		["seed", 42.5], ["seed", true], ["floor", 24], ["floor", 32],
 		["health", -0.1], ["health", 100.1], ["health", NAN], ["oxygen", INF],
 		["stress", "50"], ["anchors", 9], ["flares", -1], ["elapsed", -1.0],
@@ -79,13 +79,14 @@ func _initialize() -> void:
 	_write_text(JSON.stringify(json_invalid))
 	_check(Store.load_data(TEST_PATH).is_empty(), "A fractional JSON seed was truncated instead of rejected.")
 	json_invalid = _fixture()
-	json_invalid["version"] = 4
+	json_invalid["version"] = 5
 	_write_text(JSON.stringify(json_invalid))
 	_check(Store.load_data(TEST_PATH).is_empty(), "An unsupported saved schema version was silently accepted.")
 	_test_migration()
 	for schema: int in [1, 2, 3]:
 		var inconsistent: Dictionary = second.duplicate(true)
 		inconsistent["version"] = schema
+		inconsistent.erase("continuation")
 		inconsistent["rescued"] = ["survivor_30"]
 		if schema < 3:
 			inconsistent.erase("transmissions")
@@ -108,7 +109,7 @@ func _initialize() -> void:
 	_check(Store.load_data(TEST_PATH) == source, "An interrupted temporary file superseded the valid checkpoint.")
 	_cleanup()
 	if failures.is_empty():
-		print("PASS checkpoint storage: %d checks; v3 radio persistence, strict v1/v2 migration, atomic replacement, immutable data and corruption handling passed." % checks)
+		print("PASS checkpoint storage: %d checks; v4 radio persistence, strict v1/v2 migration, atomic replacement, immutable data and corruption handling passed." % checks)
 		quit(0)
 	else:
 		for failure in failures:
@@ -119,13 +120,14 @@ func _initialize() -> void:
 
 func _fixture() -> Dictionary:
 	return {
-		"version": 3, "seed": 24011, "floor": 29,
+		"version": Store.SAVE_VERSION, "seed": 24011, "floor": 29,
 		"health": 92.25, "oxygen": 81.75, "stress": 23.0,
 		"anchors": 4, "flares": 2,
 		"rescued": ["survivor_30"], "clues": ["evidence_29"],
 		"supplies_used": ["supply_29"], "elapsed": 123.456,
 		"seen_floors": [31, 30, 29], "completed": false, "incident_state": "intact",
-		"transmissions": [], "radio_events": []
+		"transmissions": [], "radio_events": [],
+		"continuation": {"phase": "dormant", "started_at_refuge": false, "duo_briefed": false, "escort_state": "waiting"}
 	}
 
 
@@ -133,15 +135,16 @@ func _test_migration() -> void:
 	for schema: int in [1, 2]:
 		var legacy: Dictionary = _fixture()
 		legacy["version"] = schema
+		legacy.erase("continuation")
 		legacy.erase("transmissions")
 		legacy.erase("radio_events")
 		if schema == 1:
 			legacy.erase("incident_state")
 		var serialized: String = JSON.stringify(legacy)
 		_write_text(serialized)
-		_check(Store.load_data(TEST_PATH) == _fixture(), "Valid v%d did not migrate to intact v3 (including JSON numeric version)." % schema)
+		_check(Store.load_data(TEST_PATH) == _fixture(), "Valid v%d did not migrate to intact v4 (including JSON numeric version)." % schema)
 		_check(FileAccess.get_file_as_string(TEST_PATH) == serialized, "Reading v%d rewrote original bytes." % schema)
-		_check(Store.save_data(legacy, TEST_PATH) == ERR_INVALID_DATA, "The v3 writer accepted a legacy v%d checkpoint." % schema)
+		_check(Store.save_data(legacy, TEST_PATH) == ERR_INVALID_DATA, "The v4 writer accepted a legacy v%d checkpoint." % schema)
 		_check(FileAccess.get_file_as_string(TEST_PATH) == serialized, "Rejected legacy write damaged previous bytes.")
 		if schema == 2:
 			legacy["incident_state"] = "aftermath"
@@ -157,8 +160,8 @@ func _test_migration() -> void:
 		_check(migrated.get("incident_state") == "aftermath", "Completed v%d did not restore the collapsed world." % schema)
 		_check(migrated.get("completed") == true and migrated.get("rescued") == legacy["rescued"], "Migration lost completed rescue progress.")
 		_check(migrated.get("transmissions", ["invented"]).is_empty() and migrated.get("radio_events", ["invented"]).is_empty(), "Completed migration fabricated a radio transcript.")
-		_check(Store.save_data(migrated, TEST_PATH) == OK, "Migrated v%d could not be written as v3." % schema)
-		_check(Store.load_data(TEST_PATH) == migrated, "Migration was unstable after a v3 write.")
+		_check(Store.save_data(migrated, TEST_PATH) == OK, "Migrated v%d could not be written as v4." % schema)
+		_check(Store.load_data(TEST_PATH) == migrated, "Migration was unstable after a v4 write.")
 		for pair in [
 			["extra", true], ["seed", 42.5], ["version", float(schema) + 0.5],
 			["version", true], ["version", str(schema)], ["completed", "false"],
@@ -193,10 +196,10 @@ func _radio_fixture() -> Dictionary:
 
 func _test_radio_schema() -> void:
 	var source: Dictionary = _radio_fixture()
-	_check(Store.save_data(source, TEST_PATH) == OK, "Valid v3 radio checkpoint was rejected.")
+	_check(Store.save_data(source, TEST_PATH) == OK, "Valid v4 radio checkpoint was rejected.")
 	var original: String = FileAccess.get_file_as_string(TEST_PATH)
 	var loaded: Dictionary = Store.load_data(TEST_PATH)
-	_check(loaded == source, "v3 radio/events round trip changed received words.")
+	_check(loaded == source, "v4 radio/events round trip changed received words.")
 	loaded["transmissions"][0]["message"] = "mutated nested record"
 	loaded["radio_events"].clear()
 	_check(Store.load_data(TEST_PATH) == source, "Mutating nested loaded radio data changed the stored checkpoint.")

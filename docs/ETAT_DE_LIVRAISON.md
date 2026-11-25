@@ -1,4 +1,44 @@
-# État de livraison — version 0.9
+# État de livraison de la version 0.10
+
+**25 novembre 2026 — continuation A24 et A23.**
+
+La version 0.10 ouvre deux niveaux après le bilan initial : le congrès du 24 et l’exposition Histoire de Nacre du 23. Elle ajoute l’escalier nord S25_24, le rappel R24_23, l’accompagnement physique de Léa Mercier et Idris Kaci jusqu’au refuge, deux relevés historiques et un compte rendu local. Les huit passages sont réversibles ; les trois premiers secours et l’effondrement sont conservés.
+
+## Preuves du candidat exact
+
+| Domaine | Rapport de référence |
+| --- | --- |
+| Compilation et 32 suites sources | [VERIFICATION.json](validation/v0.10/VERIFICATION.json) |
+| Exports Windows x64 et Web | [EXPORTS.json](validation/v0.10/EXPORTS.json) |
+| Ressources chargées depuis les deux packs isolés | [EXPORTED_PACK_VERIFICATION.json](validation/v0.10/EXPORTED_PACK_VERIFICATION.json) |
+| 42 vues du secteur initial et 13 vues de continuation | [REVIEW_MANIFEST.json](validation/v0.10/REVIEW_MANIFEST.json) |
+| Supplément Word et PDF | [Revue du document](validation/v0.10/DOCUMENT_SUPPLEMENT.json) · [complétude du texte](validation/v0.10/SUPPLEMENT_CONTENT.json) |
+| Examen explicite des captures et pages exactes | [approval.json](../.review/v0.10/approval.json) |
+| Archives et comparaison des membres octet par octet | [VERIFICATION_V0.10.json](../releases/VERIFICATION_V0.10.json) |
+
+Les nombres de contrôles, empreintes, versions du moteur et dates d’exécution sont consignés par ces rapports. Un verdict vaut uniquement pour les fichiers qu’il identifie. Le workflow ne crée aucune approbation visuelle et ne fusionne pas la PR.
+
+## Continuité et contenu
+
+L’ancien bilan reste une réussite locale. Le bouton de poursuite enregistre l’ouverture du nouveau secteur avant de construire les accès. Le schéma 4 distingue l’intervention initiale de la continuation ; les schémas 1–3 sont migrés après validation de leurs règles d’origine. Une lecture de sauvegarde achevée ne déclenche ni nouveaux secours ni écriture.
+
+Léa et Idris marchent à 1,5 m/s sur une route préparée, attendent au-delà de cinq mètres et rencontrent les collisions du décor. Un signe donné face au groupe lance ou suspend son déplacement. Une escorte interrompue reprend depuis la cabine ; une réception confirmée reste au refuge. Les deux corps doivent atteindre les places d’accueil et trouver un appui. Le rappel personnel ne transporte pas le groupe.
+
+La maquette et la photographie restent visibles après lecture. Le terminal du 23 clôt la reconnaissance après réception et collecte des deux pièces. E01 est facultative, sans attaque, sans collision et sans reçu de preuve automatique. Les sources de Bible précisent les lieux, les comportements, les paramètres et les limites de la livraison.
+
+Le ZIP Sources conserve la Bible intégrale v0.9, son supplément v0.10, tous les modules et documents source, les captures courantes et les preuves textuelles historiques. Les captures anciennes et les autres volumes historiques restent dans GitHub et leurs archives. Les nouvelles archives n’écrasent aucune livraison antérieure.
+
+## Limites
+
+Les tests natifs et la lecture des packs s’exécutent sous Godot Linux. Ils ne constituent ni une partie humaine sur Windows ni une partie WebAssembly dans un navigateur. Les captures sont des états préparés. Les personnages et décors restent procéduraux, la photographie est un panneau d’archive stylisé et l’écran incliné ne tombe pas. Aucun résultat de performance ou de mixage final n’est déduit des essais automatiques.
+
+Le parcours s’arrête au 23. A22 et les étages inférieurs, les humains hostiles, les laboratoires, l’Enfer, Alma, l’intérieur d’Hespérie et UE5 restent des productions futures.
+
+## Historique de livraison v0.9
+
+Le compte rendu suivant est conservé avec ses chiffres et ses preuves propres.
+
+### État historique de livraison — version 0.9
 
 **25 novembre 2026 — Version 0.9.0.**
 

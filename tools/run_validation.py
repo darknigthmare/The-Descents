@@ -21,6 +21,7 @@ REQUIRED = {
     "mission_dossier", "epilogue", "epilogue_integration",
     "horror", "horror_integration",
     "rope_traversal", "vertical_routes", "traversal_integration",
+    "continuation", "continuation_integration", "continuation_routes",
 }
 
 
@@ -47,7 +48,7 @@ def main() -> None:
         for script in scripts:
             name = script.stem.removeprefix("test_")
             command = [binary, "--headless", "--path", str(ROOT / "prototype")]
-            if name in {"routes", "incident_routes", "vertical_routes", "traversal_integration"}:
+            if name in {"routes", "incident_routes", "vertical_routes", "traversal_integration", "continuation_routes", "continuation_integration"}:
                 command += ["--fixed-fps", "60"]
             command += ["--script", "res://tests/" + script.name]
             entry = run(command, cwd=ROOT, timeout=180, log=output / ("final-" + name + ".txt"))
@@ -59,7 +60,7 @@ def main() -> None:
     after = runtime_hashes()
     report = {
         "version": version(),
-        "label": "v0.9 adjacent-floor stairs and local rope traversal with braking, lock, precision, ascent and endurance",
+        "label": "v0.10 continuation after refuge 25, physical duo escort, adjacent-floor traversal and two-proof reconnaissance",
         "validated_utc": datetime.now(timezone.utc).isoformat(),
         "engine": engine,
         "runtime_freeze_commit": git_head(),

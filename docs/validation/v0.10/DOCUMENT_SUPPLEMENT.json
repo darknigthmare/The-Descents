@@ -1,0 +1,349 @@
+{
+  "format": 1,
+  "version": "0.10.0",
+  "reviewed_utc": "2026-11-25T15:33:13.066718+00:00",
+  "status": "pass",
+  "all_pass": true,
+  "scope": "Standalone A24–A23 supplement only. This document review certifies no game test, capture, export, performance or human playthrough.",
+  "source_count": 1,
+  "source_words": 3061,
+  "word_count_method": "Whitespace-separated Markdown tokens",
+  "page_count": 6,
+  "sources": [
+    {
+      "file": "docs/CONTINUATION_A24_A23_V0.10.md",
+      "bytes": 20385,
+      "sha256": "2978c20848864f2affa34f8096faeff4250ca68c79e899d0d7bb631bebdb3568"
+    }
+  ],
+  "generators": [
+    {
+      "file": "tools/build_continuation_document.py",
+      "bytes": 6299,
+      "sha256": "7307ac7dbe48c3985f70e3d18fc11bfcd7583bce144e2a1742ccd766b35438ad"
+    },
+    {
+      "file": "tools/build_bible.py",
+      "bytes": 25630,
+      "sha256": "0b90555d098cbb9ae85a5e7818d64e760118c6ce852a13ce30603dcfcdd31f80"
+    }
+  ],
+  "authoring_runtime": {
+    "python": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "python_version": "3.12.14",
+    "python_docx_version": "1.2.0"
+  },
+  "artifacts": [
+    {
+      "file": "docs/The-Tower-Descent-Continuation-v0.10.docx",
+      "bytes": 47874,
+      "sha256": "d794de99d6c96c476c93fc1c8ad8495ee493d565cbf402933bc209bd15a2bf75"
+    },
+    {
+      "file": "docs/The-Tower-Descent-Continuation-v0.10.pdf",
+      "bytes": 145829,
+      "sha256": "5e76315b269f28d1ca8bc07652981408704524af444fcfc33528605c4e47d25c"
+    }
+  ],
+  "layout": {
+    "page_size": "Letter portrait",
+    "body_font": "Arial 11 pt",
+    "line_spacing": 1.1,
+    "titles": "Black; no decorative paragraph rule; title punctuation normalized in DOCX only",
+    "tables": 2,
+    "nonempty_table_rows": 11,
+    "footer": "Centered Page n / N fields"
+  },
+  "reproducibility": {
+    "docx_rebuilt": true,
+    "identical_bytes": true,
+    "rebuild": {
+      "file": "/tmp/tower-v010-document-render/rebuilt.docx",
+      "bytes": 47874,
+      "sha256": "d794de99d6c96c476c93fc1c8ad8495ee493d565cbf402933bc209bd15a2bf75"
+    },
+    "scope": "DOCX regeneration in the same python-docx runtime; PDF byte determinism is not claimed."
+  },
+  "content_verification": {
+    "status": "pass",
+    "complete": true,
+    "report": {
+      "file": "/tmp/tower-v010-document-render/content.json",
+      "bytes": 10516,
+      "sha256": "94a4bc5b77b650008b8600ecbe71cedcc5fc2f6c642fbbf1b286c2db552aafd4"
+    },
+    "tool": {
+      "file": "tools/verify_document_content.py",
+      "bytes": 15845,
+      "sha256": "f16b6938eddc7aefb9504cbc93edae3ac1712a0213c8eee2f9e31319cd6ca334"
+    },
+    "counts": {
+      "ordered_blocks_checked": 69,
+      "ordered_blocks_matched": 69,
+      "body_paragraphs_checked": 58,
+      "body_paragraphs_matched": 58,
+      "table_rows_checked": 11,
+      "table_rows_matched": 11,
+      "cells_checked": 28,
+      "cells_matched_in_expected_row": 28,
+      "cell_paragraphs_checked": 28,
+      "cell_paragraphs_matched_in_expected_cell": 28,
+      "cell_texts_absent_everywhere": 0
+    },
+    "missing_ordered_blocks": [],
+    "failures": [],
+    "normalization": "NFKC; Unicode casefold; retain alphanumeric characters only"
+  },
+  "visual_reviews": [
+    {
+      "rendered_document_type": "docx",
+      "reviewed": true,
+      "artifact_sha256": "d794de99d6c96c476c93fc1c8ad8495ee493d565cbf402933bc209bd15a2bf75",
+      "method": "Canonical Documents render_docx.py rendered the exact DOCX with --emit_pdf; all six final page PNGs opened individually using view_image and visually inspected.",
+      "renderer": {
+        "file": "/home/agent/.codex/skills/builtins/documents/render_docx.py",
+        "bytes": 19702,
+        "sha256": "876d5993324e2faaaa96a68a4f7504642e9a07e6df265b385b2baa03b231369e"
+      },
+      "page_count": 6,
+      "reviewed_page_count": 6,
+      "status": "pass",
+      "pages": [
+        {
+          "page": 1,
+          "file": "/tmp/tower-v010-document-render/page-1.png",
+          "bytes": 392760,
+          "sha256": "4dcfce456513f55fdff07ebd5310a7fcbd19b1a52358302b345afc565e4cdbed",
+          "width": 1547,
+          "height": 2002,
+          "status": "pass",
+          "reviewed": true,
+          "opened_individually": true,
+          "reviewer": "AI assistant /root/continuation_design",
+          "notes": [
+            "Titre, introduction, origine des décisions et tableau de périmètre lisibles ; les huit lignes du tableau sont complètes et sans débordement."
+          ]
+        },
+        {
+          "page": 2,
+          "file": "/tmp/tower-v010-document-render/page-2.png",
+          "bytes": 435989,
+          "sha256": "e5f5190586d6f43ef87a459c1813db4f4a32603f296286c15f313ace97735a86",
+          "width": 1547,
+          "height": 2002,
+          "status": "pass",
+          "reviewed": true,
+          "opened_individually": true,
+          "reviewer": "AI assistant /root/continuation_design",
+          "notes": [
+            "Entrée dans le secteur et tableau des deux liaisons lisibles ; les quatre colonnes et les deux routes restent dans les marges."
+          ]
+        },
+        {
+          "page": 3,
+          "file": "/tmp/tower-v010-document-render/page-3.png",
+          "bytes": 465796,
+          "sha256": "beb34fa488b58592d2c8114a46279a6e59c79f15813ccf7ab2492c4d6742ab8e",
+          "width": 1547,
+          "height": 2002,
+          "status": "pass",
+          "reviewed": true,
+          "opened_individually": true,
+          "reviewer": "AI assistant /root/continuation_design",
+          "notes": [
+            "Continuation du paragraphe de corde, consignes du duo, paramètres physiques et début de réception lisibles ; les caractères accentués et textes en gras sont nets."
+          ]
+        },
+        {
+          "page": 4,
+          "file": "/tmp/tower-v010-document-render/page-4.png",
+          "bytes": 468366,
+          "sha256": "8d43a3fe2bac7c237c6b36716e8691772063ab847ee5a588168ae93de8a75373",
+          "width": 1547,
+          "height": 2002,
+          "status": "pass",
+          "reviewed": true,
+          "opened_individually": true,
+          "reviewer": "AI assistant /root/continuation_design",
+          "notes": [
+            "Fin des conditions de réception et section exposition complètes ; les deux preuves et le statut procédural de l’archive sont lisibles."
+          ]
+        },
+        {
+          "page": 5,
+          "file": "/tmp/tower-v010-document-render/page-5.png",
+          "bytes": 448455,
+          "sha256": "287a03b4f4d86a651cbe89918a75c08f3c11efbf39de29255fa9de37dbe05795",
+          "width": 1547,
+          "height": 2002,
+          "status": "pass",
+          "reviewed": true,
+          "opened_individually": true,
+          "reviewer": "AI assistant /root/continuation_design",
+          "notes": [
+            "Sections E01, terminal et début de persistance lisibles ; hiérarchie des titres et séparation des paragraphes régulières."
+          ]
+        },
+        {
+          "page": 6,
+          "file": "/tmp/tower-v010-document-render/page-6.png",
+          "bytes": 473439,
+          "sha256": "baaae4023173756a76987defd22dcc5e3322b0da91b7923cce640f376c3d9151",
+          "width": 1547,
+          "height": 2002,
+          "status": "pass",
+          "reviewed": true,
+          "opened_individually": true,
+          "reviewer": "AI assistant /root/continuation_design",
+          "notes": [
+            "Schéma v4, checkpoint du premier contact, reprise et limites de production complets ; dernier paragraphe et pagination visibles sans coupure."
+          ]
+        }
+      ]
+    },
+    {
+      "rendered_document_type": "pdf",
+      "reviewed": true,
+      "artifact_sha256": "5e76315b269f28d1ca8bc07652981408704524af444fcfc33528605c4e47d25c",
+      "method": "The exact delivered PDF was separately rasterized with pdftoppm -png -r 150; all six final PNGs opened individually using view_image and visually inspected.",
+      "page_count": 6,
+      "reviewed_page_count": 6,
+      "status": "pass",
+      "pages": [
+        {
+          "page": 1,
+          "file": "/tmp/tower-v010-document-render/pdf/page-1.png",
+          "bytes": 321198,
+          "sha256": "b6381cdc01ccafd1f73ab1bd5e6502b50aa34e13dcb01ffc50ec893ddd91ffad",
+          "width": 1275,
+          "height": 1650,
+          "status": "pass",
+          "reviewed": true,
+          "opened_individually": true,
+          "reviewer": "AI assistant /root/continuation_design",
+          "notes": [
+            "Titre, introduction, origine des décisions et tableau de périmètre lisibles ; les huit lignes du tableau sont complètes et sans débordement."
+          ]
+        },
+        {
+          "page": 2,
+          "file": "/tmp/tower-v010-document-render/pdf/page-2.png",
+          "bytes": 358622,
+          "sha256": "05f3cf16268cf863355e745fbd2df2e2bc77ab8178ac68486f8d913777ce4cbd",
+          "width": 1275,
+          "height": 1650,
+          "status": "pass",
+          "reviewed": true,
+          "opened_individually": true,
+          "reviewer": "AI assistant /root/continuation_design",
+          "notes": [
+            "Entrée dans le secteur et tableau des deux liaisons lisibles ; les quatre colonnes et les deux routes restent dans les marges."
+          ]
+        },
+        {
+          "page": 3,
+          "file": "/tmp/tower-v010-document-render/pdf/page-3.png",
+          "bytes": 386177,
+          "sha256": "d46e2bb897f23c2d3cb7db7242b61ab2161085a98947025b7426019efe73978e",
+          "width": 1275,
+          "height": 1650,
+          "status": "pass",
+          "reviewed": true,
+          "opened_individually": true,
+          "reviewer": "AI assistant /root/continuation_design",
+          "notes": [
+            "Continuation du paragraphe de corde, consignes du duo, paramètres physiques et début de réception lisibles ; les caractères accentués et textes en gras sont nets."
+          ]
+        },
+        {
+          "page": 4,
+          "file": "/tmp/tower-v010-document-render/pdf/page-4.png",
+          "bytes": 388887,
+          "sha256": "2387ae314d2db48f60ff45cdedaa5b34f21def5b14daa66c52e2e0964280a88b",
+          "width": 1275,
+          "height": 1650,
+          "status": "pass",
+          "reviewed": true,
+          "opened_individually": true,
+          "reviewer": "AI assistant /root/continuation_design",
+          "notes": [
+            "Fin des conditions de réception et section exposition complètes ; les deux preuves et le statut procédural de l’archive sont lisibles."
+          ]
+        },
+        {
+          "page": 5,
+          "file": "/tmp/tower-v010-document-render/pdf/page-5.png",
+          "bytes": 370894,
+          "sha256": "b0cb0b290772a1fb84cef15b4d2e10996ac612b4350a1259b08dc22f1f1feae0",
+          "width": 1275,
+          "height": 1650,
+          "status": "pass",
+          "reviewed": true,
+          "opened_individually": true,
+          "reviewer": "AI assistant /root/continuation_design",
+          "notes": [
+            "Sections E01, terminal et début de persistance lisibles ; hiérarchie des titres et séparation des paragraphes régulières."
+          ]
+        },
+        {
+          "page": 6,
+          "file": "/tmp/tower-v010-document-render/pdf/page-6.png",
+          "bytes": 387784,
+          "sha256": "7348b4c5f2c7f6bb949ec111d5d554a29c5d899e8814448c9d9338739aabd139",
+          "width": 1275,
+          "height": 1650,
+          "status": "pass",
+          "reviewed": true,
+          "opened_individually": true,
+          "reviewer": "AI assistant /root/continuation_design",
+          "notes": [
+            "Schéma v4, checkpoint du premier contact, reprise et limites de production complets ; dernier paragraphe et pagination visibles sans coupure."
+          ]
+        }
+      ]
+    }
+  ],
+  "word_review": {
+    "rendered_document_type": "docx",
+    "reviewed": true,
+    "artifact_sha256": "d794de99d6c96c476c93fc1c8ad8495ee493d565cbf402933bc209bd15a2bf75",
+    "method": "Canonical Documents render_docx.py rendered the exact DOCX with --emit_pdf; all six final page PNGs opened individually using view_image and visually inspected.",
+    "renderer": {
+      "file": "/home/agent/.codex/skills/builtins/documents/render_docx.py",
+      "bytes": 19702,
+      "sha256": "876d5993324e2faaaa96a68a4f7504642e9a07e6df265b385b2baa03b231369e"
+    },
+    "page_count": 6,
+    "reviewed_page_count": 6,
+    "status": "pass"
+  },
+  "reference_bible": [
+    {
+      "file": "docs/The-Tower-Descent-Bible-v0.9.docx",
+      "bytes": 319296,
+      "sha256": "f718404121ba6c6990cf7df6e0988455881a0aa9e4188af6e63da14b319dbe20",
+      "unchanged_from_commit": "9e40aefe8153ec6c8400dc77949cfd08d71d1f19",
+      "byte_identical": true
+    },
+    {
+      "file": "docs/The-Tower-Descent-Bible-v0.9.pdf",
+      "bytes": 3064715,
+      "sha256": "25776d758dfb7070afb4157f15859864c6f991809fba71f78cf6f442cbe61121",
+      "unchanged_from_commit": "9e40aefe8153ec6c8400dc77949cfd08d71d1f19",
+      "byte_identical": true
+    }
+  ],
+  "commands": {
+    "author": "$CODEX_PRIMARY_RUNTIME_PYTHON tools/build_continuation_document.py",
+    "word_render": "$CODEX_PRIMARY_RUNTIME_PYTHON /home/agent/.codex/skills/builtins/documents/render_docx.py docs/The-Tower-Descent-Continuation-v0.10.docx --output_dir /tmp/tower-v010-document-render --emit_pdf",
+    "pdf_render": "pdftoppm -png -r 150 docs/The-Tower-Descent-Continuation-v0.10.pdf /tmp/tower-v010-document-render/pdf/page",
+    "content": "$CODEX_PRIMARY_RUNTIME_PYTHON tools/verify_document_content.py --docx docs/The-Tower-Descent-Continuation-v0.10.docx --pdf docs/The-Tower-Descent-Continuation-v0.10.pdf --output /tmp/tower-v010-document-render/content.json"
+  },
+  "limitations": [
+    "Visual review was performed by an AI assistant on all rendered page images, not in the native Microsoft Word application.",
+    "The Word render and the delivered PDF share the same canonical conversion; the separate PDF raster review checks that exact delivery artifact, not an independent layout engine.",
+    "Text inclusion normalizes Unicode and punctuation; it does not replace visual verification.",
+    "Six pages contain the complete 3 061-word source in readable 11 pt body type; no blank pages were added to reach an estimated page count.",
+    "This supplement preserves the complete historical v0.9 Word/PDF byte-for-byte and does not reuse their old validation as evidence for v0.10 gameplay."
+  ]
+}

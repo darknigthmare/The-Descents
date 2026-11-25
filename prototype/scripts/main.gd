@@ -15,6 +15,11 @@ const Epilogue = preload("res://scripts/epilogue_director.gd")
 const Horror = preload("res://scripts/horror_director.gd")
 const HorrorPresentation = preload("res://scripts/horror_presentation.gd")
 const Routes = preload("res://scripts/route_catalog.gd")
+const Continuation = preload("res://scripts/continuation_director.gd")
+const Dossier = preload("res://scripts/mission_dossier.gd")
+
+var continuation = Continuation.new()
+var continuation_visuals: Node3D
 
 var rescue_visuals: Node3D
 var horror_visuals: Node3D
@@ -107,6 +112,7 @@ func _ready() -> void:
 	hud.replay_intro_requested.connect(_start_studio_intro)
 	hud.cinematic_skip_requested.connect(_skip_cinematic)
 	hud.epilogue_replay_requested.connect(_replay_epilogue)
+	hud.descent_requested.connect(_begin_continuation)
 	hud.inspection_closed.connect(_resume)
 	hud.apply_settings(preferences)
 	_prepare_menu()
@@ -116,6 +122,7 @@ func _ready() -> void:
 func _prepare_menu() -> void:
 	# A menu is a preview of the last validated checkpoint, never a new save.
 	menu_snapshot = Save.load_data(save_path)
+	continuation.restore(menu_snapshot.get("continuation", Continuation.new().snapshot()))
 	menu_context = Cinematics.menu_context(menu_snapshot)
 	started = false
 	paused = false
@@ -127,7 +134,8 @@ func _prepare_menu() -> void:
 	for target: Node3D in world_data.get("interactables",[]):
 		var key: String = _key(target)
 		if key in rescued or key in menu_snapshot.get("clues",[]) or key in menu_snapshot.get("supplies_used",[]):
-			target.hide()
+			if str(target.get_meta("kind", "")) != "continuation_evidence":
+				target.hide()
 			target.set_meta("used",true)
 	if not menu_snapshot.is_empty():
 		_position_helicopters(float(menu_snapshot.get("elapsed",0)))
@@ -203,6 +211,7 @@ func _bind_inputs() -> void:
 
 func _build_world(seed_value: int) -> void:
 	traversal_checkpoint_pending = false
+	continuation_visuals = null
 	epilogue_playing = false
 	epilogue.finish()
 	epilogue_voice_key = ""
@@ -227,7 +236,9 @@ func _build_world(seed_value: int) -> void:
 	floor_specs = Generator.generate(seed_value)
 	world = World.new()
 	add_child(world)
-	world_data = world.build(seed_value, floor_specs)
+	world_data = world.build(seed_value, floor_specs, continuation.phase != "dormant")
+	continuation_visuals = world_data.get("continuation_visuals")
+	world.set_continuation_state(continuation.snapshot())
 	world_data["interactables"].append_array(FieldProps.new().build(world))
 	world.set_rescued_people(rescued)
 	world.apply_incident(incident.phase, incident.phase_elapsed)
@@ -235,6 +246,7 @@ func _build_world(seed_value: int) -> void:
 	world.set_reduced_motion(reduced_motion)
 	player = Player.new()
 	add_child(player)
+	player.configure_continuation(continuation.phase != "dormant")
 	player.traversal_notice.connect(_notify)
 	player.position = world_data.get("roof_spawn", Vector3(7,42.2,7))
 	player.rotation.y = 0.75
@@ -269,6 +281,7 @@ func _show_menu_camera() -> void:
 
 func _start_new(seed_value: int) -> void:
 	# A new attempt does not erase the previous checkpoint until a new one is valid.
+	continuation.reset()
 	health = 100
 	oxygen = 100
 	stress = 8
@@ -330,6 +343,7 @@ func _continue_game() -> void:
 		_say("VARGA  /  POSTE DU TOIT", "Point sûr rétabli. Votre compte rendu est à jour. Vérifiez votre matériel avant de continuer.", 8)
 
 func _restore(data: Dictionary) -> void:
+	continuation.restore(data.get("continuation", Continuation.new().snapshot()))
 	incident.restore(str(data["incident_state"]))
 	observation_hold = 0
 	_build_world(int(data["seed"]))
@@ -363,13 +377,19 @@ func _restore(data: Dictionary) -> void:
 	for target: Node3D in world_data.get("interactables", []):
 		var key: String = _key(target)
 		if key in rescued or key in clues or key in supplies_used:
-			target.hide()
+			if str(target.get_meta("kind", "")) != "continuation_evidence":
+				target.hide()
 			target.set_meta("used", true)
 	_begin_game()
 	player.teleport_to_floor(checkpoint_floor)
 	_process_departure()
 	if completed:
-		_complete_game(false)
+		if continuation.phase == "complete":
+			_show_continuation_debrief()
+		else:
+			_complete_game(false)
+	elif continuation.phase == "active" and continuation.escort_state != "received" and continuation.duo_briefed:
+		_notify("Point sûr rétabli. Léa et Idris attendent en sécurité dans la cabine du 24 ; reprenez leur accompagnement.")
 
 func _save_checkpoint(floor_number: int) -> bool:
 	# During the incident the preceding safe checkpoint remains authoritative.
@@ -383,13 +403,14 @@ func _save_checkpoint(floor_number: int) -> bool:
 		return false
 	traversal_checkpoint_pending = false
 	var data: Dictionary = {
-		"version": 3, "seed": current_seed, "floor": floor_number,
+		"version": Save.SAVE_VERSION, "seed": current_seed, "floor": floor_number,
 		"health": health, "oxygen": oxygen, "stress": stress,
 		"anchors": anchors, "flares": flares, "rescued": rescued.duplicate(),
 		"clues": clues.duplicate(), "supplies_used": supplies_used.duplicate(),
 		"elapsed": elapsed, "seen_floors": seen_floors.duplicate(), "completed": completed,
 		"incident_state": incident.stable_state(),
-		"transmissions": radio.history_snapshot(), "radio_events": radio_events.duplicate()
+		"transmissions": radio.history_snapshot(), "radio_events": radio_events.duplicate(),
+		"continuation": continuation.checkpoint_snapshot()
 	}
 	var error: Error = Save.save_data(data, save_path)
 	if error == OK:
@@ -680,7 +701,15 @@ func _enter_floor(number: int) -> void:
 		if first:
 			_say("NORA HADDAD  /  SPA", "J’ai cru voir quelqu’un près du bassin… Je ne sais plus. Ne me laissez pas ici.", 10)
 	elif number == 25:
-		_say("VARGA  /  REFUGE 25", "Votre signal est propre. Le local technique est sécurisé. Activez son relais pour terminer l’intervention.", 9)
+		_say("VARGA  /  REFUGE 25", "Le refuge reste sûr. Accompagnez Léa et Idris jusqu’aux deux repères verts de réception." if continuation.phase == "active" and continuation.escort_state != "received" else ("Le groupe du congrès est à l’abri. Vous pouvez reconnaître l’exposition au 23." if continuation.phase == "active" else "Votre signal est propre. Le local technique est sécurisé. Activez son relais pour terminer l’intervention."), 9)
+	elif number == 24 and continuation.phase == "active":
+		if first:
+			_say("LÉA MOREL  /  CABINE D’INTERPRÉTATION", "Nous sommes deux dans la cabine. Idris entend mal : placez-vous devant nous et donnez un signe visible. Le foyer rejoint l’escalier de service.", 11)
+		_save_checkpoint(24)
+	elif number == 23 and continuation.phase == "active":
+		if first:
+			_say("ALEX  /  EXPOSITION", "L’histoire de Nacre… La maquette descend plus bas que les plans actuels. Je vais relever les documents et les comparer.", 9)
+		_save_checkpoint(23)
 
 func _process_hazards(delta: float, floor_number: int) -> void:
 	player.environment_speed = 1.0
@@ -755,6 +784,8 @@ func _find_nearest() -> void:
 		if floor_number != player.nearest_floor():
 			continue
 		var distance: float = Vector2(player.position.x - object.global_position.x, player.position.z - object.global_position.z).length()
+		if str(object.get_meta("kind", "")).begins_with("continuation_") and not _continuation_target_visible(object):
+			continue
 		if str(object.get_meta("kind", "")) == "inspect":
 			if distance < inspection_distance and _can_inspect() and _interaction_visible(object):
 				inspection_distance = distance
@@ -797,7 +828,7 @@ func _open_inspection(object: Node3D) -> void:
 	hud.show_inspection(entry)
 
 func _key(object: Node3D) -> String:
-	if str(object.get_meta("kind", "")) == "inspect":
+	if str(object.get_meta("kind", "")) == "inspect" or str(object.get_meta("kind", "")).begins_with("continuation_"):
 		return str(object.get_meta("id", ""))
 	return "%s_%d" % [str(object.get_meta("kind", "unknown")), int(object.get_meta("floor", 0))]
 
@@ -847,7 +878,9 @@ func _interact_node(object: Node3D) -> void:
 			else:
 				_notify("Balise orange : évacuation des rescapés. Pour descendre, suivez les repères bleus ou l’escalier signalé.")
 		"rappel":
-			if is_instance_valid(carried):
+			if continuation.phase == "active" and continuation.duo_briefed and continuation.escort_state != "received":
+				_notify("Le groupe vous suit à pied. Accompagnez-le au refuge 25 avant d’engager le rappel.")
+			elif is_instance_valid(carried):
 				_notify("Évacuez d’abord le rescapé à la balise orange de son étage. Le rappel personnel reste libre.")
 			elif is_instance_valid(hoisting):
 				_notify("Attendez la réception du rescapé avant d’engager une nouvelle liaison.")
@@ -858,6 +891,9 @@ func _interact_node(object: Node3D) -> void:
 			else:
 				_notify("Rejoignez le repère bleu de cette ouverture depuis un appui stable.")
 		"survivor":
+			if continuation.phase == "active" and continuation.duo_briefed and continuation.escort_state != "received":
+				_notify("Accompagnez d’abord Léa et Idris au refuge avant d’engager un autre portage.")
+				return
 			if is_instance_valid(carried) or is_instance_valid(hoisting):
 				_notify("Une personne à la fois. Rejoignez d’abord la balise orange.")
 				return
@@ -887,7 +923,10 @@ func _interact_node(object: Node3D) -> void:
 			flares = mini(6, flares + 2)
 			_notify("Réserve récupérée  ·  Air remplacé, soins, 2 ancrages et 2 fusées")
 		"refuge":
-			if rescued.size() >= 3 and incident.phase == "aftermath":
+			if continuation.phase == "active":
+				if _save_checkpoint(25):
+					_notify("Relais 25 enregistré. " + continuation.objective())
+			elif rescued.size() >= 3 and incident.phase == "aftermath":
 				_complete_game()
 			elif rescued.size() >= 3:
 				_save_checkpoint(25)
@@ -895,6 +934,12 @@ func _interact_node(object: Node3D) -> void:
 			else:
 				_save_checkpoint(25)
 				_notify("Refuge enregistré. %d personne(s) attendent encore votre aide aux étages 30, 28 ou 26." % (3 - rescued.size()))
+		"continuation_escort":
+			_interact_escort(object)
+		"continuation_evidence":
+			_collect_continuation_evidence(object)
+		"continuation_finish":
+			_complete_continuation(object)
 
 func _start_hoist(survivor: Node3D, floor_number: int) -> void:
 	if not is_instance_valid(survivor) or int(survivor.get_meta("floor", 0)) != floor_number:
@@ -956,7 +1001,9 @@ func _call_radio() -> void:
 	stress = maxf(0, stress - 5)
 	# Operational requests take precedence over both ambient fiction and queued
 	# normal messages. Received lines remain available in the journal.
-	if is_instance_valid(carried):
+	if continuation.phase == "active":
+		_say("VARGA  /  RELAIS A25", continuation.objective() + " Les trois premières réceptions restent confirmées au toit. Bravo n’est toujours pas identifié.", 10, true)
+	elif is_instance_valid(carried):
 		_say("VARGA  /  POSTE DU TOIT", "Vous avez quelqu’un au harnais. Rejoignez la balise orange du même étage et confirmez le treuillage.", 8, true)
 	elif is_instance_valid(hoisting):
 		_say("VARGA  /  TREUIL", "Le treuil est en mouvement. Gardez le puits dégagé et attendez la confirmation de réception au toit.", 8, true)
@@ -1005,7 +1052,7 @@ func _update_hud() -> void:
 	var stair_route: Dictionary = player.stair_context()
 	var rope_state: Dictionary = player.rope_snapshot() if player.on_rope else {}
 	var spec: Dictionary = _floor_spec(floor_number)
-	var display_names: Dictionary = {31:"Poste de commandement",30:"Restaurant panoramique",29:"Suites de Nacre",28:"Bureaux et archives",27:"Jardin des enfants",26:"Spa et piscine",25:"Refuge technique"}
+	var display_names: Dictionary = {31:"Poste de commandement",30:"Restaurant panoramique",29:"Suites de Nacre",28:"Bureaux et archives",27:"Jardin des enfants",26:"Spa et piscine",25:"Refuge technique",24:"Centre de congrès",23:"Histoire de Nacre"}
 	var name_text: String = display_names.get(floor_number, "Puits de rappel")
 	hud.location_label.text = ("TOIT" if floor_number == 31 else "ÉTAGE %02d" % floor_number) + "  ·  " + name_text
 	if not stair_route.is_empty():
@@ -1035,6 +1082,8 @@ func _update_hud() -> void:
 	hud.stress_bar.value = stress
 	hud.resources_label.text = "ANCRAGES %d  /  FUSÉES %d" % [anchors, flares]
 	hud.status_label.text = "RESCAPÉS %d / 3    •    INDICES %d / 3" % [rescued.size(), clues.size()]
+	if continuation.phase != "dormant":
+		hud.status_label.text = "TOIT 3 / 3   •   REFUGE %d / 2   •   INDICES %d / 5" % [2 if continuation.escort_state == "received" else 0, clues.size()]
 	if player.on_rope:
 		rope_state["kind"] = "rope"
 		hud.set_traversal_context(rope_state)
@@ -1046,6 +1095,8 @@ func _update_hud() -> void:
 		hud.mission_label.text = "Approche des deux tours  ·  Alpha sur Aube, Bravo sur Hespérie."
 	elif incident.is_active():
 		hud.mission_label.text = "Éloignez-vous des vitres. Le noyau et la ligne de rappel tiennent."
+	elif continuation.phase == "active":
+		hud.mission_label.text = continuation.objective()
 	elif is_instance_valid(carried):
 		hud.mission_label.text = "Ramener %s à la balise orange du %d." % [str(carried.get_meta("title", "le rescapé")), int(carried.get_meta("floor", floor_number))]
 	elif is_instance_valid(hoisting):
@@ -1079,6 +1130,12 @@ func _update_hud() -> void:
 			hud.prompt_label.text = "Attendez la fin de la secousse avant de déplacer le rescapé" if incident.is_active() else "E  Sécuriser %s au harnais" % nearest.get_meta("title", "le rescapé")
 		elif kind == "refuge":
 			hud.prompt_label.text = "E  Activer le relais du refuge et enregistrer"
+		elif kind == "continuation_escort":
+			hud.prompt_label.text = "Groupe reçu au refuge 25" if continuation.escort_state == "received" else ("E  Signe visible : attendez ici" if continuation.escort_state == "following" else "E  Signe visible : suivez-moi vers le refuge 25")
+		elif kind == "continuation_evidence":
+			hud.prompt_label.text = "E  Relever · " + str(nearest.get_meta("title", "Pièce d’exposition"))
+		elif kind == "continuation_finish":
+			hud.prompt_label.text = "E  Transmettre le compte rendu de reconnaissance"
 		elif kind == "inspect":
 			hud.prompt_label.text = "E  Examiner · " + str(nearest.get_meta("title", "Objet d’intervention"))
 		elif kind == "observation":
@@ -1092,8 +1149,9 @@ func _update_hud() -> void:
 		hud.prompt_label.text = "Rescapé au harnais  ·  Rejoignez la balise orange" if is_instance_valid(carried) else ""
 	hud.overlay.color.a = clampf((30 - health) / 160.0, 0, 0.16)
 	var rows: PackedStringArray = []
-	for n: int in [31,30,29,28,27,26,25]:
-		var title: String = {31:"TOIT",30:"RESTAURANT",29:"SUITES",28:"ARCHIVES",27:"JARDIN",26:"SPA",25:"REFUGE"}[n]
+	var map_floors: Array = [31,30,29,28,27,26,25,24,23] if continuation.phase != "dormant" else [31,30,29,28,27,26,25]
+	for n: int in map_floors:
+		var title: String = {31:"TOIT",30:"RESTAURANT",29:"SUITES",28:"ARCHIVES",27:"JARDIN",26:"SPA",25:"REFUGE",24:"CONGRÈS",23:"EXPOSITION"}[n]
 		rows.append(("▸ " if n == floor_number else "  ") + str(n) + "  " + title + ("  ✓" if "survivor_%d" % n in rescued else ""))
 	hud.floor_map.text = "\n".join(rows)
 
@@ -1133,6 +1191,11 @@ func _dossier_snapshot() -> Dictionary:
 		if id in clues:
 			records.append({"id": id, "floor": int(spec["number"]),
 				"title": str(spec["evidence_title"]), "text": str(spec["evidence_text"])})
+	for id: String in Dossier.CONTINUATION_CLUES:
+		if id in clues:
+			var entry: Dictionary = Dossier.CONTINUATION_CLUES[id].duplicate(true)
+			entry["id"] = id
+			records.append(entry)
 	return {
 		"seed": current_seed, "floor": player.nearest_floor() if player.is_at_landing() else last_floor, "checkpoint_floor": checkpoint_floor,
 		"traversal_id": str(active_route.get("route_id", active_route.get("id", ""))),
@@ -1142,11 +1205,12 @@ func _dossier_snapshot() -> Dictionary:
 		"seen_floors": seen_floors.duplicate(), "completed": completed,
 		"incident_state": incident.phase, "transmissions": radio.history_snapshot(),
 		"carried_id": _key(carried) if is_instance_valid(carried) else "",
-		"hoisting_id": _key(hoisting) if is_instance_valid(hoisting) else ""
+		"hoisting_id": _key(hoisting) if is_instance_valid(hoisting) else "",
+		"continuation": continuation.snapshot()
 	}
 
 func _complete_game(play_epilogue: bool = true) -> void:
-	if not started or incident.phase != "aftermath" or player.nearest_floor() != 25:
+	if continuation.phase != "dormant" or not started or incident.phase != "aftermath" or player.nearest_floor() != 25:
 		return
 	for id: String in ["survivor_30", "survivor_28", "survivor_26"]:
 		if not id in rescued:
@@ -1179,7 +1243,7 @@ func _complete_game(play_epilogue: bool = true) -> void:
 		_finish_epilogue()
 
 func _start_epilogue() -> void:
-	if not completed or paused or epilogue_playing:
+	if continuation.phase != "dormant" or not completed or paused or epilogue_playing:
 		return
 	for id: String in ["survivor_30", "survivor_28", "survivor_26"]:
 		if id not in rescued:
@@ -1234,9 +1298,140 @@ func _finish_epilogue() -> void:
 func _replay_epilogue() -> void:
 	# Only the visible debrief owns this action. Stale signals from another
 	# modal cannot start a sequence behind a journal or a live intervention.
-	if not started or not completed or paused or epilogue_playing or not hud.end_panel.visible:
+	if continuation.phase != "dormant" or not started or not completed or paused or epilogue_playing or not hud.end_panel.visible:
 		return
 	_start_epilogue()
+
+
+func _continuation_context() -> Dictionary:
+	return {"completed": completed, "floor": player.nearest_floor(), "at_landing": player.is_at_landing(),
+		"rescued": rescued.duplicate(), "clues": clues.duplicate(), "incident_state": incident.stable_state(),
+		"duo_arrived": is_instance_valid(continuation_visuals) and continuation_visuals.both_arrived()}
+
+
+func _begin_continuation() -> void:
+	# Only the visible, settled first debrief owns this choice. Migration and
+	# merely reading the ending never start a new chapter or replace its save.
+	if not started or not completed or paused or epilogue_playing or boot_playing or arrival_playing or not hud.end_panel.visible or hud.journal_panel.visible:
+		return
+	var previous: Dictionary = continuation.snapshot()
+	var previous_seen: Array = seen_floors.duplicate()
+	if not continuation.begin(_continuation_context()):
+		return
+	if 25 not in seen_floors:
+		seen_floors.append(25)
+	completed = false
+	if not _save_checkpoint(25):
+		continuation.restore(previous)
+		seen_floors = previous_seen
+		completed = true
+		hud.end_panel.subtitle_label.text = "Sauvegarde impossible. L’intervention précédente est conservée ; réessayez la poursuite."
+		return
+	# Rebuilding happens only after the durable choice. The original six floors,
+	# receptions, resources, investigation ledger and incident are preserved.
+	_restore(Save.load_data(save_path))
+	_say("VARGA  /  RELAIS A25", "Le centre de congrès est accessible par l’escalier de service au nord. Vérifiez les personnes signalées dans les cabines. Je garde le refuge ouvert.", 10, true)
+	_update_hud()
+
+
+func _valid_continuation_interaction(object: Node3D) -> bool:
+	if continuation.phase != "active" or not started or paused or completed or not is_instance_valid(object) or player.on_rope or not player.is_at_landing():
+		return false
+	if int(object.get_meta("floor", 0)) != player.nearest_floor() or not object.is_visible_in_tree():
+		return false
+	var distance: float = Vector2(player.position.x - object.global_position.x, player.position.z - object.global_position.z).length()
+	return distance <= 3.0 and object in world_data.get("interactables", []) and _continuation_target_visible(object)
+
+
+func _continuation_target_visible(object: Node3D) -> bool:
+	var origin: Vector3 = player.camera.global_position
+	var focus: Vector3 = object.global_position + Vector3(0, 1.2, 0)
+	var toward: Vector3 = focus - origin
+	if toward.length_squared() < 0.001 or (-player.camera.global_basis.z).dot(toward.normalized()) < 0.70:
+		return false
+	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(origin, focus)
+	query.exclude = [player.get_rid()]
+	var hit: Dictionary = get_world_3d().direct_space_state.intersect_ray(query)
+	if hit.is_empty():
+		return true
+	var collider: Node = hit.get("collider")
+	return is_instance_valid(collider) and (collider == object or object.is_ancestor_of(collider) or (str(object.get_meta("kind", "")) == "continuation_escort" and collider == object.get_parent()))
+
+
+func _interact_escort(object: Node3D) -> void:
+	if not _valid_continuation_interaction(object) or continuation.escort_state == "received":
+		return
+	var first_contact: bool = not continuation.duo_briefed
+	if continuation.escort_state == "following":
+		continuation.pause_escort()
+		_notify("SIGNE VISIBLE · Attendez ici. Revenez près du groupe puis E pour reprendre.")
+	elif continuation.start_escort(_continuation_context()):
+		_notify("SIGNE VISIBLE · Suivez-moi. Restez près du groupe et remontez l’escalier de service vers le 25.")
+		_say("LÉA  /  CONSIGNE ACCOMPAGNÉE D’UN SIGNE", "D’accord. Je reste avec Idris. Avancez à notre rythme, nous attendrons si vous vous éloignez.", 10)
+	world.set_continuation_state(continuation.snapshot())
+	if first_contact and continuation.duo_briefed:
+		_save_checkpoint(24)
+	_update_hud()
+
+
+func _collect_continuation_evidence(object: Node3D) -> void:
+	if not _valid_continuation_interaction(object):
+		return
+	var id: String = _key(object)
+	if not Dossier.CONTINUATION_CLUES.has(id) or id in clues:
+		return
+	clues.append(id)
+	object.set_meta("used", true)
+	# Keep the exhibition prop in its place. Only its reading prompt is consumed.
+	var record: Dictionary = Dossier.CONTINUATION_CLUES[id]
+	_say("ALEX  /  CONSTAT RELEVÉ", str(record["text"]), 12)
+	if _save_checkpoint(23):
+		_notify("Relevé ajouté au dossier : " + str(record["title"]))
+	_update_hud()
+
+
+func _process_continuation(delta: float) -> void:
+	if continuation.phase != "active" or paused or not started or completed or not is_instance_valid(continuation_visuals):
+		return
+	var optional_cue: bool = player.is_at_landing() and not radio.is_busy() and not incident.is_active() and not is_instance_valid(carried) and not is_instance_valid(hoisting)
+	continuation_visuals.advance(delta, player.global_position, not player.on_rope, optional_cue)
+	if continuation.escort_state != "received" and continuation_visuals.both_arrived():
+		if continuation.receive_escort(_continuation_context()):
+			world.set_continuation_state(continuation.snapshot())
+			_say("VARGA  /  RÉCEPTION AU REFUGE 25", "Léa Mercier et Idris Kaci sont reçus au refuge. Les deux personnes sont à l’abri. Vous pouvez reprendre la reconnaissance au 23.", 10, true)
+			_save_checkpoint(25)
+
+
+func _physics_process(delta: float) -> void:
+	_process_continuation(delta)
+
+
+func _complete_continuation(object: Node3D) -> void:
+	if not _valid_continuation_interaction(object):
+		return
+	var previous: Dictionary = continuation.snapshot()
+	if not continuation.complete(_continuation_context()):
+		_notify("Compte rendu incomplet. Recevez Léa et Idris au refuge, puis relevez la maquette et la photographie au 23.")
+		return
+	completed = true
+	if not _save_checkpoint(23):
+		continuation.restore(previous)
+		completed = false
+		return
+	_show_continuation_debrief()
+
+
+func _show_continuation_debrief() -> void:
+	player.active = false
+	world.set_process(false)
+	paused = false
+	arrival_playing = false
+	epilogue_playing = false
+	hud.set_paused(false)
+	menu_camera.current = true
+	_apply_camera_sample(Cinematics.menu_camera({"id": "floor", "floor": 23, "incident": "aftermath"}, 0.0, true))
+	hud.show_debrief(_dossier_snapshot())
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _fall_recovery() -> void:
 	var data: Dictionary = Save.load_data(save_path)

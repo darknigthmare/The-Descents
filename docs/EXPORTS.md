@@ -1,4 +1,16 @@
-# Exports du prototype 0.9
+# Exports du prototype 0.10
+
+Le workflow **release-v010** construit Windows x64 et Web, puis vérifie leurs ressources depuis des dossiers isolés. Le moteur et les modèles restent Godot 4.7.2 stable officiels. [Windows v0.10](../releases/The-Tower-Descent-v0.10-Windows-x64.zip) · [Sources v0.10](../releases/The-Tower-Descent-v0.10-Sources.zip) · [preuves de livraison](ETAT_DE_LIVRAISON.md).
+
+La demande `.review/v0.10/build-request.json` doit être seule dans son commit et nommer son parent. La phase review exécute les 32 suites, construit les packs, produit 42 captures de référence et 13 nouvelles vues, vérifie le texte du supplément puis rend ses pages. Le fichier d’approbation est rédigé après examen effectif des fichiers exacts. La phase release exige cette approbation, revérifie ou reconstruit les packs, prépare les ZIP et compare chaque membre et ses octets. Une branche ayant avancé n’est pas forcée ; main n’est pas modifiée.
+
+La Bible intégrale v0.9 reste inchangée. Les documents de la 0.10 sont un supplément Word/PDF distinct et les sources Markdown actualisées. Le ZIP Sources inclut ces deux volumes et les captures courantes, sans recopier les anciennes captures. Les deux ZIP restent strictement sous 100 Mio. `dist/` contient l’export Web au commit de livraison ; sa présence ne signifie pas qu’un site public a été déployé.
+
+Les vérifications de packs montent les ressources avec Godot Linux ; elles n’exécutent pas Windows ou WebAssembly. Le matériel artistique et les poses restent procéduraux. Les performances et le mixage final nécessitent des essais distincts.
+
+## Contrat historique v0.9
+
+### Exports historiques du prototype 0.9
 
 **Moteur fixé : Godot 4.7.2 stable officiel — rendu Compatibility.** Ce guide décrit les formats, le contenu et les contrôles de la v0.9. Les résultats observés et les limites figurent dans [État de livraison](https://github.com/darknigthmare/The-Descents/blob/feat/live-tower-collapse/docs/ETAT_DE_LIVRAISON.md).
 

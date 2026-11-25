@@ -4,6 +4,14 @@
 
 Cette annexe fixe la progression demandée pour la campagne : hallucinations discrètes, manifestations de plus en plus persistantes, rencontres humaines dangereuses, découverte d’expériences avec une dimension infernale, puis arrivée réelle en Enfer. Elle complète les scènes, les étages, les props, le bestiaire et les règles de gameplay. Les éléments de campagne sont des spécifications à produire ; leur description n’étend pas le périmètre jouable du prototype.
 
+### Mise à jour de portée pour la continuation 0.10
+
+Le titre et les résultats de cette annexe conservent leur origine v0.8. Les tableaux décrivant la 0.8 restent historiques. Le [supplément A24–A23](CONTINUATION_A24_A23_V0.10.md) ouvre désormais la première paire du secteur suivant : accompagnement de Léa Mercier et Idris Kaci au congrès, retour au refuge 25, puis exposition Histoire de Nacre. La maquette et la photographie des anciens bains offrent deux pièces distinctes ; leur lecture ne révèle pas déjà la brèche.
+
+E01 est retenue au 23 comme routine facultative de quatorze secondes, deux répétitions au maximum, sans dégâts ni poursuite. Les commandes restent libres et la collecte ne dépend pas de l’apparition. Le duo reçu demeure au refuge ; une manifestation ne peut annuler son accueil. Les règles de pause, de traversée et de priorité des interactions continuent de s’appliquer. Les tests, captures et exports de cette continuation doivent être établis dans leurs propres rapports.
+
+A22 et les niveaux inférieurs restent hors de cette continuation. Le premier faux appel développé demeure destiné à A22, le premier humain hostile E11 à A21, Alma aux abords d’A01, et la traversée infernale à P666 puis I01–I04. Cette progression n’est pas accélérée par la simple ouverture de deux étages supplémentaires.
+
 ## 1 Vérité du récit et savoir du joueur
 
 L’Enfer existe réellement dans la fiction. Pelagos ne l’a pas inventé, mais le programme SILLAGE a appris à capter ses résonances, à stabiliser une frontière et à faire passer de la matière. La campagne conduit Alex de l’autre côté de cette frontière. Le matériel, les témoins et les conséquences conservées établissent une traversée physique. Le dénouement ne transforme pas les expériences, les personnes ou les secours accomplis en rêve.
@@ -24,7 +32,7 @@ Les références servent des choix précis : proximité et violence humaine inqu
 | Laboratoires et bunker | Conception détaillée | Preuves des essais et accès à P666 à construire |
 | P666 et I01–I04 | Conception détaillée | Franchissement, Enfer physique et retour à construire |
 
-La clôture SC06 au refuge 25 reste celle de la tranche jouable. Elle ne montre ni découverte complète du programme, ni brèche ouverte, ni retour final d’Alma. Le SC10 du contrôle SILLAGE conserve son identifiant de campagne ; il n’est pas remplacé par l’épilogue du prototype.
+Dans la tranche v0.8–v0.9, SC06 au refuge 25 reste la clôture jouable. La 0.10 conserve ce bilan supérieur puis propose la continuation explicite décrite plus haut. Elle ne montre ni découverte complète du programme, ni brèche ouverte, ni retour final d’Alma. Le SC10 du contrôle SILLAGE conserve son identifiant de campagne ; il n’est pas remplacé par l’épilogue du prototype.
 
 ## 3 Carte de l’escalade
 
@@ -68,7 +76,7 @@ Les contrôles de validation vérifient la pureté des données, les priorités,
 
 ## 6 Des étages hauts aux premières rencontres humaines
 
-A24 et A23 doivent laisser respirer après le refuge : personnes à aider, histoire du lieu et anomalie comparable à une première occurrence. À A22, un faux appel vient d’une réserve différente de celle où se trouve une personne réelle. Une vérification contextuelle suffit à préserver cette différence. Le joueur apprend qu’une voix peut mentir sans conclure que tous les appels sont faux.
+A24 et A23 doivent laisser respirer après le refuge : personnes à aider, histoire du lieu et anomalie comparable à une première occurrence. La 0.10 applique cette direction avec le duo du congrès, les deux pièces de l’exposition et E01 sans attaque ; les confrontations humaines ne sont pas déplacées vers ces étages. À A22, un faux appel vient d’une réserve différente de celle où se trouve une personne réelle. Une vérification contextuelle suffit à préserver cette différence. Le joueur apprend qu’une voix peut mentir sans conclure que tous les appels sont faux.
 
 A21 introduit E11, le Retranché, derrière une barricade observable. Il prévient, serre son outil, suit un déplacement et garde sa réserve. La scène confirme d’abord qu’il s’agit d’un humain réel. Alex peut garder ses distances, parler, ouvrir une séparation ou prendre le détour. Le cuisinier et l’agente d’entretien du secteur ne deviennent pas automatiquement des ennemis ; ils conservent leur chaîne de secours.
 
