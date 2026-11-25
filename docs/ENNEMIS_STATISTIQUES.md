@@ -252,7 +252,7 @@ Les attaques ne s’empilent pas. Un seul attaquant au contact est autorisé dan
 | Temps d’annonce | 1,4 fois la fiche | Valeur de fiche | 0,9 fois la fiche, minimum 1 s |
 | Recherche après perte du joueur | 0,7 fois la durée | Valeur de fiche | 1,2 fois la durée |
 | Ressources du chemin critique | Même minimum garanti | Même minimum garanti | Même minimum garanti |
-| Vérification des indices | Aide explicite après échec | Aide contextuelle | Même preuves, aide plus tardive |
+| Vérification des indices | Aide explicite après échec | Aide contextuelle | Mêmes preuves, aide plus tardive |
 | Refuge, pause et confirmations | Garanties identiques | Garanties identiques | Garanties identiques |
 
 Ces profils ne sont pas des réglages déjà disponibles. Les changements de difficulté ne modifient ni la chronologie, ni les noms, ni la vérité du registre, ni l’accès aux fins. Les options de mouvements réduits, de sous-titres et de flashes sont séparées de la difficulté.

@@ -268,16 +268,24 @@ def add_table(document: Document, rows: list[list[str]]):
     for column, width in zip(table.columns, widths):
         column.width = Cm(width)
     props = table._tbl.tblPr
-    props.append(node("w:tblW", **{"w:w": int(Cm(BODY_WIDTH_CM).twips), "w:type": "dxa"}))
+    # python-docx already creates tblW. Keep its single OOXML occurrence;
+    # conflicting auto/dxa widths make pagination converter-dependent.
+    table_width = props.find(qn("w:tblW"))
+    if table_width is None:
+        table_width = node("w:tblW")
+        props.insert(0, table_width)
+    table_width.set(qn("w:w"), str(int(Cm(BODY_WIDTH_CM).twips)))
+    table_width.set(qn("w:type"), "dxa")
     borders = OxmlElement("w:tblBorders")
     for border in ["top", "left", "bottom", "right", "insideH", "insideV"]:
         borders.append(node(f"w:{border}", **{"w:val": "single", "w:sz": 4, "w:color": "D9D9D9"}))
-    props.append(borders)
+    props.insert_element_before(borders, "w:shd", "w:tblLayout", "w:tblCellMar",
+                                "w:tblLook", "w:tblCaption", "w:tblDescription", "w:tblPrChange")
     margins = OxmlElement("w:tblCellMar")
     vertical_padding = 45 if compact else 90
     for side, size in [("top", vertical_padding), ("bottom", vertical_padding), ("left", 100), ("right", 100)]:
         margins.append(node(f"w:{side}", **{"w:w": size, "w:type": "dxa"}))
-    props.append(margins)
+    props.insert_element_before(margins, "w:tblLook", "w:tblCaption", "w:tblDescription", "w:tblPrChange")
     for index, values in enumerate(rows):
         row = table.add_row()
         row._tr.get_or_add_trPr().append(node("w:cantSplit"))

@@ -250,6 +250,10 @@ def build_documents() -> None:
             VALIDATION / "document-pages.txt", timeout=360)
     checked(["pdftotext", "-layout", str(BIBLE_PDF), str(RENDERED / "document.txt")],
             VALIDATION / "document-text.txt")
+    # A converter can exit successfully while silently dropping continued rows.
+    # Compare the actual ordered DOCX content before recording a review candidate.
+    tool("verify_document_content.py", "--docx", str(BIBLE_DOCX), "--pdf", str(BIBLE_PDF),
+         "--output", str(VALIDATION / "DOCUMENT_CONTENT.json"))
     font_report = subprocess.check_output(["pdffonts", str(BIBLE_PDF)], text=True)
     (VALIDATION / "document-fonts.txt").write_text(font_report, encoding="utf-8")
     paths = sorted(RENDERED.glob("page-*.png"), key=lambda path: int(path.stem.rsplit("-", 1)[1]))
@@ -272,6 +276,7 @@ def build_documents() -> None:
         "version": VERSION, "source_commit": git_head(), "built_utc": datetime.now(timezone.utc).isoformat(),
         "source_count": len(sources), "source_words": sum(len((ROOT / name).read_text().split()) for name in DOCUMENT_SOURCES),
         "sources": sources, "artifacts": [record(BIBLE_DOCX), record(BIBLE_PDF)],
+        "content_verification": record(VALIDATION / "DOCUMENT_CONTENT.json"),
         "page_count": page_count, "pages": pages,
         "manual_visual_review": False,
         "renderer": {
@@ -318,6 +323,9 @@ def verify_reviews() -> None:
             require(sha256(ROOT / row["file"]) == row["sha256"], "A reviewed document source or artifact changed.")
     require({row["file"] for row in document["artifacts"]} ==
             {BIBLE_DOCX.relative_to(ROOT).as_posix(), BIBLE_PDF.relative_to(ROOT).as_posix()}, "Both Word and PDF require review.")
+    from verify_document_content import verify as verify_document_content
+    content = verify_document_content(BIBLE_DOCX, BIBLE_PDF)
+    require(content["complete"], "The reviewed PDF no longer contains the complete ordered Word text.")
 
 
 def build(binary: str, request: dict) -> None:

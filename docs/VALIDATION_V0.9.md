@@ -44,6 +44,7 @@ Après examen des fichiers exacts, publier les revues JSON. Créer un second com
 | docs/captures/v0.9/REVIEW_DERIVATIVES.json | Correspondance entre les grands PNG et leurs JPEG de lecture éventuels. |
 | docs/captures/v0.9/review_jpeg/ | Copies de consultation à la même dimension, sans recadrage. |
 | docs/validation/v0.9/DOCUMENT_BUILD.json | Les 16 sources, le Word, le PDF et chaque page rendue reliés par empreinte. |
+| docs/validation/v0.9/DOCUMENT_CONTENT.json | Comparaison ordonnée des paragraphes, lignes de tableaux et cellules du Word avec le texte réellement présent dans le PDF. |
 | docs/validation/v0.9/rendered/ | PNG de toutes les pages du PDF et texte extrait pour la revue. |
 | docs/validation/v0.9/VISUAL_REVIEW.json | Décision et observation explicites pour chaque capture native finale. |
 | docs/validation/v0.9/DOCUMENT_REVIEW.json | Revue des formats documentaires et de chaque page finale. |
@@ -93,6 +94,8 @@ Les tests du modèle ou de géométrie ne prouvent pas, à eux seuls, la qualit�
 Le générateur Word reprend intégralement **seize sources** dans l’ordre de **PARTS**, identique à **DOCUMENT_SOURCES**. La nouvelle seizième source est **docs/TRAVERSEE_ET_RAPPEL_V0.9.md**, ajoutée comme annexe N. La progression de l’horreur reste **docs/PROGRESSION_HORREUR_V0.8.md** ; les annexes de secours, d’ambiance, de confort et de dossier conservent également leurs noms historiques.
 
 Les contenus sont compilés dans **The-Tower-Descent-Bible-v0.9.docx**. Le runner convertit ce Word en PDF avec LibreOffice, puis rend toutes les pages à 2 000 pixels de hauteur avec Poppler. **DOCUMENT_BUILD.json** décrit la conversion, les logiciels, les polices résolues, le nombre effectif de pages et les empreintes. Le nombre de pages n’est pas annoncé avant la construction finale.
+
+La conversion doit également conserver le contenu. **verify_document_content.py** compare les paragraphes et les lignes de tableaux du Word au texte brut du PDF, dans leur ordre et avec leur multiplicité ; il contrôle aussi les cellules et consigne les absences dans **DOCUMENT_CONTENT.json**. Une extraction réussie ou un nombre de pages plausible ne remplace pas ce contrôle. Le premier PDF de revue v0.9 avait omis cinq lignes du tableau des liaisons malgré un retour de conversion réussi : cette tentative est rejetée. Les propriétés de largeur et l’ordre des propriétés des tableaux ont été normalisés, et la livraison exige désormais ce contrôle de contenu en plus de la revue visuelle.
 
 La revue documentaire couvre les seize sources et les deux formats. Chaque entrée de **pages** fournit le numéro, la décision et l’empreinte du PNG examiné, dans l’ordre complet. Les empreintes et le nombre de pages doivent correspondre à **DOCUMENT_BUILD.json**. Les formats Word et PDF ne peuvent pas être remplacés après leur revue par une conversion différente, même si le texte paraît identique.
 
