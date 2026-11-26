@@ -20,6 +20,13 @@ const Dossier = preload("res://scripts/mission_dossier.gd")
 const Equipment = preload("res://scripts/equipment_director.gd")
 const EquipmentPresentation = preload("res://scripts/rescue_equipment.gd")
 const Commerce = preload("res://scripts/commerce_director.gd")
+const Residential = preload("res://scripts/residential_director.gd")
+const RelayPanel = preload("res://scripts/relay_verification_panel.gd")
+
+var residential = Residential.new()
+var residential_visuals: Node3D
+var relay_panel: Control
+var residential_retry_timer: float = 0.0
 
 var commerce = Commerce.new()
 var commerce_visuals: Node3D
@@ -123,6 +130,10 @@ func _ready() -> void:
 	hud.epilogue_replay_requested.connect(_replay_epilogue)
 	hud.descent_requested.connect(_begin_continuation)
 	hud.inspection_closed.connect(_resume)
+	relay_panel = RelayPanel.new()
+	hud.root.add_child(relay_panel)
+	relay_panel.submitted.connect(_submit_residential_relay)
+	relay_panel.cancelled.connect(_cancel_residential_relay)
 	hud.apply_settings(preferences)
 	_prepare_menu()
 	if DisplayServer.get_name() != "headless" and bool(preferences["startup_intro"]):
@@ -134,6 +145,7 @@ func _prepare_menu() -> void:
 	equipment.restore(menu_snapshot.get("supplies_used", []))
 	continuation.restore(menu_snapshot.get("continuation", Continuation.new().snapshot()))
 	commerce.restore(menu_snapshot.get("commerce", Commerce.dormant_state()))
+	residential.restore(menu_snapshot.get("residential", Residential.dormant_state()))
 	menu_context = Cinematics.menu_context(menu_snapshot)
 	started = false
 	paused = false
@@ -145,7 +157,7 @@ func _prepare_menu() -> void:
 	for target: Node3D in world_data.get("interactables",[]):
 		var key: String = _key(target)
 		if key in rescued or key in menu_snapshot.get("clues",[]) or key in menu_snapshot.get("supplies_used",[]):
-			if str(target.get_meta("kind", "")) not in ["continuation_evidence", "commerce_clue", "equipment"]:
+			if str(target.get_meta("kind", "")) not in ["continuation_evidence", "commerce_clue", "residential_clue", "equipment"]:
 				target.hide()
 			target.set_meta("used",true)
 	if not menu_snapshot.is_empty():
@@ -230,7 +242,11 @@ func _bind_inputs() -> void:
 func _build_world(seed_value: int) -> void:
 	equipment.cancel()
 	commerce.cancel()
+	residential.cancel()
 	commerce_visuals = null
+	residential_visuals = null
+	residential_retry_timer = 0.0
+	if is_instance_valid(relay_panel): relay_panel.hide()
 	equipment_visuals = null
 	traversal_checkpoint_pending = false
 	continuation_visuals = null
@@ -258,9 +274,12 @@ func _build_world(seed_value: int) -> void:
 	floor_specs = Generator.generate(seed_value)
 	world = World.new()
 	add_child(world)
-	world_data = world.build(seed_value, floor_specs, continuation.phase != "dormant", commerce.phase != "dormant")
+	world_data = world.build(seed_value, floor_specs, continuation.phase != "dormant", commerce.phase != "dormant", residential.phase != "dormant")
 	continuation_visuals = world_data.get("continuation_visuals")
 	commerce_visuals = world_data.get("commerce_visuals")
+	residential_visuals = world_data.get("residential_visuals")
+	if is_instance_valid(residential_visuals):
+		residential_visuals.apply_state(residential.snapshot())
 	if is_instance_valid(commerce_visuals):
 		commerce_visuals.apply_state(commerce.snapshot())
 	world.set_continuation_state(continuation.snapshot())
@@ -271,7 +290,7 @@ func _build_world(seed_value: int) -> void:
 	world.set_reduced_motion(reduced_motion)
 	player = Player.new()
 	add_child(player)
-	player.configure_continuation(continuation.phase != "dormant", commerce.phase != "dormant")
+	player.configure_continuation(continuation.phase != "dormant", commerce.phase != "dormant", residential.phase != "dormant")
 	player.traversal_notice.connect(_notify)
 	player.position = world_data.get("roof_spawn", Vector3(7,42.2,7))
 	player.rotation.y = 0.75
@@ -313,6 +332,7 @@ func _start_new(seed_value: int) -> void:
 	# A new attempt does not erase the previous checkpoint until a new one is valid.
 	continuation.reset()
 	commerce.reset()
+	residential.reset()
 	health = 100
 	oxygen = 100
 	stress = 8
@@ -382,6 +402,7 @@ func _restore(data: Dictionary) -> void:
 	equipment.restore(data.get("supplies_used", []))
 	continuation.restore(data.get("continuation", Continuation.new().snapshot()))
 	commerce.restore(data.get("commerce", Commerce.dormant_state()))
+	residential.restore(data.get("residential", Residential.dormant_state()))
 	incident.restore(str(data["incident_state"]))
 	observation_hold = 0
 	_build_world(int(data["seed"]))
@@ -415,7 +436,7 @@ func _restore(data: Dictionary) -> void:
 	for target: Node3D in world_data.get("interactables", []):
 		var key: String = _key(target)
 		if key in rescued or key in clues or key in supplies_used:
-			if str(target.get_meta("kind", "")) not in ["continuation_evidence", "commerce_clue", "equipment"]:
+			if str(target.get_meta("kind", "")) not in ["continuation_evidence", "commerce_clue", "residential_clue", "equipment"]:
 				target.hide()
 			target.set_meta("used", true)
 	_begin_game()
@@ -428,6 +449,8 @@ func _restore(data: Dictionary) -> void:
 			_complete_game(false)
 	elif continuation.phase == "active" and continuation.escort_state != "received" and continuation.duo_briefed:
 		_notify("Point sûr rétabli. Léa et Idris attendent en sécurité dans la cabine du 24 ; reprenez leur accompagnement.")
+	elif residential.phase == "active":
+		_notify("Point sûr rétabli. Jeanne, Marc et Inès attendent à leurs contacts initiaux si leur réception n’était pas confirmée.")
 	elif commerce.phase == "active":
 		_notify("Point sûr rétabli. Les réceptions sont conservées ; toute escorte inachevée attend à son point de contact initial.")
 
@@ -456,7 +479,8 @@ func _save_checkpoint(floor_number: int) -> bool:
 		"incident_state": incident.stable_state(),
 		"transmissions": radio.history_snapshot(), "radio_events": radio_events.duplicate(),
 		"continuation": continuation.checkpoint_snapshot(),
-		"commerce": commerce.checkpoint_snapshot()
+		"commerce": commerce.checkpoint_snapshot(),
+		"residential": residential.checkpoint_snapshot()
 	}
 	var error: Error = Save.save_data(data, save_path)
 	if error == OK:
@@ -468,6 +492,11 @@ func _save_checkpoint(floor_number: int) -> bool:
 	return false
 
 func _unhandled_input(event: InputEvent) -> void:
+	if is_instance_valid(relay_panel) and relay_panel.visible:
+		if event.is_action_pressed("pause_game"):
+			_cancel_residential_relay()
+			get_viewport().set_input_as_handled()
+		return
 	if boot_playing:
 		if event.is_action_pressed("ui_accept") or event.is_action_pressed("pause_game") or event.is_action_pressed("interact"):
 			_skip_cinematic()
@@ -603,6 +632,7 @@ func _process(delta: float) -> void:
 	_find_nearest()
 	_process_equipment(delta)
 	_process_commerce_action(delta)
+	_process_residential_action(delta)
 	_update_hud()
 	if health <= 0:
 		_fall_recovery()
@@ -741,6 +771,12 @@ func _enter_floor(number: int) -> void:
 	var first: bool = not number in seen_floors
 	if first:
 		seen_floors.append(number)
+	if residential.phase == "active" and number in [20, 19, 18, 17]:
+		if first:
+			var message: String = {20: "Le refuge reste ouvert. Les trois nouveaux repères de réception sont à l’ouest.", 19: "Jeanne attend Marc dans l’appartement nord-est. Mettez-la en sécurité. Le rappel du duplex est une voie personnelle ; repérez l’appui inférieur.", 18: "Marc est dans le duplex sud-est. Le Halligan permet de libérer le retour par l’escalier de service. Aucun rescapé ne doit passer par la corde.", 17: "Inès vous attend dans le local technique. Lisez la plaque de routage avant de rétablir l’émission. La destination du signal doit être vérifiée."}[number]
+			_say("VARGA  /  RÉSIDENCES ET RELAIS", message, 11)
+		_save_checkpoint(number)
+		return
 	if commerce.phase == "active" and number in [22, 21, 20]:
 		if first:
 			var message: String = {22: "Mina est enfermée derrière le volet de sa réserve. Une autre personne refuse qu’on l’approche dans le salon ouest. Gardez vos distances.", 21: "Le réchauffeur fume encore. Le coupe-circuit est dans l’office, hors de la fumée. Isolez-le avant de déployer la couverture.", 20: "Le refuge des équipes tient. Trois emplacements sont libres. Sofia attend dans la réserve au nord-est. Réactivez le relais et conduisez chacun aux repères verts."}[number]
@@ -839,6 +875,11 @@ func _find_nearest() -> void:
 	nearest = null
 	if player.on_rope or not player.is_at_landing():
 		return
+	if residential.phase == "active" and not residential.active_action.is_empty() and is_instance_valid(residential_visuals):
+		var residential_target: Node3D = residential_visuals.action_targets.get(residential.active_action)
+		if _residential_target_visible(residential_target):
+			nearest = residential_target
+			return
 	if commerce.phase == "active" and not commerce.active_action.is_empty() and is_instance_valid(commerce_visuals):
 		var commerce_target: Node3D = commerce_visuals.action_targets.get(commerce.active_action)
 		if _commerce_target_visible(commerce_target):
@@ -871,6 +912,8 @@ func _find_nearest() -> void:
 		if str(object.get_meta("kind", "")).begins_with("continuation_") and not _continuation_target_visible(object):
 			continue
 		if str(object.get_meta("kind", "")).begins_with("commerce_") and not _commerce_target_visible(object):
+			continue
+		if str(object.get_meta("kind", "")).begins_with("residential_") and not _residential_target_visible(object):
 			continue
 		if str(object.get_meta("kind", "")) == "inspect":
 			if distance < inspection_distance and _can_inspect() and _interaction_visible(object):
@@ -953,7 +996,7 @@ func _open_inspection(object: Node3D) -> void:
 	hud.show_inspection(entry)
 
 func _key(object: Node3D) -> String:
-	if str(object.get_meta("kind", "")) in ["inspect", "equipment"] or str(object.get_meta("kind", "")).begins_with("continuation_") or str(object.get_meta("kind", "")).begins_with("commerce_"):
+	if str(object.get_meta("kind", "")) in ["inspect", "equipment"] or str(object.get_meta("kind", "")).begins_with("continuation_") or str(object.get_meta("kind", "")).begins_with("commerce_") or str(object.get_meta("kind", "")).begins_with("residential_"):
 		return str(object.get_meta("id", ""))
 	return "%s_%d" % [str(object.get_meta("kind", "unknown")), int(object.get_meta("floor", 0))]
 
@@ -1054,7 +1097,9 @@ func _interact_node(object: Node3D) -> void:
 			flares = mini(6, flares + 2)
 			_notify("Réserve récupérée  ·  Air remplacé, soins, 2 ancrages et 2 fusées")
 		"refuge":
-			if commerce.phase == "active":
+			if residential.phase == "active":
+				if _save_checkpoint(25): _notify("Relais 25 enregistré. " + residential.objective())
+			elif commerce.phase == "active":
 				if _save_checkpoint(25):
 					_notify("Relais 25 enregistré. " + commerce.objective())
 			elif continuation.phase == "active":
@@ -1074,6 +1119,8 @@ func _interact_node(object: Node3D) -> void:
 			_collect_continuation_evidence(object)
 		"continuation_finish":
 			_complete_continuation(object)
+		"residential_action", "residential_person", "residential_clue", "residential_finish":
+			_interact_residential(object)
 		"commerce_action", "commerce_person", "commerce_clue", "commerce_finish":
 			_interact_commerce(object)
 
@@ -1137,7 +1184,9 @@ func _call_radio() -> void:
 	stress = maxf(0, stress - 5)
 	# Operational requests take precedence over both ambient fiction and queued
 	# normal messages. Received lines remain available in the journal.
-	if commerce.phase == "active":
+	if residential.phase == "active":
+		_say("VARGA  /  RELAIS LOCAL", residential.objective() + " Les huit secours précédents restent confirmés.", 11, true)
+	elif commerce.phase == "active":
 		_say("VARGA  /  SECOURS INFÉRIEURS", commerce.objective() + " Les groupes déjà reçus restent à l’abri au toit et au 25.", 11, true)
 	elif continuation.phase == "active":
 		_say("VARGA  /  RELAIS A25", continuation.objective() + " Les trois premières réceptions restent confirmées au toit. Bravo n’est toujours pas identifié.", 10, true)
@@ -1190,7 +1239,7 @@ func _update_hud() -> void:
 	var stair_route: Dictionary = player.stair_context()
 	var rope_state: Dictionary = player.rope_snapshot() if player.on_rope else {}
 	var spec: Dictionary = _floor_spec(floor_number)
-	var display_names: Dictionary = {31:"Poste de commandement",30:"Restaurant panoramique",29:"Suites de Nacre",28:"Bureaux et archives",27:"Jardin des enfants",26:"Spa et piscine",25:"Refuge technique",24:"Centre de congrès",23:"Histoire de Nacre",22:"Galerie des Alizés",21:"Cuisines de service",20:"Refuge des équipes"}
+	var display_names: Dictionary = {31:"Poste de commandement",30:"Restaurant panoramique",29:"Suites de Nacre",28:"Bureaux et archives",27:"Jardin des enfants",26:"Spa et piscine",25:"Refuge technique",24:"Centre de congrès",23:"Histoire de Nacre",22:"Galerie des Alizés",21:"Cuisines de service",20:"Refuge des équipes",19:"Résidences hautes",18:"Duplex de Nacre",17:"Télécommunications"}
 	var name_text: String = display_names.get(floor_number, "Puits de rappel")
 	hud.location_label.text = ("TOIT" if floor_number == 31 else "ÉTAGE %02d" % floor_number) + "  ·  " + name_text
 	if not stair_route.is_empty():
@@ -1230,6 +1279,8 @@ func _update_hud() -> void:
 		hud.status_label.text = "TOIT 3 / 3   •   REFUGE %d / 2   •   INDICES %d / 5" % [2 if continuation.escort_state == "received" else 0, clues.size()]
 	if commerce.phase != "dormant":
 		hud.status_label.text = "À L’ABRI %d / 8   •   REFUGE 20 : %d / 3   •   INDICES %d / 7" % [5 + commerce.received_count(), commerce.received_count(), clues.size()]
+	if residential.phase != "dormant":
+		hud.status_label.text = "À L’ABRI %d / 11   •   RÉSIDENCES %d / 3   •   INDICES %d / 10" % [8 + residential.received_count(), residential.received_count(), clues.size()]
 	if player.on_rope:
 		rope_state["kind"] = "rope"
 		hud.set_traversal_context(rope_state)
@@ -1241,6 +1292,8 @@ func _update_hud() -> void:
 		hud.mission_label.text = "Approche des deux tours  ·  Alpha sur Aube, Bravo sur Hespérie."
 	elif incident.is_active():
 		hud.mission_label.text = "Éloignez-vous des vitres. Le noyau et la ligne de rappel tiennent."
+	elif residential.phase == "active":
+		hud.mission_label.text = residential.objective()
 	elif commerce.phase == "active":
 		hud.mission_label.text = commerce.objective()
 	elif continuation.phase == "active":
@@ -1284,6 +1337,17 @@ func _update_hud() -> void:
 			hud.prompt_label.text = "E  Relever · " + str(nearest.get_meta("title", "Pièce d’exposition"))
 		elif kind == "continuation_finish":
 			hud.prompt_label.text = "E  Transmettre le compte rendu de reconnaissance"
+		elif kind == "residential_action":
+			hud.prompt_label.text = residential.prompt(str(nearest.get_meta("action_id", "")), equipment.selected)
+		elif kind == "residential_person":
+			var person: String = str(nearest.get_meta("person_id", ""))
+			hud.prompt_label.text = "E · Attendez ici" if residential.person_state(person) == "following" else "E · Suivez-moi vers le refuge 20"
+			if person == "jeanne" and not residential.has_action("care"): hud.prompt_label.text = "Mettez d’abord Jeanne en sécurité près du fauteuil"
+			elif person in ["marc", "ines"] and not residential.has_action("service_access"): hud.prompt_label.text = "Libérez d’abord l’escalier de service au 18"
+		elif kind == "residential_clue":
+			hud.prompt_label.text = "E · Consigner ce document"
+		elif kind == "residential_finish":
+			hud.prompt_label.text = "E · Transmettre le bilan des résidences"
 		elif kind == "commerce_action":
 			var action: String = str(nearest.get_meta("action_id", ""))
 			hud.prompt_label.text = commerce.prompt(action, equipment.selected)
@@ -1315,8 +1379,9 @@ func _update_hud() -> void:
 	var rows: PackedStringArray = []
 	var map_floors: Array = [31,30,29,28,27,26,25,24,23] if continuation.phase != "dormant" else [31,30,29,28,27,26,25]
 	if commerce.phase != "dormant": map_floors.append_array([22,21,20])
+	if residential.phase != "dormant": map_floors.append_array([19,18,17])
 	for n: int in map_floors:
-		var title: String = {31:"TOIT",30:"RESTAURANT",29:"SUITES",28:"ARCHIVES",27:"JARDIN",26:"SPA",25:"REFUGE",24:"CONGRÈS",23:"EXPOSITION",22:"GALERIE",21:"CUISINES",20:"REFUGE"}[n]
+		var title: String = {31:"TOIT",30:"RESTAURANT",29:"SUITES",28:"ARCHIVES",27:"JARDIN",26:"SPA",25:"REFUGE",24:"CONGRÈS",23:"EXPOSITION",22:"GALERIE",21:"CUISINES",20:"REFUGE",19:"RÉSIDENCES",18:"DUPLEX",17:"TÉLÉCOMS"}[n]
 		rows.append(("▸ " if n == floor_number else "  ") + str(n) + "  " + title + ("  ✓" if "survivor_%d" % n in rescued else ""))
 	hud.floor_map.text = "\n".join(rows)
 
@@ -1366,6 +1431,11 @@ func _dossier_snapshot() -> Dictionary:
 			var entry: Dictionary = Commerce.CLUES[id].duplicate(true)
 			entry["id"] = id
 			records.append(entry)
+	for id: String in Residential.CLUES:
+		if id in clues:
+			var entry: Dictionary = Residential.CLUES[id].duplicate(true)
+			entry["id"] = id
+			records.append(entry)
 	return {
 		"seed": current_seed, "floor": player.nearest_floor() if player.is_at_landing() else last_floor, "checkpoint_floor": checkpoint_floor,
 		"traversal_id": str(active_route.get("route_id", active_route.get("id", ""))),
@@ -1376,7 +1446,7 @@ func _dossier_snapshot() -> Dictionary:
 		"incident_state": incident.phase, "transmissions": radio.history_snapshot(),
 		"carried_id": _key(carried) if is_instance_valid(carried) else "",
 		"hoisting_id": _key(hoisting) if is_instance_valid(hoisting) else "",
-		"continuation": continuation.snapshot(), "commerce": commerce.snapshot()
+		"continuation": continuation.snapshot(), "commerce": commerce.snapshot(), "residential": residential.snapshot()
 	}
 
 func _complete_game(play_epilogue: bool = true) -> void:
@@ -1480,6 +1550,9 @@ func _continuation_context() -> Dictionary:
 
 
 func _begin_continuation() -> void:
+	if commerce.phase == "complete":
+		_begin_residential()
+		return
 	if continuation.phase == "complete":
 		_begin_commerce()
 		return
@@ -1578,6 +1651,7 @@ func _process_continuation(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	_process_continuation(delta)
 	_process_commerce(delta)
+	_process_residential(delta)
 
 
 func _complete_continuation(object: Node3D) -> void:
@@ -1603,7 +1677,7 @@ func _show_continuation_debrief() -> void:
 	epilogue_playing = false
 	hud.set_paused(false)
 	menu_camera.current = true
-	_apply_camera_sample(Cinematics.menu_camera({"id": "floor", "floor": 20 if commerce.phase == "complete" else 23, "incident": "aftermath"}, 0.0, true))
+	_apply_camera_sample(Cinematics.menu_camera({"id": "floor", "floor": 17 if residential.phase == "complete" else (20 if commerce.phase == "complete" else 23), "incident": "aftermath"}, 0.0, true))
 	hud.show_debrief(_dossier_snapshot())
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
@@ -1631,6 +1705,7 @@ func _pause(show_panel: bool = true) -> void:
 	paused = true
 	equipment.cancel()
 	commerce.cancel()
+	residential.cancel()
 	if is_instance_valid(equipment_visuals):
 		equipment_visuals.sample(equipment.snapshot(), false, incident.phase == "aftermath", reduced_motion)
 	for channel: AudioStreamPlayer in [audio_wind,audio_radio,audio_effect,audio_score,audio_rotors]:
@@ -1836,6 +1911,7 @@ func _select_equipment(id: String) -> void:
 		return
 	if equipment.select_tool(id):
 		commerce.cancel()
+		residential.cancel()
 		_notify(str(Equipment.TITLES[id]) + " en main. Visez un point d’intervention puis maintenez E.")
 		equipment_visuals.sample(equipment.snapshot(), true, incident.phase == "aftermath", reduced_motion, elapsed)
 		_update_hud()
@@ -1866,7 +1942,7 @@ func _process_equipment(delta: float, held_override: int = -1) -> void:
 				"medical": health = minf(100.0, health + 20.0)
 		_save_checkpoint(player.nearest_floor())
 		_notify(str(result["message"]))
-	equipment_visuals.sample(equipment.snapshot(), available and commerce.active_action.is_empty(), incident.phase == "aftermath", reduced_motion, elapsed)
+	equipment_visuals.sample(equipment.snapshot(), available and commerce.active_action.is_empty() and residential.active_action.is_empty(), incident.phase == "aftermath", reduced_motion, elapsed)
 	equipment_visuals.aim_spray(player.camera.to_global(Vector3(0.25, -0.22, -0.5)))
 
 
@@ -1978,3 +2054,139 @@ func _process_commerce(delta: float) -> void:
 			commerce_visuals.apply_state(commerce.snapshot())
 			_say("VARGA  /  RÉCEPTION AU REFUGE 20", "%s est reçu·e au refuge 20. %d sur 3 nouvelles personnes à l’abri." % [Commerce.PEOPLE[id]["name"], commerce.received_count()], 9, true)
 			_save_checkpoint(20)
+
+
+func _begin_residential() -> void:
+	if not started or not completed or paused or epilogue_playing or boot_playing or arrival_playing or not hud.end_panel.visible or hud.journal_panel.visible:
+		return
+	var previous: Dictionary = residential.snapshot()
+	var previous_seen: Array = seen_floors.duplicate()
+	if not residential.begin({"completed": completed, "floor": player.nearest_floor(), "at_landing": player.is_at_landing(), "commerce": commerce.snapshot()}): return
+	if 20 not in seen_floors: seen_floors.append(20)
+	completed = false
+	if not _save_checkpoint(20):
+		residential.restore_runtime(previous)
+		seen_floors = previous_seen
+		completed = true
+		hud.end_panel.subtitle_label.text = "Sauvegarde impossible. Le bilan du 20 est conservé ; réessayez."
+		return
+	_restore(Save.load_data(save_path))
+	_say("VARGA  /  RÉSIDENCES", "L’escalier nord du refuge rejoint le 19. Jeanne y attend Marc. Retrouvez-le, libérez le retour de service et vérifiez le relais du 17 avec Inès. Les huit personnes déjà reçues restent à l’abri.", 13, true)
+	_update_hud()
+
+
+func _residential_target_visible(object: Node3D) -> bool:
+	if residential.phase != "active" or not _can_inspect() or not player.is_at_landing() or not is_instance_valid(object) or not object.is_visible_in_tree() or object.get_meta("used", false): return false
+	if object not in world_data.get("interactables", []) or int(object.get_meta("floor", 0)) != player.nearest_floor(): return false
+	var origin: Vector3 = player.camera.global_position
+	var focus: Vector3 = object.global_position + (object.get_meta("focus_offset", Vector3(0, 1.2, 0)) as Vector3)
+	var toward: Vector3 = focus - origin
+	if toward.length() > 3.15 or toward.length_squared() < 0.001 or (-player.camera.global_basis.z).dot(toward.normalized()) < 0.72: return false
+	var query := PhysicsRayQueryParameters3D.create(origin, focus, 0xFFFFFFFF, [player.get_rid()])
+	var hit: Dictionary = get_world_3d().direct_space_state.intersect_ray(query)
+	if hit.is_empty(): return true
+	var collider: Node = hit.get("collider")
+	return is_instance_valid(collider) and (collider == object or object.is_ancestor_of(collider) or (str(object.get_meta("kind", "")) == "residential_person" and collider == object.get_parent()))
+
+
+func _interact_residential(object: Node3D) -> void:
+	if not _residential_target_visible(object): return
+	match str(object.get_meta("kind", "")):
+		"residential_action":
+			var id: String = str(object.get_meta("action_id", ""))
+			if id == "relay":
+				if residential.active_action == "relay": return
+				if not residential.has_action("power") or not residential.has_action("reference"):
+					_notify("Rétablissez l’alimentation et lisez la plaque de routage avant d’émettre.")
+					return
+				_pause(false)
+				relay_panel.open_panel()
+			elif residential.begin_action(id, equipment.selected):
+				equipment.cancel()
+			else:
+				_notify(residential.prompt(id, equipment.selected))
+		"residential_person":
+			var id: String = str(object.get_meta("person_id", ""))
+			var previous: Dictionary = residential.snapshot()
+			if residential.toggle_person(id):
+				if not _save_checkpoint(player.nearest_floor()):
+					residential.restore_runtime(previous)
+				else:
+					_notify(str(Residential.PEOPLE[id]["name"]) + (" vous suit. Gardez moins de 5 mètres d’écart et prenez les escaliers." if residential.person_state(id) == "following" else " attend ici."))
+				residential_visuals.apply_state(residential.snapshot())
+			else:
+				_notify("Vérifiez la mise en sécurité de Jeanne et l’ouverture du retour de service au 18.")
+		"residential_clue":
+			var id: String = _key(object)
+			if Residential.CLUES.has(id) and id not in clues:
+				clues.append(id)
+				if not _save_checkpoint(player.nearest_floor()):
+					clues.erase(id)
+				else:
+					object.set_meta("used", true)
+					_say("ALEX  /  CONSTAT CONSIGNÉ", str(Residential.CLUES[id]["text"]), 12)
+		"residential_finish":
+			var previous: Dictionary = residential.snapshot()
+			if not residential.complete({"floor": player.nearest_floor(), "at_landing": player.is_at_landing(), "clues": clues}):
+				_notify("Bilan incomplet : Jeanne, Marc et Inès au refuge 20, relais vérifié et trois constats requis.")
+				return
+			completed = true
+			if not _save_checkpoint(17):
+				residential.restore_runtime(previous)
+				completed = false
+				return
+			residential_visuals.apply_state(residential.snapshot())
+			_show_continuation_debrief()
+	_update_hud()
+
+
+func _submit_residential_relay(destination: String, reference: String) -> void:
+	if not relay_panel.visible or not paused or residential.phase != "active": return
+	if not residential.begin_relay(destination, reference, equipment.selected):
+		relay_panel.show_error("Routage non confirmé. Comparez la destination et la référence avec la plaque du relais. Vous pouvez réessayer.")
+		return
+	relay_panel.hide()
+	_resume()
+	_notify("Destination vérifiée. Maintenez E face à la console pour rétablir l’émission.")
+
+
+func _cancel_residential_relay() -> void:
+	relay_panel.hide()
+	residential.cancel()
+	_resume()
+
+
+func _process_residential_action(delta: float, held_override: int = -1) -> void:
+	if not is_instance_valid(residential_visuals): return
+	var target: Node3D = residential_visuals.action_targets.get(residential.active_action)
+	var held: bool = Input.is_action_pressed("interact") if held_override < 0 else held_override == 1
+	var previous: Dictionary = residential.snapshot()
+	var result: Dictionary = residential.advance_action(delta, _residential_target_visible(target), held, equipment.selected)
+	if result.is_empty(): return
+	if not _save_checkpoint(player.nearest_floor()):
+		# restore_runtime keeps the live following states and physical route cursors.
+		residential.restore_runtime(previous)
+		residential_visuals.apply_state(residential.snapshot())
+		_notify("Intervention non enregistrée. Votre escorte continue ; réessayez cette action au point stable.")
+		return
+	residential_visuals.apply_state(residential.snapshot())
+	_notify(str(result["message"]))
+	_say("ALEX  /  INTERVENTION", str(result["message"]), 10)
+
+
+func _process_residential(delta: float) -> void:
+	if residential.phase != "active" or not started or paused or completed or arrival_playing or not is_instance_valid(residential_visuals): return
+	var running: bool = not player.on_rope and not incident.is_active()
+	var allow_unease: bool = player.is_at_landing() and not radio.is_busy() and residential.active_action.is_empty()
+	residential_visuals.advance(delta, player.global_position, running, allow_unease, player.lamp_enabled, reduced_motion)
+	residential_retry_timer = maxf(0.0, residential_retry_timer - maxf(0.0, delta))
+	if residential_retry_timer > 0.0 or not player.is_at_landing() or player.nearest_floor() != 20: return
+	for id: String in Residential.PERSON_IDS:
+		var previous: Dictionary = residential.snapshot()
+		if residential.receive(id, 20, residential_visuals.physically_arrived(id)):
+			if not _save_checkpoint(20):
+				residential.restore_runtime(previous)
+				residential_retry_timer = 3.0
+				return
+			residential_visuals.apply_state(residential.snapshot())
+			_say("VARGA  /  RÉCEPTION AU REFUGE 20", "%s a rejoint son repère. %d sur 3 nouvelles personnes à l’abri." % [Residential.PEOPLE[id]["name"], residential.received_count()], 9, true)

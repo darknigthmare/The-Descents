@@ -17,12 +17,14 @@ func _run() -> void:
 	_test_projection()
 	_test_clue_disclosure()
 	_test_history()
+	_test_residential_reference()
 	_test_boundaries()
 	await _test_panels(Vector2i(1440, 900))
 	await _test_panels(Vector2i(960, 600))
 	await _test_hud()
+	await _test_game_and_menu_bounds()
 	if failures.is_empty():
-		print("PASS mission dossier: %d checks; factual rescue states, unrecovered-clue protection, received history, keyboard tabs/scroll, debrief actions and 1440x900/960x600 bounds." % checks)
+		print("PASS mission dossier: %d checks; factual rescue states, unrecovered-clue protection, received history, keyboard tabs/scroll, debrief actions, 1440x900/960x600 reading panels and 1440x900/1280x800/1024x640 game/menu bounds." % checks)
 		quit(0)
 	else:
 		for failure: String in failures:
@@ -112,6 +114,26 @@ func _test_history() -> void:
 	_check(source["transmissions"][8]["message"] != "Mutated copy", "A projected radio row aliases live history.")
 	source["transmissions"] = []
 	_check(str(Dossier.build(source)["pages"]["transmissions"]).contains("Aucune transmission enregistrée"), "An empty radio log invents an opening exchange.")
+
+
+func _test_residential_reference() -> void:
+	var source: Dictionary = _fixture()
+	source["continuation"] = {"phase": "complete", "started_at_refuge": true, "duo_briefed": true, "escort_state": "received"}
+	source["commerce"] = {"phase": "complete", "actions": ["shutter", "isolation", "blanket", "relay"], "people": {"mina": "received", "theo": "received", "sofia": "received"}, "contacted": ["mina", "theo", "sofia"]}
+	source["residential"] = {"phase": "active", "actions": [], "people": {"jeanne": "waiting", "marc": "waiting", "ines": "waiting"}, "contacted": []}
+	source["floor"] = 17
+	source["checkpoint_floor"] = 17
+	source["transmissions"] = []
+	var unopened: String = JSON.stringify(Dossier.build(source))
+	_check(not unopened.contains("NACRE-204") and not unopened.contains("AUBE-20"), "The journal revealed the service reference before it was read.")
+	source["residential"]["actions"] = ["reference"]
+	var recorded: Dictionary = Dossier.build(source)
+	_check(str(recorded["pages"]["situation"]).contains("AUBE-20") and str(recorded["pages"]["situation"]).contains("NACRE-204"), "The recorded reference disappeared with an empty radio history and pending escorts.")
+	for index in range(40):
+		source["transmissions"].append({"speaker": "VARGA", "message": "Échange ultérieur %d" % index, "elapsed": float(index)})
+	var truncated: Dictionary = Dossier.build(source)
+	_check(truncated["transmissions"].size() == 32 and str(truncated["pages"]["situation"]).contains("NACRE-204"), "Later radio exchanges displaced the durable service reference.")
+	_check(truncated["total_received"] == 8, "Consulting a reference invented a residential reception.")
 
 
 func _test_boundaries() -> void:
@@ -229,6 +251,44 @@ func _test_hud() -> void:
 	hud.end_panel.return_button.pressed.emit()
 	_check(actions == ["journal", "replay", "menu"], "HUD failed to forward debrief actions to the mission controller.")
 	hud.queue_free()
+	await process_frame
+	await process_frame
+
+
+func _test_game_and_menu_bounds() -> void:
+	var viewport := SubViewport.new()
+	viewport.size = Vector2i(1440, 900)
+	root.add_child(viewport)
+	var hud = HUD.new()
+	viewport.add_child(hud)
+	hud.status_label.text = "À L’ABRI 11 / 11   •   RÉSIDENCES 3 / 3   •   INDICES 10 / 10"
+	hud.mission_label.text = "Accompagner Jeanne, Marc et Inès par les escaliers jusqu’au refuge 20 · 0 / 3 réceptions."
+	hud.resources_label.text = "ANCRAGES 4  /  FUSÉES 2"
+	hud.equipment_label.text = "OUTIL HALLIGAN\n1 Hache  2 Extincteur  3 Halligan  4 Coupe-boulon"
+	var floors: PackedStringArray = []
+	for number: int in range(31, 16, -1): floors.append("▸ %d  RÉSIDENCES" % number)
+	hud.floor_map.text = "\n".join(floors)
+	hud.radio_panel.show()
+	hud.radio_label.text = "Inès Vidal a rejoint son repère. 3 sur 3 nouvelles personnes à l’abri."
+	hud.menu.set_context({"id":"residential_debrief", "title":"LA DESTINATION DU SIGNAL", "detail":"Les onze personnes sont à l’abri. Le relais du 17 est vérifié.", "floor":17, "rescued":11, "elapsed":1600}, true, 271104)
+	for viewport_size: Vector2i in [Vector2i(1440, 900), Vector2i(1280, 800), Vector2i(1024, 640)]:
+		viewport.size = viewport_size
+		hud.show_game()
+		hud.radio_panel.show()
+		await _settle_layout()
+		for control: Control in [hud.location_label, hud.mission_label, hud.status_label, hud.resources_label, hud.health_bar, hud.oxygen_bar, hud.stress_bar, hud.radio_panel, hud.floor_map, hud.equipment_label, hud.prompt_label]:
+			_assert_inside(control, viewport_size, "scaled game " + str(control.name))
+		_check(hud.floor_map.get_global_rect().end.y < hud.equipment_label.get_global_rect().position.y, "The fifteen-floor map overlaps equipment at %s." % viewport_size)
+		var mission_bounds: Rect2 = hud.mission_label.get_parent().get_parent().get_global_rect()
+		_check(mission_bounds.encloses(hud.status_label.get_global_rect()), "The residential counters escape their mission panel at %s." % viewport_size)
+		hud.game.hide()
+		hud.menu.show()
+		await _settle_layout()
+		for node: Node in hud.menu.main_layout.find_children("*", "Control", true, false):
+			if node is Control and node.is_visible_in_tree(): _assert_inside(node, viewport_size, "scaled menu " + str(node.name))
+		_check(hud.menu.options.get_global_rect().size.is_equal_approx(Vector2(viewport_size)), "Scaling menu art also reduced the options modal at %s." % viewport_size)
+		_check(hud.journal_panel.get_global_rect().size.is_equal_approx(Vector2(viewport_size)), "Scaling the game also reduced the journal at %s." % viewport_size)
+	viewport.queue_free()
 	await process_frame
 	await process_frame
 

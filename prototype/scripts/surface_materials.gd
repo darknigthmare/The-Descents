@@ -18,7 +18,9 @@ const CATALOG: Dictionary = {
 	"teal_carpet": {"repeat_m": 1.0, "roughness": 0.96, "metallic": 0.0, "normal": 0.27, "fallback": Color("42656c")},
 	"porcelain_tile": {"repeat_m": 1.2, "roughness": 0.34, "metallic": 0.0, "normal": 0.10, "fallback": Color("c0c4bd")},
 	"ivory_terrazzo": {"repeat_m": 2.0, "roughness": 0.64, "metallic": 0.0, "normal": 0.06, "fallback": Color("b9b7a8"), "root": "res://assets/materials/v012/"},
-	"kitchen_sage_tile": {"repeat_m": 2.0, "roughness": 0.88, "metallic": 0.0, "normal": 0.08, "fallback": Color("829187"), "root": "res://assets/materials/v012/"}
+	"kitchen_sage_tile": {"repeat_m": 2.0, "roughness": 0.88, "metallic": 0.0, "normal": 0.08, "fallback": Color("829187"), "root": "res://assets/materials/v012/"},
+	"linen_wallpaper": {"repeat_m": 1.2, "roughness": 0.94, "metallic": 0.0, "normal": 0.12, "fallback": Color("bcb3a2"), "root": "res://assets/materials/v013/"},
+	"antistatic_floor": {"repeat_m": 1.8, "roughness": 0.78, "metallic": 0.0, "normal": 0.07, "fallback": Color("424f56"), "root": "res://assets/materials/v013/"}
 }
 
 var _materials: Dictionary = {}

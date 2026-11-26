@@ -18,6 +18,7 @@ const PALE: Color = Color(0.86, 0.92, 0.92)
 const MUTED: Color = Color(0.55, 0.69, 0.72)
 const AMBER: Color = Color(1.0, 0.65, 0.29)
 const TEAL: Color = Color(0.35, 0.86, 0.83)
+const GAME_DESIGN_SIZE := Vector2(1440, 900)
 
 var root: Control
 var menu: Control
@@ -86,6 +87,15 @@ func _ready() -> void:
 	journal_panel.hide()
 	end_panel.hide()
 	help_panel.hide()
+	root.resized.connect(_fit_game_to_viewport)
+	_fit_game_to_viewport()
+
+func _fit_game_to_viewport() -> void:
+	if not is_instance_valid(game): return
+	var available: Vector2 = root.size
+	var factor: float = minf(available.x / GAME_DESIGN_SIZE.x, available.y / GAME_DESIGN_SIZE.y)
+	game.scale = Vector2.ONE * maxf(factor, 0.01)
+	game.position = (available - GAME_DESIGN_SIZE * game.scale) * 0.5
 
 func _box(color: Color = INK, border: Color = Color(0.18, 0.29, 0.32)) -> StyleBoxFlat:
 	var style: StyleBoxFlat = StyleBoxFlat.new()
@@ -169,6 +179,9 @@ func apply_settings(settings: Dictionary) -> void:
 
 func _build_game() -> void:
 	game = _full_control()
+	# Only the fixed in-game composition scales; reading panels keep their own layout.
+	game.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
+	game.size = GAME_DESIGN_SIZE
 	var head: PanelContainer = PanelContainer.new()
 	head.position = Vector2(28, 26)
 	head.size = Vector2(505, 105)
@@ -194,6 +207,8 @@ func _build_game() -> void:
 	mission_label.custom_minimum_size.x = 390
 	mission_stack.add_child(mission_label)
 	status_label = _label("RESCAPÉS 0 / 3    •    INDICES 0 / 3", 15, TEAL)
+	status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	status_label.custom_minimum_size.x = 390
 	mission_stack.add_child(status_label)
 	var resources: PanelContainer = PanelContainer.new()
 	resources.position = Vector2(28, 655)
@@ -241,7 +256,7 @@ func _build_game() -> void:
 	radio_panel.hide()
 	floor_map = _label("31 TOIT\n30 RESTAURANT\n29 SUITES\n28 ARCHIVES\n27 JARDIN\n26 SPA\n25 REFUGE", 14, MUTED)
 	floor_map.position = Vector2(1245, 265)
-	floor_map.add_theme_constant_override("line_spacing", 10)
+	floor_map.add_theme_constant_override("line_spacing", 2)
 	game.add_child(floor_map)
 	equipment_label = _label("", 14, PALE)
 	equipment_label.position = Vector2(880, 652)
@@ -428,7 +443,7 @@ func _build_help() -> void:
 	text.focus_mode = Control.FOCUS_ALL
 	text.selection_enabled = true
 	text.text = "MISSION\nSecourez Ana au 30, Samuel au 28 et Nora au 26. E fixe leur harnais.\nRamenez chaque personne à la balise ORANGE de son étage pour le treuil.\nAprès les trois réceptions et l’incident, rejoignez le refuge 25.\n\nITINÉRAIRE LOCAL\nRappel toit–30 · Escalier 30–29 · Rappel 29–28 · Escalier 28–27\nRappel 27–26 · Escalier 26–25. Chaque passage permet aussi le retour.\n\nÀ PIED ET DANS LES ESCALIERS\nZQSD / WASD : marcher · Souris / flèches : regarder · Maj : courir\nCtrl : s’accroupir · Espace : sauter · E : interagir au repère BLEU du rappel\n\nSUR LA CORDE\nS : descendre · Z/W : remonter · Q/A et D : équilibrer le balancement\nCtrl : progression précise · Maj + S : descente rapide\nEspace : verrouiller / libérer le descendeur · Relâcher : frein automatique\nX : stabiliser 16 s (un ancrage) · E : sortir, arrêté et centré au palier\nRemontée et descente rapide demandent de l’endurance. Reposez-vous assuré.\nLe rappel personnel exige les mains libres ; évacuez d’abord votre rescapé.\n\nMATÉRIEL ET LECTURE\n1 : hache · 2 : extincteur · 3 : Halligan · 4 : coupe-boulon\nMaintenir E en visant le point d’intervention avec le bon outil.\nS’éloigner, relâcher E ou changer d’outil interrompt le travail.\nLes outils se rangent pendant le portage, le rappel et les secousses.\nF : lampe · G : fusée · R : radio · J : dossier · Échap : pause et options\nE devant un objet « Examiner » ouvre sa fiche et suspend l’intervention.\nMolette / Page ↑↓ : défiler. Fermer ou Échap : reprendre.\nL’air de réserve diminue dans les fumées. Le refuge reste sûr."
-	text.text += "\n\nAPRÈS LE BILAN DU 25\nChoisissez Poursuivre au congrès pour ouvrir la reconnaissance.\nEscalier de service NORD 25–24 : voie de retour pour Léa et Idris.\nPlacez-vous devant le groupe et E : signe visible Suivez-moi / Attendez.\nAvancez près d’eux ; s’ils vous perdent, ils attendent sans se téléporter.\nLes deux personnes doivent atteindre les repères du refuge pour être reçues.\nAprès réception : rappel personnel 24–23, maquette et photographie à relever.\nLe terminal du 23 transmet le compte rendu. Choisissez ensuite Poursuivre vers les commerces.\nUne reprise remet une escorte inachevée à l’abri dans la cabine du 24.\n\nGALERIE, CUISINES ET REFUGE 20\nEscaliers locaux : sud 23–22, nord 22–21, sud 21–20.\nUn rappel facultatif 22–21 reste réservé au sauveteur.\n22 : Halligan au volet de Mina. 21 : isoler puis couvrir le réchauffeur.\nE devant Mina, Théo ou Sofia : suivre / attendre ; gardez moins de 5 m.\nChaque personne doit atteindre sa marque au refuge 20 pour être reçue.\nLe Retranché : distance de 2 à 3 m, lampe abaissée, E pour parler.\nDeux constats à relever au 22 et au 21, relais et bilan au 20.\nUne escorte inachevée reprend à son point initial ; les réceptions persistent."
+	text.text += "\n\nAPRÈS LE BILAN DU 25\nChoisissez Poursuivre au congrès pour ouvrir la reconnaissance.\nEscalier de service NORD 25–24 : voie de retour pour Léa et Idris.\nPlacez-vous devant le groupe et E : signe visible Suivez-moi / Attendez.\nAvancez près d’eux ; s’ils vous perdent, ils attendent sans se téléporter.\nLes deux personnes doivent atteindre les repères du refuge pour être reçues.\nAprès réception : rappel personnel 24–23, maquette et photographie à relever.\nLe terminal du 23 transmet le compte rendu. Choisissez ensuite Poursuivre vers les commerces.\nUne reprise remet une escorte inachevée à l’abri dans la cabine du 24.\n\nGALERIE, CUISINES ET REFUGE 20\nEscaliers locaux : sud 23–22, nord 22–21, sud 21–20.\nUn rappel facultatif 22–21 reste réservé au sauveteur.\n22 : Halligan au volet de Mina. 21 : isoler puis couvrir le réchauffeur.\nE devant Mina, Théo ou Sofia : suivre / attendre ; gardez moins de 5 m.\nChaque personne doit atteindre sa marque au refuge 20 pour être reçue.\nLe Retranché : distance de 2 à 3 m, lampe abaissée, E pour parler.\nDeux constats à relever au 22 et au 21, relais et bilan au 20.\nUne escorte inachevée reprend à son point initial ; les réceptions persistent.\n\nRÉSIDENCES ET RELAIS 17\nPoursuivre vers les résidences depuis le bilan du refuge 20.\n19 : sécuriser Jeanne ; rappel bleu dans le duplex vers le 18.\n18 : retrouver Marc et dégager le retour de service au Halligan.\n17 : Inès, alimentation, plaque de destination puis vérification du relais.\nLes trois personnes remontent au refuge 20 par les escaliers ; restez proches.\nRecopiez destination et référence de la plaque, puis maintenez E à la console.\nUne erreur de saisie peut être corrigée. Trois documents et trois réceptions avant le bilan du 17."
 	col.add_child(text)
 	help_close_button = _button("Compris", close_help, true)
 	col.add_child(help_close_button)

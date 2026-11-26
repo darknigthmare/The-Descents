@@ -70,9 +70,10 @@ static func normalize(value: Variant, stable_only: bool = false) -> Dictionary:
 				return {}
 	return value.duplicate(true)
 
-static func checkpoint_consistent(context: Dictionary, value: Dictionary) -> bool:
+static func checkpoint_consistent(context: Dictionary, value: Dictionary, residential_started: bool = false) -> bool:
 	var checked: Dictionary = normalize(value, true)
 	if checked.is_empty(): return false
+	if residential_started and checked["phase"] != "complete": return false
 	if checked["phase"] == "dormant":
 		if int(context.get("floor", 31)) < 23: return false
 		for level: Variant in context.get("seen_floors", []):
@@ -84,7 +85,7 @@ static func checkpoint_consistent(context: Dictionary, value: Dictionary) -> boo
 	if previous.get("phase") != "complete" or previous.get("escort_state") != "received" or context.get("incident_state") != "aftermath" or 23 not in context.get("seen_floors", []):
 		return false
 	if checked["phase"] == "active": return not bool(context.get("completed", true))
-	if not bool(context.get("completed", false)) or int(context.get("floor", 0)) != 20: return false
+	if not residential_started and (not bool(context.get("completed", false)) or int(context.get("floor", 0)) != 20): return false
 	for id: String in CLUES:
 		if id not in context.get("clues", []): return false
 	return true

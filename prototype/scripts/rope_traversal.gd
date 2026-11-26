@@ -256,7 +256,7 @@ static func _valid_route(route: Dictionary) -> bool:
 		return false
 	var upper: int = int(route["upper"])
 	var lower: int = int(route["lower"])
-	if upper != lower + 1 or lower < 20 or upper > 31:
+	if upper != lower + 1 or lower < 17 or upper > 31:
 		return false
 	for key: String in ["top_entry", "bottom_entry", "rope_top", "rope_bottom", "anchor"]:
 		if typeof(route[key]) != TYPE_VECTOR3 or not route[key].is_finite():

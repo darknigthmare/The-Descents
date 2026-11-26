@@ -16,7 +16,7 @@ static func floor_height(number: int) -> float:
 	return float(number - 24) * 6.0
 
 
-static func all_routes(include_continuation: bool = false, include_commerce: bool = false) -> Array[Dictionary]:
+static func all_routes(include_continuation: bool = false, include_commerce: bool = false, include_residential: bool = false) -> Array[Dictionary]:
 	var result: Array[Dictionary] = []
 	for upper: int in [31, 30, 29, 28, 27, 26]:
 		result.append(_make_route(upper))
@@ -28,28 +28,33 @@ static func all_routes(include_continuation: bool = false, include_commerce: boo
 		result.append(_make_route(22, "stairs", true))
 		result.append(_make_route(21, "stairs"))
 		result.append(_make_route(22, "rope"))
+	if include_residential and include_commerce and include_continuation:
+		result.append(_make_route(20, "stairs", true))
+		result.append(_make_route(19, "stairs"))
+		result.append(_make_route(18, "stairs", true))
+		result.append(_duplex_route())
 	return result
 
 
 static func for_id(route_id: String) -> Dictionary:
-	for route: Dictionary in all_routes(true, true):
+	for route: Dictionary in all_routes(true, true, true):
 		if str(route["id"]) == route_id:
 			return route
 	return {}
 
 
-static func routes_at_floor(number: int, include_continuation: bool = false, include_commerce: bool = false) -> Array[Dictionary]:
+static func routes_at_floor(number: int, include_continuation: bool = false, include_commerce: bool = false, include_residential: bool = false) -> Array[Dictionary]:
 	var result: Array[Dictionary] = []
-	for route: Dictionary in all_routes(include_continuation, include_commerce):
+	for route: Dictionary in all_routes(include_continuation, include_commerce, include_residential):
 		if number == int(route["upper"]) or number == int(route["lower"]):
 			result.append(route)
 	return result
 
 
-static func stair_at_position(position_value: Vector3, include_continuation: bool = false, include_commerce: bool = false) -> Dictionary:
+static func stair_at_position(position_value: Vector3, include_continuation: bool = false, include_commerce: bool = false, include_residential: bool = false) -> Dictionary:
 	if not position_value.is_finite():
 		return {}
-	for route: Dictionary in all_routes(include_continuation, include_commerce):
+	for route: Dictionary in all_routes(include_continuation, include_commerce, include_residential):
 		if route["kind"] == "stairs" and (route["bounds"] as AABB).has_point(position_value):
 			return route
 	return {}
@@ -105,9 +110,9 @@ static func _make_route(upper: int, authored_kind: String = "", north: bool = fa
 	return route
 
 
-static func validate(routes: Array, include_continuation: bool = false, include_commerce: bool = false) -> Array[String]:
+static func validate(routes: Array, include_continuation: bool = false, include_commerce: bool = false, include_residential: bool = false) -> Array[String]:
 	var errors: Array[String] = []
-	var authored: Array[Dictionary] = all_routes(include_continuation, include_commerce)
+	var authored: Array[Dictionary] = all_routes(include_continuation, include_commerce, include_residential)
 	if routes.size() != authored.size():
 		errors.append("The selected chapter requires its exact adjacent-floor traversal links.")
 		return errors
@@ -136,3 +141,16 @@ static func validate(routes: Array, include_continuation: bool = false, include_
 			if route[key] != expected[key]:
 				errors.append("Route %s changed the protected %s contract." % [str(route["id"]), key])
 	return errors
+
+
+static func _duplex_route() -> Dictionary:
+	var route: Dictionary = _make_route(19, "rope")
+	var delta_x: float = 8.0 - ROPE_X
+	for key: String in ["top_entry", "bottom_entry", "rope_top", "rope_bottom", "anchor"]:
+		route[key] = (route[key] as Vector3) + Vector3(delta_x, 0, 0)
+	# The standing position is west of the duplex opening (x 5.7–10.3).
+	route["top_entry"] = Vector3(4.8, floor_height(19) + 0.06, 0)
+	route["bottom_entry"] = Vector3(4.8, floor_height(18) + 0.06, 0)
+	route["bounds"] = AABB(Vector3(6.9, floor_height(18) - 0.1, -1.2), Vector3(2.2, 6.5, 2.4))
+	route["title"] = "Rappel du duplex 19 ↔ 18"
+	return route

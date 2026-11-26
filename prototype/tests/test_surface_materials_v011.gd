@@ -10,7 +10,7 @@ func _initialize() -> void:
 
 func _run() -> void:
 	var library: RefCounted = Surfaces.new()
-	_check(Surfaces.CATALOG.size() == 10, "Material source catalogue is incomplete.")
+	_check(Surfaces.CATALOG.size() == 12, "Material source catalogue is incomplete.")
 	for id: String in Surfaces.CATALOG:
 		var material: StandardMaterial3D = library.get_surface(id)
 		var spec: Dictionary = Surfaces.CATALOG[id]
@@ -39,7 +39,7 @@ func _run() -> void:
 	var unknown: StandardMaterial3D = library.get_surface("missing_catalogue_entry", Color("aabbcc"))
 	_check(unknown != null and unknown.albedo_texture == null and unknown.albedo_color.is_equal_approx(Color("aabbcc")), "Unknown material has no safe visible fallback.")
 	var snapshot: Dictionary = library.snapshot()
-	_check(snapshot["assets"].size() == 10 and str(snapshot["projection"]).contains("triplanar"), "Material provenance snapshot is incomplete.")
+	_check(snapshot["assets"].size() == 12 and str(snapshot["projection"]).contains("triplanar"), "Material provenance snapshot is incomplete.")
 	for record: Dictionary in snapshot["assets"]:
 		_check(record["loaded"], "Material manifest reports a missing final PNG: " + str(record["file"]))
 	if failures.is_empty():

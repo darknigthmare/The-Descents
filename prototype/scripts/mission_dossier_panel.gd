@@ -175,7 +175,7 @@ func _build_journal() -> void:
 	side_column.add_child(route_scroll)
 	route_scroll.add_child(route_box)
 	route_box.add_child(_label("AXE DE DESCENTE", 12, GOLD))
-	for index in range(12):
+	for index in range(15):
 		var row: Label = _label("", 15, MUTED)
 		route_box.add_child(row)
 		route_rows.append(row)
@@ -266,6 +266,7 @@ func _refresh() -> void:
 	if mode == "debrief":
 		var extended: bool = model.get("continuation_phase", "dormant") != "dormant"
 		var lower: bool = model.get("commerce_phase", "dormant") != "dormant"
+		var deepest: bool = model.get("residential_phase", "dormant") != "dormant"
 		title_label.text = "SOUS LES PLANS DE NACRE" if extended else "LE REFUGE 25"
 		subtitle_label.text = "RECONNAISSANCE A24–A23 TERMINÉE · Cinq personnes à l’abri, deux constats à approfondir." if extended else "INTERVENTION SUPÉRIEURE TERMINÉE · Le refuge ouvre la suite de la descente."
 		# Three cards remain readable on compact displays. The extension uses
@@ -277,6 +278,10 @@ func _refresh() -> void:
 			title_label.text = "LE REFUGE DES ÉQUIPES"
 			subtitle_label.text = "SECOURS A22–A20 TERMINÉS · Huit personnes à l’abri, sept pièces possibles au dossier."
 			cards = model["survivors"].slice(5, 8)
+		if deepest:
+			title_label.text = "LA DESTINATION DU SIGNAL"
+			subtitle_label.text = "RÉSIDENCES A19–A17 · Onze personnes à l’abri, un relais vérifié."
+			cards = model["survivors"].slice(8, 11)
 		for index in range(mini(cards.size(), survivor_names.size())):
 			var row: Dictionary = cards[index]
 			survivor_names[index].text = row["name"]
@@ -292,9 +297,11 @@ func _refresh() -> void:
 		replay_button.disabled = not model["replay_available"]
 		if lower:
 			completion_text.text = str(model["relay_title"]) + "\n\n" + str(model["relay_text"]) + "\n\nPOINT SÛR\nRefuge 20 · Les réceptions et interventions sont conservées. Le journal distingue les faits recueillis de leur interprétation."
+		if deepest:
+			completion_text.text = str(model["relay_title"]) + "\n\n" + str(model["relay_text"]) + "\n\nPOINT SÛR\nRelais 17 · Le bilan conserve les onze réceptions et les constats recueillis."
 		replay_button.visible = not extended
-		descent_button.visible = model.get("continuation_available", false) or model.get("commerce_available", false)
-		descent_button.text = "Poursuivre vers les commerces" if model.get("commerce_available", false) else "Poursuivre au congrès"
+		descent_button.visible = model.get("continuation_available", false) or model.get("commerce_available", false) or model.get("residential_available", false)
+		descent_button.text = "Poursuivre vers les résidences" if model.get("residential_available", false) else ("Poursuivre vers les commerces" if model.get("commerce_available", false) else "Poursuivre au congrès")
 		var focus_chain: Array[Control] = [journal_button]
 		if replay_button.visible:
 			focus_chain.append(replay_button)

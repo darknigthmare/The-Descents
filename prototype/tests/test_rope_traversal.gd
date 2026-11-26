@@ -109,7 +109,7 @@ func _test_controls_and_brakes() -> void:
 
 func _test_local_limits_and_landings() -> void:
 	var rope = Rope.new()
-	for upper: int in [31,29,27,24,22,21]:
+	for upper: int in [31,29,27,24,22,21,19,18]:
 		var route: Dictionary = _route(upper)
 		rope.attach(route,upper)
 		var bottom: Dictionary = rope.advance(100.0,_controls(1.0))
@@ -118,7 +118,7 @@ func _test_local_limits_and_landings() -> void:
 		var top: Dictionary = rope.advance(100.0,_controls(-1.0))
 		_check(top["position"] == route["rope_top"] and top["can_exit"] and top["exit_floor"] == upper, "Return route cannot climb back to its own upper endpoint: %d." % upper)
 		_check(is_equal_approx(float(top["segment_length"]),6.0) and is_zero_approx(float(top["travelled"])), "The local route length is not one six-metre floor.")
-	_check(not rope.attach(_route(20), 20), "The rig admitted a route below the built chapter's floor-20 boundary.")
+	_check(not rope.attach(_route(17), 17), "The rig admitted a route below the built chapter's floor-17 boundary.")
 	rope.attach(_route(),31)
 	rope.sync_position(Vector3(-1.3,39.04,0))
 	_check(not rope.can_exit() and rope.exit_floor() == 0 and not rope.landing().is_finite(), "A midpoint offers an invented walkable floor.")

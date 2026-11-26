@@ -111,7 +111,7 @@ func _run() -> void:
 	for tick: int in range(26): mission._process_equipment(0.125, 1)
 	_check(mission.equipment.charges_left() == 2 and not mission.equipment_visuals.local_fire.visible, "Fire did not extinguish with one charge.")
 	var checkpoint: Dictionary = Save.load_data(SAVE)
-	_check(checkpoint.get("version") == 5 and "equipment_fire_28" in checkpoint.get("supplies_used", []), "Checkpoint lost the work receipt.")
+	_check(checkpoint.get("version") == Save.SAVE_VERSION and "equipment_fire_28" in checkpoint.get("supplies_used", []), "Checkpoint lost the work receipt.")
 	mission._restore(checkpoint)
 	_freeze()
 	await physics_frame

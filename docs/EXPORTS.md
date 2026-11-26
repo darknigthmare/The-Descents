@@ -1,4 +1,55 @@
-# Exports du prototype 0.12
+# Exports du prototype 0.13.0
+
+**Candidature v0.13.0 en vérification finale.** Le projet utilise **Godot 4.7.2**. Les trois chemins ci-dessous sont les cibles de distribution retenues ; tailles, empreintes, membres exacts et disponibilité seront confirmés après construction et contrôle des archives. Les résultats historiques conservés plus bas ne certifient pas la 0.13.
+
+Windows propose **Forward+** par défaut. **JOUER_CINEMATIQUE.cmd** demande Vulkan/Forward+ ; **JOUER_COMPATIBILITE.cmd** demande OpenGL/Compatibility. Le Web utilise Compatibility. Les parcours, modèles, textures et règles de secours restent communs aux profils ; les effets de lumière dépendent du moteur effectivement obtenu.
+
+## Archives prévues
+
+| Format | Cible de distribution | Contenu attendu |
+| --- | --- | --- |
+| Windows x86_64 | [TheTowerDescent-v0.13-Windows-x86_64.zip](../releases/v0.13/TheTowerDescent-v0.13-Windows-x86_64.zip) | Exécutable avec ressources embarquées, deux lanceurs, guide et licences |
+| Sources Godot | [TheTowerDescent-v0.13-Godot-Source.zip](../releases/v0.13/TheTowerDescent-v0.13-Godot-Source.zip) | Projet éditable, actifs, sources Blender, tests, outils, guides et documents |
+| Web | [TheTowerDescent-v0.13-Web.zip](../releases/v0.13/TheTowerDescent-v0.13-Web.zip) | Chargeur HTML/JavaScript, WebAssembly, paquet de ressources et notices à servir ensemble |
+
+Le manifeste final de la livraison doit établir les fichiers présents et leurs SHA-256. Tant que son contrôle n’est pas terminé, ces liens décrivent l’emplacement visé et non une attestation de publication. Le statut courant figure dans [État de livraison](ETAT_DE_LIVRAISON.md).
+
+## Ouvrir et utiliser chaque format
+
+### Windows
+
+Extraire l’ensemble de l’archive dans un même dossier et lancer l’un des deux fichiers `.cmd`. Le paquet conserve `TheTowerDescent.exe`, `JOUER_CINEMATIQUE.cmd`, `JOUER_COMPATIBILITE.cmd`, le guide de démarrage, `EXPORTS.md`, `GODOT_LICENSES.txt` et les notices Open Sans. L’exécutable contient son paquet de ressources ; l’utilisateur n’a pas à installer l’éditeur Godot. Les commandes et étapes de mission sont décrites dans [Démarrage Windows](DEMARRAGE_WINDOWS.md).
+
+### Projet éditable
+
+Ouvrir `prototype/project.godot` avec Godot 4.7.2 et laisser l’import des ressources se terminer. Le projet conserve les catalogues de **quarante GLB** et les **douze PNG de matière** actifs. Le nouveau lot résidentiel apporte douze GLB, 428 pièces source, 155 152 triangles et 5 203 300 octets GLB. Les dimensions et empreintes individuelles figurent dans son [manifeste](../prototype/assets/models/residential_v013/manifest.json).
+
+Les sources de modèles restent `docs/assets/v0.11/rescue_equipment.blend`, `docs/assets/v0.12/commerce_equipment.blend` et `docs/assets/v0.13/residential_equipment.blend`. Le nouveau [guide des modèles](assets/v0.13/MODELS.md) indique les identifiants, pivots et usages. Les papiers peints et sols du lot v0.13 gardent leur résolution native de 1254 × 1254 et leurs prompts ; ce sont des créations artistiques, avec détail de surface approximé par le moteur.
+
+La Bible complète v0.9, les suppléments v0.10, v0.12 et v0.13, leurs sources Markdown et les rapports associés restent conservés. Les captures du jeu et les aperçus Blender ont des provenances différentes. Leur disponibilité dans l’archive finale doit correspondre à l’inventaire réellement vérifié ; aucun nouveau total d’images n’est annoncé avant la revue.
+
+### Web
+
+Extraire le chargeur, le module WebAssembly et le paquet de ressources sans renommer séparément les fichiers. Servir ce dossier par HTTP avec les paramètres nécessaires à l’export Godot retenu. Ouvrir directement le fichier HTML par `file://` ne constitue pas le mode de lancement attendu. Le Web utilise le rendu Compatibility ; les données de reprise restent locales au contexte de navigation.
+
+La présence de l’archive Web ou d’un dossier d’export n’établit pas le déploiement d’un site public. Les résultats de construction, de chargement des ressources et d’exécution en navigateur doivent rester identifiés séparément.
+
+## Contrôles de la candidature
+
+La [procédure v0.13](VALIDATION_V0.13.md) décrit la validation de logique, les parcours physiques, les erreurs d’écriture, les captures et le supplément Word/PDF. Les contrôles finaux sont en cours. Les résultats publiés devront lier leur verdict au moteur, aux commandes, aux fichiers et à leurs empreintes exactes.
+
+Le chargement d’un pack Windows ou Web par Godot Linux vérifie les ressources embarquées dans ce contexte. Il ne lance pas l’application sur Windows ni le WebAssembly dans un navigateur. Les captures sont des états préparés du moteur et les parcours automatisés peuvent employer un guide synthétique. Ces preuves ne valent pas partie humaine complète ni mesure de performance sur GPU de joueur.
+
+Après assemblage, contrôler les CRC, l’inventaire, les tailles et les octets des membres, puis calculer les SHA-256 des archives. Le contrat historique conserve une limite de **100 Mio — 104 857 600 octets — par archive** ; une nouvelle répartition doit être décrite et vérifiée avant publication.
+
+## Contrat historique v0.12
+
+Les chemins, résultats et outils ci-dessous appartiennent à la livraison antérieure.
+
+<details>
+<summary>Consulter les exports et preuves historiques v0.12</summary>
+
+### Exports historiques du prototype 0.12
 
 La candidature 0.12 utilise **Godot 4.7.2 stable officiel** et ses modèles d’export vérifiés par empreinte. **Sa revue est achevée** : 43 suites et 8 291 contrôles sources, 572 contrôles de packs, 21 PNG natifs examinés et neuf pages de document revues. Les preuves concernent la demande `9756f0b707c1ffc72284754ec1f1ff301ffdd960` et sa source `2e4de42ce85a42c80dae97a1de9985194430d9b6`. Le workflow **commerce-review** construit les exports et preuves ; il ne publie aucun fichier dans la branche et ne crée aucune approbation.
 
@@ -32,6 +83,9 @@ Les [exports construits](validation/v0.12/CANDIDATE_EXPORTS.json), les [572 cont
 Le vérificateur [verify_commerce_release.py](../tools/verify_commerce_release.py) exige les tests, packs, provenances et revues, puis compare les membres et octets exacts des ZIP avec leurs sources. Il écrit `releases/VERIFICATION_V0.12.json` seulement après réussite de ces contrôles. Chaque archive doit rester strictement sous **100 Mio — 104 857 600 octets**. Les fichiers Web destinés à `dist/` doivent correspondre exactement à l’export vérifié ; ce dossier n’établit pas à lui seul la publication d’un site public.
 
 La procédure détaillée est dans [Validation v0.12](VALIDATION_V0.12.md). Le [rapport de livraison](ETAT_DE_LIVRAISON.md) distingue revue et disponibilité. Les captures natives sous Linux et les packs montés ne constituent pas une partie humaine sous Windows ou dans un navigateur, ni un benchmark de GPU. Personnages, feu et fumée restent stylisés ; quelques superpositions de libellés 3D et de notifications ainsi qu’une aide parfois peu contrastée sont consignées dans la revue.
+
+
+</details>
 
 ## Contrat historique v0.11
 

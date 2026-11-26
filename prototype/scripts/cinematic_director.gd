@@ -112,6 +112,15 @@ static func menu_context(data: Dictionary) -> Dictionary:
 	var names: Dictionary = {31:"POSTE DU TOIT",30:"RESTAURANT PANORAMIQUE",29:"SUITES DE NACRE",28:"ARCHIVES D’AUBE",27:"JARDIN DES ENFANTS",26:"SPA DE NACRE",25:"REFUGE TECHNIQUE",24:"CENTRE DE CONGRÈS",23:"HISTOIRE DE NACRE"}
 	var continuation: Dictionary = data.get("continuation", {})
 	var commerce: Dictionary = data.get("commerce", {})
+	var residential: Dictionary = data.get("residential", {})
+	if residential.get("phase", "dormant") != "dormant":
+		var received: int = 0
+		for state: Variant in residential.get("people", {}).values():
+			if state == "received": received += 1
+		return {"id": "residential_debrief" if complete else "residential", "floor": floor_number,
+			"title": "LA DESTINATION DU SIGNAL" if complete else {19: "RÉSIDENCES HAUTES", 18: "DUPLEX ET SERVICES", 17: "TÉLÉCOMMUNICATIONS", 20: "REFUGE DES ÉQUIPES"}.get(floor_number, names.get(floor_number, "POINT SÛR")),
+			"detail": "Onze personnes à l’abri. Le relais local est vérifié." if complete else "Retrouver les proches. Vérifier le signal avant d’émettre.",
+			"incident": "aftermath", "rescued": 8 + received, "elapsed": float(data.get("elapsed", 0.0))}
 	if commerce.get("phase", "dormant") != "dormant":
 		var received: int = 0
 		for state: Variant in commerce.get("people", {}).values():
@@ -137,11 +146,15 @@ static func menu_camera(context: Dictionary, time: float, reduced_motion: bool) 
 			position = Vector3(21,52,21)
 			target = Vector3(1,43.5,-5)
 			fov = 59.0
-		"floor", "refuge", "recon", "recon_debrief", "commerce", "commerce_debrief":
+		"floor", "refuge", "recon", "recon_debrief", "commerce", "commerce_debrief", "residential", "residential_debrief":
 			var y: float = float(floor_number - 24) * 6.0
 			position = Vector3(10.2,y+2.3,8.9)
 			target = Vector3(-5.0,y+1.8,-4.5)
 			fov = 68.0
+			if floor_number == 17:
+				position = Vector3(4.6, y + 1.9, -4.0)
+				target = Vector3(8.2, y + 1.5, -8.0)
+				fov = 65.0
 			if floor_number == 20:
 				position = Vector3(10.4, y + 2.1, 1.4)
 				target = Vector3(5.8, y + 1.1, 7.4)

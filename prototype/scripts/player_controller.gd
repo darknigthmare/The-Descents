@@ -47,10 +47,12 @@ var rope_obstructed: bool = false
 var last_ground_height: float = 42.0
 var continuation_enabled: bool = false
 var commerce_enabled: bool = false
+var residential_enabled: bool = false
 
-func configure_continuation(enabled: bool, enable_commerce: bool = false) -> void:
+func configure_continuation(enabled: bool, enable_commerce: bool = false, enable_residential: bool = false) -> void:
 	continuation_enabled = enabled
 	commerce_enabled = enabled and enable_commerce
+	residential_enabled = commerce_enabled and enable_residential
 
 func _ready() -> void:
 	name = "Rescuer"
@@ -131,7 +133,7 @@ func _physics_process(delta: float) -> void:
 		_process_walk(delta)
 	_apply_disaster_motion()
 	flashlight.visible = lamp_enabled
-	if position.y < (-28.0 if commerce_enabled else (-10.0 if continuation_enabled else 2.0)) or (not on_rope and position.y < last_ground_height - 3.5):
+	if position.y < (-46.0 if residential_enabled else (-28.0 if commerce_enabled else (-10.0 if continuation_enabled else 2.0))) or (not on_rope and position.y < last_ground_height - 3.5):
 		active = false
 		lost_footing.emit()
 
@@ -298,8 +300,10 @@ func engage_rope(floor_number: int, route_id: String = "") -> bool:
 		return false
 	if not commerce_enabled and int(route.get("lower", 23)) < 23:
 		return false
+	if not residential_enabled and int(route.get("lower", 20)) < 20:
+		return false
 	if route_id.is_empty():
-		for candidate: Dictionary in Routes.routes_at_floor(floor_number, continuation_enabled, commerce_enabled):
+		for candidate: Dictionary in Routes.routes_at_floor(floor_number, continuation_enabled, commerce_enabled, residential_enabled):
 			if str(candidate.get("kind", "")) == "rope":
 				route = candidate
 				break
@@ -375,7 +379,7 @@ func rope_snapshot() -> Dictionary:
 	return state
 
 func stair_context() -> Dictionary:
-	return {} if on_rope else Routes.stair_at_position(global_position, continuation_enabled, commerce_enabled)
+	return {} if on_rope else Routes.stair_at_position(global_position, continuation_enabled, commerce_enabled, residential_enabled)
 
 func is_at_landing() -> bool:
 	return not on_rope and stair_context().is_empty() and absf(velocity.y) <= 0.15 and absf(position.y - Routes.floor_height(nearest_floor())) <= FLOOR_TOLERANCE and _has_landing_support(global_position)
@@ -388,7 +392,7 @@ func _draw_rope() -> void:
 	rope_line.surface_end()
 
 func nearest_floor() -> int:
-	return clampi(roundi((position.y - 0.04) / 6.0) + 24, 20 if commerce_enabled else (23 if continuation_enabled else 25), 31)
+	return clampi(roundi((position.y - 0.04) / 6.0) + 24, 17 if residential_enabled else (20 if commerce_enabled else (23 if continuation_enabled else 25)), 31)
 
 func can_exit_rope() -> bool:
 	return on_rope and rope_transfer.is_empty() and not rope_obstructed and rope.can_exit()

@@ -75,12 +75,13 @@ func _run() -> void:
 	var legacy := _fixture()
 	legacy["version"] = 4
 	legacy.erase("commerce")
+	legacy.erase("residential")
 	var file := FileAccess.open(SAVE, FileAccess.WRITE)
 	file.store_string(JSON.stringify(legacy))
 	file.close()
 	original = FileAccess.get_file_as_string(SAVE)
 	var migrated := Store.load_data(SAVE)
-	_check(migrated.get("version") == 5 and migrated.get("continuation") == legacy["continuation"] and migrated.get("commerce") == Director.dormant_state(), "Migration v4 reset earlier progress or began commerce.")
+	_check(migrated.get("version") == Store.SAVE_VERSION and migrated.get("continuation") == legacy["continuation"] and migrated.get("commerce") == Director.dormant_state(), "Migration v4 reset earlier progress or began commerce.")
 	_check(FileAccess.get_file_as_string(SAVE) == original, "Merely reading v4 changed its bytes.")
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(SAVE))
 	if failures.is_empty():
@@ -97,7 +98,7 @@ func _fixture() -> Dictionary:
 	return {"version": Store.SAVE_VERSION, "seed": 271104, "floor": 23, "health": 92.0, "oxygen": 83.0, "stress": 20.0, "anchors": 4, "flares": 2,
 		"rescued": ["survivor_30", "survivor_28", "survivor_26"], "clues": Continuation.PROOF_IDS.duplicate(), "supplies_used": [], "elapsed": 320.0,
 		"seen_floors": [31,30,29,28,27,26,25,24,23], "completed": true, "incident_state": "aftermath", "transmissions": [], "radio_events": [],
-		"continuation": {"phase": "complete", "started_at_refuge": true, "duo_briefed": true, "escort_state": "received"}, "commerce": Director.dormant_state()}
+		"continuation": {"phase": "complete", "started_at_refuge": true, "duo_briefed": true, "escort_state": "received"}, "commerce": Director.dormant_state(), "residential": preload("res://scripts/residential_director.gd").dormant_state()}
 func _check(condition: bool, message: String) -> void:
 	checks += 1
 	if not condition: failures.append(message)

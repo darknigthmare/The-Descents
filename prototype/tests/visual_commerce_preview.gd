@@ -159,7 +159,7 @@ func _capture() -> void:
 	await _view(Vector3(-7.7, -23.94, -5.4), Vector3(-7.7, -22.7, -7.8))
 	mission._interact_node(_object("commerce_finish_20"))
 	if not _require(mission.completed and mission.commerce.phase == "complete" and mission.hud.end_panel.visible, "A valid refuge report could not complete through its real terminal."): return
-	if not _require(not mission.hud.end_panel.descent_button.visible and Store.load_data(SAVE).get("floor") == 20, "The final report exposed an unfinished chapter or lost its safe landing."): return
+	if not _require(mission.hud.end_panel.descent_button.visible and mission.hud.end_panel.descent_button.text == "Poursuivre vers les résidences" and Store.load_data(SAVE).get("floor") == 20, "The refuge report lost its residential continuation or its safe landing."): return
 	await _shot("15_bilan_20", "Bilan au refuge 20 : trois nouvelles réceptions, cinq anciennes conservées")
 	mission._return_to_menu()
 	_freeze()
@@ -246,7 +246,7 @@ func _checkpoint() -> Dictionary:
 	return {"version": Store.SAVE_VERSION, "seed": 271104, "floor": 23, "health": 92.0, "oxygen": 83.0, "stress": 20.0, "anchors": 4, "flares": 2,
 		"rescued": ["survivor_30", "survivor_28", "survivor_26"], "clues": ["evidence_29", "evidence_27", "evidence_26", "continuation_model_23", "continuation_photo_23"], "supplies_used": [], "elapsed": 1450.0,
 		"seen_floors": [31,30,29,28,27,26,25,24,23], "completed": true, "incident_state": "aftermath", "transmissions": [], "radio_events": [],
-		"continuation": {"phase": "complete", "started_at_refuge": true, "duo_briefed": true, "escort_state": "received"}, "commerce": Commerce.dormant_state()}
+		"continuation": {"phase": "complete", "started_at_refuge": true, "duo_briefed": true, "escort_state": "received"}, "commerce": Commerce.dormant_state(), "residential": preload("res://scripts/residential_director.gd").dormant_state()}
 
 func _freeze() -> void:
 	mission.set_process(false)

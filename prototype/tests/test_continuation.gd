@@ -89,6 +89,7 @@ func _test_migration() -> void:
 	legacy["version"] = 3
 	legacy.erase("continuation")
 	legacy.erase("commerce")
+	legacy.erase("residential")
 	legacy["completed"] = true
 	# Old v3 permits this short visited ledger; loading must not invent visits.
 	legacy["seen_floors"] = [31, 30, 29]
@@ -104,7 +105,7 @@ func _test_migration() -> void:
 	_check(Store.save_data(legacy, SAVE_PATH) == OK and legacy == original, "The compatible v3 writer failed or mutated its input.")
 	_check(Store.load_data(SAVE_PATH) == migrated, "The compatible writer disagrees with read-only migration.")
 	var good_bytes: String = FileAccess.get_file_as_string(SAVE_PATH)
-	for change: Dictionary in [{"floor": 24}, {"seen_floors": [31, 25, 24]}, {"continuation": Director.dormant_state(), "commerce": preload("res://scripts/commerce_director.gd").dormant_state()}, {"rescued": ["survivor_30"]}]:
+	for change: Dictionary in [{"floor": 24}, {"seen_floors": [31, 25, 24]}, {"continuation": Director.dormant_state(), "commerce": preload("res://scripts/commerce_director.gd").dormant_state(), "residential": preload("res://scripts/residential_director.gd").dormant_state()}, {"rescued": ["survivor_30"]}]:
 		var invalid: Dictionary = legacy.duplicate(true)
 		invalid.merge(change, true)
 		_check(Store.save_data(invalid, SAVE_PATH) == ERR_INVALID_DATA, "v3 migration bypassed its original schema: %s." % change)
@@ -184,7 +185,7 @@ func _context(floor_number: int) -> Dictionary:
 func _save_fixture() -> Dictionary:
 	return {"version": Store.SAVE_VERSION, "seed": 271104, "floor": 25, "health": 92.0, "oxygen": 83.0, "stress": 20.0, "anchors": 4, "flares": 2,
 		"rescued": ["survivor_30", "survivor_28", "survivor_26"], "clues": [], "supplies_used": [], "elapsed": 100.0,
-		"seen_floors": [31, 30, 29, 28, 27, 26, 25], "completed": false, "incident_state": "aftermath", "transmissions": [], "radio_events": [], "continuation": Director.dormant_state(), "commerce": preload("res://scripts/commerce_director.gd").dormant_state()}
+		"seen_floors": [31, 30, 29, 28, 27, 26, 25], "completed": false, "incident_state": "aftermath", "transmissions": [], "radio_events": [], "continuation": Director.dormant_state(), "commerce": preload("res://scripts/commerce_director.gd").dormant_state(), "residential": preload("res://scripts/residential_director.gd").dormant_state()}
 
 
 func _write(value: String) -> void:

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "version": "0.13.0",
+  "source": "docs/CONTINUATION_A19_A17_V0.13.md",
+  "source_sha256": "ed203bf390a02a25c2a6ef071d9f0f31f3d6c2bc750a3d284080768bc7b2d37b",
+  "source_word_count": 5127,
+  "generator": "tools/build_residential_document.py",
+  "generator_sha256": "bb0646a8ced139e2a17bb7fef9575f44a9c0b56af0226b15b9ca3660b778bfec",
+  "layout_dependency": "tools/build_bible.py",
+  "layout_dependency_sha256": "0b90555d098cbb9ae85a5e7818d64e760118c6ce852a13ce30603dcfcdd31f80",
+  "output": "docs/The-Tower-Descent-Continuation-v0.13.docx",
+  "docx_sha256": "880f99d8f80e0dccab66b482af5e700f3faa3ae255ac52ba719035b0f63f4bf3",
+  "body_paragraphs": 95,
+  "tables": 7,
+  "table_rows": 42,
+  "page_size": "Letter portrait",
+  "body_font": "Arial 11 pt",
+  "visual_review": "Not performed by this authoring script",
+  "gameplay_validation": "Not performed by this authoring script"
+}

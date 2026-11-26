@@ -44,6 +44,7 @@ func _run() -> void:
 	var legacy: Dictionary = Store.load_data(SAVE)
 	legacy.erase("continuation")
 	legacy.erase("commerce")
+	legacy.erase("residential")
 	legacy["version"] = 3
 	var file: FileAccess = FileAccess.open(SAVE, FileAccess.WRITE)
 	file.store_string(JSON.stringify(legacy))

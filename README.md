@@ -1,5 +1,69 @@
 # The Tower Descent
 
+**Version 0.13.0 — candidature : résidences A19–A18 et télécommunications A17.**
+
+La nouvelle tranche reprend au bilan du refuge 20. Jeanne Morel attend dans les résidences du 19, son conjoint Marc dans le duplex du 18 et Inès Vidal dans le local technique du 17. Alex prépare leur départ, dégage le retour de service au Halligan et accompagne les trois personnes jusqu’aux repères du refuge 20. Il revient ensuite au relais du 17 pour transmettre les trois constats du secteur et un bilan fondé sur les arrivées réellement confirmées.
+
+Le rappel du duplex traverse une ouverture avec son appui inférieur visible. Il reste réservé au sauveteur ; les personnes remontent par les escaliers. Le relais exige une destination et une référence comparées à la plaque, avec une saisie réessayable. L’enquête conserve le doute sur Bravo et les événements antérieurs au séisme.
+
+## Accès et documents v0.13
+
+Le projet éditable s’ouvre avec **Godot 4.7.2** depuis `prototype/project.godot`. Les liens suivants sont les **cibles de distribution v0.13** ; la création, la vérification et la publication finales des archives sont encore en cours au statut candidat.
+
+| Format prévu | Usage |
+| --- | --- |
+| [Windows x86_64](releases/v0.13/TheTowerDescent-v0.13-Windows-x86_64.zip) | Jeu autonome, lanceurs Forward+ et Compatibilité, commandes et licences |
+| [Sources Godot](releases/v0.13/TheTowerDescent-v0.13-Godot-Source.zip) | Projet éditable, modèles, sources Blender, textures, tests et documentation |
+| [Web](releases/v0.13/TheTowerDescent-v0.13-Web.zip) | Export à servir par HTTP, avec son chargeur, WebAssembly et ressources |
+
+- [Démarrage et commandes](docs/DEMARRAGE_WINDOWS.md) · [État de livraison et limites](docs/ETAT_DE_LIVRAISON.md) · [Formats des exports](docs/EXPORTS.md).
+- [Supplément Word v0.13](docs/The-Tower-Descent-Continuation-v0.13.docx) · [PDF v0.13](docs/The-Tower-Descent-Continuation-v0.13.pdf) · [Source complète A19–A17](docs/CONTINUATION_A19_A17_V0.13.md).
+- [Douze modèles et source Blender](docs/assets/v0.13/MODELS.md) · [Manifeste des GLB](prototype/assets/models/residential_v013/manifest.json) · [Matières originales et empreintes](prototype/assets/materials/v013/manifest.json).
+- [Protocole de validation v0.13](docs/VALIDATION_V0.13.md) · [Revue des pages du supplément](docs/validation/v0.13/DOCUMENT_REVIEW.json).
+
+Les résultats de la 0.12 conservés plus bas sont historiques. Les contrôles finaux, captures natives et vérifications des exports de la 0.13 doivent être lus dans leurs rapports propres ; cette candidature ne reprend aucun ancien total comme certification du nouveau chapitre.
+
+## Parcours des résidences
+
+| Lieu | Action et résultat |
+| --- | --- |
+| **19 — Résidences hautes** | Préparer le départ de Jeanne près du fauteuil, relever le message des visites, repérer le rappel personnel du duplex |
+| **18 — Duplex** | Retrouver Marc, ouvrir la grille du service au Halligan depuis le plateau et consigner la fissure antérieure au séisme |
+| **17 — Télécommunications** | Retrouver Inès, alimenter le relais, relever la plaque de routage et comparer les enregistrements |
+| **20 — Refuge** | Recevoir physiquement Jeanne, Marc et Inès sur leurs trois repères ouest, distincts des réceptions antérieures |
+| **17 — Bilan** | Valider la destination et la référence, maintenir E pour établir la liaison, puis transmettre les constats après les trois réceptions |
+
+**E** donne une consigne de suivi ou d’attente. Jeanne marche plus lentement ; tous s’arrêtent lorsque Alex s’éloigne de plus de cinq mètres. Leur parcours utilise les collisions et les escaliers **S20_19 au nord, S19_18 au sud et S18_17 au nord**. Le rappel **R19_18**, dans le duplex à l’est, sert uniquement aux déplacements d’Alex. Le service devient réversible après son dégagement depuis le 18.
+
+Le chapitre porte le dossier à **onze identités de secours**, **dix pièces possibles** et **seize liaisons locales**. La clôture au 17 exige Jeanne, Marc et Inès reçus au 20, les trois nouveaux constats et la liaison vérifiée. Les huit réceptions des chapitres précédents restent acquises.
+
+## Modèles, textures et lumière
+
+Le lot résidentiel ajoute **douze GLB** : fauteuil, armoire de soins, bibliothèque, table basse, lampe de lecture, interphone, loquet de service, baie télécom, panneau de brassage, alimentation secourue, console relais et enregistreur. La source Blender conserve **428 pièces nommées** ; le manifeste recense **155 152 triangles** et **5 203 300 octets de GLB**. Ces valeurs décrivent le catalogue, pas une mesure de performance en jeu.
+
+Le papier peint en lin et le sol antistatique sont deux créations artistiques natives **1254 × 1254**, conservées avec leurs prompts et empreintes. Le microrelief et la rugosité restent des approximations procédurales. Forward+ conserve les fonctions d’éclairage Godot introduites précédemment ; Compatibilité garde les mêmes lieux et actions avec son rendu direct. Les personnages et une partie de l’architecture restent procéduraux.
+
+## Reprise et progression conservée
+
+Le schéma **6** valide et migre en mémoire les sauvegardes **1 à 5**. Lire un ancien bilan au 20 conserve ce bilan. Le bouton **Poursuivre vers les résidences** enregistre le choix avant de construire les nouveaux étages. Une erreur d’écriture maintient le dernier état durable valide.
+
+Une véritable reprise replace une escorte inachevée en attente à son contact initial. Pendant la session, une erreur d’enregistrement conserve l’escorte vivante et son parcours au lieu de lui appliquer cette normalisation de reprise. Les réceptions confirmées et les interventions achevées restent distinctes des gestes en cours.
+
+## Portée et limites
+
+Le parcours de cette candidature va du toit **31 au 17**. Les tours commencent intactes ; l’effondrement d’Hespérie se produit pendant l’intervention initiale. Le Répondant du 17 est une apparition distante facultative, sans combat ni poursuite. Les niveaux 16 à 1, les laboratoires SILLAGE, la traversée de l’Enfer, Alma, l’intérieur d’Hespérie et le portage UE5 restent des travaux de campagne.
+
+Les essais de logique et de collisions utilisent Godot Linux. Un parcours avec guide synthétique et une capture d’état préparé ont chacun une portée précise ; ils ne certifient pas une partie humaine complète. Monter les ressources d’un export Windows ou Web sous Linux ne lance pas Windows ni le WebAssembly dans un navigateur. Les contrôles finaux de cette candidature restent en cours et aucune performance sur GPU de joueur n’est annoncée.
+
+La [Bible intégrale v0.9 Word](docs/The-Tower-Descent-Bible-v0.9.docx) / [PDF](docs/The-Tower-Descent-Bible-v0.9.pdf) et les suppléments [v0.10](docs/CONTINUATION_A24_A23_V0.10.md) et [v0.12](docs/CONTINUATION_A22_A20_V0.12.md) restent conservés avec leurs preuves historiques.
+
+## Livraison antérieure v0.12
+
+<details>
+<summary>Consulter le périmètre et les résultats historiques v0.12</summary>
+
+## Livraison historique v0.12
+
 **Version 0.12.0 — galerie, cuisines et refuge du 20. Revue de la candidature achevée.**
 
 La descente se poursuit du bilan de l’exposition au 23 jusqu’au refuge de logistique du 20. Trois personnes supplémentaires — Mina Bensaïd, Théo Lenoir et Sofia Renard — rejoignent les cinq secours déjà présents. Le nouveau secteur combine des interventions de secours, trois escaliers locaux, un rappel facultatif, deux constats et une première rencontre humaine tendue, sans révéler prématurément les expériences profondes ni l’Enfer.
@@ -55,9 +119,12 @@ Les contrôles de logique et de collisions s’exécutent sous Godot Linux. Les 
 
 La Bible intégrale [Word v0.9](docs/The-Tower-Descent-Bible-v0.9.docx) / [PDF](docs/The-Tower-Descent-Bible-v0.9.pdf), le supplément [Word v0.10](docs/The-Tower-Descent-Continuation-v0.10.docx) / [PDF](docs/The-Tower-Descent-Continuation-v0.10.pdf) et les anciennes livraisons restent conservés.
 
+
+</details>
+
 ## Versions antérieures
 
-Les livraisons et résultats ci-dessous sont conservés comme historique ; ils ne décrivent pas le périmètre courant de la v0.12.
+Les livraisons et résultats ci-dessous sont conservés comme historique ; ils ne décrivent pas le périmètre courant de la v0.13.
 
 <details>
 <summary>Consulter les livraisons historiques v0.11, v0.10 et précédentes</summary>
@@ -155,7 +222,7 @@ La progression conserve le doute et les répétitions avant les rencontres humai
 
 ## Dossier historique de la version 0.9
 
-Les mesures, liens et descriptions ci-dessous appartiennent à la version 0.9 conservée. Le périmètre actuel est celui décrit en tête de ce README et dans le supplément v0.12.
+Les mesures, liens et descriptions ci-dessous appartiennent à la version 0.9 conservée. Le périmètre actuel est celui décrit en tête de ce README et dans le supplément v0.13.
 
 **Version 0.9 — escaliers entre étages voisins et rappel contrôlé.**
 

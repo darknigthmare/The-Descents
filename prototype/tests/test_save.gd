@@ -30,7 +30,7 @@ func _initialize() -> void:
 
 	var invalid_cases: Array[Dictionary] = []
 	for pair in [
-		["version", 1], ["version", 2], ["version", 3], ["version", 6], ["version", "4"], ["seed", 0], ["seed", 1000000],
+		["version", 1], ["version", 2], ["version", 3], ["version", 7], ["version", "4"], ["seed", 0], ["seed", 1000000],
 		["seed", 42.5], ["seed", true], ["floor", 24], ["floor", 32],
 		["health", -0.1], ["health", 100.1], ["health", NAN], ["oxygen", INF],
 		["stress", "50"], ["anchors", 9], ["flares", -1], ["elapsed", -1.0],
@@ -79,7 +79,7 @@ func _initialize() -> void:
 	_write_text(JSON.stringify(json_invalid))
 	_check(Store.load_data(TEST_PATH).is_empty(), "A fractional JSON seed was truncated instead of rejected.")
 	json_invalid = _fixture()
-	json_invalid["version"] = 6
+	json_invalid["version"] = 7
 	_write_text(JSON.stringify(json_invalid))
 	_check(Store.load_data(TEST_PATH).is_empty(), "An unsupported saved schema version was silently accepted.")
 	_test_migration()
@@ -88,6 +88,7 @@ func _initialize() -> void:
 		inconsistent["version"] = schema
 		inconsistent.erase("continuation")
 		inconsistent.erase("commerce")
+		inconsistent.erase("residential")
 		inconsistent["rescued"] = ["survivor_30"]
 		if schema < 3:
 			inconsistent.erase("transmissions")
@@ -129,7 +130,8 @@ func _fixture() -> Dictionary:
 		"seen_floors": [31, 30, 29], "completed": false, "incident_state": "intact",
 		"transmissions": [], "radio_events": [],
 		"continuation": {"phase": "dormant", "started_at_refuge": false, "duo_briefed": false, "escort_state": "waiting"},
-		"commerce": preload("res://scripts/commerce_director.gd").dormant_state()
+		"commerce": preload("res://scripts/commerce_director.gd").dormant_state(),
+		"residential": preload("res://scripts/residential_director.gd").dormant_state()
 	}
 
 
@@ -139,6 +141,7 @@ func _test_migration() -> void:
 		legacy["version"] = schema
 		legacy.erase("continuation")
 		legacy.erase("commerce")
+		legacy.erase("residential")
 		legacy.erase("transmissions")
 		legacy.erase("radio_events")
 		if schema == 1:

@@ -1,0 +1,29 @@
+{
+  "version": "0.13.0",
+  "textures": [
+    {
+      "id": "linen_wallpaper",
+      "file": "linen_wallpaper.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "sha256": "2ca0ebc035271086d338f0c9e516ce8a434edf126890407fc4b1dcd41eb76eb2",
+      "generator": "built-in image_gen",
+      "edited": false,
+      "note": "Original generated albedo. Normal/roughness remain procedural approximations; seamlessness is artistic, not measured scan data."
+    },
+    {
+      "id": "antistatic_floor",
+      "file": "antistatic_floor.png",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "sha256": "4fb4a263c0e779a5ee5452ebbbfed6f54992724e8f81d2f1fd0ca9b8601e0f85",
+      "generator": "built-in image_gen",
+      "edited": false,
+      "note": "Original generated albedo. Normal/roughness remain procedural approximations; seamlessness is artistic, not measured scan data."
+    }
+  ]
+}

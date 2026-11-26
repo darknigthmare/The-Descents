@@ -16,6 +16,7 @@ const GOLD: Color = Color("d2b582")
 const WHITE: Color = Color("e7e6dd")
 const MUTED: Color = Color("97a8ad")
 const TEAL: Color = Color("7caeb5")
+const MAIN_DESIGN_SIZE := Vector2(1440, 900)
 
 var start_button: Button
 var continue_button: Button
@@ -40,6 +41,7 @@ var reduced_motion: bool = true
 var clock: float = 0.0
 var enter_time: float = 0.0
 var title_group: Control
+var main_layout: Control
 var context: Dictionary = {}
 
 func _ready() -> void:
@@ -57,6 +59,14 @@ func _ready() -> void:
 	_build_options()
 	_build_dossier()
 	set_context({},false,271104)
+	resized.connect(_fit_main_to_viewport)
+	_fit_main_to_viewport()
+
+func _fit_main_to_viewport() -> void:
+	if not is_instance_valid(main_layout): return
+	var factor: float = minf(size.x / MAIN_DESIGN_SIZE.x, size.y / MAIN_DESIGN_SIZE.y)
+	main_layout.scale = Vector2.ONE * maxf(factor, 0.01)
+	main_layout.position = (size - MAIN_DESIGN_SIZE * main_layout.scale) * 0.5
 
 func _label(value: String, font_size: int, color: Color = WHITE, font: Font = BODY_FONT) -> Label:
 	var item: Label = Label.new()
@@ -69,7 +79,7 @@ func _label(value: String, font_size: int, color: Color = WHITE, font: Font = BO
 func _place(item: Control, position_value: Vector2, extent: Vector2, parent: Node = null) -> void:
 	item.position = position_value
 	item.size = extent
-	(parent if parent != null else self).add_child(item)
+	(parent if parent != null else main_layout).add_child(item)
 
 func _flat(color: Color, border: Color = Color(0,0,0,0), width: int = 0) -> StyleBoxFlat:
 	var style: StyleBoxFlat = StyleBoxFlat.new()
@@ -121,6 +131,12 @@ func _build_background() -> void:
 	add_child(veil)
 
 func _build_main() -> void:
+	# Main-menu artwork uses its authored canvas; modals remain viewport-sized siblings.
+	main_layout = Control.new()
+	main_layout.name = "MainComposition"
+	main_layout.size = MAIN_DESIGN_SIZE
+	main_layout.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(main_layout)
 	var mark: TextureRect = TextureRect.new()
 	mark.texture = preload("res://assets/ui/studio_mark.svg")
 	mark.expand_mode = TextureRect.EXPAND_IGNORE_SIZE

@@ -1,4 +1,58 @@
-# État de livraison de la version 0.12
+# État de livraison de la version 0.13.0
+
+**26 novembre 2026 — candidature résidentielle A19–A17.**
+
+La source ajoute Jeanne Morel au 19, Marc Morel au 18 et Inès Vidal au 17. Tous doivent arriver physiquement au refuge 20 par les escaliers. Le rappel personnel traverse le duplex ; le retour de service se débloque au Halligan depuis le 18. Le relais du 17 exige alimentation, lecture de la plaque, validation réessayable de la destination et de la référence, puis maintien de l’action d’émission. Le compte rendu final se transmet au **17**, après les trois réceptions au **20** et les trois nouveaux constats.
+
+**Statut : candidat 0.13.0 en vérification finale.** Les résultats consolidés des suites, des exports et des captures sont encore en cours de gel. Les liens de distribution ci-dessous sont des cibles prévues ; ils ne constituent pas une attestation de publication. Aucun ancien résultat de la 0.12 n’est compté comme preuve actuelle.
+
+## Éléments de la candidature
+
+| Domaine | Contenu ou statut actuel | Source de référence |
+| --- | --- | --- |
+| Parcours | A19 résidences, A18 duplex, A17 télécommunications ; retour des escortes au refuge 20 | [Supplément détaillé](CONTINUATION_A19_A17_V0.13.md) |
+| Personnes et enquête | 3 nouvelles identités, 11 au total ; 3 nouveaux constats, 10 pièces possibles | [Contrat de mission](../prototype/scripts/residential_director.gd) |
+| Liaisons | S20_19 nord, S19_18 sud, S18_17 nord, R19_18 dans le duplex ; 16 liens au total | [Catalogue](../prototype/scripts/route_catalog.gd) |
+| Actions | Préparation de Jeanne, Halligan, alimentation, référence durable, validation du relais et émission | [Logique résidentielle](../prototype/scripts/residential_director.gd) |
+| Sauvegarde | Schéma 6 ; lecture des schémas 1–5 sans réécriture automatique ; reprise stable et rollback de session distincts | [Stockage](../prototype/scripts/save_store.gd) |
+| Modèles | 12 GLB ; 428 pièces source ; 155 152 triangles ; 5 203 300 octets GLB | [Modèles et source Blender](assets/v0.13/MODELS.md) · [Manifeste](../prototype/assets/models/residential_v013/manifest.json) |
+| Matières | Papier peint en lin et sol antistatique, 2 PNG natifs de 1254 × 1254 | [Manifeste des textures](../prototype/assets/materials/v013/manifest.json) |
+| Documentation | Supplément de 11 pages en Word/PDF ; rendu, contrôle du texte et examen individuel des pages | [Revue documentaire](validation/v0.13/DOCUMENT_REVIEW.json) · [Texte et tableaux](validation/v0.13/DOCUMENT_CONTENT.json) |
+| Tests sources, packs et captures | Vérification finale en cours ; résultats à lier à leurs empreintes exactes | [Protocole v0.13](VALIDATION_V0.13.md) |
+| Archives | Assemblage et publication à confirmer au terme du contrôle de livraison | [Formats et contenu](EXPORTS.md) |
+
+Le document possède sa propre preuve de mise en page. Celle-ci ne certifie ni les déplacements, ni le rendu du moteur, ni les plateformes d’export. Le statut de candidature sera actualisé à partir des rapports finaux, sans anticiper leur verdict ou leur total.
+
+## Cibles de distribution
+
+| Format | Chemin prévu |
+| --- | --- |
+| Windows x86_64 | [TheTowerDescent-v0.13-Windows-x86_64.zip](../releases/v0.13/TheTowerDescent-v0.13-Windows-x86_64.zip) |
+| Projet éditable | [TheTowerDescent-v0.13-Godot-Source.zip](../releases/v0.13/TheTowerDescent-v0.13-Godot-Source.zip) |
+| Export Web | [TheTowerDescent-v0.13-Web.zip](../releases/v0.13/TheTowerDescent-v0.13-Web.zip) |
+
+Le projet source s’ouvre depuis `prototype/project.godot` avec Godot 4.7.2. Le paquet Windows conserve ses lanceurs et notices ; le paquet Web doit être servi par HTTP. Les membres exacts, tailles et SHA-256 seront ceux du manifeste établi après assemblage. Une source sur la branche de la PR ne vaut pas à elle seule nouvel export disponible ni fusion de `main`.
+
+## Continuité et limites
+
+Les secours au toit, Léa et Idris au refuge 25, puis Mina, Théo et Sofia au refuge 20 restent acquis. La nouvelle clôture exige les trois réceptions supplémentaires, le relais vérifié et les trois constats résidentiels. Les anciennes pièces facultatives restent facultatives. Une erreur de saisie du relais ne retire aucun indice ni aucune réception et permet de réessayer.
+
+Une escorte interrompue par une véritable reprise revient en attente à son contact initial. Un échec d’écriture pendant la partie conserve les personnages vivants, leurs positions et leurs curseurs de parcours. La progression durable reste au dernier point sûr valide ; aucun état suspendu sur corde ou au milieu d’un escalier n’est restauré.
+
+Le parcours s’arrête au **17**. Le Répondant est une apparition facultative ; les formes humaines et une partie des décors restent procédurales. Les modèles importés sont des éléments statiques. Le soin de Jeanne est une interaction abstraite, pas une simulation médicale. Les matières sont des créations artistiques avec normales et rugosité approximées, sans scans PBR mesurés. Le rendu Godot conserve l’intention lumineuse du projet, sans revendiquer la parité avec Lumen.
+
+Les essais de mouvements physiques utilisent des corps et collisions réels, avec un guidage synthétique lorsque le rapport le précise. Les captures préparent des états de mission. Charger un pack dans Godot Linux ne constitue pas une exécution de l’application Windows ni une partie WebAssembly dans un navigateur ; les performances sur GPU de joueur restent à mesurer. Les réserves visuelles finales seront celles des images effectivement examinées.
+
+Les étages 16 à 1, les laboratoires SILLAGE, la traversée de l’Enfer, Alma, l’intérieur d’Hespérie, le combat et le portage UE5 restent à produire. Les tours commencent toujours intactes et l’effondrement a lieu pendant l’intervention.
+
+## Historique de livraison v0.12
+
+Les chiffres, commits et archives suivants appartiennent à la livraison antérieure.
+
+<details>
+<summary>Consulter les preuves historiques v0.12</summary>
+
+### État historique de la version 0.12
 
 **25 novembre 2026 — galerie, cuisines et refuge du 20.**
 
@@ -58,6 +112,9 @@ Les parcours utilisent les vrais corps et collisions. Le test des civils emploie
 Les éléments mobiles sont exclus de la géométrie statique de l’éclairage global. L’intention lumineuse de Lumen reste adaptée aux fonctions Godot, sans parité revendiquée. La disparition de la fumée du réchauffeur est immédiate à la validation de la couverture dans cette version.
 
 La revue visuelle conserve des réserves non bloquantes : personnages, flammes et fumée géométriques et stylisés ; certains libellés 3D passent derrière le HUD ou chevauchent une notification ; l’aide de commandes est parfois peu contrastée sur le sol clair. Les comptes rendus, les compteurs et les commandes principales restent lisibles, y compris dans les deux vues à 1024 × 640. Deux formulations d’interface restent perfectibles : la règle générale sur une personne encore portée apparaît même au bilan 8/8, et le menu achevé propose encore « Reprendre l’intervention ». Les observations par image figurent dans [la revue exacte](validation/v0.12/VISUAL_REVIEW.json).
+
+
+</details>
 
 ## Historique de livraison v0.11
 

@@ -24,6 +24,7 @@ REQUIRED = {
     "continuation", "continuation_integration", "continuation_routes",
     "equipment", "equipment_integration", "lighting_v011", "surface_materials_v011", "rescue_assets_v011",
     "commerce", "commerce_integration", "commerce_routes", "addon_schema", "interaction_safety", "rope_abort",
+    "residential", "residential_save", "residential_integration", "residential_routes", "residential_assets",
 }
 
 
@@ -50,7 +51,7 @@ def main() -> None:
         for script in scripts:
             name = script.stem.removeprefix("test_")
             command = [binary, "--headless", "--path", str(ROOT / "prototype")]
-            if name in {"routes", "incident_routes", "vertical_routes", "traversal_integration", "continuation_routes", "continuation_integration", "equipment_integration", "commerce_routes", "commerce_integration", "addon_schema", "interaction_safety", "rope_abort"}:
+            if name in {"routes", "incident_routes", "vertical_routes", "traversal_integration", "continuation_routes", "continuation_integration", "equipment_integration", "commerce_routes", "commerce_integration", "addon_schema", "interaction_safety", "rope_abort", "residential_routes", "residential_integration"}:
                 command += ["--fixed-fps", "60"]
             command += ["--script", "res://tests/" + script.name]
             entry = run(command, cwd=ROOT, timeout=180, log=output / ("final-" + name + ".txt"))
@@ -62,7 +63,7 @@ def main() -> None:
     after = runtime_hashes()
     report = {
         "version": version(),
-        "label": "v0.12 commerce floors 22–20, physical escorts, local rescue actions, authored assets and preserved five-person continuation",
+        "label": "v0.13 residences 19–17, duplex rappel, physical upward escorts, verified relay, original assets and preserved eight-person rescue",
         "validated_utc": datetime.now(timezone.utc).isoformat(),
         "engine": engine,
         "runtime_freeze_commit": git_head(),
