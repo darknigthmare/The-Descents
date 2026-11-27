@@ -1,0 +1,37 @@
+{
+  "version": "0.9.0",
+  "scope": "Rejected document conversions, retained to explain the canonical-PDF input; these are not final artifact approvals.",
+  "attempts": [
+    {
+      "run_id": 45622597990,
+      "source_commit": "23f2284d2d2ce9f14744331d3ed8176797fafe02",
+      "workflow_status": "success",
+      "manual_document_verdict": "rejected",
+      "pdf_sha256": "325ce9baaaa367ae8a84062830f4c078e35498a1decf7a69e389cb4d958782fd",
+      "pages": 184,
+      "ordered_blocks_matched": 2695,
+      "ordered_blocks_checked": 2700,
+      "cells_matched": 2048,
+      "cells_checked": 2068
+    },
+    {
+      "run_id": 45630032773,
+      "source_commit": "42d4b914bc7becff900b709f1bc3300f9494d8a2",
+      "workflow_status": "failure",
+      "failure_step": "verify_document_content.py",
+      "ordered_blocks_matched": 2695,
+      "ordered_blocks_checked": 2700,
+      "cells_matched": 2048,
+      "cells_checked": 2068,
+      "evidence": "GitHub Actions job 139260422557 decoded logs; failure on 2026-11-25T14:10:10Z after source and exported-pack validation."
+    }
+  ],
+  "missing_rows": [
+    "S30_29",
+    "R29_28",
+    "S28_27",
+    "R27_26",
+    "S26_25"
+  ],
+  "resolution": "Use the complete canonical PDF, require all source/generator/decompressed Word/PDF identities, rerun the unchanged ordered-content gate in CI and review every final rendered page. The final reviews are separate."
+}

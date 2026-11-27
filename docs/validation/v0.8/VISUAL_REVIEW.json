@@ -1,0 +1,352 @@
+{
+  "format": 1,
+  "version": "0.8.0",
+  "all_pass": true,
+  "reviewed_utc": "2026-11-25T07:46:57.261825+00:00",
+  "source_commit": "90c7c23d1f00c1c007967083bc73364a4f34debe",
+  "evidence_commit": "8f0ffc5fc65d11384353a295d492cebc382e14fd",
+  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45569546416",
+  "provenance_sha256": "e0961bb1e310c7bc73664b681f3c78fcd7c7eeb5593d8508a572b5b5a0b484c5",
+  "capture_count": 33,
+  "method": "All 33 original final native PNGs opened and inspected individually. Logic and audio claims rely on separate tests, not these still images.",
+  "captures": [
+    {
+      "file": "01_menu_arrivee.png",
+      "sha256": "058e3312f8bc1484de15f48db310b40f454d2e3085683a9a21ed10f545e31957",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/01_menu_arrivee.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Accueil initial lisible, deux tours intactes et appareils au toit visibles ; titre, commandes, version 0.8.0 et état avant intervention dans le cadre."
+    },
+    {
+      "file": "02_options.png",
+      "sha256": "bf294c94097e08cb07e9f33ba46221608cbb48c935c054a4707f37ac3ca4aba6",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/02_options.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Panneau de réglages lisible avec valeurs, focus et barre de défilement ; boutons de commandes, réinitialisation et retour dégagés. Fond du menu faiblement visible, sans gêne de lecture."
+    },
+    {
+      "file": "03_nouvelle_intervention.png",
+      "sha256": "a25562b494c2b2948a61331e413cd0d1bb2755188f15eb08001bdbfb65a8c321",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/03_nouvelle_intervention.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Briefing, trois personnes et étages, disposition de l’intervention, bouton de déploiement et retour entièrement lisibles."
+    },
+    {
+      "file": "04_signature_studio.png",
+      "sha256": "cecad4248986c51abc2fb495dd09820bde3ed41522552eeab7654de5b14b35ae",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/04_signature_studio.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Couronne, nom Darknigthmare, Kingdoms Games et Productions entièrement visibles ; fond des deux tours, bandes de cinéma, progression et commande Passer lisibles."
+    },
+    {
+      "file": "05_titre.png",
+      "sha256": "f705b3fd7685c3cdbf92e41c565e302ceeba9040bc721994ff9558a3dc13655c",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/05_titre.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Titre et phrase d’accroche centrés, contraste et marges corrects ; tours et silhouette maritime restent visibles sans recouvrir la commande de passage."
+    },
+    {
+      "file": "06_approche_03.png",
+      "sha256": "bcf136d4ee1fa2d2d31ac2cf40d9c03d835504c17f1c76a2e43a1e1e48948e07",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/06_approche_03.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Plan large avec deux tours, ville noyée et deux appareils ; premier carton et sous-titre entièrement lisibles, progression et passage séparés."
+    },
+    {
+      "file": "06_approche_10.png",
+      "sha256": "597a7eb19f3cb6a41bca26adbffaf0f55da0ff1b71a9648752431e3764587eab",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/06_approche_10.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Deux toits et appareils clairement distincts, répartition Alpha/Bravo lisible ; horizon et sous-titres ne présentent pas de rupture bloquante."
+    },
+    {
+      "file": "06_approche_17.png",
+      "sha256": "4acc26fc773a597bc80b058b3bc9b5086835bc12eb899e03f62d41f22cd3ad28",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/06_approche_17.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Deux appareils posés et deux toits lisibles dans le raccord ; attribution Bravo et sous-titre dégagés, géographie conservée."
+    },
+    {
+      "file": "06_approche_25.png",
+      "sha256": "e634b6b20986625cba02869f86b0c95068c03a2e3a8d79eed788fb3a73fda702",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/06_approche_25.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Toit d’Aube, portique, ligne de descente, hélicoptère et équipe médicale clairement disposés ; texte de raccord vers Alex lisible."
+    },
+    {
+      "file": "07_pause_intro.png",
+      "sha256": "6bf8f0a01e5a9543c9bdcdb443dd1b32d93d61b52b4c5ed75ec9867d2b271a7d",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/07_pause_intro.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Pause de l’approche avec reprise, aide, options, réglages courts et retour au menu lisibles ; décor assombri et commandes dans le cadre."
+    },
+    {
+      "file": "14_toit_equipe.png",
+      "sha256": "6aa6548a0165bbb63bd8cc1d80991a74a5ce53fa01ede16a5870b536032c586f",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/14_toit_equipe.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Plan du toit dégagé : hélicoptère posé, portique, puits de rappel, poste médical, réserves et trois équipiers identifiables."
+    },
+    {
+      "file": "15_portage.png",
+      "sha256": "32bcae6262744233295a43b89d23d718f97d8c26034d1d851cd4be225d3117c2",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/15_portage.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Ana visible dans le harnais au premier plan droit ; balise et axe central de déplacement dégagés, objectif de transport et compteur 0/3 lisibles. Pose procédurale de prototype."
+    },
+    {
+      "file": "16_treuillage.png",
+      "sha256": "79195236da5bb3edb48ce0a3b135d85a9ee5a5ce3c636cd7e5deba0aaf7d124e",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/16_treuillage.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Panier, sangles et câble visibles dans le puits ; avancement 36 % et attente de réception cohérents avec 1,8 s. Pas d’annotation flottante sur la victime pendant le transfert."
+    },
+    {
+      "file": "17_reception.png",
+      "sha256": "7957ead7bf447a6aa08b372cf74d266b6a631e6a214cf62a8ac77330c6e4bf61",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/17_reception.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Ana sur la civière, accompagnée par deux équipiers entre le treuil et l’abri ; personne, support et trajet médical visibles sans intersection bloquante."
+    },
+    {
+      "file": "18_meteo_toit.png",
+      "sha256": "a7d1ae04fb1557b182f9cebb0c62c9d6e4e6e9764d635a21ea7ac15e660ae3ee",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/18_meteo_toit.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Plafond nuageux, brume et deux tours lisibles ; mer et fond atmosphérique raccordés, silhouettes des équipes visibles. Capture fixe, sans jugement sur fluidité ou performances."
+    },
+    {
+      "file": "19_options_pause.png",
+      "sha256": "7269b39b28af9803d8c02cdcf2d533131010aa2cc15b77095a38038f58bdfcc4",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/19_options_pause.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Options depuis la pause : mêmes valeurs et contrôles complets, focus et défilement visibles ; arrière-plan du jeu et du menu faiblement perceptible sans masquer les réglages."
+    },
+    {
+      "file": "11_inspection_toit.png",
+      "sha256": "13f5e2aa02574c764405de3d641b8607fc724377ab18f93e02ffcca661caf1bd",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/11_inspection_toit.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Registre médical avec 0/3, noms attendus et distinction entre portage et réception lisibles ; texte long contenu dans le lecteur, commande Fermer et reprendre dégagée."
+    },
+    {
+      "file": "12_inspection_archives.png",
+      "sha256": "48dfe1c4b4864dbe82f782b9d1153feef7a5219f75f4b313ce20047c70686576",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/12_inspection_archives.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Fiche avant le choc : titre, fonction, accès central et situation de Samuel lisibles, boutons séparés du contenu."
+    },
+    {
+      "file": "13_inspection_apres.png",
+      "sha256": "a2a38eae8e075a63197b010297e9c4999c83342dab46bbf2b24fd0810bacd05d",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/13_inspection_apres.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Fiche après le choc : titre inchangé, voie Est condamnée et détour intérieur explicitement mis à jour ; texte et fermeture lisibles."
+    },
+    {
+      "file": "08_menu_archives.png",
+      "sha256": "0b408e89a2a677829f0030528f95cde29b4c80c53a1c82ec939b6e1e5dd0b890",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/08_menu_archives.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Accueil reconstruit aux archives, point sûr 28, une vie sauvée et durée 01:38 cohérents ; commandes de reprise et nouveau départ lisibles, aucune manifestation active derrière le menu."
+    },
+    {
+      "file": "09_dossier_apres.png",
+      "sha256": "e42b72df4ff484deee3ef10a14f44f82a30c68ecdb9859ebc964b32ab0afb8e5",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/09_dossier_apres.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Dossier après impact : état des tours, détour et équipe lisibles ; parcours dans son lecteur défilant, boutons de commandes et retour en dehors de la zone de texte."
+    },
+    {
+      "file": "20_journal_situation.png",
+      "sha256": "9fb5727a16e5f2fcb2ed24d9dd496b8611a779ddf77f7676bf0efd832321096a",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/20_journal_situation.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Quatre compteurs et quatre onglets lisibles ; une réception, un indice, temps 01:38 et position 28 cohérents. État après impact et liste de secours contenus dans le lecteur défilant."
+    },
+    {
+      "file": "21_journal_rescapes.png",
+      "sha256": "04cc8a06a44866413cf1e084c5005335fa553c5a8b3d0d32e4660ac87c0440c0",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/21_journal_rescapes.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Ana à l’abri, Samuel encore à secourir et Nora identifiée ; distinction portage/réception clairement écrite. Noms et états restent dans le lecteur, fermeture et onglets dégagés."
+    },
+    {
+      "file": "22_journal_indices.png",
+      "sha256": "d8ce39b2833b2651c2932f26e710ab9f69f4f2e73fa036907c89942a7e395960",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/22_journal_indices.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Pièce du 29 effectivement récupérée lisible ; les emplacements 27 et 26 affichent DOCUMENT NON RÉCUPÉRÉ et n’exposent pas leurs récits."
+    },
+    {
+      "file": "23_journal_transmissions.png",
+      "sha256": "88214b1b51fa166cb1e991245153f6296f95ce786669a0cbaad7d7311df8d719",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/23_journal_transmissions.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Historique réel de l’état préparé, indicatifs et temps de mission visibles ; reprise du point sûr et note d’intervention distinctes, aucune transmission d’apparition inventée."
+    },
+    {
+      "file": "24_epilogue_02.png",
+      "sha256": "0316fc74edcd769e74798a3346be56ffff764555f2c44e82c00297192fbace02",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/24_epilogue_02.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Trois personnes reçues identifiables : Samuel et Nora pleinement visibles, Ana sur la civière dont une partie proche/gauche est masquée par un équipier au premier plan. Carton, attribution, sous-titre et commande de bilan lisibles."
+    },
+    {
+      "file": "24_epilogue_07.png",
+      "sha256": "03abc15b7248bc80a3ebeb6f4699b829641c52d1d4ff6ad045681667ffa677b4",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/24_epilogue_07.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Terminal réel du refuge au centre, équipier latéral et balise visibles ; fragment Bravo attribué au relais, carton et commande de bilan dégagés."
+    },
+    {
+      "file": "24_epilogue_12.png",
+      "sha256": "8d29407f59215da410b59bc4b4cf9f2bdd31a816827d812b20a0563642d7d96e",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/24_epilogue_12.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Hespérie inclinée contre Aube, dégâts et géographie conservés ; origine du signal présentée comme incertaine, sous-titres et progression lisibles."
+    },
+    {
+      "file": "25_bilan_refuge.png",
+      "sha256": "649af525294a1be92819b383dd0eccb2bf883d296d6161d90e1056cd0fbf9daf",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/25_bilan_refuge.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Bilan final lisible avec trois noms à l’abri, 3/3 personnes, 2/3 indices, durée 03:30 et étage 25 ; extrait du relais attribué et non confirmé, trois actions séparées et focus visible."
+    },
+    {
+      "file": "10_menu_refuge.png",
+      "sha256": "fae7903726d8f8b6e3a755df3eeeee2d06471660a038d4b27b8b9efeadb4ee89",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/10_menu_refuge.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Accueil final au refuge avec équipier et terminal, trois vies sauvées, durée 03:30 et action Consulter l’intervention terminée ; état et commandes entièrement dans le cadre."
+    },
+    {
+      "file": "26_suites_presence.png",
+      "sha256": "a788aa609c09d6f66f23aeb3b2bbab420dcc0681bcb85c5678ff27b8a29c2cb7",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/26_suites_presence.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Silhouette humaine périphérique entièrement visible à gauche de l’axe ; numéro d’étage réduit au-dessus du regard, décor et passage dégagés. HUD cohérent avec une réception confirmée et observation de Bravo encore à faire ; aucune notification ancienne."
+    },
+    {
+      "file": "27_archives_traces.png",
+      "sha256": "e66509a1ce8e8f7b5403d83eaa938759c74aae4c0ed5071606115d7fa1181c4b",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/27_archives_traces.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Huit empreintes distinctes plaquées au sol et lisibles dans le faisceau ; mobilier et trajet restent dégagés. HUD après-impact avec une réception ; aucun carton de révélation ni notification initiale."
+    },
+    {
+      "file": "28_spa_remanence.png",
+      "sha256": "90ae004c13be8f39fd7ccc0ce51f6ab2455ce429c7c722ec5f60c27eb76597df",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_file": "docs/captures/v0.8/28_spa_remanence.png",
+      "method": "Original native PNG opened directly through view_image at 1440 by 900; no crop, resize or derivative used.",
+      "notes": "Présence humaine stationnaire lisible devant le bassin, sans yeux lumineux ni posture d’attaque ; environnement et trajet dégagés. Repère d’étage réduit en bord supérieur droit, notification expirée, réception précédente confirmée."
+    }
+  ],
+  "non_blocking_observations": [
+    "In the first medical epilogue shot, a foreground crew member partly occludes the near/left side of Ana’s litter; the three received people and all captions remain identifiable.",
+    "Models, materials and poses remain procedural prototype assets."
+  ],
+  "limitations": [
+    "Prepared states, not a human playthrough or continuous cinematic recording.",
+    "No audible mix or target hardware performance certification."
+  ]
+}

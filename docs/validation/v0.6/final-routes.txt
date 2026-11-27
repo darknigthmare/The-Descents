@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Route seed coverage: [3, 47, 69] — each floor exercises layouts 0, 1 and 2.
+PASS physical routes: 205 checks; 150 real move_and_slide segments; 27 objective approaches plus returns; three seeds cover all three layouts on every floor. No route teleports, noclip or geometry modifications.

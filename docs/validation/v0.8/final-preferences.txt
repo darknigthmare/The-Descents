@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS preferences storage: 80 checks; independent defaults, strict boolean fields, immutable reads and preservation after rejected or failed writes.

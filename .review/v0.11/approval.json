@@ -1,0 +1,990 @@
+{
+  "format": 1,
+  "version": "0.11.0",
+  "decision": "approved",
+  "reviewer": "assistant",
+  "reviewed_utc": "2026-11-25T18:54:28.545425+00:00",
+  "review_manifest_sha256": "b7fef6c0e6d6d381d95ebd4340d796317c3629fa80da1effda47a440789cbcf0",
+  "runtime_sha256": {
+    "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
+    "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
+    "prototype/assets/audio/impact.wav": "e831204acdc889fa5b57a95b21edc8044748415342018720969cd6a589d58050",
+    "prototype/assets/audio/intro_sting.wav": "7920665fc873ca41cba6417e327d99f7229606634b64f2efd729b617a8c48571",
+    "prototype/assets/audio/menu_theme.wav": "42708f055e4aae61a48b07b9f6e67a3e02c7f82aade78f0907a15781478bb4a6",
+    "prototype/assets/audio/quake.wav": "869aaff278eaa264f9dfbe19801a09000d987cb9b316691876e52114f6e497b1",
+    "prototype/assets/audio/radio.wav": "7b5e25100bbd0738037ce091772325ece3ec9326c528d8e7593ee3d4ef7ade38",
+    "prototype/assets/audio/rescue.wav": "404c60cefad1f258166211024dfdbf402a0051d168efc906268afe3867bdae98",
+    "prototype/assets/audio/rotors.wav": "77fb4dcdf4248efd884ffe45c5ffad6315806f911577d51c3b9522dd38bcc78a",
+    "prototype/assets/audio/rumble.wav": "bc0e349c7dbda51573308c738b8e15c49c35d7ea4bcd2b91f07b19a81b91ebd2",
+    "prototype/assets/audio/uncertain_steps.wav": "52f8b66c082d53e293eb9a2bb69bae4eb82db2487ed084944214cbee545664f2",
+    "prototype/assets/audio/wind.wav": "e552edccc315de23a83114a6d43dfdc6ab347b925d05fa8839d0cdfda179511e",
+    "prototype/assets/fonts/LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "prototype/assets/fonts/NOTICE.txt": "94d4b78643f99d7cfa872145b38da578299f401405ca5cba66a5c95bf13933b0",
+    "prototype/assets/fonts/OpenSans-CondBold.ttf": "a859a438018739aee16c306586d91a453c208ee500c827d9e9aa063155c8a6e8",
+    "prototype/assets/fonts/OpenSans-Light.ttf": "cf5f5184c1441a1660aa52526328e9d5c2793e77b6d8d3a3ad654bdb07ab8424",
+    "prototype/assets/fonts/OpenSans-Regular.ttf": "e64e508b2aa2880f907e470c4550980ec4c0694d103a43f36150ac3f93189bee",
+    "prototype/assets/icon.svg": "6d3e2c2f34057f8c2d0c0381ba25a1a288a7145b28f17f4d4cbcdeba31c7351e",
+    "prototype/assets/materials/v011/README.md": "f457113bff4563beb1d17b3ed300785445871b942d7359f669bc14588484ea80",
+    "prototype/assets/materials/v011/black_rubber.png": "dd554c6a3ce03657395330df817e78a9c36c93de983a0ae20fc018d344c38581",
+    "prototype/assets/materials/v011/brushed_steel.png": "b182a04fc8bda2b8cd657fd6a7386233bad6b7635e7924bac6b2efccd3d5dc69",
+    "prototype/assets/materials/v011/dark_stone.png": "ea23d3a2fef5ecb13f153c65a7edb9b45c5512a75553f26923b89cfaa82babc0",
+    "prototype/assets/materials/v011/manifest.json": "cf7fbe726af5f4b4485b9b23b5d3f9171203ad4837271e310514f96e84d0c6c9",
+    "prototype/assets/materials/v011/porcelain_tile.png": "e9bd1d3e86af1f1eefb0d3679b8ff4526dd72af04575077af2fd164b1c7e632b",
+    "prototype/assets/materials/v011/rescue_red_paint.png": "adcd2865e7853a4e79ab932a09f35bfed054a2613978d8e7ea75de2276617a96",
+    "prototype/assets/materials/v011/salt_concrete.png": "7299270d824a23a54a642dd528e215047fd41173b7765b0ad6de1723b064d4c9",
+    "prototype/assets/materials/v011/smoked_oak.png": "a5b4e3bb1859b1a6b722463ea03c48de8e68649921122d768c09f1698aff8b35",
+    "prototype/assets/materials/v011/teal_carpet.png": "0c899389b28ab6169fefa09acf093aa543131e859ddc223529da076f7f426da5",
+    "prototype/assets/models/rescue_v011/bolt_cutter.glb": "1ca9720c092191f10db9c537daf2358c5411a68c6e36033db30521b13bd153d7",
+    "prototype/assets/models/rescue_v011/carabiner.glb": "baf7f4df4a47f377d719cf16e8c1e18d969b767e7ea05b243b9c88463a1bf887",
+    "prototype/assets/models/rescue_v011/descender.glb": "12d97ba55f74027750377607ff871fe93546dcf4d3f9d550b937f8f6709a5f61",
+    "prototype/assets/models/rescue_v011/emergency_beacon.glb": "c25c7b2c38d9500060e0a587c74101898490c4e3fff06c95f06f8643c141e2c1",
+    "prototype/assets/models/rescue_v011/equipment_case.glb": "c1f087b4a222e8b5b75d62c2cd7db7a66ffa84a57725182d80260488ae076f7e",
+    "prototype/assets/models/rescue_v011/extinguisher.glb": "9437897f50f2d611baafd628325347e472aeeb18afe9b5e47e2a44898506f606",
+    "prototype/assets/models/rescue_v011/fire_axe.glb": "3e1f58918d56fe9f92131eef8d389faab3849408b838cf24baab140f02430ae2",
+    "prototype/assets/models/rescue_v011/halligan.glb": "537c07642f6075639a406702f56ea896c1e1a0fcc9981697bb5244070af22c46",
+    "prototype/assets/models/rescue_v011/manifest.json": "8203c05898243ea84381eae11e0a6259d0fc3dcb7de26fb8d6dd28f59aa44e2c",
+    "prototype/assets/models/rescue_v011/oxygen_cylinder.glb": "c1490f993e6a503aa0d17e951a2252b5224c3ed2de4b664e0adecdcd97a77802",
+    "prototype/assets/models/rescue_v011/portable_worklight.glb": "e65b7a006b750e00124aa1cdb7f40a43bbd9ca5e8cd50237dc2483e392a49734",
+    "prototype/assets/models/rescue_v011/rescue_flashlight.glb": "73212e4a7445e10bc4d36b19533a6adec6bf994a60d0281223ab9467f8e4d574",
+    "prototype/assets/models/rescue_v011/rescue_helmet.glb": "a88430f9ff535a64866dc52bc10d40abc6ae213c2e2c7daa04a04c43c19769d2",
+    "prototype/assets/models/rescue_v011/rescue_radio.glb": "f4a828b9f86c5b2841f7dc582f91428aa4e788acb80916c322ddf63861ecd326",
+    "prototype/assets/models/rescue_v011/rescue_stretcher.glb": "6493fb4540944fb0ad1337810bfd7a0ac3848899e4b7c8032e4f21c56ac4a943",
+    "prototype/assets/models/rescue_v011/rope_coil.glb": "9a5d496abbb6e610b9b5fc9d471f567aa70ffcb1fa18602f2edd4e4dc3fe0f40",
+    "prototype/assets/models/rescue_v011/trauma_bag.glb": "c373771ab869ad3837fb7874b94a75c121fb0ccfcf9e45c1d4a8df64c93eea19",
+    "prototype/assets/ui/studio_mark.svg": "c452e38192adda61ef9cebfefe9759ef850e35f9b248a09a17ad818dd4e20835",
+    "prototype/export_presets.cfg": "7f3bdbfde7ff38421077283b9ee723f423b612feaf54f932dcdc648f5dea113b",
+    "prototype/project.godot": "266ffe8ba6e6ce157c31b2886c76c632a4abbf0272d243440f81f3911797f446",
+    "prototype/scenes/main.tscn": "db52bbe7b5a1df4d839ec4f721a1f09faa8272e35c387b097fa2c5b1b4ac6937",
+    "prototype/scripts/cinematic_director.gd": "1496a0564cd3faf4e30b89fef7255686f979253e108f2eef882af5b29bfe4b80",
+    "prototype/scripts/cinematic_lighting.gd": "7bb9eec0d3e928346a76265da91428c891b2f7458951958410145422cba6a1be",
+    "prototype/scripts/cinematic_overlay.gd": "2b9c9d3f1b2368380fb92ef82b3949b6c90c863bbd02184c89ddc9df6c33050b",
+    "prototype/scripts/collapse_director.gd": "3d9dce62a1b99c68aba41dc7f447a1ced40041ab64f2fb07f16802af5cdd8ee7",
+    "prototype/scripts/continuation_director.gd": "fadf17cfdf6e86d4e92632d9b0cd5519ac01555156ee914ca12251584e7dc3a8",
+    "prototype/scripts/continuation_presentation.gd": "4017561aa70fe34694ebd535cbabd875bfc0a46968a27e2a062a26850dc3555b",
+    "prototype/scripts/epilogue_director.gd": "4a8da32affe5bf27d616f6d289f41b83121b37f4d60a41b71e069f732408d972",
+    "prototype/scripts/equipment_director.gd": "010d075fbf8ea23107a197810f363e5811be55484b55a1a941e4671f3bc0a144",
+    "prototype/scripts/field_props.gd": "a9f6bb6e879c5dbdab0143bee832032d98a2fc2afd37f531f3900326d3a5a514",
+    "prototype/scripts/floor_generator.gd": "0ae0f3e796e0e219fb505ba688488661848434c5fc4e46278b030a257f399779",
+    "prototype/scripts/frontend_menu.gd": "db9cb05c2f820fd5f4201e154b1051cedaa1de823bb5af70a6fbb9933015e1fc",
+    "prototype/scripts/horror_director.gd": "03b49075109baa5c3951044bc25f5d7a07f61ece9bba3e4c61f6fcb90b319e0c",
+    "prototype/scripts/horror_presentation.gd": "4dc010cef8b8e350d26a19f7682154b8b772b65ab07297e4445465c4d11ca3c1",
+    "prototype/scripts/hud.gd": "39d777f64e0c328eadf1706d1f43392b56ef51c19cd127a96b87508743651f27",
+    "prototype/scripts/inspection_panel.gd": "37c8c06327a8e97f955381bd36564eddabb686bd053e0af1b99c2b7895d49cbd",
+    "prototype/scripts/main.gd": "4535b36b593b9bc466eab4b6d2b8134cdfd4adf3e17ee9fac386d18c41910bc6",
+    "prototype/scripts/maritime_atmosphere.gd": "ccce77223a8aea0888ae660fb5a32facc89440afb4edbaf57f68834da84d33a5",
+    "prototype/scripts/mission_dossier.gd": "08e805c1724ecfcd274a8c81f9ae1932b2d6a9cffa0d5c0456bce941ba8f5897",
+    "prototype/scripts/mission_dossier_panel.gd": "d74ae8d25510d386321e70232fc95f29e3811faff4db16fda0a5024f597eca36",
+    "prototype/scripts/player_controller.gd": "85dbd0c34a27a60b2794dacdbf550320ca405077b3b9b9fb9e2be75d17209360",
+    "prototype/scripts/preferences_store.gd": "31c0a2dee0287b17fc41f1ebd13dd8060986ed431174625d6c304bdd431f5420",
+    "prototype/scripts/presentation_geometry.gd": "1d1b52a483221eb98b477fd9e90b3aeaf42fe6a87af26abf8730cf9ccfa890db",
+    "prototype/scripts/radio_director.gd": "0c3d64be528a11db8df32ca9f6afcc5ed1bd228744f28740c56ef377b9b07dab",
+    "prototype/scripts/rescue_asset_catalog.gd": "c6ff7a890b12f1d13be806f8c899211367b6d6c2742caa6d151fa4c2b0234d79",
+    "prototype/scripts/rescue_equipment.gd": "b6a84934d90346cf732e04ebb05a0ec928df39595d1286763a90cc4d3de98fed",
+    "prototype/scripts/rescue_presentation.gd": "ac3e900f85615f4dedff422c3fcb5985901cd75107f17dffe876a5087565a7a8",
+    "prototype/scripts/rope_presentation.gd": "c8c5a2826a4fa1fcddaa7e37e7994a49f5981b9c2a1fea14bbcbe914a89cc731",
+    "prototype/scripts/rope_traversal.gd": "2690c1a8cd07e9ddc333bcb9002b8735ae9985bd2ec99271b2f6c6e63d060704",
+    "prototype/scripts/route_catalog.gd": "ec5dadc197f2995c8fdad9348905d0ab05eaadb000f8b0d5808d4f6fbcd73b4e",
+    "prototype/scripts/save_store.gd": "2929265b598f18a108c94feec14aea9b19410042c509fb2e98494b69d1f7f5ff",
+    "prototype/scripts/surface_materials.gd": "5e657399ab1e3016b14594a17debeb5e91acc2e9a2f392dafcc088613fd56542",
+    "prototype/scripts/world_builder.gd": "5e79a2ac89db74803b18849ed3543ac9b24958b05e0920a7ccc93156e2605b4a",
+    "prototype/shaders/cinematic_veil.gdshader": "1aa18255935f3c9ab0d3ebb2ee49dea18d32828d21eac67eeaaf0f22a8cdfb0e",
+    "prototype/shaders/maritime_rain.gdshader": "ff3e19dca63c9bdcc79fc283f468c9213c6a93044b095c5a6e305d84ef4867cd",
+    "prototype/shaders/rotor_wash.gdshader": "8a59b620e99331970aef867ec4c847d27094eda1e7fed6a7b6bdcfe9b8ce8866",
+    "prototype/shaders/storm_curtain.gdshader": "9a359ac0bb58a46838db1d02f6a5ae33447f61b430b21ecd38343088b6e16d37",
+    "prototype/shaders/storm_sky.gdshader": "3f952ed773256f532f95fc7636c4d9ef04d0bc3363c13b1e5860e1d213e95f7a",
+    "prototype/shaders/water.gdshader": "800331fda3f273e43fa5196a26720fcc5eee80f8b80d3680842583fbba4203c5",
+    "prototype/shaders/weathered_surface.gdshader": "e71f62962863bc3e3fe64e73c1b2b53098ec2c354eb46464a32eba0db0a62d3d",
+    "prototype/web_shell.html": "2153408b1c07a7cdac170f9f87fdb99617fd61f82c523902a11658e17d2e54fd"
+  },
+  "captures": [
+    {
+      "file": "docs/captures/v0.11/baseline/01_menu_arrivee.png",
+      "sha256": "ebd69ef38494e30477611848a514d3d916f54f050e70ecd5968e708b1d94b381",
+      "status": "pass",
+      "observation": "Menu lisible, boutons distincts à gauche, deux tours et hélicoptères visibles dans le décor ; version 0.11.0 affichée sans débordement.",
+      "review_basis": "Verdict transféré après identité exacte avec le PNG intérimaire déjà ouvert individuellement."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/02_options.png",
+      "sha256": "7170df4c4df3db013e78afe4a50605ad3a5e676148577c7162c5c31e9061e5f2",
+      "status": "pass",
+      "observation": "Panneau Options et confort lisible, curseurs et valeurs alignés, cadre de focus visible ; la zone des réglages défile sans recouvrir les commandes de retour.",
+      "review_basis": "PNG final rouvert individuellement avec view_image ; observation reconfirmée sur cette image."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/03_nouvelle_intervention.png",
+      "sha256": "066fba27b1ca50b5bb339ebcb57a77d98b7b2123bf2b8ce4a15c00278f484603",
+      "status": "pass",
+      "observation": "Brief de déploiement et numéro de disposition lisibles ; boutons Déployer Alpha et Retour entièrement visibles.",
+      "review_basis": "PNG final rouvert individuellement avec view_image ; observation reconfirmée sur cette image."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/04_signature_studio.png",
+      "sha256": "a8ac6d2894f19fe24bf3e8e67f282aee668731a6cabde4a3a9523ff3f43a44e6",
+      "status": "pass",
+      "observation": "Couronne, nom du studio et Productions centrés sur le fond des tours ; barre de progression et commande Passer lisibles dans la bande inférieure.",
+      "review_basis": "PNG final rouvert individuellement avec view_image ; observation reconfirmée sur cette image."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/05_titre.png",
+      "sha256": "66348842c2d1047248b222661b88a23d16e482394f0f32e9b7ff7ea0b419bd23",
+      "status": "pass",
+      "observation": "Titre principal et accroche centrés, silhouette des deux tours conservée ; absence de chevauchement avec les contrôles de la cinématique.",
+      "review_basis": "PNG final rouvert individuellement avec view_image ; observation reconfirmée sur cette image."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/06_approche_03.png",
+      "sha256": "aeea4821ccdfa0420d2053920d9117183c14ac3a871017a375d9a35f6033286f",
+      "status": "pass",
+      "observation": "Plan large des deux tours dans la brume et deux hélicoptères distincts ; carton Île de Nacre et sous-titre radio entièrement lisibles.",
+      "review_basis": "PNG final rouvert individuellement avec view_image ; observation reconfirmée sur cette image."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/06_approche_10.png",
+      "sha256": "583b7cf9f4266a2ff9c0738807f40422bd9fa1121d6074eb0006425f62afffcb",
+      "status": "pass",
+      "observation": "Approche des toits avec hélicoptères et ombres perceptibles ; cartouche Les Tours Orphée et transmission de Varga non tronqués.",
+      "review_basis": "PNG final rouvert individuellement avec view_image ; observation reconfirmée sur cette image."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/06_approche_17.png",
+      "sha256": "93f29e3bd36f2a5dc4fcc5d2c01f701490662ea02d1fefdaba567bd4427756c2",
+      "status": "pass",
+      "observation": "Deux équipes et deux toits identifiables ; enseigne Orphée correctement lisible depuis cette vue extérieure, texte radio sous les tours.",
+      "review_basis": "PNG final rouvert individuellement avec view_image ; observation reconfirmée sur cette image."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/06_approche_25.png",
+      "sha256": "cb55a5c5bd9f2b4bba50c9d2d764cad43068e449844096aece0be0bdfaa66c44",
+      "status": "pass",
+      "observation": "Poste de commandement, treuil, abri médical et équipe visibles ; sous-titre de Varga lisible, outils et casque partiellement visibles au bord du comptoir.",
+      "review_basis": "PNG final rouvert individuellement avec view_image ; observation reconfirmée sur cette image."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/07_pause_intro.png",
+      "sha256": "1597c9a7334e01caee0df7fbe8c1df5d6124bb1647957e8a0518cb0008d18917",
+      "status": "pass",
+      "observation": "Menu de pause centré, état visuel assombri, boutons et réglages confort lisibles sans chevauchement avec les consignes de sauvegarde.",
+      "review_basis": "PNG final rouvert individuellement avec view_image ; observation reconfirmée sur cette image."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/08_menu_archives.png",
+      "sha256": "7805fbead49d1ae9266c203f8e445bd1a81eee1572e98a20605438110da75140",
+      "status": "pass",
+      "observation": "Menu de reprise lisible sur les archives, dernier point sûr étage 28 et vie sauvée cohérents ; cloison occultant une partie du grand label de décor, sans gêner le menu.",
+      "review_basis": "Verdict transféré après identité exacte avec le PNG intérimaire déjà ouvert individuellement."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/09_dossier_apres.png",
+      "sha256": "e79bd72326ad19d5d592f5b75832399f7a8f483def53c5fd7869f3831a179b69",
+      "status": "pass",
+      "observation": "Situation après impact, équipe et parcours lisibles dans une zone à défilement ; boutons Commandes et matériel et Retour accessibles. La suite de la liste est sous le bord de défilement.",
+      "review_basis": "PNG final rouvert individuellement avec view_image ; observation reconfirmée sur cette image."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/10_menu_refuge.png",
+      "sha256": "0f7732af80bc74375628a9eff818889de735ace7d6e21177e07a5aa5487aa6ae",
+      "status": "pass",
+      "observation": "Menu de consultation terminé, point sûr 25 et trois vies sauvées lisibles ; scène du refuge éclairée avec secouriste. Le label de décor est partiellement occulté par le mobilier.",
+      "review_basis": "PNG final rouvert individuellement avec view_image ; observation reconfirmée sur cette image."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/11_inspection_toit.png",
+      "sha256": "b9f96ee9c97276a0242390f75c7ff8626770e915d6626b1937d62a1911fd5dfa",
+      "status": "pass",
+      "observation": "Registre médical, titre, panneau défilant et commandes de fermeture lisibles. Le HUD assombri indique maintenant le matériel rangé et les mains libres pendant l’inspection ; aucune hache ne reste affichée. La synchronisation incorrecte de la première série est corrigée.",
+      "review_basis": "Verdict transféré après identité exacte avec le PNG intérimaire déjà ouvert individuellement."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/12_inspection_archives.png",
+      "sha256": "8523236ffb58b1895e09e22c3905252b3a11b59e937eb92b358bb6dfd83ceed2",
+      "status": "pass",
+      "observation": "La fiche « Le dossier de maintenance » avant le choc est intégralement lisible : titre, fonction, constat, suite et note d’Alex sont séparés sans débordement. Le fond du jeu est assombri et le bouton de reprise ainsi que les aides de défilement restent visibles."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/13_inspection_apres.png",
+      "sha256": "b6642672e373acf6a48c92b31e56c5925fa9083b90923decef23d41be9020de7",
+      "status": "pass",
+      "observation": "L’état « Après le choc » est clairement distingué ; le texte décrit la voie Est coupée et le détour intérieur au nord pour Samuel. Toutes les lignes tiennent dans la fiche, y compris la note Alpha, et les commandes de reprise restent dégagées."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/14_toit_equipe.png",
+      "sha256": "76e401057aa494cfa5878f5e821dd7b2796b00d21e2e419edb66491027498dff",
+      "status": "pass",
+      "observation": "La vue finale du toit montre distinctement l’hélicoptère posé, le puits et ses garde-corps, l’équipe médicale, le brancard et le comptoir. L’enseigne ORPHÉE / POSTE DE SECOURS conserve une lecture correcte depuis sa face extérieure ; les accessoires et les silhouettes ne bouchent pas les zones de circulation visibles."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/15_portage.png",
+      "sha256": "c4322ac01f6b3c9b76714b2af6386d8965c20a401def7f20972fa0517adf6f9a",
+      "status": "pass",
+      "observation": "Ana et le harnais occupent le côté droit du premier plan avec les mains de portage, tandis que la balise orange reste dégagée au centre. Le HUD annonce le retour au treuil et 0/3 reçu ; l’outil d’intervention est rangé et le panneau radio inférieur ne recouvre pas l’objectif visuel."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/16_treuillage.png",
+      "sha256": "40463321461938fd0b4c9620deaca494aeb8d83fc5b16c5c7690226bd3a6d7e0",
+      "status": "pass",
+      "observation": "La vue finale conserve le corps d’Ana, les sangles, le panier orange et le câble tendu dans l’ouverture du puits. Le HUD indique 36 % de remontée, l’attente de réception et 0/3 rescapé reçu ; l’outil est rangé et la suspension reste visible au-dessus des panneaux inférieurs."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/17_reception.png",
+      "sha256": "790658a3cc9e7b9257db1315886cf8b7206515d70911f33b623720563aab390e",
+      "status": "pass",
+      "observation": "Ana est visible allongée entre les deux secouristes au poste de réception, séparée du bord du puits. L’hélicoptère, l’abri, la croix médicale et le brancard de réserve restent distincts ; le cadrage final ne présente ni panneau ni outil masquant la prise en charge."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/18_meteo_toit.png",
+      "sha256": "1a5f760170a077aeab76af1d4c5abf4da6b938801cbdb00e089d477fbf4d8a31",
+      "status": "pass",
+      "observation": "Le plafond nuageux stylisé et la brume bleutée donnent une profondeur maritime entre les deux toits. Les hélicoptères, silhouettes, balises et zones médicales restent séparables malgré l’atmosphère ; la vue ne contient ni texte miroir ni panneau superposé gênant."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/19_options_pause.png",
+      "sha256": "88faeb674700ec3013e0996a7ee2c959cd4d7e4241759a016686e68069cbb9f0",
+      "status": "pass",
+      "observation": "Le panneau Options et confort présente des intitulés, valeurs et curseurs lisibles ; le focus d’activation du son, la barre de défilement, les commandes de navigation, la remise à zéro et Retour sont visibles sans chevauchement. Le jeu assombri ne concurrence pas les réglages."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/20_journal_situation.png",
+      "sha256": "55234d0bf79e8aeebe03ac51b4eaad7101e46be188db5fc2edeaad2b3c8a290f",
+      "status": "pass",
+      "observation": "L’onglet Situation distingue les compteurs 1/3, le temps 01:38 et l’étage 28. Les priorités, la modification du passage Est après impact et le statut des rescapés restent lisibles ; le contenu se poursuit dans une zone défilante clairement signalée et le bouton de fermeture reste accessible visuellement."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/21_journal_rescapes.png",
+      "sha256": "24db0a49795f63774b7228ec5f306bfe6a9e161dd877faf9abb1359a4c0804b4",
+      "status": "pass",
+      "observation": "L’onglet Rescapés présente Ana à l’abri avec réception confirmée et Samuel à secourir, puis Nora dans la liste défilante. La règle de confirmation médicale est lisible en tête, les noms et étages sont espacés et le compteur 1/3 correspond à la seule réception affichée."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/22_journal_indices.png",
+      "sha256": "bbe5e01d866be7e6c5683b20c42d7a801e40d2b109b745444a737e2342dd86b7",
+      "status": "pass",
+      "observation": "L’onglet Indices montre le relevé récupéré de la chambre 2908 et laisse les documents des étages 27 et 26 non récupérés, sans révéler leur contenu. Le texte, les statuts et le compteur 1/3 sont lisibles ; la zone défilante évite un débordement hors panneau."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/23_journal_transmissions.png",
+      "sha256": "94a519e83245316a04443bc389a0a366dae4f8ac8478bf5b27edf1300be66647",
+      "status": "pass",
+      "observation": "Les transmissions sont horodatées 01:38, avec une attribution claire à Varga puis à la note d’intervention. Les paragraphes complets tiennent dans le panneau, la limite annoncée de 32 échanges reste lisible et aucun texte ne chevauche les onglets ou Fermer le journal."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/24_epilogue_02.png",
+      "sha256": "aa925dd7c87e312798d7f66f6a368d66943ae6b17fa74b47bc188115d4668fcc",
+      "status": "pass",
+      "observation": "Le carton « Trois vies à l’abri » présente les trois rescapés au poste médical avec les soignants ; les couvertures et corps restent des formes procédurales assumées. Le sous-titre nomme Ana, Samuel et Nora, et l’invite de bilan en bas à droite est lisible sans recouvrir les visages."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/24_epilogue_07.png",
+      "sha256": "7f2505656025f5ae8244df8d5f860c903c01a0377224dd65fd6caf486e02903f",
+      "status": "pass",
+      "observation": "Le relais lumineux du refuge 25 domine une scène dégagée avec escalier, balise et secouriste. Le titre « Le relais répond », la liaison sécurisée, le fragment attribué à Bravo et l’invite de bilan sont lisibles ; aucun outil n’obstrue cette séquence de présentation."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/24_epilogue_12.png",
+      "sha256": "b7e02391bc4208b0b1f454ccfc2b46fa5331924ffb1b12393b4f479bd6978da1",
+      "status": "pass",
+      "observation": "Le titre, l’origine incertaine du signal, le sous-titre du relais et la commande de bilan sont lisibles ; le plan extérieur reste dégagé de l’interface et des outils de marche."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/25_bilan_refuge.png",
+      "sha256": "86b9eb0ce4ea9d3db55aa837ce1271cb7f256a4eba253d2dbe2d0e0193b04fdd",
+      "status": "pass",
+      "observation": "Les trois personnes nommées, les compteurs 3/3 et 2/3, le texte du relais et les quatre boutons sont lisibles ; « Poursuivre au congrès » reste entièrement accessible à droite."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/26_suites_presence.png",
+      "sha256": "fdae919c670509308ba890fd650b6d2dc15b3af1002dd20e4308c3d5c686103a",
+      "status": "pass",
+      "observation": "La hache est désormais visible dans la main droite et concorde avec le HUD « outil prêt » ; la présence translucide, le repère de rappel 29–28 et les garde-corps restent dégagés."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/27_archives_traces.png",
+      "sha256": "2b98c75ced5c0d2e25d85dc60c596bb6274bd250ffdca928f8d29d8d13ff23f8",
+      "status": "pass",
+      "observation": "La hache tenue correspond au HUD « outil prêt » ; la piste de traces humides reste repérable au sol, et le petit foyer près des bureaux est visible. L’interface, le repère d’étage 28 et le réticule demeurent lisibles, sans nouveau défaut bloquant."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/28_spa_remanence.png",
+      "sha256": "807b7ad82eca431e06b01bec2faf145a8a23fd710871ba8dcb1e05824c69646a",
+      "status": "pass",
+      "observation": "La hache tenue apparaît correctement, sans masquer la rémanence ni le bassin ; le HUD est cohérent. Les grands labels du fond se superposent encore, sans bloquer les consignes principales."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/29_station_rappel_toit.png",
+      "sha256": "844ffe8a373701f00eb037c7b25ea39048d8c6c9907cc209a17b51d7067e9a50",
+      "status": "pass",
+      "observation": "La hache est visible avant l’engagement du rappel et concorde avec le HUD ; le repère bleu, les garde-corps, le treuil orange et l’invite E restent identifiables."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/30_rappel_descente.png",
+      "sha256": "d776c15b15fdf823e80cb26879a9a4300f9d92222913bb31c86ff5162a8eebaf",
+      "status": "pass",
+      "observation": "La descente contrôlée affiche 2,8 m/s, 3,0 m au palier bas et 4,7/7,8 m de corde ; les mains et le descendeur sont visibles, les outils de coupe absents et le HUD indique le matériel rangé."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/31_rappel_verrouille.png",
+      "sha256": "5455bb75e772002c543f22f7beabfa5586d929b8b041069ef70fbd57a25f4e67",
+      "status": "pass",
+      "observation": "Le verrouillage se traduit par 0,0 m/s, le libellé « DESCENDEUR VERROUILLÉ » et le témoin vert du descendeur ; les consignes restent lisibles et aucun outil de coupe n’occupe la main."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/32_escalier_30_29.png",
+      "sha256": "aa716ea7e356acfc72e664e135626f26a3d43342e935d5141d443676cbc72fce",
+      "status": "pass",
+      "observation": "Les nez de marche jaunes, les deux volées, le palier et les garde-corps rendent le trajet 30–29 clair ; le panneau confirme le retour possible et le HUD indique le matériel rangé."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/33_escalier_palier.png",
+      "sha256": "652f6217c5edfcd3fff194097ad7096ea1fafa843f95bb39489c109be7e0a5de",
+      "status": "pass",
+      "observation": "La vue depuis le palier montre la volée montante et les niveaux voisins ; l’interface conserve l’état de liaison 30–29 et le matériel rangé, sans masquer la progression visible."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/34_rappel_remontee.png",
+      "sha256": "c6ed7915ee9db4e21230a216f70f731ccd7b2cf4e7b459c2442221e281b3dd38",
+      "status": "pass",
+      "observation": "La remontée affiche 1,6 m/s et une endurance à 90 %, avec câble, ancrage et descendeur visibles ; les consignes de corde et le rangement des outils concordent avec cet état."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/35_aide_deplacements.png",
+      "sha256": "8ab8c28ced9ac2caf4cd4451644bcaf7f2927cc787ff8b4006c1729f35889407",
+      "status": "pass",
+      "observation": "Les sections Mission, Itinéraire local, À pied et Sur la corde sont lisibles ; la barre de défilement indique la suite du texte et le bouton Compris reste dégagé sous la zone défilante."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/36_escalier_28_27.png",
+      "sha256": "60c395153d6e31f39e3e458583fc3f6c93bedee6cc488534d0c1eb9125b96e9b",
+      "status": "pass",
+      "observation": "La première volée, le palier de retour et les nez de marche jaunes sont nettement éclairés ; le HUD identifie correctement la liaison 28–27 et indique le rangement des outils."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/37_escalier_26_25.png",
+      "sha256": "2643386dc9d73f611150f3c38051fe9ab70b78a1771e347eb9ca574a4071688f",
+      "status": "pass",
+      "observation": "Le cheminement vers le refuge est lisible entre les garde-corps, avec marches contrastées et liaison 26–25 correctement nommée ; la carte latérale est plus pâle sur le carrelage clair mais reste lisible."
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/01_bilan_poursuite.png",
+      "sha256": "179be5506e65311ce5f9175e8df9d78a402e2127e8671a2399e474a78001f162",
+      "status": "pass",
+      "observation": "Le bilan conserve les trois personnes à l’abri et le relais à origine non confirmée ; les cartes nominatives, le texte défilant et les quatre boutons restent distincts. « Poursuivre au congrès » est entièrement visible.",
+      "review_basis": "Verdict issu d’une ouverture individuelle avec view_image ; PNG final comparé octet pour octet au PNG intérimaire déjà examiné."
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/02_escalier_25_24.png",
+      "sha256": "f1205031e67fe37158fbf1abceb3657ad53d8c5b8be1924d62d7caf7d0e74acd",
+      "status": "pass",
+      "observation": "La hache est maintenant visible dans la main droite et correspond au HUD « outil prêt », tandis que la lampe reste à gauche. L’ouverture, les marches jaunes et les repères cyan restent dégagés ; l’outil ne recouvre pas les panneaux de mission.",
+      "review_basis": "Verdict issu d’une ouverture individuelle avec view_image ; PNG final comparé octet pour octet au PNG intérimaire déjà examiné."
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/03_congres_auditorium.png",
+      "sha256": "9a9b7dab848e3b4a1ab7eb24157997dd496f88a6ab0bc46899ab3c0c86a4f986",
+      "status": "pass",
+      "observation": "La hache apparaît correctement à droite, avec une silhouette et des matériaux distincts. Sa tête occulte une partie du panneau de décor Pelagos dans ce cadrage, mais les sièges, le passage latéral, le réticule et les informations de mission restent lisibles.",
+      "review_basis": "Verdict issu d’une ouverture individuelle avec view_image ; PNG final comparé octet pour octet au PNG intérimaire déjà examiné."
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/04_cabine_signes.png",
+      "sha256": "2b3433d3c6c6f41744b9f7d7f832e7f0a92432dd04ba3be7e67162fe94700582",
+      "status": "pass",
+      "observation": "La hache est présente à droite et cohérente avec son état prêt. Les deux personnages, leurs noms et la consigne de signe visible restent lisibles ; la tête de l’outil se place entre les visages sans masquer l’action du dialogue.",
+      "review_basis": "Verdict issu d’une ouverture individuelle avec view_image ; PNG final comparé octet pour octet au PNG intérimaire déjà examiné."
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/05_escorte_escalier.png",
+      "sha256": "0102c23e688c566aa58573a9a1013a4c83a128c7ec7d6921d304279200e9ba23",
+      "status": "pass",
+      "observation": "L’outil est correctement rangé sur l’escalier et le HUD annonce les mains libres. L’enseigne du congrès auparavant en miroir a disparu de cet axe ; marches et consignes de déplacement restent lisibles. La signalétique 3D est encore dense et le second membre du duo est occulté derrière Léa dans ce cadrage.",
+      "review_basis": "Verdict issu d’une ouverture individuelle avec view_image ; PNG final comparé octet pour octet au PNG intérimaire déjà examiné."
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/06_reception_refuge.png",
+      "sha256": "39e5f6fbac756decd676b0087e2b8aea3755933ecef0c10290c39457fdef1415",
+      "status": "pass",
+      "observation": "La hache portée correspond maintenant au HUD ; le refuge indique 2/2 et demande l’examen des deux preuves du 23. Les deux personnes et leurs noms sont identifiables, même si la tête de la hache occulte une partie du visage d’Idris dans cette pose fixe ; aucun panneau de mission n’est masqué.",
+      "review_basis": "Verdict issu d’une ouverture individuelle avec view_image ; PNG final comparé octet pour octet au PNG intérimaire déjà examiné."
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/07_rappel_24_23.png",
+      "sha256": "884a7229885f6de2044dc3261c662567f426f216e5c6d75bbbd4c0a6143f9264",
+      "status": "pass",
+      "observation": "La hache est rangée pendant le rappel ; le descendeur, la ligne et les garde-corps restent visibles. Vitesse nulle, distance, frein automatique et commandes sont lisibles, avec un HUD mains libres cohérent avec cette situation de corde.",
+      "review_basis": "Verdict issu d’une ouverture individuelle avec view_image ; PNG final comparé octet pour octet au PNG intérimaire déjà examiné."
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/08_maquette_souterrains.png",
+      "sha256": "2ef2a4c810bc5db4714423a46c37935f12ad8d79b90c6073bfc6787ca5f1e5b0",
+      "status": "pass",
+      "observation": "La hache est désormais visible à droite. Les deux volumes de la maquette et leur tracé clair restent reconnaissables ; la consigne de relevé est entière et lisible. Le titre de décor est partiellement couvert par les panneaux supérieurs, sans masquer l’action disponible.",
+      "review_basis": "Verdict issu d’une ouverture individuelle avec view_image ; PNG final comparé octet pour octet au PNG intérimaire déjà examiné."
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/09_archive_bains.png",
+      "sha256": "8cd8fc86284f6bb05c895179394fb86f6da5f2b92d0d9cf0c881bc9d5e22e8e5",
+      "status": "pass",
+      "observation": "La hache portée correspond au HUD et la consigne « Relever · Photographie des anciens bains » est lisible. Le panneau procédural reste identifiable malgré l’occultation partielle de sa porte par l’outil ; la légende des anciens bains et la date 1964 sont lisibles.",
+      "review_basis": "Verdict issu d’une ouverture individuelle avec view_image ; PNG final comparé octet pour octet au PNG intérimaire déjà examiné."
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/10_remanence_exposition.png",
+      "sha256": "aeee03aa57147d64b4c4b57ad950fd67afd605b67aa120d1f073431c7ea36588",
+      "status": "pass",
+      "observation": "L’outil auparavant absent apparaît à droite, avec son état prêt cohérent. La silhouette humaine sombre se distingue sur le sol éclairé ; le fer de la hache passe devant une partie de son visage dans ce cadrage fixe, sans masquer le corps ni les informations de mission.",
+      "review_basis": "Verdict issu d’une ouverture individuelle avec view_image ; PNG final comparé octet pour octet au PNG intérimaire déjà examiné."
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/11_dossier_nacre.png",
+      "sha256": "9caf0edbe7076c48cfe42eb32e9a7e19a2a8de90490532f368dfa7e3c221162d",
+      "status": "pass",
+      "observation": "Les deux entrées du 23, la maquette des volumes enfouis et la photographie des anciens bains, sont entièrement lisibles dans le volet défilant. Onglet actif, position 23, compte 5/5 et bouton de fermeture sont distincts ; la ligne restante de l’entrée précédente correspond au défilement préparé.",
+      "review_basis": "Verdict issu d’une ouverture individuelle avec view_image ; PNG final comparé octet pour octet au PNG intérimaire déjà examiné."
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/12_bilan_reconnaissance.png",
+      "sha256": "03f9685676b291c561973d89c1546ffde112978f681cdfe136901fb766ba1c3a",
+      "status": "pass",
+      "observation": "Le bilan affiche cinq personnes à l’abri, distingue Léa et Idris au refuge des trois secours au toit, et laisse lire le compte rendu ainsi que la fermeture vers le 22. Les deux boutons inférieurs sont entièrement visibles et les cartes ne se chevauchent pas.",
+      "review_basis": "Verdict issu d’une ouverture individuelle avec view_image ; PNG final comparé octet pour octet au PNG intérimaire déjà examiné."
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/13_menu_exposition.png",
+      "sha256": "a32dfd9a2098bae283a690cda48ecbe97483f90e0590b0e2c652b135dfa90ea4",
+      "status": "pass",
+      "observation": "L’accueil montre le point sûr au 23 et la reconnaissance terminée, avec cinq vies sauvées et la version 0.11.0. Titre, choix de menu, reprise du compte rendu et statut inférieur restent lisibles sur le décor d’exposition ; aucun outil de jeu ne subsiste devant cette vue d’accueil.",
+      "review_basis": "Verdict issu d’une ouverture individuelle avec view_image ; PNG final comparé octet pour octet au PNG intérimaire déjà examiné."
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/01_rack_toit.png",
+      "sha256": "9a0651ad113003285bc937726e4dfafae9220f9b9e1d997b5039aee7df6c02bd",
+      "status": "pass",
+      "observation": "La hache et la lampe restent distinctes en main ; le râtelier, ses accessoires et la liste des quatre outils sont lisibles autour du réticule. Le revers de l’enseigne du toit n’affiche plus de texte miroir ; les panneaux du HUD ne masquent pas la visée centrale."
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/02_comptoir_toit.png",
+      "sha256": "d021c88df9f5a5636a8d36288b199c3766916884c9ef349a204028cce2faa338",
+      "status": "pass",
+      "observation": "La vue relevée montre la lampe posée, le sac médical rouge, le casque jaune et la radio sur le comptoir. La hache en main recouvre une partie du casque mais les accessoires restent identifiables ; le texte miroir de l’enseigne a disparu et le HUD demeure lisible."
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/03_hache_29.png",
+      "sha256": "6049718180f16b8cc2464508a0af64e7804e89536b1fbcec8518e8f427ea47d8",
+      "status": "pass",
+      "observation": "La hache est visible devant la réserve barricadée du 29 et le réticule vise l’armoire. La consigne affiche désormais « Maintenir E · Dégager la réserve de balisage · 28 % », cohérente avec l’action en cours ; l’ancienne invitation de caisse de secours ne prend plus sa place."
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/04_extincteur_28_actif.png",
+      "sha256": "7d112e7466bdc2a253f49aae69dcb12cb75bc114d9b906950fe63867c1a019a3",
+      "status": "pass",
+      "observation": "La nouvelle image montre le jet blanc stylisé entre l’extincteur en main et la corbeille en feu, malgré une disposition différente des particules. Le réticule reste sur le foyer ; la consigne de maintien E à 33 % et la réserve 3/3 sont lisibles, sans obstruction de la cible par l’outil."
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/05_foyer_28_eteint.png",
+      "sha256": "0a69eac27a574ac20dd57ac6c1f5c96a608cae22ecbf17dd239d61561eaf16ee",
+      "status": "pass",
+      "observation": "Au même emplacement, la corbeille reste visible sans flamme, jet ni fumée locale ; l’extincteur reste en main. La notification confirme le foyer éteint et la réserve indique 2/3, cohérente avec une charge consommée ; la distinction avec les autres zones enfumées est lisible."
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/06_halligan_25.png",
+      "sha256": "c2a172b6e884e1d4eb836a7f36758327bee317a940ad21e5f655b20baf760e3c",
+      "status": "pass",
+      "observation": "Le Halligan est identifiable en main face à l’armoire médicale verte et à sa croix blanche. La consigne « Maintenir E · Débloquer l’armoire de premiers secours · 23 % » est lisible, le réticule reste dégagé et le HUD situe correctement l’intervention au refuge 25."
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/07_coupe_boulon_24.png",
+      "sha256": "9cedca0b68c51a2c5ca7d321e09467f8f3499ad03fc8781006058347afe50645",
+      "status": "pass",
+      "observation": "Le coupe-boulon reste dégagé en main ; l’armoire ouverte et le projecteur posé à gauche sont séparés des sièges et visibles en entier. Le faisceau éclaire le sol et la notification confirme la chaîne coupée. Le balisage derrière l’armoire demeure visible ; les étiquettes du duo sont denses derrière la notification, sans masquer l’intervention ni la consigne du HUD."
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/08_inventaire_refuge25.png",
+      "sha256": "fbcd0838b9b59e5145bc30be6f93199dfbc6382e87d41ac88fc3f65724e3169a",
+      "status": "pass",
+      "observation": "Le sac rouge repose maintenant sur la toile centrale du brancard, sans l’espace d’air visible dans le premier lot. La bouteille d’oxygène, l’armoire médicale ouverte et le Halligan en main restent distincts ; le balisage du refuge et le réticule sont lisibles."
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_compat/01_roof_rescue.png",
+      "status": "pass",
+      "observation": "Au même cadrage que Forward+, le remplissage plus clair rend le béton et les équipements du toit lisibles. L’ombre du secouriste est plus nette et les volumes restent distincts ; l’accès central et les garde-corps sont faciles à repérer. Aucun élément visible ne disparaît avec le profil portable.",
+      "sha256": "96abd3c2e9ebf0623285cd64a50ed498f18d41fbaa55b72839230657fbd7e846",
+      "review_basis": "PNG final de la demande 03 ouvert individuellement avec view_image."
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_compat/02_restaurant_materials.png",
+      "status": "pass",
+      "observation": "Le restaurant est plus clair que la vue Forward+, avec des ombres aux bords plus francs. Le comptoir en bois, le sol sombre et les sièges restent différenciés ; le passage à droite est dégagé et lisible. La même occultation partielle de l’enseigne par le poteau relève du cadrage commun.",
+      "sha256": "e8a343b4224e9ec81c44c6665c477d1b7a014ac694e1847a6ce25f323ffbd3b3",
+      "review_basis": "PNG final de la demande 03 ouvert individuellement avec view_image."
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_compat/03_congress_lighting.png",
+      "status": "pass",
+      "observation": "La moquette turquoise, les sièges bleus, la scène et le panneau Pelagos sont plus clairs que dans le profil cinématique. Les ombres directes restent visibles, les matériaux ne se confondent pas et le bord clair du passage conserve son rôle de repère sans masquer la géométrie.",
+      "sha256": "cf2d6324c1481f942902840d6a35859a558c8006e89bf26126f16ab1bf5827cc",
+      "review_basis": "PNG final de la demande 03 ouvert individuellement avec view_image."
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_compat/04_archive_after_impact.png",
+      "status": "pass",
+      "observation": "Le rendu portable plus clair distingue les deux faces de la cloison et préserve les repères cyan au sol. L’absence du halo chaud visible en Forward+ ne réduit pas la lisibilité du chemin. Le personnage reste partiellement masqué et la légende coupée par le même cadrage ; cette vue ne montre pas Hespérie.",
+      "sha256": "f0e715733198378e0fe8a65cb4c166b1008743c56b387a631fc46a853bfb9eff",
+      "review_basis": "PNG final de la demande 03 ouvert individuellement avec view_image."
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_forward/01_roof_rescue.png",
+      "status": "pass",
+      "observation": "Le toit reste lisible sous une exposition plus basse que Compatibility : hélicoptère, secouristes, garde-corps et ouverture se détachent du sol. Les ombres du personnage au premier plan présentent des bords plus doux ; les zones de passage restent identifiables, sans voile lumineux envahissant.",
+      "sha256": "8633e94af9405eaaff1aa710a0afbb93e253e71ba221b628e85d35b1c0389c62",
+      "review_basis": "PNG final de la demande 03 ouvert individuellement avec view_image."
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_forward/02_restaurant_materials.png",
+      "status": "pass",
+      "observation": "Le sol sombre conserve sa texture et un reflet chaud discret ; béton, bois du comptoir et sièges rouges restent distincts. Les ombres sont plus profondes que dans le profil portable, mais l’accès bordé d’orange et son repère clair restent visibles. Un poteau masque partiellement l’enseigne du restaurant dans ce cadrage commun aux deux profils.",
+      "sha256": "43cd56c2a942432e7c1effd4719d2746087e5a66fc9744e774889df8b893ab31",
+      "review_basis": "PNG final de la demande 03 ouvert individuellement avec view_image."
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_forward/03_congress_lighting.png",
+      "status": "pass",
+      "observation": "Les rangées de sièges se détachent de la moquette sombre et le passage de service à droite reste repéré par son bord lumineux. Le panneau Pelagos présente un contraste faible mais son texte reste déchiffrable. L’éclairage froid et les ombres plus profondes ne font pas disparaître la route dans cette vue.",
+      "sha256": "79d4aa5a5090bd2cce1003a2d00348cb7b7eb25a972563f6a5d6278604f0e25f",
+      "review_basis": "PNG final de la demande 03 ouvert individuellement avec view_image."
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_forward/04_archive_after_impact.png",
+      "status": "pass",
+      "observation": "Après impact, le béton de la cloison conserve sa texture, une nuance chaude est visible en partie haute et les repères cyan restent lisibles sur le sol sombre. Le cadrage est dominé par la cloison, masque partiellement le personnage et coupe la légende à gauche ; il montre le rendu intérieur mais ne fournit pas de vue d’Hespérie pour conclure visuellement à l’absence de fantôme de GI.",
+      "sha256": "96f2dc37d2647b183cbc204f9986ae44690d4a1890a7b4f4ad7044061087bded",
+      "review_basis": "PNG final de la demande 03 ouvert individuellement avec view_image."
+    }
+  ],
+  "assets": {
+    "guides": [
+      {
+        "file": "docs/VISUELS_ET_SECOURS_V0.11.md",
+        "bytes": 14064,
+        "sha256": "7b428d4804661505281835f76bdc12ce2ec1625a0eca10d5dbeaa479a5054dcd",
+        "status": "pass",
+        "observation": "Contenu relu et cohérent avec le moteur, les conventions d’assets, les gestes livrés et les limites consignées ; empreinte du candidat conservée."
+      },
+      {
+        "file": "prototype/assets/materials/v011/README.md",
+        "bytes": 4525,
+        "sha256": "f457113bff4563beb1d17b3ed300785445871b942d7359f669bc14588484ea80",
+        "status": "pass",
+        "observation": "Contenu relu et cohérent avec le moteur, les conventions d’assets, les gestes livrés et les limites consignées ; empreinte du candidat conservée."
+      },
+      {
+        "file": "prototype/assets/materials/v011/manifest.json",
+        "bytes": 25203,
+        "sha256": "cf7fbe726af5f4b4485b9b23b5d3f9171203ad4837271e310514f96e84d0c6c9",
+        "status": "pass",
+        "observation": "Contenu relu et cohérent avec le moteur, les conventions d’assets, les gestes livrés et les limites consignées ; empreinte du candidat conservée."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/manifest.json",
+        "bytes": 16267,
+        "sha256": "8203c05898243ea84381eae11e0a6259d0fc3dcb7de26fb8d6dd28f59aa44e2c",
+        "status": "pass",
+        "observation": "Contenu relu et cohérent avec le moteur, les conventions d’assets, les gestes livrés et les limites consignées ; empreinte du candidat conservée."
+      }
+    ],
+    "source_files": [
+      {
+        "file": "docs/assets/v0.11/README.md",
+        "bytes": 6522,
+        "sha256": "cd41f685b4aa6d2f04ea7102845d5bd9249f75517bf0a998940c44952b093757",
+        "status": "pass",
+        "observation": "Source et provenance de génération vérifiées, pièces nommées conservées dans Blender ; modèles et vues de la même génération contrôlés sans modification ultérieure."
+      },
+      {
+        "file": "docs/assets/v0.11/rescue_equipment.blend",
+        "bytes": 1891271,
+        "sha256": "818eabcbcf195a6b69d2a6d513f270b51fc7ba1bf150c327a56cd05fdb64beab",
+        "status": "pass",
+        "observation": "Source et provenance de génération vérifiées, pièces nommées conservées dans Blender ; modèles et vues de la même génération contrôlés sans modification ultérieure."
+      },
+      {
+        "file": "docs/assets/v0.11/rescue_equipment_manifest.json",
+        "bytes": 16267,
+        "sha256": "8203c05898243ea84381eae11e0a6259d0fc3dcb7de26fb8d6dd28f59aa44e2c",
+        "status": "pass",
+        "observation": "Source et provenance de génération vérifiées, pièces nommées conservées dans Blender ; modèles et vues de la même génération contrôlés sans modification ultérieure."
+      }
+    ],
+    "models": [
+      {
+        "file": "prototype/assets/models/rescue_v011/bolt_cutter.glb",
+        "bytes": 464136,
+        "sha256": "1ca9720c092191f10db9c537daf2358c5411a68c6e36033db30521b13bd153d7",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/carabiner.glb",
+        "bytes": 144284,
+        "sha256": "baf7f4df4a47f377d719cf16e8c1e18d969b767e7ea05b243b9c88463a1bf887",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/descender.glb",
+        "bytes": 68456,
+        "sha256": "12d97ba55f74027750377607ff871fe93546dcf4d3f9d550b937f8f6709a5f61",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/emergency_beacon.glb",
+        "bytes": 209112,
+        "sha256": "c25c7b2c38d9500060e0a587c74101898490c4e3fff06c95f06f8643c141e2c1",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/equipment_case.glb",
+        "bytes": 178240,
+        "sha256": "c1f087b4a222e8b5b75d62c2cd7db7a66ffa84a57725182d80260488ae076f7e",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/extinguisher.glb",
+        "bytes": 408388,
+        "sha256": "9437897f50f2d611baafd628325347e472aeeb18afe9b5e47e2a44898506f606",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/fire_axe.glb",
+        "bytes": 308352,
+        "sha256": "3e1f58918d56fe9f92131eef8d389faab3849408b838cf24baab140f02430ae2",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/halligan.glb",
+        "bytes": 304892,
+        "sha256": "537c07642f6075639a406702f56ea896c1e1a0fcc9981697bb5244070af22c46",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/oxygen_cylinder.glb",
+        "bytes": 339836,
+        "sha256": "c1490f993e6a503aa0d17e951a2252b5224c3ed2de4b664e0adecdcd97a77802",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/portable_worklight.glb",
+        "bytes": 433652,
+        "sha256": "e65b7a006b750e00124aa1cdb7f40a43bbd9ca5e8cd50237dc2483e392a49734",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/rescue_flashlight.glb",
+        "bytes": 410404,
+        "sha256": "73212e4a7445e10bc4d36b19533a6adec6bf994a60d0281223ab9467f8e4d574",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/rescue_helmet.glb",
+        "bytes": 206852,
+        "sha256": "a88430f9ff535a64866dc52bc10d40abc6ae213c2e2c7daa04a04c43c19769d2",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/rescue_radio.glb",
+        "bytes": 394504,
+        "sha256": "f4a828b9f86c5b2841f7dc582f91428aa4e788acb80916c322ddf63861ecd326",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/rescue_stretcher.glb",
+        "bytes": 792800,
+        "sha256": "6493fb4540944fb0ad1337810bfd7a0ac3848899e4b7c8032e4f21c56ac4a943",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/rope_coil.glb",
+        "bytes": 458776,
+        "sha256": "9a5d496abbb6e610b9b5fc9d471f567aa70ffcb1fa18602f2edd4e4dc3fe0f40",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      },
+      {
+        "file": "prototype/assets/models/rescue_v011/trauma_bag.glb",
+        "bytes": 138640,
+        "sha256": "c373771ab869ad3837fb7874b94a75c121fb0ccfcf9e45c1d4a8df64c93eea19",
+        "status": "pass",
+        "observation": "GLB contrôlé par le validateur indépendant et les imports/packs Godot ; forme examinée dans son aperçu Blender individuel, puis intégration dans les scènes natives du lot."
+      }
+    ],
+    "materials": [
+      {
+        "file": "prototype/assets/materials/v011/black_rubber.png",
+        "bytes": 2753044,
+        "sha256": "dd554c6a3ce03657395330df817e78a9c36c93de983a0ae20fc018d344c38581",
+        "status": "pass",
+        "observation": "Albedo original examiné individuellement et en répétition 2 × 2 ; dimensions RGB 1254² et empreinte vérifiées. Les raccords et limites artistiques sont consignés dans le manifeste."
+      },
+      {
+        "file": "prototype/assets/materials/v011/brushed_steel.png",
+        "bytes": 2065734,
+        "sha256": "b182a04fc8bda2b8cd657fd6a7386233bad6b7635e7924bac6b2efccd3d5dc69",
+        "status": "pass",
+        "observation": "Albedo original examiné individuellement et en répétition 2 × 2 ; dimensions RGB 1254² et empreinte vérifiées. Les raccords et limites artistiques sont consignés dans le manifeste."
+      },
+      {
+        "file": "prototype/assets/materials/v011/dark_stone.png",
+        "bytes": 3049901,
+        "sha256": "ea23d3a2fef5ecb13f153c65a7edb9b45c5512a75553f26923b89cfaa82babc0",
+        "status": "pass",
+        "observation": "Albedo original examiné individuellement et en répétition 2 × 2 ; dimensions RGB 1254² et empreinte vérifiées. Les raccords et limites artistiques sont consignés dans le manifeste."
+      },
+      {
+        "file": "prototype/assets/materials/v011/porcelain_tile.png",
+        "bytes": 2295784,
+        "sha256": "e9bd1d3e86af1f1eefb0d3679b8ff4526dd72af04575077af2fd164b1c7e632b",
+        "status": "pass",
+        "observation": "Albedo original examiné individuellement et en répétition 2 × 2 ; dimensions RGB 1254² et empreinte vérifiées. Les raccords et limites artistiques sont consignés dans le manifeste."
+      },
+      {
+        "file": "prototype/assets/materials/v011/rescue_red_paint.png",
+        "bytes": 2449883,
+        "sha256": "adcd2865e7853a4e79ab932a09f35bfed054a2613978d8e7ea75de2276617a96",
+        "status": "pass",
+        "observation": "Albedo original examiné individuellement et en répétition 2 × 2 ; dimensions RGB 1254² et empreinte vérifiées. Les raccords et limites artistiques sont consignés dans le manifeste."
+      },
+      {
+        "file": "prototype/assets/materials/v011/salt_concrete.png",
+        "bytes": 3287966,
+        "sha256": "7299270d824a23a54a642dd528e215047fd41173b7765b0ad6de1723b064d4c9",
+        "status": "pass",
+        "observation": "Albedo original examiné individuellement et en répétition 2 × 2 ; dimensions RGB 1254² et empreinte vérifiées. Les raccords et limites artistiques sont consignés dans le manifeste."
+      },
+      {
+        "file": "prototype/assets/materials/v011/smoked_oak.png",
+        "bytes": 2386981,
+        "sha256": "a5b4e3bb1859b1a6b722463ea03c48de8e68649921122d768c09f1698aff8b35",
+        "status": "pass",
+        "observation": "Albedo original examiné individuellement et en répétition 2 × 2 ; dimensions RGB 1254² et empreinte vérifiées. Les raccords et limites artistiques sont consignés dans le manifeste."
+      },
+      {
+        "file": "prototype/assets/materials/v011/teal_carpet.png",
+        "bytes": 3803283,
+        "sha256": "0c899389b28ab6169fefa09acf093aa543131e859ddc223529da076f7f426da5",
+        "status": "pass",
+        "observation": "Albedo original examiné individuellement et en répétition 2 × 2 ; dimensions RGB 1254² et empreinte vérifiées. Les raccords et limites artistiques sont consignés dans le manifeste."
+      }
+    ],
+    "reference_documents": [
+      {
+        "file": "docs/The-Tower-Descent-Bible-v0.9.docx",
+        "bytes": 319296,
+        "sha256": "f718404121ba6c6990cf7df6e0988455881a0aa9e4188af6e63da14b319dbe20",
+        "status": "pass",
+        "observation": "Document conservé octet par octet depuis sa livraison approuvée ; empreinte historique contrôlée. Aucune nouvelle revue des pages n’est revendiquée dans ce chantier."
+      },
+      {
+        "file": "docs/The-Tower-Descent-Bible-v0.9.pdf",
+        "bytes": 3064715,
+        "sha256": "25776d758dfb7070afb4157f15859864c6f991809fba71f78cf6f442cbe61121",
+        "status": "pass",
+        "observation": "Document conservé octet par octet depuis sa livraison approuvée ; empreinte historique contrôlée. Aucune nouvelle revue des pages n’est revendiquée dans ce chantier."
+      },
+      {
+        "file": "docs/The-Tower-Descent-Continuation-v0.10.docx",
+        "bytes": 47874,
+        "sha256": "d794de99d6c96c476c93fc1c8ad8495ee493d565cbf402933bc209bd15a2bf75",
+        "status": "pass",
+        "observation": "Document conservé octet par octet depuis sa livraison approuvée ; empreinte historique contrôlée. Aucune nouvelle revue des pages n’est revendiquée dans ce chantier."
+      },
+      {
+        "file": "docs/The-Tower-Descent-Continuation-v0.10.pdf",
+        "bytes": 145829,
+        "sha256": "5e76315b269f28d1ca8bc07652981408704524af444fcfc33528605c4e47d25c",
+        "status": "pass",
+        "observation": "Document conservé octet par octet depuis sa livraison approuvée ; empreinte historique contrôlée. Aucune nouvelle revue des pages n’est revendiquée dans ce chantier."
+      }
+    ],
+    "previews": [
+      {
+        "file": "docs/assets/v0.11/renders/bolt_cutter.png",
+        "bytes": 84159,
+        "sha256": "fac9acf59145d094e0436f934cd8a80ca1f730b6e54e070d9bf9b5aab30ec9a8",
+        "status": "pass",
+        "observation": "L’outil entier est cadré ; les deux manches rouges, les poignées noires, les biellettes et les mâchoires opposées sont nettement identifiables.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/carabiner.png",
+        "bytes": 88747,
+        "sha256": "91883cc5bc491d8385a3426e8060ff9d9d706bae084308eb33d61189f16febbc",
+        "status": "pass",
+        "observation": "Le cadre en D, le doigt distinct et la bague de verrouillage striée sont lisibles ; le léger facettage reste acceptable pour cet accessoire de jeu.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/descender.png",
+        "bytes": 90982,
+        "sha256": "0915664f78f3166cc092a9f77d3afef9c197e059058da825a747382a7941ec85",
+        "status": "pass",
+        "observation": "Les deux ouvertures, le col et les oreilles de retenue donnent une silhouette reconnaissable ; le facettage visible ne masque pas les volumes.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/detail_bolt_cutter.png",
+        "bytes": 765860,
+        "sha256": "947ba603ec9a5e23ba39d0f60555362409ebc314200abc0fac9f56055cd9ab54",
+        "status": "pass",
+        "observation": "Les faces des mâchoires, les pivots et les plaques du mécanisme sont distincts ; aucun recouvrement de surface gênant n’apparaît.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/detail_extinguisher.png",
+        "bytes": 804185,
+        "sha256": "3781e56ce7e9acf6a6960d766d391fb92331f6475f88906c1947994fd3728397",
+        "status": "pass",
+        "observation": "La bague, la valve, les leviers, la goupille, la jauge, le tuyau et l’étiquette ABC sont lisibles dans ce gros plan correctement cadré.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/detail_fire_axe.png",
+        "bytes": 714018,
+        "sha256": "3f445cc3ce612dbb224cac8197bb8e31500cf72d0d36fb9f4a24b20044758535",
+        "status": "pass",
+        "observation": "L’épaisseur de la lame, son biseau clair, le pic, la douille rouge et ses fixations sont visibles ; aucune pièce flottante ni surface noire parasite.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/detail_halligan.png",
+        "bytes": 666225,
+        "sha256": "e4660121240c8d7333a223bf1991354f32310d9f332fafca22d58fea27ee6e1c",
+        "status": "pass",
+        "observation": "La bande noire sur l’herminette et le triangle noir au raccord du col ont disparu ; le biseau clair, les raccords métalliques et le pic sont lisibles sans artefact de surface coplanaire.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/emergency_beacon.png",
+        "bytes": 92029,
+        "sha256": "97b7ba33ddff993c5c432c4e36337108b105ae6d22e656ea67e90a223a9d57ad",
+        "status": "pass",
+        "observation": "Le pied en caoutchouc, le corps jaune protégé, le dôme orange nervuré et le bouton sont séparés ; la silhouette de balise reste claire.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/equipment_case.png",
+        "bytes": 93737,
+        "sha256": "3d550c6fdf4c8b54b358bf5e3935e3db480c1687e59e2bd02531eb9b8e315e7c",
+        "status": "pass",
+        "observation": "Le joint du couvercle, la poignée, les fermoirs jaunes, les nervures de protection et l’emblème médical restent lisibles sans recadrage.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/extinguisher.png",
+        "bytes": 89781,
+        "sha256": "1929905cdfd99c87874f8ea929fd9684a00d7ccbb61860ba0de727b4258d668e",
+        "status": "pass",
+        "observation": "La silhouette complète distingue le corps rouge, le socle, la poignée, la jauge et le tuyau ; l’étiquette ABC est reconnaissable.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/fire_axe.png",
+        "bytes": 81168,
+        "sha256": "18f7dcc15d25c4b551f0617e883dc4229f87cf07099c36fc144fcfb01c6b8fcb",
+        "status": "pass",
+        "observation": "La hache entière tient dans le cadre ; lame, pic, manche jaune et grip noir se distinguent nettement.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/halligan.png",
+        "bytes": 80210,
+        "sha256": "c296569267607ad3b4855c3cc3b22b15e821a6f5f17ac1cf4fc6600de9d04922",
+        "status": "pass",
+        "observation": "La fourche, le manche avec son grip et la tête corrigée sont entièrement visibles ; aucun artefact gênant ne subsiste dans cette vue d’ensemble.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/oxygen_cylinder.png",
+        "bytes": 87399,
+        "sha256": "4d457433d260136a0f5a28db2535d3cc604d6837a9708840b46ac083f4dddeb0",
+        "status": "pass",
+        "observation": "Le corps vert, l’épaule blanche, le robinet, le manomètre, le tuyau et l’étiquette O2 distinguent clairement la bouteille de l’extincteur.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/portable_worklight.png",
+        "bytes": 87467,
+        "sha256": "4b618768d838c5f7eee768f993b6681d1e692aabacb971bb8dab3a32aaed91de",
+        "status": "pass",
+        "observation": "Le piètement jaune évasé, les pieds noirs, les boutons d’inclinaison, la matrice lumineuse et la poignée sont séparés et correctement cadrés.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/rescue_flashlight.png",
+        "bytes": 79973,
+        "sha256": "4316b2795d206f88497c0a3598157ed6698e09c1ff601ae0bad9e1621b8c186c",
+        "status": "pass",
+        "observation": "Le grip strié, la tête jaune évasée, la lentille, la couronne protégée et le bouton latéral rouge sont lisibles.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/rescue_helmet.png",
+        "bytes": 94968,
+        "sha256": "0f6b3ab654ba87c627b2d8c733037e54a1071b866d7fc17b6f3198ba64092a7b",
+        "status": "pass",
+        "observation": "Les bandes réfléchissantes suivent maintenant la courbure de la coque ; les languettes flottantes du rendu CI4 ont disparu, et le casque reste entièrement cadré.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/rescue_radio.png",
+        "bytes": 89729,
+        "sha256": "6e4c1ddfed4ce0029b1e1bb7e5a2df1fc806a2ec8cdae6bdd665c87c8bfc7fa5",
+        "status": "pass",
+        "observation": "L’antenne, les commandes supérieures, la grille du haut-parleur, l’écran CH01 et le clavier distinguent clairement la radio.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/rescue_stretcher.png",
+        "bytes": 90079,
+        "sha256": "317497024fdecf25f85536a827ce93d584478ae27a67a8dcc6a7832bd9f51830",
+        "status": "pass",
+        "observation": "Le cadre tubulaire, la toile turquoise, les trois sangles avec boucles rouges et les poignées orange sont visibles ; aucune extrémité n’est coupée.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/rope_coil.png",
+        "bytes": 99521,
+        "sha256": "8f9be137648e039ed35bc27bf358cdd79b913dca1f8e7b05d0b8f90e9558ba6d",
+        "status": "pass",
+        "observation": "Les tours de corde, les attaches noires et le brin libre à embout rouge forment un volume lisible sans confusion de silhouette.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/renders/trauma_bag.png",
+        "bytes": 96805,
+        "sha256": "0bd1e2fee71bd206bb303844115939be389e7c5eccd5c5ac379e3614e4b7bc3b",
+        "status": "pass",
+        "observation": "Les poignées, les sangles noires, la poche frontale et la croix médicale se distinguent sur le sac rouge entièrement cadré.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      },
+      {
+        "file": "docs/assets/v0.11/rescue_equipment_contact_sheet.png",
+        "bytes": 1292030,
+        "sha256": "558c7f7a623681c8811e631b8d0edeaceef24a02532be9d55f3562ac0cb93254",
+        "status": "pass",
+        "observation": "Les seize cases, leurs noms, dimensions et nombres de triangles restent lisibles sans chevauchement ; les vignettes du casque et du Halligan montrent les géométries corrigées.",
+        "review_basis": "Revue individuelle déjà accomplie, octets identiques après les corrections du runtime."
+      }
+    ],
+    "review_method": "Les 21 aperçus Blender finaux ont été ouverts individuellement après la dernière génération des modèles, dont les détails du casque et du Halligan corrigés. Leurs octets sont inchangés dans la nouvelle construction native. Les huit textures originales et leurs répétitions exactes 2 × 2 ont été vues individuellement ; les modèles sont validés structurellement et importés dans Godot. Les guides ont été relus. La source Blender et les deux manifestes proviennent de la génération contrôlée. Les quatre documents Word/PDF historiques restent identiques à leurs livraisons approuvées ; ils ne sont pas présentés comme nouvellement rerendus."
+  }
+}

@@ -1,0 +1,2 @@
+Warning: failed to launch javaldx - java may not function correctly
+convert /home/runner/work/The-Descents/The-Descents/docs/The-Tower-Descent-Bible-v0.7.docx as a Writer document -> /tmp/tower-v07-document-y6bq5pfg/pdf/The-Tower-Descent-Bible-v0.7.pdf using filter : writer_pdf_Export

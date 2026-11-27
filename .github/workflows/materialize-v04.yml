@@ -1,0 +1,83 @@
+name: Materialize verified v0.4 release binaries
+
+on:
+  push:
+    branches: [feat/live-tower-collapse]
+    paths: ['.publication/v0.4/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: materialize-tower-descent-v04
+  cancel-in-progress: false
+
+jobs:
+  materialize:
+    if: github.ref == 'refs/heads/feat/live-tower-collapse'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out the exact publication source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - name: Reconstruct and verify every release binary
+        run: python3 tools/materialize_published_binaries.py --manifest .publication/v0.4/manifest.json --clean-pieces
+      - name: Preserve verified files if the branch changes
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: tower-descent-v04-verified-${{ github.sha }}
+          path: |
+            releases/The-Tower-Descent-v0.4-Windows-x64.zip
+            releases/The-Tower-Descent-v0.4-Sources.zip
+            docs/The-Tower-Descent-Bible-v0.4.pdf
+            docs/The-Tower-Descent-Bible-v0.4.docx
+            .publication/v0.4/manifest.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0
+      - name: Commit only if the publication source is still the branch head
+        shell: bash
+        run: |
+          set -euo pipefail
+          target='refs/heads/feat/live-tower-collapse'
+          remote_head="$(git ls-remote origin "$target" | cut -f1)"
+          if [[ "$remote_head" != "$GITHUB_SHA" ]]; then
+            echo 'Branch changed. Verified binaries remain in the workflow artifact; no commit was pushed.'
+            exit 0
+          fi
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          mapfile -d '' -t files < <(python3 - <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+          manifest = json.loads(Path('.publication/v0.4/manifest.json').read_text())
+          for record in manifest['files']:
+              sys.stdout.write(record['path'] + '\0')
+          PY
+          )
+          git add -- "${files[@]}"
+          if [[ -n "$(git ls-files -- .publication/v0.4/chunks)" ]]; then
+            git add -u -- .publication/v0.4/chunks
+          fi
+          if git diff --cached --quiet; then
+            echo 'All complete binaries were already verified and committed.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Materialize verified v0.4 distributions and remove temporary transport pieces'
+          if git push origin "HEAD:$target"; then
+            echo 'Complete verified binaries committed to the publication branch.'
+          else
+            remote_head="$(git ls-remote origin "$target" | cut -f1)"
+            if [[ "$remote_head" != "$GITHUB_SHA" ]]; then
+              echo 'Branch changed during publication. Verified artifact retained; no force push attempted.'
+              exit 0
+            fi
+            exit 1
+          fi

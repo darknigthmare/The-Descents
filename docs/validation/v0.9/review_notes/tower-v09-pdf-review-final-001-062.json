@@ -1,0 +1,533 @@
+{
+  "reviewer": "AI — /root/v09_docs",
+  "source_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
+  "pdf_file": "/workspace/scratch/d0ef31297958/The-Descents/docs/The-Tower-Descent-Bible-v0.9.pdf",
+  "pdf_sha256": "25776d758dfb7070afb4157f15859864c6f991809fba71f78cf6f442cbe61121",
+  "page_count": 186,
+  "reviewed_page_range": [
+    1,
+    62
+  ],
+  "reviewed_page_count": 62,
+  "method": "Chaque PNG CI exact a été ouvert individuellement à sa taille native avec view_image ; au plus deux pages par appel, sans planche-contact ni substitution par extraction de texte. Titres, corps, tableaux, en-têtes et pieds examinés.",
+  "all_pass": true,
+  "pages": [
+    {
+      "page": 1,
+      "status": "pass",
+      "notes": "Couverture, version, attribution, introduction et tableau de périmètre complets ; toutes les cellules lisibles, aucune coupure.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-001.png",
+      "sha256": "bc3fa7a9e1433045871ce6cc6f6ad1d1f98efc6a4b39edab1011272f1f70c8a4",
+      "opened_individually": true
+    },
+    {
+      "page": 2,
+      "status": "pass",
+      "notes": "Sommaire des deux parties et quatorze annexes complet ; liens, guide de lecture, en-tête et pied 2 / 186 nets.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-002.png",
+      "sha256": "d92afa211c96b0691257d6738c71bed7a80ae37f28c1bf7e7bb7445cc3c70e17",
+      "opened_individually": true
+    },
+    {
+      "page": 3,
+      "status": "pass",
+      "notes": "Titre de partie, version sur deux lignes et introduction dense entièrement lisibles ; liens et paragraphes dans les marges.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-003.png",
+      "sha256": "9b7100a39288ab03d4bf4f1d44622db121648406ce9ba0950e14bde529ac0201",
+      "opened_individually": true
+    },
+    {
+      "page": 4,
+      "status": "pass",
+      "notes": "Intention, promesse et tableau de direction lisibles ; six premières lignes complètes jusqu’à la durée de campagne, continuation attendue.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-004.png",
+      "sha256": "d63ed5c22712f44a5be90c13d4d4c192ba995c1fff045ba89417e5ca1db4fc25",
+      "opened_individually": true
+    },
+    {
+      "page": 5,
+      "status": "pass",
+      "notes": "Suite du tableau de direction complète, y compris durée du prototype ; références et principes lisibles, paragraphe Refuge poursuivi page suivante.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-005.png",
+      "sha256": "5219a686ede8dd664172886830382ec349508d1821f3119d44835e37056c6f27",
+      "opened_individually": true
+    },
+    {
+      "page": 6,
+      "status": "pass",
+      "notes": "Continuation du refuge, génération et géographie de Nacre lisibles ; fin de paragraphe de catastrophe reportée proprement, aucune troncature de ligne.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-006.png",
+      "sha256": "a58be3f02bebf10f3a6c6762954f3698d30db2595bc971cc98ed6e52e9c5b375",
+      "opened_individually": true
+    },
+    {
+      "page": 7,
+      "status": "pass",
+      "notes": "Suite de la catastrophe, antécédents et tableau chronologique lisibles ; douze lignes entières avec dernière entrée sur la descente au 29.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-007.png",
+      "sha256": "2d0ecd21f839b515ccfd31cd224c1970bb105344c5900f6c27380c932836c9ce",
+      "opened_individually": true
+    },
+    {
+      "page": 8,
+      "status": "pass",
+      "notes": "Dernière ligne chronologique bien reprise ; programme SILLAGE et sept premières questions du registre lisibles, cellules intactes.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-008.png",
+      "sha256": "93423797057488b748cab512dfcf13dcf116d6f6bdb62056ab847a57811407c4",
+      "opened_individually": true
+    },
+    {
+      "page": 9,
+      "status": "pass",
+      "notes": "Deux dernières questions du registre reprises sous en-tête ; conclusion et portraits Alex/Varga/Malik complets, aucun chevauchement.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-009.png",
+      "sha256": "77e04d08122de8fa72504fd60383c970fef951277e2c9cdde5636a983e7f51b9",
+      "opened_individually": true
+    },
+    {
+      "page": 10,
+      "status": "pass",
+      "notes": "Portraits Inès/Alma/Eva et équipes lisibles ; dernier paragraphe continue normalement, pied 10 / 186 dégagé.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-010.png",
+      "sha256": "497b399a74584106d018974021f546a98a851c9ce4d12265b4dc98e6f3289b7b",
+      "opened_individually": true
+    },
+    {
+      "page": 11,
+      "status": "pass",
+      "notes": "Suite de la population puis actes un à trois entièrement lisibles ; paragraphes denses sans collision, dernières lignes au-dessus du pied.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-011.png",
+      "sha256": "d1cfa0f9f92076efb912e37e3cffaece47bc3230e261b66084f303f7bfa4524a",
+      "opened_individually": true
+    },
+    {
+      "page": 12,
+      "status": "pass",
+      "notes": "Actes quatre/cinq et épilogue lisibles ; tableau des fins contient trois lignes complètes, continuation naturelle.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-012.png",
+      "sha256": "0007dcd537aa409a4da2301ae765662044ffcec0099a96a4bc514333cb48e7a9",
+      "opened_individually": true
+    },
+    {
+      "page": 13,
+      "status": "pass",
+      "notes": "Dernière fin et boucle de jeu lisibles ; actions et début du rappel complets, paragraphe d’escalier poursuivi sans perte à la page suivante.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-013.png",
+      "sha256": "c0ee83c1457b5a94f1722c79be7041540e33504447af7e4a23873ba170af9b82",
+      "opened_individually": true
+    },
+    {
+      "page": 14,
+      "status": "pass",
+      "notes": "Tableau des huit états et paragraphes de rappel lisibles. Accompagnement se replie sur deux lignes dans la cellule, toutes les lettres restant visibles ; détail non bloquant.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-014.png",
+      "sha256": "ca5b3a0510bb3e22d4c9981c1485af2a428a2e0256fddab7eb5541c0957e2210",
+      "opened_individually": true
+    },
+    {
+      "page": 15,
+      "status": "pass",
+      "notes": "Équipement et tableau à quatre colonnes lisibles ; lignes Lampe à Balise entières, dernière bordure au-dessus du pied.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-015.png",
+      "sha256": "de47721994c2751b1c069ec9375d5bc18c9148f089039699ddabc7490fb68aa6",
+      "opened_individually": true
+    },
+    {
+      "page": 16,
+      "status": "pass",
+      "notes": "Suite du tableau avec Kit et Marqueur présente ; chapitre survivants, sept états et situations réutilisables entièrement lisibles.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-016.png",
+      "sha256": "f00ed014f88bfb5d03d85b7c1b9c0cd7687e5311fd84e5d2ed18e2d71acc6b6a",
+      "opened_individually": true
+    },
+    {
+      "page": 17,
+      "status": "pass",
+      "notes": "Stress, vérification et début des présences lisibles ; tableau à cinq colonnes conserve ses quatre premières lignes complètes.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-017.png",
+      "sha256": "9c6c3767a98f8f4fb46813d4c4fc064562811eb41e48fe793421e62703c84c6a",
+      "opened_individually": true
+    },
+    {
+      "page": 18,
+      "status": "pass",
+      "notes": "Six présences suivantes et en-tête répété présents ; défense, échec et amorce de génération lisibles sans dépassement.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-018.png",
+      "sha256": "45cec840239a6efbb102d32be88f3dc0c0fbf70a3b491c1a4d01c760f5f3c193",
+      "opened_individually": true
+    },
+    {
+      "page": 19,
+      "status": "pass",
+      "notes": "Structure, ordre et invariants de génération lisibles ; dix étapes entières et première ligne du tableau de rythme intacte.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-019.png",
+      "sha256": "fece02c83ede8704b5925e48c086404ecba3376ce904674f578bb0a4c07d38d1",
+      "opened_individually": true
+    },
+    {
+      "page": 20,
+      "status": "pass",
+      "notes": "Six lignes du tableau de rythme reprises avec en-tête ; contrat de données et cinq premières lignes des événements lisibles sans coupure.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-020.png",
+      "sha256": "ae09967d6bab8d3a141075cd3d0d3734c0b8f15ce650056ce5362913025a3861",
+      "opened_individually": true
+    },
+    {
+      "page": 21,
+      "status": "pass",
+      "notes": "Longue continuation des événements entièrement lisible, du Jouet interrompu au Relais de trop ; cellules à plusieurs lignes et dernière bordure intactes.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-021.png",
+      "sha256": "302c319dd5bd35c2afcb7685779f7d7dca4ff13ae4ebc74aaee3c2130053b1b2",
+      "opened_individually": true
+    },
+    {
+      "page": 22,
+      "status": "pass",
+      "notes": "Deux derniers événements présents ; titre, introduction et onze familles modulaires complets, sans chevauchement ni glyphes manquants.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-022.png",
+      "sha256": "8de08d9af360c2851012b46586ed60a105ba29985bd089ba9de14f5e62d187bc",
+      "opened_individually": true
+    },
+    {
+      "page": 23,
+      "status": "pass",
+      "notes": "Fin des modules, mer comme repère et direction visuelle/sonore entièrement lisibles ; titres Son et Musique suivis de leur corps, aucune collision.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-023.png",
+      "sha256": "b0b5dc93794ecf5c292455796ab9342a65f80cfe8df0fc9be5a625447fe363b6",
+      "opened_individually": true
+    },
+    {
+      "page": 24,
+      "status": "pass",
+      "notes": "Interface, huit options d’accessibilité et sauvegarde lisibles ; code et caractères accentués rendus, dernière phrase se poursuit normalement.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-024.png",
+      "sha256": "a2f762a36697309198e7652068282183f78fe9c573f4e944b88fe47e10e424ad",
+      "opened_individually": true
+    },
+    {
+      "page": 25,
+      "status": "pass",
+      "notes": "Suite de la sauvegarde et ouverture de campagne lisibles ; liens, sous-titres Approche/Toit/Première descente et leurs paragraphes complets.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-025.png",
+      "sha256": "c67941d5d2eb1027d0f33d83ab53d3f14bfa830bcd015451122adccb2316d137",
+      "opened_individually": true
+    },
+    {
+      "page": 26,
+      "status": "pass",
+      "notes": "Baie Est, premières contradictions et objectif de validation nets ; tableau de périmètre présente Toit, 30 et 29 intégralement, continuation attendue.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-026.png",
+      "sha256": "2c5c532771eea5eeee50cf12b9133cdf61bcea3ee08dbdfc3b788bc6ba345ae9",
+      "opened_individually": true
+    },
+    {
+      "page": 27,
+      "status": "pass",
+      "notes": "Quatre dernières zones du périmètre reprises intégralement ; limites et critères fonctionnels lisibles jusqu’à la dernière puce, suite en page suivante.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-027.png",
+      "sha256": "4932b7ea3be1b3c0291f817b2936b7399972fffad25c4813949346ce0c527b85",
+      "opened_individually": true
+    },
+    {
+      "page": 28,
+      "status": "pass",
+      "notes": "Fin des critères, architecture et tableau des dix composants complets ; début du plan de production correctement espacé, pied 28 / 186 dégagé.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-028.png",
+      "sha256": "1c438953e7f6c4ab9170198ef97940622d15065184672a1b40d74dbf7eb00cfd",
+      "opened_individually": true
+    },
+    {
+      "page": 29,
+      "status": "pass",
+      "notes": "Jalons deux à six lisibles ; tableau des risques conserve cinq premières lignes entières et ses trois colonnes, sans dépassement.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-029.png",
+      "sha256": "6093873eaa02a865206b588fddf4415ca02f247153d992f0ff0a23b5a519e3cc",
+      "opened_individually": true
+    },
+    {
+      "page": 30,
+      "status": "pass",
+      "notes": "Cinq risques restants repris avec en-tête ; extension Mountain Hole et sept exemples de dialogue complets, guillemets et accents rendus.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-030.png",
+      "sha256": "9f3c7cc8cb1fd6c9a150c1265a54b7aebe3e48026c758cb1426ac5410486ba87",
+      "opened_individually": true
+    },
+    {
+      "page": 31,
+      "status": "pass",
+      "notes": "Registre des décisions et historique de production lisibles ; gras, liens et nombres bien rendus ; dernière phrase poursuit en page 32 sans coupe.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-031.png",
+      "sha256": "0fa3cd124ac6ff6d29efabc278b13663007493373b8df822dcb564228ab75fca",
+      "opened_individually": true
+    },
+    {
+      "page": 32,
+      "status": "pass",
+      "notes": "Fin de phrase puis directions 0.8 et 0.9 complètes ; les mentions historiques 60 et actuelles 64 sont lisibles, titre et lien d’annexe intacts.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-032.png",
+      "sha256": "3668301a5c579d76671b5d912f7e40a4457e152a76f93bd271fb0fb9c476d674",
+      "opened_individually": true
+    },
+    {
+      "page": 33,
+      "status": "pass",
+      "notes": "Ouverture du catalogue, version et périmètre lisibles ; règles et première ligne A-TOIT du tableau à cinq colonnes complètes.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-033.png",
+      "sha256": "22ef80e141752dc495dae14ddfbb422accc57e6e6ac589cf5807c7cfdcbf060d",
+      "opened_individually": true
+    },
+    {
+      "page": 34,
+      "status": "pass",
+      "notes": "Tableau des étages A30 à A12 complet sur la page ; 19 lignes, cinq colonnes, en-tête répété et toutes les cellules lisibles.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-034.png",
+      "sha256": "fafa0e30ab23a5cf5217ccf32fe9e92f768b4ac766a2364625f9901183aa899b",
+      "opened_individually": true
+    },
+    {
+      "page": 35,
+      "status": "pass",
+      "notes": "Suite A11 à A00 et introduction des liaisons lisibles ; première ligne R31_30 entière au bas du tableau, continuation correctement présente en page 36.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-035.png",
+      "sha256": "42c3a99721d350e278c2fbf8dc5b33f8095fc574984e8d97ca007dbfe50e0535",
+      "opened_individually": true
+    },
+    {
+      "page": 36,
+      "status": "pass",
+      "notes": "Ancien défaut corrigé : les cinq lignes S30_29, R29_28, S28_27, R27_26 et S26_25 sont présentes et lisibles sous l’en-tête répété ; texte des stations et fiche A TOIT complets.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-036.png",
+      "sha256": "7c9261656108970fa64cd9c2f0780a229adf7beab80fe010aba1a5d4ab1529d6",
+      "opened_individually": true
+    },
+    {
+      "page": 37,
+      "status": "pass",
+      "notes": "Suite du toit, fiche A30 et début d’A29 lisibles ; liaisons locales et champs en gras intacts, dernière phrase poursuivie proprement.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-037.png",
+      "sha256": "ba1ecd2d733dfab6819c2d4eb96a69825e851490788407529e41b7d44d2c229f",
+      "opened_individually": true
+    },
+    {
+      "page": 38,
+      "status": "pass",
+      "notes": "Continuation d’A29, fiche A28 et début d’A27 complets à l’écran ; paragraphes et labels sans chevauchement, dernier champ Variables lisible.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-038.png",
+      "sha256": "79f84ec86d1c20a9a032ede7ec61c84029531e828fed285ce9a3adf7b97f463e",
+      "opened_individually": true
+    },
+    {
+      "page": 39,
+      "status": "pass",
+      "notes": "Fin d’A27, A26 et début du refuge A25 lisibles ; règles locales, anomalie et variables complètes, aucune ligne rognée.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-039.png",
+      "sha256": "331a8252825ac9634bccf5446747c8258fc2279890b57d162565c706c73f52fd",
+      "opened_individually": true
+    },
+    {
+      "page": 40,
+      "status": "pass",
+      "notes": "Suite du refuge, A24, A23 et amorce A22 correctement composées ; titres accompagnés de corps, toutes les dernières lignes restent au-dessus du pied.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-040.png",
+      "sha256": "52509c40a37df1936d0d7396522e272143828056b15ae5fabff888f7d76275f2",
+      "opened_individually": true
+    },
+    {
+      "page": 41,
+      "status": "pass",
+      "notes": "Suite d’A22, cuisines A21, refuge A20 et début d’A19 lisibles ; champs bien espacés, corps entier dans les marges.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-041.png",
+      "sha256": "047008232a29c8e72ab2bd75581ee5a4ccc599cc7445cc9495982a4b6361fb06",
+      "opened_individually": true
+    },
+    {
+      "page": 42,
+      "status": "pass",
+      "notes": "Fin d’A19, fiches A18/A17 et début d’A16 lisibles ; champs et accents intacts, aucune ligne coupée malgré la page dense.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-042.png",
+      "sha256": "c18e6ea6fcc9c5658e6c5bab2533cfd0832cee7aa51aedf5aca7dbf3f6047ed9",
+      "opened_individually": true
+    },
+    {
+      "page": 43,
+      "status": "pass",
+      "notes": "Invariant d’A16, refuge A15 et fiches A14/A13 entières ; hiérarchie de titres et champs lisible, marges et pied respectés.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-043.png",
+      "sha256": "9354b8bbb44e645b54ff3053a2ffa4390f63d4e78eee18a9dcc0f5ec7b434801",
+      "opened_individually": true
+    },
+    {
+      "page": 44,
+      "status": "pass",
+      "notes": "Fiches A12, A11, A10 et amorce A09 lisibles ; paragraphes sans collision ni texte tronqué, continuation A09 attendue.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-044.png",
+      "sha256": "abd2a2646c8efc7d3ebf0e7d478aadb1d6dc660df26c622a092e3f4a6872bb1b",
+      "opened_individually": true
+    },
+    {
+      "page": 45,
+      "status": "pass",
+      "notes": "Fin d’A09, géologie A08, archives A07 et début d’A06 complets ; texte et champs de fin de page nets, sans rognage.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-045.png",
+      "sha256": "b148f3f2a3979074f7f2aca708c05e9c0cecf1c04efcc516648820970254dc0b",
+      "opened_individually": true
+    },
+    {
+      "page": 46,
+      "status": "pass",
+      "notes": "Suite d’A06, refuge A05, musée A04 et parking A03 lisibles ; titre du socle, sous-titres et paragraphes clairement séparés.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-046.png",
+      "sha256": "5c80a7502a0e9f568856cb2f8cb6a89880897cd487eede59873d3016baf1e4b7",
+      "opened_individually": true
+    },
+    {
+      "page": 47,
+      "status": "pass",
+      "notes": "Fin d’A03 puis A02/A01/A00 lisibles ; tous les champs de la terrasse et de la rupture sont présents, dernière ligne entière.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-047.png",
+      "sha256": "2e739c6b35a70924e144b8a0c73a125701dde6678d81003efaa2a6df770fd91f",
+      "opened_individually": true
+    },
+    {
+      "page": 48,
+      "status": "pass",
+      "notes": "Chapitre Hespérie et ses six espaces entièrement lisibles ; sous-titres longs, accents et fin du relais des absents bien rendus.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-048.png",
+      "sha256": "ef77a3e3fc081b38aaa13cba5ff2ac8cc7346502bc5b073ce77cad986b683845",
+      "opened_individually": true
+    },
+    {
+      "page": 49,
+      "status": "pass",
+      "notes": "Anciens bains S01 à S05 et début S06 lisibles ; chapitre et sous-titres nets, dernière phrase du puits poursuit proprement.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-049.png",
+      "sha256": "5a98ec6aefd3c592e4f9b784eb727ac624fc86056a8d35b3545acdc94a46d6ee",
+      "opened_individually": true
+    },
+    {
+      "page": 50,
+      "status": "pass",
+      "notes": "Fin S06, sas S07 et bunker B01 à B05 lisibles ; aucun paragraphe ni label rogné, B05 se poursuit normalement à la page suivante.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-050.png",
+      "sha256": "46c87505174ca7afd74c7e246e3d8e39ef74c4856c851404b442ce9da8d9c1da",
+      "opened_individually": true
+    },
+    {
+      "page": 51,
+      "status": "pass",
+      "notes": "Suite B05, B06, seuil P666 et secteurs I01 à I04 lisibles ; nombres, liens et accents corrects ; sortie amorcée avec continuation normale.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-051.png",
+      "sha256": "b47e68ff4b9b3574a8b6d5f136c36f29c0b8af1a7af2726a72c9292b56a65309",
+      "opened_individually": true
+    },
+    {
+      "page": 52,
+      "status": "pass",
+      "notes": "Fin de sortie, six lignes M01–M06 du tableau Mountain Hole et validation du catalogue complètes ; quatre colonnes lisibles sans débordement.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-052.png",
+      "sha256": "da2d4f1ab15bb946fa9aeb2d6012b0a1484decd90db16a1eb469397e2143abe2",
+      "opened_individually": true
+    },
+    {
+      "page": 53,
+      "status": "pass",
+      "notes": "Assemblage des trente étages, avertissement de périmètre et fiches A30–A28 complets ; symboles de dimensions, nombres et liens lisibles.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-053.png",
+      "sha256": "691a0c070eeb9e13975177ae545a8f915b34d21b948b608fd08f137e2e7572f5",
+      "opened_individually": true
+    },
+    {
+      "page": 54,
+      "status": "pass",
+      "notes": "Fiches d’assemblage A27 à A23 entièrement lisibles ; cinq sous-titres avec leurs paragraphes complets, aucun débordement ni glyphe manquant.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-054.png",
+      "sha256": "2ec5ff3071ccfc4f42a42c4cb2ba1db4bfd758d094ec31ea6fc7389522cdbaec",
+      "opened_individually": true
+    },
+    {
+      "page": 55,
+      "status": "pass",
+      "notes": "Assemblages A22 à A18 lisibles ; dimensions, références P/E/SC et derniers paragraphes intacts ; A18 continue à la page suivante.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-055.png",
+      "sha256": "c13d39b1c1415950b2c8464a409b751dc1b16f135fc0f279e65d66816b2a9981",
+      "opened_individually": true
+    },
+    {
+      "page": 56,
+      "status": "pass",
+      "notes": "Suite d’A18 puis assemblages A17 à A13 entièrement lisibles ; signes ×, virgules décimales et tirets rendus sans collision.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-056.png",
+      "sha256": "2c82d165ab8dc0f0da444142552e2d34348c4f07f0165bd0083cc42947e54262",
+      "opened_individually": true
+    },
+    {
+      "page": 57,
+      "status": "pass",
+      "notes": "Assemblages A12 à A08 complets ; chapitres denses mais nets, références P53/P54 et dernière ligne entièrement visibles.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-057.png",
+      "sha256": "3ec9068b263f88dbb08b682206322176d0ea44bc5c6967fbd6cd2a4a94c5c5de",
+      "opened_individually": true
+    },
+    {
+      "page": 58,
+      "status": "pass",
+      "notes": "Assemblages A07 à A03 et début A02 lisibles ; toutes les dimensions et les lignes restent dans les marges, pied 58 / 186 dégagé.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-058.png",
+      "sha256": "1b32e2b78434a482dce8a800b1d8dd133453c6f98e6ac3c23f4134e53033c1e6",
+      "opened_individually": true
+    },
+    {
+      "page": 59,
+      "status": "pass",
+      "notes": "Fin d’A02, A01 et ordre de production lisibles ; espace blanc final cohérent avec la fin du catalogue, aucun contenu tronqué.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-059.png",
+      "sha256": "98a573ebbbdbbff338c0916efc590956a8fac56a73a390b4bdd67f6a391131c6",
+      "opened_individually": true
+    },
+    {
+      "page": 60,
+      "status": "pass",
+      "notes": "Titre Annexe A, version, périmètre et contrat d’extension lisibles ; routes et liens intacts, dernière phrase se poursuit normalement en page 61.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-060.png",
+      "sha256": "ebbe18bc3a7d9038ff95ccf0a209040dac5a1b84b140330fed1138afdcf66797",
+      "opened_individually": true
+    },
+    {
+      "page": 61,
+      "status": "pass",
+      "notes": "Suite du contrat d’extension, signature des méthodes et tableau des onze premiers champs complets ; code, caractères accentués et bordures lisibles.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-061.png",
+      "sha256": "13b706368627237800f8f4c689a0cea281ad5094fe5862b70258b952a1486191",
+      "opened_individually": true
+    },
+    {
+      "page": 62,
+      "status": "pass",
+      "notes": "Trois derniers champs repris sous l’en-tête ; contrat des liaisons et tableau des six données de rappel complets, paragraphes de physique et d’escalier sans rognage.",
+      "file": "/workspace/scratch/d0ef31297958/The-Descents/docs/validation/v0.9/rendered/page-062.png",
+      "sha256": "b92ff814c1741caadd088e59680607d9bffd006deaedbf509ba6d5f2d15bff2f",
+      "opened_individually": true
+    }
+  ],
+  "blocking_findings": [],
+  "non_blocking_findings": [
+    {
+      "page": 14,
+      "notes": "Accompagnement se replie sur deux lignes dans sa cellule ; le mot demeure entièrement lisible."
+    }
+  ],
+  "limitations": [
+    "Revue visuelle effectuée par un agent IA, limitée aux pages 1 à 62 du PDF CI indiqué ; les pages 63 à 186 relèvent des autres rapports.",
+    "Ce rapport évalue le rendu des pages et ne constitue pas une nouvelle validation fonctionnelle du jeu."
+  ],
+  "verification": {
+    "page_hashes_match_ci_manifest": 62,
+    "source_commit_matches_ci_manifest": true,
+    "native_png_dimensions": [
+      1415,
+      2000
+    ],
+    "running_header_and_footer_left_regions_identical_on_pages_2_to_62": true,
+    "repeated_floor_table_header_pages_34_35_identical": true
+  }
+}

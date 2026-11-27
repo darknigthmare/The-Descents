@@ -1,0 +1,201 @@
+{
+  "reviewer": "/root/continuation_world",
+  "method": "Comparaison SHA-256 des 21 PNG CI5 avec le rapport CI4 ; les 21 empreintes ayant changé, les 21 images finales ont été rouvertes individuellement avec view_image. Examen du cadrage, des volumes, des détails, des artefacts et de la lisibilité, puis nouvelle vérification des empreintes avant écriture.",
+  "stage": "CI5 — revue finale des rendus de modèles",
+  "source_commit": "28db3e7654b9b7b523369b6990035b159babae34",
+  "checkout_commit": "28db3e7654b9b7b523369b6990035b159babae34",
+  "reviewed_at_utc": "2026-11-25T17:30:44.447517+00:00",
+  "renderer": "Blender 4.0.2 / Cycles",
+  "comparison": {
+    "previous_source_commit": "1921dd7fac82bd92926cec2f922ff695e80ba06c",
+    "changed": 21,
+    "unchanged": 0,
+    "reopened": 21,
+    "verdicts_carried_forward": 0
+  },
+  "captures": [
+    {
+      "file": "docs/assets/v0.11/renders/bolt_cutter.png",
+      "sha256": "fac9acf59145d094e0436f934cd8a80ca1f730b6e54e070d9bf9b5aab30ec9a8",
+      "status": "pass",
+      "observation": "L’outil entier est cadré ; les deux manches rouges, les poignées noires, les biellettes et les mâchoires opposées sont nettement identifiables.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "fd29336a6d227f66ecb4367cf5ab7849949a14bd2f2094187c2d946da7ad416f"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/carabiner.png",
+      "sha256": "91883cc5bc491d8385a3426e8060ff9d9d706bae084308eb33d61189f16febbc",
+      "status": "pass",
+      "observation": "Le cadre en D, le doigt distinct et la bague de verrouillage striée sont lisibles ; le léger facettage reste acceptable pour cet accessoire de jeu.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "b76837c0f15da440617508d9460bfe0c2d1da3467e13cb5785097a644ef61d81"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/descender.png",
+      "sha256": "0915664f78f3166cc092a9f77d3afef9c197e059058da825a747382a7941ec85",
+      "status": "pass",
+      "observation": "Les deux ouvertures, le col et les oreilles de retenue donnent une silhouette reconnaissable ; le facettage visible ne masque pas les volumes.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "03f9209f07af92ab464ad696b19e2d7aee0fb3c94547d950402b2037f177218e"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/detail_bolt_cutter.png",
+      "sha256": "947ba603ec9a5e23ba39d0f60555362409ebc314200abc0fac9f56055cd9ab54",
+      "status": "pass",
+      "observation": "Les faces des mâchoires, les pivots et les plaques du mécanisme sont distincts ; aucun recouvrement de surface gênant n’apparaît.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "d5118b3edd7120b88e3d53687a1dc8375d6213d9edae02b976efad2c03f25797"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/detail_extinguisher.png",
+      "sha256": "3781e56ce7e9acf6a6960d766d391fb92331f6475f88906c1947994fd3728397",
+      "status": "pass",
+      "observation": "La bague, la valve, les leviers, la goupille, la jauge, le tuyau et l’étiquette ABC sont lisibles dans ce gros plan correctement cadré.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "4b79e1a7c4eec685d9133807bb6f36b5b25d74ae2f5791de360c38e8eabcac8f"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/detail_fire_axe.png",
+      "sha256": "3f445cc3ce612dbb224cac8197bb8e31500cf72d0d36fb9f4a24b20044758535",
+      "status": "pass",
+      "observation": "L’épaisseur de la lame, son biseau clair, le pic, la douille rouge et ses fixations sont visibles ; aucune pièce flottante ni surface noire parasite.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "7ec01599528ca7c2cff2f6b8fdea702231cf2cb1f90eb90192adcb4186a86b9f"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/detail_halligan.png",
+      "sha256": "e4660121240c8d7333a223bf1991354f32310d9f332fafca22d58fea27ee6e1c",
+      "status": "pass",
+      "observation": "La bande noire sur l’herminette et le triangle noir au raccord du col ont disparu ; le biseau clair, les raccords métalliques et le pic sont lisibles sans artefact de surface coplanaire.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "4e7ebab1e117d524506f7ddb8c7b001df683923594a902ac775c2e745e6e649a"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/emergency_beacon.png",
+      "sha256": "97b7ba33ddff993c5c432c4e36337108b105ae6d22e656ea67e90a223a9d57ad",
+      "status": "pass",
+      "observation": "Le pied en caoutchouc, le corps jaune protégé, le dôme orange nervuré et le bouton sont séparés ; la silhouette de balise reste claire.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "5c4e417736fee2493878021452eba44fb0e24bcd2f414271d88c2c884bbb68b8"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/equipment_case.png",
+      "sha256": "3d550c6fdf4c8b54b358bf5e3935e3db480c1687e59e2bd02531eb9b8e315e7c",
+      "status": "pass",
+      "observation": "Le joint du couvercle, la poignée, les fermoirs jaunes, les nervures de protection et l’emblème médical restent lisibles sans recadrage.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "7c106e7e3a480262360734f967422bba94623bd771404b8ab7191ff653489687"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/extinguisher.png",
+      "sha256": "1929905cdfd99c87874f8ea929fd9684a00d7ccbb61860ba0de727b4258d668e",
+      "status": "pass",
+      "observation": "La silhouette complète distingue le corps rouge, le socle, la poignée, la jauge et le tuyau ; l’étiquette ABC est reconnaissable.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "ce46c1aff6edaff0fa12073012813f902b37ab49fb1546b1230a52f0f2a99742"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/fire_axe.png",
+      "sha256": "18f7dcc15d25c4b551f0617e883dc4229f87cf07099c36fc144fcfb01c6b8fcb",
+      "status": "pass",
+      "observation": "La hache entière tient dans le cadre ; lame, pic, manche jaune et grip noir se distinguent nettement.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "a6defb2d1feb7cf04352cbbd9345a92427b4f179bdad2046ea150ef6340e6912"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/halligan.png",
+      "sha256": "c296569267607ad3b4855c3cc3b22b15e821a6f5f17ac1cf4fc6600de9d04922",
+      "status": "pass",
+      "observation": "La fourche, le manche avec son grip et la tête corrigée sont entièrement visibles ; aucun artefact gênant ne subsiste dans cette vue d’ensemble.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "2a544038ce3a6f9e54ac32a46d5bfd7fddc255bace2a48ed4dd8139002480a9e"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/oxygen_cylinder.png",
+      "sha256": "4d457433d260136a0f5a28db2535d3cc604d6837a9708840b46ac083f4dddeb0",
+      "status": "pass",
+      "observation": "Le corps vert, l’épaule blanche, le robinet, le manomètre, le tuyau et l’étiquette O2 distinguent clairement la bouteille de l’extincteur.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "90bf459f045b2f6f7dacb284503f0be1fc258af0bb31edef331eee8a5153ae24"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/portable_worklight.png",
+      "sha256": "4b618768d838c5f7eee768f993b6681d1e692aabacb971bb8dab3a32aaed91de",
+      "status": "pass",
+      "observation": "Le piètement jaune évasé, les pieds noirs, les boutons d’inclinaison, la matrice lumineuse et la poignée sont séparés et correctement cadrés.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "d23b0e87e664c77018646189b4bfbd44f4b793d1c53c28f81fba3ccdc79bc3ae"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/rescue_flashlight.png",
+      "sha256": "4316b2795d206f88497c0a3598157ed6698e09c1ff601ae0bad9e1621b8c186c",
+      "status": "pass",
+      "observation": "Le grip strié, la tête jaune évasée, la lentille, la couronne protégée et le bouton latéral rouge sont lisibles.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "f34d3971d5fbabe033b5f3ec525eb5cb24bd8ac2a9c61290496dfcab672b97cf"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/rescue_helmet.png",
+      "sha256": "0f6b3ab654ba87c627b2d8c733037e54a1071b866d7fc17b6f3198ba64092a7b",
+      "status": "pass",
+      "observation": "Les bandes réfléchissantes suivent maintenant la courbure de la coque ; les languettes flottantes du rendu CI4 ont disparu, et le casque reste entièrement cadré.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "044c9e38214c6d1ce49bc91f6a1b6e26c4097ffe69c558388f88f7a926939f33"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/rescue_radio.png",
+      "sha256": "6e4c1ddfed4ce0029b1e1bb7e5a2df1fc806a2ec8cdae6bdd665c87c8bfc7fa5",
+      "status": "pass",
+      "observation": "L’antenne, les commandes supérieures, la grille du haut-parleur, l’écran CH01 et le clavier distinguent clairement la radio.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "103bbce4c223a06ca5ab347fcd16356bf77862d659e848cacc87516d36b04999"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/rescue_stretcher.png",
+      "sha256": "317497024fdecf25f85536a827ce93d584478ae27a67a8dcc6a7832bd9f51830",
+      "status": "pass",
+      "observation": "Le cadre tubulaire, la toile turquoise, les trois sangles avec boucles rouges et les poignées orange sont visibles ; aucune extrémité n’est coupée.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "7c432fe682fd46742c84d570a568130f13ad68f68f391df04609b173b3521739"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/rope_coil.png",
+      "sha256": "8f9be137648e039ed35bc27bf358cdd79b913dca1f8e7b05d0b8f90e9558ba6d",
+      "status": "pass",
+      "observation": "Les tours de corde, les attaches noires et le brin libre à embout rouge forment un volume lisible sans confusion de silhouette.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "3ba0de528a703520b01285c3f4cdadb12a966e920d1fe9a65ab884fcd3fbcf09"
+    },
+    {
+      "file": "docs/assets/v0.11/renders/trauma_bag.png",
+      "sha256": "0bd1e2fee71bd206bb303844115939be389e7c5eccd5c5ac379e3614e4b7bc3b",
+      "status": "pass",
+      "observation": "Les poignées, les sangles noires, la poche frontale et la croix médicale se distinguent sur le sac rouge entièrement cadré.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "5dfd546c65fde7ff1895ef9008c7f2708b2064499568a2cecc7454f7bbb44bd3"
+    },
+    {
+      "file": "docs/assets/v0.11/rescue_equipment_contact_sheet.png",
+      "sha256": "558c7f7a623681c8811e631b8d0edeaceef24a02532be9d55f3562ac0cb93254",
+      "status": "pass",
+      "observation": "Les seize cases, leurs noms, dimensions et nombres de triangles restent lisibles sans chevauchement ; les vignettes du casque et du Halligan montrent les géométries corrigées.",
+      "review_basis": "Image finale rouverte individuellement avec view_image après changement SHA-256.",
+      "previous_sha256": "ac019408004c9860c970c2886ecda2fa657e3bb6c8f2f67fc98795653332cfff"
+    }
+  ],
+  "counts": {
+    "pass": 21,
+    "needs_revision": 0,
+    "fail": 0
+  },
+  "blockers": [],
+  "resolved_previous_revisions": [
+    "Casque : bandes réfléchissantes conformées à la coque, vérifiées sur l’image finale.",
+    "Halligan : suppression des deux artefacts de surfaces coplanaires, vérifiée au gros plan final.",
+    "Vue entière du Halligan et planche d’ensemble actualisées, vérifiées sur les octets finaux."
+  ],
+  "nonblocking_observations": [
+    "Un léger facettage reste visible sur certains anneaux et tubes, compatible avec la bibliothèque d’accessoires de jeu ; il ne masque ni les volumes ni les silhouettes."
+  ],
+  "scope": "Rendus Blender des modèles et planche d’ensemble ; la revue native du jeu est réalisée séparément."
+}

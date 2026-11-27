@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "version": "0.4.0",
+  "description": "Temporary connector-sized binary transport. Files are distributions only after full SHA256 verification and materialization.",
+  "reviewed_capture_source_commit": "c3f3aa23cd637c798be7be6b9cc78ef565293510",
+  "files": [
+    {
+      "path": "releases/The-Tower-Descent-v0.4-Windows-x64.zip",
+      "size": 38956689,
+      "sha256": "9aa432f6ee5bf60de8489c43b666887d5a3cd91ae658acf04068f0959d0b377d",
+      "git_sha": "aa775db71ab848adb2888d0efb689b590fc53e15",
+      "pieces": [
+        {
+          "path": ".publication/v0.4/chunks/windows-000.part",
+          "size": 9000000,
+          "sha256": "d66f0f18a2e6bcb51beb68a175eaadbe62495476c7b39225b2691b42f48b18aa",
+          "git_sha": "101275fdb4b2407d7254aaeefd3cdcf1f2172c98"
+        },
+        {
+          "path": ".publication/v0.4/chunks/windows-001.part",
+          "size": 9000000,
+          "sha256": "cf77da76e79892a138f3c3dbbd21e2a83dc0d68f627b5b85d0055c34b348cc9f",
+          "git_sha": "502d81e4979d3adbbc47ca98d7ffb9b107d41eb6"
+        },
+        {
+          "path": ".publication/v0.4/chunks/windows-002.part",
+          "size": 9000000,
+          "sha256": "2a5e68a763847b1a7e2dd3f009c85fd9c462eed5124dd1e73d806589bf08a95b",
+          "git_sha": "ee124ebf46c27478f6f92061d93d0fd9c0abc044"
+        },
+        {
+          "path": ".publication/v0.4/chunks/windows-003.part",
+          "size": 9000000,
+          "sha256": "7aeed08641e8183a042db8dfd0f41aa2f3dbec8844acab0a45c69fd658249491",
+          "git_sha": "2ce77cf422073266e358269f8d5b46b7c45a0e68"
+        },
+        {
+          "path": ".publication/v0.4/chunks/windows-004.part",
+          "size": 2956689,
+          "sha256": "dadaf132597262b4d9b0035644ebfedb6dc98bd61cbd260fee5899e5f8fa1b20",
+          "git_sha": "0b20103bd58f47cd01c058a45c6920ccbc46fbb3"
+        }
+      ]
+    },
+    {
+      "path": "releases/The-Tower-Descent-v0.4-Sources.zip",
+      "size": 16741479,
+      "sha256": "50d1f376e439e6975d9c6f12437fa59837a3f2f12c4dc8346afd843eea3c3504",
+      "git_sha": "beeeb294ca096e7ca07a40c20d746d5d221ada3d",
+      "pieces": [
+        {
+          "path": ".publication/v0.4/chunks/sources-000.part",
+          "size": 9000000,
+          "sha256": "5b9c0e1a4e946f38c82bb056ecb011ca98d46c25c1846442fbccaf70af3eb610",
+          "git_sha": "9f0fa245db45429e79d4ece6e117cc7357c53066"
+        },
+        {
+          "path": ".publication/v0.4/chunks/sources-001.part",
+          "size": 7741479,
+          "sha256": "a2c792b12ef6f7312bbfdfeb01d09a710396ed70bf01cec8117037972227e705",
+          "git_sha": "4efc605110e6efff4181b43e64472ad61d5ba28a"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS continuation routes: 84 checks; 43 move_and_slide path segments; optional northern stair both ways, adjacent 24–23 rope, closed access cover, physical two-person reception, waiting, distance, pause and bounded repeated gesture.

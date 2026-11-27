@@ -1,0 +1,150 @@
+{
+  "format": 1,
+  "version": "0.13.0",
+  "reviewer": "assistant /root/repository_recovery",
+  "reviewed_utc": "2026-11-26T07:17:05.706780+00:00",
+  "all_pass": true,
+  "sources": [
+    {
+      "file": "docs/CONTINUATION_A19_A17_V0.13.md",
+      "bytes": 33081,
+      "sha256": "ed203bf390a02a25c2a6ef071d9f0f31f3d6c2bc750a3d284080768bc7b2d37b"
+    }
+  ],
+  "generator": {
+    "file": "tools/build_residential_document.py",
+    "bytes": 7459,
+    "sha256": "bb0646a8ced139e2a17bb7fef9575f44a9c0b56af0226b15b9ca3660b778bfec"
+  },
+  "layout_dependency": {
+    "file": "tools/build_bible.py",
+    "bytes": 25630,
+    "sha256": "0b90555d098cbb9ae85a5e7818d64e760118c6ce852a13ce30603dcfcdd31f80"
+  },
+  "artifacts": [
+    {
+      "file": "docs/The-Tower-Descent-Continuation-v0.13.docx",
+      "bytes": 54410,
+      "sha256": "880f99d8f80e0dccab66b482af5e700f3faa3ae255ac52ba719035b0f63f4bf3"
+    },
+    {
+      "file": "docs/The-Tower-Descent-Continuation-v0.13.pdf",
+      "bytes": 241988,
+      "sha256": "56e7d2782a649a7fa1727e17dd64ef78e134a47622b81459430b5b090e503b5a"
+    }
+  ],
+  "page_count": 11,
+  "rendered_from_pdf_sha256": "56e7d2782a649a7fa1727e17dd64ef78e134a47622b81459430b5b090e503b5a",
+  "content_verification": {
+    "file": "docs/validation/v0.13/DOCUMENT_CONTENT.json",
+    "bytes": 17507,
+    "sha256": "ccd751b516c579855e82e23a26b9b659df32ecda9d159d52ac33aa33d239c257"
+  },
+  "pages": [
+    {
+      "file": "docs/validation/v0.13/document-pages/page-1.png",
+      "bytes": 440896,
+      "sha256": "36fd0a9a3c77a88712213387b001e429b35240c29835aaea3c597addb5942739",
+      "page": 1,
+      "status": "pass",
+      "observation": "Titre, périmètre, contexte de départ et continuité lisibles ; aucun chevauchement avec en-tête ou pagination.",
+      "review_method": "opened_regenerated_final_png"
+    },
+    {
+      "file": "docs/validation/v0.13/document-pages/page-2.png",
+      "bytes": 457391,
+      "sha256": "aa0c42df160d57844d1303e782bdd795d5989efad45e1a199dc7b13047b46725",
+      "page": 2,
+      "status": "pass",
+      "observation": "Tableau des quatre liaisons complet ; paliers, positions et usages lisibles. Début du sauvetage de Jeanne sans cellule tronquée.",
+      "review_method": "opened_regenerated_final_png"
+    },
+    {
+      "file": "docs/validation/v0.13/document-pages/page-3.png",
+      "bytes": 497089,
+      "sha256": "56923ca4edbd5cb08cbaad6ec4045859bdeee014fce2f7fa4c4569ce758d5a9c",
+      "page": 3,
+      "status": "pass",
+      "observation": "Résidences basses et télécommunications lisibles ; identifiants des constats et durées ne débordent pas des marges.",
+      "review_method": "opened_regenerated_final_png"
+    },
+    {
+      "file": "docs/validation/v0.13/document-pages/page-4.png",
+      "bytes": 412432,
+      "sha256": "02940412fbe2ff4c25abd259067e75d156da79144d767e4ea2b3a30effd22b77",
+      "page": 4,
+      "status": "pass",
+      "observation": "Tableau du relais lisible ; tableau des trois escortes conservé intégralement sur cette page après correction de la pagination.",
+      "review_method": "opened_regenerated_final_png"
+    },
+    {
+      "file": "docs/validation/v0.13/document-pages/page-5.png",
+      "bytes": 453783,
+      "sha256": "20758e0b0836e107a28b4b3ac5fe04ac98df5f6b53faab75ba678a78b03546e7",
+      "page": 5,
+      "status": "pass",
+      "observation": "Réceptions, bilan au 17 et commandes du rappel lisibles ; fin de section et introduction des constats sans recouvrement.",
+      "review_method": "opened_regenerated_final_png"
+    },
+    {
+      "file": "docs/validation/v0.13/document-pages/page-6.png",
+      "bytes": 415091,
+      "sha256": "e11e08b0d11181dccf1441bf1ccee870dd271d7c42fb1cb5daad19aafb0f50cb",
+      "page": 6,
+      "status": "pass",
+      "observation": "Tableau des trois constats complet ; Répondant facultatif et dialogues lisibles. Aucun caractère accentué manquant.",
+      "review_method": "opened_regenerated_final_png"
+    },
+    {
+      "file": "docs/validation/v0.13/document-pages/page-7.png",
+      "bytes": 386567,
+      "sha256": "2eda428f4b27ff75675f26cd1a8685707fbb0ce96ef724d16d5a2c697964f72e",
+      "page": 7,
+      "status": "pass",
+      "observation": "Catalogue des douze modèles complet ; chiffre final 5 203 300 octets GLB vérifié à l’image. Identifiants, fonctions et paragraphes lisibles, aucune cellule tronquée.",
+      "review_method": "opened_regenerated_final_png"
+    },
+    {
+      "file": "docs/validation/v0.13/document-pages/page-8.png",
+      "bytes": 452139,
+      "sha256": "90179db2a1a45ca8ce7700f8f1d0c4465bc30586ca68bc6275572a28172bf658",
+      "page": 8,
+      "status": "pass",
+      "observation": "Textures, paramètres artistiques et règles d’interaction lisibles ; tableau des matières dans les marges.",
+      "review_method": "opened_regenerated_final_png"
+    },
+    {
+      "file": "docs/validation/v0.13/document-pages/page-9.png",
+      "bytes": 426533,
+      "sha256": "c4e478c419a1aa6b0e849d2d53de0771862fb9eb9e663ce4a714c23342ff19b9",
+      "page": 9,
+      "status": "pass",
+      "observation": "Schéma 6 et rollback I/O lisibles ; début du tableau de recette sans ligne coupée.",
+      "review_method": "opened_regenerated_final_png"
+    },
+    {
+      "file": "docs/validation/v0.13/document-pages/page-10.png",
+      "bytes": 432025,
+      "sha256": "9c3b1c6cb89429d429b576c959a85adca0d043227aac48a041769e6c3685f9e1",
+      "page": 10,
+      "status": "pass",
+      "observation": "Tableau de recette poursuivi avec en-tête répété ; limites de livraison et clôture au 17 entièrement lisibles.",
+      "review_method": "opened_regenerated_final_png"
+    },
+    {
+      "file": "docs/validation/v0.13/document-pages/page-11.png",
+      "bytes": 186989,
+      "sha256": "7927ef5def316f3ee5fb18c86832dc1dcbfe038b1a4b09303091d4d6f2781fbd",
+      "page": 11,
+      "status": "pass",
+      "observation": "Sources et chemins de preuves entièrement lisibles. Dernière page courte réservée aux références ; pagination 11 sur 11 correcte.",
+      "review_method": "opened_regenerated_final_png"
+    }
+  ],
+  "render_command": "$CODEX_PRIMARY_RUNTIME_PYTHON /home/agent/.codex/skills/builtins/documents/render_docx.py docs/The-Tower-Descent-Continuation-v0.13.docx --output_dir /workspace/scratch/fce6969ec359/tower-v013-document-rereview --emit_pdf",
+  "binding": "Exact content hashes. Source commit can be bound after committing the candidate.",
+  "limitations": [
+    "Document layout and text completeness only; gameplay, models, textures and engine captures require their separate reviews.",
+    "No Windows, browser or human playthrough is claimed by this document review."
+  ]
+}

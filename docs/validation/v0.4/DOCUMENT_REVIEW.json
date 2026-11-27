@@ -1,0 +1,2094 @@
+{
+  "schema_version": 1,
+  "project": "The Tower Descent",
+  "version": "0.4.0",
+  "reviewed_at_utc": "2026-11-24T18:55:02.948691+00:00",
+  "all_pass": true,
+  "human_review": false,
+  "review_type": "Assistant visual review with independent page assignments and differential validation after layout corrections.",
+  "page_count": 119,
+  "source_count": 10,
+  "source_words": 59089,
+  "document_paragraphs": 1456,
+  "document_tables": 42,
+  "artifacts": [
+    {
+      "file": "docs/The-Tower-Descent-Bible-v0.4.docx",
+      "sha256": "1c1289fa9bf4584d0ba35795ab1c138ac9ffb4b621c7819807b28e47239af46f",
+      "bytes": 218449
+    },
+    {
+      "file": "docs/The-Tower-Descent-Bible-v0.4.pdf",
+      "sha256": "130a6fb3b530189638925778430c948ab7ed3ad0befb635948326c63477a8401",
+      "bytes": 2042497
+    }
+  ],
+  "sources": [
+    {
+      "file": "docs/BIBLE_DU_JEU.md",
+      "sha256": "1e413d4fffc812f3e6d39e305df3836a4d63b557a2844e352f965bad6d552f71",
+      "bytes": 88560,
+      "words": 13290
+    },
+    {
+      "file": "docs/CATALOGUE_ETAGES.md",
+      "sha256": "3a00cacdeefe78f711c91c13342f4ed9318f0637d9311730137d6d2678644521",
+      "bytes": 83064,
+      "words": 12531
+    },
+    {
+      "file": "docs/SYSTEMES_PROCEDURAUX.md",
+      "sha256": "debc768f405f69f28fc7945a2d02027defc0819d33765ff9c7675a953ae8c351",
+      "bytes": 24602,
+      "words": 3612
+    },
+    {
+      "file": "docs/ARCHITECTURE_ET_PORTAGE_UE5.md",
+      "sha256": "7dd2e721aad767e5afe9f175830ccef0dff658926344e46d5915381bccf2a6e0",
+      "bytes": 24607,
+      "words": 3391
+    },
+    {
+      "file": "docs/EFFONDREMENT_EN_DIRECT.md",
+      "sha256": "1efbf3d336a358850aa1c0b050cbc778602b12eb4a98262d4f3b44eca3b4d869",
+      "bytes": 23208,
+      "words": 3698
+    },
+    {
+      "file": "docs/COMMUNICATIONS_ET_EQUIPES.md",
+      "sha256": "d8769949417312e7fc45f621ecb131554ccce2de7016b725c06b8c42ba2197e2",
+      "bytes": 12144,
+      "words": 1838
+    },
+    {
+      "file": "docs/PROPS_INTERACTIONS.md",
+      "sha256": "d30f2bb18d26ad17d9c296b1458f9360a9a2e67d3b520792aaad1fcd0262dd47",
+      "bytes": 49444,
+      "words": 7425
+    },
+    {
+      "file": "docs/ENNEMIS_STATISTIQUES.md",
+      "sha256": "2933e5e59f8b7cfc5426072e7be9f350d4ffc83e17d02fe4d24ff60004e11d70",
+      "bytes": 27503,
+      "words": 4331
+    },
+    {
+      "file": "docs/SCENES_CINEMATIQUES.md",
+      "sha256": "d504d64f36705273b0927dbf297bb9114578a036257f0d8032f523c0d4db7b18",
+      "bytes": 27657,
+      "words": 4194
+    },
+    {
+      "file": "docs/GAMEPLAY_DETAILLE.md",
+      "sha256": "73b8e7577e80e65f8946c584ad1dcb08dd85ae4e79818091a36d49dff12f3383",
+      "bytes": 31279,
+      "words": 4779
+    }
+  ],
+  "generator": {
+    "file": "tools/build_bible.py",
+    "sha256": "3dd10a59f4a980511bc52e1bf1b0b275d88c30b80cb233fb32b469d86b086273"
+  },
+  "render": {
+    "script": "documents/render_docx.py",
+    "canonical_render": true,
+    "format": "A4",
+    "body_font": "Arial",
+    "body_size_pt": 11,
+    "page_png_resolution": [
+      1414,
+      2000
+    ]
+  },
+  "initial_review": {
+    "page_count": 120,
+    "pdf_sha256": "1933f67c95fcf2cbf2dd52f1327b27d9e85b21c3b73bb63ba5357177045687ff",
+    "all_pages_visually_inspected": true,
+    "assignments": [
+      {
+        "reviewer": "/root",
+        "pages": [
+          1,
+          40
+        ]
+      },
+      {
+        "reviewer": "/root/baseline_qa",
+        "pages": [
+          41,
+          80
+        ]
+      },
+      {
+        "reviewer": "/root/world_reactions",
+        "pages": [
+          81,
+          120
+        ]
+      }
+    ]
+  },
+  "corrections_resolved": [
+    {
+      "kind": "factual",
+      "source": "docs/SYSTEMES_PROCEDURAUX.md",
+      "final_page": 60,
+      "description": "Speaker/message length limits corrected from 96/600 to 120/1200 to match save_store.gd."
+    },
+    {
+      "kind": "pagination",
+      "final_page": 61,
+      "description": "Reduced padding in the checkpoint transition matrix, with unchanged table font; final Annex A paragraph now fits on page 61. Previous almost-empty page 62 removed."
+    },
+    {
+      "kind": "factual",
+      "source": "docs/ARCHITECTURE_ET_PORTAGE_UE5.md",
+      "final_page": 67,
+      "description": "Current evidence identifier corrected from clue_29 to evidence_29."
+    },
+    {
+      "kind": "pagination",
+      "final_page": 103,
+      "description": "Local paragraph and heading spacing keeps all four launch-card rows together. Body font, size and line spacing are unchanged."
+    }
+  ],
+  "differential_validation": {
+    "equivalent_body_count": 108,
+    "reinspected_changed_pages": [
+      60,
+      61,
+      67,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110
+    ],
+    "comparison": "Exact RGB pixel SHA256 for all pixels from y 0 through 1899 at native 1414×2000; bottom 100 px footer band excluded. Page mapping recorded in each equivalent page entry.",
+    "previous_page 62_absorbed": true
+  },
+  "footer_validation": {
+    "all_pass": true,
+    "checked_pages": 118,
+    "method": "Every final PDF footer was checked for sequential page /119 text and page-bound geometry. Cover has no footer by design. Visual page review independently checks separation from body.",
+    "visual_final_samples": [
+      2,
+      40,
+      60,
+      61,
+      67,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110
+    ]
+  },
+  "final_review_evidence": {
+    "review-root-final.json": {
+      "reviewer": "/root",
+      "all_pass": true,
+      "pages": [
+        {
+          "page": 1,
+          "status": "pass",
+          "sha256": "4910c97a183004b5c9f15f832ea26ba8bb5230c4fc831f3370806cf4ea7070bd",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 2,
+          "status": "pass",
+          "sha256": "756fb85acb7e0558dd3066a39547aaf7729bf094b9e5e96c5f901f2c471bae0c",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 3,
+          "status": "pass",
+          "sha256": "7b5593b8a17ae084005433f1ac51386bf940e689c17a5bae0ecb46a9effa2f44",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 4,
+          "status": "pass",
+          "sha256": "f979ff1eb540a1cb25392a1d00133c6039b4bf138b14d4445e6cb260474f5cef",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 5,
+          "status": "pass",
+          "sha256": "83aba58184519507011ee6a990f6c1dfd2866ce965287194abb0911f16f8b4a9",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 6,
+          "status": "pass",
+          "sha256": "87a6fc2abda8aacd2f1f0278e5e1a4171017a0d2653e2af438e649b896bb9b39",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 7,
+          "status": "pass",
+          "sha256": "66cde713c85e8ab5547de9a194ff202ccfa566fed9e61dd754a60efa6791d385",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 8,
+          "status": "pass",
+          "sha256": "af6498aedb1700234319cca2fb1980ac3d3d60b7440e5875d82b1a5d52ed9fce",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 9,
+          "status": "pass",
+          "sha256": "4eab2fc6443d26e1ddbc33f9bd97077680bca620f806270b476ba0a21f998462",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 10,
+          "status": "pass",
+          "sha256": "548176aec84b65de7f7ebed050b34a9eb44497259dc2d53a83d93a654a339350",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 11,
+          "status": "pass",
+          "sha256": "f2e69461cdeeca8a8dd801403196cdfb8252338a6ee46e4c6b81a2238faf7211",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 12,
+          "status": "pass",
+          "sha256": "98f9bb9a315beaa0945c0309a6682b2ebe1ac57f900961f194f264080cca7754",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 13,
+          "status": "pass",
+          "sha256": "c8ca42b71bddbcb3d5bbc8b473883b0adec6dc81b7e2c7c0f36156abe18e04ff",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 14,
+          "status": "pass",
+          "sha256": "70bacb5c8a359a18fbd59b8c431b4ffb6a1ecfec6ac32234c0b1bd8ebfeb1b2c",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 15,
+          "status": "pass",
+          "sha256": "2e3197f87f04ff0465825e5c0aba47160597d5d25b723e65e2db9607cd3bd424",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 16,
+          "status": "pass",
+          "sha256": "7df055ec7b6bbf543cc61d3f95c75247961a2c635cedc3d44fc1d8025836c090",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 17,
+          "status": "pass",
+          "sha256": "0d0f022fbc8fcf02a7282799a19714073bbf838df1639c7a82e7776c9506ab26",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 18,
+          "status": "pass",
+          "sha256": "a0a9c690522ea3695f46319e5681e4e6a053c2fd37e75765a75051ee91d970db",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 19,
+          "status": "pass",
+          "sha256": "6e4514a19f41c7bbb881482d0d4ca7a07f0e2fa8d73ac4fbe5d383b8687f605d",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 20,
+          "status": "pass",
+          "sha256": "e0bea1acbdea1a5d095c9228a24db9c706cc43e0e6c386fea44082fd73e277e7",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 21,
+          "status": "pass",
+          "sha256": "2f780d24b4265bcddf84a851eda633ebd6ee1be81e096902eedad10fa5602b79",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 22,
+          "status": "pass",
+          "sha256": "d6f863de569e247ef3773515d3a0eb7c601010ea43a8ed926a1cbeda30c1bb69",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 23,
+          "status": "pass",
+          "sha256": "e54b6db7dc9726c626ca2681b95d54520aec673056c6f2fa9a3bb26445c09cd9",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 24,
+          "status": "pass",
+          "sha256": "ab49181d13444a49caa4e4b629420c79b22e79cb6a1308a03fb60e6341fa0f23",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 25,
+          "status": "pass",
+          "sha256": "12c779d00b8c059cda2c8521283b520f1c26ae37637b54fbdd373163c220e8b1",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 26,
+          "status": "pass",
+          "sha256": "47fd223e23c13bb9be8bc279975513546f9c9048dba35a029f8ffd915879ab1c",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 27,
+          "status": "pass",
+          "sha256": "1b7c7d3e8e85baf3fcd1b6fed550342013457a671003ece18ec17ea99f346af2",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 28,
+          "status": "pass",
+          "sha256": "fc422f6802f36a4b85a99f40f0ca2a14d2bc5f08ce7ce45230dc748b1d09b925",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 29,
+          "status": "pass",
+          "sha256": "2e0183f0e6cd2bb08c505975892633de9309b736cb355518c80f7e83a54ca335",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 30,
+          "status": "pass",
+          "sha256": "383df24564869427a7522dfe3d9479c8238d9a34461444a555292044018a7f25",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 31,
+          "status": "pass",
+          "sha256": "bef7ccecdf3e81377081ecac08d730330f8098033538ec481e179703592e97a9",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 32,
+          "status": "pass",
+          "sha256": "1e263bfce0fb499e42effbc8703a30e3463cb3d74c896a76a1da67e86207282e",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 33,
+          "status": "pass",
+          "sha256": "bd66404316b3e6c5ced5ad6485ab59f2ca33b312a15f1d38735b8b383cbb96de",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 34,
+          "status": "pass",
+          "sha256": "88bd590d5d5ba132ddaa62b5ca201e571a7db708002f5e4ccb8e4997a056fcc9",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 35,
+          "status": "pass",
+          "sha256": "8ebf7761b92082d4496605769d102c4e1ff6556718edba718b82b05e03ec6a5b",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 36,
+          "status": "pass",
+          "sha256": "267a558e3a084361ef31d45c7dce7622bb28e7e250b03292b4269082e315487c",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 37,
+          "status": "pass",
+          "sha256": "27852accf01ae5ad725bd7d4aa86c2900be61f58e5a3c2de3b030bb0d512d1a6",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 38,
+          "status": "pass",
+          "sha256": "c1f4ff7c4f203b121352a4d0b7d78ec6db9b7ef6dc118cb972a3b062b52f18d9",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 39,
+          "status": "pass",
+          "sha256": "920fd7f0faf8afc830882bda9774866ed7f614b91c3a7070d4d19ea53800b156",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        },
+        {
+          "page": 40,
+          "status": "pass",
+          "sha256": "80be9a99b14410bc51410f59ab1a1498a7d46c87121f04b83cb1a2ccac24e350",
+          "reviewer": "/root",
+          "method": "Original page individually inspected; final header/body pixel-identical, excluding bottom 100 px footer. New footer checked visually on pages 2 and 40."
+        }
+      ],
+      "visually_rechecked_final_pages": [
+        2,
+        40
+      ],
+      "footer_result": "Correct total 119 and expected page numbers; no overlap in both native page views.",
+      "original_review": "review-root.json",
+      "original_pdf_sha256": "1933f67c95fcf2cbf2dd52f1327b27d9e85b21c3b73bb63ba5357177045687ff",
+      "final_pdf_sha256": "130a6fb3b530189638925778430c948ab7ed3ad0befb635948326c63477a8401"
+    },
+    "review-qa-final.json": {
+      "reviewer": "/root/baseline_qa",
+      "reviewed_at_utc": "2026-11-24T18:50:49.037694+00:00",
+      "artifact": "The-Tower-Descent-Bible-v0.4.pdf",
+      "pdf_sha256": "130a6fb3b530189638925778430c948ab7ed3ad0befb635948326c63477a8401",
+      "render_page_count": 119,
+      "image_resolution": [
+        1414,
+        2000
+      ],
+      "previous_review": "/tmp/tower-descent-v04-doc-render/review-qa.json",
+      "previous_review_sha256": "5276146bb3c970cffd64ccc7cce657d7cb9758b10bef8022d4e26153d8235e65",
+      "previous_review_range": [
+        41,
+        80
+      ],
+      "final_coverage_range": [
+        41,
+        79
+      ],
+      "comparison_artifact": "page-comparison.json",
+      "comparison_sha256": "dcbd6e7f7efa13d619680028bfd3304a53abb61655e88ec900b93a30c3f0857a",
+      "inherited_visual_reviews": [
+        {
+          "new": 41,
+          "previous": 41
+        },
+        {
+          "new": 42,
+          "previous": 42
+        },
+        {
+          "new": 43,
+          "previous": 43
+        },
+        {
+          "new": 44,
+          "previous": 44
+        },
+        {
+          "new": 45,
+          "previous": 45
+        },
+        {
+          "new": 46,
+          "previous": 46
+        },
+        {
+          "new": 47,
+          "previous": 47
+        },
+        {
+          "new": 48,
+          "previous": 48
+        },
+        {
+          "new": 49,
+          "previous": 49
+        },
+        {
+          "new": 50,
+          "previous": 50
+        },
+        {
+          "new": 51,
+          "previous": 51
+        },
+        {
+          "new": 52,
+          "previous": 52
+        },
+        {
+          "new": 53,
+          "previous": 53
+        },
+        {
+          "new": 54,
+          "previous": 54
+        },
+        {
+          "new": 55,
+          "previous": 55
+        },
+        {
+          "new": 56,
+          "previous": 56
+        },
+        {
+          "new": 57,
+          "previous": 57
+        },
+        {
+          "new": 58,
+          "previous": 58
+        },
+        {
+          "new": 59,
+          "previous": 59
+        },
+        {
+          "new": 62,
+          "previous": 63
+        },
+        {
+          "new": 63,
+          "previous": 64
+        },
+        {
+          "new": 64,
+          "previous": 65
+        },
+        {
+          "new": 65,
+          "previous": 66
+        },
+        {
+          "new": 66,
+          "previous": 67
+        },
+        {
+          "new": 68,
+          "previous": 69
+        },
+        {
+          "new": 69,
+          "previous": 70
+        },
+        {
+          "new": 70,
+          "previous": 71
+        },
+        {
+          "new": 71,
+          "previous": 72
+        },
+        {
+          "new": 72,
+          "previous": 73
+        },
+        {
+          "new": 73,
+          "previous": 74
+        },
+        {
+          "new": 74,
+          "previous": 75
+        },
+        {
+          "new": 75,
+          "previous": 76
+        },
+        {
+          "new": 76,
+          "previous": 77
+        },
+        {
+          "new": 77,
+          "previous": 78
+        },
+        {
+          "new": 78,
+          "previous": 79
+        },
+        {
+          "new": 79,
+          "previous": 80
+        }
+      ],
+      "inheritance_basis": "Corps et en-têtes pixel-identiques selon page-comparison.json ; les 100 pixels inférieurs du pied sont exclus de cette comparaison. Les corps identiques n’ont pas été relus.",
+      "changed_pages_reviewed": [
+        60,
+        61,
+        67
+      ],
+      "method": "Chaque PNG modifié a effectivement été ouvert et inspecté à résolution native, incluant texte, tableau, marges et pied. Aucune validation des pages modifiées fondée uniquement sur extraction textuelle.",
+      "pages": [
+        {
+          "page": 60,
+          "image": "page-60.png",
+          "sha256": "bb8c22473bd8445b36294d32c6832028f4557e6dd6c400989f33acfc7bf91764",
+          "verdict": "pass",
+          "actual_visual_inspection": true,
+          "note": "Correction confirmée visuellement : 120 caractères pour l’indicatif, 1200 pour le message. Mise en page lisible, aucun débordement ni collision avec le pied."
+        },
+        {
+          "page": 61,
+          "image": "page-61.png",
+          "sha256": "b6706995b9622a4b95965af1212a35dcf09148a317abcfd4e27edf773472f1be",
+          "verdict": "pass",
+          "actual_visual_inspection": true,
+          "note": "Matrice de reprise plus compacte mais entièrement lisible. Le dernier paragraphe auparavant isolé en page 62 est intégralement absorbé ici ; dernière ligne et pied restent séparés. Aucun titre orphelin."
+        },
+        {
+          "page": 67,
+          "image": "page-67.png",
+          "sha256": "cb81884228ec86113b37012f5e1e6f827ea3e69c7b7eb9c0f35e26edee019f46",
+          "verdict": "pass",
+          "actual_visual_inspection": true,
+          "note": "Correction confirmée visuellement dans le dernier paragraphe : evidence_29 remplace clue_29. Les paragraphes et titres restent lisibles, sans coupure."
+        }
+      ],
+      "resolved_findings": [
+        "p.60 : limites radio 120/1200 corrigées",
+        "ancienne p.62 : paragraphe final absorbé dans la nouvelle p.61, page presque vide supprimée",
+        "ancienne p.68 / nouvelle p.67 : identifiant evidence_29 corrigé"
+      ],
+      "verdict": "pass",
+      "unresolved_findings": [],
+      "scope_limit": "Revue complémentaire des trois pages modifiées de la tranche initiale 41–80 ; les autres tranches relèvent des autres réviseurs. Aucun nouveau test runtime exécuté."
+    },
+    "review-author-final.json": {
+      "reviewer": "/root/world_reactions",
+      "reviewed_at_utc": "2026-11-24T18:51:30.940005+00:00",
+      "review_type": "assistant visual review, not human review",
+      "pdf_sha256": "130a6fb3b530189638925778430c948ab7ed3ad0befb635948326c63477a8401",
+      "status": "pass",
+      "pages_reviewed": [
+        103,
+        104,
+        105,
+        106
+      ],
+      "method": "Direct native 1414×2000 PNG inspection of each changed page; source content and table continuations checked. Previous full-range review81–120 covers108 body-equivalent pages together with other reviewers.",
+      "findings_resolved": [
+        "All four launch-card rows now fit on page103. The following contextual-menu table also fits entirely on page104."
+      ],
+      "issues": [],
+      "pages": [
+        {
+          "page": 103,
+          "sha256": "1fdf556c1c9969664f4e259dd6f2aa268f738a68865a587c97f6f5f91b09e45c",
+          "status": "pass"
+        },
+        {
+          "page": 104,
+          "sha256": "364a11d85dcd22aa06ce1b4fb27237d929ed62979ac71e5f61af70b2fc32cb5f",
+          "status": "pass"
+        },
+        {
+          "page": 105,
+          "sha256": "fa5bd9fd1b479bffd994cb65dc01faad0bcf6cff05c808f65ddd888228429964",
+          "status": "pass"
+        },
+        {
+          "page": 106,
+          "sha256": "07eaba9c382d1583e37e8ba8d73d25b6426b23aa17ed7e43b898e2ee2ae12f2d",
+          "status": "pass"
+        }
+      ],
+      "other_observations": [
+        "Pages105–106 have normal paragraph continuation, no orphan headings, clipped text, overlapping content or displaced footers.",
+        "Final PDF footers were checked for every page2–119; cover has no footer."
+      ]
+    },
+    "review-publication-final.json": {
+      "reviewer": "repo_audit",
+      "reviewed_utc": "2026-11-24T18:51:52.245080+00:00",
+      "pdf": "The-Tower-Descent-Bible-v0.4.pdf",
+      "pdf_sha256": "130a6fb3b530189638925778430c948ab7ed3ad0befb635948326c63477a8401",
+      "page_count": 119,
+      "human_review": false,
+      "method": "Assistant opened and visually inspected each assigned PNG at its native 1414x2000 resolution. Header/footer text was additionally checked in the PDF. No sources were modified.",
+      "all_pass": true,
+      "pages": [
+        {
+          "page": 107,
+          "png": "page-107.png",
+          "sha256": "0cc6d230799476e140d6f117fa9c501eefe14cef87e775e2f7cdd19e39a590d3",
+          "width": 1414,
+          "height": 2000,
+          "status": "PASS",
+          "blocking_defects": [],
+          "checks": [
+            "Readable body text and hierarchy",
+            "No clipping or overlap",
+            "Page number and total consistent",
+            "Paragraph continuation and section endings clear"
+          ]
+        },
+        {
+          "page": 108,
+          "png": "page-108.png",
+          "sha256": "38890fdaceb4dca530f5d5b0af48127e8343af55e7194da902a0a75a0a54f7fb",
+          "width": 1414,
+          "height": 2000,
+          "status": "PASS",
+          "blocking_defects": [],
+          "checks": [
+            "Readable body text and hierarchy",
+            "No clipping or overlap",
+            "Page number and total consistent",
+            "Paragraph continuation and section endings clear"
+          ]
+        },
+        {
+          "page": 109,
+          "png": "page-109.png",
+          "sha256": "1b080d61047fd4268c14cc33e1e8cbe7d9899b51d7ab5bcd2e9e1273cf81c9ba",
+          "width": 1414,
+          "height": 2000,
+          "status": "PASS",
+          "blocking_defects": [],
+          "checks": [
+            "Readable body text and hierarchy",
+            "No clipping or overlap",
+            "Page number and total consistent",
+            "Paragraph continuation and section endings clear"
+          ]
+        },
+        {
+          "page": 110,
+          "png": "page-110.png",
+          "sha256": "2f04f3efc26dc08d233cf335bb9c8c23cad9fab31e371f116501fed31cb17c89",
+          "width": 1414,
+          "height": 2000,
+          "status": "PASS",
+          "blocking_defects": [],
+          "checks": [
+            "Readable body text and hierarchy",
+            "No clipping or overlap",
+            "Page number and total consistent",
+            "Paragraph continuation and section endings clear"
+          ]
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "page": 1,
+      "sha256": "4910c97a183004b5c9f15f832ea26ba8bb5230c4fc831f3370806cf4ea7070bd",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 1,
+      "previous_png_sha256": "4910c97a183004b5c9f15f832ea26ba8bb5230c4fc831f3370806cf4ea7070bd",
+      "body_and_header_sha256": "c8360c71861085d07fd873c62bb96067ba3ff88cbf19ff7cc8e41d2bbcbc068a",
+      "footer": "none on cover"
+    },
+    {
+      "page": 2,
+      "sha256": "756fb85acb7e0558dd3066a39547aaf7729bf094b9e5e96c5f901f2c471bae0c",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 2,
+      "previous_png_sha256": "8bdcd77e7c91cc3180bec4cb6114fa27d2cfefab2e0dd72cecfc50974f7312c2",
+      "body_and_header_sha256": "501148b8061e43cec9d39067905af83f2902c2c43cea3869a633d6bab4197fd8",
+      "footer": "2 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 3,
+      "sha256": "7b5593b8a17ae084005433f1ac51386bf940e689c17a5bae0ecb46a9effa2f44",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 3,
+      "previous_png_sha256": "f424d99c055f9bb45155d72b92196b2ac1fe1966992e67cd97111e982c6cf3f2",
+      "body_and_header_sha256": "af37b790dbe413c52ee2f4aac649968079dcb3ae04857f63f9527100e2162129",
+      "footer": "3 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 4,
+      "sha256": "f979ff1eb540a1cb25392a1d00133c6039b4bf138b14d4445e6cb260474f5cef",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 4,
+      "previous_png_sha256": "75b6ec39526478341387afb68560cddba95c31734d7729c0680bf68dc767f5ef",
+      "body_and_header_sha256": "1b6bf6e6d4339881f1dcb92839a3d53867cd9304673eefb1c89087099b88c73c",
+      "footer": "4 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 5,
+      "sha256": "83aba58184519507011ee6a990f6c1dfd2866ce965287194abb0911f16f8b4a9",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 5,
+      "previous_png_sha256": "62baaa3f0e232f2ef7fd9d9724e27597d4838f63f1b74dad30cf32f124fd2ec5",
+      "body_and_header_sha256": "ba000f7b94d3209a35b5b3a6e73847c7f9509c47b4156a6a5860a8271c5f5e94",
+      "footer": "5 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 6,
+      "sha256": "87a6fc2abda8aacd2f1f0278e5e1a4171017a0d2653e2af438e649b896bb9b39",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 6,
+      "previous_png_sha256": "ff73311d366b513f133a0a1de5c1226f69a946f153e3cd77eab83ee0addfa398",
+      "body_and_header_sha256": "3c01f8b8bd1ce2e2f84ecc5902500cd5d23508d15dd3e3830c268a45b04b2445",
+      "footer": "6 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 7,
+      "sha256": "66cde713c85e8ab5547de9a194ff202ccfa566fed9e61dd754a60efa6791d385",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 7,
+      "previous_png_sha256": "0db52ffe1b1fff73ceda09322e7b0913cc6fa33773dd425600b989bf328d9687",
+      "body_and_header_sha256": "67c0826bff431dc867c74a0eb21d154a0004d0d2d8fcd7852ecfb0d04442b705",
+      "footer": "7 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 8,
+      "sha256": "af6498aedb1700234319cca2fb1980ac3d3d60b7440e5875d82b1a5d52ed9fce",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 8,
+      "previous_png_sha256": "9f64919da4b23364058e729112ff5c62d70d07b77505b534680e4340f0eb1dd9",
+      "body_and_header_sha256": "8994c330c6ff579813405adbeb6a65b3b440b122d0da7d56eeb4fb50207cc475",
+      "footer": "8 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 9,
+      "sha256": "4eab2fc6443d26e1ddbc33f9bd97077680bca620f806270b476ba0a21f998462",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 9,
+      "previous_png_sha256": "b9bc8a3f9a91bfa35868ef0feba0c5b083ef1d4267bc71aed8e524ccaba8e822",
+      "body_and_header_sha256": "89f39fc8ddd1305425b58b05a3e10e8a5bcc9953daebac4db2851da69aa91db8",
+      "footer": "9 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 10,
+      "sha256": "548176aec84b65de7f7ebed050b34a9eb44497259dc2d53a83d93a654a339350",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 10,
+      "previous_png_sha256": "c4ca2c384fb59c4d80602c2c92c24c613df35635d4c3943f5d4b7255ddef3052",
+      "body_and_header_sha256": "fb461e495dd4444805263aa43a41a5b3c05ed514754f2ea719516ac88d0b5a22",
+      "footer": "10 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 11,
+      "sha256": "f2e69461cdeeca8a8dd801403196cdfb8252338a6ee46e4c6b81a2238faf7211",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 11,
+      "previous_png_sha256": "354763331b060709b9af4d44483e83d928f3f8066084d40c5d667005a6b481d2",
+      "body_and_header_sha256": "0c9f9fa4eea3d500912f6145aef34d044ef749630da41d6882643feb936add79",
+      "footer": "11 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 12,
+      "sha256": "98f9bb9a315beaa0945c0309a6682b2ebe1ac57f900961f194f264080cca7754",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 12,
+      "previous_png_sha256": "3f71e08a26dd13ae6f0280ffe9739914a8ed6240c8dd8a2c3bb5c816d85a6137",
+      "body_and_header_sha256": "f783b6aa4911a6184c0423373a7a5f1a4955a5b832ed7d0e42b4a46863cc39d7",
+      "footer": "12 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 13,
+      "sha256": "c8ca42b71bddbcb3d5bbc8b473883b0adec6dc81b7e2c7c0f36156abe18e04ff",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 13,
+      "previous_png_sha256": "b4b957e1fa1644a2c5c768ea49a0b4c5c7ff28a1b794936b5afbf22ff8888232",
+      "body_and_header_sha256": "a529254b403ecbfcbc5487b5110f8b75ab71ec430d0f4aa98adcf4d718f149c1",
+      "footer": "13 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 14,
+      "sha256": "70bacb5c8a359a18fbd59b8c431b4ffb6a1ecfec6ac32234c0b1bd8ebfeb1b2c",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 14,
+      "previous_png_sha256": "80da050f64d8f750fde6f391258b85e0046471831a849171e956704017002811",
+      "body_and_header_sha256": "29df543e15c41094a0cb9c5fa987fa9af91e9500a84c6c12cae351b0742d49c2",
+      "footer": "14 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 15,
+      "sha256": "2e3197f87f04ff0465825e5c0aba47160597d5d25b723e65e2db9607cd3bd424",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 15,
+      "previous_png_sha256": "6d251c1071cbd039a447af34ad5ea0633e7a83197c3c1311776b6b5efcd48b44",
+      "body_and_header_sha256": "e0f340ebac1d7b1e5b2258373fe6d5a41023531f9e21724e4cfac6b87d5a3d0f",
+      "footer": "15 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 16,
+      "sha256": "7df055ec7b6bbf543cc61d3f95c75247961a2c635cedc3d44fc1d8025836c090",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 16,
+      "previous_png_sha256": "f4a2a776ce466f5ee882b5902f33731a0a907e11b09f847cf6218f4dbee5aef5",
+      "body_and_header_sha256": "1d7c5e0dae9f8e31c7a24ca72def24c4cfcf3ea1f25079e5e0b4ebf55dc90b30",
+      "footer": "16 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 17,
+      "sha256": "0d0f022fbc8fcf02a7282799a19714073bbf838df1639c7a82e7776c9506ab26",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 17,
+      "previous_png_sha256": "8b481c4a5542b35ef9650741f11cd96e96cd592ec1d0ce683d1dea021c7dbf0c",
+      "body_and_header_sha256": "13a5085b752400554b9fc265251928aac48f188f49c06d7964552e9a4071ee58",
+      "footer": "17 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 18,
+      "sha256": "a0a9c690522ea3695f46319e5681e4e6a053c2fd37e75765a75051ee91d970db",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 18,
+      "previous_png_sha256": "dd2e1e60e6caac533aefd1a965f8c1504ddbbbdf880fbd1b39f80280150ae6b3",
+      "body_and_header_sha256": "d5fd0591e666642e3cfca6a1bda7a132ab10b11a709f15482a9990993ec3f2a8",
+      "footer": "18 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 19,
+      "sha256": "6e4514a19f41c7bbb881482d0d4ca7a07f0e2fa8d73ac4fbe5d383b8687f605d",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 19,
+      "previous_png_sha256": "15d20042732db196114ae9ac4c3b70f8a493542149a86384da8bc5f3ffe0e804",
+      "body_and_header_sha256": "7dc9328bd00f1a001c8de11db6f669e8946cb4e884e6c671f3b0be84400028f9",
+      "footer": "19 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 20,
+      "sha256": "e0bea1acbdea1a5d095c9228a24db9c706cc43e0e6c386fea44082fd73e277e7",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 20,
+      "previous_png_sha256": "6788b739301a389034e2c676382584cd754e77acad539aa6861a51edd4974f74",
+      "body_and_header_sha256": "e8a2d626b2ee8596e5b0691cafa54767239b6d88481a065cbda8bbe9bd477837",
+      "footer": "20 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 21,
+      "sha256": "2f780d24b4265bcddf84a851eda633ebd6ee1be81e096902eedad10fa5602b79",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 21,
+      "previous_png_sha256": "70fcb350d0794fc6b9a80e6ec5c93d02b73b5a87be53433c33f00fc234455779",
+      "body_and_header_sha256": "c78326661b09dc81069c77c8dfde013edbe5ffa9188d811011c2895fe01a1cec",
+      "footer": "21 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 22,
+      "sha256": "d6f863de569e247ef3773515d3a0eb7c601010ea43a8ed926a1cbeda30c1bb69",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 22,
+      "previous_png_sha256": "220765bae471ca2842afbb76f9e48caf4b212307989778ffb1de412f784aa2e6",
+      "body_and_header_sha256": "1a53946bf99a6a82e8a27c8d61b16869644370ec946f14d72f06f91cdef9e1d8",
+      "footer": "22 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 23,
+      "sha256": "e54b6db7dc9726c626ca2681b95d54520aec673056c6f2fa9a3bb26445c09cd9",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 23,
+      "previous_png_sha256": "f88e1696974ab037888bdc85bc60bfebeb0d5d3faea23b7934a6ae2ce8dd5100",
+      "body_and_header_sha256": "ec8e24ad52e498b758c11865f0062bb054006d14ecd7b9ed538954487c9ba9bf",
+      "footer": "23 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 24,
+      "sha256": "ab49181d13444a49caa4e4b629420c79b22e79cb6a1308a03fb60e6341fa0f23",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 24,
+      "previous_png_sha256": "e6ce84389e32b9abc0cbdcb9da31e8a060668aac6c261c7dfcaf703f54c535f3",
+      "body_and_header_sha256": "1e84273cde493c0aaad578dc4e35fc09837b252015804d5d5610d039cb242d86",
+      "footer": "24 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 25,
+      "sha256": "12c779d00b8c059cda2c8521283b520f1c26ae37637b54fbdd373163c220e8b1",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 25,
+      "previous_png_sha256": "f532f57b44ef176c409776aa4fe10970c9773f1373a9a2622a1175321d6db8b2",
+      "body_and_header_sha256": "f3d15127ec5440af52a8611151c159c24858752bf65ab14eb37f093aa36a810e",
+      "footer": "25 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 26,
+      "sha256": "47fd223e23c13bb9be8bc279975513546f9c9048dba35a029f8ffd915879ab1c",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 26,
+      "previous_png_sha256": "54405151227fa686d18a4726277ed883442aa91585673c8bdccc2f792780c17e",
+      "body_and_header_sha256": "f12c05adb0623b5a7cbfbfe72dddd88b92fddbb0051e7c350e65823543cd66d1",
+      "footer": "26 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 27,
+      "sha256": "1b7c7d3e8e85baf3fcd1b6fed550342013457a671003ece18ec17ea99f346af2",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 27,
+      "previous_png_sha256": "42352fc774e8013d7ec61831e8f45e494aabf1fa61355d088cebac7d6ab1b7e0",
+      "body_and_header_sha256": "edae1ea2a2eb9da321cd1ad8b3342eba689fdcaa08d1a77ddc662fc9b95bce46",
+      "footer": "27 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 28,
+      "sha256": "fc422f6802f36a4b85a99f40f0ca2a14d2bc5f08ce7ce45230dc748b1d09b925",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 28,
+      "previous_png_sha256": "5c5ff804232796486512f1822a8c4d9b09ee934a33feecbcf144f843f0f50051",
+      "body_and_header_sha256": "01500f5d71b0460faaa94f6f71e41ce3322fa0372f7725053c57c5fb242541be",
+      "footer": "28 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 29,
+      "sha256": "2e0183f0e6cd2bb08c505975892633de9309b736cb355518c80f7e83a54ca335",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 29,
+      "previous_png_sha256": "e467e379bd2af34511d3300cea0743e0838a977e9213b11684188aedac945fb2",
+      "body_and_header_sha256": "8dbbff37a1bb9c402e31cb471e890b0147b4b7051252bf5fde7d0164b11efee4",
+      "footer": "29 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 30,
+      "sha256": "383df24564869427a7522dfe3d9479c8238d9a34461444a555292044018a7f25",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 30,
+      "previous_png_sha256": "2e8c349a5c0805131f9f08dd2d3b269bc27dc57c263fc6c7919468c3834a1c81",
+      "body_and_header_sha256": "adef74a93b43622164d46ecdddc1f99a82e4c5b673577f91d7c87e2b64444476",
+      "footer": "30 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 31,
+      "sha256": "bef7ccecdf3e81377081ecac08d730330f8098033538ec481e179703592e97a9",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 31,
+      "previous_png_sha256": "c92a67171aeb92c3ee72dc7d6d9724164ab86b60fb82d103ea0763cfef620e22",
+      "body_and_header_sha256": "7923aee0733557da225c72c5448b73c1be940debedf5efd3d7f5dab8972687d6",
+      "footer": "31 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 32,
+      "sha256": "1e263bfce0fb499e42effbc8703a30e3463cb3d74c896a76a1da67e86207282e",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 32,
+      "previous_png_sha256": "554428f8299f0c44e82016c04ff371083389d1ecdcad43008f27dd4e8d5ab153",
+      "body_and_header_sha256": "cbe548f1685f762cae8c4269cd1430509de20b62c2520611c6dac6a6e5d9f37a",
+      "footer": "32 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 33,
+      "sha256": "bd66404316b3e6c5ced5ad6485ab59f2ca33b312a15f1d38735b8b383cbb96de",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 33,
+      "previous_png_sha256": "8e1bf1ccea152f060f0a78dcee6944691c481f0a8e1b305b8fb39382bdc1fb6d",
+      "body_and_header_sha256": "000aa2a193d6954434489e539f5e512aeca9165d1d73269a28959a0e07373bfb",
+      "footer": "33 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 34,
+      "sha256": "88bd590d5d5ba132ddaa62b5ca201e571a7db708002f5e4ccb8e4997a056fcc9",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 34,
+      "previous_png_sha256": "80466bfa94ebc9585c3d481d1758fbc225401ad67bc702935f266dea5c2f5294",
+      "body_and_header_sha256": "130f1ef9d4b05a95dcfb6a0ee28aa6bde60707626e513d7f77b4921c6d73293f",
+      "footer": "34 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 35,
+      "sha256": "8ebf7761b92082d4496605769d102c4e1ff6556718edba718b82b05e03ec6a5b",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 35,
+      "previous_png_sha256": "374e0c99f5759676572eea56ee30c32249211710d7eca22f0a881cc079c0066b",
+      "body_and_header_sha256": "2ddfa446c856286a7a386cbfc51f6e05a26cc7f70d2fa287468953ee544ed588",
+      "footer": "35 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 36,
+      "sha256": "267a558e3a084361ef31d45c7dce7622bb28e7e250b03292b4269082e315487c",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 36,
+      "previous_png_sha256": "e3de75fe3cb3644c9e8c713ef75f5e041500e19b8b39c15c1ca9328caf91b15e",
+      "body_and_header_sha256": "ab1f4a781b3330d112689371893b54fe796df6ba7e7bac567dd575083fcb60c1",
+      "footer": "36 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 37,
+      "sha256": "27852accf01ae5ad725bd7d4aa86c2900be61f58e5a3c2de3b030bb0d512d1a6",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 37,
+      "previous_png_sha256": "68b97c935f9f3994042d3228ef653fdad9f06d92fc203de34a58a0117bb93a52",
+      "body_and_header_sha256": "dd5a0d4afaac4722c9f99e31d546996b60c17b07c25828f092614c371e0f253e",
+      "footer": "37 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 38,
+      "sha256": "c1f4ff7c4f203b121352a4d0b7d78ec6db9b7ef6dc118cb972a3b062b52f18d9",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 38,
+      "previous_png_sha256": "563982524b5b4f37efb2ca91391d5ee7286051712d48c87b78fc44d2c2aedd4a",
+      "body_and_header_sha256": "089417b26ede9f938a3ebb3496e44d325644278ded76b7544165e55a29c4d917",
+      "footer": "38 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 39,
+      "sha256": "920fd7f0faf8afc830882bda9774866ed7f614b91c3a7070d4d19ea53800b156",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 39,
+      "previous_png_sha256": "6bdc8f4cc1485b29de6559c320c49032169be37021c346d3b1837bf0e6436566",
+      "body_and_header_sha256": "c61bc5abefbf1dc15607d7cfbabd60593cceff2d53d388e068fac9702b5044fe",
+      "footer": "39 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 40,
+      "sha256": "80be9a99b14410bc51410f59ab1a1498a7d46c87121f04b83cb1a2ccac24e350",
+      "status": "pass",
+      "reviewer": "/root",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 40,
+      "previous_png_sha256": "4df3658480f38bb8ec1f885b397fa6c5ff3299a1e51c83ad8b2b9fae3a9ace29",
+      "body_and_header_sha256": "0d118b5b54ea8baf3697f3ab03a63510431ec8cbc25f56aa19abcd1eb3039491",
+      "footer": "40 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 41,
+      "sha256": "6fee5275d4c6f0985c136a062510fe049cd3ecf6210348dd7ec39ab59b1475d1",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 41,
+      "previous_png_sha256": "1f39d250207d4ef65ad5e6f8f103e50ab48b202bc9f96a8954059e8f45c3f2bd",
+      "body_and_header_sha256": "d1345ff9d832723f89cddc481339686321abf3dc37ff59e35948d58adfb6bee1",
+      "footer": "41 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 42,
+      "sha256": "727a623dc62753be1f1f363600d59a4ce67b203f4ad7b44bc0a8987f641c3d7f",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 42,
+      "previous_png_sha256": "6f6c8e38e0a6c4b3da886d9a7883fe7bf14bc13df0d2516e0e9d8f3502c363b0",
+      "body_and_header_sha256": "bdc7f7900ab2c3bac0bba9a4c704ec834e89b8d383f33056b94c7977b3061ee1",
+      "footer": "42 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 43,
+      "sha256": "c1f84edfb9fe0d76b5b5396fb31b99c8d466a3f80f115caaaccfcc53b47b6df1",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 43,
+      "previous_png_sha256": "3c055160d7fc65c78585103aeac3bbd391e9afdf22cafa39bbd4d865c5bcc19f",
+      "body_and_header_sha256": "884b8d4e179b0edd8a3277e0a96519c9ab5bcf303326b5c1a2fee9a5f070e561",
+      "footer": "43 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 44,
+      "sha256": "773b4c30bd7b495c6926179fb8b55009c77558b22e2e64dfba4b1fc86e561b56",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 44,
+      "previous_png_sha256": "801aadb0b31361a7643a605ca797bd04cf2f72bd0ec2565fd3dd23d490667111",
+      "body_and_header_sha256": "065c983d8b650061959a409a7e8615cf4d96b3869c324990ab68a9bdc70c1db7",
+      "footer": "44 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 45,
+      "sha256": "096cf185db98076f454d028ed9384de775b760e8669fb8240a8f006a353e6b62",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 45,
+      "previous_png_sha256": "65c79fb8905f01a8b032a8e08b2bff05a5cb46700abaa5b69f5bfab43991d981",
+      "body_and_header_sha256": "ca76060f89f5d798ccd8fabc45b01971de964c0e3504e52d78dba9676c245dfd",
+      "footer": "45 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 46,
+      "sha256": "c4785bbcd41a4974cedeefc380a5c5eac10db7ab89373e58a2055b92a9f4e070",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 46,
+      "previous_png_sha256": "5df02c20539f3e7f80a1add9d9dc29d53d44ab8d1f7581658e83e5b0b28a2951",
+      "body_and_header_sha256": "25de5d941b1fd94969b93fb8a26f048a129424e54f98820e6a01c607e2eb1af9",
+      "footer": "46 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 47,
+      "sha256": "68ec153dc6ca5867165beaf0dce45a7ef4aace9ece096eef6bd6f8cee91414ba",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 47,
+      "previous_png_sha256": "a31b108a2caa18d38ca7770b2e21bb046f2f1be4a49835ce968b2e17d7f251cb",
+      "body_and_header_sha256": "450268ca294f5dcc56e7a9a5235968f95e3f7350e003b9c48f2768e4dadf3012",
+      "footer": "47 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 48,
+      "sha256": "b494a14770a225a353ed5d13f898152c0af458342c3499b8bc048636e25e1b7b",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 48,
+      "previous_png_sha256": "e46585ec1241e4e04e7b12ae33e22bcec28ef26fdfe6ac82dac8497d4885863b",
+      "body_and_header_sha256": "8ea7ebc0241447be8603b0fb9ce5a68d6c66fd2b9d685d5685698d2ee5a69c3c",
+      "footer": "48 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 49,
+      "sha256": "84eb86932b75f058721cedf3c499104ff18f35a73824babf9b17896fa2baf921",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 49,
+      "previous_png_sha256": "91bfce6016d026a56c6910466d95e86ce0771b981add010b56faed071ed46276",
+      "body_and_header_sha256": "6269970b2b0115dfc1cf9f08d25e755c3ab878c5e4a88d2f4388177633921d0f",
+      "footer": "49 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 50,
+      "sha256": "8099f0dcede323731652a21a52ded9ac1517fee824062956f191e44a1865e9a0",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 50,
+      "previous_png_sha256": "814e53cccfeecf96e91a584f47215126ad7a7f0c2eeffe15c68e2d8793f37de2",
+      "body_and_header_sha256": "31b6c53d81c3ba859196a3f12707f5757903ac57bad5ad84623cae3b5081bedb",
+      "footer": "50 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 51,
+      "sha256": "12a6e15a31ade4661d2bbce61e0a35904b7712f35ea6b7be9186cb4e704f26bd",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 51,
+      "previous_png_sha256": "1ed02ee75e818f703d55e0ec58c75f0e41e0b93abbf8c00fe72ec7dbc9d0354e",
+      "body_and_header_sha256": "52acbbaa4b92b52324165305047b69ffd23bed488dfdc8082cb717015fb3f525",
+      "footer": "51 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 52,
+      "sha256": "9520222d99417f6cd537ebd82c80fb7b4c0568a6f88ef9cb7e9cb62f713540cc",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 52,
+      "previous_png_sha256": "023bd2c72d25eb2a2c775bed982b76bda5d14a6f90b92be024d41bbc6c8bc67a",
+      "body_and_header_sha256": "efea2288453c5d2ed026f35b4d7ce3d2f2a6ae68d6da08e42ff1a42226ee4ac3",
+      "footer": "52 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 53,
+      "sha256": "ff4b2de63ef26ca04f797893176f5fb0f26700f6311b033aeb1664452af70125",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 53,
+      "previous_png_sha256": "666617dadd2048a1e4278d50197814c1ca74d7b85c4d960be06cd1458c9f7dae",
+      "body_and_header_sha256": "976e9920d00ea95d505124d255b149f6350f5145a5b3b66b59b2c7297a120145",
+      "footer": "53 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 54,
+      "sha256": "9e4e3938692a2bacbd8423ff591d7d0306fc8fc1654f5d6fa32d6683b9694a8e",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 54,
+      "previous_png_sha256": "a02031e139a5b9f55e0625c9fbdf0fe43c8e55b01588b40ffde4875fe228da96",
+      "body_and_header_sha256": "235495e1fe6196da91a81245bd31c967b086ce9c91e9edae2e30bdba7a5d1483",
+      "footer": "54 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 55,
+      "sha256": "42e34331f583db90bf6f76a5daaa25a56ae3967d4f0dd1f649410ee47d416840",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 55,
+      "previous_png_sha256": "01439be9678225ed563e5a58bb53b672751b4ae50f03fd180d15ff17f2ed9380",
+      "body_and_header_sha256": "72d9e40304b193b1bae018979a32429e05dc5334687c40e0e4a8e66555bc0f04",
+      "footer": "55 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 56,
+      "sha256": "a6fe4907c545d9be1ea8c70e3e6ae067b96e671f0f3a98677d3c890dc19d15d2",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 56,
+      "previous_png_sha256": "a6ea70230d4d7ef04d3ac47e8a7bee54f9fdb9055898ab81702a0f8893ce499c",
+      "body_and_header_sha256": "bd2ccccb04e8db196c342c6a77c2566a4711e7c1b385515e27e99a0908e622df",
+      "footer": "56 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 57,
+      "sha256": "8ed01fbbe169376142cd1c331c83ce4bca965700ff5984ad267acb15b11c27f1",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 57,
+      "previous_png_sha256": "caca617deb080c7caaca7d0ee381e9311dc31c0efe6ea6390cd7af1651d2a08b",
+      "body_and_header_sha256": "5120d2b7069e5d7b0997bc9fcd9ac5e35f3bbcea8db23d5d5dbb9c98bffaf315",
+      "footer": "57 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 58,
+      "sha256": "43972d391ae1346cee3b030c65b5e90ecf531c6308b5806e69938f2361e9d0c5",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 58,
+      "previous_png_sha256": "5932ea7e221a2702b5520b839a06ad44c42b5ac952a95da083a05b82d0b00133",
+      "body_and_header_sha256": "8f4344900d08ea8ef6cfc7bdef4728aebe68e306caf231f4b639304412267ed4",
+      "footer": "58 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 59,
+      "sha256": "5f6ded3512658f32c25f2bf60c6072cce0e2368a53f96311815c09ff44b56176",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 59,
+      "previous_png_sha256": "884de0ce3c8af88d8fe8406d51cdc55e73bf41e4bbda13748d7233867057fc82",
+      "body_and_header_sha256": "2077e8bd1b651b2cbaad3e330109c7c70377ccc5548f47d53179c969932b92fe",
+      "footer": "59 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 60,
+      "sha256": "bb8c22473bd8445b36294d32c6832028f4557e6dd6c400989f33acfc7bf91764",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Direct visual inspection of the final native 1414×2000 page PNG, including body, tables, headings and page transitions.",
+      "footer": "60 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 61,
+      "sha256": "b6706995b9622a4b95965af1212a35dcf09148a317abcfd4e27edf773472f1be",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Direct visual inspection of the final native 1414×2000 page PNG, including body, tables, headings and page transitions.",
+      "footer": "61 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 62,
+      "sha256": "fac9c37e468bb2bf6436ca7bbf26af608110481f4c76c9f4cb47bc615efdf14c",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 63,
+      "previous_png_sha256": "5a7fc89655069cea3fa979dd8b3605e132d319a7206a8f7f86b0025a27b1bfc2",
+      "body_and_header_sha256": "c7fef6ca019a6ab5fc992e8c676488a0c2fcad9f91179ed6d47a4ce9863073de",
+      "footer": "62 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 63,
+      "sha256": "ca0a0f8a52b06689507ae7012bf31651301474aeda2bf0b2a8e0655792b911db",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 64,
+      "previous_png_sha256": "2454a157829a2975964a9374fc8c072692f555ebdab14daf2f1cd8d103193963",
+      "body_and_header_sha256": "9932df043546907c9a1817eca3a656dcc4d4232cdc9846da131114277f601a38",
+      "footer": "63 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 64,
+      "sha256": "0ef6045cc0a869a2547456c0376a673841abbd8d71fec0d46c3b819d4c201b19",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 65,
+      "previous_png_sha256": "c1dbba954379360bfbfaab360091dcd1ec63a0b49a8843892e2813f88b2b3dda",
+      "body_and_header_sha256": "fd47bc393c14351ebc72cb17481ccca086bbff93853b9f1b60f2a5168163e5c5",
+      "footer": "64 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 65,
+      "sha256": "6ab8efc28cb2a5be631813901b041c70404e9e4951f0e01281142cb824106eeb",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 66,
+      "previous_png_sha256": "c10b7923fc221f6825cb421951652cbe2834aae222c4a7f97454f513d3cf47f6",
+      "body_and_header_sha256": "e37808c90d9301bc1b5776a4bacd40719454bd705ca1a10816b0af5929a4c380",
+      "footer": "65 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 66,
+      "sha256": "eed6e9af6da2e86efea6f34f2140b109fce3c4f3cdae7a22432414b7234e4428",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 67,
+      "previous_png_sha256": "64d336bdd355e019f9995ba8cbe20516e7ad787d067ee0dc45fc05226bf9a941",
+      "body_and_header_sha256": "2d88c5d08610c5bb1081326a6a55cc230290dd24e19762ff321c1f9e92b6eb86",
+      "footer": "66 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 67,
+      "sha256": "cb81884228ec86113b37012f5e1e6f827ea3e69c7b7eb9c0f35e26edee019f46",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Direct visual inspection of the final native 1414×2000 page PNG, including body, tables, headings and page transitions.",
+      "footer": "67 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 68,
+      "sha256": "572967aeae461ba484092c8f7d531fd0e9d943ef831cfb9742ac0152634b94ac",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 69,
+      "previous_png_sha256": "81fc7c617d72a93ca59813f480a28f79b03bafdd0461e2f07fd9657e5f76d660",
+      "body_and_header_sha256": "1843d8c34126bae945658134e0ba58118717ad436b284ff50e0c44005940ce64",
+      "footer": "68 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 69,
+      "sha256": "a864b48bd4bc4592ab2bc62a4e02cc4e43b1b039e609286eff4740451f4b7f91",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 70,
+      "previous_png_sha256": "0428729060f7a3650feace1bbac01bed322e432f2fb2454c730c4a144ed6c002",
+      "body_and_header_sha256": "70f4dcf2b1d4d0e6c157d8f2dd4126f982e256d81f250863fbedc14551050f4e",
+      "footer": "69 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 70,
+      "sha256": "b61ea0a8720bbc0547f49c548937894d924e2262bd8a925c8bc3b4332786116c",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 71,
+      "previous_png_sha256": "c6601a4c48d283c12655408b0668c166baa8344a70496f2579a265271ed2f2de",
+      "body_and_header_sha256": "18be346f7fb2ce7254dedb77ded9979f3ab78e91fab573243eb0f49bde7b5a52",
+      "footer": "70 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 71,
+      "sha256": "f2113d1c83117f24a6d2e2da99556157b4d3940b2457dbda0c12d292b09568eb",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 72,
+      "previous_png_sha256": "f35dda3fc9c6089c9d6002715c0de3a76025af6568884d3a429526ee869a89a7",
+      "body_and_header_sha256": "b370290d14e7a06e462b9df66642a92555bedc9809a743babbf463b36ea41962",
+      "footer": "71 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 72,
+      "sha256": "7596386dc3562519526aa7f38bd905dbf4206b70dcf0b0b90586018ce3c7af20",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 73,
+      "previous_png_sha256": "0770e350da934dd83ac2c9c3a9dfc70cae0ab312c322413615a51aff55a5e87d",
+      "body_and_header_sha256": "fdbf933346977e13f0f834824b19c84a821cf6537d20fbcc02930fc41c6e04bf",
+      "footer": "72 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 73,
+      "sha256": "f6c036f2b2bce403bbd89dbfe83f3fbe9379042c4e866d0c15b2f8dd739d543e",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 74,
+      "previous_png_sha256": "7088dc7e60cd27df589eb0d499da6ca6e5df47cc9e99e631e40dc3a5a0315dbc",
+      "body_and_header_sha256": "db530d6501b9e48e0be42559de44038efe5c31a08af825ba76d4f64037f966bc",
+      "footer": "73 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 74,
+      "sha256": "f6ee7636fef9fe08b5297666ab069b1d84f83172334b715f71025a55a97f4ac2",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 75,
+      "previous_png_sha256": "e7a23f6c71d4e2f5aed0c09b6900b8b4250180cc22ef71cd4692007c659f9ddb",
+      "body_and_header_sha256": "e51001893b58d981cb1732d17ae9d802cad69b8b4b5d64e418393913c23c5a78",
+      "footer": "74 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 75,
+      "sha256": "71728911c5218996a1649f9e57adaaf8f1e4f9cfe7b83810d13a7417b2ff034d",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 76,
+      "previous_png_sha256": "b768f7cee99f031cb2aba28190f1644b967ca1db1ac92e7f420f820b2bfa7d2c",
+      "body_and_header_sha256": "170dec160a249f69cdc79acebfad7e06b7848771d3fa41c112261a7bdb9cc02c",
+      "footer": "75 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 76,
+      "sha256": "cf1c3f607a5ce56b3abdb37eb4486f04449531926e862178cd6a375386569e3d",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 77,
+      "previous_png_sha256": "98862a304d5d7654306abac4826df873d15a606f2fc8f929511cf12f61f39710",
+      "body_and_header_sha256": "eebdc999ede2a2840c0e439fc52ac10cdf8f246a0a65cdf13e02e449996d4377",
+      "footer": "76 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 77,
+      "sha256": "684585dd5e9fe8fb28ca833a59d358159425a8e2fd012dcc9b3c5f5364912483",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 78,
+      "previous_png_sha256": "1067a28ad559222add459a98edc4c362fb6b19bae57e13953dcbbee457560696",
+      "body_and_header_sha256": "be608748d3827fc20e7fec509294b4117685042857d87a1e811d21bda86d8ec6",
+      "footer": "77 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 78,
+      "sha256": "7563dae977018b6602b397daf139bc400c2b40f0cee064fc583e758381a6c1e8",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 79,
+      "previous_png_sha256": "91e0e93463fa9c9df484c6ae8578028f8fc0a04ded1ecdea4b3d20defb39617d",
+      "body_and_header_sha256": "7fd11209569ca2e949d28139f625ec94bbd84d3f20c15444f450c191c3837099",
+      "footer": "78 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 79,
+      "sha256": "16a7f73ec885184b88c8cae24736ad799cd4ab018f64c8b3c63d657e01cf9a85",
+      "status": "pass",
+      "reviewer": "/root/baseline_qa",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 80,
+      "previous_png_sha256": "84dc65da4f4c9440fa0dd214805c78a86375e1d71214970f82ce75c4cc4d5efc",
+      "body_and_header_sha256": "dd99dee291c3f6077e6ed9d34d3822957b0f6497beb06c9208e343f52642e480",
+      "footer": "79 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 80,
+      "sha256": "faf4e0a612b020ff00ba6ae0ffa800f8227faed02715ca3eb18e8b6f842785c7",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 81,
+      "previous_png_sha256": "bf142d03fc13214f7471555885ece0d3d1224e567510730d192f4878d8571533",
+      "body_and_header_sha256": "b19ac6cc73954389869f291bb0570ad745a85d011b82ff3b5ad9cf2fc7d4fc8c",
+      "footer": "80 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 81,
+      "sha256": "51d1271e1a7de04cd70bb6a0c880051aefd5f71f284b24c6a6b4ffa011db0494",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 82,
+      "previous_png_sha256": "6795c9d0072b55f47e686c516cbca444e4ae20cf90ac274b39f977274609504e",
+      "body_and_header_sha256": "3dd4f11b67f287129debeb12d4a306dcdf4201a1f046449ddbabf54101c9c02a",
+      "footer": "81 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 82,
+      "sha256": "a08514f97dcfd355aaa12b6cad7d4ba338321abd35094f839b167de726eca179",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 83,
+      "previous_png_sha256": "cad61aa2bcbd34919771867d648b57a8524cabf2865e36abd8b3900120c7586e",
+      "body_and_header_sha256": "2f03ac6ae08ede0670c7933b9451dfd06201d9c28ab42d3c9a3d53678d820932",
+      "footer": "82 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 83,
+      "sha256": "73f97a475303de197d363093b13fe056e88eb839f845c9107bc12cacbb68d007",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 84,
+      "previous_png_sha256": "f047be1862a9c525c6b46ec96995d9c20f0da5e8fc606022d84eb9bd99598080",
+      "body_and_header_sha256": "09da4666983fb891ce040e5051c777e48b5e6a50094b9fd32cab4dafcdf5b7c8",
+      "footer": "83 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 84,
+      "sha256": "72095f6ed18722b33c077f49569ee45a685290fe43250ca7ea345ca4c43f35d2",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 85,
+      "previous_png_sha256": "411340b13a3b7824980159cebf3c51feff0dc7e0398dddf0e11f51f818bb0744",
+      "body_and_header_sha256": "df573bd64330d417aafd817aa2364b6c0f39bd6b1c311f28d629feebc263ab3a",
+      "footer": "84 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 85,
+      "sha256": "d8479d4a464fb0b948d5c49a00bf5398c7a2182883bf85ba7f6119031c05ef2a",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 86,
+      "previous_png_sha256": "7b6bffaa6da28a8b71efeb3cfbe466f6ab71dd234ee17a1e497f2c7016d22333",
+      "body_and_header_sha256": "d0032c562a49d52c26a550f100f9d47347fef521106e887530d28b7b672deb06",
+      "footer": "85 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 86,
+      "sha256": "ddb26dd678852d944ee3168b7f5687c7a91712c5725b2cfc4eab6955a218956c",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 87,
+      "previous_png_sha256": "7f6e6fe90725e8dac503003b84a93522ca7767ff282c5d738cff2c73173210f9",
+      "body_and_header_sha256": "f467b6e065e631aeeda7db39ae64a667d72e121604cf93487a5ee15249a506dd",
+      "footer": "86 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 87,
+      "sha256": "edb42f162874dac8e91500dbaeb0239950b8cb8de6a19c35356d27c587a71227",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 88,
+      "previous_png_sha256": "afbc7b5b227bfbc73b2b3be6b889ee256eb06d30c90927f0c158c392d864adb6",
+      "body_and_header_sha256": "400b13ed21a5bbaeb4fabe5adf30031b9cb9adbfa8a363176f2b52acdca07392",
+      "footer": "87 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 88,
+      "sha256": "8bfac1cd6dce723d1b9849d31f5374196a94d405fe1623e9559432d302ee8289",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 89,
+      "previous_png_sha256": "96280a6af662895e952ff8793296794cc4bc9d6d4576713b54b58719fdbbbf93",
+      "body_and_header_sha256": "f9df159eb666077f719d0604ea2091dee6996b0255a2851eb8b32b8499479250",
+      "footer": "88 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 89,
+      "sha256": "a0c08d5cffe71a39493d749beeed449a9193ec7918ef7fc8c8ea4c3478b07a2a",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 90,
+      "previous_png_sha256": "b156aa0512f3d5b9e2719b763886cce2f3a1171b2a86b0666b72cbff482c272d",
+      "body_and_header_sha256": "03775decc5b9528bd9006712f135a2b4c8c1f286d459d05be77129b473b2a478",
+      "footer": "89 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 90,
+      "sha256": "296097bb45fd52710eff1816c270906d853c0bde5b0b815e3b9432166891836f",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 91,
+      "previous_png_sha256": "69be79f7b2139134c4e5b7bfe8d3a8ffd4c2462b258c58f8d0c0de6aad5a8912",
+      "body_and_header_sha256": "8a608b195473b3b86229fc5849f648268e36b839fd5f1d2b785fb00236731758",
+      "footer": "90 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 91,
+      "sha256": "3f6bb9f91ab6ca28246ce7a60c99c7167d2237d7a9c24078fa51694226967104",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 92,
+      "previous_png_sha256": "8926b8e636f66b97bc51fa026c6c96b78d6a86cbc581089ef06a9423bf1287d2",
+      "body_and_header_sha256": "1eb6b332dda4889d12b329f03759fccf3dee130e2d88fc2294aea794671f879a",
+      "footer": "91 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 92,
+      "sha256": "4d234d8460fb790ad8248216015ca634706840ef416883b53de7783831fba5bd",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 93,
+      "previous_png_sha256": "a80ef6ca2c9671e4ae4df5fd4f96bfeb29cd366e9ecfa35c14ad19f125bbde33",
+      "body_and_header_sha256": "3aa01baff0a5d595f4366398d008f50c76f38cea429794dd88462d8520aad881",
+      "footer": "92 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 93,
+      "sha256": "a0986781c7fdbe1280a5c5c7b591178de3bb569d7925b3808fdcc23633146bc9",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 94,
+      "previous_png_sha256": "d58e7402c6bcb1077ebf689d0ee67daeff89e6d9bf2937bdf4325ca3443b2d0e",
+      "body_and_header_sha256": "5d221da5054c22a317eea36044c049a74e788966a6d599f2332c70b588d68a4d",
+      "footer": "93 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 94,
+      "sha256": "4f7ea52f41e80a5d6c4e58b44baddde8513126365def14e8760dab608723806a",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 95,
+      "previous_png_sha256": "2bb249d7429cd536fb20ac40f12156bf90cf6e2fd56d456d24cfb94a77a74935",
+      "body_and_header_sha256": "ac6b25675df714d59c3521e4cb9341abc443dc2ad4713948dd7d8737b0b8bf9e",
+      "footer": "94 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 95,
+      "sha256": "773744f57a763b1593608deb3bf204f2c30398a50879dae810008cca55c73530",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 96,
+      "previous_png_sha256": "88f6c8e987d66e3eda8763b502966f8e1ca37fe57b7a3ea5ec6c2651d5c354a9",
+      "body_and_header_sha256": "8fd558ad6bc21898765af989fa5c519bb90f4de403fae7473f5de7de57e5e9a3",
+      "footer": "95 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 96,
+      "sha256": "f52055d4620cba23f513c9d3c83c7641786a4089417e0daabd56be484b94bfef",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 97,
+      "previous_png_sha256": "09e8c734a97f74c1d5ea37a7506b4e317031ce4e961694db1be2905fc88e7452",
+      "body_and_header_sha256": "d4d00f08c55e3f6d1fed7c21533ed35944f9d655297f652059e437c0ef26f003",
+      "footer": "96 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 97,
+      "sha256": "062347a7654c0919ebdd6d38bc263229cd4062dff19e9f769f96621c9bca9b9b",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 98,
+      "previous_png_sha256": "3c96952100cad10323a1253d0b8ca45b0e5cb4acb764cec1bbc148071b7289e1",
+      "body_and_header_sha256": "f5db2ce4d39e114dc2798c95c90b44e99217d0552611280ab2fb6370c6bb21be",
+      "footer": "97 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 98,
+      "sha256": "f347d0a9f62b02c117343526e8f3b1426d3f8052fcc974439cfded6179004a0b",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 99,
+      "previous_png_sha256": "b75a4b7f5da1b7e52635e1eb8ed4d3d4636ddc3b9c1e317e7e2f9485960a07fd",
+      "body_and_header_sha256": "7b9b42dafed97e0c6f3c766933cbdcdb53edf79ab110e3281453467ddf2088f7",
+      "footer": "98 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 99,
+      "sha256": "a023a9b68cfcd0e5ee0716cf768dde78c35846079cd16d4f53b74e0eb3b2740d",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 100,
+      "previous_png_sha256": "3af78a5a9e15e09398bb415ee5358b2ff891e7a269dadf3abec94bf12a453a57",
+      "body_and_header_sha256": "ac374405cc8b9108bea3866e75c6a1f93db28ab7299e608995ad8ea9e86481cb",
+      "footer": "99 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 100,
+      "sha256": "70aaecf73dcade82366e9feb33dec70a3996defc74fd985cd107db4d8e588786",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 101,
+      "previous_png_sha256": "d4daa235a2554f804cd30e68da44ccfe29214b16da9f43b4f49d7fb4ce7667ad",
+      "body_and_header_sha256": "6ac3f1def2c4c970b84f21c64d28389fb9705930746b1e05d2369ddbc4340198",
+      "footer": "100 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 101,
+      "sha256": "cd04565d8d1a5b2d59be7bdcee49b8643e326ff3d5017b88ab95649b615e4fed",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 102,
+      "previous_png_sha256": "d3ed590bb4c5774ab9b5400aa313b10a4e7e05a4a05ed16b7c766ee1802e5d04",
+      "body_and_header_sha256": "2d3270b3ad36af465bbff24ed642bb6e8e700a3b7afbd2c03523c67d13ac2622",
+      "footer": "101 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 102,
+      "sha256": "27bd928a6bd06c7a6d3997ed5d08a4565a64a7dcea0d2161c5d022611b714fff",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 103,
+      "previous_png_sha256": "09197f6c0bbcf7f62c86cd2c5c180b6b6813ba1b4207c90d44fa850dfe79bf35",
+      "body_and_header_sha256": "562398c409ee1ec8cf9b10bf9157377f89ff53b0c4ab5cb31fea7272ac915935",
+      "footer": "102 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 103,
+      "sha256": "1fdf556c1c9969664f4e259dd6f2aa268f738a68865a587c97f6f5f91b09e45c",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Direct visual inspection of the final native 1414×2000 page PNG, including body, tables, headings and page transitions.",
+      "footer": "103 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 104,
+      "sha256": "364a11d85dcd22aa06ce1b4fb27237d929ed62979ac71e5f61af70b2fc32cb5f",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Direct visual inspection of the final native 1414×2000 page PNG, including body, tables, headings and page transitions.",
+      "footer": "104 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 105,
+      "sha256": "fa5bd9fd1b479bffd994cb65dc01faad0bcf6cff05c808f65ddd888228429964",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Direct visual inspection of the final native 1414×2000 page PNG, including body, tables, headings and page transitions.",
+      "footer": "105 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 106,
+      "sha256": "07eaba9c382d1583e37e8ba8d73d25b6426b23aa17ed7e43b898e2ee2ae12f2d",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Direct visual inspection of the final native 1414×2000 page PNG, including body, tables, headings and page transitions.",
+      "footer": "106 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 107,
+      "sha256": "0cc6d230799476e140d6f117fa9c501eefe14cef87e775e2f7cdd19e39a590d3",
+      "status": "pass",
+      "reviewer": "/root/repo_audit",
+      "method": "Direct visual inspection of the final native 1414×2000 page PNG, including body, tables, headings and page transitions.",
+      "footer": "107 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 108,
+      "sha256": "38890fdaceb4dca530f5d5b0af48127e8343af55e7194da902a0a75a0a54f7fb",
+      "status": "pass",
+      "reviewer": "/root/repo_audit",
+      "method": "Direct visual inspection of the final native 1414×2000 page PNG, including body, tables, headings and page transitions.",
+      "footer": "108 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 109,
+      "sha256": "1b080d61047fd4268c14cc33e1e8cbe7d9899b51d7ab5bcd2e9e1273cf81c9ba",
+      "status": "pass",
+      "reviewer": "/root/repo_audit",
+      "method": "Direct visual inspection of the final native 1414×2000 page PNG, including body, tables, headings and page transitions.",
+      "footer": "109 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 110,
+      "sha256": "2f04f3efc26dc08d233cf335bb9c8c23cad9fab31e371f116501fed31cb17c89",
+      "status": "pass",
+      "reviewer": "/root/repo_audit",
+      "method": "Direct visual inspection of the final native 1414×2000 page PNG, including body, tables, headings and page transitions.",
+      "footer": "110 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 111,
+      "sha256": "8a51c4a24acfca51b6a88323d0f6e84870e992febf7e5efb6f2d1d44aa99c490",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 112,
+      "previous_png_sha256": "ba9c691326f14b9ac2f986b81b1a8db614b407477d3ff5acbaa1b223f470c990",
+      "body_and_header_sha256": "f6a0620ab72dbcb6bf7c724d4b237cd8dcd89c45e41a15993fa1450697341e89",
+      "footer": "111 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 112,
+      "sha256": "13a531c5a780b9e1ad19fd6637ce12cdbd0dc34ad5987ccf21c63e64b0756e61",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 113,
+      "previous_png_sha256": "bce262802e6606831c940cf996d0952c828dabfaffc81454bd34a1d413fb504e",
+      "body_and_header_sha256": "d913712f89234865d9a1a1e8b43c6897fead2cc2907540e7a7c80bb0e6c5699c",
+      "footer": "112 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 113,
+      "sha256": "91b49ec1de0fbbbb08b80504287497ac041b5676f76e3d289f3235a626b46202",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 114,
+      "previous_png_sha256": "1708b2070821ab2f1770b500894b259402ee03f5126f8d345301417dcdd3d373",
+      "body_and_header_sha256": "289081668e6d1810435dc573e2d7237dd5dd5fad6c032aacc4e91ad469089f3c",
+      "footer": "113 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 114,
+      "sha256": "93e9d425cbed4e748e4ce713bfa4d9e35d5036498fe222f66c398d0a1726677f",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 115,
+      "previous_png_sha256": "2b3009ce4ac087956d3a209bc1499056e74d3dd9e26efb072c54822dc4b79b06",
+      "body_and_header_sha256": "94b28e7efa25e9a3cb4b2285aee642861f486eb4cbb09c87254aac2951d98485",
+      "footer": "114 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 115,
+      "sha256": "9d5a58b525e26f765eb361fecc82cc96abc7646a85523efabca66774af26ca58",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 116,
+      "previous_png_sha256": "4882140c2d208084cebccef940268bdad674e8c1da3abde847335c7ed0bffd1d",
+      "body_and_header_sha256": "f02b4a99a27f29634bbdfd1c1dc94feba13d2d8b3a1ec1d236e9ec593ae09272",
+      "footer": "115 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 116,
+      "sha256": "6361c60e2a7f583f5d7d664e8fc85c1f1f6654a64737d0ad12e6c4feb99a09b6",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 117,
+      "previous_png_sha256": "05c32b9fb9235af4733e00daa3aaa2c198a1311ea32f8e7bbb8bed51b0b45c58",
+      "body_and_header_sha256": "e6b034125f91e3a33555f3006afe2768c7f3a7bc5e1a75a2e073b53179ede3be",
+      "footer": "116 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 117,
+      "sha256": "431aefbddd0c27f62dedaf03ebfdd8cdea125cde39aa2320bb1bf2a78e3fa88e",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 118,
+      "previous_png_sha256": "037e84a07149d23377efded0325ad1b25794c120b63c47948f4d6fdaa0b0b2a9",
+      "body_and_header_sha256": "a66c72a5e426d8f65699114c3fb00140e589617d64c25d7fbe435325edde5d83",
+      "footer": "117 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 118,
+      "sha256": "084e6ffa11ad5d0148d06f6425ce8a3c22baf7190fa2aeba410cfe11d6138040",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 119,
+      "previous_png_sha256": "9237a529d0442b4933d9ee001321c27e4a62c3814111a5eaaeef3d7e6906ba7c",
+      "body_and_header_sha256": "a8d03a20b8c164a46a97ee6600c2c75263951e50a86dcd3aac95ff0f7706a957",
+      "footer": "118 /119 — sequential value and in-page geometry verified"
+    },
+    {
+      "page": 119,
+      "sha256": "94a88b9d0e57f896763e67f7906a68637a7ed439d1ed12b9ab39c2c6fad509f8",
+      "status": "pass",
+      "reviewer": "/root/world_reactions",
+      "method": "Every original page was visually inspected at native resolution. The final full body and header are pixel-identical to that reviewed page; only the bottom 100 px footer band is excluded from the comparison. Final footers were checked separately.",
+      "previous_reviewed_page": 120,
+      "previous_png_sha256": "08790ae04c9f2616c04aa6c2d6eb242c7eb5c46464405da9229c096d62c41bd7",
+      "body_and_header_sha256": "cf8b4fa4a9bbdd8362e5dd16d656ca5801542a4745b11755ac44c00122e25d5d",
+      "footer": "119 /119 — sequential value and in-page geometry verified"
+    }
+  ],
+  "unresolved_findings": []
+}

@@ -1,0 +1,187 @@
+{
+  "version": "0.13",
+  "renderer": "Blender 4.3.2 Cycles CPU, 24 samples, 750x600",
+  "review": "Each final preview was opened individually and visually inspected after the final generation. These are Blender asset previews, not Godot gameplay captures.",
+  "all_accepted": true,
+  "reviewed_count": 12,
+  "corrections": [
+    "Moved the 18 - 19 service latch marking to the unobstructed side of the panel after the earlier placement remained obscured by the bolt."
+  ],
+  "remaining_limits": [
+    "Cycles sample noise is visible in shadows and metal surfaces.",
+    "The small AUBE marking on the intercom has low contrast; game interaction labels and reference text are separate Godot labels.",
+    "Native engine placement, UI visibility and hardware performance require game-level verification.",
+    "Static geometry; no rig, articulated model animation or LODs."
+  ],
+  "source_sha256": "9eeacc60f1e35110c741fac947bb1916c702b3e46c9d37b6a1a1b0ebdad023d1",
+  "images": [
+    {
+      "id": "rest_armchair",
+      "file": "docs/assets/v0.13/previews/residential_rest_armchair.png",
+      "bytes": 696138,
+      "sha256": "a74f4a1d8e33eb07fd5f92c3713118bb3d324a9fc6edbfe273094acd826ab879",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Assise, dossier rembourré, accoudoirs, quatre pieds et plaid lisibles ; pas de pièce flottante visible.",
+      "glb_sha256": "24ce3d573682e8655dd5a28895b452fdd0e0972b275b9da702243b998ca5053e"
+    },
+    {
+      "id": "medicine_cabinet",
+      "file": "docs/assets/v0.13/previews/residential_medicine_cabinet.png",
+      "bytes": 681874,
+      "sha256": "660450d3ce4d93d610aaa4aecea91f1a647bdf368e542992fc2b0efd20cc5cd8",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Rayonnages et boîtes visibles ; porte, poignée et croix verte distinctes ; marquage SOINS lisible.",
+      "glb_sha256": "0895443d905bead198fa6cd18979c1f5d1fde763793910937efc4ac5ad0e20eb"
+    },
+    {
+      "id": "resident_bookcase",
+      "file": "docs/assets/v0.13/previews/residential_resident_bookcase.png",
+      "bytes": 765570,
+      "sha256": "77fe26877b01d9c00691560f57bb2ff5b4f1f9455e5c9de43ca0ec5bfd3aea72",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Quatre rangées de livres, tablettes, joues et socle correctement raccordés ; palette cohérente.",
+      "glb_sha256": "21c8798fc7a17b31af3d0407e4efd78bd2673bf93b46d38461a5c2b0e5bb9dc1"
+    },
+    {
+      "id": "coffee_table",
+      "file": "docs/assets/v0.13/previews/residential_coffee_table.png",
+      "bytes": 727812,
+      "sha256": "915502e203b604c72637cddf35cb3ff1d77fe72f56f4e327f08690356b0e01bc",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Quatre pieds, plateau bas, chemin de table, album et deux tasses reconnaissables ; assemblage cohérent.",
+      "glb_sha256": "80cc739aa963dd25dd88c352780bcd18788100c6a7c73fbc28d39662bf7a16e7"
+    },
+    {
+      "id": "reading_lamp",
+      "file": "docs/assets/v0.13/previews/residential_reading_lamp.png",
+      "bytes": 578330,
+      "sha256": "6687d0e09ff08e83aefd49912ea9414df2d5218283109a67dc910858a0cb0e08",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Abat-jour, pied métallique, base lestée, interrupteur et cordon distincts ; silhouette entière cadrée.",
+      "glb_sha256": "1542e6fe4bf0d16211d787bfe72433ae1a08a48b80d0e1f4c6341deb6dd5eb61"
+    },
+    {
+      "id": "wall_intercom",
+      "file": "docs/assets/v0.13/previews/residential_wall_intercom.png",
+      "bytes": 688279,
+      "sha256": "377fa6a23ffc36611dda6316e502b0495ded90b9df76d39f97a4931c0aed519f",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Combiné, grille, écran et deux boutons distincts. Petit marquage AUBE de contraste faible ; interaction lisible assurée séparément dans Godot.",
+      "glb_sha256": "359aee799670772a08f2fdea61e779db0fccab6b096b2ac5b1e1c2543764bb5d"
+    },
+    {
+      "id": "service_latch_panel",
+      "file": "docs/assets/v0.13/previews/residential_service_latch_panel.png",
+      "bytes": 694336,
+      "sha256": "55badb29d413f11b4c32777e456c0622d08d358c2a16969c76e385d9328b5afd",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Poignée transversale, verrou, guide et fixation identifiables. Marquage 18 - 19 déplacé sur le côté : visible sans recouvrement du verrou dans la vue finale.",
+      "glb_sha256": "418390cba726b91a3fd614853d20ee13e7d6444febb35b57a8ed40836a11026b"
+    },
+    {
+      "id": "telecom_rack",
+      "file": "docs/assets/v0.13/previews/residential_telecom_rack.png",
+      "bytes": 698031,
+      "sha256": "cf059ccd4943ba68eeb38e80bb4b8608f8907ffcb7a8855c336829fbf99e3442",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Montants, modules, évents et voyants distincts ; raccords cohérents et volume complet visible.",
+      "glb_sha256": "6dae29b4a3541fc605f8718d422584053af5171afdfe03aaccfe34163ae3faed"
+    },
+    {
+      "id": "patch_panel",
+      "file": "docs/assets/v0.13/previews/residential_patch_panel.png",
+      "bytes": 779535,
+      "sha256": "6bd4038a06ff496bffe97530c496edf3c523c914c121953abbd326467af007ea",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Douze prises et trois câbles de couleurs distinctes ; connexions visibles et inscription de comparaison lisible.",
+      "glb_sha256": "5e0a1bb4f9e2f1d93d6a688aeca368b76e379572a061e89be8eb613f2d1900e9"
+    },
+    {
+      "id": "ups_battery",
+      "file": "docs/assets/v0.13/previews/residential_ups_battery.png",
+      "bytes": 662228,
+      "sha256": "bef9c8a004fadf78865dd8fdcd5f1f75db1359b9e9f5dd54e7e551649515ad20",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Socle, boîtier, commande protégée, écran et évents cohérents ; marquage SECOURS lisible.",
+      "glb_sha256": "863fc5fc655a1a17dcaa41b1d1643f792b2f5766d73dd4f531e0ea0d09403514"
+    },
+    {
+      "id": "relay_console",
+      "file": "docs/assets/v0.13/previews/residential_relay_console.png",
+      "bytes": 717640,
+      "sha256": "ac0f25d9b605c4f4d27c971915f7586b0be17ecd1a83398ef9c0a386f82803b8",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Écran sur pied, clavier, microphone, plateau et deux supports distincts ; surface d’écran réservée à la présentation moteur.",
+      "glb_sha256": "463aaa0b1d546dd2a7e7a824cd56ad8adab4c0cebf49454e49d5b120d43b25d5"
+    },
+    {
+      "id": "voice_recorder",
+      "file": "docs/assets/v0.13/previews/residential_voice_recorder.png",
+      "bytes": 714813,
+      "sha256": "6fea654a2e214b74946b7a094293d0fecddc9edad58dd9ad502a6678eddab5c4",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Deux micros, grilles, écran et trois boutons lisibles ; marquage ARCHIVES correctement placé.",
+      "glb_sha256": "b866933552682874547dc3204620c94d3ccc2de70b38d25e65aa04c48b46f868"
+    }
+  ]
+}

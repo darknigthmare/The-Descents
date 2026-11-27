@@ -1,0 +1,14 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+BAAAAA+Carlito                       TrueType          WinAnsi          yes yes yes  12469  0
+CAAAAA+Carlito-Italic                TrueType          WinAnsi          yes yes yes  12474  0
+DAAAAA+LiberationSans-Bold           TrueType          WinAnsi          yes yes yes  12499  0
+EAAAAA+LiberationSans                TrueType          WinAnsi          yes yes yes  12509  0
+FAAAAA+Carlito-Bold                  TrueType          WinAnsi          yes yes yes  12479  0
+GAAAAA+LiberationSans-Bold           TrueType          WinAnsi          yes yes yes  12494  0
+HAAAAA+LiberationSans                TrueType          WinAnsi          yes yes yes  12504  0
+IAAAAA+LiberationSans                TrueType          WinAnsi          yes yes yes  12514  0
+JAAAAA+Carlito-Bold                  TrueType          WinAnsi          yes yes yes  12489  0
+KAAAAA+Carlito-Bold                  TrueType          WinAnsi          yes yes yes  12484  0
+LAAAAA+OpenSymbol                    TrueType          WinAnsi          yes yes yes  12464  0
+MAAAAA+NotoSerif-Regular             TrueType          WinAnsi          yes yes yes  12519  0

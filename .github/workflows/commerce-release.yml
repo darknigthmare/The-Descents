@@ -1,0 +1,71 @@
+name: Publish reviewed The Tower Descent v0.12
+
+on:
+  push:
+    branches: [feat/live-tower-collapse]
+    paths: ['.review/v0.12/release-request.json']
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: tower-descent-v012-release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish-reviewed-release:
+    if: github.repository == 'darknigthmare/The-Descents' && github.ref == 'refs/heads/feat/live-tower-collapse'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_HOST: github.com
+      GH_PROMPT_DISABLED: '1'
+      GIT_TERMINAL_PROMPT: '0'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Check out the isolated release request and its complete ancestry
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Check the approved parent request isolation and review fingerprints
+        run: /usr/bin/python3 tools/publish_commerce_release.py guard
+
+      - name: Install read-only image and document verification dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends python3-pil poppler-utils
+
+      - name: Restore the exact candidate verify reviews and package delivery
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: /usr/bin/python3 tools/publish_commerce_release.py prepare
+
+      - name: Publish verified generated files if the branch still names this request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: /usr/bin/python3 tools/publish_commerce_release.py publish
+
+      - name: Retain release outputs and evidence even if the branch advanced
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: tower-descent-v012-release-${{ github.sha }}
+          path: |
+            dist/
+            releases/The-Tower-Descent-v0.12-*.zip
+            releases/SHA256SUMS.txt
+            releases/VERIFICATION_V0.12.json
+            docs/validation/v0.12/
+            docs/captures/v0.12/
+            .review/v0.12/release-request.json
+          include-hidden-files: true
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 14
+
+      # Reviews are authored and committed before this isolated request.
+      # No workflow_dispatch, rebuild, automatic approval or update of main.

@@ -1,0 +1,302 @@
+{
+  "version": "0.8.0",
+  "source_commit": "90c7c23d1f00c1c007967083bc73364a4f34debe",
+  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45569546416",
+  "godot_archive_sha256": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4",
+  "engine": "4.7.2-stable (official)",
+  "display": "X11",
+  "rendering_method": "gl_compatibility",
+  "capture_protocol": "Native Godot Compatibility renderer via Xvfb and Mesa software rendering; prepared game states.",
+  "human_playthrough": false,
+  "manual_visual_review": false,
+  "request_sha256": "e2fb5b03f303174db630daa5ada83840ee7a52a03a792913198c2b79332f8403",
+  "fixture_sha256": "67f5d5b22362755330202c7b3bdaed69d99867acb7f2f6c576d480226ff07fb1",
+  "runtime_sha256": {
+    "prototype/assets/audio/collapse.wav": "42ce85f4ab1a1f83d0bcb5cdaabbd176c206036418fb121b10157a34797e5c6c",
+    "prototype/assets/audio/flare.wav": "6bc03f68a3093beacc464330cdab25fcd664e270671e5ae00950780aac7642eb",
+    "prototype/assets/audio/impact.wav": "e831204acdc889fa5b57a95b21edc8044748415342018720969cd6a589d58050",
+    "prototype/assets/audio/intro_sting.wav": "7920665fc873ca41cba6417e327d99f7229606634b64f2efd729b617a8c48571",
+    "prototype/assets/audio/menu_theme.wav": "42708f055e4aae61a48b07b9f6e67a3e02c7f82aade78f0907a15781478bb4a6",
+    "prototype/assets/audio/quake.wav": "869aaff278eaa264f9dfbe19801a09000d987cb9b316691876e52114f6e497b1",
+    "prototype/assets/audio/radio.wav": "7b5e25100bbd0738037ce091772325ece3ec9326c528d8e7593ee3d4ef7ade38",
+    "prototype/assets/audio/rescue.wav": "404c60cefad1f258166211024dfdbf402a0051d168efc906268afe3867bdae98",
+    "prototype/assets/audio/rotors.wav": "77fb4dcdf4248efd884ffe45c5ffad6315806f911577d51c3b9522dd38bcc78a",
+    "prototype/assets/audio/rumble.wav": "bc0e349c7dbda51573308c738b8e15c49c35d7ea4bcd2b91f07b19a81b91ebd2",
+    "prototype/assets/audio/uncertain_steps.wav": "52f8b66c082d53e293eb9a2bb69bae4eb82db2487ed084944214cbee545664f2",
+    "prototype/assets/audio/wind.wav": "e552edccc315de23a83114a6d43dfdc6ab347b925d05fa8839d0cdfda179511e",
+    "prototype/assets/fonts/LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "prototype/assets/fonts/NOTICE.txt": "94d4b78643f99d7cfa872145b38da578299f401405ca5cba66a5c95bf13933b0",
+    "prototype/assets/fonts/OpenSans-CondBold.ttf": "a859a438018739aee16c306586d91a453c208ee500c827d9e9aa063155c8a6e8",
+    "prototype/assets/fonts/OpenSans-Light.ttf": "cf5f5184c1441a1660aa52526328e9d5c2793e77b6d8d3a3ad654bdb07ab8424",
+    "prototype/assets/fonts/OpenSans-Regular.ttf": "e64e508b2aa2880f907e470c4550980ec4c0694d103a43f36150ac3f93189bee",
+    "prototype/assets/icon.svg": "6d3e2c2f34057f8c2d0c0381ba25a1a288a7145b28f17f4d4cbcdeba31c7351e",
+    "prototype/assets/ui/studio_mark.svg": "c452e38192adda61ef9cebfefe9759ef850e35f9b248a09a17ad818dd4e20835",
+    "prototype/export_presets.cfg": "7f3bdbfde7ff38421077283b9ee723f423b612feaf54f932dcdc648f5dea113b",
+    "prototype/project.godot": "60a623af386f741abeda851095aff38441a9ef68083758bddd37b7d6ad37e186",
+    "prototype/scenes/main.tscn": "db52bbe7b5a1df4d839ec4f721a1f09faa8272e35c387b097fa2c5b1b4ac6937",
+    "prototype/scripts/cinematic_director.gd": "49077aff66ccfbabc525c4a5877093c00df039b6707f3a1f0af111f564f10248",
+    "prototype/scripts/cinematic_overlay.gd": "2b9c9d3f1b2368380fb92ef82b3949b6c90c863bbd02184c89ddc9df6c33050b",
+    "prototype/scripts/collapse_director.gd": "3d9dce62a1b99c68aba41dc7f447a1ced40041ab64f2fb07f16802af5cdd8ee7",
+    "prototype/scripts/epilogue_director.gd": "4a8da32affe5bf27d616f6d289f41b83121b37f4d60a41b71e069f732408d972",
+    "prototype/scripts/field_props.gd": "9770895f7dc598b6c1fd70c9185df9900f974d64fcbe2fb7bb1804009224932b",
+    "prototype/scripts/floor_generator.gd": "0ae0f3e796e0e219fb505ba688488661848434c5fc4e46278b030a257f399779",
+    "prototype/scripts/frontend_menu.gd": "99c9b895740c30ee6fcd4cad42eb67f392bc227894cc93feba20f1e61d93813a",
+    "prototype/scripts/horror_director.gd": "03b49075109baa5c3951044bc25f5d7a07f61ece9bba3e4c61f6fcb90b319e0c",
+    "prototype/scripts/horror_presentation.gd": "4dc010cef8b8e350d26a19f7682154b8b772b65ab07297e4445465c4d11ca3c1",
+    "prototype/scripts/hud.gd": "3fd2a773f9ccd9f80e66d0c47514899df1a8aaae87b522e2c460f70955307b77",
+    "prototype/scripts/inspection_panel.gd": "37c8c06327a8e97f955381bd36564eddabb686bd053e0af1b99c2b7895d49cbd",
+    "prototype/scripts/main.gd": "840409902cde6213236ea44100f48136108d318eeb172604bd0252d384330990",
+    "prototype/scripts/maritime_atmosphere.gd": "ccce77223a8aea0888ae660fb5a32facc89440afb4edbaf57f68834da84d33a5",
+    "prototype/scripts/mission_dossier.gd": "1318c12f69663745945b1f7adb7904bb2d2265e4efde1cd2b165f63dc88bd6ca",
+    "prototype/scripts/mission_dossier_panel.gd": "aeeb8fe808650b693bec31d1574fb37f84fc58f3991caf091490aa8b432ba10e",
+    "prototype/scripts/player_controller.gd": "92617ae5337e7f74c809a4f516cecf0df561bca676bb990ffb913f70b9a25394",
+    "prototype/scripts/preferences_store.gd": "31c0a2dee0287b17fc41f1ebd13dd8060986ed431174625d6c304bdd431f5420",
+    "prototype/scripts/presentation_geometry.gd": "1d1b52a483221eb98b477fd9e90b3aeaf42fe6a87af26abf8730cf9ccfa890db",
+    "prototype/scripts/radio_director.gd": "0c3d64be528a11db8df32ca9f6afcc5ed1bd228744f28740c56ef377b9b07dab",
+    "prototype/scripts/rescue_presentation.gd": "ac3e900f85615f4dedff422c3fcb5985901cd75107f17dffe876a5087565a7a8",
+    "prototype/scripts/save_store.gd": "9c679cea225d908f2b5fa606c7056b754bc2b9b9fa3454aa950401d4686f0c64",
+    "prototype/scripts/world_builder.gd": "4df3a04ab52afc972cf0370b93ba131000a5991a83cdec60fdc3643e8a092d14",
+    "prototype/shaders/cinematic_veil.gdshader": "1aa18255935f3c9ab0d3ebb2ee49dea18d32828d21eac67eeaaf0f22a8cdfb0e",
+    "prototype/shaders/maritime_rain.gdshader": "ff3e19dca63c9bdcc79fc283f468c9213c6a93044b095c5a6e305d84ef4867cd",
+    "prototype/shaders/rotor_wash.gdshader": "8a59b620e99331970aef867ec4c847d27094eda1e7fed6a7b6bdcfe9b8ce8866",
+    "prototype/shaders/storm_curtain.gdshader": "9a359ac0bb58a46838db1d02f6a5ae33447f61b430b21ecd38343088b6e16d37",
+    "prototype/shaders/storm_sky.gdshader": "3f952ed773256f532f95fc7636c4d9ef04d0bc3363c13b1e5860e1d213e95f7a",
+    "prototype/shaders/water.gdshader": "800331fda3f273e43fa5196a26720fcc5eee80f8b80d3680842583fbba4203c5",
+    "prototype/shaders/weathered_surface.gdshader": "e71f62962863bc3e3fe64e73c1b2b53098ec2c354eb46464a32eba0db0a62d3d",
+    "prototype/web_shell.html": "2153408b1c07a7cdac170f9f87fdb99617fd61f82c523902a11658e17d2e54fd"
+  },
+  "verification_sha256": "d4c2e17e053a9cc951cbaea492e6745943a6e7e5cf4e03723a14ed9a8c803a7b",
+  "captures": [
+    {
+      "file": "01_menu_arrivee.png",
+      "bytes": 856229,
+      "sha256": "058e3312f8bc1484de15f48db310b40f454d2e3085683a9a21ed10f545e31957",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "02_options.png",
+      "bytes": 142716,
+      "sha256": "bf294c94097e08cb07e9f33ba46221608cbb48c935c054a4707f37ac3ca4aba6",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "03_nouvelle_intervention.png",
+      "bytes": 137707,
+      "sha256": "a25562b494c2b2948a61331e413cd0d1bb2755188f15eb08001bdbfb65a8c321",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "04_signature_studio.png",
+      "bytes": 1099137,
+      "sha256": "cecad4248986c51abc2fb495dd09820bde3ed41522552eeab7654de5b14b35ae",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "05_titre.png",
+      "bytes": 1098813,
+      "sha256": "f705b3fd7685c3cdbf92e41c565e302ceeba9040bc721994ff9558a3dc13655c",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_03.png",
+      "bytes": 877275,
+      "sha256": "bcf136d4ee1fa2d2d31ac2cf40d9c03d835504c17f1c76a2e43a1e1e48948e07",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_10.png",
+      "bytes": 880170,
+      "sha256": "597a7eb19f3cb6a41bca26adbffaf0f55da0ff1b71a9648752431e3764587eab",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_17.png",
+      "bytes": 925367,
+      "sha256": "4acc26fc773a597bc80b058b3bc9b5086835bc12eb899e03f62d41f22cd3ad28",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_25.png",
+      "bytes": 927279,
+      "sha256": "e634b6b20986625cba02869f86b0c95068c03a2e3a8d79eed788fb3a73fda702",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "07_pause_intro.png",
+      "bytes": 215245,
+      "sha256": "6bf8f0a01e5a9543c9bdcdb443dd1b32d93d61b52b4c5ed75ec9867d2b271a7d",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "14_toit_equipe.png",
+      "bytes": 671651,
+      "sha256": "6aa6548a0165bbb63bd8cc1d80991a74a5ce53fa01ede16a5870b536032c586f",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "15_portage.png",
+      "bytes": 481907,
+      "sha256": "32bcae6262744233295a43b89d23d718f97d8c26034d1d851cd4be225d3117c2",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "16_treuillage.png",
+      "bytes": 505961,
+      "sha256": "79195236da5bb3edb48ce0a3b135d85a9ee5a5ce3c636cd7e5deba0aaf7d124e",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "17_reception.png",
+      "bytes": 634851,
+      "sha256": "7957ead7bf447a6aa08b372cf74d266b6a631e6a214cf62a8ac77330c6e4bf61",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "18_meteo_toit.png",
+      "bytes": 526987,
+      "sha256": "a7d1ae04fb1557b182f9cebb0c62c9d6e4e6e9764d635a21ea7ac15e660ae3ee",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "19_options_pause.png",
+      "bytes": 154206,
+      "sha256": "7269b39b28af9803d8c02cdcf2d533131010aa2cc15b77095a38038f58bdfcc4",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "11_inspection_toit.png",
+      "bytes": 198793,
+      "sha256": "13f5e2aa02574c764405de3d641b8607fc724377ab18f93e02ffcca661caf1bd",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "12_inspection_archives.png",
+      "bytes": 149875,
+      "sha256": "48dfe1c4b4864dbe82f782b9d1153feef7a5219f75f4b313ce20047c70686576",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "13_inspection_apres.png",
+      "bytes": 153814,
+      "sha256": "a2a38eae8e075a63197b010297e9c4999c83342dab46bbf2b24fd0810bacd05d",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "08_menu_archives.png",
+      "bytes": 726086,
+      "sha256": "0b408e89a2a677829f0030528f95cde29b4c80c53a1c82ec939b6e1e5dd0b890",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "09_dossier_apres.png",
+      "bytes": 165457,
+      "sha256": "e42b72df4ff484deee3ef10a14f44f82a30c68ecdb9859ebc964b32ab0afb8e5",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "20_journal_situation.png",
+      "bytes": 191192,
+      "sha256": "9fb5727a16e5f2fcb2ed24d9dd496b8611a779ddf77f7676bf0efd832321096a",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "21_journal_rescapes.png",
+      "bytes": 168454,
+      "sha256": "04cc8a06a44866413cf1e084c5005335fa553c5a8b3d0d32e4660ac87c0440c0",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "22_journal_indices.png",
+      "bytes": 181675,
+      "sha256": "d8ce39b2833b2651c2932f26e710ab9f69f4f2e73fa036907c89942a7e395960",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "23_journal_transmissions.png",
+      "bytes": 173359,
+      "sha256": "88214b1b51fa166cb1e991245153f6296f95ce786669a0cbaad7d7311df8d719",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "24_epilogue_02.png",
+      "bytes": 901913,
+      "sha256": "0316fc74edcd769e74798a3346be56ffff764555f2c44e82c00297192fbace02",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "24_epilogue_07.png",
+      "bytes": 804098,
+      "sha256": "03abc15b7248bc80a3ebeb6f4699b829641c52d1d4ff6ad045681667ffa677b4",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "24_epilogue_12.png",
+      "bytes": 873075,
+      "sha256": "8d29407f59215da410b59bc4b4cf9f2bdd31a816827d812b20a0563642d7d96e",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "25_bilan_refuge.png",
+      "bytes": 189817,
+      "sha256": "649af525294a1be92819b383dd0eccb2bf883d296d6161d90e1056cd0fbf9daf",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "10_menu_refuge.png",
+      "bytes": 776642,
+      "sha256": "fae7903726d8f8b6e3a755df3eeeee2d06471660a038d4b27b8b9efeadb4ee89",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "26_suites_presence.png",
+      "bytes": 306673,
+      "sha256": "a788aa609c09d6f66f23aeb3b2bbab420dcc0681bcb85c5678ff27b8a29c2cb7",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "27_archives_traces.png",
+      "bytes": 290364,
+      "sha256": "e66509a1ce8e8f7b5403d83eaa938759c74aae4c0ed5071606115d7fa1181c4b",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "28_spa_remanence.png",
+      "bytes": 438049,
+      "sha256": "90ae004c13be8f39fd7ccc0ce51f6ab2455ce429c7c722ec5f60c27eb76597df",
+      "width": 1440,
+      "height": 900
+    }
+  ]
+}

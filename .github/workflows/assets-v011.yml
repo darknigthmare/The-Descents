@@ -1,0 +1,64 @@
+name: Generate v0.11 rescue asset candidate
+
+on:
+  push:
+    branches: [feat/live-tower-collapse]
+    paths: ['.review/v0.11/assets-request.json']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tower-descent-v011-assets
+  cancel-in-progress: false
+
+jobs:
+  assets:
+    if: github.ref == 'refs/heads/feat/live-tower-collapse'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      GODOT_SILENCE_ROOT_WARNING: '1'
+      GODOT_ARCHIVE_URL: https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
+      GODOT_ARCHIVE_SHA256: cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 2
+          ref: ${{ github.sha }}
+      - name: Validate isolated asset request
+        run: /usr/bin/python3 tools/bootstrap_visual_assets.py guard
+      - name: Install Blender and pinned Godot
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends blender python3-pil python3-numpy fontconfig fonts-dejavu-core libgl1
+          curl --fail --location --retry 3 --output "$RUNNER_TEMP/godot.zip" "$GODOT_ARCHIVE_URL"
+          printf '%s  %s\n' "$GODOT_ARCHIVE_SHA256" "$RUNNER_TEMP/godot.zip" | sha256sum --check -
+          mkdir -p "$RUNNER_TEMP/godot"
+          unzip -q "$RUNNER_TEMP/godot.zip" -d "$RUNNER_TEMP/godot"
+          chmod +x "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64"
+          echo "GODOT_BINARY=$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64" >> "$GITHUB_ENV"
+      - name: Generate editable models and run source suites
+        run: /usr/bin/python3 tools/bootstrap_visual_assets.py generate
+      - name: Preserve candidate and logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: tower-v011-asset-candidate-${{ github.sha }}
+          path: |
+            prototype/assets/models/rescue_v011/
+            prototype/scripts/rescue_asset_catalog.gd
+            docs/assets/v0.11/
+            docs/validation/v0.11/
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 14
+      - name: Publish generated candidate while request remains head
+        if: success()
+        run: /usr/bin/python3 tools/bootstrap_visual_assets.py publish
+      - name: Report source gate accurately
+        if: success()
+        run: /usr/bin/python3 tools/bootstrap_visual_assets.py check

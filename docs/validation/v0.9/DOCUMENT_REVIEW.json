@@ -1,0 +1,3139 @@
+{
+  "format": 1,
+  "version": "0.9.0",
+  "source_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
+  "reviewed_utc": "2026-11-25T14:37:46.991957+00:00",
+  "all_pass": true,
+  "source_count": 16,
+  "source_words": 93871,
+  "page_count": 186,
+  "paragraphs": 2116,
+  "tables": 71,
+  "sources": [
+    {
+      "file": "docs/BIBLE_DU_JEU.md",
+      "bytes": 100400,
+      "sha256": "fdfb59e959b363d7ac68150a127f719a2bb7bc1470a7540cf9372cdcfa6c2d46"
+    },
+    {
+      "file": "docs/CATALOGUE_ETAGES.md",
+      "bytes": 91681,
+      "sha256": "a2fa367b7b16c9d8b21cdbc4d6468a53904a630586644d2a83475db9a49ce006"
+    },
+    {
+      "file": "docs/SYSTEMES_PROCEDURAUX.md",
+      "bytes": 32672,
+      "sha256": "473c39d9f481bbec26fd3b0ecd263067cabb53dded7cafd4400907e5f043a58e"
+    },
+    {
+      "file": "docs/ARCHITECTURE_ET_PORTAGE_UE5.md",
+      "bytes": 34023,
+      "sha256": "3e5a2a9377e78c4d9be793c3c33a33b9c6a53ed43f0a3eb8cc17543883f0454b"
+    },
+    {
+      "file": "docs/EFFONDREMENT_EN_DIRECT.md",
+      "bytes": 24335,
+      "sha256": "2edf417356bffeee149fcbe62353615108a8bb2d73c64d462c2361da422f6e9f"
+    },
+    {
+      "file": "docs/COMMUNICATIONS_ET_EQUIPES.md",
+      "bytes": 15178,
+      "sha256": "cdd3a5d4126f0c62bb235662a57c10842acf9392cf1daf4359ea9dcf4204da0b"
+    },
+    {
+      "file": "docs/PROPS_INTERACTIONS.md",
+      "bytes": 73750,
+      "sha256": "f841ccaa89c6744f53427c4074e4d575dfbc8d8788af9bce5468afa1114148cc"
+    },
+    {
+      "file": "docs/ENNEMIS_STATISTIQUES.md",
+      "bytes": 37636,
+      "sha256": "0618928f99b0d9c04ff69b8dd59e48e1e3ae860a68f7dcbd108e9a1e32e69d2f"
+    },
+    {
+      "file": "docs/SCENES_CINEMATIQUES.md",
+      "bytes": 48584,
+      "sha256": "ddadf50b2f1c3b24263c9476e7654d31a02b5fb7205a422dbf1e255f1d7e600a"
+    },
+    {
+      "file": "docs/GAMEPLAY_DETAILLE.md",
+      "bytes": 45169,
+      "sha256": "463c72f505e68d7675eed6622bde1a9b078c7409623f7c24ff4817d4896f097c"
+    },
+    {
+      "file": "docs/SAUVETAGE_V0.6.md",
+      "bytes": 16322,
+      "sha256": "a2df21a6974262c1024e027a3a5b38ff35024722e406fb4bca4d052cf13552eb"
+    },
+    {
+      "file": "docs/AMBIANCE_V0.6.md",
+      "bytes": 9780,
+      "sha256": "11d0e639631deb639a48beeff3d7047395fee333f2f33eefa6890640b01c3dc7"
+    },
+    {
+      "file": "docs/CONFORT_V0.6.md",
+      "bytes": 10835,
+      "sha256": "38f6f01f567c4c6c5986e9bd73d5ff8e8e4bbc4122a5bb8d2ff3d3aeaa0ca2b5"
+    },
+    {
+      "file": "docs/DOSSIER_ET_EPILOGUE_V0.7.md",
+      "bytes": 20860,
+      "sha256": "b6e6d0f98fb804b5036910bc828e40cf0e348b4ef2efc66745129609effc9386"
+    },
+    {
+      "file": "docs/PROGRESSION_HORREUR_V0.8.md",
+      "bytes": 26045,
+      "sha256": "b023c48f4787226a7622c7dda90813fbee041bba39eb8ed050645dc299339f43"
+    },
+    {
+      "file": "docs/TRAVERSEE_ET_RAPPEL_V0.9.md",
+      "bytes": 31968,
+      "sha256": "5a1ef16395cde12325528d203acf4b518c40a2009deff29becdaf58903a62f98"
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "docs/The-Tower-Descent-Bible-v0.9.docx",
+      "bytes": 319296,
+      "sha256": "f718404121ba6c6990cf7df6e0988455881a0aa9e4188af6e63da14b319dbe20"
+    },
+    {
+      "file": "docs/The-Tower-Descent-Bible-v0.9.pdf",
+      "bytes": 3064715,
+      "sha256": "25776d758dfb7070afb4157f15859864c6f991809fba71f78cf6f442cbe61121"
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "file": "docs/validation/v0.9/rendered/page-001.png",
+      "bytes": 334641,
+      "sha256": "bc3fa7a9e1433045871ce6cc6f6ad1d1f98efc6a4b39edab1011272f1f70c8a4",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 2750,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Couverture, version, attribution, introduction et tableau de périmètre complets ; toutes les cellules lisibles, aucune coupure."
+      ]
+    },
+    {
+      "page": 2,
+      "file": "docs/validation/v0.9/rendered/page-002.png",
+      "bytes": 283231,
+      "sha256": "d92afa211c96b0691257d6738c71bed7a80ae37f28c1bf7e7bb7445cc3c70e17",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 1717,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Sommaire des deux parties et quatorze annexes complet ; liens, guide de lecture, en-tête et pied 2 / 186 nets."
+      ]
+    },
+    {
+      "page": 3,
+      "file": "docs/validation/v0.9/rendered/page-003.png",
+      "bytes": 577664,
+      "sha256": "9b7100a39288ab03d4bf4f1d44622db121648406ce9ba0950e14bde529ac0201",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4397,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Titre de partie, version sur deux lignes et introduction dense entièrement lisibles ; liens et paragraphes dans les marges."
+      ]
+    },
+    {
+      "page": 4,
+      "file": "docs/validation/v0.9/rendered/page-004.png",
+      "bytes": 416414,
+      "sha256": "d63ed5c22712f44a5be90c13d4d4c192ba995c1fff045ba89417e5ca1db4fc25",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3321,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Intention, promesse et tableau de direction lisibles ; six premières lignes complètes jusqu’à la durée de campagne, continuation attendue."
+      ]
+    },
+    {
+      "page": 5,
+      "file": "docs/validation/v0.9/rendered/page-005.png",
+      "bytes": 436450,
+      "sha256": "5219a686ede8dd664172886830382ec349508d1821f3119d44835e37056c6f27",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3492,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite du tableau de direction complète, y compris durée du prototype ; références et principes lisibles, paragraphe Refuge poursuivi page suivante."
+      ]
+    },
+    {
+      "page": 6,
+      "file": "docs/validation/v0.9/rendered/page-006.png",
+      "bytes": 512935,
+      "sha256": "a58be3f02bebf10f3a6c6762954f3698d30db2595bc971cc98ed6e52e9c5b375",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4080,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Continuation du refuge, génération et géographie de Nacre lisibles ; fin de paragraphe de catastrophe reportée proprement, aucune troncature de ligne."
+      ]
+    },
+    {
+      "page": 7,
+      "file": "docs/validation/v0.9/rendered/page-007.png",
+      "bytes": 417299,
+      "sha256": "2d0ecd21f839b515ccfd31cd224c1970bb105344c5900f6c27380c932836c9ce",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3650,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite de la catastrophe, antécédents et tableau chronologique lisibles ; douze lignes entières avec dernière entrée sur la descente au 29."
+      ]
+    },
+    {
+      "page": 8,
+      "file": "docs/validation/v0.9/rendered/page-008.png",
+      "bytes": 453531,
+      "sha256": "93423797057488b748cab512dfcf13dcf116d6f6bdb62056ab847a57811407c4",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4430,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Dernière ligne chronologique bien reprise ; programme SILLAGE et sept premières questions du registre lisibles, cellules intactes."
+      ]
+    },
+    {
+      "page": 9,
+      "file": "docs/validation/v0.9/rendered/page-009.png",
+      "bytes": 460156,
+      "sha256": "77e04d08122de8fa72504fd60383c970fef951277e2c9cdde5636a983e7f51b9",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3684,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Deux dernières questions du registre reprises sous en-tête ; conclusion et portraits Alex/Varga/Malik complets, aucun chevauchement."
+      ]
+    },
+    {
+      "page": 10,
+      "file": "docs/validation/v0.9/rendered/page-010.png",
+      "bytes": 510888,
+      "sha256": "497b399a74584106d018974021f546a98a851c9ce4d12265b4dc98e6f3289b7b",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4052,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Portraits Inès/Alma/Eva et équipes lisibles ; dernier paragraphe continue normalement, pied 10 / 186 dégagé."
+      ]
+    },
+    {
+      "page": 11,
+      "file": "docs/validation/v0.9/rendered/page-011.png",
+      "bytes": 499408,
+      "sha256": "d1cfa0f9f92076efb912e37e3cffaece47bc3230e261b66084f303f7bfa4524a",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3958,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite de la population puis actes un à trois entièrement lisibles ; paragraphes denses sans collision, dernières lignes au-dessus du pied."
+      ]
+    },
+    {
+      "page": 12,
+      "file": "docs/validation/v0.9/rendered/page-012.png",
+      "bytes": 486238,
+      "sha256": "0007dcd537aa409a4da2301ae765662044ffcec0099a96a4bc514333cb48e7a9",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4432,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Actes quatre/cinq et épilogue lisibles ; tableau des fins contient trois lignes complètes, continuation naturelle."
+      ]
+    },
+    {
+      "page": 13,
+      "file": "docs/validation/v0.9/rendered/page-013.png",
+      "bytes": 475425,
+      "sha256": "c0ee83c1457b5a94f1722c79be7041540e33504447af7e4a23873ba170af9b82",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3866,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Dernière fin et boucle de jeu lisibles ; actions et début du rappel complets, paragraphe d’escalier poursuivi sans perte à la page suivante."
+      ]
+    },
+    {
+      "page": 14,
+      "file": "docs/validation/v0.9/rendered/page-014.png",
+      "bytes": 440554,
+      "sha256": "ca5b3a0510bb3e22d4c9981c1485af2a428a2e0256fddab7eb5541c0957e2210",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4498,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Tableau des huit états et paragraphes de rappel lisibles. Accompagnement se replie sur deux lignes dans la cellule, toutes les lettres restant visibles ; détail non bloquant."
+      ]
+    },
+    {
+      "page": 15,
+      "file": "docs/validation/v0.9/rendered/page-015.png",
+      "bytes": 428504,
+      "sha256": "de47721994c2751b1c069ec9375d5bc18c9148f089039699ddabc7490fb68aa6",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4974,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Équipement et tableau à quatre colonnes lisibles ; lignes Lampe à Balise entières, dernière bordure au-dessus du pied."
+      ]
+    },
+    {
+      "page": 16,
+      "file": "docs/validation/v0.9/rendered/page-016.png",
+      "bytes": 439011,
+      "sha256": "f00ed014f88bfb5d03d85b7c1b9c0cd7687e5311fd84e5d2ed18e2d71acc6b6a",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3682,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite du tableau avec Kit et Marqueur présente ; chapitre survivants, sept états et situations réutilisables entièrement lisibles."
+      ]
+    },
+    {
+      "page": 17,
+      "file": "docs/validation/v0.9/rendered/page-017.png",
+      "bytes": 430109,
+      "sha256": "9c6c3767a98f8f4fb46813d4c4fc064562811eb41e48fe793421e62703c84c6a",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4186,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Stress, vérification et début des présences lisibles ; tableau à cinq colonnes conserve ses quatre premières lignes complètes."
+      ]
+    },
+    {
+      "page": 18,
+      "file": "docs/validation/v0.9/rendered/page-018.png",
+      "bytes": 444898,
+      "sha256": "45cec840239a6efbb102d32be88f3dc0c0fbf70a3b491c1a4d01c760f5f3c193",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4962,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Six présences suivantes et en-tête répété présents ; défense, échec et amorce de génération lisibles sans dépassement."
+      ]
+    },
+    {
+      "page": 19,
+      "file": "docs/validation/v0.9/rendered/page-019.png",
+      "bytes": 457476,
+      "sha256": "fece02c83ede8704b5925e48c086404ecba3376ce904674f578bb0a4c07d38d1",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3629,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Structure, ordre et invariants de génération lisibles ; dix étapes entières et première ligne du tableau de rythme intacte."
+      ]
+    },
+    {
+      "page": 20,
+      "file": "docs/validation/v0.9/rendered/page-020.png",
+      "bytes": 379135,
+      "sha256": "ae09967d6bab8d3a141075cd3d0d3734c0b8f15ce650056ce5362913025a3861",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4135,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Six lignes du tableau de rythme reprises avec en-tête ; contrat de données et cinq premières lignes des événements lisibles sans coupure."
+      ]
+    },
+    {
+      "page": 21,
+      "file": "docs/validation/v0.9/rendered/page-021.png",
+      "bytes": 387417,
+      "sha256": "302c319dd5bd35c2afcb7685779f7d7dca4ff13ae4ebc74aaee3c2130053b1b2",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 5227,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Longue continuation des événements entièrement lisible, du Jouet interrompu au Relais de trop ; cellules à plusieurs lignes et dernière bordure intactes."
+      ]
+    },
+    {
+      "page": 22,
+      "file": "docs/validation/v0.9/rendered/page-022.png",
+      "bytes": 373933,
+      "sha256": "8de08d9af360c2851012b46586ed60a105ba29985bd089ba9de14f5e62d187bc",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3940,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Deux derniers événements présents ; titre, introduction et onze familles modulaires complets, sans chevauchement ni glyphes manquants."
+      ]
+    },
+    {
+      "page": 23,
+      "file": "docs/validation/v0.9/rendered/page-023.png",
+      "bytes": 450782,
+      "sha256": "b0b5dc93794ecf5c292455796ab9342a65f80cfe8df0fc9be5a625447fe363b6",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3564,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin des modules, mer comme repère et direction visuelle/sonore entièrement lisibles ; titres Son et Musique suivis de leur corps, aucune collision."
+      ]
+    },
+    {
+      "page": 24,
+      "file": "docs/validation/v0.9/rendered/page-024.png",
+      "bytes": 473925,
+      "sha256": "a2f762a36697309198e7652068282183f78fe9c573f4e944b88fe47e10e424ad",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3605,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Interface, huit options d’accessibilité et sauvegarde lisibles ; code et caractères accentués rendus, dernière phrase se poursuit normalement."
+      ]
+    },
+    {
+      "page": 25,
+      "file": "docs/validation/v0.9/rendered/page-025.png",
+      "bytes": 455876,
+      "sha256": "c67941d5d2eb1027d0f33d83ab53d3f14bfa830bcd015451122adccb2316d137",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3545,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite de la sauvegarde et ouverture de campagne lisibles ; liens, sous-titres Approche/Toit/Première descente et leurs paragraphes complets."
+      ]
+    },
+    {
+      "page": 26,
+      "file": "docs/validation/v0.9/rendered/page-026.png",
+      "bytes": 434081,
+      "sha256": "2c5c532771eea5eeee50cf12b9133cdf61bcea3ee08dbdfc3b788bc6ba345ae9",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3868,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Baie Est, premières contradictions et objectif de validation nets ; tableau de périmètre présente Toit, 30 et 29 intégralement, continuation attendue."
+      ]
+    },
+    {
+      "page": 27,
+      "file": "docs/validation/v0.9/rendered/page-027.png",
+      "bytes": 455877,
+      "sha256": "4932b7ea3be1b3c0291f817b2936b7399972fffad25c4813949346ce0c527b85",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4174,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Quatre dernières zones du périmètre reprises intégralement ; limites et critères fonctionnels lisibles jusqu’à la dernière puce, suite en page suivante."
+      ]
+    },
+    {
+      "page": 28,
+      "file": "docs/validation/v0.9/rendered/page-028.png",
+      "bytes": 366633,
+      "sha256": "1c438953e7f6c4ab9170198ef97940622d15065184672a1b40d74dbf7eb00cfd",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 2892,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin des critères, architecture et tableau des dix composants complets ; début du plan de production correctement espacé, pied 28 / 186 dégagé."
+      ]
+    },
+    {
+      "page": 29,
+      "file": "docs/validation/v0.9/rendered/page-029.png",
+      "bytes": 396157,
+      "sha256": "6093873eaa02a865206b588fddf4415ca02f247153d992f0ff0a23b5a519e3cc",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3363,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Jalons deux à six lisibles ; tableau des risques conserve cinq premières lignes entières et ses trois colonnes, sans dépassement."
+      ]
+    },
+    {
+      "page": 30,
+      "file": "docs/validation/v0.9/rendered/page-030.png",
+      "bytes": 429792,
+      "sha256": "9f3c7cc8cb1fd6c9a150c1265a54b7aebe3e48026c758cb1426ac5410486ba87",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3495,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Cinq risques restants repris avec en-tête ; extension Mountain Hole et sept exemples de dialogue complets, guillemets et accents rendus."
+      ]
+    },
+    {
+      "page": 31,
+      "file": "docs/validation/v0.9/rendered/page-031.png",
+      "bytes": 559227,
+      "sha256": "0fa3cd124ac6ff6d29efabc278b13663007493373b8df822dcb564228ab75fca",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4300,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Registre des décisions et historique de production lisibles ; gras, liens et nombres bien rendus ; dernière phrase poursuit en page 32 sans coupe."
+      ]
+    },
+    {
+      "page": 32,
+      "file": "docs/validation/v0.9/rendered/page-032.png",
+      "bytes": 353022,
+      "sha256": "3668301a5c579d76671b5d912f7e40a4457e152a76f93bd271fb0fb9c476d674",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 2599,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin de phrase puis directions 0.8 et 0.9 complètes ; les mentions historiques 60 et actuelles 64 sont lisibles, titre et lien d’annexe intacts."
+      ]
+    },
+    {
+      "page": 33,
+      "file": "docs/validation/v0.9/rendered/page-033.png",
+      "bytes": 462592,
+      "sha256": "22ef80e141752dc495dae14ddfbb422accc57e6e6ac589cf5807c7cfdcbf060d",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3594,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Ouverture du catalogue, version et périmètre lisibles ; règles et première ligne A-TOIT du tableau à cinq colonnes complètes."
+      ]
+    },
+    {
+      "page": 34,
+      "file": "docs/validation/v0.9/rendered/page-034.png",
+      "bytes": 330795,
+      "sha256": "fafa0e30ab23a5cf5217ccf32fe9e92f768b4ac766a2364625f9901183aa899b",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4105,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Tableau des étages A30 à A12 complet sur la page ; 19 lignes, cinq colonnes, en-tête répété et toutes les cellules lisibles."
+      ]
+    },
+    {
+      "page": 35,
+      "file": "docs/validation/v0.9/rendered/page-035.png",
+      "bytes": 376974,
+      "sha256": "42c3a99721d350e278c2fbf8dc5b33f8095fc574984e8d97ca007dbfe50e0535",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4365,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite A11 à A00 et introduction des liaisons lisibles ; première ligne R31_30 entière au bas du tableau, continuation correctement présente en page 36."
+      ]
+    },
+    {
+      "page": 36,
+      "file": "docs/validation/v0.9/rendered/page-036.png",
+      "bytes": 450959,
+      "sha256": "7c9261656108970fa64cd9c2f0780a229adf7beab80fe010aba1a5d4ab1529d6",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4352,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Ancien défaut corrigé : les cinq lignes S30_29, R29_28, S28_27, R27_26 et S26_25 sont présentes et lisibles sous l’en-tête répété ; texte des stations et fiche A TOIT complets."
+      ]
+    },
+    {
+      "page": 37,
+      "file": "docs/validation/v0.9/rendered/page-037.png",
+      "bytes": 531688,
+      "sha256": "ba1ecd2d733dfab6819c2d4eb96a69825e851490788407529e41b7d44d2c229f",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4051,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite du toit, fiche A30 et début d’A29 lisibles ; liaisons locales et champs en gras intacts, dernière phrase poursuivie proprement."
+      ]
+    },
+    {
+      "page": 38,
+      "file": "docs/validation/v0.9/rendered/page-038.png",
+      "bytes": 514776,
+      "sha256": "79f84ec86d1c20a9a032ede7ec61c84029531e828fed285ce9a3adf7b97f463e",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3839,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Continuation d’A29, fiche A28 et début d’A27 complets à l’écran ; paragraphes et labels sans chevauchement, dernier champ Variables lisible."
+      ]
+    },
+    {
+      "page": 39,
+      "file": "docs/validation/v0.9/rendered/page-039.png",
+      "bytes": 513834,
+      "sha256": "331a8252825ac9634bccf5446747c8258fc2279890b57d162565c706c73f52fd",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3776,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin d’A27, A26 et début du refuge A25 lisibles ; règles locales, anomalie et variables complètes, aucune ligne rognée."
+      ]
+    },
+    {
+      "page": 40,
+      "file": "docs/validation/v0.9/rendered/page-040.png",
+      "bytes": 464137,
+      "sha256": "52509c40a37df1936d0d7396522e272143828056b15ae5fabff888f7d76275f2",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3420,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite du refuge, A24, A23 et amorce A22 correctement composées ; titres accompagnés de corps, toutes les dernières lignes restent au-dessus du pied."
+      ]
+    },
+    {
+      "page": 41,
+      "file": "docs/validation/v0.9/rendered/page-041.png",
+      "bytes": 463673,
+      "sha256": "047008232a29c8e72ab2bd75581ee5a4ccc599cc7445cc9495982a4b6361fb06",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3335,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite d’A22, cuisines A21, refuge A20 et début d’A19 lisibles ; champs bien espacés, corps entier dans les marges."
+      ]
+    },
+    {
+      "page": 42,
+      "file": "docs/validation/v0.9/rendered/page-042.png",
+      "bytes": 464391,
+      "sha256": "c18e6ea6fcc9c5658e6c5bab2533cfd0832cee7aa51aedf5aca7dbf3f6047ed9",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3339,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin d’A19, fiches A18/A17 et début d’A16 lisibles ; champs et accents intacts, aucune ligne coupée malgré la page dense."
+      ]
+    },
+    {
+      "page": 43,
+      "file": "docs/validation/v0.9/rendered/page-043.png",
+      "bytes": 440944,
+      "sha256": "9354b8bbb44e645b54ff3053a2ffa4390f63d4e78eee18a9dcc0f5ec7b434801",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3150,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Invariant d’A16, refuge A15 et fiches A14/A13 entières ; hiérarchie de titres et champs lisible, marges et pied respectés."
+      ]
+    },
+    {
+      "page": 44,
+      "file": "docs/validation/v0.9/rendered/page-044.png",
+      "bytes": 455351,
+      "sha256": "abd2a2646c8efc7d3ebf0e7d478aadb1d6dc660df26c622a092e3f4a6872bb1b",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3274,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fiches A12, A11, A10 et amorce A09 lisibles ; paragraphes sans collision ni texte tronqué, continuation A09 attendue."
+      ]
+    },
+    {
+      "page": 45,
+      "file": "docs/validation/v0.9/rendered/page-045.png",
+      "bytes": 481588,
+      "sha256": "b148f3f2a3979074f7f2aca708c05e9c0cecf1c04efcc516648820970254dc0b",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3474,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin d’A09, géologie A08, archives A07 et début d’A06 complets ; texte et champs de fin de page nets, sans rognage."
+      ]
+    },
+    {
+      "page": 46,
+      "file": "docs/validation/v0.9/rendered/page-046.png",
+      "bytes": 450990,
+      "sha256": "5c80a7502a0e9f568856cb2f8cb6a89880897cd487eede59873d3016baf1e4b7",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3243,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite d’A06, refuge A05, musée A04 et parking A03 lisibles ; titre du socle, sous-titres et paragraphes clairement séparés."
+      ]
+    },
+    {
+      "page": 47,
+      "file": "docs/validation/v0.9/rendered/page-047.png",
+      "bytes": 458651,
+      "sha256": "2e739c6b35a70924e144b8a0c73a125701dde6678d81003efaa2a6df770fd91f",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3316,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin d’A03 puis A02/A01/A00 lisibles ; tous les champs de la terrasse et de la rupture sont présents, dernière ligne entière."
+      ]
+    },
+    {
+      "page": 48,
+      "file": "docs/validation/v0.9/rendered/page-048.png",
+      "bytes": 440614,
+      "sha256": "ef77a3e3fc081b38aaa13cba5ff2ac8cc7346502bc5b073ce77cad986b683845",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3374,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Chapitre Hespérie et ses six espaces entièrement lisibles ; sous-titres longs, accents et fin du relais des absents bien rendus."
+      ]
+    },
+    {
+      "page": 49,
+      "file": "docs/validation/v0.9/rendered/page-049.png",
+      "bytes": 456967,
+      "sha256": "5a98ec6aefd3c592e4f9b784eb727ac624fc86056a8d35b3545acdc94a46d6ee",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3583,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Anciens bains S01 à S05 et début S06 lisibles ; chapitre et sous-titres nets, dernière phrase du puits poursuit proprement."
+      ]
+    },
+    {
+      "page": 50,
+      "file": "docs/validation/v0.9/rendered/page-050.png",
+      "bytes": 452008,
+      "sha256": "46c87505174ca7afd74c7e246e3d8e39ef74c4856c851404b442ce9da8d9c1da",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3528,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin S06, sas S07 et bunker B01 à B05 lisibles ; aucun paragraphe ni label rogné, B05 se poursuit normalement à la page suivante."
+      ]
+    },
+    {
+      "page": 51,
+      "file": "docs/validation/v0.9/rendered/page-051.png",
+      "bytes": 488933,
+      "sha256": "b47e68ff4b9b3574a8b6d5f136c36f29c0b8af1a7af2726a72c9292b56a65309",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3744,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite B05, B06, seuil P666 et secteurs I01 à I04 lisibles ; nombres, liens et accents corrects ; sortie amorcée avec continuation normale."
+      ]
+    },
+    {
+      "page": 52,
+      "file": "docs/validation/v0.9/rendered/page-052.png",
+      "bytes": 410292,
+      "sha256": "da2d4f1ab15bb946fa9aeb2d6012b0a1484decd90db16a1eb469397e2143abe2",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3851,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin de sortie, six lignes M01–M06 du tableau Mountain Hole et validation du catalogue complètes ; quatre colonnes lisibles sans débordement."
+      ]
+    },
+    {
+      "page": 53,
+      "file": "docs/validation/v0.9/rendered/page-053.png",
+      "bytes": 493809,
+      "sha256": "691a0c070eeb9e13975177ae545a8f915b34d21b948b608fd08f137e2e7572f5",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3671,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Assemblage des trente étages, avertissement de périmètre et fiches A30–A28 complets ; symboles de dimensions, nombres et liens lisibles."
+      ]
+    },
+    {
+      "page": 54,
+      "file": "docs/validation/v0.9/rendered/page-054.png",
+      "bytes": 487660,
+      "sha256": "2ec5ff3071ccfc4f42a42c4cb2ba1db4bfd758d094ec31ea6fc7389522cdbaec",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3648,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fiches d’assemblage A27 à A23 entièrement lisibles ; cinq sous-titres avec leurs paragraphes complets, aucun débordement ni glyphe manquant."
+      ]
+    },
+    {
+      "page": 55,
+      "file": "docs/validation/v0.9/rendered/page-055.png",
+      "bytes": 494290,
+      "sha256": "c13d39b1c1415950b2c8464a409b751dc1b16f135fc0f279e65d66816b2a9981",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3766,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Assemblages A22 à A18 lisibles ; dimensions, références P/E/SC et derniers paragraphes intacts ; A18 continue à la page suivante."
+      ]
+    },
+    {
+      "page": 56,
+      "file": "docs/validation/v0.9/rendered/page-056.png",
+      "bytes": 466639,
+      "sha256": "2c82d165ab8dc0f0da444142552e2d34348c4f07f0165bd0083cc42947e54262",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3607,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite d’A18 puis assemblages A17 à A13 entièrement lisibles ; signes ×, virgules décimales et tirets rendus sans collision."
+      ]
+    },
+    {
+      "page": 57,
+      "file": "docs/validation/v0.9/rendered/page-057.png",
+      "bytes": 498724,
+      "sha256": "3ec9068b263f88dbb08b682206322176d0ea44bc5c6967fbd6cd2a4a94c5c5de",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3737,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Assemblages A12 à A08 complets ; chapitres denses mais nets, références P53/P54 et dernière ligne entièrement visibles."
+      ]
+    },
+    {
+      "page": 58,
+      "file": "docs/validation/v0.9/rendered/page-058.png",
+      "bytes": 475213,
+      "sha256": "1b32e2b78434a482dce8a800b1d8dd133453c6f98e6ac3c23f4134e53033c1e6",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3546,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Assemblages A07 à A03 et début A02 lisibles ; toutes les dimensions et les lignes restent dans les marges, pied 58 / 186 dégagé."
+      ]
+    },
+    {
+      "page": 59,
+      "file": "docs/validation/v0.9/rendered/page-059.png",
+      "bytes": 261880,
+      "sha256": "98a573ebbbdbbff338c0916efc590956a8fac56a73a390b4bdd67f6a391131c6",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 1895,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin d’A02, A01 et ordre de production lisibles ; espace blanc final cohérent avec la fin du catalogue, aucun contenu tronqué."
+      ]
+    },
+    {
+      "page": 60,
+      "file": "docs/validation/v0.9/rendered/page-060.png",
+      "bytes": 501035,
+      "sha256": "ebbe18bc3a7d9038ff95ccf0a209040dac5a1b84b140330fed1138afdcf66797",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3818,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Titre Annexe A, version, périmètre et contrat d’extension lisibles ; routes et liens intacts, dernière phrase se poursuit normalement en page 61."
+      ]
+    },
+    {
+      "page": 61,
+      "file": "docs/validation/v0.9/rendered/page-061.png",
+      "bytes": 396187,
+      "sha256": "13b706368627237800f8f4c689a0cea281ad5094fe5862b70258b952a1486191",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3546,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite du contrat d’extension, signature des méthodes et tableau des onze premiers champs complets ; code, caractères accentués et bordures lisibles."
+      ]
+    },
+    {
+      "page": 62,
+      "file": "docs/validation/v0.9/rendered/page-062.png",
+      "bytes": 385077,
+      "sha256": "b92ff814c1741caadd088e59680607d9bffd006deaedbf509ba6d5f2d15bff2f",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3237,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Trois derniers champs repris sous l’en-tête ; contrat des liaisons et tableau des six données de rappel complets, paragraphes de physique et d’escalier sans rognage."
+      ]
+    },
+    {
+      "page": 63,
+      "file": "docs/validation/v0.9/rendered/page-063.png",
+      "bytes": 329922,
+      "sha256": "ab947835d13c7bd1eee879c582fe7d4bfcd02fbe8a12f57a9e7d61410a598aef",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 5668,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Tableau Invariants de la descente complet : six colonnes, toit et six étages, cellules longues lisibles. Les paragraphes sous le tableau restent séparés du pied de page 63/186."
+      ]
+    },
+    {
+      "page": 64,
+      "file": "docs/validation/v0.9/rendered/page-064.png",
+      "bytes": 501781,
+      "sha256": "904b6a225f4e777c00e00b4412d9ecd7faeb227ca64c622d584b5426b56a0d4d",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3752,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite des invariants, événement majeur et reproductibilité lisibles. Les identifiants et le lien de documentation tiennent dans les marges ; le titre des tests et sa première commande sont accompagnés de contenu."
+      ]
+    },
+    {
+      "page": 65,
+      "file": "docs/validation/v0.9/rendered/page-065.png",
+      "bytes": 549505,
+      "sha256": "5136daed39032e78c9f1e537d22417580b95e2cad046c087bc45f0a85db44c8c",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4336,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Sections de tests physiques et de transitions verticales lisibles. La longue commande Godot reste entière ; titres et descriptions des contrôles se distinguent, sans rognage du paragraphe continué en page suivante."
+      ]
+    },
+    {
+      "page": 66,
+      "file": "docs/validation/v0.9/rendered/page-066.png",
+      "bytes": 514913,
+      "sha256": "c636595adac5a34359d0483a77e036d3210f2088efa1a8de407e2fea10ab4609",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3862,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Les cinq passes de génération sont présentées dans une liste numérotée complète. Contraintes de progression et début du stockage des checkpoints bien espacés ; deux lignes accompagnent le dernier titre, sans chevauchement du pied."
+      ]
+    },
+    {
+      "page": 67,
+      "file": "docs/validation/v0.9/rendered/page-067.png",
+      "bytes": 533020,
+      "sha256": "83c8290c78f3bab8e43dab17fcaab6f89d10f591563819ba4b78f85df9833b1a",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 5110,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Le schéma de sauvegarde et le tableau des huit situations de reprise sont lisibles en entier. Les cellules longues restent dans leurs bordures et le tableau laisse une marge nette avant le pied de page."
+      ]
+    },
+    {
+      "page": 68,
+      "file": "docs/validation/v0.9/rendered/page-068.png",
+      "bytes": 533575,
+      "sha256": "1c5e2eecf19e3818a3e70536a9329bd34c68435499b315f14d8858d442880b0e",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4177,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Migration, écriture atomique, tests et perspectives de campagne sont lisibles. Les deux sous-titres sont suivis de leurs paragraphes ; la continuation de phrase en bas n’est ni coupée ni masquée."
+      ]
+    },
+    {
+      "page": 69,
+      "file": "docs/validation/v0.9/rendered/page-069.png",
+      "bytes": 58809,
+      "sha256": "31d42de2b891f101de2fe9bdd87d7ae4082df94daa8721526ea523e4aa784d7b",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 327,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Les trois lignes finales de l’annexe sont présentes et lisibles. Observation mineure de pagination : le saut de section suivant laisse presque toute la page blanche ; aucune perte de contenu ni coupure."
+      ]
+    },
+    {
+      "page": 70,
+      "file": "docs/validation/v0.9/rendered/page-070.png",
+      "bytes": 428169,
+      "sha256": "d021275172342ee272f30b742d9525c50fb4b5f11ad572a43c32dd23e5dc23b2",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3685,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Ouverture de l’annexe B et tableau des responsabilités lisibles. Les onze premières lignes, dont catalogue de routes et deux modules de rappel, sont entières et correctement délimitées ; la dernière reste au-dessus du pied."
+      ]
+    },
+    {
+      "page": 71,
+      "file": "docs/validation/v0.9/rendered/page-071.png",
+      "bytes": 444407,
+      "sha256": "9b962c3f3bf9333cb072d261c7e98af6266a947a9c1e03973e3bf9d40c29fe40",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3770,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Le tableau reprend son en-tête et affiche les douze responsabilités restantes sans cellule tronquée. La section sur les horloges commence clairement ; son dernier paragraphe poursuit normalement sur la page suivante."
+      ]
+    },
+    {
+      "page": 72,
+      "file": "docs/validation/v0.9/rendered/page-072.png",
+      "bytes": 553029,
+      "sha256": "6e47357a8328506c5b9f5f092e3f9b0428435775b6be609ae9a7f1870f8bb907",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4365,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Page dense mais nette : paragraphes de présentation, préférences, son et limites spatiales entièrement dans les marges. Les liens et identifiants longs se répartissent sans déborder ; le pied reste séparé."
+      ]
+    },
+    {
+      "page": 73,
+      "file": "docs/validation/v0.9/rendered/page-073.png",
+      "bytes": 550440,
+      "sha256": "bde1b0c2c70a218a7a68304bc15c3f6f2f67769dd0bf2c108b15f9df2503bc83",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4315,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Le développement sur les rappels locaux, escaliers, collisions et checkpoints est entièrement lisible. Distances et durée de transfert ressortent correctement ; le nouveau titre en fin de page dispose de son texte."
+      ]
+    },
+    {
+      "page": 74,
+      "file": "docs/validation/v0.9/rendered/page-074.png",
+      "bytes": 544919,
+      "sha256": "6c9d09aaa8c358a9baa0551c42c70aeb519f0349fc90ab7a3609004fb17245dd",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4041,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Les sections persistance, incident et air respirable sont bien hiérarchisées. Les emphases et liens s’affichent correctement ; aucune ligne ne franchit la marge ni le pied de page."
+      ]
+    },
+    {
+      "page": 75,
+      "file": "docs/validation/v0.9/rendered/page-075.png",
+      "bytes": 404140,
+      "sha256": "c3cc68a5e67f5b90786060b38fa651dde50f6b0e3b536bff5f080eca4559d162",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3074,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Tableau de répartition UE5 complet et lisible, y compris les longs noms de composants. L’avertissement sur le statut proposé, les commandes et le début du portage rappel ne débordent pas."
+      ]
+    },
+    {
+      "page": 76,
+      "file": "docs/validation/v0.9/rendered/page-076.png",
+      "bytes": 547679,
+      "sha256": "e27a6cd92a9e3c91f2e6fb72b380dcb1d0e093f231f22ad352db7893b46cab3b",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4131,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Sections câble, chargement des étages et procédural bien rendues. Les citations en liens, titres et paragraphes ont un espacement régulier ; la dernière phrase se poursuit sans perte visible."
+      ]
+    },
+    {
+      "page": 77,
+      "file": "docs/validation/v0.9/rendered/page-077.png",
+      "bytes": 478300,
+      "sha256": "b00630f40e6af744de38b8a3aa1df8fa9f17cc7f67504234035bf624587cf1a8",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3798,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Correction requise confirmée visuellement : « Les fiches P01 à P64 » apparaît dans le contrat de contenu. Les titres, paragraphes et la première ligne du tableau des jalons restent entiers et lisibles."
+      ]
+    },
+    {
+      "page": 78,
+      "file": "docs/validation/v0.9/rendered/page-078.png",
+      "bytes": 455647,
+      "sha256": "8000f6c7280009f6f4e1feb266e57b1b85256d6e6df3063a21e1f74429c06817",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3855,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite du tableau des jalons avec en-tête répété et six lignes lisibles. Les paragraphes du contrat perceptif et de l’extension future sont complets, sans débordement ni recouvrement."
+      ]
+    },
+    {
+      "page": 79,
+      "file": "docs/validation/v0.9/rendered/page-079.png",
+      "bytes": 366048,
+      "sha256": "cff5d8514ea4ae06d22d934f43a03d0ec117676e9112be56a7ffc3179c84816a",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 2968,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Ouverture de l’annexe historique C clairement datée 0.8.0. Titre, décision de direction et tableau du périmètre sont nets ; les lignes affichées gardent l’intégralité de leurs textes."
+      ]
+    },
+    {
+      "page": 80,
+      "file": "docs/validation/v0.9/rendered/page-080.png",
+      "bytes": 463721,
+      "sha256": "f78bfabbc981a273af7cb152b7ad1464166280a64ffc9231d4084ea96294bacb",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3513,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Dernière ligne du tableau de périmètre correctement reprise sous son en-tête. Géographie des deux tours et étapes 1 à 5 du parcours sont lisibles, avec numérotation et retraits réguliers."
+      ]
+    },
+    {
+      "page": 81,
+      "file": "docs/validation/v0.9/rendered/page-081.png",
+      "bytes": 467829,
+      "sha256": "cd12907546f4c5272e527084ce0be2d6af0a1f7fa248380a584148dac29262e5",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4973,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Les étapes 6 et 7 et les cinq phases du tableau temporel sont intégralement lisibles. En-têtes multilignes et cellules de mise en scène respectent leurs bordures ; notes de pause et de collisions bien séparées."
+      ]
+    },
+    {
+      "page": 82,
+      "file": "docs/validation/v0.9/rendered/page-082.png",
+      "bytes": 458717,
+      "sha256": "0ff102acc07f7f158e53b12f844873874dec32fc8dba9ff7ac0e289117109843",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4808,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Le tableau à six séquences d’arrivée et le début du script radio sont correctement composés. Les cellules longues et les deux premières lignes ARR-01/ARR-02 sont entières, avec une marge basse suffisante."
+      ]
+    },
+    {
+      "page": 83,
+      "file": "docs/validation/v0.9/rendered/page-083.png",
+      "bytes": 417736,
+      "sha256": "64a987e4fefc1a155d5d1f83346b8da30b529959f878e3d96c640949cdc1e160",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4237,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Le tableau radio poursuit les lignes ARR-03 à AMB-02 sous l’en-tête répété. Répliques, accents, guillemets et cellules multilignes sont entiers ; le paragraphe sous le tableau demeure lisible jusqu’en bas."
+      ]
+    },
+    {
+      "page": 84,
+      "file": "docs/validation/v0.9/rendered/page-084.png",
+      "bytes": 387794,
+      "sha256": "ec6f33bf81353ac9f7176f29b4d4c13d91a5a7eb145a9e9e4f50a35c884d4988",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3457,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Tableau des huit conséquences complet et lisible. Le début du tableau de migration garde son en-tête et deux lignes intactes ; aucune superposition avec les paragraphes ou le pied."
+      ]
+    },
+    {
+      "page": 85,
+      "file": "docs/validation/v0.9/rendered/page-085.png",
+      "bytes": 444550,
+      "sha256": "57881d6e9c50461e18852061248f77530090f66a8cc640223897c738e0c4037a",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3595,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Les sept lignes restantes du tableau de migration sont entières sous l’en-tête répété. Les sections de confort et de portage affichent des paragraphes bien séparés, sans rognage des dernières lignes."
+      ]
+    },
+    {
+      "page": 86,
+      "file": "docs/validation/v0.9/rendered/page-086.png",
+      "bytes": 380456,
+      "sha256": "d9b88743fc04ae49993a9b48d1f6b4f121e034e2008731c22fbcbbb43cdaba09",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 2990,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Liste des critères de revue et section de cohérence horrifique lisibles. Puces, accents et hiérarchie des titres corrects ; la fin d’annexe conserve une marge basse ample."
+      ]
+    },
+    {
+      "page": 87,
+      "file": "docs/validation/v0.9/rendered/page-087.png",
+      "bytes": 400006,
+      "sha256": "1e8cb7022a3999637e6598f8b6b48d1f05ca91ecdd644162235a9f03c952b729",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3652,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Ouverture de l’annexe D, historique des communications et tableau des six groupes lisibles. Le titre principal tient sur une ligne ; les cellules de responsabilité sont entières et le paragraphe final ne touche pas le pied."
+      ]
+    },
+    {
+      "page": 88,
+      "file": "docs/validation/v0.9/rendered/page-088.png",
+      "bytes": 413198,
+      "sha256": "449fcd846b89b7cd74d2cdda610d1f24e8f49557c73152d9936df0b65bcbd9d0",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3579,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Repli de Bravo, réception des trois personnes et tableau nominatif bien rendus. Les identifiants ne débordent pas ; le dernier titre sur les sous-titres est accompagné de son paragraphe."
+      ]
+    },
+    {
+      "page": 89,
+      "file": "docs/validation/v0.9/rendered/page-089.png",
+      "bytes": 451670,
+      "sha256": "87046cfeb2ff30f813f793abeeaac5225078261d48059c5914d2648631e61e14",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3910,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Tableau d’ordonnancement à sept cas complet. Le journal et le compte rendu sont expliqués sous des titres lisibles ; les noms d’onglets en gras et la fin du texte ne sont pas coupés."
+      ]
+    },
+    {
+      "page": 90,
+      "file": "docs/validation/v0.9/rendered/page-090.png",
+      "bytes": 384677,
+      "sha256": "cf7608c39ac70e045551ace0597a81a71320bd0c376b64e88f4672a181fb8989",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 2954,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "L’écho facultatif et ses cinq conditions sont bien rendus. Le second tableau conserve ses quatre schémas de migration et toutes les cellules ; le paragraphe final continue normalement sur la page suivante."
+      ]
+    },
+    {
+      "page": 91,
+      "file": "docs/validation/v0.9/rendered/page-091.png",
+      "bytes": 348090,
+      "sha256": "c960145c413e4f5309be0265dc91e5de51015a23f940781f215fe32451ecba72",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 2631,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin de l’annexe D lisible : direction du doublage, liens vers les sources et distinction entre incertitude et faits établis. Aucun titre isolé ni texte hors marge."
+      ]
+    },
+    {
+      "page": 92,
+      "file": "docs/validation/v0.9/rendered/page-092.png",
+      "bytes": 493125,
+      "sha256": "5f625e15542a22cfda6adf5c4ee6fe10ae6fefe9b7ba5db7cee5db23ccecb6ed",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3821,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Annexe E bien titrée « Version 0.9.0 — 64 fiches de référence et 12 observations jouables ». L’historique 60 puis 64 fiches est explicite ; conventions et règles de placement sont nettes et non tronquées."
+      ]
+    },
+    {
+      "page": 93,
+      "file": "docs/validation/v0.9/rendered/page-093.png",
+      "bytes": 475268,
+      "sha256": "5fc2d93380c5b815c5968b03782e699979536054c1a3434f7a61faea2903b6be",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3584,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fiches P01 à P03 présentes et lisibles, avec rubriques en gras distinctes. Les mises à jour sur treuil, séparation des lignes et stabilisation de 16 s sont visibles ; aucun bloc n’est tronqué."
+      ]
+    },
+    {
+      "page": 94,
+      "file": "docs/validation/v0.9/rendered/page-094.png",
+      "bytes": 513621,
+      "sha256": "cf6db6fcdb9d7a90ca09cfd7dde75563c009d0eee25a211197c62032f068a273",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3855,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fiches P04 à P06 et début de P07 correctement composés. Les vitesses du rappel, les touches et les limites géométriques sont lisibles ; la dernière rubrique de P07 se poursuit sans chevaucher le pied."
+      ]
+    },
+    {
+      "page": 95,
+      "file": "docs/validation/v0.9/rendered/page-095.png",
+      "bytes": 511466,
+      "sha256": "fba046e6df95ac2ee0ee2f0d6bb32bef6e3d0ac4bfe30db5b5eacdef8bdb11ae",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3668,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite du prop précédent puis P08–P11 : paragraphes, valeurs, intertitres et pagination 95/186 lisibles ; aucune troncature ni superposition."
+      ]
+    },
+    {
+      "page": 96,
+      "file": "docs/validation/v0.9/rendered/page-096.png",
+      "bytes": 462964,
+      "sha256": "88460a237b3aea1502a4ffec823b4df51c1cb7ffb23bb55fb8affb6f6e436f65",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3403,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "P12 puis Architecture et circulation, P13–P15 : titres reliés à leur texte, paragraphes complets dans les marges, pagination 96/186 lisible."
+      ]
+    },
+    {
+      "page": 97,
+      "file": "docs/validation/v0.9/rendered/page-097.png",
+      "bytes": 479944,
+      "sha256": "b9b09c65b2bfbbd1c8dd50febc23ff4ed2e170e577cf4035345a83121143d0f3",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3415,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "P16–P19 puis début de P20 : gabarits, états, interactions et titres lisibles. Le début de P20 reste associé à son premier paragraphe avant la continuation suivante ; aucune coupure de glyphes."
+      ]
+    },
+    {
+      "page": 98,
+      "file": "docs/validation/v0.9/rendered/page-098.png",
+      "bytes": 495719,
+      "sha256": "769ea0e68279201894ecb80a1b4fe4fc5a26914afb7fcb6cf9de941778bd4865",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3562,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Continuation de P20, fiches P21–P23 et titre Mobilier et traces de vie : texte net, espacements réguliers et pied 98/186 dégagé."
+      ]
+    },
+    {
+      "page": 99,
+      "file": "docs/validation/v0.9/rendered/page-099.png",
+      "bytes": 479360,
+      "sha256": "759d4e3a8825f2de01917d07644af5398c396744c9bf637842223b24514d654f",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3477,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fiches P24–P28 : contenu lisible, valeurs et unités intactes. P28 commence avec son paragraphe avant la page suivante ; aucun débordement dans le pied."
+      ]
+    },
+    {
+      "page": 100,
+      "file": "docs/validation/v0.9/rendered/page-100.png",
+      "bytes": 508703,
+      "sha256": "e91e9138e8c763abd7f4da548499efc839442c6958e42778d259ca6ca28b8951",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3711,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin de P28, P29–P31 et début de P32 : hiérarchie en gras nette, paragraphes dans les marges, numéro 100/186 dégagé."
+      ]
+    },
+    {
+      "page": 101,
+      "file": "docs/validation/v0.9/rendered/page-101.png",
+      "bytes": 491189,
+      "sha256": "f0564af3d741e632568516103c7bbc38f432429a8949eed7c17d522077ac97b2",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3670,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin de P32 et fiches P33–P36 : bassin du spa, dessin et jouet décrits avec statuts distincts. Corps et valeurs entièrement lisibles ; page 101/186 sans chevauchement."
+      ]
+    },
+    {
+      "page": 102,
+      "file": "docs/validation/v0.9/rendered/page-102.png",
+      "bytes": 461267,
+      "sha256": "2446e1711787cbac9e922f313a4b678054eb6fa55ed2a3adf2dfa7c7cc9ae9a7",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3372,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite de P36 puis Réseaux et outils de campagne, P37–P40 : titres, longues lignes et paragraphes restent à l’intérieur des marges ; pied 102/186 net."
+      ]
+    },
+    {
+      "page": 103,
+      "file": "docs/validation/v0.9/rendered/page-103.png",
+      "bytes": 488715,
+      "sha256": "75187d000e3540c5a0e3385cbcf549766be380549dafe1dd3a7b3848a96ba385",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3592,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite de P40, P41 bouteille, P42 détecteur et P43 extincteur : caractères, unités et paragraphes nets, sans dépassement de marge ni collision avec la pagination."
+      ]
+    },
+    {
+      "page": 104,
+      "file": "docs/validation/v0.9/rendered/page-104.png",
+      "bytes": 470567,
+      "sha256": "a4f896f8c965772b580d84dbf14eed679f5700811a2de1f400ef634ec7a29610",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3393,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "P44 puis Recherche et profondeur, P45–P47 : hiérarchie et quatre fiches lisibles, paragraphes complets, marges et pied 104/186 dégagés."
+      ]
+    },
+    {
+      "page": 105,
+      "file": "docs/validation/v0.9/rendered/page-105.png",
+      "bytes": 506250,
+      "sha256": "1950e26cff23f04eb9e578fb812c5946bef531120d7aa8fe01b900f8a50d4d0b",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3761,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "P48–P51 et début de P52 : gabarits, états et paragraphes lisibles ; le texte du dernier prop se poursuit normalement à la page suivante sans titre isolé."
+      ]
+    },
+    {
+      "page": 106,
+      "file": "docs/validation/v0.9/rendered/page-106.png",
+      "bytes": 491852,
+      "sha256": "6c0f3b42a1116fb1b9f9108d3a238da83aa400d273cd30cea41336928ff8a1c4",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3606,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin du prop hélicoptère, titre des accessoires d’expériences et fiches P53–P55 : long titre complet, distinction campagne future visible, aucune troncature ni superposition."
+      ]
+    },
+    {
+      "page": 107,
+      "file": "docs/validation/v0.9/rendered/page-107.png",
+      "bytes": 494051,
+      "sha256": "76e0429bc895b832b44a74a1d0cc3cacf5af7c8d31596a57ecb8d1a2f64edbde",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3632,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin de P55 puis P56–P59 : portes, amarrage, ligne de retour et contre-signal lisibles ; toutes les rubriques et la pagination restent dans les marges."
+      ]
+    },
+    {
+      "page": 108,
+      "file": "docs/validation/v0.9/rendered/page-108.png",
+      "bytes": 522982,
+      "sha256": "fca3e826dea6f9284b64b180d17f6990693e2834375c69be1f64dc3916d90b51",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3986,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "P60 puis Liaisons locales de la version 0.9 et P61–P62 : coordonnées, signes négatifs, dimensions des escaliers, références de routes et statuts Présent lisibles. Aucun titre tronqué."
+      ]
+    },
+    {
+      "page": 109,
+      "file": "docs/validation/v0.9/rendered/page-109.png",
+      "bytes": 496007,
+      "sha256": "41ffc28b473b070b0463022cead91860452ffe7f601783e555ffdf24e2852a79",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3899,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "P63 dalle d’arrêt et P64 descendeur/mains entièrement lisibles, suivis des douze observations ; les statuts procéduraux et la séparation avec le treuil restent explicites. Aucun débordement."
+      ]
+    },
+    {
+      "page": 110,
+      "file": "docs/validation/v0.9/rendered/page-110.png",
+      "bytes": 412845,
+      "sha256": "0ecbeac924f4c1ed3b5c0874437c555703ff1efc9924db78651bb0de52368675",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3785,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Table des douze observations complète : quatre colonnes, douze lignes de données, références et textes correctement enveloppés. Conditions de lecture et début de continuité lisibles, sans cellule coupée."
+      ]
+    },
+    {
+      "page": 111,
+      "file": "docs/validation/v0.9/rendered/page-111.png",
+      "bytes": 422085,
+      "sha256": "a7cbb6923d43cad1b6ec221d785d6196f2ba58b3df7005f3b30840129be2e773",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3303,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite de la continuité des observations, Présentation et recette, priorité de production et liens de référence lisibles. Espace blanc de fin d’annexe après les liens ; aucun contenu tronqué."
+      ]
+    },
+    {
+      "page": 112,
+      "file": "docs/validation/v0.9/rendered/page-112.png",
+      "bytes": 417651,
+      "sha256": "3e13147bee4864e1911158162b42d6b3ce6fc69b63cd01105d9d0f6be72d7b8a",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3831,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Début de l’annexe F, conventions statistiques et tableau E00–E04 lisibles. L’en-tête historique 0.8 est celui de l’annexe conservée ; les cellules de la première portion du tableau sont complètes."
+      ]
+    },
+    {
+      "page": 113,
+      "file": "docs/validation/v0.9/rendered/page-113.png",
+      "bytes": 306024,
+      "sha256": "9cb42f4862264a08b1670a918ae7e4ad3db4eb040ad0aef499b1c96c53182477",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3856,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite du tableau E05–E16 avec en-tête répété et douze lignes complètes ; début de la fiche E00 et tableau Lieu/Nature/Poursuite lisibles. Aucun chevauchement de cellules."
+      ]
+    },
+    {
+      "page": 114,
+      "file": "docs/validation/v0.9/rendered/page-114.png",
+      "bytes": 436336,
+      "sha256": "93af674b93befc251b3b3dcc2013ad5a1891bccddb1365aaa2580191032c561c",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3416,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite du tableau E00 avec en-tête répété et six lignes complètes, puis historique et fiche E01. Les durées, dommages, titres et paragraphes restent lisibles sans troncature."
+      ]
+    },
+    {
+      "page": 115,
+      "file": "docs/validation/v0.9/rendered/page-115.png",
+      "bytes": 507998,
+      "sha256": "8e891a9806aa46c99636038e736c1e10d1f55ccdd44991fd01e8533de0b37f68",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3848,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fiches E02 Le Répondant et E03 Le Noyé sec intégralement lisibles. Titres, rubriques en gras, valeurs et paragraphes sont bien séparés ; aucune ligne n’approche le pied de page."
+      ]
+    },
+    {
+      "page": 116,
+      "file": "docs/validation/v0.9/rendered/page-116.png",
+      "bytes": 509041,
+      "sha256": "3ca4028234d2561b1baa9e2003b90b8f6e82f78a625985bc3fc2e178ba34e234",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3810,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fiches E04 Le Porteur et E05 Les Veilleurs correctement composées. Le début de E06 dispose de plusieurs lignes après son titre ; textes et valeurs restent dans les marges sans chevauchement."
+      ]
+    },
+    {
+      "page": 117,
+      "file": "docs/validation/v0.9/rendered/page-117.png",
+      "bytes": 513675,
+      "sha256": "4ebc32251f24b455f36feb0e74b682b9d13d756100999d7a4f02152f51c0e619",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3861,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite de E06, fiche E07 Les Déliés et début de E08 Le Contremaître lisibles. Les changements de fiche et les valeurs restent distincts ; aucun paragraphe ne dépasse les marges."
+      ]
+    },
+    {
+      "page": 118,
+      "file": "docs/validation/v0.9/rendered/page-118.png",
+      "bytes": 513846,
+      "sha256": "ac3d59e16035c71a767980de10a88c7510828384574b1ad9268930a4e34adce6",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3881,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin de E08, fiche E09 La Chambre qui écoute et début de E10 Le Chœur bas bien rendus. Accents, rubriques et nombres sont nets ; les dernières lignes sont au-dessus du pied."
+      ]
+    },
+    {
+      "page": 119,
+      "file": "docs/validation/v0.9/rendered/page-119.png",
+      "bytes": 508633,
+      "sha256": "388a3a23cdb6d746c340e3c170445accf58292beecf4540d2999ea03687d9c62",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3731,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin de E10 et fiches E11 Le Retranché humain/E12 Le Débusqueur humain lisibles en entier. Rubriques, accents et valeurs ont un contraste uniforme ; dernière fiche terminée avant le pied."
+      ]
+    },
+    {
+      "page": 120,
+      "file": "docs/validation/v0.9/rendered/page-120.png",
+      "bytes": 541205,
+      "sha256": "d55781acd679b1929690f18d75c0e9abe568aaff6c632a3ef3f77383ae236ba2",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3946,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fiches E13, E14 et début de E15 rendues sans débordement. Les titres longs restent dans la largeur utile et les paragraphes conservent leurs lignes ; la dernière rubrique continue normalement."
+      ]
+    },
+    {
+      "page": 121,
+      "file": "docs/validation/v0.9/rendered/page-121.png",
+      "bytes": 453019,
+      "sha256": "2da674c6dc2a7b397dbca488de0798de567964418f573d9a777198bdff89ed9e",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3359,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin de E15, fiche E16 Le Gardien de brèche et contraintes communes complètes et lisibles. Les titres longs, valeurs et rubriques gardent un espacement net ; aucune troncature."
+      ]
+    },
+    {
+      "page": 122,
+      "file": "docs/validation/v0.9/rendered/page-122.png",
+      "bytes": 319557,
+      "sha256": "2e00e509c6e844f716d7361dec8b7761b02679e71f38e61e7da3f5677949fbb5",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 2646,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Correction requise confirmée visuellement dans le tableau : « Mêmes preuves, aide plus tardive ». Les six lignes et quatre colonnes du tableau de difficulté sont complètes ; les paragraphes de production et les liens sont lisibles."
+      ]
+    },
+    {
+      "page": 123,
+      "file": "docs/validation/v0.9/rendered/page-123.png",
+      "bytes": 437781,
+      "sha256": "fac2fd1fda6b7bb92e4ea5edc4c10e18a0c5ae311e73016ca9ada0987e279866",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3769,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Ouverture de l’annexe G clairement identifiée en version 0.9.0. Intentions, titre SC00 et trois premières lignes du tableau de lancement lisibles ; textes en gras et références correctement rendus."
+      ]
+    },
+    {
+      "page": 124,
+      "file": "docs/validation/v0.9/rendered/page-124.png",
+      "bytes": 411058,
+      "sha256": "9193b4e76bd73e05bcac82d347bfdf00d516ec7d14d7cf54dbd1e38d36fee8b9",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3901,
+      "status": "pass",
+      "reviewer": "AI — /root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Dernière ligne du tableau de lancement reprise avec son en-tête. Sections caméra et accueil, puis six premières lignes du tableau de contexte, sont entières ; cellules multilignes nettes et marge basse conservée."
+      ]
+    },
+    {
+      "page": 125,
+      "file": "docs/validation/v0.9/rendered/page-125.png",
+      "bytes": 494189,
+      "sha256": "98f60aa972a5ea299913a301bf4d3d72f8b01771eff99c29408186b730f19788",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3997,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite du tableau d’accueil : lignes spa et refuge complètes, en-tête répété lisible. Paragraphes et sous-titres nets, aucune superposition ni coupure au pied de page."
+      ]
+    },
+    {
+      "page": 126,
+      "file": "docs/validation/v0.9/rendered/page-126.png",
+      "bytes": 444246,
+      "sha256": "eada4feb4804eac2259035c3064a9f71b4d7a0681787ffab4a2fed2326321806",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4093,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "SC02 arrivée : tableau des quatre plans entièrement lisible, colonnes et accents corrects. Le tableau des événements commence proprement en bas et poursuit sa suite sur la page suivante."
+      ]
+    },
+    {
+      "page": 127,
+      "file": "docs/validation/v0.9/rendered/page-127.png",
+      "bytes": 456568,
+      "sha256": "02f58ccf6a020dc5b78202be4348a9eb912cf7b770af4abf8eb7ac8f4e6caaa8",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3662,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Tableau des événements de dépose poursuivi avec en-têtes et huit lignes complètes. Textes des communications et pieds de page lisibles, aucun chevauchement."
+      ]
+    },
+    {
+      "page": 128,
+      "file": "docs/validation/v0.9/rendered/page-128.png",
+      "bytes": 499889,
+      "sha256": "94125af4ff9c73b404de32d694aaeee8e5278e548e1e4f15ce9f2efac290b953",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3930,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "SC03 sauvetage et apprentissage du rappel bien hiérarchisés. Références P62/P04/P64 et texte lisibles ; première ligne du tableau SC03 entière avant la coupure de page."
+      ]
+    },
+    {
+      "page": 129,
+      "file": "docs/validation/v0.9/rendered/page-129.png",
+      "bytes": 486033,
+      "sha256": "1beb579da966733ee3129b7b353887eaa6bcd4823ad71bae984e97659cd4dbb3",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4190,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite SC03 : cinq lignes du tableau visibles et bordures nettes. Texte du rappel et début SC04 lisibles ; le paragraphe final continue normalement sur la page suivante."
+      ]
+    },
+    {
+      "page": 130,
+      "file": "docs/validation/v0.9/rendered/page-130.png",
+      "bytes": 510429,
+      "sha256": "c4c386bcb40b15c90af0c565db5a9e8c701692d7e54a486f9f74b0816513e6ed",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3932,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "SC04, SC05 et début SC06 : titres distincts, liens et accents rendus correctement. Texte dense mais intégralement dans les marges, aucune ligne recouverte par le pied de page."
+      ]
+    },
+    {
+      "page": 131,
+      "file": "docs/validation/v0.9/rendered/page-131.png",
+      "bytes": 447043,
+      "sha256": "de105d427481e2e418d65697af12943bbbd8aa5b7a5bca41100c3376a0bd922e",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3725,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Tableau des trois plans d’épilogue complet, textes des colonnes bien contenus. Sous-sections pause, reprise et bilan lisibles ; marge basse dégagée."
+      ]
+    },
+    {
+      "page": 132,
+      "file": "docs/validation/v0.9/rendered/page-132.png",
+      "bytes": 505136,
+      "sha256": "69166eb37b14350a8c0941a97c42e5157861c18a7bb20099a5ddcdb659a74720",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3743,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Storyboards SC07 à SC10 : titres et passages en gras clairement distingués, paragraphes non tronqués et accents visibles. Aucun tableau ni élément qui déborde."
+      ]
+    },
+    {
+      "page": 133,
+      "file": "docs/validation/v0.9/rendered/page-133.png",
+      "bytes": 565577,
+      "sha256": "42bc9761fc36f92d0814fa246faab9eb39fbc3375168f51d29571eac2ec9065e",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4342,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite SC10, SC11 et début SC12 : corps et repères gras lisibles, longues lignes correctement renvoyées. La dernière phrase se poursuit sur la page suivante sans texte superposé au pied."
+      ]
+    },
+    {
+      "page": 134,
+      "file": "docs/validation/v0.9/rendered/page-134.png",
+      "bytes": 515448,
+      "sha256": "ff619eca44d9fac4e97d6a7dd6b6e26e4149a38f4536eb001ff14fac9515211f",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3951,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "SC13, SC14 et SC15 : toutes les sous-sections restent lisibles, titres attachés à leur texte. Références de niveaux et apostrophes correctement rendues, marge basse suffisante."
+      ]
+    },
+    {
+      "page": 135,
+      "file": "docs/validation/v0.9/rendered/page-135.png",
+      "bytes": 532535,
+      "sha256": "becfe572710ba5aa576fd9c0ab5c7ea7ec46441a5c2984049ba07f0b2f5cbf41",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3999,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin des storyboards et contrats de réalisation : liens de scripts soulignés lisibles et texte bien contenu. Hiérarchie des sections 10 et 11 claire, aucun débordement."
+      ]
+    },
+    {
+      "page": 136,
+      "file": "docs/validation/v0.9/rendered/page-136.png",
+      "bytes": 457817,
+      "sha256": "6da7c0a65aab1b8464d9cda140cfd84ea4d3753b80a37e9f90936bd657d32323",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3749,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Ouverture de l’annexe H avec grand titre complet. Paragraphes de boucle et tableau du déplacement lisibles ; lignes marche/course entières avant continuation."
+      ]
+    },
+    {
+      "page": 137,
+      "file": "docs/validation/v0.9/rendered/page-137.png",
+      "bytes": 418358,
+      "sha256": "ede49d2a218bce5862d9851de4d4e577edafd7bee7fd55cb0e1fb9691e5bfb65",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4045,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite du tableau déplacement : neuf paramètres complets, unités m/s² et signes ± correctement visibles. Paragraphes des réglages et cibles bien espacés."
+      ]
+    },
+    {
+      "page": 138,
+      "file": "docs/validation/v0.9/rendered/page-138.png",
+      "bytes": 396033,
+      "sha256": "67f707b5cb79bfb625a06e73d11cb140ba694ce727480173ac519daf364cbb9b",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3780,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Tableau des six liaisons intégralement visible, identifiants et retours lisibles. Sections escaliers/engagement puis trois premières commandes de corde bien contenues, sans ligne de tableau coupée."
+      ]
+    },
+    {
+      "page": 139,
+      "file": "docs/validation/v0.9/rendered/page-139.png",
+      "bytes": 442525,
+      "sha256": "341d6393c5169308ba4145e5735aedb6360154369ef00ededed6534c32636ace",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4045,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite du tableau des commandes : six lignes complètes, valeurs et signes ± lisibles. Paragraphes de sortie, seuils gras et stabilisation bien espacés, sans débordement."
+      ]
+    },
+    {
+      "page": 140,
+      "file": "docs/validation/v0.9/rendered/page-140.png",
+      "bytes": 525527,
+      "sha256": "fab092030cf19dab7ced1251b35863bd86d17d6f115cf55b09358cdffe38a06a",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4101,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Conditions de portage, pause, interaction et début des sauvetages lisibles. Hiérarchie des sections 4 et 5 nette ; continuation du dernier paragraphe ordinaire, aucune occultation."
+      ]
+    },
+    {
+      "page": 141,
+      "file": "docs/validation/v0.9/rendered/page-141.png",
+      "bytes": 377285,
+      "sha256": "34ca53ed6780badd72562a36e61c5defa0636fa6587bee0d2546febf31033cb5",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3911,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Tableau des trois rescapés à quatre colonnes complet et lisible. La section ressources débute avec trois lignes entières ; aucune collision entre titres, tableau et footer."
+      ]
+    },
+    {
+      "page": 142,
+      "file": "docs/validation/v0.9/rendered/page-142.png",
+      "bytes": 458740,
+      "sha256": "4f509b58e9b79c0c32fa5d8be9459be9b13f1f8d48f8c67c7430bece0f166d07",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3879,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite ressources avec cinq lignes, valeurs et signes mathématiques correctement affichés. Paragraphes des dangers et de l’équilibrage lisibles ; la dernière phrase continue normalement."
+      ]
+    },
+    {
+      "page": 143,
+      "file": "docs/validation/v0.9/rendered/page-143.png",
+      "bytes": 522238,
+      "sha256": "40c385551bb2954dffcd5d22138df9b1a40ead3b2f94a74cadc69f133abdbf67",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4163,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Radio, preuves, objectifs et sauvegarde : titres et paragraphes longs lisibles, signes et chiffres nets. Aucun chevauchement ; fin de paragraphe poursuivie en page 144."
+      ]
+    },
+    {
+      "page": 144,
+      "file": "docs/validation/v0.9/rendered/page-144.png",
+      "bytes": 511629,
+      "sha256": "5b4ffe89f0ebc1d47e3c964a159185893ac0396169a562360ba45736a9234f66",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4054,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fiches de personnages : titres Alex, Leïla et Ana distincts, sous-rubriques en gras cohérentes. Accents et ponctuation correctement rendus, page dense sans débordement."
+      ]
+    },
+    {
+      "page": 145,
+      "file": "docs/validation/v0.9/rendered/page-145.png",
+      "bytes": 491164,
+      "sha256": "85f582a42ddd7e7f359478be1d8e3be86db8a83267a25f4b0c0b522972aa6417",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3710,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fiches Samuel, Nora, Malik et Inès : noms et rubriques en gras lisibles, paragraphes correctement espacés. Aucun caractère manquant ni ligne tronquée."
+      ]
+    },
+    {
+      "page": 146,
+      "file": "docs/validation/v0.9/rendered/page-146.png",
+      "bytes": 485344,
+      "sha256": "1f4e85049b481d3c8460e5eda7b695e0a6c5a5d1f0725ce6e5ef336d5d19de4d",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3685,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fiches Alma, Eva et équipes : texte complet dans les marges. La section 10 conserve son titre et son premier paragraphe ensemble ; footer distinct."
+      ]
+    },
+    {
+      "page": 147,
+      "file": "docs/validation/v0.9/rendered/page-147.png",
+      "bytes": 535054,
+      "sha256": "99041855cece3d4ab61a5845f6a195c741eede89467a439ed239c39ba0789be0",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4091,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Sources et extension de campagne : mention du prototype 0.9 visible, liens lisibles et titres complets. Le dernier paragraphe se poursuit sans chevauchement sur la page suivante."
+      ]
+    },
+    {
+      "page": 148,
+      "file": "docs/validation/v0.9/rendered/page-148.png",
+      "bytes": 230550,
+      "sha256": "89163dd7c4252d1e890f60c8a5f44f08dca634758a7e27250d52c101a734e3fd",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 1742,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin de l’annexe H : sections sur la preuve et la dimension infernale lisibles, aucune troncature. Grand espace libre de fin de chapitre, sans contenu isolé ou superposé."
+      ]
+    },
+    {
+      "page": 149,
+      "file": "docs/validation/v0.9/rendered/page-149.png",
+      "bytes": 422124,
+      "sha256": "72e5b417382d202b90b99833ac18411455ac8b14ba528b53fab29b02fd88ec76",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3488,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Ouverture de l’annexe I : long titre entier et tableau des cinq états de secours complet. Texte introductif historique, noms et valeurs lisibles sans recouvrement."
+      ]
+    },
+    {
+      "page": 150,
+      "file": "docs/validation/v0.9/rendered/page-150.png",
+      "bytes": 437877,
+      "sha256": "5477282f77b044cecbcce6566ef15e0ed95cf2e0d5318d896a48590a64e7241e",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3404,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Portage et géométrie du treuil : coordonnées et textes nets. Le tableau chronologique commence par une ligne complète ; bordures et footer restent séparés."
+      ]
+    },
+    {
+      "page": 151,
+      "file": "docs/validation/v0.9/rendered/page-151.png",
+      "bytes": 451122,
+      "sha256": "ede4af3e1bea863619b94dbdc6a7db01bfd84f4c79ef679867c49cd9fa3d993b",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3765,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite chronologie du treuil : quatre lignes complètes sous en-tête répété. Paragraphes sur le retour d’information et l’équipe au toit entièrement lisibles."
+      ]
+    },
+    {
+      "page": 152,
+      "file": "docs/validation/v0.9/rendered/page-152.png",
+      "bytes": 410202,
+      "sha256": "9f29c6377581398376528a068e720c330b3a522432ba105982489a0d259d9094",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3789,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Sauvegarde et contrat technique : tableau de huit responsabilités complet, noms de scripts contenus dans les cellules. Aucun chevauchement ni glyphe manquant observé."
+      ]
+    },
+    {
+      "page": 153,
+      "file": "docs/validation/v0.9/rendered/page-153.png",
+      "bytes": 422028,
+      "sha256": "ff7f29b5ed3a01bb586bc34aabb0551061d3bc2e7e7c71680515acbfa91a64c2",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3282,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Recette du sauvetage, production SC03 et priorité du secours : titres clairs et paragraphes entièrement lisibles. Espace de fin d’annexe normal, sans élément tronqué."
+      ]
+    },
+    {
+      "page": 154,
+      "file": "docs/validation/v0.9/rendered/page-154.png",
+      "bytes": 412146,
+      "sha256": "8065ad36b4219a46d26070c9f77984fca1aa545ec15ca1c318854f92e1f3275a",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4052,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Annexe J : titre maritime complet et tableau de sept éléments entièrement visible. Valeurs, signe × et code couleur sont nets ; aucune cellule ne déborde."
+      ]
+    },
+    {
+      "page": 155,
+      "file": "docs/validation/v0.9/rendered/page-155.png",
+      "bytes": 431374,
+      "sha256": "6b4ac287157e47a96bb185966aef787c06a8dfc58f2a2ab446f1acc58c6d4e21",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3421,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Dernière ligne du tableau maritime entière avec en-tête répété. Sections confort et fonctionnement reproductible lisibles ; aucun débordement ni chevauchement."
+      ]
+    },
+    {
+      "page": 156,
+      "file": "docs/validation/v0.9/rendered/page-156.png",
+      "bytes": 400060,
+      "sha256": "648da9bc002e38cc0927e2a0ac464cfaf054b05bb7fe546fd0acc6dac44170c1",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 2998,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Tableau des six fichiers d’atmosphère complet avec chemins renvoyés proprement. Références en liste lisibles ; titre de contraste et début de paragraphe présents avant continuation."
+      ]
+    },
+    {
+      "page": 157,
+      "file": "docs/validation/v0.9/rendered/page-157.png",
+      "bytes": 104893,
+      "sha256": "d29bc7c53a53629612139570af5683321b206c13029b72875858656d037c6a31",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 699,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin de l’annexe J : deux paragraphes de continuation lisibles en haut de page. Important blanc de fin de chapitre, aucune troncature ni superposition."
+      ]
+    },
+    {
+      "page": 158,
+      "file": "docs/validation/v0.9/rendered/page-158.png",
+      "bytes": 320535,
+      "sha256": "6faf560be7bd1e8b0178410150d73a0f6d717bf601b4525825ee9fa5fa930b88",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3972,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Ouverture annexe K : titre complet, tableau à quatre colonnes lisible. La longue cellule du champ de vision reste entièrement visible et sa ligne n’est pas coupée."
+      ]
+    },
+    {
+      "page": 159,
+      "file": "docs/validation/v0.9/rendered/page-159.png",
+      "bytes": 362815,
+      "sha256": "8e4616fe5f2d5b45ad1db2ab9ad976426a5ba88bb338d58e30b61496d3f14e86",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3701,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Suite des réglages : quatre lignes complètes avec en-têtes répétés. Parcours numérotés, commandes en gras et flèches Page ↑/↓ lisibles ; aucune superposition."
+      ]
+    },
+    {
+      "page": 160,
+      "file": "docs/validation/v0.9/rendered/page-160.png",
+      "bytes": 477977,
+      "sha256": "4a2ca10f08c475ebcb7101cbc2a313f6c37532248fe9b9c94d6f6852469a0924",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3536,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Navigation, données et intégration : puces bien alignées, clés et signatures techniques lisibles. Texte dans les marges jusqu’au dernier paragraphe, sans débordement."
+      ]
+    },
+    {
+      "page": 161,
+      "file": "docs/validation/v0.9/rendered/page-161.png",
+      "bytes": 363651,
+      "sha256": "47c20f9595137559fbb42f58a408afb98daac7b33a8e0fbcb9209df0498ba835",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 2780,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin des réglages : liste de vérifications lisible et correctement alignée. Rubrique manifestations entièrement visible, avec espace libre de fin d’annexe."
+      ]
+    },
+    {
+      "page": 162,
+      "file": "docs/validation/v0.9/rendered/page-162.png",
+      "bytes": 456726,
+      "sha256": "c739ec098da25dea80b1c6f4fc78802fffec8e6b50c48f166d2336e7534ebb16",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4090,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Annexe L : grand titre, sections et tableau des quatre onglets complets. Accents et guillemets visibles ; la section 2.1 conserve son texte dans la marge basse."
+      ]
+    },
+    {
+      "page": 163,
+      "file": "docs/validation/v0.9/rendered/page-163.png",
+      "bytes": 484065,
+      "sha256": "d54012ab321d6483cd26f4f4c991b40a1c25556491cfb009e0f2a5f2160e63ee",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3772,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Dossier : tableau des trois personnes complet, états à puces lisibles et identifiants nets. Sections indices/historique bien hiérarchisées ; fin de phrase poursuivie normalement."
+      ]
+    },
+    {
+      "page": 164,
+      "file": "docs/validation/v0.9/rendered/page-164.png",
+      "bytes": 382095,
+      "sha256": "af3685b168e38e57e9eadf3242abbc4992cace242a7d45450844a9321dd48472",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 2988,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Bilan : tableau de neuf éléments entièrement visible, puis trois actions numérotées lisibles. Aucun chevauchement, aucune troncature des cellules ni des passages en gras."
+      ]
+    },
+    {
+      "page": 165,
+      "file": "docs/validation/v0.9/rendered/page-165.png",
+      "bytes": 350522,
+      "sha256": "86cfb48346be913da0fcdc4eaadfdfb7221e99d084e308ecde7f68c6f5cb6425",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3984,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Épilogue : tableaux des trois plans et des trois sous-titres complets. Tableau de coordonnées à cinq colonnes lisible ; deux premières lignes entières avant sa continuation."
+      ]
+    },
+    {
+      "page": 166,
+      "file": "docs/validation/v0.9/rendered/page-166.png",
+      "bytes": 463900,
+      "sha256": "3ad873c4f8ccbaf9364d484f61abd8901faf5e9b51b4a836410bf7e1cdfd9b60",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3797,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Dernière ligne Extérieur du tableau de caméras complète avec en-tête répété. Sections temps, accessibilité et contrat de données lisibles, dimensions et noms de scripts sans chevauchement."
+      ]
+    },
+    {
+      "page": 167,
+      "file": "docs/validation/v0.9/rendered/page-167.png",
+      "bytes": 454153,
+      "sha256": "ef945c98c8b3fb2c1c6c8a89c21d0513d36de84a211be520f9d2609b4ebe3348",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3546,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Tableau des données du snapshot : sept lignes complètes, clés et signatures API lisibles. Sections de vérification sans chevauchement et marge basse dégagée."
+      ]
+    },
+    {
+      "page": 168,
+      "file": "docs/validation/v0.9/rendered/page-168.png",
+      "bytes": 196112,
+      "sha256": "d1753f272a77158299336184ab42c431e26a2c48e84e41351668db5eeb18cdb2",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 1418,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin de l’annexe L : liens et paragraphes sur la continuité des manifestations lisibles. Blanc de fin de chapitre normal ; aucun élément tronqué."
+      ]
+    },
+    {
+      "page": 169,
+      "file": "docs/validation/v0.9/rendered/page-169.png",
+      "bytes": 414567,
+      "sha256": "2ddca1fa38a55d53d19a3f446262c7d7967140ec1880537ed65d768e5e98a7ab",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3640,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Titre de l’annexe M et paragraphes de progression lisibles. Tableau du périmètre à trois colonnes complet, cinq lignes sans chevauchement ; la référence historique à la version 0.8 reste visible sous l’en-tête général 0.9.0."
+      ]
+    },
+    {
+      "page": 170,
+      "file": "docs/validation/v0.9/rendered/page-170.png",
+      "bytes": 383572,
+      "sha256": "c295ccb7b18cb5e563ce15ff47006e33fd3ecc12aed1bab1f5c52ae6b19af557",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4579,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Carte de l’escalade à quatre colonnes et cinq paliers complète et lisible. Les deux premières lignes du tableau des manifestations sont entières en bas de page ; chiffres, virgules et accents rendus correctement."
+      ]
+    },
+    {
+      "page": 171,
+      "file": "docs/validation/v0.9/rendered/page-171.png",
+      "bytes": 496121,
+      "sha256": "f7e1a1ecb8a52d44c763afb20afc0498ce65fecb980cd0d60cd5327c3fc2dda2",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4297,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Dernière ligne Spa 26 du tableau des manifestations complète, avec en-tête répété. Page dense de paragraphes sur les priorités et la continuité ; dernière ligne conservée au-dessus du pied de page, sans recouvrement."
+      ]
+    },
+    {
+      "page": 172,
+      "file": "docs/validation/v0.9/rendered/page-172.png",
+      "bytes": 458822,
+      "sha256": "682f58dab8d584fd150fa88c565108ebd2e3a06dab7e4bfadf660d8ef583b3ed",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3614,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Titres des sections 6, 7 et 8 et paragraphes de progression lisibles. Espacements réguliers, aucun texte tronqué ni glyphe manquant observé."
+      ]
+    },
+    {
+      "page": 173,
+      "file": "docs/validation/v0.9/rendered/page-173.png",
+      "bytes": 461199,
+      "sha256": "fae3104e067e0aa34df10e7141f9ea28de6a1aa016e94a71a6037379d939afd5",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4182,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Tableau du programme fictif à quatre colonnes et cinq lignes complet, bordures et texte nets. Titres 9 et 10 lisibles ; le dernier paragraphe se poursuit sur la page suivante sans chevauchement du pied."
+      ]
+    },
+    {
+      "page": 174,
+      "file": "docs/validation/v0.9/rendered/page-174.png",
+      "bytes": 468368,
+      "sha256": "de751fea8bdc76eb09ecb9d112bb333fd4f25d12c24ada6a583c6a927148c1bc",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3533,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Sections I01 à I04 lisibles, références P55 à P60 et caractères œ/é visibles. Début de la section 14 en bas de page avec deux lignes de texte, continuation normale sur la page suivante."
+      ]
+    },
+    {
+      "page": 175,
+      "file": "docs/validation/v0.9/rendered/page-175.png",
+      "bytes": 511611,
+      "sha256": "eeee438fb6ecacbfc0b8e70da9ca5c8a725913ba22f979573c1af363f676fe50",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4019,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Paragraphes sur les personnages, le gameplay et la direction visuelle lisibles. La dernière phrase de la section 16 continue sur la page suivante ; aucune ligne ne touche le pied de page."
+      ]
+    },
+    {
+      "page": 176,
+      "file": "docs/validation/v0.9/rendered/page-176.png",
+      "bytes": 228818,
+      "sha256": "a612b00960e19b9d0401cd7b974aaf834b11af06bd606686cdd084069ee7f4c4",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 1659,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Fin de l’annexe M nette et bien espacée. Vérification visuelle explicite de la mention corrigée « 64 props P01–P64, E00 perceptif et 16 archétypes de campagne E01–E16 ». Grand blanc de fin d’annexe normal, sans contenu tronqué."
+      ]
+    },
+    {
+      "page": 177,
+      "file": "docs/validation/v0.9/rendered/page-177.png",
+      "bytes": 473643,
+      "sha256": "70e18a5da573ea44f46ebc450fa6875fed1ca6f38c0311d22b7859a0d1a86d30",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3742,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Titre de l’annexe N et version 0.9.0 nets. Paragraphes d’intention et distinction rappel/treuil lisibles ; section 2 et son introduction conservées entièrement en bas de page."
+      ]
+    },
+    {
+      "page": 178,
+      "file": "docs/validation/v0.9/rendered/page-178.png",
+      "bytes": 395318,
+      "sha256": "84d2766b8c4398482942d93a05a134b801738cb6442751dfdb5b7ecdea9377df",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4590,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Les six liaisons R31_30 à S26_25 sont toutes visibles dans le tableau à cinq colonnes, sans cellule tronquée. Formule de hauteur, coordonnées négatives et signe ±0,65 lisibles ; paragraphes d’implantation complets."
+      ]
+    },
+    {
+      "page": 179,
+      "file": "docs/validation/v0.9/rendered/page-179.png",
+      "bytes": 484864,
+      "sha256": "01a6b50e9bb1bafba0df23c2f6b30b39af15400205325e83f63ebdfd7963dcea",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3758,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Coordonnées des surfaces d’arrêt et du treuil, dimensions de capsule et description des escaliers toutes lisibles. Multiplications, signes négatifs, ±0,35 et valeur 0,15 m/s correctement rendus ; aucun recouvrement."
+      ]
+    },
+    {
+      "page": 180,
+      "file": "docs/validation/v0.9/rendered/page-180.png",
+      "bytes": 434398,
+      "sha256": "76a6987f2cf741e012f4e68d112092053e1f7fc4576ebbfd0dac34190266da02",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3419,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Section du cycle de rappel et ses trois sous-titres clairs. Durées 0,85 s et seuils 0,45 m / 0,05 m/s / 0,25 m lisibles ; texte de bas de page complet avec marge avant le pied."
+      ]
+    },
+    {
+      "page": 181,
+      "file": "docs/validation/v0.9/rendered/page-181.png",
+      "bytes": 434931,
+      "sha256": "b65dc6e34b5f3aa2a2fde3e56f20f93f68ec4b163876044485b29cf192afaec9",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4099,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Tableau des neuf commandes complet et lisible, avec exposants m/s² et signe ± correctement affichés. Section 7 commence en bas de page, son dernier paragraphe continue sans texte recouvert."
+      ]
+    },
+    {
+      "page": 182,
+      "file": "docs/validation/v0.9/rendered/page-182.png",
+      "bytes": 497982,
+      "sha256": "111521af0d93ebea4e7661562dcd0680e8fed3dba86137691130caaa08ab0c13",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3971,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Noms de champs de longueur de corde lisibles dans le corps. Sections présentation/confort et portage/treuil bien hiérarchisées ; la dernière phrase du treuil continue normalement sur la page suivante."
+      ]
+    },
+    {
+      "page": 183,
+      "file": "docs/validation/v0.9/rendered/page-183.png",
+      "bytes": 485504,
+      "sha256": "599397550417dfff92928b56cbe0a9c58895f2cc5dc5173229959088fc3bfa3a",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3923,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Paragraphes radio, incident et sauvegarde lisibles. Tableau des nouveaux props commencé en bas de page avec en-tête et ligne P61 entiers ; la mention du catalogue de 64 références est visible."
+      ]
+    },
+    {
+      "page": 184,
+      "file": "docs/validation/v0.9/rendered/page-184.png",
+      "bytes": 409173,
+      "sha256": "519196931296f29fe1dc10e161600a106df41c9c07bbba00e9d4bb7e7ab22aa9",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 4161,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Continuation du tableau avec P62, P63 et P64 complète. Tableau des critères de validation : dix lignes de Catalogue à Incident visibles, toutes leurs cellules complètes et sans chevauchement ; en-têtes nets."
+      ]
+    },
+    {
+      "page": 185,
+      "file": "docs/validation/v0.9/rendered/page-185.png",
+      "bytes": 450643,
+      "sha256": "c7f27c5c62349371bb769ca6c7f7ede6bbd26c4c725fb6320a393ac02513d21b",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 3805,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Les trois dernières lignes Sauvegarde, Présentation et Treuil du tableau de validation sont complètes, avec en-tête répété. Section des extensions de campagne lisible ; dernier paragraphe complet et espace suffisant avant le pied."
+      ]
+    },
+    {
+      "page": 186,
+      "file": "docs/validation/v0.9/rendered/page-186.png",
+      "bytes": 135049,
+      "sha256": "53ffc7958d9aa7e9e3b9ddce35fd60fc664226a827dceb1408a7f26fc046b00c",
+      "width": 1415,
+      "height": 2000,
+      "text_characters": 727,
+      "status": "pass",
+      "reviewer": "OpenAI /root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "opened_individually": true,
+      "notes": [
+        "Dernière page avec titre Sources de référence et deux paragraphes complets. Liens soulignés et retours de ligne lisibles ; aucun chevauchement, glyphe manquant ou contenu coupé observé. Grand blanc final normal."
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "file": "docs/validation/v0.9/review_notes/tower-v09-pdf-review-final-001-062.json",
+      "sha256": "b9c2c013b9abf333034bc818ae6e339b0c57280c020586a0f4af6643314dadf8",
+      "reviewer": "AI — /root/v09_docs",
+      "page_count": 62
+    },
+    {
+      "file": "docs/validation/v0.9/review_notes/tower-v09-pdf-review-final-063-094.json",
+      "sha256": "7c49dd42459a749acb591a07d26d695c01f4d57bb2c43215e6a1d847cac924bc",
+      "reviewer": "AI — /root/v09_rope",
+      "page_count": 32
+    },
+    {
+      "file": "docs/validation/v0.9/review_notes/tower-v09-pdf-review-final-095-114.json",
+      "sha256": "163b36ddbe9b8f9799382d429a086a475f944cb36ccd1b0fdbbebaacc8195ba3",
+      "reviewer": "/root",
+      "page_count": 20
+    },
+    {
+      "file": "docs/validation/v0.9/review_notes/tower-v09-pdf-review-final-115-124.json",
+      "sha256": "e684b8b3f9b142e5ffd00bd00f819a0ed7d4d7fcf77f667bad586b67f5b82083",
+      "reviewer": "AI — /root/v09_rope",
+      "page_count": 10
+    },
+    {
+      "file": "docs/validation/v0.9/review_notes/tower-v09-pdf-review-final-125-186.json",
+      "sha256": "0281ad0c2e1f43cede1436c8cc35e37fcaa17cf0caa986260e9ec0fb27dbf9f2",
+      "reviewer": "OpenAI /root/v09_routes",
+      "page_count": 62
+    }
+  ],
+  "method": "Each of the 186 final CI PDF pages was opened directly at native size, at most two images per call. The exact Word has a separate canonical rendering and visual review covering 186 pages.",
+  "reviewer_type": "AI assistant visual inspection",
+  "content_verification": {
+    "file": "docs/validation/v0.9/DOCUMENT_CONTENT.json",
+    "bytes": 321240,
+    "sha256": "2e84cc67a6474fc342d364909f2e3bdc8d3627263dd7218d19070d1f0305d067"
+  },
+  "canonical_word_review": {
+    "file": "docs/validation/v0.9/CANONICAL_WORD_REVIEW.json",
+    "sha256": "f8501d48f049fda8fd907105ad3a27af707ae921566b3ac7bcbb6b4083abc947",
+    "page_count": 186,
+    "all_pass": true
+  },
+  "blocking_findings": [],
+  "non_blocking_observations": [
+    "Some annex endings leave blank space before the next section; page69 contains three concluding lines, and page111 ends after its reference links.",
+    "On page14, Accompagnement wraps across two lines inside a narrow cell; all letters remain visible."
+  ],
+  "limitations": [
+    "The delivered PDF has 186 pages; the canonical Word renderer produces 186. Each artifact is reviewed using its actual pagination.",
+    "Visual review verifies visible layout, completeness and the corrected catalogue references. It does not claim that the future campaign or AAA assets are implemented.",
+    "Source-word totals are whitespace counts from the Markdown sources, not an independent count of printed PDF words."
+  ]
+}

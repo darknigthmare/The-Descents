@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "project": "The Tower Descent",
+  "asset_pack": "Nacre coastal luxury / post-catastrophe albedos",
+  "version": "0.11",
+  "requested_dimensions_px": [
+    2048,
+    2048
+  ],
+  "actual_resolution_note": "The built-in Imagegen tool returned native 1254 × 1254 PNGs. No upsampling or pixel editing was performed.",
+  "generated_with": "image_gen__imagegen (built-in Imagegen)",
+  "provenance": {
+    "generation_type": "original text-to-image",
+    "provider_tool": "image_gen__imagegen",
+    "model_identifier": "not exposed by the tool",
+    "referenced_images": [],
+    "post_processing": "none; original Imagegen PNG bytes. Project copies were made before executor interruption; Git blobs were then created directly from the preserved original data URI.",
+    "generated_at_utc_date": "2026-11-25"
+  },
+  "color_usage": {
+    "texture_type": "base_color / albedo",
+    "intended_color_space": "sRGB",
+    "transparency": false,
+    "limitations": "Artist-directed generated colors, not measured spectral reflectance. These files do not include normal, roughness, metallic, height, ambient-occlusion or emission maps. Shader properties and physical scale remain integration choices."
+  },
+  "tiling": {
+    "intent": "repeat in both U and V",
+    "mathematically_seamless_verified": false,
+    "note": "Prompts request repeating edges. Opposite edges are not algorithmically equalized. All eight exact 2×2 repetition previews were visually reviewed. This review does not prove mathematical periodicity."
+  },
+  "materials": [
+    {
+      "id": "salt_concrete",
+      "file": "prototype/assets/materials/v011/salt_concrete.png",
+      "source_generated_file": "exec-822ccd69-a861-4223-9112-d99a0b75b758.png",
+      "source_unchanged": true,
+      "suggested_uv_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_scale_status": "art-direction recommendation; not a real-world measurement",
+      "prompt": "Use case: photorealistic-natural\nAsset type: one physically plausible repeating game-material base-color/albedo texture for The Tower Descent, coastal luxury resort Nacre after a recent catastrophe.\nComposition: exactly one square 2048 x 2048 pixel texture, orthographic top-down normal to a flat surface, edge to edge, no perspective and no border. This is a material map, not a photograph of a sample in a scene.\nLighting: perfectly even neutral color capture / diffuse albedo only, no baked directional illumination, no cast shadow, no ambient occlusion gradient, no specular reflection, no vignette. Preserve realistic restrained pigment color.\nRepeating intent: design all four edges to continue into the opposite edge, consistent scale and statistics over the entire image, no singular focal motif.\nAvoid: objects, scenery, sample spheres, labels, text, numbers, logos, watermarks, frames, dramatic cracks, rubble, blood, photographic depth of field.\nSubject: salt-weathered architectural concrete, a 2 by 2 meter area of an unjointed wall. Mid-light cool greige cement with small pale mineral aggregates, very fine pores, discreet chalky salt efflorescence and tiny weathered abrasions. Slight irregular tonal variation, restrained premium brutalist coastal architecture, light recent dust. No formwork seams, no rebar, no large holes. All surface relief should be communicated only by intrinsic material color variation, not directional shading.",
+      "generation_parameters": {
+        "transparent_background": false
+      },
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "bit_depth": 8,
+      "png_color_type": 2,
+      "bytes": 3287966,
+      "png_chunks": 4,
+      "png_crc32_all_chunks_valid": true,
+      "complete_iend": true,
+      "sha256": "7299270d824a23a54a642dd528e215047fd41173b7765b0ad6de1723b064d4c9",
+      "git_blob_sha": "08375497f084532b1668f3f0cb09e55ca726fca4",
+      "visual_review": {
+        "original_inspected": true,
+        "repeat_2x2_inspected": true,
+        "observation_fr": "Béton greige salin homogène, sans source lumineuse directionnelle visible. Répétition 2×2 inspectée : les taches minérales se répètent perceptiblement, sans joint de couleur fortement contrasté à cette échelle.",
+        "repeat_status": "reviewed_no_strong_boundary_at_preview_scale"
+      }
+    },
+    {
+      "id": "smoked_oak",
+      "file": "prototype/assets/materials/v011/smoked_oak.png",
+      "source_generated_file": "exec-628373e3-86e9-4d4a-b048-2cc25d8b9c7e.png",
+      "source_unchanged": true,
+      "suggested_uv_tile_size_m": [
+        1.2,
+        1.2
+      ],
+      "physical_scale_status": "art-direction recommendation; not a real-world measurement",
+      "prompt": "Use case: photorealistic-natural\nAsset type: one physically plausible repeating game-material base-color/albedo texture for The Tower Descent, coastal luxury resort Nacre after a recent catastrophe.\nComposition: exactly one square 2048 x 2048 pixel texture, orthographic top-down normal to a flat surface, edge to edge, no perspective and no border. This is a material map, not a photograph of a sample in a scene.\nLighting: perfectly even neutral color capture / diffuse albedo only, no baked directional illumination, no cast shadow, no ambient occlusion gradient, no specular reflection, no vignette. Preserve realistic restrained pigment color.\nRepeating intent: design all four edges to continue into the opposite edge, consistent scale and statistics over the entire image, no singular focal motif.\nAvoid: objects, scenery, sample spheres, labels, text, numbers, logos, watermarks, frames, dramatic cracks, rubble, blood, photographic depth of field.\nSubject: refined smoked oak floor and wall cladding, a 1.2 by 1.2 meter area. Four parallel straight long boards run vertically, 30 cm wide each, very narrow dark material joints; boards continue through the top and bottom edge without visible end cuts. Subtle dark warm umber and muted taupe-brown, fine longitudinal grain, small unobtrusive pores, occasional tiny closed knots, slight scuffs and traces of pale dust. Low gloss appearance rendered as base color with absolutely no light glints. Keep grain scale and tone stable across all edges; no dramatic black knots, no chevron or herringbone pattern.",
+      "generation_parameters": {
+        "transparent_background": false
+      },
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "bit_depth": 8,
+      "png_color_type": 2,
+      "bytes": 2386981,
+      "png_chunks": 4,
+      "png_crc32_all_chunks_valid": true,
+      "complete_iend": true,
+      "sha256": "a5b4e3bb1859b1a6b722463ea03c48de8e68649921122d768c09f1698aff8b35",
+      "git_blob_sha": "fc2c657850108a59124875fbeb259f639bea28c8",
+      "visual_review": {
+        "original_inspected": true,
+        "repeat_2x2_inspected": true,
+        "observation_fr": "Quatre lames verticales, teinte chaude sobre, sans reflet cuit. Répétition 2×2 inspectée : raccord latéral cohérent avec les joints des lames ; une légère rupture du veinage au raccord haut-bas reste perceptible.",
+        "repeat_status": "usable_with_visible_minor_boundary"
+      }
+    },
+    {
+      "id": "dark_stone",
+      "file": "prototype/assets/materials/v011/dark_stone.png",
+      "source_generated_file": "exec-ada343c3-443a-4d71-9263-1bf2b79b79f9.png",
+      "source_unchanged": true,
+      "suggested_uv_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_scale_status": "art-direction recommendation; not a real-world measurement",
+      "prompt": "Use case: photorealistic-natural\nAsset type: one physically plausible repeating game-material base-color/albedo texture for The Tower Descent, coastal luxury resort Nacre after a recent catastrophe.\nComposition: exactly one square 2048 x 2048 pixel texture, orthographic top-down normal to a flat surface, edge to edge, no perspective and no border. This is a material map, not a photograph of a sample in a scene.\nLighting: perfectly even neutral color capture / diffuse albedo only, no baked directional illumination, no cast shadow, no ambient occlusion gradient, no specular reflection, no vignette. Preserve realistic restrained pigment color.\nRepeating intent: design all four edges to continue into the opposite edge, consistent scale and statistics over the entire image, no singular focal motif.\nAvoid: objects, scenery, sample spheres, labels, text, numbers, logos, watermarks, frames, dramatic cracks, rubble, blood, photographic depth of field.\nSubject: A two by two meter continuous surface of premium dark charcoal volcanic architectural stone, unjointed. Restrained neutral cool graphite and fine gray mineral mottling, subtle sparse very fine mineral veins, nearly microscopic pale grains, a few light worn abrasions and a trace of salt dust. Elegant coastal hotel stone, modest catastrophe wear. Albedo only, no polished specular glints, no strong white marble veins, no cracks, no slabs outlined with joints.",
+      "generation_parameters": {
+        "transparent_background": false
+      },
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "bit_depth": 8,
+      "png_color_type": 2,
+      "bytes": 3049901,
+      "png_chunks": 4,
+      "png_crc32_all_chunks_valid": true,
+      "complete_iend": true,
+      "sha256": "ea23d3a2fef5ecb13f153c65a7edb9b45c5512a75553f26923b89cfaa82babc0",
+      "git_blob_sha": "f12a5017927f51ef973702a20e2cbc9b7c4868a8",
+      "visual_review": {
+        "original_inspected": true,
+        "repeat_2x2_inspected": true,
+        "observation_fr": "Pierre graphite à grains et veines fins, sans éclat spéculaire cuit. Répétition 2×2 inspectée : une légère limite horizontale de texture reste perceptible au raccord haut-bas ; ne pas qualifier de seamless garanti.",
+        "repeat_status": "usable_with_visible_minor_boundary"
+      }
+    },
+    {
+      "id": "brushed_steel",
+      "file": "prototype/assets/materials/v011/brushed_steel.png",
+      "source_generated_file": "exec-3d18c46e-16f3-44f4-85a0-14df75bfaeb8.png",
+      "source_unchanged": true,
+      "suggested_uv_tile_size_m": [
+        0.6,
+        0.6
+      ],
+      "physical_scale_status": "art-direction recommendation; not a real-world measurement",
+      "prompt": "Use case: photorealistic-natural\nAsset type: one physically plausible repeating game-material base-color/albedo texture for The Tower Descent, coastal luxury resort Nacre after a recent catastrophe.\nComposition: exactly one square 2048 x 2048 pixel texture, orthographic top-down normal to a flat surface, edge to edge, no perspective and no border. This is a material map, not a photograph of a sample in a scene.\nLighting: perfectly even neutral color capture / diffuse albedo only, no baked directional illumination, no cast shadow, no ambient occlusion gradient, no specular reflection, no vignette. Preserve realistic restrained pigment color.\nRepeating intent: design all four edges to continue into the opposite edge, consistent scale and statistics over the entire image, no singular focal motif.\nAvoid: objects, scenery, sample spheres, labels, text, numbers, logos, watermarks, frames, dramatic cracks, rubble, blood, photographic depth of field.\nSubject: A sixty by sixty centimeter continuous sheet of refined brushed stainless steel for rescue equipment and coastal architecture. Neutral medium-light silver-gray intrinsic metal base color, very low contrast fine horizontal parallel brushing and tiny muted micro scratches, a few inconspicuous dull salt specks. Absolutely uniform average brightness from all edges to center: no bright specular band, no reflection, no reflected sky, no gradient, no hot spot. No seams, bolts, objects, bevels or rust streaks. This must be a base-color texture intended for a metallic shader, not a rendered shiny material.",
+      "generation_parameters": {
+        "transparent_background": false
+      },
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "bit_depth": 8,
+      "png_color_type": 2,
+      "bytes": 2065734,
+      "png_chunks": 4,
+      "png_crc32_all_chunks_valid": true,
+      "complete_iend": true,
+      "sha256": "b182a04fc8bda2b8cd657fd6a7386233bad6b7635e7924bac6b2efccd3d5dc69",
+      "git_blob_sha": "6604c69456f7891b445de3722f2ad3cc12ca0c4b",
+      "visual_review": {
+        "original_inspected": true,
+        "repeat_2x2_inspected": true,
+        "observation_fr": "Brossage horizontal fin, teinte argent neutre et luminosité moyenne stable. Répétition 2×2 inspectée sans bande lumineuse ni couture fortement visible à cette échelle.",
+        "repeat_status": "reviewed_no_strong_boundary_at_preview_scale"
+      }
+    },
+    {
+      "id": "rescue_red_paint",
+      "file": "prototype/assets/materials/v011/rescue_red_paint.png",
+      "source_generated_file": "exec-b9b7cdc6-07e0-471c-9668-9af9cb2159d9.png",
+      "source_unchanged": true,
+      "suggested_uv_tile_size_m": [
+        0.5,
+        0.5
+      ],
+      "physical_scale_status": "art-direction recommendation; not a real-world measurement",
+      "prompt": "Use case: photorealistic-natural\nAsset type: one physically plausible repeating game-material base-color/albedo texture for The Tower Descent, coastal luxury resort Nacre after a recent catastrophe.\nComposition: exactly one square 2048 x 2048 pixel texture, orthographic top-down normal to a flat surface, edge to edge, no perspective and no border. This is a material map, not a photograph of a sample in a scene.\nLighting: perfectly even neutral color capture / diffuse albedo only, no baked directional illumination, no cast shadow, no ambient occlusion gradient, no specular reflection, no vignette. Preserve realistic restrained pigment color.\nRepeating intent: design all four edges to continue into the opposite edge, consistent scale and statistics over the entire image, no singular focal motif.\nAvoid: objects, scenery, sample spheres, labels, text, numbers, logos, watermarks, frames, dramatic cracks, rubble, blood, photographic depth of field.\nSubject: A fifty by fifty centimeter area of safety-red painted rescue equipment metal, muted vermilion red approximately #be3028. Consistent red pigmentation with very fine subtle orange-peel painted surface grain, slight recent pale dust, restrained low contrast scuffs and a few tiny chips exposing neutral dark gray primer, occupying less than two percent of the area. Almost uniform material statistics, neutral diffuse capture. No hazard stripes, no symbols, no letters, no blood, no large distressed patches, no dripping paint, no specular glints.",
+      "generation_parameters": {
+        "transparent_background": false
+      },
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "bit_depth": 8,
+      "png_color_type": 2,
+      "bytes": 2449883,
+      "png_chunks": 4,
+      "png_crc32_all_chunks_valid": true,
+      "complete_iend": true,
+      "sha256": "adcd2865e7853a4e79ab932a09f35bfed054a2613978d8e7ea75de2276617a96",
+      "git_blob_sha": "562b343a4a172b8498e48ed04ab7791da3d4f909",
+      "visual_review": {
+        "original_inspected": true,
+        "repeat_2x2_inspected": true,
+        "observation_fr": "Rouge secours franc, grain discret, quelques éclats gris très petits. Répétition 2×2 inspectée sans couture fortement visible ; les petits éclats forment naturellement un motif périodique.",
+        "repeat_status": "reviewed_no_strong_boundary_at_preview_scale"
+      }
+    },
+    {
+      "id": "black_rubber",
+      "file": "prototype/assets/materials/v011/black_rubber.png",
+      "source_generated_file": "exec-8d430c57-27a0-4375-8f32-cee2c9e61497.png",
+      "source_unchanged": true,
+      "suggested_uv_tile_size_m": [
+        0.4,
+        0.4
+      ],
+      "physical_scale_status": "art-direction recommendation; not a real-world measurement",
+      "prompt": "Use case: photorealistic-natural\nAsset type: one physically plausible repeating game-material base-color/albedo texture for The Tower Descent, coastal luxury resort Nacre after a recent catastrophe.\nComposition: exactly one square 2048 x 2048 pixel texture, orthographic top-down normal to a flat surface, edge to edge, no perspective and no border. This is a material map, not a photograph of a sample in a scene.\nLighting: perfectly even neutral color capture / diffuse albedo only, no baked directional illumination, no cast shadow, no ambient occlusion gradient, no specular reflection, no vignette. Preserve realistic restrained pigment color.\nRepeating intent: design all four edges to continue into the opposite edge, consistent scale and statistics over the entire image, no singular focal motif.\nAvoid: objects, scenery, sample spheres, labels, text, numbers, logos, watermarks, frames, dramatic cracks, rubble, blood, photographic depth of field.\nSubject: A forty by forty centimeter area of dense black vulcanized EPDM rubber for rescue equipment grip surfaces. Very dark charcoal intrinsic color around #202527, fine restrained molded pebble grain, minute gray wear scuffs, subtle natural pigment variation. A nearly uniform flexible rubber sheet with extremely low contrast microtexture. No tread pattern, no embossed lettering, no logo, no molded border, no raised ribs, no oily shine, no directional highlights. This is an RGB color albedo map, not a height or normal map.",
+      "generation_parameters": {
+        "transparent_background": false
+      },
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "bit_depth": 8,
+      "png_color_type": 2,
+      "bytes": 2753044,
+      "png_chunks": 4,
+      "png_crc32_all_chunks_valid": true,
+      "complete_iend": true,
+      "sha256": "dd554c6a3ce03657395330df817e78a9c36c93de983a0ae20fc018d344c38581",
+      "git_blob_sha": "e4227b45755d082fb1a35dcb1cb9c639d8015350",
+      "visual_review": {
+        "original_inspected": true,
+        "repeat_2x2_inspected": true,
+        "observation_fr": "Caoutchouc anthracite finement granuleux, sans reflet directionnel marqué. Répétition 2×2 inspectée sans couture fortement visible à cette échelle.",
+        "repeat_status": "reviewed_no_strong_boundary_at_preview_scale"
+      }
+    },
+    {
+      "id": "teal_carpet",
+      "file": "prototype/assets/materials/v011/teal_carpet.png",
+      "source_generated_file": "exec-5c01ac33-ea36-4a78-a1d8-8cc5727eaf0d.png",
+      "source_unchanged": true,
+      "suggested_uv_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_scale_status": "art-direction recommendation; not a real-world measurement",
+      "prompt": "Use case: photorealistic-natural\nAsset type: one physically plausible repeating game-material base-color/albedo texture for The Tower Descent, coastal luxury resort Nacre after a recent catastrophe.\nComposition: exactly one square 2048 x 2048 pixel texture, orthographic top-down normal to a flat surface, edge to edge, no perspective and no border. This is a material map, not a photograph of a sample in a scene.\nLighting: perfectly even neutral color capture / diffuse albedo only, no baked directional illumination, no cast shadow, no ambient occlusion gradient, no specular reflection, no vignette. Preserve realistic restrained pigment color.\nRepeating intent: design all four edges to continue into the opposite edge, consistent scale and statistics over the entire image, no singular focal motif.\nAvoid: objects, scenery, sample spheres, labels, text, numbers, logos, watermarks, frames, dramatic cracks, rubble, blood, photographic depth of field.\nSubject: A one by one meter area of elegant low-pile tightly woven luxury coastal-hotel carpet. Muted deep petrol teal, compact fine loop-fiber weave, subtle nuanced blue-green yarn colors and slight recent gray mineral dust. Low contrast uniform average color, calm sophisticated textile, slight restrained wear without localized stains. Fine-scale material texture, not oversized ropes. No seams, ornaments, checkerboard, large pattern, border, threads hanging, debris or directional fiber shadows. Fully even neutral diffuse color.",
+      "generation_parameters": {
+        "transparent_background": false
+      },
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "bit_depth": 8,
+      "png_color_type": 2,
+      "bytes": 3803283,
+      "png_chunks": 4,
+      "png_crc32_all_chunks_valid": true,
+      "complete_iend": true,
+      "sha256": "0c899389b28ab6169fefa09acf093aa543131e859ddc223529da076f7f426da5",
+      "git_blob_sha": "0083bc97301efc5cb12f265a9fd33a70be5a5f1b",
+      "visual_review": {
+        "original_inspected": true,
+        "repeat_2x2_inspected": true,
+        "observation_fr": "Moquette pétrole à trame dense, moyenne colorée stable. Répétition 2×2 inspectée sans couture fortement visible à cette échelle ; motifs de fibres reconnaissables à courte distance.",
+        "repeat_status": "reviewed_no_strong_boundary_at_preview_scale"
+      }
+    },
+    {
+      "id": "porcelain_tile",
+      "file": "prototype/assets/materials/v011/porcelain_tile.png",
+      "source_generated_file": "exec-1729e2a7-9350-44b1-bc1d-8b334b2559cb.png",
+      "source_unchanged": true,
+      "suggested_uv_tile_size_m": [
+        1.2,
+        1.2
+      ],
+      "physical_scale_status": "art-direction recommendation; not a real-world measurement",
+      "prompt": "Use case: photorealistic-natural\nAsset type: one physically plausible repeating game-material base-color/albedo texture for The Tower Descent, coastal luxury resort Nacre after a recent catastrophe.\nComposition: exactly one square 2048 x 2048 pixel texture, orthographic top-down normal to a flat surface, edge to edge, no perspective and no border. This is a material map, not a photograph of a sample in a scene.\nLighting: perfectly even neutral color capture / diffuse albedo only, no baked directional illumination, no cast shadow, no ambient occlusion gradient, no specular reflection, no vignette. Preserve realistic restrained pigment color.\nRepeating intent: design all four edges to continue into the opposite edge, consistent scale and statistics over the entire image, no singular focal motif.\nAvoid: objects, scenery, sample spheres, labels, text, numbers, logos, watermarks, frames, dramatic cracks, rubble, blood, photographic depth of field.\nSubject: A 1.2 by 1.2 meter surface of warm off-white porcelain floor tiles with very subtle mineral gray flecks, four square 60 cm tiles in an exact two-by-two square grid. Fine consistent neutral light-gray 3 mm grout: straight horizontal and vertical grout cross exactly at image center, half-width grout lines at the outermost image boundaries so adjacent repeats form the same grout width. All tiles share almost identical average pigment brightness; tiny restrained scuffs and dust. No chipped corners, no cracks, no dramatic stains, no beveled shadows and no glossy reflections. Flat orthographic base color, no perspective.",
+      "generation_parameters": {
+        "transparent_background": false
+      },
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "bit_depth": 8,
+      "png_color_type": 2,
+      "bytes": 2295784,
+      "png_chunks": 4,
+      "png_crc32_all_chunks_valid": true,
+      "complete_iend": true,
+      "sha256": "e9bd1d3e86af1f1eefb0d3679b8ff4526dd72af04575077af2fd164b1c7e632b",
+      "git_blob_sha": "9737c0444f918c1270e79b71e337301bef490452",
+      "visual_review": {
+        "original_inspected": true,
+        "repeat_2x2_inspected": true,
+        "observation_fr": "Porcelaine claire à grille régulière, sans reflet directionnel marqué. Répétition 2×2 réellement inspectée après rétablissement de l’environnement : joints alignés et teinte stable, sans couture fortement visible à cette échelle. La périodicité exacte des pixels n’est pas garantie.",
+        "repeat_status": "reviewed_no_strong_boundary_at_preview_scale"
+      }
+    }
+  ],
+  "quality_review": {
+    "original_images_reviewed": 8,
+    "repeat_2x2_previews_reviewed": 8,
+    "pending": "Final in-engine visual review.",
+    "review_method": "Each original image was displayed and inspected; exact 2×2 repeats were assembled with ImageMagick as temporary QA previews only. Asset pixels were never edited.",
+    "byte_integrity_method": "Decode the stored data URI, inspect PNG signature/IHDR, validate every PNG chunk CRC32 and complete IEND, compute SHA256. SHA256 implementation checked against the empty-string standard digest and the independent local SHA256 measurements for salt_concrete and smoked_oak.",
+    "repeated_image_preview_storage": "Temporary QA only; not part of the asset pack.",
+    "engine_review_performed": false,
+    "guaranteed_seamless": false,
+    "local_git_verification": {
+      "checked_materials": 8,
+      "complete_png_decode": true,
+      "all_dimensions_rgb8_native": true,
+      "all_sha256_match_manifest": true,
+      "all_worktree_git_blobs_match_manifest": true,
+      "all_head_git_blobs_match_manifest": true,
+      "method": "After executor recovery: Pillow verify and full pixel decode, SHA256 of every project PNG, git hash-object, and git ls-tree HEAD compared with the recorded original hashes."
+    }
+  }
+}

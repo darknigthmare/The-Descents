@@ -1,0 +1,719 @@
+{
+  "format": 1,
+  "version": "0.9.0",
+  "source_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
+  "reviewed_utc": "2026-11-25T14:31:15.908428+00:00",
+  "all_pass": true,
+  "reviewer": "/root",
+  "reviewer_type": "AI assistant visual inspection",
+  "method": "Every native PNG is covered by direct individual view_image inspection. Previously opened images are reused only after exact PNG SHA256 identity; changed images require a fresh individual review. No contact sheet or prior-version verdict is used.",
+  "scope": "Readability and staging of prepared native Godot views. Acceptance is for the procedural prototype.",
+  "captures": [
+    {
+      "file": "01_menu_arrivee.png",
+      "bytes": 856752,
+      "sha256": "4291c9b995586497f9ab8fda0a0c6566e878792280562eade5390709dbca554c",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Accueil avant intervention : deux tours droites, titre, options et repère v 0.9 lisibles, navigation alignée et contexte maritime conservé."
+      ]
+    },
+    {
+      "file": "02_options.png",
+      "bytes": 142752,
+      "sha256": "47ba7a94eb3a39d23dd63dd9af39ad3f34cfbd5bb8f997e9a639530aa0172115",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "Options et confort ouverts à taille native. Titre, valeur 100 %, sensibilité ×1,00, champ de vision 77°, focus, boutons et barre de défilement lisibles. Le bas du contenu se parcourt par défilement ; aucun chevauchement bloquant dans la zone affichée."
+      ]
+    },
+    {
+      "file": "03_nouvelle_intervention.png",
+      "bytes": 137827,
+      "sha256": "695ee3ab5b193f75de944007a014f0e9bfacda383525a41dfebd44431d4ed408",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "Nouvelle intervention ouverte directement. Texte de déploiement, trois personnes et leurs étages, disposition 271104, bouton Déployer Alpha et Retour entièrement lisibles et séparés."
+      ]
+    },
+    {
+      "file": "04_signature_studio.png",
+      "bytes": 1099297,
+      "sha256": "57c821d6d7eb359828e85c5f556f6ac2f7bcf1a40e152a5ef95cf576e8fb2b9b",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "PNG natif ouvert directement. Couronne, Darknigthmare, Kingdoms Games et Productions centrés sur les deux tours ; marge suffisante, progression et commande Passer visibles. Décor et logo acceptables pour la présentation procédurale."
+      ]
+    },
+    {
+      "file": "05_titre.png",
+      "bytes": 1099507,
+      "sha256": "a7044307787fa6b5f9c2d6740793ce05d14e5833648094e34232d406980f7111",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "Titre The Tower Descent et accroche lisibles sur les deux tours. Hélicoptères et toits identifiables, barre de progression et commande de passage dégagées. Aucun titre tronqué."
+      ]
+    },
+    {
+      "file": "06_approche_03.png",
+      "bytes": 876762,
+      "sha256": "b9701b5a380ad7b37172ca383bd758b929dadfcf59bfa2123f6f89a10c45a22c",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "Plan large natif ouvert. Deux tours, mer noyant les bâtiments, hélicoptère principal et second appareil discernables. Carton Île de Nacre, heure, sous-titre et commande de passage lisibles."
+      ]
+    },
+    {
+      "file": "06_approche_10.png",
+      "bytes": 880299,
+      "sha256": "f767ef43dd39502c3a41f2121cb9284299b519b9ac097477e3789349a84b681b",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "Plan des deux toits ouvert directement. Les deux hélicoptères se distinguent avec leurs plateformes ; titre et sous-titre Alpha/Bravo entièrement dans le cadre, sans chevauchement d’interface."
+      ]
+    },
+    {
+      "file": "06_approche_17.png",
+      "bytes": 927514,
+      "sha256": "eda96e8f62c775015706571bd68aaa4f1e3da22df99446624666db536f356a99",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "Plan Deux équipes ouvert directement. Poste de secours et hélicoptères sur les deux tours visibles ; label Bravo et sous-titre lisibles, progression et commande de passage préservées."
+      ]
+    },
+    {
+      "file": "06_approche_25.png",
+      "bytes": 939455,
+      "sha256": "d3ea595d6456e7da2b278b7f16ce563473dfa6d2c38a997437e2eaac3732e999",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "Plan du poste de commandement ouvert directement. Équipe, médical, hélicoptère et ouverture centrale visibles. Le sous-titre indique maintenant le repère bleu à l’ouest et le rappel vers le 30. Un prop de premier plan déborde du cadre sans couper l’interface."
+      ]
+    },
+    {
+      "file": "07_pause_intro.png",
+      "bytes": 220417,
+      "sha256": "beaf9f42ad3fd680f91732c2323a8e8b264e766d156e755b26cf7738f835d0f0",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "Pause ouverte sur l’arrivée. Reprendre, Commandes et mission, Options et confort, trois réglages, explication de sauvegarde et Retour au menu lisibles, sans superposition de zones actives."
+      ]
+    },
+    {
+      "file": "14_toit_equipe.png",
+      "bytes": 684363,
+      "sha256": "18e574f2ade8a42a966a8b6e8baa181449cef1932d8b192664d89d604f91c384",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "Vue native du toit ouverte directement. Hélicoptère, noyau, garde-corps, treuil, opérateur et poste médical sont distincts. La scène reste procédurale ; cette vue ne certifie pas une animation complète."
+      ]
+    },
+    {
+      "file": "15_portage.png",
+      "bytes": 534896,
+      "sha256": "dd60fb0cce4ebb1fe8d8b2b25c46fcf2bb9995a9bf2ad0596ba3e795fd4e4bcc",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "Vue du portage ouverte directement. Ana et le harnais occupent la zone inférieure droite ; la balise orange et l’accès restent visibles. Objectif et état du secours lisibles. Le message radio d’arrivée persiste dans cet état préparé à horloge figée ; cette image ne vaut pas chronologie d’une partie humaine."
+      ]
+    },
+    {
+      "file": "16_treuillage.png",
+      "bytes": 539695,
+      "sha256": "72a0a77a42f99579af9f6c28b56ecfc180e81c22bb1eca3b6ec4b17ac38398b6",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "Vue de la remontée ouverte directement. Câble, panier, personne et ouverture jusqu’au toit visibles. Objectif à 36 %, attente de réception et compteurs lisibles. La signalétique 3D est partiellement occultée par un poteau ; la radio d’arrivée est celle de l’état préparé figé."
+      ]
+    },
+    {
+      "file": "17_reception.png",
+      "bytes": 662745,
+      "sha256": "5d63b7c27a1fd53e93358ea22f331b536b7b0b71edeae4749d64214dbb3d8257",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "Vue du médical ouverte directement. Personne sur civière, deux équipiers, abri et treuil identifiables. L’équipier proche masque une partie du bord de la civière, sans empêcher la lecture de la prise en charge."
+      ]
+    },
+    {
+      "file": "18_meteo_toit.png",
+      "bytes": 529093,
+      "sha256": "a76bbfb72e3fd6e4f46fdb2d4dfb3067fb61c9c5b14af1be9e6d179348bf3241",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Ciel nuageux, mer brumeuse et deux équipes visibles dans un plan d’ambiance ; pas de défaut de géométrie évident."
+      ]
+    },
+    {
+      "file": "19_options_pause.png",
+      "bytes": 162988,
+      "sha256": "1632e57a20e3efb27cf146ebc509967796e045635169b09232b01f63821755be",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Options ouvertes depuis la mission : contrôles contrastés, valeurs et retour accessibles, arrière-plan atténué."
+      ]
+    },
+    {
+      "file": "11_inspection_toit.png",
+      "bytes": 198793,
+      "sha256": "13f5e2aa02574c764405de3d641b8607fc724377ab18f93e02ffcca661caf1bd",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Registre médical : titres, réceptions 0/3 et trois noms lisibles ; zone de lecture défilante et bouton de fermeture séparés."
+      ]
+    },
+    {
+      "file": "12_inspection_archives.png",
+      "bytes": 149882,
+      "sha256": "c0a8cd6786b12546e5a27a923bff5a02495ad3c9ff206852146d8ce001d6c2a7",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Fiche de maintenance avant choc : constat, consigne et fermeture lisibles, contenu tient sans collision dans la fenêtre."
+      ]
+    },
+    {
+      "file": "13_inspection_apres.png",
+      "bytes": 153821,
+      "sha256": "96cc71d4ffada1b1bcc68a8323effd075104d97b82876cec703e767094994ab5",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "La même fiche reflète le détour intérieur après choc ; badge de phase et texte modifié lisibles, aucune troncature."
+      ]
+    },
+    {
+      "file": "08_menu_archives.png",
+      "bytes": 750314,
+      "sha256": "6ed520df786fa97ab9de74eadac686969b5f4cb063f77efd157c9db67dd2c4dc",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "Accueil des archives ouvert directement. Lieu au 28, une vie sauvée et dernier point sûr sont cohérents et lisibles. Reprendre, nouvelle intervention et autres entrées restent dégagés. La signalétique du décor peut être occultée par le mobilier, sans couper le menu."
+      ]
+    },
+    {
+      "file": "09_dossier_apres.png",
+      "bytes": 169463,
+      "sha256": "7721f7a0818010391ad8610a0842d33312beeedcda3d25e84dd88289637ce8a6",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "Dossier après incident ouvert directement. Situation, équipe et parcours sont lisibles ; la barre de défilement annonce les lignes suivantes. Le bas de la liste est dans une zone défilante distincte des boutons Commandes et matériel et Retour."
+      ]
+    },
+    {
+      "file": "20_journal_situation.png",
+      "bytes": 192516,
+      "sha256": "910b8576aaf5ea5a6765a0f0f119efebbcdf5817b4a2fc10a134308e915f8a3f",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Journal Situation : compteurs, lieu 28, détour après choc et états des rescapés lisibles. Le défilement donne accès au reste sans masquer les onglets."
+      ]
+    },
+    {
+      "file": "21_journal_rescapes.png",
+      "bytes": 169753,
+      "sha256": "5f1f84030339130795cd658f2b33185efa026a08ea425cd332964c47909c18b0",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Onglet Rescapés : Ana à l’abri, Samuel à secourir et fiche Nora visibles ; compteur 1/3 et sélection de l’onglet cohérents."
+      ]
+    },
+    {
+      "file": "22_journal_indices.png",
+      "bytes": 183024,
+      "sha256": "8d709f2caf18dc96cb653905562a26f077fade0d93db3ac0c2d6dc89d18ee146",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Indice de la chambre 2908 lisible ; documents des 27/26 restent explicitement inconnus, sans révélation de contenu non récupéré."
+      ]
+    },
+    {
+      "file": "23_journal_transmissions.png",
+      "bytes": 174645,
+      "sha256": "c7c944a7cbe84a905bfd191d560c1dec0498dac795f1f24c70c42a0a19e718d6",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Transmissions horodatées, texte de reprise et note d’enquête visibles en entier ; disposition des onglets et fermeture intactes."
+      ]
+    },
+    {
+      "file": "24_epilogue_02.png",
+      "bytes": 901927,
+      "sha256": "8b1bf3d5b6ed113c333fa57ec8b6a289b3a8fd7d8ecd66a63ecfb534df3f55fa",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Les trois personnes reçues et les deux soignants visibles ; titre et sous-titre ne masquent pas leurs visages."
+      ]
+    },
+    {
+      "file": "24_epilogue_07.png",
+      "bytes": 828952,
+      "sha256": "0c0f4e181689ae211f6c8b75e8488c52218139dcb0d3708b127a15742a4b0cfe",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Relais du 25 au premier plan, escalier nouvellement relié au 26 visible à gauche ; plan et sous-titre cadrés sans chevauchement."
+      ]
+    },
+    {
+      "file": "24_epilogue_12.png",
+      "bytes": 872965,
+      "sha256": "2cac92fe4d05ec10a88a6c9e62a113ce2043daa868c678e4f5a612f3292454f4",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Tour Hespérie inclinée visible contre Aube ; signal d’origine incertaine et sous-titre vers le 24 lisibles, sans montrer de niveau infernal prématuré."
+      ]
+    },
+    {
+      "file": "25_bilan_refuge.png",
+      "bytes": 198998,
+      "sha256": "255beac2ad80007a0d4edf81d22c046bcdce318a1c43c2fdd8b5fc4556cdadc8",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Bilan final :3/3 personnes,2/3 indices,position 25 et trois fiches lisibles. Le texte conserve l’incertitude de Bravo, actions de fin toutes dans le cadre."
+      ]
+    },
+    {
+      "file": "10_menu_refuge.png",
+      "bytes": 787084,
+      "sha256": "d734e7aebf46b899ed0a4f065470adcced26337aaef81a34f219958a210f82bc",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "This final native PNG was opened directly by root after the final capture build.",
+      "notes": [
+        "Accueil final ouvert directement. Consulter l’intervention terminée, trois vies sauvées, étage 25 et statut final lisibles. Refuge, équipier et noyau forment un décor cohérent avec la sauvegarde ; les commandes principales ne sont pas occultées."
+      ]
+    },
+    {
+      "file": "26_suites_presence.png",
+      "bytes": 356425,
+      "sha256": "59b843cd52c0b202a360dd8bc6d5f4d60f48d11a4c48f0b93059e6bfbe01bf01",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Silhouette discrète des suites visible devant le lit ; support de rappel décalé à sa droite, sans masquer l’apparition. Repère de la liaison 29↔28 et mission restent lisibles."
+      ]
+    },
+    {
+      "file": "27_archives_traces.png",
+      "bytes": 301268,
+      "sha256": "3c72c788bd89001c06b42ec61a74c2b456381f4053534b083e108231063db475",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Huit empreintes visibles sur le plateau ouest, à distance du noyau ; géométrie de circulation et HUD dégagés."
+      ]
+    },
+    {
+      "file": "28_spa_remanence.png",
+      "bytes": 443369,
+      "sha256": "c13c5efc384a17f114e1052689a700acd8b8646faf98ca9d89ea5b38c40aa47c",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Rémanence devant le bassin clairement visible dans l’état préparé ; nouveau rappel 27↔26 n’en masque pas la silhouette."
+      ]
+    },
+    {
+      "file": "29_station_rappel_toit.png",
+      "bytes": 648822,
+      "sha256": "b7fcb8f7f2fba6815d535aa7392c8c7af0cb127dcd3bccf3cf50b25b83fee6f4",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Station bleue et entrée du noyau visibles ; garde-corps, plafond du porte-à-faux et destination 30 cohérents. Prompt d’engagement lisible. Signalétique 3D proche partiellement hors cadre, distincte des panneauxHUD."
+      ]
+    },
+    {
+      "file": "30_rappel_descente.png",
+      "bytes": 498902,
+      "sha256": "2e57c66bfd196a01e19b11f6189a839aba24c79daa2dadcd7840f424f910cd11",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Vue suspendue vers le palier 30 ; panneau indique descente 2,8 m/s,3,0 m restants,endurance 100 %,corde 4,7/7,8 m. Descendeur et main visibles, trois lignes de commandes entièrement lisibles."
+      ]
+    },
+    {
+      "file": "31_rappel_verrouille.png",
+      "bytes": 532707,
+      "sha256": "579bfa34faf49d54d3070571b3c7bbc0a74f05a3692d4b7fc00c6925fed56dcd",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Même suspension arrêtée : 0,0 m/s, mention descendeur verrouillé et voyant vert. HUD et instructions restent entièrement dans leurs panneaux."
+      ]
+    },
+    {
+      "file": "34_rappel_remontee.png",
+      "bytes": 407998,
+      "sha256": "374f7a5ad2832624b19997a36f170796ce60bec84b84d48451578986672b7225",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Cadrage vers le toit et l’ancrage ; mode remontée 1,6 m/s, endurance 90 %. Le câble de scène, le matériel subjectif et l’ouverture supérieure sont visibles."
+      ]
+    },
+    {
+      "file": "32_escalier_30_29.png",
+      "bytes": 512264,
+      "sha256": "239bb2f886c16f8d2c9cd4354330f64f4357d7e82f0148b95fda3a2924f86e7f",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Deux volées, marches contrastées, garde-corps et palier lisibles depuis l’entrée 30. HUD identifie la seule paire 30↔29 et le retour possible. Le prompt reste lisible sur les marches, avec un contraste variable dû aux nez jaunes."
+      ]
+    },
+    {
+      "file": "33_escalier_palier.png",
+      "bytes": 511613,
+      "sha256": "4cb3b20ffdf74195c9b86d34e52c679cff692b74b6592d7d5f7f637a9fbb405f",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Depuis le palier intermédiaire, la volée de retour et l’ouverture supérieure se lisent ; destination 29 visible sous la dalle. HUD conserve la liaison 30↔29, sans inventer un troisième étage."
+      ]
+    },
+    {
+      "file": "36_escalier_28_27.png",
+      "bytes": 506561,
+      "sha256": "b31c109aad2b91412aaee171093753c29c5f1b233ffbb8a70d0b65608addd6d9",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Accès 28↔27 reconnaissable, panneau de liaison entièrement lisible et ouverture de la dalle dégagée ; les deux volées conservent leurs garde-corps."
+      ]
+    },
+    {
+      "file": "37_escalier_26_25.png",
+      "bytes": 539466,
+      "sha256": "5a6e80f31bb0dd5978253ee2c2c62bc4df5d01b0e0e931b375c50951aeaf4ebe",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Accès 26↔25 et palier visible ; HUD indique la bonne paire et la limite locale. Une conduite jaune reste dans le décor supérieur sans masquer la marche de descente."
+      ]
+    },
+    {
+      "file": "35_aide_deplacements.png",
+      "bytes": 161162,
+      "sha256": "ea013137a3ce4fe11cf1ec8370eafd77c6454a0afa9278053288c57c66a3443d",
+      "width": 1440,
+      "height": 900,
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "displayed_format": "native PNG",
+      "opened_individually": true,
+      "review_basis": "Exact native PNG is byte-identical to the v0.9 candidate PNG opened directly by root. Hash checked against the retained original visual review.",
+      "notes": [
+        "Panneau d’aide centré, mission/itinéraire local/commandes au sol et sur corde lisibles. Défilement vertical visible pour le contenu restant ; bouton Compris accessible hors de la zone défilante. Capture du début du contenu seulement."
+      ]
+    }
+  ],
+  "blocking_findings": [],
+  "exact_images_from_original_review": 26,
+  "changed_images_reopened": [
+    "02_options.png",
+    "03_nouvelle_intervention.png",
+    "04_signature_studio.png",
+    "05_titre.png",
+    "06_approche_03.png",
+    "06_approche_10.png",
+    "06_approche_17.png",
+    "06_approche_25.png",
+    "07_pause_intro.png",
+    "14_toit_equipe.png",
+    "15_portage.png",
+    "16_treuillage.png",
+    "17_reception.png",
+    "08_menu_archives.png",
+    "09_dossier_apres.png",
+    "10_menu_refuge.png"
+  ],
+  "original_review": {
+    "file": "docs/validation/v0.9/review_notes/native-original-v09-review.json",
+    "sha256": "4ca48daa25f0985c39537ca97d1f25031eea69105d519b2e1202365e7168705c"
+  },
+  "non_blocking_observations": [
+    "World-space signage close to the camera can extend outside the frame; principal HUD panels remain readable.",
+    "The pale stair prompt has variable contrast over yellow step edges; the separate dark route panel remains readable.",
+    "The help screenshot shows the initial scroll position; the lower content is outside the still and is accessed through the visible scroll control.",
+    "Procedural character, hand and descender geometry is prototype art, not final production animation."
+  ],
+  "limitations": [
+    "Prepared states and sampled clocks do not establish a complete human playthrough or transition-video review.",
+    "Linux native images do not certify Windows execution, browser WebGL/WebAssembly, performance, voice acting or audible mix quality."
+  ]
+}

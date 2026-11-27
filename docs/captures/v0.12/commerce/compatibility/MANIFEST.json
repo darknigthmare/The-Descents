@@ -1,0 +1,172 @@
+{
+	"captures": [
+		{
+			"description": "Bilan du 23 et choix explicite de poursuivre ; cinq réceptions antérieures conservées",
+			"file": "01_bilan_23.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "99c9ecc46908555703dc0fe228d7fb1b3462982ca81acf4d54f4d8831b3b1244",
+			"width": 1440
+		},
+		{
+			"description": "Galerie au 22 : terrazzo, vitrines importées et circulations latérales",
+			"file": "02_gallery_22.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "6c937f922b41b078b9ee44226cb86c05df59223e68caebc3f32ccb5aa02ec7ac",
+			"width": 1440
+		},
+		{
+			"description": "Volet fermé ; Mina reste dans la réserve avant intervention au Halligan",
+			"file": "03_mina_shutter_closed.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "ef450e017707e73247f58b1d251120cb52a8262a631ba6aafda617e1ac48aad3",
+			"width": 1440
+		},
+		{
+			"description": "Volet soulevé après maintien réel de l’action ; passage et personne visibles",
+			"file": "04_mina_shutter_open.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "2fcb7fe5feb6cb32111221c075cfa6d0cd2784e383d032abd9341eaacc0d4ebc",
+			"width": 1440
+		},
+		{
+			"description": "Le Retranché protège son visage à courte distance ; consigne de recul visible",
+			"file": "05_retranche_close.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "5d2a9833d224e30fd1e9747757e746cf3b221c83c89d5421d2baf1286a901e04",
+			"width": 1440
+		},
+		{
+			"description": "Distance conservée, lampe baissée et dialogue achevé ; les bras sont abaissés",
+			"file": "06_retranche_calm.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "613986caa86c33e017904c4754d706770e5a8d45173c533289de3af3d8598d1c",
+			"width": 1440
+		},
+		{
+			"description": "Office au 21 : matériels importés, foyer local et fumée avant intervention",
+			"file": "07_kitchen_before.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "28944f04a92f104a7f96bdfe841c276f738e27f70227047a072ac3eec855cc58",
+			"width": 1440
+		},
+		{
+			"description": "Réchauffeur isolé, couverture déployée et foyer contenu",
+			"file": "08_kitchen_after.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "be66f23e6e61ca23ada6d60c9a9967ab0cd023417b77dc41a50fd957e645f0c3",
+			"width": 1440
+		},
+		{
+			"description": "Escalier local nord 22–21, indépendant des liaisons voisines",
+			"file": "09_stairs_22_21.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "d1f799639c72aafd1fc83beaa317ca927b8513d5ebac4e9460ff9c66f098cdf3",
+			"width": 1440
+		},
+		{
+			"description": "État physique préparé sur le rappel optionnel 22–21, descendeur et mesures actifs",
+			"file": "10_rope_22_21.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "3aa87d93897a772f70144334fdbefe4329cc8fdf34b33560464f84f9a59056da",
+			"width": 1440
+		},
+		{
+			"description": "Refuge 20 avant réception : lits, paravents, eau et repères d’accueil",
+			"file": "11_refuge_20.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "192379d1c7d3bad9296366bc57b7e9e3b3d44062217411d2d5efe1a954178aa9",
+			"width": 1440
+		},
+		{
+			"description": "État de réception préparé des trois personnes au refuge 20 ; parcours testés séparément",
+			"file": "12_receptions_20.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "b2dce0b3a1d5a199ed4f8504bdfe3424725e0e678eed29173cee77c49aeebf55",
+			"width": 1440
+		},
+		{
+			"description": "Dossier des huit personnes, avec leurs lieux de réception distincts",
+			"file": "13_journal_people.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "1d0b6f2c50d38ddb79d2047e2f8bf4bba8a7bb33ea1726b8dda2cca4fdcb76d8",
+			"width": 1440
+		},
+		{
+			"description": "Constats effectivement recueillis ; registre et maintenance antérieurs au séisme",
+			"file": "14_journal_clues.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "4e39a4e29c612e7a4941c656a1d1d381df4a4e3e1d1a46ff9d6b1d7d53d6e3e4",
+			"width": 1440
+		},
+		{
+			"description": "Bilan au refuge 20 : trois nouvelles réceptions, cinq anciennes conservées",
+			"file": "15_bilan_20.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "3b650410bdcd5b54aa46796ae8236f3e7460e6c31380b9e27f46fe52a769c75b",
+			"width": 1440
+		},
+		{
+			"description": "Accueil contextuel correspondant au point de reprise du refuge 20",
+			"file": "16_menu_20.png",
+			"height": 900,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "2a2dbf5694576b73d35978160f51755440b5aa20a6828f2214fc9998f1f4304d",
+			"width": 1440
+		},
+		{
+			"description": "Journal en fenêtre 1024 × 640 ; navigation et huit personnes accessibles",
+			"file": "17_compact_journal.png",
+			"height": 640,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "41f4f2d858f36027a881b756586ded7fb8c0ac7ab49159dd25c543628766c756",
+			"width": 1024
+		},
+		{
+			"description": "Bilan final en fenêtre 1024 × 640, contrôles de retour accessibles",
+			"file": "18_compact_bilan.png",
+			"height": 640,
+			"human_playthrough": false,
+			"prepared_state": true,
+			"sha256": "825b943e10d4c2b274c26df320ab721a0cd9b7858161e9342f7a8f1bb707b272",
+			"width": 1024
+		}
+	],
+	"display": "X11",
+	"engine": "4.7.2-stable (official)",
+	"human_playthrough": false,
+	"prepared_states": true,
+	"rendering_method": "gl_compatibility",
+	"version": "0.12.0"
+}

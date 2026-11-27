@@ -1,0 +1,92 @@
+name: Build and review The Tower Descent v0.11
+
+on:
+  push:
+    branches: [feat/live-tower-collapse]
+    paths:
+      - '.review/v0.11/build-request.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tower-descent-v011-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/feat/live-tower-collapse'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      GODOT_ARCHIVE_URL: https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
+      GODOT_ARCHIVE_SHA256: cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4
+      GODOT_SILENCE_ROOT_WARNING: '1'
+      LIBGL_ALWAYS_SOFTWARE: '1'
+      GALLIUM_DRIVER: llvmpipe
+    steps:
+      - name: Check out the request and its frozen source parent
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 2
+
+      - name: Validate the isolated request, frozen authored assets and preserved documents
+        run: /usr/bin/python3 tools/build_visual_ci.py guard
+
+      - name: Install pinned Godot, native OpenGL and Vulkan software drivers
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            xvfb xauth libgl1-mesa-dri libgl1 libvulkan1 mesa-vulkan-drivers libxinerama1 libxcursor1 libxi6 libxrandr2 \
+            python3-pil fontconfig fonts-liberation fonts-dejavu-core
+          curl --fail --location --retry 3 --output "$RUNNER_TEMP/godot.zip" "$GODOT_ARCHIVE_URL"
+          printf '%s  %s\n' "$GODOT_ARCHIVE_SHA256" "$RUNNER_TEMP/godot.zip" | sha256sum --check -
+          mkdir -p "$RUNNER_TEMP/godot"
+          unzip -q "$RUNNER_TEMP/godot.zip" -d "$RUNNER_TEMP/godot"
+          chmod +x "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64"
+          echo "GODOT_BINARY=$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64" >> "$GITHUB_ENV"
+          LVP_ICD_PATH="$(/usr/bin/python3 -c 'from pathlib import Path; directory=Path("/usr/share/vulkan/icd.d"); preferred=directory/"lvp_icd.x86_64.json"; choices=sorted(directory.glob("lvp_icd*.json")); print(preferred if preferred.is_file() else choices[0])')"
+          test -f "$LVP_ICD_PATH"
+          printf 'VK_ICD_FILENAMES=%s\n' "$LVP_ICD_PATH" >> "$GITHUB_ENV"
+          printf 'VK_DRIVER_FILES=%s\n' "$LVP_ICD_PATH" >> "$GITHUB_ENV"
+
+      - name: Validate and render the review candidate, or package explicitly approved evidence
+        run: /usr/bin/python3 tools/build_visual_ci.py build --godot "$GODOT_BINARY"
+
+      - name: Preserve review evidence, exports and archives even when a gate fails
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: tower-descent-v011-${{ github.sha }}
+          path: |
+            docs/validation/v0.11/
+            docs/captures/v0.11/
+            docs/VISUELS_ET_SECOURS_V0.11.md
+            docs/assets/v0.11/
+            prototype/assets/models/rescue_v011/
+            prototype/assets/materials/v011/
+            docs/The-Tower-Descent-Bible-v0.9.docx
+            docs/The-Tower-Descent-Bible-v0.9.pdf
+            docs/The-Tower-Descent-Continuation-v0.10.docx
+            docs/The-Tower-Descent-Continuation-v0.10.pdf
+            builds/windows/TheTowerDescent.exe
+            builds/web/
+            dist/
+            releases/The-Tower-Descent-v0.11-Windows-x64.zip
+            releases/The-Tower-Descent-v0.11-Sources.zip
+            releases/The-Tower-Descent-v0.11-Captures-native.zip
+            releases/SHA256SUMS.txt
+            releases/VERIFICATION_V0.11.json
+            .review/v0.11/
+          include-hidden-files: true
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 14
+
+      - name: Publish generated files only while the request is still the branch head
+        if: success()
+        run: /usr/bin/python3 tools/build_visual_ci.py publish

@@ -1,0 +1,24 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.5 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)
+
+CAPTURE 01_bilan_23
+CAPTURE 02_gallery_22
+CAPTURE 03_mina_shutter_closed
+CAPTURE 04_mina_shutter_open
+CAPTURE 05_retranche_close
+CAPTURE 06_retranche_calm
+CAPTURE 07_kitchen_before
+CAPTURE 08_kitchen_after
+CAPTURE 09_stairs_22_21
+CAPTURE 10_rope_22_21
+CAPTURE 11_refuge_20
+CAPTURE 12_receptions_20
+CAPTURE 13_journal_people
+CAPTURE 14_journal_clues
+CAPTURE 15_bilan_20
+CAPTURE 16_menu_20
+CAPTURE 17_compact_journal
+CAPTURE 18_compact_bilan
+PASS commerce integration: 79 checks; real tool actions, interruptions, dialogue, journal, stable receipts and final report. Prepared placements, not a human playthrough; 18 native captures.

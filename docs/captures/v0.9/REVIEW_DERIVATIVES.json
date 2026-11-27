@@ -1,0 +1,77 @@
+{
+  "format": 1,
+  "version": "0.9.0",
+  "source_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
+  "source_provenance": "CI_PROVENANCE.json",
+  "source_provenance_sha256": "06be6962f5f50eb634616ff4c2cf1385929d9bf080973ad71746d02ec0929494",
+  "built_utc": "2026-11-25T14:25:20.386755+00:00",
+  "selection": {
+    "native_png_bytes_strictly_greater_than": 900000
+  },
+  "conversion": {
+    "format": "JPEG",
+    "quality": 95,
+    "chroma_subsampling": "4:4:4",
+    "resize": false,
+    "crop": false,
+    "lossy": true
+  },
+  "derivatives": [
+    {
+      "source_file": "04_signature_studio.png",
+      "source_bytes": 1099297,
+      "source_sha256": "57c821d6d7eb359828e85c5f556f6ac2f7bcf1a40e152a5ef95cf576e8fb2b9b",
+      "file": "review_jpeg/04_signature_studio.jpg",
+      "bytes": 188296,
+      "sha256": "750cfad6ff724e607af614364c8aa94ee7ff516861d65dc49e4eff2eef333106",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "source_file": "05_titre.png",
+      "source_bytes": 1099507,
+      "source_sha256": "a7044307787fa6b5f9c2d6740793ce05d14e5833648094e34232d406980f7111",
+      "file": "review_jpeg/05_titre.jpg",
+      "bytes": 203603,
+      "sha256": "fd40b534741cd5d4073298a1b295a5922b4c69ded89a31fdc5056100e345a24d",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "source_file": "06_approche_17.png",
+      "source_bytes": 927514,
+      "source_sha256": "eda96e8f62c775015706571bd68aaa4f1e3da22df99446624666db536f356a99",
+      "file": "review_jpeg/06_approche_17.jpg",
+      "bytes": 222419,
+      "sha256": "a7cd8299ac78f996e31e18df2a4d5af425601c7412df880fe79a7b5904621bc1",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "source_file": "06_approche_25.png",
+      "source_bytes": 939455,
+      "source_sha256": "d3ea595d6456e7da2b278b7f16ce563473dfa6d2c38a997437e2eaac3732e999",
+      "file": "review_jpeg/06_approche_25.jpg",
+      "bytes": 264811,
+      "sha256": "218cbf90432203fb7254b80cc170380ad2009cb0046da24aa0418ff78b1514d0",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "source_file": "24_epilogue_02.png",
+      "source_bytes": 901927,
+      "source_sha256": "8b1bf3d5b6ed113c333fa57ec8b6a289b3a8fd7d8ecd66a63ecfb534df3f55fa",
+      "file": "review_jpeg/24_epilogue_02.jpg",
+      "bytes": 246172,
+      "sha256": "12e8b5213238769fc33a755944ac067e96a89898427681d1f760163d2b2a57e7",
+      "width": 1440,
+      "height": 900
+    }
+  ],
+  "manual_visual_review": false,
+  "limitations": [
+    "These full-size JPEG derivatives support visual inspection in file readers that cannot return PNGs above 1 MiB.",
+    "JPEG is lossy. The original PNGs and CI_PROVENANCE.json remain the authoritative capture evidence.",
+    "Derivative generation does not approve a visual review or change any PNG release gate."
+  ]
+}

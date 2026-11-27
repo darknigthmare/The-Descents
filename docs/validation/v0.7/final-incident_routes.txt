@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Incident route seeds: [3, 47, 69]; each changed floor covers all three layout variants.
+PASS incident physical routes: 130 checks; 81 real move_and_slide segments; 6 expected solid blockages; 3 safe occupied landings; 3 seeds cover each 28/29 layout. Bay round trips, Samuel's detour and carried return passed before/after impact. Position is set only for each initial scenario.

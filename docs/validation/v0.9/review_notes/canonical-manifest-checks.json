@@ -1,0 +1,67 @@
+{
+  "script": "/workspace/scratch/d0ef31297958/The-Descents/tools/build_release_ci.py",
+  "script_sha256": "f5173e6b7e2160d3652d4c31258919b16e3dd2013d3cfccfb3d350848bca7ec5",
+  "ast_parse_pass": true,
+  "reference_docx": "/tmp/tower-v09-normalized-source/The-Tower-Descent-Bible-v0.9.docx",
+  "pdf_sha256": "25776d758dfb7070afb4157f15859864c6f991809fba71f78cf6f442cbe61121",
+  "all_pass": true,
+  "cases": [
+    {
+      "case": "exact_normalized_word_and_prepared_pdf",
+      "pass": true,
+      "sources": 16,
+      "docx_members": 19
+    },
+    {
+      "case": "wrong_version",
+      "pass": true,
+      "rejection": "FAIL: Canonical document manifest format or version differs from this release."
+    },
+    {
+      "case": "missing_source",
+      "pass": true,
+      "rejection": "FAIL: Canonical document manifest must identify all sixteen sources."
+    },
+    {
+      "case": "duplicate_source",
+      "pass": true,
+      "rejection": "FAIL: Canonical document source names are missing, duplicated or unexpected."
+    },
+    {
+      "case": "source_fingerprint_mismatch",
+      "pass": true,
+      "rejection": "FAIL: A Bible source changed after canonical PDF preparation."
+    },
+    {
+      "case": "generator_fingerprint_mismatch",
+      "pass": true,
+      "rejection": "FAIL: The Bible generator differs from the canonical PDF preparation."
+    },
+    {
+      "case": "missing_docx_member",
+      "pass": true,
+      "rejection": "FAIL: The fresh Word package has missing or unexpected canonical members."
+    },
+    {
+      "case": "extra_docx_member",
+      "pass": true,
+      "rejection": "FAIL: The fresh Word package has missing or unexpected canonical members."
+    },
+    {
+      "case": "docx_member_content_mismatch",
+      "pass": true,
+      "rejection": "FAIL: The fresh Word package contents differ from the canonical PDF preparation."
+    },
+    {
+      "case": "pdf_fingerprint_mismatch",
+      "pass": true,
+      "rejection": "FAIL: The prepared canonical PDF is missing or its fingerprint differs from the manifest."
+    },
+    {
+      "case": "missing_renderer_provenance",
+      "pass": true,
+      "rejection": "FAIL: Canonical renderer provenance is incomplete."
+    }
+  ],
+  "scope": "Focused manifest validation and renderer-provenance checks only; no pipeline, conversion, rendering, publication or visual approval performed."
+}

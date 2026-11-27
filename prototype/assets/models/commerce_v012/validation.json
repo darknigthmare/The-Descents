@@ -1,0 +1,247 @@
+{
+  "scope": "Actual exported GLB binary structure, indexed geometry, normalized normals, UVs, transformed bounds and manifest digests. Does not claim game placement, collision or graphics performance.",
+  "all_pass": true,
+  "models_checked": 12,
+  "models": [
+    {
+      "id": "retail_display_case",
+      "pass": true,
+      "sha256": "447c6f765db27a323a3316786259b96abc8008f73280e60cc26a5f0fb963c998",
+      "glb_bounds_m": {
+        "minimum": [
+          -0.705,
+          0.0,
+          -0.33525
+        ],
+        "maximum": [
+          0.705,
+          1.1925,
+          0.33525
+        ]
+      },
+      "triangles": 9152,
+      "uvs_and_normals_finite": true,
+      "pivot_bottom_center": true
+    },
+    {
+      "id": "cash_register",
+      "pass": true,
+      "sha256": "a97b65cbf017410140d51d6085c0320e3e3100cfec14b0221c64cca09a2e7e85",
+      "glb_bounds_m": {
+        "minimum": [
+          -0.22,
+          0.0,
+          -0.18625
+        ],
+        "maximum": [
+          0.22,
+          0.490769,
+          0.18625
+        ]
+      },
+      "triangles": 6636,
+      "uvs_and_normals_finite": true,
+      "pivot_bottom_center": true
+    },
+    {
+      "id": "shutter_control",
+      "pass": true,
+      "sha256": "e3f4024998a2eff11bb67ce259af0bed27d56f1555c6b687ad3fa943239956c1",
+      "glb_bounds_m": {
+        "minimum": [
+          -0.065,
+          0.0,
+          -0.0495
+        ],
+        "maximum": [
+          0.065,
+          0.325,
+          0.0495
+        ]
+      },
+      "triangles": 5088,
+      "uvs_and_normals_finite": true,
+      "pivot_bottom_center": true
+    },
+    {
+      "id": "service_trolley",
+      "pass": true,
+      "sha256": "3cdbd92281d39e8b99b88ca8e700f5aedf81171be585ee941939920c9678a512",
+      "glb_bounds_m": {
+        "minimum": [
+          -0.348,
+          0.0,
+          -0.281762
+        ],
+        "maximum": [
+          0.348,
+          1.001234,
+          0.281762
+        ]
+      },
+      "triangles": 17368,
+      "uvs_and_normals_finite": true,
+      "pivot_bottom_center": true
+    },
+    {
+      "id": "industrial_sink",
+      "pass": true,
+      "sha256": "36e3ecf1b3439af8e65b231e52efb46c6f281ed59d038df51c7f88f8a252247b",
+      "glb_bounds_m": {
+        "minimum": [
+          -0.6,
+          -0.0,
+          -0.3495
+        ],
+        "maximum": [
+          0.6,
+          1.313605,
+          0.3495
+        ]
+      },
+      "triangles": 10608,
+      "uvs_and_normals_finite": true,
+      "pivot_bottom_center": true
+    },
+    {
+      "id": "kitchen_stove",
+      "pass": true,
+      "sha256": "8ed80e7735ff44db3665111f6a8d518adb18178e186fb858edfb574d2016d93b",
+      "glb_bounds_m": {
+        "minimum": [
+          -0.515,
+          0.0,
+          -0.44025
+        ],
+        "maximum": [
+          0.515,
+          1.135,
+          0.44025
+        ]
+      },
+      "triangles": 22816,
+      "uvs_and_normals_finite": true,
+      "pivot_bottom_center": true
+    },
+    {
+      "id": "extraction_hood",
+      "pass": true,
+      "sha256": "9700b550cd473c5a285f4d8ce860a71f83a12030a6380764f782fd150a274769",
+      "glb_bounds_m": {
+        "minimum": [
+          -0.7275,
+          0.0,
+          -0.4875
+        ],
+        "maximum": [
+          0.7275,
+          0.811158,
+          0.4875
+        ]
+      },
+      "triangles": 8678,
+      "uvs_and_normals_finite": true,
+      "pivot_bottom_center": true
+    },
+    {
+      "id": "utility_cutoff_panel",
+      "pass": true,
+      "sha256": "53c6323cfa8863d66b5f9bb1dc634ffe220193579cb7bf16b9846c786be659d8",
+      "glb_bounds_m": {
+        "minimum": [
+          -0.2,
+          0.0,
+          -0.11525
+        ],
+        "maximum": [
+          0.2,
+          0.58,
+          0.11525
+        ]
+      },
+      "triangles": 27320,
+      "uvs_and_normals_finite": true,
+      "pivot_bottom_center": true
+    },
+    {
+      "id": "fire_blanket_cabinet",
+      "pass": true,
+      "sha256": "e8d40d074187db6627f8e02d75b8d1716e726e034bcaa5556881756aebf239fc",
+      "glb_bounds_m": {
+        "minimum": [
+          -0.145,
+          0.0,
+          -0.0545
+        ],
+        "maximum": [
+          0.145,
+          0.41,
+          0.0545
+        ]
+      },
+      "triangles": 24532,
+      "uvs_and_normals_finite": true,
+      "pivot_bottom_center": true
+    },
+    {
+      "id": "folding_cot",
+      "pass": true,
+      "sha256": "d629083a64292111d4eaf0a4bafe34a3577c1010bf7ba30d592e86f669cef876",
+      "glb_bounds_m": {
+        "minimum": [
+          -0.386,
+          0.0,
+          -1.0
+        ],
+        "maximum": [
+          0.386,
+          0.5305,
+          1.0
+        ]
+      },
+      "triangles": 8636,
+      "uvs_and_normals_finite": true,
+      "pivot_bottom_center": true
+    },
+    {
+      "id": "water_canister",
+      "pass": true,
+      "sha256": "875dae9f5ca861ce85b436d3c9360d44c0d60d22367ce010bfc2ba8e9c6ecc81",
+      "glb_bounds_m": {
+        "minimum": [
+          -0.143,
+          0.0,
+          -0.13775
+        ],
+        "maximum": [
+          0.143,
+          0.458214,
+          0.13775
+        ]
+      },
+      "triangles": 11040,
+      "uvs_and_normals_finite": true,
+      "pivot_bottom_center": true
+    },
+    {
+      "id": "privacy_screen",
+      "pass": true,
+      "sha256": "4c7845c904d217c240f95b2cfd15f20438d6c08084fe445ea803aeb37d81f985",
+      "glb_bounds_m": {
+        "minimum": [
+          -0.929,
+          0.0,
+          -0.2375
+        ],
+        "maximum": [
+          0.929,
+          1.744,
+          0.2375
+        ]
+      },
+      "triangles": 24556,
+      "uvs_and_normals_finite": true,
+      "pivot_bottom_center": true
+    }
+  ]
+}

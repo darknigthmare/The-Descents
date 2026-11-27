@@ -1,0 +1,78 @@
+name: Review The Tower Descent v0.12 candidate
+
+on:
+  push:
+    branches: [feat/live-tower-collapse]
+    paths: ['.review/v0.12/candidate-request.json']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tower-descent-v012-candidate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  review-candidate:
+    if: github.ref == 'refs/heads/feat/live-tower-collapse'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      GODOT_ARCHIVE_URL: https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
+      GODOT_ARCHIVE_SHA256: cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4
+      GODOT_SILENCE_ROOT_WARNING: '1'
+      LIBGL_ALWAYS_SOFTWARE: '1'
+      GALLIUM_DRIVER: llvmpipe
+    steps:
+      - name: Check out the isolated request and its source parent
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 2
+          persist-credentials: false
+
+      - name: Check request isolation and exact runtime fingerprints
+        run: /usr/bin/python3 tools/build_commerce_candidate.py guard
+
+      - name: Install pinned Godot and native software renderers
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            xvfb xauth libgl1-mesa-dri libgl1 libvulkan1 mesa-vulkan-drivers vulkan-tools \
+            libxinerama1 libxcursor1 libxi6 libxrandr2 python3-pil \
+            fontconfig fonts-liberation fonts-dejavu-core
+          curl --fail --location --retry 3 --output "$RUNNER_TEMP/godot.zip" "$GODOT_ARCHIVE_URL"
+          printf '%s  %s\n' "$GODOT_ARCHIVE_SHA256" "$RUNNER_TEMP/godot.zip" | sha256sum --check -
+          mkdir -p "$RUNNER_TEMP/godot"
+          unzip -q "$RUNNER_TEMP/godot.zip" -d "$RUNNER_TEMP/godot"
+          chmod +x "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64"
+          echo "GODOT_BINARY=$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64" >> "$GITHUB_ENV"
+          LVP_ICD_PATH="$(/usr/bin/python3 -c 'from pathlib import Path; d=Path("/usr/share/vulkan/icd.d"); preferred=d/"lvp_icd.x86_64.json"; candidates=sorted(d.glob("lvp_icd*.json")); print(preferred if preferred.is_file() else (candidates[0] if candidates else ""))')"
+          if [ -n "$LVP_ICD_PATH" ]; then
+            printf 'VK_ICD_FILENAMES=%s\n' "$LVP_ICD_PATH" >> "$GITHUB_ENV"
+            printf 'VK_DRIVER_FILES=%s\n' "$LVP_ICD_PATH" >> "$GITHUB_ENV"
+          fi
+
+      - name: Validate sources export resource packs and capture prepared states
+        run: /usr/bin/python3 tools/build_commerce_candidate.py build --godot "$GODOT_BINARY"
+
+      - name: Retain the unreviewed candidate and logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: tower-descent-v012-candidate-${{ github.sha }}
+          path: |
+            docs/validation/v0.12/
+            docs/captures/v0.12/
+            builds/windows/
+            builds/web/
+            .review/v0.12/candidate-request.json
+          include-hidden-files: true
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 7
+
+      # Native images require an explicit review of their exact bytes before
+      # any release packaging or publication. This workflow performs neither.

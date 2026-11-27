@@ -1,0 +1,664 @@
+{
+  "reviewer": "/root/v09_rope",
+  "review_type": "canonical_word_render_visual_review",
+  "document_file": "/tmp/tower-v09-canonical-source/The-Tower-Descent-Bible-v0.9.docx",
+  "render_directory": "/tmp/tower-v09-canonical-final",
+  "page_range": {
+    "first": 63,
+    "last": 124,
+    "inclusive": true
+  },
+  "document_total_pages": 186,
+  "method": "Chaque PNG a été ouvert et examiné individuellement à sa définition native 1414 × 2000 avec view_image ; au maximum deux images par appel. Les pages 109 et 110 ont été rouvertes après une sortie tronquée, avant toute notation. Aucune planche-contact ni seule extraction textuelle utilisée.",
+  "scope_limit": "Revue du rendu canonique Word identifié par empreinte, distincte de la revue ultérieure du PDF exact issu de CI. Aucun passage sur une autre version n'est approuvé par ce rapport.",
+  "status": "revision_required",
+  "all_pass": false,
+  "reviewed_pages": 62,
+  "blocking_layout_defects": [],
+  "editorial_revision_requests": [
+    {
+      "page": 77,
+      "issue": "Contrats de contenu : référence actuelle « Les fiches P01 à P60 » au lieu de P01 à P64.",
+      "reported_to_parent": true
+    }
+  ],
+  "non_blocking_observations": [
+    {
+      "page": 69,
+      "issue": "Trois lignes de fin d'annexe suivies d'un grand blanc avant l'annexe B ; aucun contenu coupé."
+    },
+    {
+      "page": 122,
+      "issue": "Accord mineur dans la cellule du profil Pression : « Même preuves »."
+    }
+  ],
+  "source_edits_performed": false,
+  "pages": [
+    {
+      "page": 63,
+      "status": "pass",
+      "notes": "Tableau « Invariants de la descente » sur six colonnes : en-tête contrasté, textes enveloppés et sept niveaux lisibles ; bas du tableau, prose et pied de page restent dans les marges.",
+      "file": "/tmp/tower-v09-canonical-final/page-63.png",
+      "sha256": "c2d7b2d269ebef5a53b7873ffc9661cde31b2960afaa57809a6158ce01e2fe79",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 64,
+      "status": "pass",
+      "notes": "Suite de paragraphe puis sections événement, reproductibilité et tests : hiérarchie, liens soulignés et commande de bas de page lisibles, sans chevauchement avec le folio.",
+      "file": "/tmp/tower-v09-canonical-final/page-64.png",
+      "sha256": "f04675aefbb72cb15d3522651137b4624e648d76df25a04a8452512c8a9c86b0",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 65,
+      "status": "pass",
+      "notes": "Vérification des trajets physiques et nouvelles transitions 0.9 : commande complète lisible, titres espacés et texte dense restant dans le cadre ; continuation annoncée par la prose en bas.",
+      "file": "/tmp/tower-v09-canonical-final/page-65.png",
+      "sha256": "6211d66852007e19d65715bf145056433d3ce8e12d65c1d27ef34372f148fe20",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 66,
+      "status": "pass",
+      "notes": "Cinq passes de campagne numérotées puis contraintes et checkpoints : retraits de liste réguliers, titres avec texte d’accompagnement, en-tête et folio dégagés.",
+      "file": "/tmp/tower-v09-canonical-final/page-66.png",
+      "sha256": "6f841404ba54bffe24926d2b07c1fd4c6e08822df8ad58d8a707c83f2038dd7c",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 67,
+      "status": "pass",
+      "notes": "Schéma de sauvegarde et tableau des moments de reprise : lignes alternées, colonnes et textes complets ; tableau entier avant le pied, aucune cellule coupée.",
+      "file": "/tmp/tower-v09-canonical-final/page-67.png",
+      "sha256": "b2e39bb288d5bc636fe2e28bb1938fe69f817aa46457c6c7c6eb138ddb655238",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 68,
+      "status": "pass",
+      "notes": "Migration, outils de production et paliers de vérité : liens et identifiants lisibles, sous-titres séparés et lignes finales à distance du folio ; aucun débordement.",
+      "file": "/tmp/tower-v09-canonical-final/page-68.png",
+      "sha256": "6784ca504f155413cebe9d663ee4c7c0a164fa41266ac469d2213fe1498f86cc",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 69,
+      "status": "pass",
+      "notes": "Fin de l’annexe précédente sur trois lignes, entièrement lisibles ; grande zone blanche avant le départ de l’annexe B à la page suivante. Observation de densité non bloquante, aucun contenu tronqué.",
+      "file": "/tmp/tower-v09-canonical-final/page-69.png",
+      "sha256": "838aa6e16266efb4e113601c2c7bae1063c63d719b18a84d31a17625be274471",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 70,
+      "status": "pass",
+      "notes": "Ouverture de l’annexe B : titre long tenu dans la largeur, introduction et début du tableau architecture à deux colonnes lisibles ; dernières lignes restent au-dessus du folio.",
+      "file": "/tmp/tower-v09-canonical-final/page-70.png",
+      "sha256": "0ec2d825f62238d24077e0560aab3b0570ff4949a131ad2a45a39efb8b3b4943",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 71,
+      "status": "pass",
+      "notes": "Suite du tableau des scripts : en-tête répété, noms de modules et responsabilités lisibles ; transition vers les horloges de présentation propre, sans coupure de cellules.",
+      "file": "/tmp/tower-v09-canonical-final/page-71.png",
+      "sha256": "9b66fc203bca60ebcb8f7499b554d84edc3e47c87942e0a6869cd14b987b36ac",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 72,
+      "status": "pass",
+      "notes": "Prose sur cinématiques, dossier, accueil et limites de simulation : paragraphes réguliers, liens et valeurs d’échelle nets ; sous-titre final accompagné de son texte, marges préservées.",
+      "file": "/tmp/tower-v09-canonical-final/page-72.png",
+      "sha256": "d7a610ab90b9e238f8737d9f1af52038ddf9bde7a5f8fc985cb4da48b18b21a3",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 73,
+      "status": "pass",
+      "notes": "Architecture du rappel local et des escaliers : corps de texte continu et lien vers l’annexe 0.9 lisibles ; aucun écrasement des identifiants ni débordement sur les marges.",
+      "file": "/tmp/tower-v09-canonical-final/page-73.png",
+      "sha256": "68910e7fd436040c0f5378eb5e7ff6af837b84a1ebf94b0db8cd076d05881b2b",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 74,
+      "status": "pass",
+      "notes": "Persistance, incident et air respirable : les sous-sections et la réserve en gras se distinguent ; liens, nombres et lignes de fin propres, sans collision avec le pied.",
+      "file": "/tmp/tower-v09-canonical-final/page-74.png",
+      "sha256": "d6492189ead30092fa80664430f2b4c3731b371de3604bfd08b838c3b213a585",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 75,
+      "status": "pass",
+      "notes": "Tableau des composants UE5 : noms longs contenus dans leur colonne et responsabilités bien séparées ; section Portage du rappel conserve un paragraphe complet avant le pied.",
+      "file": "/tmp/tower-v09-canonical-final/page-75.png",
+      "sha256": "0207821f2e4f9a07454070ff67449a2d760d34267d3fc734b111b7baeb2e372f",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 76,
+      "status": "pass",
+      "notes": "Portage, streaming et effondrement UE5 : titres longs et liens intégrés tiennent dans les marges ; texte et soulignements sans collision ni glyphes manquants.",
+      "file": "/tmp/tower-v09-canonical-final/page-76.png",
+      "sha256": "3660039bb3fb54b976d27d40b628bb8b998f15c24fb898259c552e12419c5915",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 77,
+      "status": "revision_requested",
+      "notes": "Mise en page propre : titres et début du tableau des jalons lisibles. Correction éditoriale signalée au parent : « Les fiches P01 à P60 » dans les contrats actuels omet les quatre références P61–P64 du corpus v0.9 ; aucune modification effectuée par le relecteur.",
+      "file": "/tmp/tower-v09-canonical-final/page-77.png",
+      "sha256": "c7561e8af5a09a921990105e2f891f6357983d4e128ac21e0fb8dbd9e0640da0",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 78,
+      "status": "pass",
+      "notes": "Tableau des jalons poursuivi avec en-tête répété, lignes complètes et contraste régulier ; section du contrat perceptif lisible jusqu’à sa fin, sans débordement.",
+      "file": "/tmp/tower-v09-canonical-final/page-78.png",
+      "sha256": "0230c7146b27ed666c6794fd95c773aea3cc324642d5dc3adc12c3d5cc877ba9",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 79,
+      "status": "pass",
+      "notes": "Ouverture de l’annexe C : titre, version historique 0.8 et périmètre clairement séparés ; tableau à deux colonnes sans texte coupé en bas de page.",
+      "file": "/tmp/tower-v09-canonical-final/page-79.png",
+      "sha256": "4fcf9cda7034873de7b4f50bc9974895a6df70ab083a994e20de752a17ecdc2b",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 80,
+      "status": "pass",
+      "notes": "En-tête du tableau de périmètre répété, puis géographie et parcours numéroté : retraits cohérents, cinq étapes lisibles et folio séparé du dernier paragraphe.",
+      "file": "/tmp/tower-v09-canonical-final/page-80.png",
+      "sha256": "409dc3e9ead11a648200d7e585670fc7ee34cac51f79ed41cde71c32a86dfcdc",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 81,
+      "status": "pass",
+      "notes": "Tableau des quatre phases et de l’après-impact : cinq colonnes, durées et libertés du joueur clairement enveloppées ; aucune ligne ou bordure masquée, texte de conclusion complet.",
+      "file": "/tmp/tower-v09-canonical-final/page-81.png",
+      "sha256": "d737831c410a37a2e4d83a4db98d76bb5864a15c3287d6f2558e7d1af5678149",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 82,
+      "status": "pass",
+      "notes": "Tableau des plans d’arrivée puis début du script radio : cellules de récit bien espacées, titres accompagnés et deux premières répliques lisibles jusqu’au bas.",
+      "file": "/tmp/tower-v09-canonical-final/page-82.png",
+      "sha256": "eefaa2615fc96056439bf76afcf78f922979bd958c38bb724fa3e8f585cbdf26",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 83,
+      "status": "pass",
+      "notes": "Long tableau radio avec en-tête répété : repères, déclencheurs, voix et répliques restent distincts ; dernière ligne et note de conditions entièrement visibles au-dessus du folio.",
+      "file": "/tmp/tower-v09-canonical-final/page-83.png",
+      "sha256": "62bee9217c7e94a9505216b5b5562c0c067314afabe2301da4fc0b440203d975",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 84,
+      "status": "pass",
+      "notes": "Tableau des conséquences puis tableau sauvegarde : largeurs adaptées, bordures et alternance régulières ; chaque titre est suivi de son texte ou de son tableau, sans chevauchement.",
+      "file": "/tmp/tower-v09-canonical-final/page-84.png",
+      "sha256": "9ceec8fd13d4e813381367e28f49cd83a7bb5b013d70a09f211f88780d2f819b",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 85,
+      "status": "pass",
+      "notes": "Suite des scénarios de reprise avec en-tête répété, puis confort et portage : cellules complètes, identifiants lisibles et marges régulières ; texte final continue proprement.",
+      "file": "/tmp/tower-v09-canonical-final/page-85.png",
+      "sha256": "cec66ac5c215b1b7a96b4488cf7d5d87f54005d77d22b28785281c66e4687dc2",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 86,
+      "status": "pass",
+      "notes": "Critères de revue en liste et cohérence de l’horreur : puces bien alignées, intertitres espacés, fin d’annexe aérée et pied de page intact.",
+      "file": "/tmp/tower-v09-canonical-final/page-86.png",
+      "sha256": "1365aea3b95925c4050482270118a2d7773bfbebfa055cefda3977b7d552d84b",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 87,
+      "status": "pass",
+      "notes": "Annexe D : titre long de communications tenu dans la page, historique lisible, tableau des six responsabilités net et complet ; conclusion et pied séparés.",
+      "file": "/tmp/tower-v09-canonical-final/page-87.png",
+      "sha256": "a1d78428e79ed22221b34c7684f21af42d9fcc8a0d120febee344436f3c5c8e3",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 88,
+      "status": "pass",
+      "notes": "Repli de Bravo puis tableau nominatif des réceptions : noms, identifiants et présentations clairement alignés ; section sous-titres conserve son introduction, sans titre isolé.",
+      "file": "/tmp/tower-v09-canonical-final/page-88.png",
+      "sha256": "d90b773cc12007c38d29f211a2517262308abfbf9bfa42de88ae643147986335",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 89,
+      "status": "pass",
+      "notes": "Tableau d’ordonnancement radio puis Journal et compte rendu : contraste et retours de ligne réguliers ; les quatre noms d’onglets en gras restent lisibles, dernier paragraphe entier.",
+      "file": "/tmp/tower-v09-canonical-final/page-89.png",
+      "sha256": "22aaa36d43ab424e4babae27d362b4abb159bd35382ddd1959a94348ce6eeae9",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 90,
+      "status": "pass",
+      "notes": "Écho après Samuel et migration : deux tableaux compacts, en-têtes nets, dialogues et accents lisibles ; prose finale poursuit sur la page suivante sans troncature visuelle.",
+      "file": "/tmp/tower-v09-canonical-final/page-90.png",
+      "sha256": "964b69de48fe1316626ff8b698154948e90f2633957be6a6a05dd09700d7024c",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 91,
+      "status": "pass",
+      "notes": "Fin des communications : titres, citations courtes et liens de sources bien distingués ; fin d’annexe à mi-page conservant une composition lisible, aucun défaut de marge.",
+      "file": "/tmp/tower-v09-canonical-final/page-91.png",
+      "sha256": "4dded192d70c0f396396bb221812bf706bdacb4a535879aef518994f6f1a5b5d",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 92,
+      "status": "pass",
+      "notes": "Ouverture des props : mention 64 fiches et 12 observations nette, historique 60→64 explicite ; conventions et règles de placement s’enchaînent sans chevauchement.",
+      "file": "/tmp/tower-v09-canonical-final/page-92.png",
+      "sha256": "12952fcb2e4116135b293ad423bc029b7098fe536fd07251f19301a53dd589f7",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 93,
+      "status": "pass",
+      "notes": "Fiches P01–P03 : titres, statuts et rubriques en gras structurent la prose ; règles du treuil et de la stabilisation lisibles sans perte de ligne ni conflit avec le pied.",
+      "file": "/tmp/tower-v09-canonical-final/page-93.png",
+      "sha256": "d652d3d89870902e7d0959a8476cefea8a2518f247263d94eb51a54760b4e6c2",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 94,
+      "status": "pass",
+      "notes": "Fiches P04–P07 : unités, valeurs de vitesse et signes ± correctement rendus ; séparations de fiches régulières, début de P07 accompagne ses paragraphes.",
+      "file": "/tmp/tower-v09-canonical-final/page-94.png",
+      "sha256": "c918d88b2e145dc2e2a565411e48a584c50bd798b0c4b48089c5181c4813c4e4",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 95,
+      "status": "pass",
+      "notes": "Fiches caisse, civière, couverture et registre : blocs denses mais rubriques et chiffres nets ; P11 se termine au-dessus du pied avec l’ensemble de sa recette visible.",
+      "file": "/tmp/tower-v09-canonical-final/page-95.png",
+      "sha256": "8f1441305f756e86f8ad2187b18ee80e890a1e62f3d76e3f3fd67d360dd3e711",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 96,
+      "status": "pass",
+      "notes": "P12 puis architecture P13–P15 : hiérarchie de section et fiches nette, caractères de dimensions et paragraphes lisibles, aucune coupure de titre ni débordement.",
+      "file": "/tmp/tower-v09-canonical-final/page-96.png",
+      "sha256": "99ce45414bfe6efe037199768afb4fa5905f8c61bb24397c2c363cca3f460e63",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 97,
+      "status": "pass",
+      "notes": "P16–P20 : dimensions et vitesses correctement composées, fiches distinctes et P20 débute avec son paragraphe, sans titre seul au pied.",
+      "file": "/tmp/tower-v09-canonical-final/page-97.png",
+      "sha256": "885d2fc01e1f9f4dec087cd6d1196070d036bafbf026d1da6555a815682ece0d",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 98,
+      "status": "pass",
+      "notes": "Fin de P20, gravats, relais et table de restaurant : rubriques actuelles/campagne bien visibles, section Mobilier distincte et texte complet dans les marges.",
+      "file": "/tmp/tower-v09-canonical-final/page-98.png",
+      "sha256": "a3e79d1a1404ccf80297939b782c1227f8b54d18c8c161b2ba30e2fc23452815",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 99,
+      "status": "pass",
+      "notes": "P24–P28 : hiérarchie des fiches et rubriques nette, dimensions lisibles ; la valise commence avec son observation et les lignes restent au-dessus du folio.",
+      "file": "/tmp/tower-v09-canonical-final/page-99.png",
+      "sha256": "bdcacc3d76bcb065abd90dfc9c3040f8cdf04829538ae3ec184699817f83ce6c",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 100,
+      "status": "pass",
+      "notes": "P28–P32 : dossiers, archives et preuves en prose régulière ; les statuts et débuts de fiches ressortent, aucune ligne masquée ni élément hors page.",
+      "file": "/tmp/tower-v09-canonical-final/page-100.png",
+      "sha256": "6d99b1e2eeeff654d17448d0067f7261a90556dd05825b7d33d7eeca9cb713bd",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 101,
+      "status": "pass",
+      "notes": "P32–P36 : jouet, dessin, bassin et transat lisibles, rubriques en gras et dimensions distinctes ; la continuation du transat est régulière, sans zone coupée.",
+      "file": "/tmp/tower-v09-canonical-final/page-101.png",
+      "sha256": "0930db04140c1d768848c2674b31b0952520b55da7de8690a8e7f5ab5c848a43",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 102,
+      "status": "pass",
+      "notes": "Réseaux et outils P37–P40 : les statuts longs s’enveloppent proprement, sous-sections et recettes conservent leur hiérarchie ; dernier titre accompagné de sa fonction.",
+      "file": "/tmp/tower-v09-canonical-final/page-102.png",
+      "sha256": "e384b4a02009bb2e2422158bae56cffe44aa33e6f4276229cadd93f1023d5040",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 103,
+      "status": "pass",
+      "notes": "P40–P43 : réserves respiratoires, détecteur et extincteur présentés avec statuts distincts ; rubriques longues et nombres gardent une bonne lisibilité, fin de P43 entière.",
+      "file": "/tmp/tower-v09-canonical-final/page-103.png",
+      "sha256": "a7dc712c28769b1f23775125f6f6d02df5f957cfaf38a80efa899d0e629b99a5",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 104,
+      "status": "pass",
+      "notes": "P44 puis Recherche et profondeur P45–P47 : changement de section clair, titres et chiffres propres ; aucun texte hors marge ou masqué par le pied.",
+      "file": "/tmp/tower-v09-canonical-final/page-104.png",
+      "sha256": "24c83da6792c3ca1f8e2f4b80614515aeacd85445043f8fa7df48fe7b0a9b108",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 105,
+      "status": "pass",
+      "notes": "P48–P52 : fiches de recherche et début hélicoptère régulièrement espacés ; identifiants P666/I04 et dimensions rendus proprement, pas de texte coupé en bas.",
+      "file": "/tmp/tower-v09-canonical-final/page-105.png",
+      "sha256": "8342d5f31427e8783df7b1a93cf0d9370038608a1d37c7a654fdfadb2096b860",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 106,
+      "status": "pass",
+      "notes": "Fin hélicoptère puis accessoires infernaux P53–P55 : long titre de section contenu dans la largeur, avertissement de périmètre en gras lisible, blocs et folio séparés.",
+      "file": "/tmp/tower-v09-canonical-final/page-106.png",
+      "sha256": "6aac370827f43e72afe5b48e629d98f5f5f90ccb887ed2e497ccb9b200e85e34",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 107,
+      "status": "pass",
+      "notes": "P56–P59 : quatre fiches infernales structurées et entièrement lisibles ; titres, identifiants, dimensions et rubriques de recette ne débordent pas.",
+      "file": "/tmp/tower-v09-canonical-final/page-107.png",
+      "sha256": "2468788397b52853c39ef0e4454e4fc1c4f3406ebde86f0ef94734b3606effa7",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 108,
+      "status": "pass",
+      "notes": "P60 puis nouvelles liaisons P61/P62 : transition 0.9 claire, valeurs d’implantation et états de station bien rendus ; les deux nouvelles fiches restent complètes dans la page.",
+      "file": "/tmp/tower-v09-canonical-final/page-108.png",
+      "sha256": "937cf635283c2fa08271d427616d92736d4c6f9b8b7c0d69a74827634031a513",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 109,
+      "status": "pass",
+      "notes": "Fiches P63 et P64 entièrement lisibles, titres et longs paragraphes dans les marges ; transition vers les douze observations de terrain et folio sans chevauchement.",
+      "file": "/tmp/tower-v09-canonical-final/page-109.png",
+      "sha256": "c614886a761221ab32917aff795ec95ba46c3acad208c7dd0041fad93dea38d7",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 110,
+      "status": "pass",
+      "notes": "Tableau des douze objets examinables complet avec colonnes et références bien contenues ; conditions de lecture et début de continuité lisibles, aucune coupure de cellule ni débordement.",
+      "file": "/tmp/tower-v09-canonical-final/page-110.png",
+      "sha256": "a777a561dd055e87cf9604ab5ce77478f848288d69bb5182bf7a0fb9e5112e69",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 111,
+      "status": "pass",
+      "notes": "Suite des observations, identifiants longs, critères de production et liens locaux bien contenus ; titres avec texte associé et fin d'annexe propre.",
+      "file": "/tmp/tower-v09-canonical-final/page-111.png",
+      "sha256": "f6d3cd3a95db030a885527d2d42bdab76d8dd34a8e81f7db08b09423c7967e42",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 112,
+      "status": "pass",
+      "notes": "Titre de l'annexe F et version historique lisibles ; distinction entre présence actuelle et campagne explicite. Tableau des archétypes E00–E04 démarre sans coupure de ligne et reste au-dessus du folio.",
+      "file": "/tmp/tower-v09-canonical-final/page-112.png",
+      "sha256": "47fa77e3680e06f374450379322616b6abaccf25d9e6b9cfd45af41d122e7e0b",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 113,
+      "status": "pass",
+      "notes": "Suite du catalogue E05–E16 avec en-tête répété, toutes les cellules contenues ; fiche E00 et début de son tableau actuel correctement séparés du folio.",
+      "file": "/tmp/tower-v09-canonical-final/page-113.png",
+      "sha256": "c461d2bb4c65a920087c21b0d737ea468abf03d5651a8f7ea95833cd345d4fe3",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 114,
+      "status": "pass",
+      "notes": "Suite du tableau E00 et fiche E01 entièrement lisibles ; en-tête répété, valeurs et distinctions historiques sans défaut typographique, aucun titre isolé.",
+      "file": "/tmp/tower-v09-canonical-final/page-114.png",
+      "sha256": "f4080b4f84613bdbbf10206b445de3f3e98e566404b06c9ec3daa0657575358e",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 115,
+      "status": "pass",
+      "notes": "Fiches E02 et E03 complètes, longueurs et statistiques lisibles ; emphases, accents et degrés correctement rendus, marges et folio dégagés.",
+      "file": "/tmp/tower-v09-canonical-final/page-115.png",
+      "sha256": "de8eca309f79d105f95bdba14862a7fe0397a8684fa7aaecd98274563042e951",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 116,
+      "status": "pass",
+      "notes": "Fiches E04 et E05 puis début E06 lisibles ; hiérarchie des titres cohérente et titre E06 accompagné de son premier paragraphe, sans chevauchement du pied de page.",
+      "file": "/tmp/tower-v09-canonical-final/page-116.png",
+      "sha256": "d1cab5ea2db017a9678ce9c44dfdf8368fb260d331d88a706ca687e18a6c4f46",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 117,
+      "status": "pass",
+      "notes": "Suite E06, fiche E07 et début E08 correctement enchaînés ; paragraphes de statistiques et de reprise entièrement visibles, aucun titre isolé ni texte hors marge.",
+      "file": "/tmp/tower-v09-canonical-final/page-117.png",
+      "sha256": "9c23bd5ee16afd9a75c423179d0240412f054311d34835a3a23b37eebb60b50f",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 118,
+      "status": "pass",
+      "notes": "Suite E08, fiche spatiale E09 et début E10 lisibles ; longues phrases et sous-sections en gras bien contenues, accents et caractères spéciaux rendus, pied de page dégagé.",
+      "file": "/tmp/tower-v09-canonical-final/page-118.png",
+      "sha256": "3c33ab830cc87dd651b48b8ce89ef8e678387ae13fff504bef51700872683495",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 119,
+      "status": "pass",
+      "notes": "Fin E10 puis fiches humaines E11 et E12 complètes ; différences de rôle, valeurs et reprise lisibles, longs blocs sans débordement ni collision avec le folio.",
+      "file": "/tmp/tower-v09-canonical-final/page-119.png",
+      "sha256": "474172cb34a7103a51643abbdc0021bf162435c873a97081451adf87286939eb",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 120,
+      "status": "pass",
+      "notes": "Fiches E13 et E14 puis début E15 ; longs titres des entités infernales restent dans la largeur utile. Statistiques, degrés et continuation de paragraphe lisibles jusqu'au bas de la page.",
+      "file": "/tmp/tower-v09-canonical-final/page-120.png",
+      "sha256": "2d0a4d18ad8d0e43804eb358445aed47bb9a09d63573524fb3acd49efd95a85e",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 121,
+      "status": "pass",
+      "notes": "Fin E15, fiche E16 et contraintes communes entièrement lisibles ; titre long sur une ligne, valeurs et paragraphes bien espacés, aucun débordement ni chevauchement.",
+      "file": "/tmp/tower-v09-canonical-final/page-121.png",
+      "sha256": "e2c84ba222956a6d07b31547879c3c73b935fe48c6d6257a0e8dfc6c347f681b",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 122,
+      "status": "pass",
+      "notes": "Tableau comparatif des trois profils et critères de production lisibles ; colonnes bien alignées, liens de fin d'annexe contenus. Coquille d'accord mineure non bloquante dans une cellule : « Même preuves ».",
+      "file": "/tmp/tower-v09-canonical-final/page-122.png",
+      "sha256": "1420e8e85dd2f4307b4a8a32339710b28b444b3dee426e1df1a619eba7685c98",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 123,
+      "status": "pass",
+      "notes": "Ouverture de l'annexe G propre : long titre, intentions visuelles et texte sur les limites actuelles lisibles. Début du tableau des cartons SC00 contenu dans les marges, trois lignes complètes avant le folio.",
+      "file": "/tmp/tower-v09-canonical-final/page-123.png",
+      "sha256": "0b8b381f047142d1f42d5684191877827e7b90c5a53d284ccd1244f38f91f24a",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    },
+    {
+      "page": 124,
+      "status": "pass",
+      "notes": "Suite du tableau SC00 avec en-tête répété, texte caméra/son et début SC01 lisibles. Tableau des contextes d'accueil bien aligné et ligne 27 complète, sans coupe de cellule ni débordement.",
+      "file": "/tmp/tower-v09-canonical-final/page-124.png",
+      "sha256": "9d6fa32651eeef0117a64d9ed8a4b0cb295bedb61b983e2f1f6ea8d314b6745d",
+      "width": 1414,
+      "height": 2000,
+      "observed": true
+    }
+  ],
+  "document_sha256": "b06f675cebc19d604ea765da51b6efe05d11cf752030c66da3da3b544d0bf138",
+  "completed_at_utc": "2026-11-25T13:24:24.958210+00:00",
+  "status_counts": {
+    "pass": 61,
+    "revision_requested": 1
+  }
+}

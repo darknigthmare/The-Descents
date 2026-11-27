@@ -1,0 +1,457 @@
+{
+  "reviewer": "/root/v09_routes",
+  "review_scope": "Canonical local DOCX rendering only; not the future exact CI PDF",
+  "word_file": "/tmp/tower-v09-canonical-source/The-Tower-Descent-Bible-v0.9.docx",
+  "word_sha256": "b06f675cebc19d604ea765da51b6efe05d11cf752030c66da3da3b544d0bf138",
+  "page_range": {
+    "first": 125,
+    "last": 186
+  },
+  "method": "Each PNG opened individually at native size with tools.view_image; no more than two images per call. Visual inspection of legibility, headings, complete table rows, margins, overlap, and missing glyphs.",
+  "reviewed_count": 62,
+  "all_opened": true,
+  "all_pass": true,
+  "blocking_defects": [],
+  "editorial_observations": [
+    {
+      "page": 176,
+      "note": "Historical annex M labels itself version 0.8.0 but says the current catalogue has 60 props P01–P60. Parent notified; later corrected document requires its own hash/review. This report covers the unchanged original render."
+    }
+  ],
+  "pages": [
+    {
+      "page": 125,
+      "file": "/tmp/tower-v09-canonical-final/page-125.png",
+      "sha256": "3d56e6ab54c42a050f442004b48a3cb849908d7ca5433a792c6ecc601326bc24",
+      "status": "pass",
+      "notes": "Table de cadrage accueil complète pour 26/refuge ; paragraphes et sous-titres Actions/Composition lisibles, marges et pied 125/186 dégagés."
+    },
+    {
+      "page": 126,
+      "file": "/tmp/tower-v09-canonical-final/page-126.png",
+      "sha256": "98b36a1b935d6bfb03a9f7e8083621ae287439b23127d964301367c31c8def24",
+      "status": "pass",
+      "notes": "Titre SC02, tableau des quatre plans et début du tableau de dépose lisibles ; première ligne entière en bas, aucun chevauchement."
+    },
+    {
+      "page": 127,
+      "file": "/tmp/tower-v09-canonical-final/page-127.png",
+      "sha256": "5f325ed43c71f4263f01467bcab57a6d66e3f48b8d25b9692eee54878d68409d",
+      "status": "pass",
+      "notes": "Table de dépose continuée avec en-têtes répétés et lignes intactes ; textes des communications lisibles jusqu'au bas de page, pied séparé."
+    },
+    {
+      "page": 128,
+      "file": "/tmp/tower-v09-canonical-final/page-128.png",
+      "sha256": "c494406e1b88cc00c58334bf97eec63127672951df7415bcd3168f1485c6490d",
+      "status": "pass",
+      "notes": "Fin SC02 et titre SC03 bien hiérarchisés ; lien Sauvetage visible lisible ; table d'apprentissage commence avec une ligne entière."
+    },
+    {
+      "page": 129,
+      "file": "/tmp/tower-v09-canonical-final/page-129.png",
+      "sha256": "56fb59d52e16337921494be38fb2565b98c0e154821df39f3818b08a002670f4",
+      "status": "pass",
+      "notes": "Table SC03 poursuivie avec en-têtes et cinq lignes entières ; prose de traversée et titre SC04 nets, continuation du paragraphe en page suivante régulière."
+    },
+    {
+      "page": 130,
+      "file": "/tmp/tower-v09-canonical-final/page-130.png",
+      "sha256": "826bf98f1e957746a58605bb10a01b8afe4249e9e3a8132c9f1e3c322896013d",
+      "status": "pass",
+      "notes": "SC04 puis titres SC05 et SC06 bien espacés ; liens et accents rendus, paragraphes denses mais sans débordement ni collision avec le pied."
+    },
+    {
+      "page": 131,
+      "file": "/tmp/tower-v09-canonical-final/page-131.png",
+      "sha256": "44cf954ae05d8d7ac48996d77072c356a5631106fb83ea01c2dada8ff5d6035f",
+      "status": "pass",
+      "notes": "Table des trois plans de clôture entièrement visible ; sections Passage/Bilan et lien final nets, espaces suffisants autour des éléments."
+    },
+    {
+      "page": 132,
+      "file": "/tmp/tower-v09-canonical-final/page-132.png",
+      "sha256": "d746726d9acbb3e728e09dfe5c007cfdc9f6ae87e5826e14134f162a6abcd8ca",
+      "status": "pass",
+      "notes": "Titre Storyboards et sous-sections SC07 à SC10 lisibles ; paragraphes et mises en gras réguliers, aucun glyphe manquant ni débordement."
+    },
+    {
+      "page": 133,
+      "file": "/tmp/tower-v09-canonical-final/page-133.png",
+      "sha256": "78138ae3859be6ac929b08be1eac91ed66810ca16b976446a46e4d3d527b0f92",
+      "status": "pass",
+      "notes": "Suite SC10, SC11 et SC12 clairement structurées par titres et amorces en gras ; dernière phrase poursuit normalement page suivante, pied non chevauché."
+    },
+    {
+      "page": 134,
+      "file": "/tmp/tower-v09-canonical-final/page-134.png",
+      "sha256": "6cdb82a6573d1387d88725f2846743a3b99dda68846070877a2f573781f48d09",
+      "status": "pass",
+      "notes": "SC13, SC14 et SC15 nets ; accents, apostrophes et numéros des props lisibles ; aucun chevauchement dans les paragraphes de franchissement."
+    },
+    {
+      "page": 135,
+      "file": "/tmp/tower-v09-canonical-final/page-135.png",
+      "sha256": "216ed2ce48c875f7e07108af021be34b15179a4743ea8fb352937c74189631ae",
+      "status": "pass",
+      "notes": "Chapitres Contrats et Sources clairement séparés ; longues références de scripts et lien final restent dans les marges, texte sans collision."
+    },
+    {
+      "page": 136,
+      "file": "/tmp/tower-v09-canonical-final/page-136.png",
+      "sha256": "7449fc279f61310f58c460304d97363efc14c3f4d478997fcb62db7500129d9f",
+      "status": "pass",
+      "notes": "Ouverture Annexe H et titre Déplacement bien lisibles ; les deux premières lignes Marche/Course du tableau sont entières et correctement espacées."
+    },
+    {
+      "page": 137,
+      "file": "/tmp/tower-v09-canonical-final/page-137.png",
+      "sha256": "88b6201cd78bda6908813d92fca303f82b2a32ce859930f662cf954ebf7cc474",
+      "status": "pass",
+      "notes": "Table des paramètres de portage à caméra complète ; unités m/s², × et ± correctement rendues, sections de sensation lisibles."
+    },
+    {
+      "page": 138,
+      "file": "/tmp/tower-v09-canonical-final/page-138.png",
+      "sha256": "a7fc55189d94449303784dc422fb90ca4cbdee2d0117e0fc59ff704b5dc7f5fb",
+      "status": "pass",
+      "notes": "Table des six liaisons entièrement lisible ; description des escaliers et garde de palier nette ; trois premières commandes de rappel entières en bas."
+    },
+    {
+      "page": 139,
+      "file": "/tmp/tower-v09-canonical-final/page-139.png",
+      "sha256": "1b136fb1eeb372bbeb3485dd9288fccc64853888b9880d429e9bafc3bbb2bed1",
+      "status": "pass",
+      "notes": "Suite du tableau de commandes complète avec en-tête répété ; coordonnées, seuils de sortie et stabilisation lisibles, signes moins et ± corrects."
+    },
+    {
+      "page": 140,
+      "file": "/tmp/tower-v09-canonical-final/page-140.png",
+      "sha256": "1603091e18318e76b0c2c0a11a8ed2a8a671e6fd66307ba0d93c1338e9d560c6",
+      "status": "pass",
+      "notes": "Fin rappel puis titres Interaction et Sauvetages clairement séparés ; liens et texte en gras lisibles, continuation finale sans chevauchement du pied."
+    },
+    {
+      "page": 141,
+      "file": "/tmp/tower-v09-canonical-final/page-141.png",
+      "sha256": "3033d86e348455bee4c3bd575f51592cff14ac38389535f7d3f6474bd0ca4691",
+      "status": "pass",
+      "notes": "Table des trois personnes sur quatre colonnes sans coupure ; cible de campagne puis trois lignes initiales de ressources correctement disposées."
+    },
+    {
+      "page": 142,
+      "file": "/tmp/tower-v09-canonical-final/page-142.png",
+      "sha256": "5e4c251beb302a3bea999bdd135d784447df3e4a1f46f658d84d41e0f816bf8d",
+      "status": "pass",
+      "notes": "Table des ressources reprise avec en-tête, valeurs et unités lisibles ; paragraphes Dangers et Équilibrage restent dégagés du pied."
+    },
+    {
+      "page": 143,
+      "file": "/tmp/tower-v09-canonical-final/page-143.png",
+      "sha256": "91df00e7437ed12477febae9811563194b43b3f0f9f9f7bdbf3c41698b3d5932",
+      "status": "pass",
+      "notes": "Sections Radio et Objectifs nettes ; nouvelles conditions de palier et sauvegarde lisibles dans la prose, bas de page sans troncature."
+    },
+    {
+      "page": 144,
+      "file": "/tmp/tower-v09-canonical-final/page-144.png",
+      "sha256": "13ea6abad5fa5214f12466e9828b6ed0430b12e7872f6961a903387802b79f1e",
+      "status": "pass",
+      "notes": "Titre Personnages et fiches Alex, Leïla, Ana bien hiérarchisés ; paragraphes en gras/romain alignés, accents et pied de page corrects."
+    },
+    {
+      "page": 145,
+      "file": "/tmp/tower-v09-canonical-final/page-145.png",
+      "sha256": "295cbb7b6ab7846c2fa49eca2891664b64832a06c8e1e21c3da6c85f532b1fa7",
+      "status": "pass",
+      "notes": "Fiches Samuel, Nora, Malik et Inès lisibles ; titres ne sont pas isolés et amorces en gras restent bien distinctes."
+    },
+    {
+      "page": 146,
+      "file": "/tmp/tower-v09-canonical-final/page-146.png",
+      "sha256": "5ff058bac00b1bc3829da99083c941421ba950de970f0704631bdb4e8b10008b",
+      "status": "pass",
+      "notes": "Fiches Alma, Eva et équipes alignées ; chapitre Réglage commence avec son paragraphe entier, aucune collision avec le pied."
+    },
+    {
+      "page": 147,
+      "file": "/tmp/tower-v09-canonical-final/page-147.png",
+      "sha256": "6a146561481e9e6ab97d675f9d30a7593566478e524f56b6176d49e583334383",
+      "status": "pass",
+      "notes": "Sources et Extension de campagne lisibles ; liens longs restent contenus ; titre de l'expérience accompagné de son texte, sans chevauchement."
+    },
+    {
+      "page": 148,
+      "file": "/tmp/tower-v09-canonical-final/page-148.png",
+      "sha256": "0be105f95fa63bf30f618839916ba5990575f1e825111e140833901e769f2027",
+      "status": "pass",
+      "notes": "Fin d'annexe avec section Agir dans la dimension infernale ; contenu net dans la moitié haute, espace blanc de fin de section sans texte tronqué."
+    },
+    {
+      "page": 149,
+      "file": "/tmp/tower-v09-canonical-final/page-149.png",
+      "sha256": "6e8851750aee39ecc4393e37d4d537c9c10ee6e33f7404ade635395aded7accd",
+      "status": "pass",
+      "notes": "Titre long Annexe I tient dans la largeur ; tableau des cinq états de secours entier, marges et espacements cohérents."
+    },
+    {
+      "page": 150,
+      "file": "/tmp/tower-v09-canonical-final/page-150.png",
+      "sha256": "bd958d73c4b4d816757303f5e10436ce0056b414984606e5d9cfb607359197ec",
+      "status": "pass",
+      "notes": "Titres Portage/Mise au treuil et coordonnées lisibles ; tableau chronologique débute par un en-tête et une ligne complète, aucun texte coupé."
+    },
+    {
+      "page": 151,
+      "file": "/tmp/tower-v09-canonical-final/page-151.png",
+      "sha256": "a23136c6a73cd1a9a2142f4cbe70a4bea902269334a43089f62bd526a3e546bb",
+      "status": "pass",
+      "notes": "Chronologie du transfert terminée avec en-têtes répétés ; sections Retour d'information et Travail visible lisibles jusqu'au dernier paragraphe."
+    },
+    {
+      "page": 152,
+      "file": "/tmp/tower-v09-canonical-final/page-152.png",
+      "sha256": "992d06e051d63389f91ef6b77db0355867896f81cf400a52a0609e43cb8f79d4",
+      "status": "pass",
+      "notes": "Chapitres Sauvegarde et Contrat technique nets ; tableau des propriétaires complet, noms de scripts contenus dans leurs cellules."
+    },
+    {
+      "page": 153,
+      "file": "/tmp/tower-v09-canonical-final/page-153.png",
+      "sha256": "601d2e6164d6fcab93e3625528604370dcb7dfeda21a9c0e0e084cdbb183024a",
+      "status": "pass",
+      "notes": "Titres Recette, Prochaine production et Priorité du secours bien séparés ; fin d'annexe lisible avec marge basse dégagée."
+    },
+    {
+      "page": 154,
+      "file": "/tmp/tower-v09-canonical-final/page-154.png",
+      "sha256": "ef23fe03c5eb1577d59ac33e31e3ac636e207bc28ba37cbb5414508d02f62e34",
+      "status": "pass",
+      "notes": "Annexe J, intention et tableau météo complets ; valeurs, dimensions, couleur hexadécimale et signes mathématiques correctement rendus."
+    },
+    {
+      "page": 155,
+      "file": "/tmp/tower-v09-canonical-final/page-155.png",
+      "sha256": "9e08523acd6fedad57e9ea554beb3bfeff595a87517dea8acb86902cc695fe5a",
+      "status": "pass",
+      "notes": "Dernière ligne du tableau météo avec en-têtes répétés ; Confort et Fonctionnement nettement séparés, texte technique lisible."
+    },
+    {
+      "page": 156,
+      "file": "/tmp/tower-v09-canonical-final/page-156.png",
+      "sha256": "9330f5ed45170d8e12de2a11c9826efd08134f7e590d93eeaf147e50d9db2f83",
+      "status": "pass",
+      "notes": "Table à deux colonnes Intégration complète ; chemins repliés dans les cellules ; références à puces et titre Contraste lisibles, aucune superposition."
+    },
+    {
+      "page": 157,
+      "file": "/tmp/tower-v09-canonical-final/page-157.png",
+      "sha256": "cf0d1351da104bdc0ff657b609ad9c50d941ea7bb4454bafcc77a99996c19aea",
+      "status": "pass",
+      "notes": "Deux paragraphes de clôture météo en haut, entièrement lisibles ; grande réserve blanche de fin d'annexe, aucune perte de contenu visible."
+    },
+    {
+      "page": 158,
+      "file": "/tmp/tower-v09-canonical-final/page-158.png",
+      "sha256": "6c8cd3e64f83ff6553c7d79755eb4838fc7db55c27020e6bb9061f52298fb51c",
+      "status": "pass",
+      "notes": "Annexe K et tableau des réglages lisibles ; longue cellule Champ de vision augmente la hauteur sans couper le texte ni toucher le pied."
+    },
+    {
+      "page": 159,
+      "file": "/tmp/tower-v09-canonical-final/page-159.png",
+      "sha256": "683d582094bb87c0b0d2e013c8d1ec02ea54010a4c990e0ca79c397f6019a4d6",
+      "status": "pass",
+      "notes": "Quatre dernières lignes des réglages entières ; parcours numérotés et flèches de navigation correctement rendus ; titre Commandes accompagné de son texte."
+    },
+    {
+      "page": 160,
+      "file": "/tmp/tower-v09-canonical-final/page-160.png",
+      "sha256": "4162ca694b04da9c1db772dab5013cdbe05363dc3318ef137efbb1f1927f8e4e",
+      "status": "pass",
+      "notes": "Navigation à puces, données et contrat d'intégration lisibles ; signatures et clés techniques s'insèrent sans déborder, marges régulières."
+    },
+    {
+      "page": 161,
+      "file": "/tmp/tower-v09-canonical-final/page-161.png",
+      "sha256": "485232092e028374d014619116fdc05a3a9d63928928d78f95922db7dc027c0a",
+      "status": "pass",
+      "notes": "Liste des contrôles correctement indentée ; fonctions et titres Vérification/Manifestations lisibles, fin de section avec espace suffisant."
+    },
+    {
+      "page": 162,
+      "file": "/tmp/tower-v09-canonical-final/page-162.png",
+      "sha256": "423ecb6db3e59cb7aff42bf25962e02c9f38847563a02a79add721e87061899e",
+      "status": "pass",
+      "notes": "Annexe L et tableau des quatre onglets complets ; sous-titre Situation suivi de prose, liens et texte de navigation sans débordement."
+    },
+    {
+      "page": 163,
+      "file": "/tmp/tower-v09-canonical-final/page-163.png",
+      "sha256": "2535a7c344935d8e324e5a0a6c7b0461c796c0afcc6559b62c3a659a00d30387",
+      "status": "pass",
+      "notes": "Table des personnes, liste d'états et sous-sections Indices/Historique lisibles ; identifiants techniques et crochets rendus sans troncature."
+    },
+    {
+      "page": 164,
+      "file": "/tmp/tower-v09-canonical-final/page-164.png",
+      "sha256": "9404e9e00efda5bf3ed054d62e6f23f1560aeb1efb6c10345b89cbcc6c6507f8",
+      "status": "pass",
+      "notes": "Table du bilan à deux colonnes entièrement visible ; trois actions numérotées et citation du relais nettes, espace inférieur dégagé."
+    },
+    {
+      "page": 165,
+      "file": "/tmp/tower-v09-canonical-final/page-165.png",
+      "sha256": "2b4cc2efd4175547acd66f9d47615787c91ae943d6fc6ca8b9df2d3037e7d843",
+      "status": "pass",
+      "notes": "Tableaux des trois plans et des sous-titres complets ; tableau à cinq colonnes des caméras lisible avec deux lignes entières en bas."
+    },
+    {
+      "page": 166,
+      "file": "/tmp/tower-v09-canonical-final/page-166.png",
+      "sha256": "3744657903204c37e5789634fab5d4bf3ddece6afb2afef045564cb0bca771b2",
+      "status": "pass",
+      "notes": "Dernière ligne Extérieur reprise avec en-têtes ; sections Temps, Direction visuelle et Contrat lisibles, dimensions et noms techniques correctement affichés."
+    },
+    {
+      "page": 167,
+      "file": "/tmp/tower-v09-canonical-final/page-167.png",
+      "sha256": "cf7a7b18fc88447faf2694cb228c5d90171bc5ad78c37efdd969ccf94f733f25",
+      "status": "pass",
+      "notes": "Table des entrées de snapshot complète ; signatures d'API et trois paragraphes de tests lisibles sans dépassement de marge."
+    },
+    {
+      "page": 168,
+      "file": "/tmp/tower-v09-canonical-final/page-168.png",
+      "sha256": "d2d61326d95fbebd6eb0473e8fe0de015a56a55ccfe895615a8a7b4b1d17ca10",
+      "status": "pass",
+      "notes": "Fin du dossier et continuité des manifestations clairement lisibles ; liens s'enroulent correctement, grande zone blanche de fin d'annexe sans perte visible."
+    },
+    {
+      "page": 169,
+      "file": "/tmp/tower-v09-canonical-final/page-169.png",
+      "sha256": "6a6d2fc1e410fdbb3e41c1d9adb2391a35e32fb96e9727418841d97cd38c0c7f",
+      "status": "pass",
+      "notes": "Titre Annexe M long mais contenu dans la largeur ; récit et tableau de périmètre lisibles, cinq lignes du tableau complètes."
+    },
+    {
+      "page": 170,
+      "file": "/tmp/tower-v09-canonical-final/page-170.png",
+      "sha256": "02c031145e711d054b62b1df7cc0110812ad30ed75dfd05aa176efcb1c026a90",
+      "status": "pass",
+      "notes": "Carte de l'escalade à quatre colonnes entièrement visible ; tableau des manifestations commence avec deux lignes entières, aucune collision de cellules."
+    },
+    {
+      "page": 171,
+      "file": "/tmp/tower-v09-canonical-final/page-171.png",
+      "sha256": "132209b6f81a735c3747006edd75a6523b60da97ed58df7ab21b16c7040064ac",
+      "status": "pass",
+      "notes": "Ligne Spa 26 entière avec en-têtes répétés ; paragraphe sonore et chapitre Priorités lisibles, dernière ligne dégagée du pied."
+    },
+    {
+      "page": 172,
+      "file": "/tmp/tower-v09-canonical-final/page-172.png",
+      "sha256": "59e762b8633307cfed50be72929889e5c2d94ccc0f4630725e1e6fa2d6b133c1",
+      "status": "pass",
+      "notes": "Trois chapitres Rencontres, Paranormal et Expériences nettement hiérarchisés ; textes et identifiants lisibles, aucune coupure anormale."
+    },
+    {
+      "page": 173,
+      "file": "/tmp/tower-v09-canonical-final/page-173.png",
+      "sha256": "337cc865a520c0b8d11104edd2577ef6d002ba51fbbfee497072929be25f0a03",
+      "status": "pass",
+      "notes": "Matrice des cinq programmes et preuves complète ; titres Bunker/I01 visibles avec prose, pas de coupure de ligne ni de chevauchement."
+    },
+    {
+      "page": 174,
+      "file": "/tmp/tower-v09-canonical-final/page-174.png",
+      "sha256": "6ae45911a3bf511adec03eecbf26a7aee5f2c89464899f8aafe0243da5482961",
+      "status": "pass",
+      "notes": "Sections I02, I03, I04 et Personnages clairement hiérarchisées ; ligatures œ et accents rendus, début final de section reste lisible."
+    },
+    {
+      "page": 175,
+      "file": "/tmp/tower-v09-canonical-final/page-175.png",
+      "sha256": "c9c9028bf2073e715182646fdbf2aa73e44a213f3e984307d2c34b85e3872b44",
+      "status": "pass",
+      "notes": "Titres Gameplay et Direction visuelle bien espacés ; paragraphes continus lisibles, dernière phrase se poursuit normalement page suivante."
+    },
+    {
+      "page": 176,
+      "file": "/tmp/tower-v09-canonical-final/page-176.png",
+      "sha256": "74ce1d3e6417ba63953eeedc130a63301e91d0195a580a0b5a1fcecb5ad083db",
+      "status": "pass",
+      "notes": "Fin de l'annexe M lisible avec ample espace blanc. Remarque éditoriale hors rendu : cette annexe titrée 0.8 mentionne encore « catalogue actuel » de 60 props P01–P60."
+    },
+    {
+      "page": 177,
+      "file": "/tmp/tower-v09-canonical-final/page-177.png",
+      "sha256": "3516862c6dcff4e8fedf73f15a7254690a6a883103987a42cc5ee1ffae5f2b17",
+      "status": "pass",
+      "notes": "Annexe N version 0.9 nette ; grand titre, périmètre et intention lisibles ; Graphe livré commence avec son introduction complète."
+    },
+    {
+      "page": 178,
+      "file": "/tmp/tower-v09-canonical-final/page-178.png",
+      "sha256": "15017eae204c672dc7c4be15adcdd384410adc9351226a851794f85e3d99af97",
+      "status": "pass",
+      "notes": "Table à cinq colonnes des six liaisons complète, retours à la ligne propres ; implantation et coordonnées lisibles avec signes ± et × corrects."
+    },
+    {
+      "page": 179,
+      "file": "/tmp/tower-v09-canonical-final/page-179.png",
+      "sha256": "089d3de440c93a29c31623133e0ac5d769cc20e82afd36850144eccbfa3631d1",
+      "status": "pass",
+      "notes": "Dimensions des caps, couloir treuil et escaliers nettement lisibles ; coordonnées et chiffres décimaux non tronqués, titre et paragraphes bien espacés."
+    },
+    {
+      "page": 180,
+      "file": "/tmp/tower-v09-canonical-final/page-180.png",
+      "sha256": "14684d2e84d573707692b76f463006c6aa301e364d1617acaf5d902dc54a67a3",
+      "status": "pass",
+      "notes": "Cycle du rappel organisé en Lire, Se déplacer et Sortir ; seuils et durées lisibles, aucun chevauchement ou glyphe absent."
+    },
+    {
+      "page": 181,
+      "file": "/tmp/tower-v09-canonical-final/page-181.png",
+      "sha256": "2a107560e6475eea4376b4bda310ffa60eec3f9bbea394695dbf5548813dc017",
+      "status": "pass",
+      "notes": "Table des neuf commandes entièrement lisible ; coûts et m/s² bien rendus ; chapitre Stabilisation commence sans titre isolé."
+    },
+    {
+      "page": 182,
+      "file": "/tmp/tower-v09-canonical-final/page-182.png",
+      "sha256": "c574668b8e569b68946c0a57fb7c3573ea96e3f4475e0df5ebabfb7a5b4def06",
+      "status": "pass",
+      "notes": "Longueurs de corde et champs du HUD lisibles ; Présentation subjective puis Portage bien séparés, continuation basse régulière sans collision."
+    },
+    {
+      "page": 183,
+      "file": "/tmp/tower-v09-canonical-final/page-183.png",
+      "sha256": "281ef61ec32343a5c51e7b94e8fb7e734d3e4c3abd6b32582c378390ece5a888",
+      "status": "pass",
+      "notes": "Priorités, sauvegarde et props lisibles ; nouveau total de 64 références visible ; tableau commence avec P61 entier et en-tête."
+    },
+    {
+      "page": 184,
+      "file": "/tmp/tower-v09-canonical-final/page-184.png",
+      "sha256": "68711ef8c1db0f45b960bb4d31a6c509e03a68b488779c2c148664f39c44dc94",
+      "status": "pass",
+      "notes": "P62–P64 repris avec en-têtes ; tableau de validation Catalogue à Incident lisible jusqu'à la dernière ligne complète, aucun débordement."
+    },
+    {
+      "page": 185,
+      "file": "/tmp/tower-v09-canonical-final/page-185.png",
+      "sha256": "5796de7251641faad5890c24b4b0c3db4e23d1b2cd7cd449298a5907ecf6fc14",
+      "status": "pass",
+      "notes": "Suite de validation Sauvegarde/Présentation/Treuil complète avec en-têtes ; chapitre des extensions lisible, marge basse suffisante."
+    },
+    {
+      "page": 186,
+      "file": "/tmp/tower-v09-canonical-final/page-186.png",
+      "sha256": "d8329218572f10eb6912bafeeae8e2973e6c3e0b9c3dbcd18714015c9d23ed02",
+      "status": "pass",
+      "notes": "Dernière page Sources de référence : titre et deux paragraphes de liens entièrement lisibles ; texte s'enroule correctement, pied 186/186 net."
+    }
+  ]
+}

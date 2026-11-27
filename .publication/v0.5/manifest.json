@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "version": "0.5.0",
+  "created_utc": "2026-11-24T20:27:47.513969+00:00",
+  "method": "Connector-sized pieces, with per-piece and whole-file SHA256 verification before materialization.",
+  "files": [
+    {
+      "path": "releases/The-Tower-Descent-v0.5-Windows-x64.zip",
+      "size": 39005598,
+      "sha256": "93d4ee8fd3b2b9ba16133507ed3adb06211fa35508bd04d8b9a7217ab867c6cc",
+      "git_sha": "6ba43bb82f7092949eb02af5a01bd91e7a56ff64",
+      "pieces": [
+        {
+          "path": ".publication/v0.5/chunks/windows-000.part",
+          "size": 9000000,
+          "sha256": "854b23f8907e348249ebb06beee2b2079cf92011c1624efd91ccf8b526f5de64"
+        },
+        {
+          "path": ".publication/v0.5/chunks/windows-001.part",
+          "size": 9000000,
+          "sha256": "1df6fd407d58f312e9c72e75d86fdd8ff03dbaa5e0288523fca7e3bf740c84ac"
+        },
+        {
+          "path": ".publication/v0.5/chunks/windows-002.part",
+          "size": 9000000,
+          "sha256": "28afa81e33427a785b9f5084a9de3512bbc8b596792584f49baf20e26566fec8"
+        },
+        {
+          "path": ".publication/v0.5/chunks/windows-003.part",
+          "size": 9000000,
+          "sha256": "74029b904784fd8a5cf37086902531d33bb9ddbd0d2359b76520ff84fddd90fe"
+        },
+        {
+          "path": ".publication/v0.5/chunks/windows-004.part",
+          "size": 3005598,
+          "sha256": "5788b614b37fd91215396ace7240748e068abdc2e303421decb79e730d4837ca"
+        }
+      ]
+    },
+    {
+      "path": "releases/The-Tower-Descent-v0.5-Sources.zip",
+      "size": 28567093,
+      "sha256": "06df9a6cba21c5ac71ba1b478c60212e01ad6e1d12ed4e8120f5e45c48f10866",
+      "git_sha": "024e0dcc26f41dfb50c33b98bb35e3a28d099e1c",
+      "pieces": [
+        {
+          "path": ".publication/v0.5/chunks/sources-000.part",
+          "size": 9000000,
+          "sha256": "97c4611ed36956e15348b7c83545e84e27bd9b5b81d93543292b9b80e2d4cc2d"
+        },
+        {
+          "path": ".publication/v0.5/chunks/sources-001.part",
+          "size": 9000000,
+          "sha256": "004a5e7cdb421070a50427fe3ad2a2ad323fbfa88e9d3ec946e67bca27f9204a"
+        },
+        {
+          "path": ".publication/v0.5/chunks/sources-002.part",
+          "size": 9000000,
+          "sha256": "7e0d9f24f443c18fdfd10016d00bd7329f67735f2f96e0393ced038713c4978d"
+        },
+        {
+          "path": ".publication/v0.5/chunks/sources-003.part",
+          "size": 1567093,
+          "sha256": "cfc53f052c36f8bf8b4f5f33ea4c9d6e865f1d611e380eab53dceb8fefeefdf9"
+        }
+      ]
+    },
+    {
+      "path": "docs/The-Tower-Descent-Bible-v0.5.pdf",
+      "size": 2127036,
+      "sha256": "049076fb8dc015b272f4ca4ad4c26d9dfc79a6f4c5a08336d0da5d51e00b3aa0",
+      "git_sha": "b18a930a58d0174e613f9871ada707ba5b8c9024",
+      "pieces": []
+    },
+    {
+      "path": "docs/The-Tower-Descent-Bible-v0.5.docx",
+      "size": 226412,
+      "sha256": "31797e95bcdd66ab85cc7203419d4962c1492e4fb99e8bbb9018b6a5acb8d911",
+      "git_sha": "235e7e757dac8acb3f285a135735b48b5e618b14",
+      "pieces": []
+    }
+  ]
+}

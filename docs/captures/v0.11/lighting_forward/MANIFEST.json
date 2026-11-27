@@ -1,0 +1,478 @@
+{
+	"captures": [
+		{
+			"camera_position": [
+				11.0,
+				44.0,
+				4.0
+			],
+			"camera_target": [
+				-4.40000009536743,
+				43.2999992370605,
+				-5.59999990463257
+			],
+			"description": "Poste de secours sur le toit, béton salin et éclairage de tempête",
+			"file": "01_roof_rescue.png",
+			"height": 900,
+			"lighting": {
+				"active_profile": "cinematic",
+				"display": "X11",
+				"fallback_reason": "",
+				"geometry": {
+					"excluded_meshes": 1540,
+					"moving_static_violations": 0,
+					"static_meshes": 1987
+				},
+				"gi_technique": "SDFGI: fixed opaque geometry only",
+				"glow": true,
+				"last_refresh_reason": "initial_build",
+				"materials": {
+					"albedo_source": "authored PNG assets",
+					"assets": [
+						{
+							"file": "res://assets/materials/v011/salt_concrete.png",
+							"id": "salt_concrete",
+							"loaded": true,
+							"repeat_m": 2.0
+						},
+						{
+							"file": "res://assets/materials/v011/smoked_oak.png",
+							"id": "smoked_oak",
+							"loaded": true,
+							"repeat_m": 1.4
+						},
+						{
+							"file": "res://assets/materials/v011/dark_stone.png",
+							"id": "dark_stone",
+							"loaded": true,
+							"repeat_m": 1.8
+						},
+						{
+							"file": "res://assets/materials/v011/brushed_steel.png",
+							"id": "brushed_steel",
+							"loaded": true,
+							"repeat_m": 0.8
+						},
+						{
+							"file": "res://assets/materials/v011/rescue_red_paint.png",
+							"id": "rescue_red_paint",
+							"loaded": true,
+							"repeat_m": 0.8
+						},
+						{
+							"file": "res://assets/materials/v011/black_rubber.png",
+							"id": "black_rubber",
+							"loaded": true,
+							"repeat_m": 0.5
+						},
+						{
+							"file": "res://assets/materials/v011/teal_carpet.png",
+							"id": "teal_carpet",
+							"loaded": true,
+							"repeat_m": 1.0
+						},
+						{
+							"file": "res://assets/materials/v011/porcelain_tile.png",
+							"id": "porcelain_tile",
+							"loaded": true,
+							"repeat_m": 1.2
+						}
+					],
+					"microdetail_source": "deterministic procedural approximation",
+					"projection": "world-space triplanar; local-space for movers"
+				},
+				"native_forward_plus": true,
+				"refresh_pending": false,
+				"rendering_device": true,
+				"rendering_method": "forward_plus",
+				"requested_profile": "auto",
+				"sdfgi": true,
+				"ssao": true,
+				"ssil": true,
+				"ssr": true,
+				"static_revision": 0,
+				"volumetric_fog": true
+			},
+			"sha256": "8633e94af9405eaaff1aa710a0afbb93e253e71ba221b628e85d35b1c0389c62",
+			"warmup_frames": 96,
+			"width": 1440
+		},
+		{
+			"camera_position": [
+				-8.69999980926514,
+				37.6500015258789,
+				3.79999995231628
+			],
+			"camera_target": [
+				-6.19999980926514,
+				37.0999984741211,
+				-6.5
+			],
+			"description": "Restaurant 30 : pierre, bois fumé et luminaires chauds avec ombres locales",
+			"file": "02_restaurant_materials.png",
+			"height": 900,
+			"lighting": {
+				"active_profile": "cinematic",
+				"display": "X11",
+				"fallback_reason": "",
+				"geometry": {
+					"excluded_meshes": 1540,
+					"moving_static_violations": 0,
+					"static_meshes": 1987
+				},
+				"gi_technique": "SDFGI: fixed opaque geometry only",
+				"glow": true,
+				"last_refresh_reason": "initial_build",
+				"materials": {
+					"albedo_source": "authored PNG assets",
+					"assets": [
+						{
+							"file": "res://assets/materials/v011/salt_concrete.png",
+							"id": "salt_concrete",
+							"loaded": true,
+							"repeat_m": 2.0
+						},
+						{
+							"file": "res://assets/materials/v011/smoked_oak.png",
+							"id": "smoked_oak",
+							"loaded": true,
+							"repeat_m": 1.4
+						},
+						{
+							"file": "res://assets/materials/v011/dark_stone.png",
+							"id": "dark_stone",
+							"loaded": true,
+							"repeat_m": 1.8
+						},
+						{
+							"file": "res://assets/materials/v011/brushed_steel.png",
+							"id": "brushed_steel",
+							"loaded": true,
+							"repeat_m": 0.8
+						},
+						{
+							"file": "res://assets/materials/v011/rescue_red_paint.png",
+							"id": "rescue_red_paint",
+							"loaded": true,
+							"repeat_m": 0.8
+						},
+						{
+							"file": "res://assets/materials/v011/black_rubber.png",
+							"id": "black_rubber",
+							"loaded": true,
+							"repeat_m": 0.5
+						},
+						{
+							"file": "res://assets/materials/v011/teal_carpet.png",
+							"id": "teal_carpet",
+							"loaded": true,
+							"repeat_m": 1.0
+						},
+						{
+							"file": "res://assets/materials/v011/porcelain_tile.png",
+							"id": "porcelain_tile",
+							"loaded": true,
+							"repeat_m": 1.2
+						}
+					],
+					"microdetail_source": "deterministic procedural approximation",
+					"projection": "world-space triplanar; local-space for movers"
+				},
+				"native_forward_plus": true,
+				"refresh_pending": false,
+				"rendering_device": true,
+				"rendering_method": "forward_plus",
+				"requested_profile": "auto",
+				"sdfgi": true,
+				"ssao": true,
+				"ssil": true,
+				"ssr": true,
+				"static_revision": 0,
+				"volumetric_fog": true
+			},
+			"sha256": "43cd56c2a942432e7c1effd4719d2746087e5a66fc9744e774889df8b893ab31",
+			"warmup_frames": 96,
+			"width": 1440
+		},
+		{
+			"camera_position": [
+				4.0,
+				1.64999997615814,
+				-3.40000009536743
+			],
+			"camera_target": [
+				7.40000009536743,
+				1.79999995231628,
+				7.5
+			],
+			"description": "Congrès 24 : moquette, scène et trajet de service sous éclairage froid",
+			"file": "03_congress_lighting.png",
+			"height": 900,
+			"lighting": {
+				"active_profile": "cinematic",
+				"display": "X11",
+				"fallback_reason": "",
+				"geometry": {
+					"excluded_meshes": 1540,
+					"moving_static_violations": 0,
+					"static_meshes": 1987
+				},
+				"gi_technique": "SDFGI: fixed opaque geometry only",
+				"glow": true,
+				"last_refresh_reason": "initial_build",
+				"materials": {
+					"albedo_source": "authored PNG assets",
+					"assets": [
+						{
+							"file": "res://assets/materials/v011/salt_concrete.png",
+							"id": "salt_concrete",
+							"loaded": true,
+							"repeat_m": 2.0
+						},
+						{
+							"file": "res://assets/materials/v011/smoked_oak.png",
+							"id": "smoked_oak",
+							"loaded": true,
+							"repeat_m": 1.4
+						},
+						{
+							"file": "res://assets/materials/v011/dark_stone.png",
+							"id": "dark_stone",
+							"loaded": true,
+							"repeat_m": 1.8
+						},
+						{
+							"file": "res://assets/materials/v011/brushed_steel.png",
+							"id": "brushed_steel",
+							"loaded": true,
+							"repeat_m": 0.8
+						},
+						{
+							"file": "res://assets/materials/v011/rescue_red_paint.png",
+							"id": "rescue_red_paint",
+							"loaded": true,
+							"repeat_m": 0.8
+						},
+						{
+							"file": "res://assets/materials/v011/black_rubber.png",
+							"id": "black_rubber",
+							"loaded": true,
+							"repeat_m": 0.5
+						},
+						{
+							"file": "res://assets/materials/v011/teal_carpet.png",
+							"id": "teal_carpet",
+							"loaded": true,
+							"repeat_m": 1.0
+						},
+						{
+							"file": "res://assets/materials/v011/porcelain_tile.png",
+							"id": "porcelain_tile",
+							"loaded": true,
+							"repeat_m": 1.2
+						}
+					],
+					"microdetail_source": "deterministic procedural approximation",
+					"projection": "world-space triplanar; local-space for movers"
+				},
+				"native_forward_plus": true,
+				"refresh_pending": false,
+				"rendering_device": true,
+				"rendering_method": "forward_plus",
+				"requested_profile": "auto",
+				"sdfgi": true,
+				"ssao": true,
+				"ssil": true,
+				"ssr": true,
+				"static_revision": 0,
+				"volumetric_fog": true
+			},
+			"sha256": "79d4aa5a5090bd2cce1003a2d00348cb7b7eb25a972563f6a5d6278604f0e25f",
+			"warmup_frames": 96,
+			"width": 1440
+		},
+		{
+			"camera_position": [
+				4.19999980926514,
+				25.6499996185303,
+				-1.0
+			],
+			"camera_target": [
+				8.0,
+				25.2000007629395,
+				-6.5
+			],
+			"description": "Archives 28 après impact : lumière de secours et Hespérie exclue du calcul statique",
+			"file": "04_archive_after_impact.png",
+			"height": 900,
+			"lighting": {
+				"active_profile": "cinematic",
+				"display": "X11",
+				"fallback_reason": "",
+				"geometry": {
+					"excluded_meshes": 1540,
+					"moving_static_violations": 0,
+					"static_meshes": 1987
+				},
+				"gi_technique": "SDFGI: fixed opaque geometry only",
+				"glow": true,
+				"last_refresh_reason": "incident_aftermath",
+				"materials": {
+					"albedo_source": "authored PNG assets",
+					"assets": [
+						{
+							"file": "res://assets/materials/v011/salt_concrete.png",
+							"id": "salt_concrete",
+							"loaded": true,
+							"repeat_m": 2.0
+						},
+						{
+							"file": "res://assets/materials/v011/smoked_oak.png",
+							"id": "smoked_oak",
+							"loaded": true,
+							"repeat_m": 1.4
+						},
+						{
+							"file": "res://assets/materials/v011/dark_stone.png",
+							"id": "dark_stone",
+							"loaded": true,
+							"repeat_m": 1.8
+						},
+						{
+							"file": "res://assets/materials/v011/brushed_steel.png",
+							"id": "brushed_steel",
+							"loaded": true,
+							"repeat_m": 0.8
+						},
+						{
+							"file": "res://assets/materials/v011/rescue_red_paint.png",
+							"id": "rescue_red_paint",
+							"loaded": true,
+							"repeat_m": 0.8
+						},
+						{
+							"file": "res://assets/materials/v011/black_rubber.png",
+							"id": "black_rubber",
+							"loaded": true,
+							"repeat_m": 0.5
+						},
+						{
+							"file": "res://assets/materials/v011/teal_carpet.png",
+							"id": "teal_carpet",
+							"loaded": true,
+							"repeat_m": 1.0
+						},
+						{
+							"file": "res://assets/materials/v011/porcelain_tile.png",
+							"id": "porcelain_tile",
+							"loaded": true,
+							"repeat_m": 1.2
+						}
+					],
+					"microdetail_source": "deterministic procedural approximation",
+					"projection": "world-space triplanar; local-space for movers"
+				},
+				"native_forward_plus": true,
+				"refresh_pending": false,
+				"rendering_device": true,
+				"rendering_method": "forward_plus",
+				"requested_profile": "auto",
+				"sdfgi": true,
+				"ssao": true,
+				"ssil": true,
+				"ssr": true,
+				"static_revision": 1,
+				"volumetric_fog": true
+			},
+			"sha256": "96f2dc37d2647b183cbc204f9986ae44690d4a1890a7b4f4ad7044061087bded",
+			"warmup_frames": 96,
+			"width": 1440
+		}
+	],
+	"display": "X11",
+	"engine": "4.7.2-stable (official)",
+	"human_playthrough": false,
+	"lighting": {
+		"active_profile": "cinematic",
+		"display": "X11",
+		"fallback_reason": "",
+		"geometry": {
+			"excluded_meshes": 1540,
+			"moving_static_violations": 0,
+			"static_meshes": 1987
+		},
+		"gi_technique": "SDFGI: fixed opaque geometry only",
+		"glow": true,
+		"last_refresh_reason": "incident_aftermath",
+		"materials": {
+			"albedo_source": "authored PNG assets",
+			"assets": [
+				{
+					"file": "res://assets/materials/v011/salt_concrete.png",
+					"id": "salt_concrete",
+					"loaded": true,
+					"repeat_m": 2.0
+				},
+				{
+					"file": "res://assets/materials/v011/smoked_oak.png",
+					"id": "smoked_oak",
+					"loaded": true,
+					"repeat_m": 1.4
+				},
+				{
+					"file": "res://assets/materials/v011/dark_stone.png",
+					"id": "dark_stone",
+					"loaded": true,
+					"repeat_m": 1.8
+				},
+				{
+					"file": "res://assets/materials/v011/brushed_steel.png",
+					"id": "brushed_steel",
+					"loaded": true,
+					"repeat_m": 0.8
+				},
+				{
+					"file": "res://assets/materials/v011/rescue_red_paint.png",
+					"id": "rescue_red_paint",
+					"loaded": true,
+					"repeat_m": 0.8
+				},
+				{
+					"file": "res://assets/materials/v011/black_rubber.png",
+					"id": "black_rubber",
+					"loaded": true,
+					"repeat_m": 0.5
+				},
+				{
+					"file": "res://assets/materials/v011/teal_carpet.png",
+					"id": "teal_carpet",
+					"loaded": true,
+					"repeat_m": 1.0
+				},
+				{
+					"file": "res://assets/materials/v011/porcelain_tile.png",
+					"id": "porcelain_tile",
+					"loaded": true,
+					"repeat_m": 1.2
+				}
+			],
+			"microdetail_source": "deterministic procedural approximation",
+			"projection": "world-space triplanar; local-space for movers"
+		},
+		"native_forward_plus": true,
+		"refresh_pending": false,
+		"rendering_device": true,
+		"rendering_method": "forward_plus",
+		"requested_profile": "auto",
+		"sdfgi": true,
+		"ssao": true,
+		"ssil": true,
+		"ssr": true,
+		"static_revision": 1,
+		"volumetric_fog": true
+	},
+	"prepared_states": true,
+	"rendering_method": "forward_plus",
+	"version": "0.11.0",
+	"warmup_frames": 96
+}

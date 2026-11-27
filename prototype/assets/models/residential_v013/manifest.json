@@ -1,0 +1,483 @@
+{
+  "schema_version": 1,
+  "library": "The Tower Descent residences/telecommunications v0.13",
+  "generator": "tools/generate_residential_models.py",
+  "blender_version": "4.3.2",
+  "units": "metres",
+  "source_axes": {
+    "up": "+Z",
+    "front": "+Y",
+    "right": "+X"
+  },
+  "runtime_axes": {
+    "up": "+Y",
+    "front": "-Z",
+    "right": "+X"
+  },
+  "source": {
+    "path": "docs/assets/v0.13/residential_equipment.blend",
+    "bytes": 2433543,
+    "sha256": "9eeacc60f1e35110c741fac947bb1916c702b3e46c9d37b6a1a1b0ebdad023d1"
+  },
+  "authoring": "Original deterministic editable Blender geometry with named parts; shared geometry/export helpers; no external models.",
+  "limitations": [
+    "Static geometry, no rig or articulated animation.",
+    "Scene code supplies collision shapes and gameplay interactions.",
+    "Material scalar parameters are artistic values, not measured scans.",
+    "No claim of real electrical or medical functionality."
+  ],
+  "assets": [
+    {
+      "id": "rest_armchair",
+      "label_fr": "Fauteuil de repos résidentiel",
+      "path": "res://assets/models/residential_v013/rest_armchair.glb",
+      "sha256": "24ce3d573682e8655dd5a28895b452fdd0e0972b275b9da702243b998ca5053e",
+      "bytes": 100408,
+      "dimensions_m": {
+        "x": 0.89,
+        "y": 1.111817,
+        "z": 0.827274
+      },
+      "source_dimensions_m": {
+        "x": 0.89,
+        "y": 0.827274,
+        "z": 1.111817
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.5,
+        0.001363
+      ],
+      "triangles": 2556,
+      "mesh_parts": 21,
+      "source_mesh_parts": 21,
+      "runtime_meshes": 1,
+      "materials": [
+        "linen_cream",
+        "medical_pale",
+        "upholstery_sand",
+        "walnut_residence"
+      ],
+      "uv": "Smart projection per named source mesh; shared albedos use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "medicine_cabinet",
+      "label_fr": "Armoire de soins des résidents",
+      "path": "res://assets/models/residential_v013/medicine_cabinet.glb",
+      "sha256": "0895443d905bead198fa6cd18979c1f5d1fde763793910937efc4ac5ad0e20eb",
+      "bytes": 429672,
+      "dimensions_m": {
+        "x": 0.585,
+        "y": 0.7,
+        "z": 0.25085
+      },
+      "source_dimensions_m": {
+        "x": 0.585,
+        "y": 0.25085,
+        "z": 0.7
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.35,
+        0.019075
+      ],
+      "triangles": 13376,
+      "mesh_parts": 25,
+      "source_mesh_parts": 25,
+      "runtime_meshes": 1,
+      "materials": [
+        "enamel_pale",
+        "label_ink",
+        "label_ivory",
+        "medical_pale",
+        "oxygen_green",
+        "steel_brushed",
+        "steel_edge"
+      ],
+      "uv": "Smart projection per named source mesh; shared albedos use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "resident_bookcase",
+      "label_fr": "Bibliothèque commune en noyer",
+      "path": "res://assets/models/residential_v013/resident_bookcase.glb",
+      "sha256": "21c8798fc7a17b31af3d0407e4efd78bd2673bf93b46d38461a5c2b0e5bb9dc1",
+      "bytes": 400204,
+      "dimensions_m": {
+        "x": 1.42,
+        "y": 2.0025,
+        "z": 0.38
+      },
+      "source_dimensions_m": {
+        "x": 1.42,
+        "y": 0.38,
+        "z": 2.0025
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "triangles": 10172,
+      "mesh_parts": 129,
+      "source_mesh_parts": 129,
+      "runtime_meshes": 1,
+      "materials": [
+        "book_ocean",
+        "book_ochre",
+        "book_rust",
+        "label_ivory",
+        "linen_cream",
+        "walnut_residence"
+      ],
+      "uv": "Smart projection per named source mesh; shared albedos use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "coffee_table",
+      "label_fr": "Table basse et album des résidents",
+      "path": "res://assets/models/residential_v013/coffee_table.glb",
+      "sha256": "80cc739aa963dd25dd88c352780bcd18788100c6a7c73fbc28d39662bf7a16e7",
+      "bytes": 119592,
+      "dimensions_m": {
+        "x": 1.14,
+        "y": 0.5465,
+        "z": 0.69
+      },
+      "source_dimensions_m": {
+        "x": 1.14,
+        "y": 0.69,
+        "z": 0.5465
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "triangles": 3216,
+      "mesh_parts": 14,
+      "source_mesh_parts": 14,
+      "runtime_meshes": 1,
+      "materials": [
+        "book_ocean",
+        "linen_cream",
+        "medical_pale",
+        "walnut_residence"
+      ],
+      "uv": "Smart projection per named source mesh; shared albedos use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "reading_lamp",
+      "label_fr": "Lampe de lecture sur pied",
+      "path": "res://assets/models/residential_v013/reading_lamp.glb",
+      "sha256": "1542e6fe4bf0d16211d787bfe72433ae1a08a48b80d0e1f4c6341deb6dd5eb61",
+      "bytes": 121564,
+      "dimensions_m": {
+        "x": 0.553764,
+        "y": 1.605,
+        "z": 0.647991
+      },
+      "source_dimensions_m": {
+        "x": 0.553764,
+        "y": 0.647991,
+        "z": 1.605
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        -0.064882,
+        0.75,
+        0.088004
+      ],
+      "triangles": 3220,
+      "mesh_parts": 8,
+      "source_mesh_parts": 8,
+      "runtime_meshes": 1,
+      "materials": [
+        "brass_valve",
+        "led_warm",
+        "linen_cream",
+        "rubber_black",
+        "steel_dark"
+      ],
+      "uv": "Smart projection per named source mesh; shared albedos use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "wall_intercom",
+      "label_fr": "Interphone des résidences",
+      "path": "res://assets/models/residential_v013/wall_intercom.glb",
+      "sha256": "359aee799670772a08f2fdea61e779db0fccab6b096b2ac5b1e1c2543764bb5d",
+      "bytes": 265664,
+      "dimensions_m": {
+        "x": 0.22,
+        "y": 0.389951,
+        "z": 0.1605
+      },
+      "source_dimensions_m": {
+        "x": 0.22,
+        "y": 0.1605,
+        "z": 0.389951
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.189951,
+        0.03975
+      ],
+      "triangles": 7808,
+      "mesh_parts": 15,
+      "source_mesh_parts": 15,
+      "runtime_meshes": 1,
+      "materials": [
+        "anodized_blue",
+        "enamel_pale",
+        "label_ink",
+        "label_ivory",
+        "medical_pale",
+        "polymer_anthracite",
+        "rubber_black",
+        "screen_teal"
+      ],
+      "uv": "Smart projection per named source mesh; shared albedos use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "service_latch_panel",
+      "label_fr": "Commande du passage de service",
+      "path": "res://assets/models/residential_v013/service_latch_panel.glb",
+      "sha256": "418390cba726b91a3fd614853d20ee13e7d6444febb35b57a8ed40836a11026b",
+      "bytes": 584176,
+      "dimensions_m": {
+        "x": 0.28,
+        "y": 0.47,
+        "z": 0.205
+      },
+      "source_dimensions_m": {
+        "x": 0.28,
+        "y": 0.205,
+        "z": 0.47
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.23,
+        0.0425
+      ],
+      "triangles": 18828,
+      "mesh_parts": 11,
+      "source_mesh_parts": 11,
+      "runtime_meshes": 1,
+      "materials": [
+        "enamel_pale",
+        "label_ink",
+        "paint_safety_yellow",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge"
+      ],
+      "uv": "Smart projection per named source mesh; shared albedos use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "telecom_rack",
+      "label_fr": "Baie de télécommunications",
+      "path": "res://assets/models/residential_v013/telecom_rack.glb",
+      "sha256": "6dae29b4a3541fc605f8718d422584053af5171afdfe03aaccfe34163ae3faed",
+      "bytes": 768056,
+      "dimensions_m": {
+        "x": 0.7,
+        "y": 2.105,
+        "z": 0.789
+      },
+      "source_dimensions_m": {
+        "x": 0.7,
+        "y": 0.789,
+        "z": 2.105
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        1.1,
+        0.0045
+      ],
+      "triangles": 21768,
+      "mesh_parts": 89,
+      "source_mesh_parts": 89,
+      "runtime_meshes": 1,
+      "materials": [
+        "label_ink",
+        "label_ivory",
+        "polymer_anthracite",
+        "status_amber",
+        "status_green",
+        "steel_brushed",
+        "steel_dark"
+      ],
+      "uv": "Smart projection per named source mesh; shared albedos use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "patch_panel",
+      "label_fr": "Panneau de brassage local",
+      "path": "res://assets/models/residential_v013/patch_panel.glb",
+      "sha256": "5e0a1bb4f9e2f1d93d6a688aeca368b76e379572a061e89be8eb613f2d1900e9",
+      "bytes": 931636,
+      "dimensions_m": {
+        "x": 0.51,
+        "y": 0.32,
+        "z": 0.354381
+      },
+      "source_dimensions_m": {
+        "x": 0.51,
+        "y": 0.354381,
+        "z": 0.32
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.16,
+        0.07219
+      ],
+      "triangles": 29440,
+      "mesh_parts": 30,
+      "source_mesh_parts": 30,
+      "runtime_meshes": 1,
+      "materials": [
+        "enamel_pale",
+        "label_ink",
+        "label_ivory",
+        "steel_brushed",
+        "steel_dark",
+        "wire_blue",
+        "wire_green",
+        "wire_yellow"
+      ],
+      "uv": "Smart projection per named source mesh; shared albedos use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "ups_battery",
+      "label_fr": "Alimentation secourue du relais",
+      "path": "res://assets/models/residential_v013/ups_battery.glb",
+      "sha256": "863fc5fc655a1a17dcaa41b1d1643f792b2f5766d73dd4f531e0ea0d09403514",
+      "bytes": 588492,
+      "dimensions_m": {
+        "x": 0.550691,
+        "y": 0.75,
+        "z": 0.719132
+      },
+      "source_dimensions_m": {
+        "x": 0.550691,
+        "y": 0.719132,
+        "z": 0.75
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        -0.035345,
+        0.4,
+        -0.033566
+      ],
+      "triangles": 18460,
+      "mesh_parts": 18,
+      "source_mesh_parts": 18,
+      "runtime_meshes": 1,
+      "materials": [
+        "enamel_pale",
+        "label_ink",
+        "label_ivory",
+        "paint_safety_yellow",
+        "polymer_anthracite",
+        "rubber_black",
+        "screen_teal",
+        "steel_dark"
+      ],
+      "uv": "Smart projection per named source mesh; shared albedos use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "relay_console",
+      "label_fr": "Console de contrôle du relais A17",
+      "path": "res://assets/models/residential_v013/relay_console.glb",
+      "sha256": "463aaa0b1d546dd2a7e7a824cd56ad8adab4c0cebf49454e49d5b120d43b25d5",
+      "bytes": 538300,
+      "dimensions_m": {
+        "x": 1.56,
+        "y": 1.57677,
+        "z": 0.78
+      },
+      "source_dimensions_m": {
+        "x": 1.56,
+        "y": 0.78,
+        "z": 1.57677
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.95,
+        0.0
+      ],
+      "triangles": 15544,
+      "mesh_parts": 52,
+      "source_mesh_parts": 52,
+      "runtime_meshes": 1,
+      "materials": [
+        "enamel_pale",
+        "label_ivory",
+        "polymer_anthracite",
+        "rubber_black",
+        "screen_teal",
+        "steel_brushed",
+        "steel_dark",
+        "walnut_residence"
+      ],
+      "uv": "Smart projection per named source mesh; shared albedos use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "voice_recorder",
+      "label_fr": "Enregistreur à deux canaux",
+      "path": "res://assets/models/residential_v013/voice_recorder.glb",
+      "sha256": "b866933552682874547dc3204620c94d3ccc2de70b38d25e65aa04c48b46f868",
+      "bytes": 355536,
+      "dimensions_m": {
+        "x": 0.24,
+        "y": 0.1195,
+        "z": 0.177
+      },
+      "source_dimensions_m": {
+        "x": 0.24,
+        "y": 0.177,
+        "z": 0.1195
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.05,
+        0.0035
+      ],
+      "triangles": 10764,
+      "mesh_parts": 16,
+      "source_mesh_parts": 16,
+      "runtime_meshes": 1,
+      "materials": [
+        "label_ivory",
+        "paint_rescue_red",
+        "polymer_anthracite",
+        "screen_teal",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge"
+      ],
+      "uv": "Smart projection per named source mesh; shared albedos use object coordinates.",
+      "embedded_images": 0
+    }
+  ],
+  "total_glb_bytes": 5203300,
+  "total_triangles": 155152
+}

@@ -1,0 +1,2478 @@
+{
+  "format": 1,
+  "version": "0.9.0",
+  "source_commit": "96e278c0e6bcc0e756b5418129317f04d44650ff",
+  "scope": "Exact final CI Word rendered by the canonical document skill renderer. The distributable PDF has a separate review tied to its exact file and CI-rendered pages.",
+  "page_count": 186,
+  "all_pass": true,
+  "all_pages_visually_reviewed": true,
+  "reviewed_utc": "2026-11-25T14:31:16.208022+00:00",
+  "word_file": "docs/The-Tower-Descent-Bible-v0.9.docx",
+  "word_sha256": "f718404121ba6c6990cf7df6e0988455881a0aa9e4188af6e63da14b319dbe20",
+  "canonical_renderer": "/home/agent/.codex/skills/builtins/documents/render_docx.py",
+  "canonical_render_directory": "/tmp/tower-v09-final-ci-word",
+  "canonical_render_log_sha256": "12f38c22491f8e50b795d1673dd47204d0d8bb1a7d58df7608700e11c09c744a",
+  "primary_runtime_creation": {
+    "file": "/tmp/tower-v09-normalized-source/The-Tower-Descent-Bible-v0.9.docx",
+    "sha256": "d10ea97019bfd8dc3290e43621c4d87ad841fff761fa3d36f857121aeabe8bb8",
+    "uncompressed_docx_members_identical_to_final_ci_word": true,
+    "member_count": 19
+  },
+  "batches": [
+    {
+      "file": "docs/validation/v0.9/review_notes/tower-v09-canonical-review-001-062.json",
+      "sha256": "2cca151e505635a920fd5dc9b0e04fa1d58c23bf73d8ea46ce45c4186209608d",
+      "reviewer": "/root/v09_docs",
+      "page_count": 62
+    },
+    {
+      "file": "docs/validation/v0.9/review_notes/tower-v09-canonical-review-063-124.json",
+      "sha256": "4386f6358ed828733af34c78f10590da67c7c71cc3ea676b383c17fc89f389f1",
+      "reviewer": "/root/v09_rope",
+      "page_count": 62
+    },
+    {
+      "file": "docs/validation/v0.9/review_notes/tower-v09-canonical-review-125-186.json",
+      "sha256": "fcdb64c41e6cd2b1509e30b437b5fb556d21e8bba10eb269f4960da114e554ff",
+      "reviewer": "/root/v09_routes",
+      "page_count": 62
+    },
+    {
+      "file": "docs/validation/v0.9/review_notes/tower-v09-normalized-page122-review.json",
+      "sha256": "e74184c98b5493632ba1b333fb13918ad07a01a7fe8bbe1da17ccc1f17ea8bba",
+      "reviewer": "/root/v09_docs",
+      "page_count": 1
+    }
+  ],
+  "corrected_pages_individually_reexamined": [
+    77,
+    122,
+    147,
+    176
+  ],
+  "unchanged_pages_verified_by_exact_png_sha256": 182,
+  "normalized_reference_pages_byte_identical_to_final": 186,
+  "pages": [
+    {
+      "page": 1,
+      "sha256": "664b096e3bb4d8e01b385d1e7e3c9806b55c896b0dc6510288edfef1fdb9ecb3",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Couverture v0.9 lisible ; titre, attribution, introduction et tableau des trois périmètres entièrement visibles, sans recouvrement ni cellule coupée. Absence de pied et d’en-tête propre à la couverture."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 2,
+      "sha256": "4061fce9255147b769b9b1ac646f9d7dd9ef44d645c677e99bd8d15f6c06d4dc",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Sommaire des deux parties et quatorze annexes complet ; liens, paragraphes de lecture, en-tête et pied 2 / 186 lisibles."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 3,
+      "sha256": "9fd9a7b60050311a547cfdcac8c2366beda1497d94a79437b46ac11986702e2e",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Ouverture de la première partie, versions et paragraphes de périmètre complets ; renvoi vers l’annexe v0.9 lisible. Le rendu de l’outil masque visuellement des zones répétées : les pixels d’en-tête et de pied gauche sont identiques aux pages 2 et 4, donc aucune suppression dans le fichier."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 4,
+      "sha256": "3aef1c35890236963e4487936272c8f8971433aa9cc6c5941143193176ec2c16",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Intention, promesse au joueur et première partie du tableau de direction lisibles ; tableau et marges propres, en-tête et pied 4 / 186 complets."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 5,
+      "sha256": "561ee51c2da02e684c6f9b35c279cb3ad5d77f46a4179c40f4afc104fea4f549",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite du tableau avec en-tête répété, références puis principes lisibles ; lignes et cellules entières, continuation du dernier paragraphe vers la page 6 normale."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 6,
+      "sha256": "f9121d3ea7d43cfb7f2662c96aeb0c198b2ef71cf3095668a487fd769ae11ae0",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite du refuge, règles de génération, île de Nacre et catastrophe récente entièrement lisibles ; hiérarchie des titres claire, aucun débordement du texte."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 7,
+      "sha256": "d04b050f99dc0ac710eef3df007da262261ef14543cf8a9e69deb4b0b360f126",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Origines du site puis chronologie : tableau à deux colonnes entièrement lisible, lignes complètes jusqu’à l’impact au 29, sans chevauchement du pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 8,
+      "sha256": "04a1d60718d4f06301a5d3dc6bfbfa1ba1ba3fd7669d4c15a25bf18c9e870e70",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin de chronologie avec en-tête répété ; programme SILLAGE et tableau de vérité complets. Toutes les cellules et accents sont lisibles, marges conservées."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 9,
+      "sha256": "09cb2c27a15b325a7111e6f95542956b57327fa2cb9bf6917d516d2c479b70dc",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite du registre de vérité puis fiches Alex, Varga et Malik ; tableaux et corps lisibles, tous les titres restent associés à leur texte."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 10,
+      "sha256": "b7ede6bf415ff25303a6fc0737712154b33a475c38ef50b59bd5aff67a83990c",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches Inès, Alma, Eva et autres équipes bien espacées ; paragraphes complets à largeur normale, aucune collision ni caractère manquant."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 11,
+      "sha256": "f70483b0779f2a3da13b7d44276c7c5181948fdc2a6be843e1e9d5d230c23bd4",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Déroulement des actes un à trois entièrement lisible ; titre principal, sous-titres et marges cohérents, dernier paragraphe séparé du pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 12,
+      "sha256": "4f4cfc779e2e12d7d0bfd023a1ab3f3f986bfc558d5d21cdfdc6e1691bd1cb88",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Actes quatre et cinq, épilogue puis début du tableau des fins lisibles ; cellules de la dernière ligne entières au bas de page, aucun chevauchement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 13,
+      "sha256": "e50b7d57feb2db8175055e702c36bf1fdb72afe2f2f9cb7d9e5ba88fb3ede8b9",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Dernière fin, boucle de jeu et introduction des liaisons v0.9 lisibles ; titres et renvois correctement placés, continuation du paragraphe d’escalier normale."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 14,
+      "sha256": "ada30f74d641926c4fbee309a3f8b662be18d3ba4286e8071a274552bc3e4da1",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "États de déplacement et limites du rappel lisibles. Le mot Accompagnement revient à la ligne dans la colonne étroite, sans perte de lettres ; toutes les cellules et le corps restent complets."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 15,
+      "sha256": "981afe7b136f9a6049d3644634eeccc404700aed9ea1fd9bc3aa8296396df71b",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Équipement et ressources : tableau dense à quatre colonnes entièrement visible, aucune cellule tronquée, hauteurs de lignes adaptées."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 16,
+      "sha256": "af7d10b8108cb139acbf0060fa3a950a73742ef35efbcc855ed0431f8ac2574b",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite de l’équipement, survivants et sept états de sauvetage ; tableau, liste numérotée et paragraphes entièrement lisibles, espace avant le pied suffisant."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 17,
+      "sha256": "4451af6f2f766c8e14eb69b6c58c0322a484fe702622311e503b96782374dbb4",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Stress et perception, vérification puis tableau des présences lisibles ; les cinq colonnes gardent leur contenu et aucune ligne ne touche le pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 18,
+      "sha256": "f122e9a60be7002ef82ce4f64ad00df985b6909e393850e77f7afed081565143",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite des présences avec en-tête répété, défense et introduction de la génération ; cellules complètes, titres et corps sans chevauchement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 19,
+      "sha256": "12152c4af748d1e52b7f0ece42f08e8cc12c4a6b722ef687b272fbc1a54164ee",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Ordre de génération en dix étapes, invariants et rythme lisibles ; numérotation complète et première ligne du tableau intégrale."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 20,
+      "sha256": "b595e77941c8be63021ac235850bd9583282e83072f9c668d718bd2604c1f9ba",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite du tableau de rythme, contrat de données puis catalogue d’événements ; deux tableaux nets, renvoi et toutes les cellules lisibles."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 21,
+      "sha256": "754d3ffabfb31f32b1268da07bce02e146ae7d28e431e1480452e6e759cd0ab2",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Catalogue d’événements en pleine page : toutes les lignes de Jouet interrompu à Relais de trop sont lisibles, alignées et complètes."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 22,
+      "sha256": "a8f5725b5ea2e65f84083342b2e8e9d13e8fe0a2a20e991762c83a8078421ec2",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin du catalogue puis familles modulaires ; tableau à trois colonnes complet, sous-titres et corps bien séparés, aucun débordement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 23,
+      "sha256": "2df09f42f588ab83d136cbd1cf081d70d801ddaa7842b62f7012b47ef48d5323",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Modules, mer, palette, son et musique : titres, paragraphes et accents lisibles avec marges uniformes, aucune coupure anormale."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 24,
+      "sha256": "ba042fc266e8385c29602679269ce9e4cb97bedbf17386dccad58c59e94b73da",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Interface, options d’accessibilité et sauvegarde : puces complètes, termes techniques et numéros lisibles, continuation de fin de page naturelle."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 25,
+      "sha256": "903f13d428682673cd26110999b824f453b95c818e094541fd746fd1afbadd51",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin de sauvegarde puis ouverture, approche, toit et première descente : corps et liens propres, toutes les lignes lisibles."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 26,
+      "sha256": "6d454f24547271e772c3db24ab8e861abf5f35fdf1150d56585efd22da72cab5",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Baie Est, contradictions et périmètre du prototype lisibles ; tableau des trois premières zones complet, pied distinct du tableau."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 27,
+      "sha256": "c99ed2e627edb777d3719b5974b84e003176b2f4fd278e93d96181367d368c70",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau des étages 28 à 25, périmètre et critères fonctionnels lisibles ; puces et lignes terminales complètes au bas de page."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 28,
+      "sha256": "0a39f9f15a06b4853c0779b2cbad86ab6629d4fa1d00ecf68116ad1fee23ea64",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Architecture, composants fonctionnels et premier jalon de production : tableau et corps lisibles, titres liés aux paragraphes, aucun recouvrement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 29,
+      "sha256": "ab22d6af14388725d60f34ba9dc2a5f9afeda95ae20dfb9ccd6f6d6121fbb1df",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Jalons deux à six et tableau des risques lisibles ; aucune ligne de tableau ni de corps coupée."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 30,
+      "sha256": "d48817920ce470b7372ca14e3c88ae2c27a3d9fb42c2c5b55a80886120f0d9e4",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin des risques, extension Mountain Hole et exemples de dialogues : tous les guillemets, accents et paragraphes sont lisibles, sans collision."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 31,
+      "sha256": "e0a407e51aa2aa292b9c1798201ca53bb940c584491d57a308934422e53e29ef",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Décisions ouvertes et historique 0.5 détaillé lisibles ; caractères accentués, gras et lien rendus correctement, paragraphes sans chevauchement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 32,
+      "sha256": "e5de72ebc2e63c18845bfd7ddaadc000ac62d55c7236f4cea24d80ea03508b3c",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Conclusion de la Bible : sections historiques 0.8 puis actuelles 0.9 lisibles, chiffres 60 historiques et 64 actuels clairement contextualisés ; bas de page aéré normal en fin de partie."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 33,
+      "sha256": "60ab4afae74349cbb86ed72c5c5e8a6a6bb67c7046091da074933ddce35d4838",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Ouverture de la partie 2, version, périmètre et règles de variation lisibles ; titre long tient dans la largeur, tableau débute avec une ligne complète."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 34,
+      "sha256": "5c58e0e43c8068e1a9232081f82b09fda99f1937c115f081cdad8b6647c1569d",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Coupe générale A30 à A12 : cinq colonnes et toutes les lignes intégrales, numéros et statuts bien alignés, aucune cellule débordante."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 35,
+      "sha256": "86c029327648d2a6a3867edd90f8b18c680d8b41c7d9ea080ead670d5cffd6fc",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Coupe A11 à A00 puis début des liaisons v0.9 ; deux tableaux correctement alignés et entièrement lisibles."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 36,
+      "sha256": "1269fd3c66fa98f7c02f5b3a6b68233e2924a655e291e26751dd12b5d4b51be4",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Les cinq liaisons restantes, leur renvoi et fiche du toit sont lisibles ; identifiants avec soulignements et colonnes conservés, aucun débordement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 37,
+      "sha256": "82a121dfb85f139b3102e3de425413df1d0039025f4e08b970d1012c4ba71c34",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches du restaurant et des suites : sous-rubriques et liaisons locales lisibles, continuité correcte vers la page suivante."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 38,
+      "sha256": "dfd9ed6d23b28084ec586a48d7c927351016c663cc17879d807c5db501b67baf",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Archives et jardin : corps dense mais lisible, paragraphes structurés et identifiants de route complets, aucun débordement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 39,
+      "sha256": "4f1e0ed7747c57f35bd8577ae47a415bd07f1bfcf1d069851071801934fb324c",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches spa et refuge avec liaisons v0.9 lisibles ; tous les sous-titres et paragraphes restent dans les marges, aucune troncature."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 40,
+      "sha256": "9af9bce49a40f18affb69edd47faaffff44c9b8cbb908847cfc56b5b437da39e",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin de refuge, congrès, exposition et début des boutiques : hiérarchie lisible, paragraphes et caractères complets."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 41,
+      "sha256": "dcfa759713e7e80142adc103ee0e15b29886bd723f4449d9c054e471e544ecb0",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches boutiques, cuisines, refuge de logistique et résidences hautes : lecture continue, titres et fins de paragraphes propres."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 42,
+      "sha256": "fb189e59f081d199667838c8ee1cf016978ffa2e83de72a161c6d1674c9bf5e0",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Résidences, télécommunications et sports : rubriques en gras et paragraphes entièrement lisibles, aucun texte en marge ni glyphe absent."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 43,
+      "sha256": "ea483463688c3d7236903ff72c74acba356a9ac7c93eb7eb6c9b2123b1bbab09",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Refuge médical et niveaux du secret : titres et rubriques A15–A13 nets, texte complet sans chevauchement du pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 44,
+      "sha256": "c093c3d330f7d9f0279732fb4eab0406a6b0c2f25bf8ba7d2aed2acf58466f96",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches diagnostic, salons, refuge technique et clinique : mise en page régulière, accents et corps lisibles."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 45,
+      "sha256": "4c9745b51ebd50a2583602235bce068fc3f4bee958e929395e60f59c96e2f89e",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Clôture clinique, laboratoires, archives juridiques et liaison basse lisibles ; tous les titres et paragraphes complets."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 46,
+      "sha256": "a6ebce1195e36932b141f8e19810e5a4d8533345df907a394ee0217d6dc384b4",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Liaison basse, refuge incendie, musée et parking : texte lisible et correctement espacé, aucune coupure de bas de page."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 47,
+      "sha256": "5f7a9f06c481453db63513ed30d82239fc3926e820efbcc8f61dc0ef9f512b42",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Jardin intérieur, accueil du socle et terrasse : rubriques complètes, bas de page dégagé, lisibilité régulière."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 48,
+      "sha256": "e1f2672d8d0abc0ce335e2e66e6d1f79bd574fa0d8f54c178266402062a4f3b8",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Traversée d’Hespérie et six espaces : titres H JONCTION à H RETOUR associés à leurs corps, aucune troncature ni collision."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 49,
+      "sha256": "7c11ea4d84012664f10ac189a4c1811a9bc2796d1ba283844f52b24dedd6ae8a",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Anciens bains S01–S06 : titres et prose complets, espacement des sections régulier, continuation de S06 normale."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 50,
+      "sha256": "fcf6df0f6b23cfe0c0d651df5a06c1a774b491b8c6e962cfe89f36f998059cf5",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Sas Pelagos et bunker B01–B05 : texte et codes lisibles, hiérarchie nette, aucun chevauchement de pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 51,
+      "sha256": "362d718b5fefbaeaeae89a2fea27d1c4ce89069272cb7f94fd405b9700d44e80",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Seuil 666, traversée I01–I04 et sortie : titres, renvoi et codes bien rendus ; texte complet avec poursuite normale de la sortie."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 52,
+      "sha256": "be1f301a90ce24a96da3f48474373664cc4294087adc4bb2d051696cd655efe9",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Sortie, extension et validation : tableau Mountain Hole M01–M06 lisible dans ses quatre colonnes, marges et paragraphes propres."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 53,
+      "sha256": "b5f44d7633f570e3ce2f69450a02aef7a20caac45e1ea847d34baa12924f58e6",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Assemblage des trente étages, objectifs de production et A30–A28 : chiffres, signes de multiplication, renvois et paragraphes correctement rendus."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 54,
+      "sha256": "6cb33cd646283b89260ad607bfe58dbb46da74ba78bd3606317a473e9fbc1ec9",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Assemblages A27–A23 : toutes les dimensions et listes de props sont lisibles, sections complètes, marges respectées."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 55,
+      "sha256": "badc2b3d4672890027239281eac9d330ed1e47fd2757100d52ee9b8685e24af3",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Assemblages boutiques, cuisines, logistique et résidences : chiffres et corps lisibles, aucune ligne coupée."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 56,
+      "sha256": "6244b9711a9d6937db7b9026096f5fa38d9b90f07b54d1cda69e1036319b46ce",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Assemblages télécommunications à niveau absent : rubriques et paramètres entièrement visibles, aucun débordement des dimensions ou références."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 57,
+      "sha256": "28d75afe3b9bdcd5efc9a3173144ee89f6c38fd81358f43d3ed2b116c9d95d6c",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Assemblages A12–A08 : contenu entier, dimensions et références E/P lisibles, bas de page sans troncature."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 58,
+      "sha256": "8d410e52f378e65a020b4945dbb6edb850d08c45e4f846045b84bc840a046cb6",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Assemblages A07–A02 : titres, chiffres et texte correctement rendus, paragraphes distincts et continuation normale du hall."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 59,
+      "sha256": "6dcd5dbbc0f597b82d9cf11682215642d69750f24b3d33aca34061f5ff540565",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin de l’assemblage A01 et ordre de production : texte intégral, espace libre normal de fin de partie, en-tête et pied propres."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 60,
+      "sha256": "a8cc2fc0a073d281a708a7bc37cfee7bca7551342223032ae46bf9d58f6c74b2",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Ouverture annexe A, périmètre et graphe v0.9 : grands titres, codes des six liaisons et renvois lisibles, aucune troncature."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 61,
+      "sha256": "34b4bc4a96a78f1301a1f3431ea63bdfe8978f11e42ad477f0b90886c57c6755",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Contrat de contenu puis données livrées : signatures techniques lisibles et tableau à trois colonnes complet, aucun code tronqué."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 62,
+      "sha256": "0843bcd8363809faf0efdb3155736cdd9f51c63ad01703888c25592c8031ecf8",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin du schéma et contrat des liaisons verticales : noms de champs, tableau à deux colonnes, renvoi, tolérance ±0,35 m et texte sur les escaliers lisibles."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 63,
+      "sha256": "c2d7b2d269ebef5a53b7873ffc9661cde31b2960afaa57809a6158ce01e2fe79",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau « Invariants de la descente » sur six colonnes : en-tête contrasté, textes enveloppés et sept niveaux lisibles ; bas du tableau, prose et pied de page restent dans les marges."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 64,
+      "sha256": "f04675aefbb72cb15d3522651137b4624e648d76df25a04a8452512c8a9c86b0",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite de paragraphe puis sections événement, reproductibilité et tests : hiérarchie, liens soulignés et commande de bas de page lisibles, sans chevauchement avec le folio."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 65,
+      "sha256": "6211d66852007e19d65715bf145056433d3ce8e12d65c1d27ef34372f148fe20",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Vérification des trajets physiques et nouvelles transitions 0.9 : commande complète lisible, titres espacés et texte dense restant dans le cadre ; continuation annoncée par la prose en bas."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 66,
+      "sha256": "6f841404ba54bffe24926d2b07c1fd4c6e08822df8ad58d8a707c83f2038dd7c",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Cinq passes de campagne numérotées puis contraintes et checkpoints : retraits de liste réguliers, titres avec texte d’accompagnement, en-tête et folio dégagés."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 67,
+      "sha256": "b2e39bb288d5bc636fe2e28bb1938fe69f817aa46457c6c7c6eb138ddb655238",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Schéma de sauvegarde et tableau des moments de reprise : lignes alternées, colonnes et textes complets ; tableau entier avant le pied, aucune cellule coupée."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 68,
+      "sha256": "6784ca504f155413cebe9d663ee4c7c0a164fa41266ac469d2213fe1498f86cc",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Migration, outils de production et paliers de vérité : liens et identifiants lisibles, sous-titres séparés et lignes finales à distance du folio ; aucun débordement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 69,
+      "sha256": "838aa6e16266efb4e113601c2c7bae1063c63d719b18a84d31a17625be274471",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin de l’annexe précédente sur trois lignes, entièrement lisibles ; grande zone blanche avant le départ de l’annexe B à la page suivante. Observation de densité non bloquante, aucun contenu tronqué."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 70,
+      "sha256": "0ec2d825f62238d24077e0560aab3b0570ff4949a131ad2a45a39efb8b3b4943",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Ouverture de l’annexe B : titre long tenu dans la largeur, introduction et début du tableau architecture à deux colonnes lisibles ; dernières lignes restent au-dessus du folio."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 71,
+      "sha256": "9b66fc203bca60ebcb8f7499b554d84edc3e47c87942e0a6869cd14b987b36ac",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite du tableau des scripts : en-tête répété, noms de modules et responsabilités lisibles ; transition vers les horloges de présentation propre, sans coupure de cellules."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 72,
+      "sha256": "d7a610ab90b9e238f8737d9f1af52038ddf9bde7a5f8fc985cb4da48b18b21a3",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Prose sur cinématiques, dossier, accueil et limites de simulation : paragraphes réguliers, liens et valeurs d’échelle nets ; sous-titre final accompagné de son texte, marges préservées."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 73,
+      "sha256": "68910e7fd436040c0f5378eb5e7ff6af837b84a1ebf94b0db8cd076d05881b2b",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Architecture du rappel local et des escaliers : corps de texte continu et lien vers l’annexe 0.9 lisibles ; aucun écrasement des identifiants ni débordement sur les marges."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 74,
+      "sha256": "d6492189ead30092fa80664430f2b4c3731b371de3604bfd08b838c3b213a585",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Persistance, incident et air respirable : les sous-sections et la réserve en gras se distinguent ; liens, nombres et lignes de fin propres, sans collision avec le pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 75,
+      "sha256": "0207821f2e4f9a07454070ff67449a2d760d34267d3fc734b111b7baeb2e372f",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau des composants UE5 : noms longs contenus dans leur colonne et responsabilités bien séparées ; section Portage du rappel conserve un paragraphe complet avant le pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 76,
+      "sha256": "3660039bb3fb54b976d27d40b628bb8b998f15c24fb898259c552e12419c5915",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Portage, streaming et effondrement UE5 : titres longs et liens intégrés tiennent dans les marges ; texte et soulignements sans collision ni glyphes manquants."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 77,
+      "sha256": "a00649a548cab2ab873a3c29ce068fde555e366294fe52cc9a0ae754f1e77db6",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Référence corrigée P01 à P64 visible. Titres, paragraphe de contrats et première ligne du tableau tiennent entièrement ; pied 77/186 dégagé."
+      ],
+      "review_basis": "Corrected page opened directly by root from the first exact CI Word; current exact CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 78,
+      "sha256": "0230c7146b27ed666c6794fd95c773aea3cc324642d5dc3adc12c3d5cc877ba9",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau des jalons poursuivi avec en-tête répété, lignes complètes et contraste régulier ; section du contrat perceptif lisible jusqu’à sa fin, sans débordement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 79,
+      "sha256": "4fcf9cda7034873de7b4f50bc9974895a6df70ab083a994e20de752a17ecdc2b",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Ouverture de l’annexe C : titre, version historique 0.8 et périmètre clairement séparés ; tableau à deux colonnes sans texte coupé en bas de page."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 80,
+      "sha256": "409dc3e9ead11a648200d7e585670fc7ee34cac51f79ed41cde71c32a86dfcdc",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "En-tête du tableau de périmètre répété, puis géographie et parcours numéroté : retraits cohérents, cinq étapes lisibles et folio séparé du dernier paragraphe."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 81,
+      "sha256": "d737831c410a37a2e4d83a4db98d76bb5864a15c3287d6f2558e7d1af5678149",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau des quatre phases et de l’après-impact : cinq colonnes, durées et libertés du joueur clairement enveloppées ; aucune ligne ou bordure masquée, texte de conclusion complet."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 82,
+      "sha256": "eefaa2615fc96056439bf76afcf78f922979bd958c38bb724fa3e8f585cbdf26",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau des plans d’arrivée puis début du script radio : cellules de récit bien espacées, titres accompagnés et deux premières répliques lisibles jusqu’au bas."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 83,
+      "sha256": "62bee9217c7e94a9505216b5b5562c0c067314afabe2301da4fc0b440203d975",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Long tableau radio avec en-tête répété : repères, déclencheurs, voix et répliques restent distincts ; dernière ligne et note de conditions entièrement visibles au-dessus du folio."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 84,
+      "sha256": "9ceec8fd13d4e813381367e28f49cd83a7bb5b013d70a09f211f88780d2f819b",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau des conséquences puis tableau sauvegarde : largeurs adaptées, bordures et alternance régulières ; chaque titre est suivi de son texte ou de son tableau, sans chevauchement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 85,
+      "sha256": "cec66ac5c215b1b7a96b4488cf7d5d87f54005d77d22b28785281c66e4687dc2",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite des scénarios de reprise avec en-tête répété, puis confort et portage : cellules complètes, identifiants lisibles et marges régulières ; texte final continue proprement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 86,
+      "sha256": "1365aea3b95925c4050482270118a2d7773bfbebfa055cefda3977b7d552d84b",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Critères de revue en liste et cohérence de l’horreur : puces bien alignées, intertitres espacés, fin d’annexe aérée et pied de page intact."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 87,
+      "sha256": "a1d78428e79ed22221b34c7684f21af42d9fcc8a0d120febee344436f3c5c8e3",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Annexe D : titre long de communications tenu dans la page, historique lisible, tableau des six responsabilités net et complet ; conclusion et pied séparés."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 88,
+      "sha256": "d90b773cc12007c38d29f211a2517262308abfbf9bfa42de88ae643147986335",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Repli de Bravo puis tableau nominatif des réceptions : noms, identifiants et présentations clairement alignés ; section sous-titres conserve son introduction, sans titre isolé."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 89,
+      "sha256": "22aaa36d43ab424e4babae27d362b4abb159bd35382ddd1959a94348ce6eeae9",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau d’ordonnancement radio puis Journal et compte rendu : contraste et retours de ligne réguliers ; les quatre noms d’onglets en gras restent lisibles, dernier paragraphe entier."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 90,
+      "sha256": "964b69de48fe1316626ff8b698154948e90f2633957be6a6a05dd09700d7024c",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Écho après Samuel et migration : deux tableaux compacts, en-têtes nets, dialogues et accents lisibles ; prose finale poursuit sur la page suivante sans troncature visuelle."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 91,
+      "sha256": "4dded192d70c0f396396bb221812bf706bdacb4a535879aef518994f6f1a5b5d",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin des communications : titres, citations courtes et liens de sources bien distingués ; fin d’annexe à mi-page conservant une composition lisible, aucun défaut de marge."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 92,
+      "sha256": "12952fcb2e4116135b293ad423bc029b7098fe536fd07251f19301a53dd589f7",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Ouverture des props : mention 64 fiches et 12 observations nette, historique 60→64 explicite ; conventions et règles de placement s’enchaînent sans chevauchement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 93,
+      "sha256": "d652d3d89870902e7d0959a8476cefea8a2518f247263d94eb51a54760b4e6c2",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches P01–P03 : titres, statuts et rubriques en gras structurent la prose ; règles du treuil et de la stabilisation lisibles sans perte de ligne ni conflit avec le pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 94,
+      "sha256": "c918d88b2e145dc2e2a565411e48a584c50bd798b0c4b48089c5181c4813c4e4",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches P04–P07 : unités, valeurs de vitesse et signes ± correctement rendus ; séparations de fiches régulières, début de P07 accompagne ses paragraphes."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 95,
+      "sha256": "8f1441305f756e86f8ad2187b18ee80e890a1e62f3d76e3f3fd67d360dd3e711",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches caisse, civière, couverture et registre : blocs denses mais rubriques et chiffres nets ; P11 se termine au-dessus du pied avec l’ensemble de sa recette visible."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 96,
+      "sha256": "99ce45414bfe6efe037199768afb4fa5905f8c61bb24397c2c363cca3f460e63",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "P12 puis architecture P13–P15 : hiérarchie de section et fiches nette, caractères de dimensions et paragraphes lisibles, aucune coupure de titre ni débordement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 97,
+      "sha256": "885d2fc01e1f9f4dec087cd6d1196070d036bafbf026d1da6555a815682ece0d",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "P16–P20 : dimensions et vitesses correctement composées, fiches distinctes et P20 débute avec son paragraphe, sans titre seul au pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 98,
+      "sha256": "a3e79d1a1404ccf80297939b782c1227f8b54d18c8c161b2ba30e2fc23452815",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin de P20, gravats, relais et table de restaurant : rubriques actuelles/campagne bien visibles, section Mobilier distincte et texte complet dans les marges."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 99,
+      "sha256": "bdcacc3d76bcb065abd90dfc9c3040f8cdf04829538ae3ec184699817f83ce6c",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "P24–P28 : hiérarchie des fiches et rubriques nette, dimensions lisibles ; la valise commence avec son observation et les lignes restent au-dessus du folio."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 100,
+      "sha256": "6d99b1e2eeeff654d17448d0067f7261a90556dd05825b7d33d7eeca9cb713bd",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "P28–P32 : dossiers, archives et preuves en prose régulière ; les statuts et débuts de fiches ressortent, aucune ligne masquée ni élément hors page."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 101,
+      "sha256": "0930db04140c1d768848c2674b31b0952520b55da7de8690a8e7f5ab5c848a43",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "P32–P36 : jouet, dessin, bassin et transat lisibles, rubriques en gras et dimensions distinctes ; la continuation du transat est régulière, sans zone coupée."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 102,
+      "sha256": "e384b4a02009bb2e2422158bae56cffe44aa33e6f4276229cadd93f1023d5040",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Réseaux et outils P37–P40 : les statuts longs s’enveloppent proprement, sous-sections et recettes conservent leur hiérarchie ; dernier titre accompagné de sa fonction."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 103,
+      "sha256": "a7dc712c28769b1f23775125f6f6d02df5f957cfaf38a80efa899d0e629b99a5",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "P40–P43 : réserves respiratoires, détecteur et extincteur présentés avec statuts distincts ; rubriques longues et nombres gardent une bonne lisibilité, fin de P43 entière."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 104,
+      "sha256": "24c83da6792c3ca1f8e2f4b80614515aeacd85445043f8fa7df48fe7b0a9b108",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "P44 puis Recherche et profondeur P45–P47 : changement de section clair, titres et chiffres propres ; aucun texte hors marge ou masqué par le pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 105,
+      "sha256": "8342d5f31427e8783df7b1a93cf0d9370038608a1d37c7a654fdfadb2096b860",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "P48–P52 : fiches de recherche et début hélicoptère régulièrement espacés ; identifiants P666/I04 et dimensions rendus proprement, pas de texte coupé en bas."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 106,
+      "sha256": "6aac370827f43e72afe5b48e629d98f5f5f90ccb887ed2e497ccb9b200e85e34",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin hélicoptère puis accessoires infernaux P53–P55 : long titre de section contenu dans la largeur, avertissement de périmètre en gras lisible, blocs et folio séparés."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 107,
+      "sha256": "2468788397b52853c39ef0e4454e4fc1c4f3406ebde86f0ef94734b3606effa7",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "P56–P59 : quatre fiches infernales structurées et entièrement lisibles ; titres, identifiants, dimensions et rubriques de recette ne débordent pas."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 108,
+      "sha256": "937cf635283c2fa08271d427616d92736d4c6f9b8b7c0d69a74827634031a513",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "P60 puis nouvelles liaisons P61/P62 : transition 0.9 claire, valeurs d’implantation et états de station bien rendus ; les deux nouvelles fiches restent complètes dans la page."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 109,
+      "sha256": "c614886a761221ab32917aff795ec95ba46c3acad208c7dd0041fad93dea38d7",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches P63 et P64 entièrement lisibles, titres et longs paragraphes dans les marges ; transition vers les douze observations de terrain et folio sans chevauchement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 110,
+      "sha256": "a777a561dd055e87cf9604ab5ce77478f848288d69bb5182bf7a0fb9e5112e69",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableau des douze objets examinables complet avec colonnes et références bien contenues ; conditions de lecture et début de continuité lisibles, aucune coupure de cellule ni débordement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 111,
+      "sha256": "f6d3cd3a95db030a885527d2d42bdab76d8dd34a8e81f7db08b09423c7967e42",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite des observations, identifiants longs, critères de production et liens locaux bien contenus ; titres avec texte associé et fin d'annexe propre."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 112,
+      "sha256": "47fa77e3680e06f374450379322616b6abaccf25d9e6b9cfd45af41d122e7e0b",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Titre de l'annexe F et version historique lisibles ; distinction entre présence actuelle et campagne explicite. Tableau des archétypes E00–E04 démarre sans coupure de ligne et reste au-dessus du folio."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 113,
+      "sha256": "c461d2bb4c65a920087c21b0d737ea468abf03d5651a8f7ea95833cd345d4fe3",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite du catalogue E05–E16 avec en-tête répété, toutes les cellules contenues ; fiche E00 et début de son tableau actuel correctement séparés du folio."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 114,
+      "sha256": "f4080b4f84613bdbbf10206b445de3f3e98e566404b06c9ec3daa0657575358e",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite du tableau E00 et fiche E01 entièrement lisibles ; en-tête répété, valeurs et distinctions historiques sans défaut typographique, aucun titre isolé."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 115,
+      "sha256": "de8eca309f79d105f95bdba14862a7fe0397a8684fa7aaecd98274563042e951",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches E02 et E03 complètes, longueurs et statistiques lisibles ; emphases, accents et degrés correctement rendus, marges et folio dégagés."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 116,
+      "sha256": "d1cab5ea2db017a9678ce9c44dfdf8368fb260d331d88a706ca687e18a6c4f46",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches E04 et E05 puis début E06 lisibles ; hiérarchie des titres cohérente et titre E06 accompagné de son premier paragraphe, sans chevauchement du pied de page."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 117,
+      "sha256": "9c23bd5ee16afd9a75c423179d0240412f054311d34835a3a23b37eebb60b50f",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite E06, fiche E07 et début E08 correctement enchaînés ; paragraphes de statistiques et de reprise entièrement visibles, aucun titre isolé ni texte hors marge."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 118,
+      "sha256": "3c33ab830cc87dd651b48b8ce89ef8e678387ae13fff504bef51700872683495",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite E08, fiche spatiale E09 et début E10 lisibles ; longues phrases et sous-sections en gras bien contenues, accents et caractères spéciaux rendus, pied de page dégagé."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 119,
+      "sha256": "474172cb34a7103a51643abbdc0021bf162435c873a97081451adf87286939eb",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin E10 puis fiches humaines E11 et E12 complètes ; différences de rôle, valeurs et reprise lisibles, longs blocs sans débordement ni collision avec le folio."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 120,
+      "sha256": "2d0a4d18ad8d0e43804eb358445aed47bb9a09d63573524fb3acd49efd95a85e",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches E13 et E14 puis début E15 ; longs titres des entités infernales restent dans la largeur utile. Statistiques, degrés et continuation de paragraphe lisibles jusqu'au bas de la page."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 121,
+      "sha256": "e2c84ba222956a6d07b31547879c3c73b935fe48c6d6257a0e8dfc6c347f681b",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin E15, fiche E16 et contraintes communes entièrement lisibles ; titre long sur une ligne, valeurs et paragraphes bien espacés, aucun débordement ni chevauchement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 122,
+      "sha256": "16668b10e3e988ed152d94d65e5207320e11030a0bc81f5aa5223ed3edbc91d0",
+      "status": "pass",
+      "reviewer": "/root/v09_docs",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Page 122 ouverte directement à taille native via view_image. Titre Profils de difficulté proposés, tableau à quatre colonnes et six lignes, rubrique Données de production et recette, corps et liens entièrement lisibles. La cellule Pression / Vérification des indices affiche correctement Mêmes preuves, aide plus tardive. Aucun texte tronqué, chevauchement, glyphe manquant ou débordement observé ; en-tête Version 0.9.0 et pied 122 / 186 nets."
+      ],
+      "review_basis": "Corrected page122 opened directly from normalized canonical Word; final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 123,
+      "sha256": "0b8b381f047142d1f42d5684191877827e7b90c5a53d284ccd1244f38f91f24a",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Ouverture de l'annexe G propre : long titre, intentions visuelles et texte sur les limites actuelles lisibles. Début du tableau des cartons SC00 contenu dans les marges, trois lignes complètes avant le folio."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 124,
+      "sha256": "9d6fa32651eeef0117a64d9ed8a4b0cb295bedb61b983e2f1f6ea8d314b6745d",
+      "status": "pass",
+      "reviewer": "/root/v09_rope",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite du tableau SC00 avec en-tête répété, texte caméra/son et début SC01 lisibles. Tableau des contextes d'accueil bien aligné et ligne 27 complète, sans coupe de cellule ni débordement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 125,
+      "sha256": "3d56e6ab54c42a050f442004b48a3cb849908d7ca5433a792c6ecc601326bc24",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Table de cadrage accueil complète pour 26/refuge ; paragraphes et sous-titres Actions/Composition lisibles, marges et pied 125/186 dégagés."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 126,
+      "sha256": "98b36a1b935d6bfb03a9f7e8083621ae287439b23127d964301367c31c8def24",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Titre SC02, tableau des quatre plans et début du tableau de dépose lisibles ; première ligne entière en bas, aucun chevauchement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 127,
+      "sha256": "5f325ed43c71f4263f01467bcab57a6d66e3f48b8d25b9692eee54878d68409d",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Table de dépose continuée avec en-têtes répétés et lignes intactes ; textes des communications lisibles jusqu'au bas de page, pied séparé."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 128,
+      "sha256": "c494406e1b88cc00c58334bf97eec63127672951df7415bcd3168f1485c6490d",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin SC02 et titre SC03 bien hiérarchisés ; lien Sauvetage visible lisible ; table d'apprentissage commence avec une ligne entière."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 129,
+      "sha256": "56fb59d52e16337921494be38fb2565b98c0e154821df39f3818b08a002670f4",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Table SC03 poursuivie avec en-têtes et cinq lignes entières ; prose de traversée et titre SC04 nets, continuation du paragraphe en page suivante régulière."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 130,
+      "sha256": "826bf98f1e957746a58605bb10a01b8afe4249e9e3a8132c9f1e3c322896013d",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "SC04 puis titres SC05 et SC06 bien espacés ; liens et accents rendus, paragraphes denses mais sans débordement ni collision avec le pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 131,
+      "sha256": "44cf954ae05d8d7ac48996d77072c356a5631106fb83ea01c2dada8ff5d6035f",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Table des trois plans de clôture entièrement visible ; sections Passage/Bilan et lien final nets, espaces suffisants autour des éléments."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 132,
+      "sha256": "d746726d9acbb3e728e09dfe5c007cfdc9f6ae87e5826e14134f162a6abcd8ca",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Titre Storyboards et sous-sections SC07 à SC10 lisibles ; paragraphes et mises en gras réguliers, aucun glyphe manquant ni débordement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 133,
+      "sha256": "78138ae3859be6ac929b08be1eac91ed66810ca16b976446a46e4d3d527b0f92",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite SC10, SC11 et SC12 clairement structurées par titres et amorces en gras ; dernière phrase poursuit normalement page suivante, pied non chevauché."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 134,
+      "sha256": "6cdb82a6573d1387d88725f2846743a3b99dda68846070877a2f573781f48d09",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "SC13, SC14 et SC15 nets ; accents, apostrophes et numéros des props lisibles ; aucun chevauchement dans les paragraphes de franchissement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 135,
+      "sha256": "216ed2ce48c875f7e07108af021be34b15179a4743ea8fb352937c74189631ae",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Chapitres Contrats et Sources clairement séparés ; longues références de scripts et lien final restent dans les marges, texte sans collision."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 136,
+      "sha256": "7449fc279f61310f58c460304d97363efc14c3f4d478997fcb62db7500129d9f",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Ouverture Annexe H et titre Déplacement bien lisibles ; les deux premières lignes Marche/Course du tableau sont entières et correctement espacées."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 137,
+      "sha256": "88b6201cd78bda6908813d92fca303f82b2a32ce859930f662cf954ebf7cc474",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Table des paramètres de portage à caméra complète ; unités m/s², × et ± correctement rendues, sections de sensation lisibles."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 138,
+      "sha256": "a7fc55189d94449303784dc422fb90ca4cbdee2d0117e0fc59ff704b5dc7f5fb",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Table des six liaisons entièrement lisible ; description des escaliers et garde de palier nette ; trois premières commandes de rappel entières en bas."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 139,
+      "sha256": "1b136fb1eeb372bbeb3485dd9288fccc64853888b9880d429e9bafc3bbb2bed1",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite du tableau de commandes complète avec en-tête répété ; coordonnées, seuils de sortie et stabilisation lisibles, signes moins et ± corrects."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 140,
+      "sha256": "1603091e18318e76b0c2c0a11a8ed2a8a671e6fd66307ba0d93c1338e9d560c6",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin rappel puis titres Interaction et Sauvetages clairement séparés ; liens et texte en gras lisibles, continuation finale sans chevauchement du pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 141,
+      "sha256": "3033d86e348455bee4c3bd575f51592cff14ac38389535f7d3f6474bd0ca4691",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Table des trois personnes sur quatre colonnes sans coupure ; cible de campagne puis trois lignes initiales de ressources correctement disposées."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 142,
+      "sha256": "5e4c251beb302a3bea999bdd135d784447df3e4a1f46f658d84d41e0f816bf8d",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Table des ressources reprise avec en-tête, valeurs et unités lisibles ; paragraphes Dangers et Équilibrage restent dégagés du pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 143,
+      "sha256": "91df00e7437ed12477febae9811563194b43b3f0f9f9f7bdbf3c41698b3d5932",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Sections Radio et Objectifs nettes ; nouvelles conditions de palier et sauvegarde lisibles dans la prose, bas de page sans troncature."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 144,
+      "sha256": "13ea6abad5fa5214f12466e9828b6ed0430b12e7872f6961a903387802b79f1e",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Titre Personnages et fiches Alex, Leïla, Ana bien hiérarchisés ; paragraphes en gras/romain alignés, accents et pied de page corrects."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 145,
+      "sha256": "295cbb7b6ab7846c2fa49eca2891664b64832a06c8e1e21c3da6c85f532b1fa7",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches Samuel, Nora, Malik et Inès lisibles ; titres ne sont pas isolés et amorces en gras restent bien distinctes."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 146,
+      "sha256": "5ff058bac00b1bc3829da99083c941421ba950de970f0704631bdb4e8b10008b",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fiches Alma, Eva et équipes alignées ; chapitre Réglage commence avec son paragraphe entier, aucune collision avec le pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 147,
+      "sha256": "3ad4390796fe1dfa4664833811dc3ccdbc16e250fe683b16c3bbb6309ee0c384",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Mention prototype 0.9 corrigée dans les cibles futures. Liens, intertitres et paragraphes sont lisibles sans troncature ; fin de paragraphe continuée à la page suivante."
+      ],
+      "review_basis": "Corrected page opened directly by root from the first exact CI Word; current exact CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 148,
+      "sha256": "0be105f95fa63bf30f618839916ba5990575f1e825111e140833901e769f2027",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin d'annexe avec section Agir dans la dimension infernale ; contenu net dans la moitié haute, espace blanc de fin de section sans texte tronqué."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 149,
+      "sha256": "6e8851750aee39ecc4393e37d4d537c9c10ee6e33f7404ade635395aded7accd",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Titre long Annexe I tient dans la largeur ; tableau des cinq états de secours entier, marges et espacements cohérents."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 150,
+      "sha256": "bd958d73c4b4d816757303f5e10436ce0056b414984606e5d9cfb607359197ec",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Titres Portage/Mise au treuil et coordonnées lisibles ; tableau chronologique débute par un en-tête et une ligne complète, aucun texte coupé."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 151,
+      "sha256": "a23136c6a73cd1a9a2142f4cbe70a4bea902269334a43089f62bd526a3e546bb",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Chronologie du transfert terminée avec en-têtes répétés ; sections Retour d'information et Travail visible lisibles jusqu'au dernier paragraphe."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 152,
+      "sha256": "992d06e051d63389f91ef6b77db0355867896f81cf400a52a0609e43cb8f79d4",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Chapitres Sauvegarde et Contrat technique nets ; tableau des propriétaires complet, noms de scripts contenus dans leurs cellules."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 153,
+      "sha256": "601d2e6164d6fcab93e3625528604370dcb7dfeda21a9c0e0e084cdbb183024a",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Titres Recette, Prochaine production et Priorité du secours bien séparés ; fin d'annexe lisible avec marge basse dégagée."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 154,
+      "sha256": "ef23fe03c5eb1577d59ac33e31e3ac636e207bc28ba37cbb5414508d02f62e34",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Annexe J, intention et tableau météo complets ; valeurs, dimensions, couleur hexadécimale et signes mathématiques correctement rendus."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 155,
+      "sha256": "9e08523acd6fedad57e9ea554beb3bfeff595a87517dea8acb86902cc695fe5a",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Dernière ligne du tableau météo avec en-têtes répétés ; Confort et Fonctionnement nettement séparés, texte technique lisible."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 156,
+      "sha256": "9330f5ed45170d8e12de2a11c9826efd08134f7e590d93eeaf147e50d9db2f83",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Table à deux colonnes Intégration complète ; chemins repliés dans les cellules ; références à puces et titre Contraste lisibles, aucune superposition."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 157,
+      "sha256": "cf0d1351da104bdc0ff657b609ad9c50d941ea7bb4454bafcc77a99996c19aea",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Deux paragraphes de clôture météo en haut, entièrement lisibles ; grande réserve blanche de fin d'annexe, aucune perte de contenu visible."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 158,
+      "sha256": "6c8cd3e64f83ff6553c7d79755eb4838fc7db55c27020e6bb9061f52298fb51c",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Annexe K et tableau des réglages lisibles ; longue cellule Champ de vision augmente la hauteur sans couper le texte ni toucher le pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 159,
+      "sha256": "683d582094bb87c0b0d2e013c8d1ec02ea54010a4c990e0ca79c397f6019a4d6",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Quatre dernières lignes des réglages entières ; parcours numérotés et flèches de navigation correctement rendus ; titre Commandes accompagné de son texte."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 160,
+      "sha256": "4162ca694b04da9c1db772dab5013cdbe05363dc3318ef137efbb1f1927f8e4e",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Navigation à puces, données et contrat d'intégration lisibles ; signatures et clés techniques s'insèrent sans déborder, marges régulières."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 161,
+      "sha256": "485232092e028374d014619116fdc05a3a9d63928928d78f95922db7dc027c0a",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Liste des contrôles correctement indentée ; fonctions et titres Vérification/Manifestations lisibles, fin de section avec espace suffisant."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 162,
+      "sha256": "423ecb6db3e59cb7aff42bf25962e02c9f38847563a02a79add721e87061899e",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Annexe L et tableau des quatre onglets complets ; sous-titre Situation suivi de prose, liens et texte de navigation sans débordement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 163,
+      "sha256": "2535a7c344935d8e324e5a0a6c7b0461c796c0afcc6559b62c3a659a00d30387",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Table des personnes, liste d'états et sous-sections Indices/Historique lisibles ; identifiants techniques et crochets rendus sans troncature."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 164,
+      "sha256": "9404e9e00efda5bf3ed054d62e6f23f1560aeb1efb6c10345b89cbcc6c6507f8",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Table du bilan à deux colonnes entièrement visible ; trois actions numérotées et citation du relais nettes, espace inférieur dégagé."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 165,
+      "sha256": "2b4cc2efd4175547acd66f9d47615787c91ae943d6fc6ca8b9df2d3037e7d843",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Tableaux des trois plans et des sous-titres complets ; tableau à cinq colonnes des caméras lisible avec deux lignes entières en bas."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 166,
+      "sha256": "3744657903204c37e5789634fab5d4bf3ddece6afb2afef045564cb0bca771b2",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Dernière ligne Extérieur reprise avec en-têtes ; sections Temps, Direction visuelle et Contrat lisibles, dimensions et noms techniques correctement affichés."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 167,
+      "sha256": "cf7a7b18fc88447faf2694cb228c5d90171bc5ad78c37efdd969ccf94f733f25",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Table des entrées de snapshot complète ; signatures d'API et trois paragraphes de tests lisibles sans dépassement de marge."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 168,
+      "sha256": "d2d61326d95fbebd6eb0473e8fe0de015a56a55ccfe895615a8a7b4b1d17ca10",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Fin du dossier et continuité des manifestations clairement lisibles ; liens s'enroulent correctement, grande zone blanche de fin d'annexe sans perte visible."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 169,
+      "sha256": "6a6d2fc1e410fdbb3e41c1d9adb2391a35e32fb96e9727418841d97cd38c0c7f",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Titre Annexe M long mais contenu dans la largeur ; récit et tableau de périmètre lisibles, cinq lignes du tableau complètes."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 170,
+      "sha256": "02c031145e711d054b62b1df7cc0110812ad30ed75dfd05aa176efcb1c026a90",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Carte de l'escalade à quatre colonnes entièrement visible ; tableau des manifestations commence avec deux lignes entières, aucune collision de cellules."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 171,
+      "sha256": "132209b6f81a735c3747006edd75a6523b60da97ed58df7ab21b16c7040064ac",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Ligne Spa 26 entière avec en-têtes répétés ; paragraphe sonore et chapitre Priorités lisibles, dernière ligne dégagée du pied."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 172,
+      "sha256": "59e762b8633307cfed50be72929889e5c2d94ccc0f4630725e1e6fa2d6b133c1",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Trois chapitres Rencontres, Paranormal et Expériences nettement hiérarchisés ; textes et identifiants lisibles, aucune coupure anormale."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 173,
+      "sha256": "337cc865a520c0b8d11104edd2577ef6d002ba51fbbfee497072929be25f0a03",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Matrice des cinq programmes et preuves complète ; titres Bunker/I01 visibles avec prose, pas de coupure de ligne ni de chevauchement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 174,
+      "sha256": "6ae45911a3bf511adec03eecbf26a7aee5f2c89464899f8aafe0243da5482961",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Sections I02, I03, I04 et Personnages clairement hiérarchisées ; ligatures œ et accents rendus, début final de section reste lisible."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 175,
+      "sha256": "c9c9028bf2073e715182646fdbf2aa73e44a213f3e984307d2c34b85e3872b44",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Titres Gameplay et Direction visuelle bien espacés ; paragraphes continus lisibles, dernière phrase se poursuit normalement page suivante."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 176,
+      "sha256": "96619ea2fd408cf4184c8fc57cf97ffb3485b15e85d9179cc27cabbb720060cd",
+      "status": "pass",
+      "reviewer": "/root",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Total corrigé de 64props P01–P64 visible ; distinction entre productionfuture et contenu livré explicite. Paragraphes et liens entiers, fin d’annexe aérée, folio 176/186 dégagé."
+      ],
+      "review_basis": "Corrected page opened directly by root from the first exact CI Word; current exact CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 177,
+      "sha256": "3516862c6dcff4e8fedf73f15a7254690a6a883103987a42cc5ee1ffae5f2b17",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Annexe N version 0.9 nette ; grand titre, périmètre et intention lisibles ; Graphe livré commence avec son introduction complète."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 178,
+      "sha256": "15017eae204c672dc7c4be15adcdd384410adc9351226a851794f85e3d99af97",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Table à cinq colonnes des six liaisons complète, retours à la ligne propres ; implantation et coordonnées lisibles avec signes ± et × corrects."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 179,
+      "sha256": "089d3de440c93a29c31623133e0ac5d769cc20e82afd36850144eccbfa3631d1",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Dimensions des caps, couloir treuil et escaliers nettement lisibles ; coordonnées et chiffres décimaux non tronqués, titre et paragraphes bien espacés."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 180,
+      "sha256": "14684d2e84d573707692b76f463006c6aa301e364d1617acaf5d902dc54a67a3",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Cycle du rappel organisé en Lire, Se déplacer et Sortir ; seuils et durées lisibles, aucun chevauchement ou glyphe absent."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 181,
+      "sha256": "2a107560e6475eea4376b4bda310ffa60eec3f9bbea394695dbf5548813dc017",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Table des neuf commandes entièrement lisible ; coûts et m/s² bien rendus ; chapitre Stabilisation commence sans titre isolé."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 182,
+      "sha256": "c574668b8e569b68946c0a57fb7c3573ea96e3f4475e0df5ebabfb7a5b4def06",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Longueurs de corde et champs du HUD lisibles ; Présentation subjective puis Portage bien séparés, continuation basse régulière sans collision."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 183,
+      "sha256": "281ef61ec32343a5c51e7b94e8fb7e734d3e4c3abd6b32582c378390ece5a888",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Priorités, sauvegarde et props lisibles ; nouveau total de 64 références visible ; tableau commence avec P61 entier et en-tête."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 184,
+      "sha256": "68711ef8c1db0f45b960bb4d31a6c509e03a68b488779c2c148664f39c44dc94",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "P62–P64 repris avec en-têtes ; tableau de validation Catalogue à Incident lisible jusqu'à la dernière ligne complète, aucun débordement."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 185,
+      "sha256": "5796de7251641faad5890c24b4b0c3db4e23d1b2cd7cd449298a5907ecf6fc14",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Suite de validation Sauvegarde/Présentation/Treuil complète avec en-têtes ; chapitre des extensions lisible, marge basse suffisante."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    },
+    {
+      "page": 186,
+      "sha256": "d8329218572f10eb6912bafeeae8e2973e6c3e0b9c3dbcd18714015c9d23ed02",
+      "status": "pass",
+      "reviewer": "/root/v09_routes",
+      "reviewer_type": "AI assistant visual inspection",
+      "notes": [
+        "Dernière page Sources de référence : titre et deux paragraphes de liens entièrement lisibles ; texte s'enroule correctement, pied 186/186 net."
+      ],
+      "review_basis": "Initial canonical page directly opened; exact final CI Word canonical PNG is byte-identical.",
+      "width": 1414,
+      "height": 2000
+    }
+  ],
+  "limitations": [
+    "Pagination depends on the renderer and installed fonts. The distributable PDF is reviewed independently against its own rendered pages."
+  ]
+}

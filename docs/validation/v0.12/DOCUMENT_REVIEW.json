@@ -1,0 +1,129 @@
+{
+  "format": 1,
+  "version": "0.12.0",
+  "reviewer": "assistant /root/textures_v012",
+  "reviewed_utc": "2026-11-25T22:05:12.617859+00:00",
+  "all_pass": true,
+  "sources": [
+    {
+      "file": "docs/CONTINUATION_A22_A20_V0.12.md",
+      "bytes": 29751,
+      "sha256": "bc4c970b22b1213eb1cf743ebc5cadfe0c1d8ef4715576a842fccdda04d04fbb"
+    }
+  ],
+  "generator": {
+    "file": "tools/build_commerce_document.py",
+    "bytes": 6739,
+    "sha256": "fdd8f29ac4aec1d14260e9d757cddadfc80479ec3fc4566fc66d727280b6ba30"
+  },
+  "artifacts": [
+    {
+      "file": "docs/The-Tower-Descent-Continuation-v0.12.docx",
+      "bytes": 52570,
+      "sha256": "6e077aa63d7105d18306578642eb408519083965e278a3513abdf7b5d5e44c06"
+    },
+    {
+      "file": "docs/The-Tower-Descent-Continuation-v0.12.pdf",
+      "bytes": 217394,
+      "sha256": "a7e3793801f0c1dd3b6b301b424ee70302e9277399e4b327f0290b1cd749f9db"
+    }
+  ],
+  "page_count": 9,
+  "rendered_from_pdf_sha256": "a7e3793801f0c1dd3b6b301b424ee70302e9277399e4b327f0290b1cd749f9db",
+  "content_verification": {
+    "file": "docs/validation/v0.12/DOCUMENT_CONTENT.json",
+    "bytes": 15996,
+    "sha256": "4d715910604d4c5a62099a74745604550ebebe0c7875b456c5d03d8fb43699bd"
+  },
+  "pages": [
+    {
+      "file": "docs/validation/v0.12/document-pages/page-1.png",
+      "bytes": 403043,
+      "sha256": "ac107bd67dae14c32c41c728e414f00fc56b42a6f44f2171f6ecf09cea798e70",
+      "page": 1,
+      "status": "pass",
+      "observation": "Image strictement identique à la page déjà inspectée ; lisibilité, marges et absence de texte tronqué vérifiées lors de cette revue conservée.",
+      "review_method": "previously_opened_identical_sha256"
+    },
+    {
+      "file": "docs/validation/v0.12/document-pages/page-2.png",
+      "bytes": 439588,
+      "sha256": "9dff9ce8e43a07181babf798fc6e337c9a16e7834b2640c0602b9cb7ffcc41d8",
+      "page": 2,
+      "status": "pass",
+      "observation": "Image strictement identique à la page déjà inspectée ; lisibilité, marges et absence de texte tronqué vérifiées lors de cette revue conservée.",
+      "review_method": "previously_opened_identical_sha256"
+    },
+    {
+      "file": "docs/validation/v0.12/document-pages/page-3.png",
+      "bytes": 486630,
+      "sha256": "b230e34a9d8487ff09a3a33ac0d9371191fb5980cf69b9ac72e405d683737313",
+      "page": 3,
+      "status": "pass",
+      "observation": "Texte corrigé de la cuisine lisible : disparition immédiate de la fumée. Les sections cuisine et refuge restent complètes, sans débordement de pied de page.",
+      "review_method": "opened_final_png"
+    },
+    {
+      "file": "docs/validation/v0.12/document-pages/page-4.png",
+      "bytes": 427480,
+      "sha256": "65cfc1cb3860bf762020abef8eb4996f6fd2cad1712eff09f62a0b8e89617239",
+      "page": 4,
+      "status": "pass",
+      "observation": "Règles des escortes et tableau des trois personnes entièrement lisibles ; titre du Retranché accompagné de son paragraphe, aucune cellule tronquée.",
+      "review_method": "opened_final_png"
+    },
+    {
+      "file": "docs/validation/v0.12/document-pages/page-5.png",
+      "bytes": 453154,
+      "sha256": "7fb8534de87771b9ef1993d8e5f25852b907a4deb01f0fcc67b43182fe46aad6",
+      "page": 5,
+      "status": "pass",
+      "observation": "Rencontre du Retranché et tableau des constats lisibles ; texte ordonné, aucune ligne ou cellule masquée.",
+      "review_method": "opened_final_png"
+    },
+    {
+      "file": "docs/validation/v0.12/document-pages/page-6.png",
+      "bytes": 416657,
+      "sha256": "d95f11aaafafb728c01f9d2298082f831008f1723eaaa924bfa2830e0418d1b3",
+      "page": 6,
+      "status": "pass",
+      "observation": "Image strictement identique à la page déjà inspectée ; lisibilité, marges et absence de texte tronqué vérifiées lors de cette revue conservée.",
+      "review_method": "previously_opened_identical_sha256"
+    },
+    {
+      "file": "docs/validation/v0.12/document-pages/page-7.png",
+      "bytes": 468062,
+      "sha256": "f41d7752e1089dfb09904ae4166cc54a9612ec0361728ae89d2f7d01d7df1580",
+      "page": 7,
+      "status": "pass",
+      "observation": "Image strictement identique à la page déjà inspectée ; lisibilité, marges et absence de texte tronqué vérifiées lors de cette revue conservée.",
+      "review_method": "previously_opened_identical_sha256"
+    },
+    {
+      "file": "docs/validation/v0.12/document-pages/page-8.png",
+      "bytes": 464864,
+      "sha256": "a83ddf3112d6c51b47b6938220dd259d7a0eac3f556aff01832d7746b174e07f",
+      "page": 8,
+      "status": "pass",
+      "observation": "Image strictement identique à la page déjà inspectée ; lisibilité, marges et absence de texte tronqué vérifiées lors de cette revue conservée.",
+      "review_method": "previously_opened_identical_sha256"
+    },
+    {
+      "file": "docs/validation/v0.12/document-pages/page-9.png",
+      "bytes": 451067,
+      "sha256": "a4c2f558d14bac41053515a9deb364163af8777d9c465506bd26d8bf29cb3dd0",
+      "page": 9,
+      "status": "pass",
+      "observation": "Image strictement identique à la page déjà inspectée ; lisibilité, marges et absence de texte tronqué vérifiées lors de cette revue conservée.",
+      "review_method": "previously_opened_identical_sha256"
+    }
+  ],
+  "limitations": [
+    "Document layout and text completeness only; gameplay and renderer captures require separate review.",
+    "No claim of a human playthrough."
+  ],
+  "source_commit": "2e4de42ce85a42c80dae97a1de9985194430d9b6",
+  "request_commit": "9756f0b707c1ffc72284754ec1f1ff301ffdd960",
+  "bound_by": "assistant /root",
+  "bound_utc": "2026-11-25T22:21:07.556815+00:00"
+}

@@ -1,0 +1,352 @@
+# Gameplay détaillé, réglages et personnages
+
+**The Tower Descent — base de conception v0.10, annotations de périmètre v0.12.0.** Les paramètres du secteur supérieur reprennent la base 0.9 ; les sections historiques conservent leur version de référence. Les valeurs désignées « actuelles » proviennent du prototype de cette version. Les valeurs « cibles » sont des propositions de réglage pour une prochaine tranche et doivent être éprouvées en jeu. Une fiche de conception ne signifie pas que la fonction correspondante est déjà programmée. Cette annexe complète la bible avec des contrats utilisables par la conception, l’animation, le son et les essais.
+
+## Périmètre de la candidature v0.12 — commerces, cuisines et refuge 20
+
+Le [supplément A22–A20 v0.12](CONTINUATION_A22_A20_V0.12.md) décrit la continuation intégrée après le bilan du 23. Le choix explicite « Poursuivre vers les commerces » enregistre le départ avant de construire les nouveaux étages. Les trois réceptions au toit et celles de Léa Mercier et Idris Kaci au refuge 25 restent acquises. La reprise d’un ancien bilan n’engage pas automatiquement la suite. L’arrivée sur des tours intactes et l’effondrement vécu dans le secteur supérieur conservent leur ordre.
+
+| Étage | Intervention de cette tranche | Confirmation attendue |
+| --- | --- | --- |
+| 22 | Dégager le volet au Halligan, contacter Mina Bensaïd et relever le registre des livraisons | L’ouverture autorise l’escorte ; seule l’arrivée de Mina au refuge 20 confirme sa réception |
+| 21 | Isoler le réchauffeur, déployer la couverture coupe-feu, contacter Théo Lenoir et relever la consigne de maintenance | L’isolement précède la couverture ; la réception de Théo exige son arrivée au 20 |
+| 20 | Accompagner Sofia Renard à son repère et remettre le relais en service | Le bilan exige les trois réceptions physiques, le relais et les deux constats collectés |
+
+Les trois personnes suivent des parcours préparés avec collisions ; elles attendent lorsque le joueur s’éloigne. L’ordre de suivi n’est pas un sauvetage confirmé. Le dossier atteint huit personnes reçues seulement après les trois nouvelles réceptions. Le registre du 22 et la consigne du 21 sont distincts des deux pièces de l’exposition au 23.
+
+Les nouvelles liaisons sont **S23_22 au sud, S22_21 au nord, S21_20 au sud et R22_21 facultatif**. Chacune relie deux étages adjacents et reste réversible. Le catalogue comprend six liaisons dans le secteur supérieur, huit avec A24–A23, puis douze avec A22–A20. Les escortes utilisent les escaliers ; le rappel facultatif reste personnel. Les douze modèles statiques Commerce et leurs fonctions sont décrits dans [Props et interactions](PROPS_INTERACTIONS.md) et dans le supplément.
+
+Le Retranché présent au **22** propose une interaction facultative d’apaisement, à distance et lampe abaissée. Il n’a ni attaque, ni poursuite, ni santé de confrontation. Cette adaptation n’implémente pas les statistiques ou les gestes de la fiche **E11 de campagne au 21**, qui conserve son statut de spécification. La présence distante des cuisines prolonge les perceptions incertaines ; les dimensions infernales restent à produire. Aucune nouvelle cinématique automatique n’est ajoutée par ce chapitre.
+
+La sauvegarde courante de cette candidature utilise le **schéma 5**, avec un objet `commerce` distinct de `continuation`. La lecture d’un fichier v4 conserve son ancienne continuation et ajoute un état Commerce dormant sans réécrire le fichier. Une escorte inachevée reprend à son point de contact ; une réception confirmée reste au refuge 20. Les règles de réception et de validation viennent de [commerce_director.gd](../prototype/scripts/commerce_director.gd), les corps et parcours de [commerce_presentation.gd](../prototype/scripts/commerce_presentation.gd), les liaisons de [route_catalog.gd](../prototype/scripts/route_catalog.gd) et le format de [save_store.gd](../prototype/scripts/save_store.gd). Les résultats de validation et de revue de la candidature sont établis séparément.
+
+## Continuation 0.10 — accompagnement et reconnaissance
+
+Le bilan du refuge 25 conserve l’intervention supérieure achevée. Une commande explicite engage A24–A23 après écriture du nouvel état ; en cas d’échec, le bilan reste disponible et les accès ne sont pas ouverts. Ana, Samuel et Nora restent reçus au toit, l’effondrement demeure acquis et l’extension ne rejoue pas ces étapes.
+
+| Action | Résultat | Limite |
+| --- | --- | --- |
+| Rejoindre A24 par S25_24 | Marche dans l’escalier physique nord | Ne partage pas la cage S26_25 au sud |
+| Regarder Léa et Idris, puis E | Consigne visuelle et contact avec le duo | Aucun appel sonore seul n’est indispensable |
+| E sur le groupe contacté | Suivre ou attendre | Le mouvement suit une route préparée au sol |
+| Entrer au refuge avec le duo | Réception si les deux corps sont arrivés sur un appui | Alex seul ou une personne encore sur l’escalier ne suffit pas |
+| S’engager sur R24_23 | Rappel personnel vers l’exposition | Interdit pendant une escorte active, même mise en attente |
+| Examiner les deux pièces A23 | Maquette et photographie collectées séparément | Aucun ordre imposé ni double comptage |
+| Activer le terminal A23 | Clôture de reconnaissance | Exige duo reçu et deux pièces collectées |
+
+Le groupe marche physiquement jusqu’au refuge 25 ; l’ordre de suivi ne confirme pas immédiatement son accueil. L’escorte active bloque aussi le portage. La pause de menu suspend la simulation ; l’attente volontaire conserve la position du duo pendant la session. La navigation est guidée sur un parcours préparé, et ne constitue pas encore une IA d’accompagnement universelle.
+
+E01 joue au 23 une routine facultative de quatorze secondes avec deux répétitions au maximum. Elle n’attaque pas et ne poursuit pas Alex. Elle ne conditionne aucune des deux collectes et ne modifie pas les personnes reçues. Au stade 0.10, A22 et la première confrontation humaine d’A21 restaient à produire ; le périmètre v0.12 décrit ci-dessus ajoute A22–A20 sans livrer la confrontation de campagne.
+
+Le schéma 4 conserve une phase de continuation distincte. Les anciens fichiers sont validés puis migrés en lecture avec une continuation dormante. L’état `completed` est faux durant l’extension, vrai lors du bilan du 23. Un cliché d’escorte en mouvement est normalisé en attente : après chargement, le groupe non reçu reprend dans sa cabine au 24 avec une mise en sécurité annoncée ; le groupe reçu reste au refuge. Aucun checkpoint ne restaure les corps au milieu d’une volée ou Alex sur corde. Le [supplément A24–A23](CONTINUATION_A24_A23_V0.10.md) détaille le contrat et les vérifications attendues sans préjuger de leurs résultats.
+
+## 1 Expérience recherchée et boucles
+
+La boucle courte est **lire un espace, rejoindre une personne, sécuriser son retour et confirmer sa prise en charge**. Une avancée doit produire une amélioration concrète : un nom ajouté au poste médical, une route balisée, un relais actif ou une preuve corroborée. Le jeu évite de demander une exploration maximale pour que le sauvetage compte.
+
+Sur trente à quatre-vingt-dix secondes, le joueur alterne déplacement, observation et interaction. Sur quelques minutes, il réalise une boucle aller-retour avec une personne ou un objectif. À l’échelle d’un secteur, il rejoint un refuge, relit les faits puis choisit la prochaine descente. Ces durées sont des intentions de rythme ; elles ne sont pas des chronomètres imposés au prototype.
+
+La base du secteur supérieur permet trois transferts nommés, un incident structurel et un bilan au 25 ; la continuation décrite ci-dessus ajoute l’accompagnement du duo et la reconnaissance A23. Le trajet de référence est toit, Ana au 30, observation de Bravo au 29, Samuel au 28, respiration au 27, Nora au 26 et refuge au 25. Un retour au toit reste possible. Les preuves secondaires et l’écho de Bravo enrichissent la lecture sans devenir des conditions cachées de survie.
+
+La 0.5 ajoute douze observations facultatives réparties sur ce même parcours. Pour les lire, Alex se place à moins de 2,4 m, vise l’objet à travers un espace libre et utilise E. Le panneau suspend l’intervention jusqu’à sa fermeture ou Échap. Le registre médical et les observations de restaurant, archives et spa tiennent compte des personnes réellement reçues ; les constats distinguent les états avant et après le choc. Ces objets ne donnent ni points, ni bonus, ni collecte supplémentaire et ne modifient pas les conditions de victoire. Leur catalogue et leurs critères figurent dans [Props et interactions](PROPS_INTERACTIONS.md).
+
+La lecture ne s’ouvre pas pendant un portage, un treuillage, le rappel ou la phase active de l’incident. Une commande de secours à moins de 1,5 m garde la priorité sur une observation voisine. Cette règle évite d’afficher une page de récit à la place d’un geste nécessaire pour ramener une personne ou reprendre la corde. Elle ne retire pas la possibilité générale de mettre le jeu en pause.
+
+La 0.10 commence à étendre cette boucle avec deux personnes mobiles et leur accueil au refuge. La campagne développera ensuite d’autres points de transfert locaux, des routes de retour à préparer et une enquête sur SILLAGE. Elle doit conserver la même grammaire : signaler ce qui est certain, rendre les coûts visibles et offrir une réponse à l’action du joueur. Une nouvelle mécanique doit expliquer quel choix elle ajoute, avant d’ajouter une jauge.
+
+## 2 Déplacement actuel
+
+| Paramètre | Valeur livrée | Conséquence pour la conception |
+| --- | --- | --- |
+| Marche | 3,7 m/s avant multiplicateur du sol | Base de mesure des trajets et distances d’observation |
+| Course | 6 m/s | Courte accélération, indisponible en portant une personne ou en position basse |
+| Portage | 2,4 m/s | Retour plus lent, trajet garanti sans saut obligatoire |
+| Position basse | 1,8 m/s | Caméra abaissée ; la capsule ne change pas encore de taille |
+| Accélération horizontale | 25 m/s² | Réponse rapide dans la maquette, à reprendre avec les animations |
+| Gravité et impulsion de saut | 16 m/s² ; 5,6 m/s | Franchissement simple ; saut interdit pendant le portage |
+| Endurance | 0 à 100 | Course autorisée au-dessus de 5 ; consommation de 14 points/s en mouvement |
+| Récupération | 11 points/s hors course ; 12 points/s au repos sur corde | La montée et la descente rapide ont désormais un coût distinct |
+| Capsule | Rayon 0,34 m, hauteur 1,72 m | Enveloppe réelle à utiliser pour les collisions du prototype |
+| Regard | Caméra à 1,62 m, abaissée vers 1,12 m | Ne pas produire un tunnel bas en supposant une capsule accroupie |
+| Caméra jouable | Champ de vision 77° par défaut, réglable de 65 à 100° | Référence des vues de lecture et de la transition depuis l’arrivée |
+
+Le déplacement se fait dans un volume physique, mais plusieurs interactions de la maquette restent abstraites. S’accroupir baisse le regard et ralentit sans rétrécir le corps de collision. Il n’existe pas encore de franchissement animé d’une fenêtre, d’escalade libre ou de système de prise de main. Les passages de production ne doivent pas être validés sur la seule hauteur de caméra.
+
+La sensibilité de souris utilise une base de 0,0024, multipliée par un réglage de ×0,25 à ×2,5, soit 0,0006 à 0,006. Le regard au clavier tourne à 1,5 radian/s horizontalement et 1,2 radian/s verticalement, avec inclinaison limitée à environ ±77 degrés. L’inversion verticale affecte la souris et les flèches. Sensibilité, champ de vision et volume sont appliqués immédiatement, enregistrés séparément de la mission et accessibles depuis l’accueil comme depuis la pause. Le remappage complet reste à produire ; les plages et la migration figurent dans [Confort v0.6](CONFORT_V0.6.md).
+
+### Cibles de sensation à éprouver
+
+Conserver une marche de 3,4 à 3,8 m/s et un portage de 2,2 à 2,6 m/s comme premières plages d’essai. Le temps de retour ne doit pas être augmenté pour simuler la gravité d’une blessure au détriment du confort. Une fatigue sonore, la posture et des pauses choisies peuvent exprimer l’effort sans immobilisation répétée.
+
+Une capsule réellement basse, des franchissements courts et des animations de manipulation sont des travaux distincts. Chaque mouvement doit annoncer sa destination et permettre de revenir avant engagement. Les itinéraires portant une personne doivent être validés avec l’enveloppe la plus large et la caméra la moins mobile ; un effet de tête ne doit pas être nécessaire à la compréhension d’un appui.
+
+## 3 Traversée entre étages, rappel et ancrages
+
+La 0.9 remplace le déplacement libre sur une ligne globale par **six liaisons locales réversibles**. Les escaliers et le rappel alternent : une ouverture ne permet pas de traverser tous les étages sans quitter la corde. Le toit porte le numéro logique 31 ; les dalles sont espacées de six mètres. Les transferts des trois rescapés conservent leur montée vers le toit dans un corridor distinct.
+
+| Liaison | Passage | Retour disponible |
+| --- | --- | --- |
+| R31_30 | Rappel du toit vers le restaurant | Remontée sur le même segment jusqu’au toit |
+| S30_29 | Escalier entre restaurant et suites | Marche en sens inverse vers le 30 |
+| R29_28 | Rappel entre suites et archives | Remontée sur le même segment vers le 29 |
+| S28_27 | Escalier entre archives et jardin des enfants | Marche en sens inverse vers le 28 |
+| R27_26 | Rappel entre jardin et spa | Remontée sur le même segment vers le 27 |
+| S26_25 | Escalier entre spa et refuge | Marche en sens inverse vers le 26 |
+
+### Escaliers locaux
+
+Chaque escalier relie uniquement la paire indiquée. Deux volées et un palier de demi-niveau dessinent une circulation en U au sud du noyau. Les marches sont visibles ; une collision inclinée continue porte la véritable capsule du joueur. Le changement de hauteur provient du déplacement physique, sans bouton qui téléporte vers un autre étage. Les prolongements ne donnent pas accès au niveau suivant : la sortie conduit au plateau, où il faut rejoindre la prochaine liaison.
+
+Alex peut monter et descendre ces escaliers, seul ou en portant une personne, avec les vitesses de marche correspondantes. La confirmation d’un nouvel étage exige une hauteur située à ±0,35 m de sa dalle, une position hors du volume de l’escalier, un support physique sous les pieds et une vitesse verticale absolue d’au plus 0,15 m/s. Il faut donc regagner le plateau : le milieu d’une volée, son haut et son bas encore dans la cage ne sont ni une arrivée confirmée ni un nouveau point sûr. La lecture du palier permet de retrouver son chemin sans devoir sauter au-dessus du puits.
+
+### Engagement et commandes sur corde
+
+Les stations de rappel personnel se trouvent du côté ouest du puits ; les balises orange de l’est servent au treuil des rescapés. E engage le segment local depuis l’un de ses deux terminaux lorsque le joueur est seul et que le dégagement permet le transfert. Une transition contrôlée rejoint la corde. Le changement de segment passe par la sortie sur une dalle puis l’approche de la station suivante.
+
+| Commande | Comportement sur la corde | Valeur actuelle |
+| --- | --- | --- |
+| S | Descendre | 2,8 m/s |
+| Z ou W | Remonter | 1,6 m/s ; dépense de 10 points d’endurance/s |
+| Ctrl avec une direction verticale | Approche précise dans les deux sens | 0,75 m/s ; montée précise à 5 points/s |
+| Maj avec S | Descente rapide | 4,2 m/s ; dépense de 8 points/s |
+| A ou Q, D | Décalage latéral borné | Axe Z, limite de ±0,65 m autour du segment |
+| Aucune direction verticale | Frein automatique | Décélération jusqu’à l’arrêt ; aucune chute libre |
+| Espace | Verrouiller ou libérer la corde | Verrou persistant, vitesse nulle immédiatement |
+| X | Stabiliser le balancement | 16 s ; un ancrage consommé seulement si la pose est acceptée |
+| E | Quitter la corde vers un palier | Seulement si les conditions de sortie sont réunies |
+
+La vitesse atteint progressivement sa cible avec une accélération de 7,5 m/s². Le frein automatique emploie 16 m/s² ; Espace constitue un arrêt explicite et persistant. Le verrou a priorité sur les directions, puis viennent l’arrêt pour fatigue, Ctrl et enfin la descente rapide. Maj ne crée pas de remontée rapide. La descente normale et l’approche précise descendante ne consomment pas d’endurance.
+
+À l’arrêt, la récupération est de 12 points/s. Épuiser l’endurance immobilise la corde ; le personnage ne lâche pas prise. Le mouvement redevient possible après récupération de 20 points. Attendre peut donc être un choix utile avant de remonter. Le joueur ne doit pas multiplier les appuis pour empêcher une chute ni subir une perte de vie parce qu’il lit les commandes.
+
+### Sortie, longueur et limites
+
+Le segment actif reste borné par ses deux étages. Le déplacement latéral se fait autour de l’axe ouest x = −1,3 m, z = 0. Le joueur retrouve la station sur la dalle à x = −3,8 m ; il ne se détache pas au centre du vide. Les surfaces d’arrêt à l’ouest interrompent la continuité entre les segments, tandis que le couloir du treuil des personnes demeure libre à l’est.
+
+E autorise la sortie à moins de **0,45 m** de la hauteur du terminal, avec une vitesse verticale inférieure ou égale à **0,05 m/s**, un décalage latéral inférieur ou égal à **0,25 m** et un dégagement suffisant pour la capsule. Le transfert de sortie dure 0,85 s et reste contrôlé physiquement. Une demande refusée laisse Alex attaché et indique le geste utile : rejoindre le terminal, s’arrêter, se recentrer ou attendre le dégagement. Un appui en pleine descente ne devient jamais une chute volontaire non annoncée.
+
+Le HUD indique le segment, les étages reliés, la progression, la longueur ou distance de segment, la vitesse, l’endurance, l’état de freinage et les commandes disponibles. Ces valeurs concernent le modèle de jeu ; elles ne constituent ni un calcul d’efforts réel ni une simulation de corde segmentée autour des obstacles. La caméra conserve le regard du joueur. Le mode de mouvements réduits ne doit pas masquer la géométrie ou les conditions de sortie.
+
+### Stabilisation, secours et reprise
+
+X garde sa fonction d’aide facultative. Il stabilise la ligne pendant seize secondes sans remplacer le segment ni déplacer sa destination. Un stock nul ou une stabilisation déjà active refuse l’usage sans consommer d’ancrage. Son expiration rend le balancement ordinaire ; elle ne provoque ni rupture, ni chute, ni disparition du passage. La route principale demeure praticable avec zéro ancrage consommable.
+
+Le rappel personnel est **indisponible pendant le portage**. La personne doit rejoindre sa balise de treuil à son étage d’origine ; emprunter l’escalier en la portant reste possible, mais ne déplace pas le point de transfert autorisé. La balise d’un autre étage explique le retour nécessaire. Le treuil des personnes monte toujours jusqu’au toit, indépendamment des segments de déplacement d’Alex.
+
+Pause, options, journal et toute suspension de la mission figent le temps du rappel, la vitesse, le verrou, la stabilisation et l’excitation du vent. La reprise continue le même état de session. Une interruption complète de la partie recharge le dernier palier validé : ni position suspendue, ni demi-escalier, ni transfert d’entrée ou de sortie ne deviennent une sauvegarde libre. Une demande de checkpoint pendant ce mouvement est différée jusqu’à la prochaine dalle admissible, hors du volume de l’escalier, sans remplacer entre-temps le point sûr précédent. La 0.9 conservait le schéma 3 ; la 0.10 utilise le schéma 4 sans ajouter de pose suspendue aux données de reprise.
+
+L’annexe [Traversée et rappel v0.9](TRAVERSEE_ET_RAPPEL_V0.9.md) développe le graphe, les gestes d’apprentissage, la signalétique, les critères physiques et les extensions de campagne. Les franchissements obliques, relais persistants, personnes accompagnantes sur corde et cordes libres restent des cibles distinctes.
+
+## 4 Interaction et lisibilité
+
+**Actualisation v0.12.** Les commandes historiques de secours vérifient désormais la cible enregistrée, le même étage, un appui stable, la portée, le regard et l’absence d’obstacle par rayon. Les stations de corde et balises proches conservent leur facilité de sélection. Les cibles Commerce disposent également de contrôles de portée, de visée et d’occlusion, vérifiés pendant les interventions maintenues. Un transfert de rappel obstrué peut être annulé par E lorsque son chemin de retour est physiquement libre ; l’annulation ne détache pas Alex au-dessus du vide. Ces comportements sont définis dans [main.gd](../prototype/scripts/main.gd) et [player_controller.gd](../prototype/scripts/player_controller.gd).
+
+Dans la base 0.10, les interactions de mission recherchaient l’objet utilisable le plus proche au même étage, à moins de **trois mètres en distance horizontale**. Un objet consommé était ignoré. La sélection de ces commandes ne vérifiait pas encore une ligne de vue par rayon : un objet pouvait être proposé à travers une cloison si son placement était trop proche. Cette limite historique est corrigée dans la candidature v0.12 ; les volumes sans concurrence autour des interactions essentielles restent nécessaires.
+
+E déclenche l’action contextuelle : station de rappel personnel, rescapé, balise de treuil, preuve, ravitaillement ou terminal. Les deux systèmes de corde disposent de repères distincts ; une balise de treuil ne raccorde plus Alex à une ligne globale. Le texte doit nommer la conséquence : « sécuriser », « confirmer le treuillage », « lire » ou « transmettre ». Un verbe générique identique pour tous les objets réduit la capacité du joueur à anticiper ce qui va se passer.
+
+Pour les actions de secours, la cible prévoit une distance de manipulation adaptée à l’objet, de 1,4 à 2,2 m pour une action manuelle ordinaire, avec vérification de visibilité et priorité au regard. Il s’agit d’une plage de prototypage, pas d’un changement déjà appliqué. Les grandes balises peuvent conserver une portée plus généreuse. Toute nouvelle durée d’appui doit être testée avec annulation, clavier et options de maintien simplifié.
+
+Un objet essentiel doit fournir au moins deux indices parmi forme, position, texte, mouvement et son. La couleur seule ne suffit pas. À l’inverse, une radio ou un corps ne doit pas être entouré d’un halo si une bonne composition permet de le trouver. Les marqueurs 3D de la maquette sont des aides de gameplay ; ils sont masqués dans les caméras de présentation.
+
+## 5 Sauvetages et état des personnes
+
+### Chaîne livrée
+
+Le prototype suit une personne dans les états **présente, portée, au treuil, reçue**. L’interaction de sécurisation est instantanée. La représentation au sol disparaît pendant le portage et la vitesse d’Alex est limitée. La 0.6 affiche une représentation dédiée de la personne dans un harnais, avec sangles, poignée et mains d’Alex ; elle suit la caméra et désactive son léger balancement lorsque les mouvements sont réduits. Une seule personne peut être prise en charge à la fois.
+
+À la balise du même étage, E commence une montée de **cinq secondes**. Le panier et la personne suivent une trajectoire absolue dans le puits, puis une dépose latérale sur la dalle du toit. La longueur du câble relie le support à la poutre ; elle reste une représentation calculée, sans simulation physique de corde. Seule la fin de la montée ajoute l’identifiant au registre des sauvés, diminue le stress de quinze points et demande l’enregistrement d’un point sûr. L’ancien checkpoint reste la référence tant que l’écriture n’a pas réussi. La réception médicale au toit reconstruit ensuite la présence nommée. En partie, un équipier accompagne pendant 4,2 secondes cette personne déjà confirmée jusqu’à sa place ; une reprise de sauvegarde l’installe directement à sa pose finale. Les phases cosmétiques de cette réception ne deviennent pas des états de reprise libre.
+
+| Personne | Identifiant | Point de départ | Réception confirmée |
+| --- | --- | --- | --- |
+| Ana Rios | survivor_30 | Restaurant du 30 | Silhouette allongée sur civière, nom et statut au toit |
+| Samuel Breton | survivor_28 | Archives du 28 | Silhouette avec couverture jaune, nom et statut au toit |
+| Nora Haddad | survivor_26 | Spa du 26 | Silhouette basse avec couverture claire, nom et statut au toit |
+
+La réception est une projection de la liste sauvée : lui fournir plusieurs fois les mêmes noms ne crée pas de doubles. Les identifiants inconnus sont ignorés ; une nouvelle intervention la remet à vide. Les figures médicales n’ont pas de collision et ne barrent ni le départ du joueur ni le treuil.
+
+### Cible de campagne
+
+Ajouter les états « contact établi », « stabilisée », « suit le joueur », « attend à l’abri », « transfert en cours » et « remise à une équipe » seulement lorsqu’un scénario les utilise. Le témoin peut avoir une mobilité différente sans disposer d’une jauge cachée de docilité. Un ordre d’attente doit désigner un point réellement protégé, vérifié par le niveau.
+
+Pour une première tranche de PNJ accompagnant, tester une marche de 1,8 à 2,2 m/s, une distance de suivi de 1,8 à 3 m et un arrêt au-delà de six mètres lorsqu’un obstacle empêche le suivi. Le joueur reçoit alors une demande claire au lieu de perdre silencieusement la personne. Les déplacements de rattrapage ne traversent pas une porte fermée et ne téléportent pas un témoin dans une zone hostile.
+
+La stabilisation envisagée dure trois à cinq secondes avec annulation immédiate. Elle utilise un seul geste abstrait, expliqué par le contexte ; le jeu ne prétend pas enseigner une procédure de secours réelle. La diversité vient de la route, du dialogue, du matériel disponible et de la relation entre personnes, pas d’une multiplication de manipulations répétitives.
+
+## 6 Ressources et pression actuelles
+
+| Ressource ou effet | Valeur actuelle | Limite et lecture |
+| --- | --- | --- |
+| Santé initiale | 100 | Les blessures viennent des dangers programmés ; aucun système médical détaillé |
+| Air initial | 100 | Consommation seulement dans les secteurs de fumée applicables |
+| Stress initial | 8 sur 100 | Indicateur de pression ; ne change pas la vérité des sauvetages |
+| Ancrages | 4 au départ, maximum 8 après ravitaillement | Un usage stabilise la corde pendant 16 s |
+| Fusées | 3 au départ, maximum 6 après ravitaillement | Une fusée dure 20 s et réduit le stress de 10 points |
+| Ravitaillement | Air remis à 100, santé +30, ancrages +2, fusées +2 | Chaque caisse est à usage unique, avec plafonds |
+| Lampe | Portée lumineuse 27 m, cône 32°, énergie 1,35 | Pas de batterie consommable dans cette version |
+| Appel manuel | Délai de 8 s ; stress −5 | Le contenu dépend de la situation ; un faux appel peut ajouter de la pression |
+
+Les caisses du 29 et du 25 permettent de récupérer sans boucle de collecte infinie. La sauvegarde mémorise leur consommation. Le terminal du refuge ne doit pas être confondu avec un distributeur réinitialisé à chaque reprise.
+
+La fusée est posée visuellement près du joueur. En 0.8, ses vingt secondes actives masquent les silhouettes perceptives, tout en conservant l’éclairage et la réduction de stress. Il n’existe ni test d’exposition local, ni ennemi repoussé, ni preuve d’exorcisme. Un futur effet de protection contre une créature corporelle demanderait une règle distincte : portée, obstruction, durée et interaction avec une personne portée.
+
+### Dangers de sol et d’ambiance
+
+Dans la fumée, l’air perd 0,65 point/s et le stress augmente de 0,12 point/s. Lorsque l’air atteint zéro, la santé perd trois points/s. Les secteurs d’eau appliquent un multiplicateur de vitesse de 0,74 ; les secteurs instables, 0,87 avec 0,07 point de stress/s. Ces valeurs sont des abstractions de jeu. Aucun calcul de noyade, d’électricité propagée dans l’eau ou de toxicologie réelle n’est simulé.
+
+Avant l’effondrement, les dangers des 29 et 28 sont désactivés même si leur variante de secteur en prévoit un après le choc. Pendant la séquence active de catastrophe, les dangers ordinaires sont suspendus. Sur corde, le stress augmente de 0,025 point/s et la silhouette est masquée. Au toit, au 27 et au 25, le stress diminue de 1,2 point/s.
+
+La v0.8 retire la poursuite et les dégâts de la figure du 26. Le directeur de manifestations présente un aperçu périphérique au 29, des traces humides au 28 après impact et une présence récurrente au spa. Aucun de ces événements ne consomme de santé, d’air ou de matériel. Ils ne créent pas de reçu de secours ni de preuve scientifique dans le journal. Les actions de mission gardent la priorité. La fiche E00 du [bestiaire](ENNEMIS_STATISTIQUES.md) distingue cette présentation actuelle des adversaires corporels futurs.
+
+### Cibles d’équilibrage
+
+La prochaine tranche doit permettre une sortie raisonnable d’un secteur après la première alerte de ressource. Commencer les essais avec au moins trente secondes de marge pour rejoindre une zone respirable depuis la route principale ; conserver une réserve plus large lors du portage. Ce budget doit être calculé sur les distances réelles du niveau, pas obtenu en augmentant arbitrairement la vitesse du joueur blessé.
+
+Le stress ne doit pas inverser les commandes, falsifier le registre des sauvés ou invalider un refuge certifié. Une cible à trois seuils peut modifier souffle, bruit périphérique et petites contradictions visuelles, avec désactivation des effets de caméra. Les seuils, durées et intensités restent à fixer après des essais de compréhension ; une jauge haute ne justifie pas n’importe quelle apparition.
+
+## 7 Radio, preuves et connaissance
+
+La radio sert d’abord à l’opération : localiser, demander une confirmation, annoncer le treuil et préciser un détour. Les messages normaux sont séquencés. Les urgences peuvent interrompre la présentation, mais les messages reçus sont conservés dans un journal limité aux trente-deux dernières entrées. Le journal distingue ce qui a été dit de ce qui a été confirmé.
+
+L’appel R demande une réponse contextuelle. Pendant un portage ou un treuillage, il rappelle l’action utile avec priorité. Pendant l’incident actif, il ne concurrence pas le canal de secours. Après les trois transferts, il indique l’observation encore nécessaire ou le refuge. Au spa, avec suffisamment d’indices, une source non identifiée peut mentir sur l’état du toit ; cette phrase ne modifie ni les sauvés ni le monde.
+
+L’écho facultatif de Bravo attend Samuel confirmé, l’après-impact et six secondes calmes au 27. La vérification attend ensuite deux secondes calmes au 27, au 25 ou au toit. Le portage, le treuil, la pause, l’arrivée et une radio occupée empêchent l’émission. Ces échanges exigent aussi un palier admissible : support sous les pieds, vitesse verticale absolue d’au plus 0,15 m/s, hauteur de dalle et position hors escalier. La corde, une volée ou un saut ne laissent donc pas avancer leur temps de calme. Les événements sont enregistrés une seule fois. La progression principale ne dépend pas de leur écoute.
+
+Une preuve actuelle est une interaction collectée et mémorisée.
+
+Le dossier de la 0.7 sépare Situation, Rescapés, Indices et Transmissions. Il affiche les noms et les états réels de secours, conserve la distinction entre portage et réception, et masque le contenu des pièces non collectées. Changer de rubrique, lire ou fermer le journal ne consomme ni temps, ni ressource, ni nouvelle entrée d’historique. La campagne devra distinguer document, témoignage et observation physique. Deux occurrences d’un même enregistrement ne constituent pas deux preuves indépendantes. Le journal peut proposer « confirmé », « rapporté » et « à vérifier » sans dire au joueur quelle interprétation finale adopter.
+
+## 8 Objectifs, sauvegarde et échec
+
+La mission initiale se termine lorsque l’incident est achevé, les trois personnes sont confirmées et le relais du refuge est activé. Atteindre le 25 trop tôt doit donner une action de retour explicite. Lire toutes les preuves ou entendre l’écho de Bravo n’est pas nécessaire à cette réussite.
+
+La première clôture exige la sauvegarde achevée au 25 puis lance un épilogue en jeu de quinze secondes, composé de trois plans de cinq secondes. Un échec d’écriture laisse le personnage et le HUD disponibles au refuge, signale l’erreur et permet de réessayer le relais ; aucun épilogue n’est lancé. E, Entrée ou le bouton de passage rejoint le bilan ; Échap suspend et reprend la séquence. Les mouvements réduits gardent chaque cadrage fixe. Le bilan montre les rescapés, les preuves collectées, le temps et les ressources de la mission, puis permet de rouvrir le journal, revoir l’épilogue ou revenir à l’accueil. Le chargement d’une mission achevée présente directement ce bilan. La clôture elle-même ne lance pas A24 : la 0.10 attend le choix explicite de continuation depuis ce bilan. Aucun ennemi final ni score de prestige n’est créé par cette opération.
+
+Le schéma de sauvegarde de la **version 0.10 est 4** ; la candidature v0.12 passe au schéma 5 décrit en tête de ce document. Le schéma 4 conserve le monde, les personnes, ressources et objets consommés, le journal et les événements radio, puis ajoute l’objet de continuation A24–A23. Les anciens schémas 1, 2 et 3 sont validés dans leur format d’origine puis migrés en mémoire sans réécrire le fichier à la simple lecture. Les transmissions historiques ne sont pas rejouées en file de sous-titres après reprise. Les préférences de confort sont indépendantes de la mission.
+
+Les points sûrs sont destinés aux paliers stables et aux confirmations de transfert. La progression d’étage attend l’arrivée à hauteur de sa dalle ; traverser une demi-volée ne suffit pas. Une phase mobile de l’effondrement, une personne suspendue, une position de corde et un transfert d’entrée ou de sortie ne sont pas des états de reprise libre. L’incident est reconstruit dans un état stable. L’état médical au toit est dérivé du registre ; il ne dépend pas de la survie d’une animation.
+
+La santé nulle conduit à l’échec prévu par la mission. Une chute hors de l’espace jouable reprend le dernier point enregistré ; le prototype la détecte sous la limite basse du secteur actif ou après une chute à pied de plus de 3,5 m sous le dernier appui. Sauter dans le puits ne constitue donc pas un raccourci vers un étage inférieur. La reprise doit restaurer les réussites du dernier point sûr et présenter le contexte. La cible de campagne pourra proposer une récupération par une équipe dans certains espaces, mais cette possibilité ne doit pas être promise dans la tranche actuelle.
+
+## 9 Personnages : envies, objectifs, peurs et fonctions
+
+Les fiches suivantes servent à écrire les comportements et dialogues. Leurs motivations sont des décisions de conception ; elles ne constituent pas des statistiques psychologiques simulées. Un personnage peut vouloir quelque chose sans que le jeu lui attribue une barre de confiance ou une peur chiffrée. Les valeurs de mobilité futures concernent l’accompagnement, pas la valeur d’une personne sauvée.
+
+### Alex Morel — retrouver une méthode avec les autres
+
+**Envie et objectif.** Alex veut terminer une intervention dont les résultats peuvent être nommés : qui a été trouvé, qui a été transmis et qui reste à chercher. L’objectif initial est le secours, puis la construction d’une route de retour quand la structure et les communications ne suffisent plus. Alex ne vient pas résoudre un traumatisme personnel servant d’explication globale à l’horreur.
+
+**Peur et tension.** La peur centrale est de prendre une décision sur une information fausse et de laisser quelqu’un hors d’atteinte. Elle s’exprime par les choix de vérification, pas par des commentaires constants ni une incapacité artificielle à agir. Le personnage doit pouvoir demander de l’aide et reconnaître une limite.
+
+**Fonction et états.** Personnage jouable, valeurs actuelles dans les tableaux précédents. La campagne suit des décisions et liens établis, sans imposer une personnalité unique. Les répliques automatiques restent courtes pour laisser une place à l’interprétation du joueur. Les états narratifs utiles sont mission active, personne à protéger, lien rompu et retour établi.
+
+### Leïla Varga — tenir la promesse du poste
+
+**Envie et objectif.** Varga veut conserver une organisation fiable alors que les moyens se réduisent. Elle tient le registre, confirme les personnes et donne un ordre de priorité compréhensible. Elle préfère dire qu’une information manque plutôt que produire une certitude rassurante.
+
+**Peur et tension.** Elle craint de perdre un équipier en lui donnant un ordre devenu faux. L’impact la pousse à réduire la portée de ses affirmations. Elle peut accepter une contradiction documentée d’Alex ; une perte de liaison ne la rend ni omnisciente ni absente du récit.
+
+**Fonction et état actuel.** Commandement par sous-titres, présence au toit dans la maquette. Aucun comportement tactique autonome ni compteur de moral n’est simulé. La production devra prévoir regard vers le terrain, échange avec Médical et geste de confirmation de réception. Les animations ne doivent pas la faire quitter le poste au moment où elle répond depuis celui-ci.
+
+### Ana Rios — ne pas abandonner son équipe
+
+**Envie et objectif.** Maître d’hôtel du restaurant, Ana veut savoir si ses collègues ont pu rejoindre un accès de service. Elle a organisé une partie de l’attente avant l’arrivée des secours. Son premier échange doit nommer une personne ou une action concrète, pas seulement décrire sa peur.
+
+**Peur et tension.** Elle redoute qu’une évacuation individuelle signifie que les autres seront oubliés. Alex peut lui expliquer que son signalement sera transmis. Cette réponse prépare la valeur du registre et de la radio sans bloquer le premier tutoriel par une longue négociation.
+
+**Fonction et états.** Premier sauvetage, déplacement porté dans la version actuelle, réception sur civière. La cible ajoute une courte réponse après prise en charge et un témoignage exploitable sur le restaurant. Son évacuation reste possible sans document secondaire. Elle ne doit pas devenir un verrou d’information exigeant une récompense.
+
+### Samuel Breton — faire sortir les faits
+
+**Envie et objectif.** Samuel se trouve dans les bureaux et archives. La conception lui donne un objectif lisible : signaler les documents antérieurs au désastre et éviter que leur existence soit confondue avec les dégâts récents. Sa profession précise et sa responsabilité dans l’organisation restent à confirmer par l’écriture de campagne.
+
+**Peur et tension.** Il redoute que les secours interprètent tout comme la conséquence du typhon. Après le choc, il a aussi une peur immédiate de la façade et des bruits de structure. Son dialogue doit commencer par le trajet de sortie avant de proposer un contexte administratif.
+
+**Fonction et états.** Deuxième transfert, couverture jaune au toit. Sa confirmation autorise l’écho facultatif au 27. Cette fonction d’événement ne signifie pas qu’il a provoqué le phénomène. La cible prévoit une déposition brève, datée comme un témoignage, confrontable à une preuve du secteur.
+
+### Nora Haddad — protéger sans nier ce qu’elle a vu
+
+**Envie et objectif.** Kinésithérapeute au spa, Nora veut retrouver les personnes qu’elle aidait et comprendre pourquoi certains appels reprennent des phrases anciennes. Elle connaît les installations ordinaires, ce qui permet de distinguer une panne habituelle d’une anomalie.
+
+**Peur et tension.** Elle craint d’être discréditée si elle décrit une silhouette. Le dialogue doit accepter son observation tout en séparant ce qu’elle a vu de ce qu’elle en conclut. Sa profession ne fait pas d’elle une spécialiste universelle des machines ou du surnaturel.
+
+**Fonction et états.** Troisième personne portée, réception basse avec couverture claire. La cible propose qu’elle indique une circulation sèche ou un équipement précis avant transfert. Elle ne doit pas faire déplacer le joueur au milieu du danger pour prouver qu’il la croit.
+
+### Malik Serra — garder une capacité d’action propre
+
+**Envie et objectif.** Binôme de terrain prévu pour la campagne, Malik veut rendre sa ligne parallèle utile. Il cherche ses propres personnes et compare le bâtiment réel aux plans. Ses succès et difficultés doivent exister même lorsqu’Alex ne le regarde pas.
+
+**Peur et tension.** Il craint de devenir une charge pour l’autre équipe, ce qui peut le pousser à retarder une demande d’aide. Le joueur peut lui fournir un relais ou une route ; l’écriture doit montrer la conséquence avant une éventuelle séparation.
+
+**Fonction et cible.** Allié de mission, pas compagnon autonome livré en 0.9.0. Une première version pourrait utiliser des postes préparés et des transitions contrôlées, puis une navigation locale. Les états utiles sont engagé, contact établi, route partagée, isolé et pris en charge. Sa survie future dépend de décisions documentées, jamais d’un silence aléatoire destiné à surprendre.
+
+### Inès Valen — distinguer une estimation d’un fait
+
+**Envie et objectif.** Inès veut produire une carte fiable avec des sources incomplètes. Elle compare horaires, indicatifs et relevés. Son envie de comprendre sert l’opération avant la curiosité pour le mystère.
+
+**Peur et tension.** Elle redoute qu’un plan ancien soit utilisé comme une garantie. L’accès aux archives de Pelagos pose un conflit entre procédures et urgence, avec des conséquences à écrire. Elle n’accède pas automatiquement à chaque caméra ou porte.
+
+**Fonction et cible.** Opératrice hors site à produire, aucune intelligence de cartographie distante actuellement simulée. Les outils doivent lui transmettre les faits réellement collectés. Son dialogue peut signaler une incompatibilité ; il ne doit pas dévoiler une salle que le joueur n’a jamais observée.
+
+### Alma — rejoindre les siens et laisser un chemin
+
+**Envie et objectif.** Alma veut retrouver sa mère et les adultes qui accompagnaient l’évacuation. Elle connaît certains trajets de service et des sonneries. Ses marques près du sol sont une stratégie concrète pour être retrouvée et aider ceux qui suivent.
+
+**Peur et tension.** Elle craint de ne pas être reconnue dans un lieu où les voix se répètent. Elle peut hésiter devant une silhouette tout en gardant des moyens d’action. Le récit évite de lui donner une connaissance totale du seuil ou une qualité biologique magique.
+
+**Fonction et cible.** Enfant de dix ans conçue pour la campagne, absente comme PNJ jouable du prototype. Les scènes de séparation restent sans violence graphique. Un suivi accompagné utilise des points protégés, jamais une poursuite punitive permanente. Sa voix, ses objets et ses gestes donnent plusieurs moyens de lire les indices, y compris sans son.
+
+### Eva Sorel — conserver le contrôle du récit et du dispositif
+
+**Envie et objectif.** Sorel veut sauver les données et empêcher que l’installation soit interprétée sans elle. Elle peut fournir une aide technique réelle tout en maintenant une dépendance au dispositif. Ses décisions passées doivent être établies par des documents et des témoins.
+
+**Peur et tension.** Elle craint de perdre la maîtrise de ce qu’elle considère comme une découverte et de devoir répondre de ses conséquences. Cette peur explique ses omissions sans les excuser. Elle ne devient pas automatiquement un boss de combat parce qu’elle s’oppose à Alex.
+
+**Fonction et cible.** Antagoniste humaine de la campagne, pas agent livré. Ses états proposés sont coopération limitée, négociation sous preuve, accès restreint et perte de contrôle. Les choix doivent modifier portes, données et moyens d’action de façon visible. Une dernière réplique ne peut effacer toutes les responsabilités établies.
+
+### Bravo, Corde et Médical — une opération collective
+
+**Envies et objectifs.** Bravo vérifie Hespérie ; Corde tient les itinéraires et Médical réceptionne les personnes sur Aube. Chaque groupe a une tâche qui explique sa place dans l’image. Leur présence doit répondre aux demandes du joueur sans transformer chaque membre en donneur de quête.
+
+**Peur et tension.** Bravo réagit à la structure et gagne un abri. Corde doit préserver une ligne encore utile après le choc. Médical protège les personnes reçues. La perte du canal Bravo demeure une incertitude, pas une confirmation de morts affichée pour renforcer artificiellement le drame.
+
+**État livré et cible.** Silhouettes procédurales, repli déterministe de Bravo et réception nommée au toit. Il n’existe pas de simulation de combat d’équipe ni de pathfinding de secours. Les premières animations de production à créer sont tourner vers une alerte, désigner un accès, se baisser, porter une caisse et accueillir un transfert. Elles doivent respecter les volumes libres des routes jouables.
+
+## 10 Réglage, difficulté et données à recueillir
+
+La difficulté doit d’abord modifier la marge de ressources et la fréquence de certaines menaces, sans changer la vérité du récit. La première personne, le passage obligé, le matériel minimal et la sécurité des refuges restent garantis. Les options de confort ne diminuent pas les récompenses et ne conditionnent pas les fins.
+
+Pour une séance de test, relever le temps avant compréhension de la corde, les erreurs de sortie, le temps entre contact et réception, les appels radio demandés, les retours sur un objectif déjà terminé et les ressources restantes au refuge. Ajouter des observations verbales : ce que le joueur croit savoir sur Bravo, à qui il attribue un appel et où il pense retrouver une personne sauvée. Une bonne moyenne de vitesse ne prouve pas cette compréhension.
+
+Les objectifs initiaux de validation sont qualitatifs : trouver Ana sans aide extérieure, comprendre que le treuil confirme le sauvetage, reconnaître la nouvelle route après le choc et distinguer réception vérifiée d’écho ambigu. Les seuils chiffrés d’acceptation doivent être fixés après une première série représentative ; cette bible ne transforme pas une estimation en résultat d’essai.
+
+## 11 Sources et responsabilités
+
+Les paramètres jouables proviennent de [player_controller.gd](../prototype/scripts/player_controller.gd) et [main.gd](../prototype/scripts/main.gd). La génération est définie par [floor_generator.gd](../prototype/scripts/floor_generator.gd), la communication par [radio_director.gd](../prototype/scripts/radio_director.gd), la persistance par [save_store.gd](../prototype/scripts/save_store.gd) et les représentations par [world_builder.gd](../prototype/scripts/world_builder.gd). Les noms de scripts sont vérifiables dans le dépôt ; toute modification de valeur doit conduire à réviser cette annexe.
+
+Le [catalogue des étages](CATALOGUE_ETAGES.md) détermine où les boucles se combinent. Les [props](PROPS_INTERACTIONS.md) décrivent les actions et états locaux. Le [bestiaire](ENNEMIS_STATISTIQUES.md) définit les contre-jeux et statistiques proposés. Les [scènes](SCENES_CINEMATIQUES.md) règlent la transition entre présentation et contrôle. Le rapport de livraison conserve les résultats d’essais effectivement obtenus.
+
+
+## 12 Extension de campagne : confrontation, preuve et traversée
+
+Cette section définit des **cibles futures**, sans ajouter de commande ou d’IA au prototype 0.9. La progression suit [l’annexe de l’horreur](PROGRESSION_HORREUR_V0.8.md). Alex reste un secouriste : ses moyens principaux sont l’observation, la communication, le déplacement, l’équipement et les routes de retour. La découverte de l’Enfer ne le transforme pas instantanément en combattant surhumain.
+
+### Corps humain, distance et défense
+
+E11, E12 et E13 possèdent un territoire, une perception limitée et des gestes annoncés. Alex peut attendre hors de portée, reculer derrière un appui, refermer une séparation, attirer l’attention depuis un autre angle, parler lorsqu’une ouverture existe ou employer un geste défensif pour quitter le contact. L’affrontement modifie concrètement la circulation ; il ne constitue pas une obligation d’exécuter chaque occupant pour ouvrir un étage. Une personne peut être blessée, désorientée, immobile ou bruyante sans être hostile : la sommation, le mouvement d’engagement et l’objet tenu donnent la lecture utile.
+
+Pour un premier prototype de confrontation, essayer une poussée à 1,25 m avec préparation de 0,35 s et récupération d’Alex de 1,2 s. Son effet dépend ensuite de l’archétype : E11 cède du terrain, E12 perd brièvement la poursuite, E13 exige un angle libre ou un obstacle. Ces valeurs servent à éprouver la lisibilité d’une séparation, pas à promettre un système de mêlée livré. Le contrôle doit montrer la portée avant de permettre une dépense répétée. Une rencontre avec deux humains actifs attend la validation d’un duel lisible, du détour et de la reprise.
+
+Le portage conserve la priorité de secours. Alex ne combine pas une attaque à deux mains avec une personne portée. Une zone de dépose certifiée ou une porte sécurisée doit exister avant toute séquence où la défense serait indispensable. La personne déposée reste présente et identifiable ; un aller-retour ne remet pas son transfert à zéro. Les territoires adverses excluent les refuges, les lectures protégées et les premières transitions d’apprentissage.
+
+### Une expérience qui apporte une preuve
+
+La boucle de laboratoire demande d’observer un montage, comparer deux identifiants, choisir une commande locale expliquée, constater un résultat persistant puis confronter ce résultat au registre ou au témoin. P53, P54 et P55 rendent la chaîne matérielle. La première preuve essentielle peut être obtenue sans poursuivre une expérience dangereuse. Des essais facultatifs précisent les responsabilités et les limites du programme ; ils ne conditionnent pas la reconnaissance des personnes sauvées.
+
+L’interface future distingue ce qu’Alex a vu, ce qu’un document rapporte et ce qu’un témoin confirme. L’auteur sait que la dimension infernale est réelle ; le joueur le découvre par ces faits successifs. Une mauvaise estimation d’Alex peut être corrigée par une preuve ultérieure, sans effacer l’objet collecté ou remplacer arbitrairement sa description historique.
+
+### Agir dans la dimension infernale
+
+La boucle change d’échelle, mais garde ses verbes : établir un appui P57, suivre la ligne P58, reconnaître un danger annoncé, rejoindre la personne ou le poste, puis conserver un retour. I01 enseigne cette continuité dans un espace stable. I02 met la route à l’épreuve avec E14 et ses attaches. I03 relie les collecteurs aux projections d’E15. I04 demande trois objectifs P59 tandis qu’E10 agit sur les réponses du lieu et qu’E16 défend le passage. P60 ramène physiquement à Nacre avant la dernière sortie.
+
+L’air, la santé et le matériel ont des causes lisibles. La seule couleur d’un ciel ne retire aucune ressource. Une zone de scories annonce sa portée et sa durée ; un refuge conserve son contrat. Le matériel indispensable à un objectif est disponible dans le secteur ou garanti avant le franchissement : aucune fusée facultative économisée depuis le 30 ne devient une clé finale cachée. Les quantités finales, les temps de dépose et les interactions à deux mains seront fixés après essais sur ces parcours futurs.

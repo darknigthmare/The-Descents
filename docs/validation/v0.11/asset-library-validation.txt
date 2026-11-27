@@ -1,0 +1,17 @@
+PASS fire_axe: 8924 triangles, 308352 bytes, {'x': 0.385852, 'y': 0.876545, 'z': 0.0583}
+PASS extinguisher: 11892 triangles, 408388 bytes, {'x': 0.231514, 'y': 0.567919, 'z': 0.182}
+PASS halligan: 8460 triangles, 304892 bytes, {'x': 0.25457, 'y': 0.889273, 'z': 0.075}
+PASS bolt_cutter: 13252 triangles, 464136 bytes, {'x': 0.2914, 'y': 0.630628, 'z': 0.04275}
+PASS rescue_flashlight: 11500 triangles, 410404 bytes, {'x': 0.095, 'y': 0.271, 'z': 0.115648}
+PASS portable_worklight: 11076 triangles, 433652 bytes, {'x': 0.39, 'y': 0.513517, 'z': 0.293393}
+PASS rescue_radio: 11620 triangles, 394504 bytes, {'x': 0.0885, 'y': 0.2425, 'z': 0.06366}
+PASS trauma_bag: 3644 triangles, 138640 bytes, {'x': 0.463, 'y': 0.34, 'z': 0.28755}
+PASS rope_coil: 14428 triangles, 458776 bytes, {'x': 0.31783, 'y': 0.143119, 'z': 0.260322}
+PASS carabiner: 4048 triangles, 144284 bytes, {'x': 0.080581, 'y': 0.122322, 'z': 0.0186}
+PASS descender: 2044 triangles, 68456 bytes, {'x': 0.125538, 'y': 0.149, 'z': 0.017}
+PASS oxygen_cylinder: 9712 triangles, 339836 bytes, {'x': 0.187253, 'y': 0.482, 'z': 0.134744}
+PASS rescue_helmet: 6324 triangles, 206852 bytes, {'x': 0.308, 'y': 0.24972, 'z': 0.37}
+PASS rescue_stretcher: 22740 triangles, 792800 bytes, {'x': 0.602682, 'y': 0.1575, 'z': 2.02}
+PASS equipment_case: 4772 triangles, 178240 bytes, {'x': 0.55, 'y': 0.426887, 'z': 0.3804}
+PASS emergency_beacon: 5868 triangles, 209112 bytes, {'x': 0.15, 'y': 0.143, 'z': 0.15}
+PASS rescue library: 16 models, 150304 triangles, 5261324 bytes; visual inspection remains separate.

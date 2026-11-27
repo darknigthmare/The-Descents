@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS continuation integration: 40 checks; legacy read-only debrief, visible continuation, failed-write rollback, visual escort consent, pause, stable restart, preserved exhibits, collected proofs and final report.

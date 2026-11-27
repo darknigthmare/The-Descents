@@ -1,0 +1,621 @@
+{
+  "schema_version": 1,
+  "library": "The Tower Descent rescue equipment v0.11",
+  "generator": "tools/generate_rescue_models.py",
+  "blender_version": "4.0.2",
+  "units": "metres",
+  "source_axes": {
+    "up": "+Z",
+    "front": "+Y",
+    "right": "+X"
+  },
+  "runtime_axes": {
+    "up": "+Y",
+    "front": "-Z",
+    "right": "+X"
+  },
+  "source": {
+    "path": "docs/assets/v0.11/rescue_equipment.blend",
+    "sha256": "818eabcbcf195a6b69d2a6d513f270b51fc7ba1bf150c327a56cd05fdb64beab",
+    "bytes": 1891271
+  },
+  "authoring": "Original deterministic Blender Python geometry; no external models or embedded image textures.",
+  "uv_convention": "One smart-projected UV atlas per asset; tiled material textures may use object/world coordinates.",
+  "assets": [
+    {
+      "id": "fire_axe",
+      "label_fr": "Hache de secours",
+      "path": "res://assets/models/rescue_v011/fire_axe.glb",
+      "sha256": "3e1f58918d56fe9f92131eef8d389faab3849408b838cf24baab140f02430ae2",
+      "bytes": 308352,
+      "dimensions_m": {
+        "x": 0.385852,
+        "y": 0.876545,
+        "z": 0.0583
+      },
+      "source_dimensions_m": {
+        "x": 0.385852,
+        "y": 0.0583,
+        "z": 0.876545
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.031013,
+        0.1938,
+        0.00165
+      ],
+      "triangles": 8924,
+      "mesh_parts": 26,
+      "source_mesh_parts": 26,
+      "runtime_meshes": 1,
+      "materials": [
+        "label_ivory",
+        "paint_rescue_red",
+        "paint_safety_yellow",
+        "rubber_black",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    },
+    {
+      "id": "extinguisher",
+      "label_fr": "Extincteur ABC",
+      "path": "res://assets/models/rescue_v011/extinguisher.glb",
+      "sha256": "9437897f50f2d611baafd628325347e472aeeb18afe9b5e47e2a44898506f606",
+      "bytes": 408388,
+      "dimensions_m": {
+        "x": 0.231514,
+        "y": 0.567919,
+        "z": 0.182
+      },
+      "source_dimensions_m": {
+        "x": 0.231514,
+        "y": 0.182,
+        "z": 0.567919
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        -0.004757,
+        0.55,
+        -0.0
+      ],
+      "triangles": 11892,
+      "mesh_parts": 37,
+      "source_mesh_parts": 37,
+      "runtime_meshes": 1,
+      "materials": [
+        "brass_valve",
+        "label_ink",
+        "label_ivory",
+        "paint_rescue_red",
+        "rubber_black",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    },
+    {
+      "id": "halligan",
+      "label_fr": "Outil Halligan",
+      "path": "res://assets/models/rescue_v011/halligan.glb",
+      "sha256": "537c07642f6075639a406702f56ea896c1e1a0fcc9981697bb5244070af22c46",
+      "bytes": 304892,
+      "dimensions_m": {
+        "x": 0.25457,
+        "y": 0.889273,
+        "z": 0.075
+      },
+      "source_dimensions_m": {
+        "x": 0.25457,
+        "y": 0.075,
+        "z": 0.889273
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.009414,
+        0.426815,
+        -0.0
+      ],
+      "triangles": 8460,
+      "mesh_parts": 26,
+      "source_mesh_parts": 26,
+      "runtime_meshes": 1,
+      "materials": [
+        "paint_safety_yellow",
+        "rubber_black",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    },
+    {
+      "id": "bolt_cutter",
+      "label_fr": "Coupe-boulons",
+      "path": "res://assets/models/rescue_v011/bolt_cutter.glb",
+      "sha256": "1ca9720c092191f10db9c537daf2358c5411a68c6e36033db30521b13bd153d7",
+      "bytes": 464136,
+      "dimensions_m": {
+        "x": 0.2914,
+        "y": 0.630628,
+        "z": 0.04275
+      },
+      "source_dimensions_m": {
+        "x": 0.2914,
+        "y": 0.04275,
+        "z": 0.630628
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        -0.09,
+        0.18031,
+        0.001875
+      ],
+      "triangles": 13252,
+      "mesh_parts": 43,
+      "source_mesh_parts": 43,
+      "runtime_meshes": 1,
+      "materials": [
+        "paint_rescue_red",
+        "rubber_black",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    },
+    {
+      "id": "rescue_flashlight",
+      "label_fr": "Lampe de secours",
+      "path": "res://assets/models/rescue_v011/rescue_flashlight.glb",
+      "sha256": "73212e4a7445e10bc4d36b19533a6adec6bf994a60d0281223ab9467f8e4d574",
+      "bytes": 410404,
+      "dimensions_m": {
+        "x": 0.095,
+        "y": 0.271,
+        "z": 0.115648
+      },
+      "source_dimensions_m": {
+        "x": 0.095,
+        "y": 0.115648,
+        "z": 0.271
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.115,
+        0.010324
+      ],
+      "triangles": 11500,
+      "mesh_parts": 34,
+      "source_mesh_parts": 34,
+      "runtime_meshes": 1,
+      "materials": [
+        "led_warm",
+        "lens_blue",
+        "paint_rescue_red",
+        "paint_safety_yellow",
+        "polymer_anthracite",
+        "rubber_black",
+        "steel_dark",
+        "steel_edge",
+        "webbing_black"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    },
+    {
+      "id": "portable_worklight",
+      "label_fr": "Projecteur portable",
+      "path": "res://assets/models/rescue_v011/portable_worklight.glb",
+      "sha256": "e65b7a006b750e00124aa1cdb7f40a43bbd9ca5e8cd50237dc2483e392a49734",
+      "bytes": 433652,
+      "dimensions_m": {
+        "x": 0.39,
+        "y": 0.513517,
+        "z": 0.293393
+      },
+      "source_dimensions_m": {
+        "x": 0.39,
+        "y": 0.293393,
+        "z": 0.513517
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.496,
+        0.001697
+      ],
+      "triangles": 11076,
+      "mesh_parts": 50,
+      "source_mesh_parts": 50,
+      "runtime_meshes": 1,
+      "materials": [
+        "led_warm",
+        "paint_safety_yellow",
+        "polymer_anthracite",
+        "rubber_black",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    },
+    {
+      "id": "rescue_radio",
+      "label_fr": "Radio de secours",
+      "path": "res://assets/models/rescue_v011/rescue_radio.glb",
+      "sha256": "f4a828b9f86c5b2841f7dc582f91428aa4e788acb80916c322ddf63861ecd326",
+      "bytes": 394504,
+      "dimensions_m": {
+        "x": 0.0885,
+        "y": 0.2425,
+        "z": 0.06366
+      },
+      "source_dimensions_m": {
+        "x": 0.0885,
+        "y": 0.06366,
+        "z": 0.2425
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.00175,
+        0.0715,
+        -0.00117
+      ],
+      "triangles": 11620,
+      "mesh_parts": 33,
+      "source_mesh_parts": 33,
+      "runtime_meshes": 1,
+      "materials": [
+        "label_ivory",
+        "paint_rescue_red",
+        "paint_safety_yellow",
+        "polymer_anthracite",
+        "rubber_black",
+        "screen_teal",
+        "steel_dark"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    },
+    {
+      "id": "trauma_bag",
+      "label_fr": "Sac de traumatologie",
+      "path": "res://assets/models/rescue_v011/trauma_bag.glb",
+      "sha256": "c373771ab869ad3837fb7874b94a75c121fb0ccfcf9e45c1d4a8df64c93eea19",
+      "bytes": 138640,
+      "dimensions_m": {
+        "x": 0.463,
+        "y": 0.34,
+        "z": 0.28755
+      },
+      "source_dimensions_m": {
+        "x": 0.463,
+        "y": 0.28755,
+        "z": 0.34
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.325,
+        0.021275
+      ],
+      "triangles": 3644,
+      "mesh_parts": 18,
+      "source_mesh_parts": 18,
+      "runtime_meshes": 1,
+      "materials": [
+        "fabric_red",
+        "label_ivory",
+        "paint_rescue_red",
+        "polymer_anthracite",
+        "steel_brushed",
+        "steel_dark",
+        "webbing_black"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    },
+    {
+      "id": "rope_coil",
+      "label_fr": "Corde lovee",
+      "path": "res://assets/models/rescue_v011/rope_coil.glb",
+      "sha256": "9a5d496abbb6e610b9b5fc9d471f567aa70ffcb1fa18602f2edd4e4dc3fe0f40",
+      "bytes": 458776,
+      "dimensions_m": {
+        "x": 0.31783,
+        "y": 0.143119,
+        "z": 0.260322
+      },
+      "source_dimensions_m": {
+        "x": 0.31783,
+        "y": 0.260322,
+        "z": 0.143119
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        -0.022797,
+        0.078972,
+        0.017837
+      ],
+      "triangles": 14428,
+      "mesh_parts": 14,
+      "source_mesh_parts": 14,
+      "runtime_meshes": 1,
+      "materials": [
+        "paint_rescue_red",
+        "rope_gold",
+        "webbing_black"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    },
+    {
+      "id": "carabiner",
+      "label_fr": "Mousqueton a verrouillage",
+      "path": "res://assets/models/rescue_v011/carabiner.glb",
+      "sha256": "baf7f4df4a47f377d719cf16e8c1e18d969b767e7ea05b243b9c88463a1bf887",
+      "bytes": 144284,
+      "dimensions_m": {
+        "x": 0.080581,
+        "y": 0.122322,
+        "z": 0.0186
+      },
+      "source_dimensions_m": {
+        "x": 0.080581,
+        "y": 0.0186,
+        "z": 0.122322
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.005991,
+        0.060676,
+        -0.0
+      ],
+      "triangles": 4048,
+      "mesh_parts": 12,
+      "source_mesh_parts": 12,
+      "runtime_meshes": 1,
+      "materials": [
+        "paint_safety_yellow",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    },
+    {
+      "id": "descender",
+      "label_fr": "Descendeur en huit",
+      "path": "res://assets/models/rescue_v011/descender.glb",
+      "sha256": "12d97ba55f74027750377607ff871fe93546dcf4d3f9d550b937f8f6709a5f61",
+      "bytes": 68456,
+      "dimensions_m": {
+        "x": 0.125538,
+        "y": 0.149,
+        "z": 0.017
+      },
+      "source_dimensions_m": {
+        "x": 0.125538,
+        "y": 0.017,
+        "z": 0.149
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.0545,
+        -0.0
+      ],
+      "triangles": 2044,
+      "mesh_parts": 5,
+      "source_mesh_parts": 5,
+      "runtime_meshes": 1,
+      "materials": [
+        "anodized_blue"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    },
+    {
+      "id": "oxygen_cylinder",
+      "label_fr": "Bouteille d'oxygene",
+      "path": "res://assets/models/rescue_v011/oxygen_cylinder.glb",
+      "sha256": "c1490f993e6a503aa0d17e951a2252b5224c3ed2de4b664e0adecdcd97a77802",
+      "bytes": 339836,
+      "dimensions_m": {
+        "x": 0.187253,
+        "y": 0.482,
+        "z": 0.134744
+      },
+      "source_dimensions_m": {
+        "x": 0.187253,
+        "y": 0.134744,
+        "z": 0.482
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        -0.029627,
+        0.475,
+        0.003372
+      ],
+      "triangles": 9712,
+      "mesh_parts": 23,
+      "source_mesh_parts": 23,
+      "runtime_meshes": 1,
+      "materials": [
+        "brass_valve",
+        "label_ink",
+        "label_ivory",
+        "oxygen_green",
+        "paint_rescue_red",
+        "rubber_black",
+        "steel_brushed",
+        "steel_dark"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    },
+    {
+      "id": "rescue_helmet",
+      "label_fr": "Casque de secours",
+      "path": "res://assets/models/rescue_v011/rescue_helmet.glb",
+      "sha256": "a88430f9ff535a64866dc52bc10d40abc6ae213c2e2c7daa04a04c43c19769d2",
+      "bytes": 206852,
+      "dimensions_m": {
+        "x": 0.308,
+        "y": 0.24972,
+        "z": 0.37
+      },
+      "source_dimensions_m": {
+        "x": 0.308,
+        "y": 0.37,
+        "z": 0.24972
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.118708,
+        -0.0
+      ],
+      "triangles": 6324,
+      "mesh_parts": 13,
+      "source_mesh_parts": 13,
+      "runtime_meshes": 1,
+      "materials": [
+        "label_ivory",
+        "paint_safety_yellow",
+        "polymer_anthracite",
+        "rubber_black",
+        "steel_dark",
+        "webbing_black"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    },
+    {
+      "id": "rescue_stretcher",
+      "label_fr": "Brancard de secours",
+      "path": "res://assets/models/rescue_v011/rescue_stretcher.glb",
+      "sha256": "6493fb4540944fb0ad1337810bfd7a0ac3848899e4b7c8032e4f21c56ac4a943",
+      "bytes": 792800,
+      "dimensions_m": {
+        "x": 0.602682,
+        "y": 0.1575,
+        "z": 2.02
+      },
+      "source_dimensions_m": {
+        "x": 0.602682,
+        "y": 2.02,
+        "z": 0.1575
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.08,
+        -0.91
+      ],
+      "triangles": 22740,
+      "mesh_parts": 68,
+      "source_mesh_parts": 68,
+      "runtime_meshes": 1,
+      "materials": [
+        "fabric_teal",
+        "paint_rescue_orange",
+        "paint_rescue_red",
+        "polymer_anthracite",
+        "rubber_black",
+        "steel_brushed",
+        "steel_dark",
+        "webbing_black"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    },
+    {
+      "id": "equipment_case",
+      "label_fr": "Valise de secours",
+      "path": "res://assets/models/rescue_v011/equipment_case.glb",
+      "sha256": "c1f087b4a222e8b5b75d62c2cd7db7a66ffa84a57725182d80260488ae076f7e",
+      "bytes": 178240,
+      "dimensions_m": {
+        "x": 0.55,
+        "y": 0.426887,
+        "z": 0.3804
+      },
+      "source_dimensions_m": {
+        "x": 0.55,
+        "y": 0.3804,
+        "z": 0.426887
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.399,
+        0.0077
+      ],
+      "triangles": 4772,
+      "mesh_parts": 24,
+      "source_mesh_parts": 24,
+      "runtime_meshes": 1,
+      "materials": [
+        "label_ivory",
+        "paint_rescue_red",
+        "paint_safety_yellow",
+        "polymer_anthracite",
+        "rubber_black",
+        "steel_dark",
+        "steel_edge"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    },
+    {
+      "id": "emergency_beacon",
+      "label_fr": "Balise d'urgence",
+      "path": "res://assets/models/rescue_v011/emergency_beacon.glb",
+      "sha256": "c25c7b2c38d9500060e0a587c74101898490c4e3fff06c95f06f8643c141e2c1",
+      "bytes": 209112,
+      "dimensions_m": {
+        "x": 0.15,
+        "y": 0.143,
+        "z": 0.15
+      },
+      "source_dimensions_m": {
+        "x": 0.15,
+        "y": 0.15,
+        "z": 0.143
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.07,
+        -0.0
+      ],
+      "triangles": 5868,
+      "mesh_parts": 30,
+      "source_mesh_parts": 30,
+      "runtime_meshes": 1,
+      "materials": [
+        "beacon_amber",
+        "label_ivory",
+        "paint_safety_yellow",
+        "polymer_anthracite",
+        "rubber_black"
+      ],
+      "uv": "UVMap: Smart UV atlas, non-overlapping islands per asset",
+      "embedded_images": 0
+    }
+  ],
+  "total_glb_bytes": 5261324,
+  "total_triangles": 150304
+}

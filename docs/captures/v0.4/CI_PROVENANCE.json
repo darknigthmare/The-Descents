@@ -1,0 +1,101 @@
+{
+  "source_commit": "c3f3aa23cd637c798be7be6b9cc78ef565293510",
+  "run_url": "https://github.com/darknigthmare/The-Descents/actions/runs/45459977356",
+  "godot_archive_sha256": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4",
+  "capture_protocol": "Native Godot Compatibility renderer via Xvfb and Mesa software rendering; prepared game states.",
+  "human_playthrough": false,
+  "manual_visual_review": false,
+  "captures": [
+    {
+      "file": "01_menu_arrivee.png",
+      "bytes": 856323,
+      "sha256": "eb753b524403e34820eef6171bd46f4ae626f77775f389a736ec813f790bc4bd",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "02_options.png",
+      "bytes": 138976,
+      "sha256": "830cd33766cfc62c3ef33942e105d498f3ef978c5e0329170612b55086d76dae",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "03_nouvelle_intervention.png",
+      "bytes": 134433,
+      "sha256": "59b94c458f6f18cbfff1f597bd59f2140b7bc7b0f937a30c037331f5154de5f1",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "04_signature_studio.png",
+      "bytes": 1131398,
+      "sha256": "8a583d2cafaa315121a0c0866eb01e5383e0137dc2482d8ff98f3eb134a4ffef",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "05_titre.png",
+      "bytes": 1115742,
+      "sha256": "663ebb5b13ec6696cf6c7a9dcb600c2d3bd654e9602d1528ec3e126673ce362b",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_03.png",
+      "bytes": 904462,
+      "sha256": "351e99e366218f15143bf726a32cdc8d0df1a31e28667f7dddc2642622886588",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_10.png",
+      "bytes": 921289,
+      "sha256": "3a07ac71540daa3103483cdd8124b95cb07aa46915208e781f0e2f9defbf6afe",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_17.png",
+      "bytes": 909100,
+      "sha256": "a03256ce09f1685a155fbe310c309b6697a1247e618fcded5f5f6653ed2c0a91",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "06_approche_25.png",
+      "bytes": 898071,
+      "sha256": "c250c423d8b4e0d2c255b04406f451b50e72da77bd22add5f1542ab3e6e7bdcc",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "07_pause_intro.png",
+      "bytes": 123407,
+      "sha256": "4f98933321128f3a32c0aecc518f1cd5c2b927ee77fa78e0785c0da0d21e6329",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "08_menu_archives.png",
+      "bytes": 765580,
+      "sha256": "6648757d93001e31f8506f7f15c4ecb8a20496d201c0d31a7da2f1e1b70d5c1f",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "09_dossier_apres.png",
+      "bytes": 168652,
+      "sha256": "91fa62be95b12f22923278acfb5ff71e6a5555f9de39d653f079cd51968315a1",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "10_menu_refuge.png",
+      "bytes": 747028,
+      "sha256": "a429f4abd67e932feb823710cc30a8d0cfa792a76dd3279bb2a1520e5a85ed86",
+      "width": 1440,
+      "height": 900
+    }
+  ]
+}

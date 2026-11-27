@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS exported pack: 286 checks; mounted v0.12 resources, 28 authored model imports, ten native albedos, historical rescue/menu/cinematic/audio/rope checks, schema-5 persistence, both real debrief-button continuations, twelve adjacent links, five guarded commerce operations, retained evidence and reception-safe reloads. Developer tests remain excluded. Standing/receipt fixtures check resources and restoration, not civilian route traversal. Linux headless engine loads the pack; this is not a Windows executable or browser launch or a visual approval.

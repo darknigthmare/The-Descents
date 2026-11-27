@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS maritime atmosphere: 44 checks; matched horizon, bounded exterior rain, deterministic seeking, reduced motion, real pause/resume, unchanged collisions and mission RNG.

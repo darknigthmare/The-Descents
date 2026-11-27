@@ -1,0 +1,913 @@
+{
+  "reviewer": "/root/v09_docs",
+  "reviewed_at_utc": "2026-11-25T13:22:56.797580+00:00",
+  "scope": "Visual review of pages 1–62 of the local canonical Word rendering only. Does not approve the remaining pages or the later CI PDF.",
+  "word_file": "/tmp/tower-v09-canonical-source/The-Tower-Descent-Bible-v0.9.docx",
+  "word_sha256": "b06f675cebc19d604ea765da51b6efe05d11cf752030c66da3da3b544d0bf138",
+  "render_directory": "/tmp/tower-v09-canonical-final",
+  "document_total_pages": 186,
+  "reviewed_page_range": [
+    1,
+    62
+  ],
+  "reviewed_page_count": 62,
+  "method": "Every assigned page opened individually at native size through view_image. Read title, body, tables, headers and footer. No contact sheet and no text extraction used as visual approval.",
+  "all_pass": true,
+  "blocking_issues": [],
+  "minor_observations": [
+    {
+      "page": 14,
+      "note": "Accompagnement wraps within the narrow first column; no letters are missing and the cell remains legible."
+    }
+  ],
+  "repeated_regions_verification": {
+    "reason": "The tool display sometimes suppresses repeated image regions; this is not a defect of the PNG.",
+    "readable_reference_page": 2,
+    "matching_pages": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62
+    ],
+    "regions_pixels": {
+      "header": [
+        100,
+        30,
+        1300,
+        110
+      ],
+      "footer_left": [
+        100,
+        1880,
+        600,
+        1980
+      ]
+    },
+    "result": "All inspected header and footer-left regions match the readable reference byte for byte; cover page 1 intentionally has no such header/footer."
+  },
+  "pages": [
+    {
+      "page": 1,
+      "status": "pass",
+      "notes": "Couverture v0.9 lisible ; titre, attribution, introduction et tableau des trois périmètres entièrement visibles, sans recouvrement ni cellule coupée. Absence de pied et d’en-tête propre à la couverture.",
+      "file": "/tmp/tower-v09-canonical-final/page-1.png",
+      "sha256": "664b096e3bb4d8e01b385d1e7e3c9806b55c896b0dc6510288edfef1fdb9ecb3",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 2,
+      "status": "pass",
+      "notes": "Sommaire des deux parties et quatorze annexes complet ; liens, paragraphes de lecture, en-tête et pied 2 / 186 lisibles.",
+      "file": "/tmp/tower-v09-canonical-final/page-2.png",
+      "sha256": "4061fce9255147b769b9b1ac646f9d7dd9ef44d645c677e99bd8d15f6c06d4dc",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 3,
+      "status": "pass",
+      "notes": "Ouverture de la première partie, versions et paragraphes de périmètre complets ; renvoi vers l’annexe v0.9 lisible. Le rendu de l’outil masque visuellement des zones répétées : les pixels d’en-tête et de pied gauche sont identiques aux pages 2 et 4, donc aucune suppression dans le fichier.",
+      "file": "/tmp/tower-v09-canonical-final/page-3.png",
+      "sha256": "9fd9a7b60050311a547cfdcac8c2366beda1497d94a79437b46ac11986702e2e",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 4,
+      "status": "pass",
+      "notes": "Intention, promesse au joueur et première partie du tableau de direction lisibles ; tableau et marges propres, en-tête et pied 4 / 186 complets.",
+      "file": "/tmp/tower-v09-canonical-final/page-4.png",
+      "sha256": "3aef1c35890236963e4487936272c8f8971433aa9cc6c5941143193176ec2c16",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 5,
+      "status": "pass",
+      "notes": "Suite du tableau avec en-tête répété, références puis principes lisibles ; lignes et cellules entières, continuation du dernier paragraphe vers la page 6 normale.",
+      "file": "/tmp/tower-v09-canonical-final/page-5.png",
+      "sha256": "561ee51c2da02e684c6f9b35c279cb3ad5d77f46a4179c40f4afc104fea4f549",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 6,
+      "status": "pass",
+      "notes": "Suite du refuge, règles de génération, île de Nacre et catastrophe récente entièrement lisibles ; hiérarchie des titres claire, aucun débordement du texte.",
+      "file": "/tmp/tower-v09-canonical-final/page-6.png",
+      "sha256": "f9121d3ea7d43cfb7f2662c96aeb0c198b2ef71cf3095668a487fd769ae11ae0",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 7,
+      "status": "pass",
+      "notes": "Origines du site puis chronologie : tableau à deux colonnes entièrement lisible, lignes complètes jusqu’à l’impact au 29, sans chevauchement du pied.",
+      "file": "/tmp/tower-v09-canonical-final/page-7.png",
+      "sha256": "d04b050f99dc0ac710eef3df007da262261ef14543cf8a9e69deb4b0b360f126",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 8,
+      "status": "pass",
+      "notes": "Fin de chronologie avec en-tête répété ; programme SILLAGE et tableau de vérité complets. Toutes les cellules et accents sont lisibles, marges conservées.",
+      "file": "/tmp/tower-v09-canonical-final/page-8.png",
+      "sha256": "04a1d60718d4f06301a5d3dc6bfbfa1ba1ba3fd7669d4c15a25bf18c9e870e70",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 9,
+      "status": "pass",
+      "notes": "Suite du registre de vérité puis fiches Alex, Varga et Malik ; tableaux et corps lisibles, tous les titres restent associés à leur texte.",
+      "file": "/tmp/tower-v09-canonical-final/page-9.png",
+      "sha256": "09cb2c27a15b325a7111e6f95542956b57327fa2cb9bf6917d516d2c479b70dc",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 10,
+      "status": "pass",
+      "notes": "Fiches Inès, Alma, Eva et autres équipes bien espacées ; paragraphes complets à largeur normale, aucune collision ni caractère manquant.",
+      "file": "/tmp/tower-v09-canonical-final/page-10.png",
+      "sha256": "b7ede6bf415ff25303a6fc0737712154b33a475c38ef50b59bd5aff67a83990c",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 11,
+      "status": "pass",
+      "notes": "Déroulement des actes un à trois entièrement lisible ; titre principal, sous-titres et marges cohérents, dernier paragraphe séparé du pied.",
+      "file": "/tmp/tower-v09-canonical-final/page-11.png",
+      "sha256": "f70483b0779f2a3da13b7d44276c7c5181948fdc2a6be843e1e9d5d230c23bd4",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 12,
+      "status": "pass",
+      "notes": "Actes quatre et cinq, épilogue puis début du tableau des fins lisibles ; cellules de la dernière ligne entières au bas de page, aucun chevauchement.",
+      "file": "/tmp/tower-v09-canonical-final/page-12.png",
+      "sha256": "4f4cfc779e2e12d7d0bfd023a1ab3f3f986bfc558d5d21cdfdc6e1691bd1cb88",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 13,
+      "status": "pass",
+      "notes": "Dernière fin, boucle de jeu et introduction des liaisons v0.9 lisibles ; titres et renvois correctement placés, continuation du paragraphe d’escalier normale.",
+      "file": "/tmp/tower-v09-canonical-final/page-13.png",
+      "sha256": "e50b7d57feb2db8175055e702c36bf1fdb72afe2f2f9cb7d9e5ba88fb3ede8b9",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 14,
+      "status": "pass",
+      "notes": "États de déplacement et limites du rappel lisibles. Le mot Accompagnement revient à la ligne dans la colonne étroite, sans perte de lettres ; toutes les cellules et le corps restent complets.",
+      "file": "/tmp/tower-v09-canonical-final/page-14.png",
+      "sha256": "ada30f74d641926c4fbee309a3f8b662be18d3ba4286e8071a274552bc3e4da1",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 15,
+      "status": "pass",
+      "notes": "Équipement et ressources : tableau dense à quatre colonnes entièrement visible, aucune cellule tronquée, hauteurs de lignes adaptées.",
+      "file": "/tmp/tower-v09-canonical-final/page-15.png",
+      "sha256": "981afe7b136f9a6049d3644634eeccc404700aed9ea1fd9bc3aa8296396df71b",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 16,
+      "status": "pass",
+      "notes": "Suite de l’équipement, survivants et sept états de sauvetage ; tableau, liste numérotée et paragraphes entièrement lisibles, espace avant le pied suffisant.",
+      "file": "/tmp/tower-v09-canonical-final/page-16.png",
+      "sha256": "af7d10b8108cb139acbf0060fa3a950a73742ef35efbcc855ed0431f8ac2574b",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 17,
+      "status": "pass",
+      "notes": "Stress et perception, vérification puis tableau des présences lisibles ; les cinq colonnes gardent leur contenu et aucune ligne ne touche le pied.",
+      "file": "/tmp/tower-v09-canonical-final/page-17.png",
+      "sha256": "4451af6f2f766c8e14eb69b6c58c0322a484fe702622311e503b96782374dbb4",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 18,
+      "status": "pass",
+      "notes": "Suite des présences avec en-tête répété, défense et introduction de la génération ; cellules complètes, titres et corps sans chevauchement.",
+      "file": "/tmp/tower-v09-canonical-final/page-18.png",
+      "sha256": "f122e9a60be7002ef82ce4f64ad00df985b6909e393850e77f7afed081565143",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 19,
+      "status": "pass",
+      "notes": "Ordre de génération en dix étapes, invariants et rythme lisibles ; numérotation complète et première ligne du tableau intégrale.",
+      "file": "/tmp/tower-v09-canonical-final/page-19.png",
+      "sha256": "12152c4af748d1e52b7f0ece42f08e8cc12c4a6b722ef687b272fbc1a54164ee",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 20,
+      "status": "pass",
+      "notes": "Suite du tableau de rythme, contrat de données puis catalogue d’événements ; deux tableaux nets, renvoi et toutes les cellules lisibles.",
+      "file": "/tmp/tower-v09-canonical-final/page-20.png",
+      "sha256": "b595e77941c8be63021ac235850bd9583282e83072f9c668d718bd2604c1f9ba",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 21,
+      "status": "pass",
+      "notes": "Catalogue d’événements en pleine page : toutes les lignes de Jouet interrompu à Relais de trop sont lisibles, alignées et complètes.",
+      "file": "/tmp/tower-v09-canonical-final/page-21.png",
+      "sha256": "754d3ffabfb31f32b1268da07bce02e146ae7d28e431e1480452e6e759cd0ab2",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 22,
+      "status": "pass",
+      "notes": "Fin du catalogue puis familles modulaires ; tableau à trois colonnes complet, sous-titres et corps bien séparés, aucun débordement.",
+      "file": "/tmp/tower-v09-canonical-final/page-22.png",
+      "sha256": "a8f5725b5ea2e65f84083342b2e8e9d13e8fe0a2a20e991762c83a8078421ec2",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 23,
+      "status": "pass",
+      "notes": "Modules, mer, palette, son et musique : titres, paragraphes et accents lisibles avec marges uniformes, aucune coupure anormale.",
+      "file": "/tmp/tower-v09-canonical-final/page-23.png",
+      "sha256": "2df09f42f588ab83d136cbd1cf081d70d801ddaa7842b62f7012b47ef48d5323",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 24,
+      "status": "pass",
+      "notes": "Interface, options d’accessibilité et sauvegarde : puces complètes, termes techniques et numéros lisibles, continuation de fin de page naturelle.",
+      "file": "/tmp/tower-v09-canonical-final/page-24.png",
+      "sha256": "ba042fc266e8385c29602679269ce9e4cb97bedbf17386dccad58c59e94b73da",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 25,
+      "status": "pass",
+      "notes": "Fin de sauvegarde puis ouverture, approche, toit et première descente : corps et liens propres, toutes les lignes lisibles.",
+      "file": "/tmp/tower-v09-canonical-final/page-25.png",
+      "sha256": "903f13d428682673cd26110999b824f453b95c818e094541fd746fd1afbadd51",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 26,
+      "status": "pass",
+      "notes": "Baie Est, contradictions et périmètre du prototype lisibles ; tableau des trois premières zones complet, pied distinct du tableau.",
+      "file": "/tmp/tower-v09-canonical-final/page-26.png",
+      "sha256": "6d454f24547271e772c3db24ab8e861abf5f35fdf1150d56585efd22da72cab5",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 27,
+      "status": "pass",
+      "notes": "Tableau des étages 28 à 25, périmètre et critères fonctionnels lisibles ; puces et lignes terminales complètes au bas de page.",
+      "file": "/tmp/tower-v09-canonical-final/page-27.png",
+      "sha256": "c99ed2e627edb777d3719b5974b84e003176b2f4fd278e93d96181367d368c70",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 28,
+      "status": "pass",
+      "notes": "Architecture, composants fonctionnels et premier jalon de production : tableau et corps lisibles, titres liés aux paragraphes, aucun recouvrement.",
+      "file": "/tmp/tower-v09-canonical-final/page-28.png",
+      "sha256": "0a39f9f15a06b4853c0779b2cbad86ab6629d4fa1d00ecf68116ad1fee23ea64",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 29,
+      "status": "pass",
+      "notes": "Jalons deux à six et tableau des risques lisibles ; aucune ligne de tableau ni de corps coupée.",
+      "file": "/tmp/tower-v09-canonical-final/page-29.png",
+      "sha256": "ab22d6af14388725d60f34ba9dc2a5f9afeda95ae20dfb9ccd6f6d6121fbb1df",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 30,
+      "status": "pass",
+      "notes": "Fin des risques, extension Mountain Hole et exemples de dialogues : tous les guillemets, accents et paragraphes sont lisibles, sans collision.",
+      "file": "/tmp/tower-v09-canonical-final/page-30.png",
+      "sha256": "d48817920ce470b7372ca14e3c88ae2c27a3d9fb42c2c5b55a80886120f0d9e4",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 31,
+      "status": "pass",
+      "notes": "Décisions ouvertes et historique 0.5 détaillé lisibles ; caractères accentués, gras et lien rendus correctement, paragraphes sans chevauchement.",
+      "file": "/tmp/tower-v09-canonical-final/page-31.png",
+      "sha256": "e0a407e51aa2aa292b9c1798201ca53bb940c584491d57a308934422e53e29ef",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 32,
+      "status": "pass",
+      "notes": "Conclusion de la Bible : sections historiques 0.8 puis actuelles 0.9 lisibles, chiffres 60 historiques et 64 actuels clairement contextualisés ; bas de page aéré normal en fin de partie.",
+      "file": "/tmp/tower-v09-canonical-final/page-32.png",
+      "sha256": "e5de72ebc2e63c18845bfd7ddaadc000ac62d55c7236f4cea24d80ea03508b3c",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 33,
+      "status": "pass",
+      "notes": "Ouverture de la partie 2, version, périmètre et règles de variation lisibles ; titre long tient dans la largeur, tableau débute avec une ligne complète.",
+      "file": "/tmp/tower-v09-canonical-final/page-33.png",
+      "sha256": "60ab4afae74349cbb86ed72c5c5e8a6a6bb67c7046091da074933ddce35d4838",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 34,
+      "status": "pass",
+      "notes": "Coupe générale A30 à A12 : cinq colonnes et toutes les lignes intégrales, numéros et statuts bien alignés, aucune cellule débordante.",
+      "file": "/tmp/tower-v09-canonical-final/page-34.png",
+      "sha256": "5c58e0e43c8068e1a9232081f82b09fda99f1937c115f081cdad8b6647c1569d",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 35,
+      "status": "pass",
+      "notes": "Coupe A11 à A00 puis début des liaisons v0.9 ; deux tableaux correctement alignés et entièrement lisibles.",
+      "file": "/tmp/tower-v09-canonical-final/page-35.png",
+      "sha256": "86c029327648d2a6a3867edd90f8b18c680d8b41c7d9ea080ead670d5cffd6fc",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 36,
+      "status": "pass",
+      "notes": "Les cinq liaisons restantes, leur renvoi et fiche du toit sont lisibles ; identifiants avec soulignements et colonnes conservés, aucun débordement.",
+      "file": "/tmp/tower-v09-canonical-final/page-36.png",
+      "sha256": "1269fd3c66fa98f7c02f5b3a6b68233e2924a655e291e26751dd12b5d4b51be4",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 37,
+      "status": "pass",
+      "notes": "Fiches du restaurant et des suites : sous-rubriques et liaisons locales lisibles, continuité correcte vers la page suivante.",
+      "file": "/tmp/tower-v09-canonical-final/page-37.png",
+      "sha256": "82a121dfb85f139b3102e3de425413df1d0039025f4e08b970d1012c4ba71c34",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 38,
+      "status": "pass",
+      "notes": "Archives et jardin : corps dense mais lisible, paragraphes structurés et identifiants de route complets, aucun débordement.",
+      "file": "/tmp/tower-v09-canonical-final/page-38.png",
+      "sha256": "dfd9ed6d23b28084ec586a48d7c927351016c663cc17879d807c5db501b67baf",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 39,
+      "status": "pass",
+      "notes": "Fiches spa et refuge avec liaisons v0.9 lisibles ; tous les sous-titres et paragraphes restent dans les marges, aucune troncature.",
+      "file": "/tmp/tower-v09-canonical-final/page-39.png",
+      "sha256": "4f1e0ed7747c57f35bd8577ae47a415bd07f1bfcf1d069851071801934fb324c",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 40,
+      "status": "pass",
+      "notes": "Fin de refuge, congrès, exposition et début des boutiques : hiérarchie lisible, paragraphes et caractères complets.",
+      "file": "/tmp/tower-v09-canonical-final/page-40.png",
+      "sha256": "9af9bce49a40f18affb69edd47faaffff44c9b8cbb908847cfc56b5b437da39e",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 41,
+      "status": "pass",
+      "notes": "Fiches boutiques, cuisines, refuge de logistique et résidences hautes : lecture continue, titres et fins de paragraphes propres.",
+      "file": "/tmp/tower-v09-canonical-final/page-41.png",
+      "sha256": "dcfa759713e7e80142adc103ee0e15b29886bd723f4449d9c054e471e544ecb0",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 42,
+      "status": "pass",
+      "notes": "Résidences, télécommunications et sports : rubriques en gras et paragraphes entièrement lisibles, aucun texte en marge ni glyphe absent.",
+      "file": "/tmp/tower-v09-canonical-final/page-42.png",
+      "sha256": "fb189e59f081d199667838c8ee1cf016978ffa2e83de72a161c6d1674c9bf5e0",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 43,
+      "status": "pass",
+      "notes": "Refuge médical et niveaux du secret : titres et rubriques A15–A13 nets, texte complet sans chevauchement du pied.",
+      "file": "/tmp/tower-v09-canonical-final/page-43.png",
+      "sha256": "ea483463688c3d7236903ff72c74acba356a9ac7c93eb7eb6c9b2123b1bbab09",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 44,
+      "status": "pass",
+      "notes": "Fiches diagnostic, salons, refuge technique et clinique : mise en page régulière, accents et corps lisibles.",
+      "file": "/tmp/tower-v09-canonical-final/page-44.png",
+      "sha256": "c093c3d330f7d9f0279732fb4eab0406a6b0c2f25bf8ba7d2aed2acf58466f96",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 45,
+      "status": "pass",
+      "notes": "Clôture clinique, laboratoires, archives juridiques et liaison basse lisibles ; tous les titres et paragraphes complets.",
+      "file": "/tmp/tower-v09-canonical-final/page-45.png",
+      "sha256": "4c9745b51ebd50a2583602235bce068fc3f4bee958e929395e60f59c96e2f89e",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 46,
+      "status": "pass",
+      "notes": "Liaison basse, refuge incendie, musée et parking : texte lisible et correctement espacé, aucune coupure de bas de page.",
+      "file": "/tmp/tower-v09-canonical-final/page-46.png",
+      "sha256": "a6ebce1195e36932b141f8e19810e5a4d8533345df907a394ee0217d6dc384b4",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 47,
+      "status": "pass",
+      "notes": "Jardin intérieur, accueil du socle et terrasse : rubriques complètes, bas de page dégagé, lisibilité régulière.",
+      "file": "/tmp/tower-v09-canonical-final/page-47.png",
+      "sha256": "5f7a9f06c481453db63513ed30d82239fc3926e820efbcc8f61dc0ef9f512b42",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 48,
+      "status": "pass",
+      "notes": "Traversée d’Hespérie et six espaces : titres H JONCTION à H RETOUR associés à leurs corps, aucune troncature ni collision.",
+      "file": "/tmp/tower-v09-canonical-final/page-48.png",
+      "sha256": "e1f2672d8d0abc0ce335e2e66e6d1f79bd574fa0d8f54c178266402062a4f3b8",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 49,
+      "status": "pass",
+      "notes": "Anciens bains S01–S06 : titres et prose complets, espacement des sections régulier, continuation de S06 normale.",
+      "file": "/tmp/tower-v09-canonical-final/page-49.png",
+      "sha256": "7c11ea4d84012664f10ac189a4c1811a9bc2796d1ba283844f52b24dedd6ae8a",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 50,
+      "status": "pass",
+      "notes": "Sas Pelagos et bunker B01–B05 : texte et codes lisibles, hiérarchie nette, aucun chevauchement de pied.",
+      "file": "/tmp/tower-v09-canonical-final/page-50.png",
+      "sha256": "fcf6df0f6b23cfe0c0d651df5a06c1a774b491b8c6e962cfe89f36f998059cf5",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 51,
+      "status": "pass",
+      "notes": "Seuil 666, traversée I01–I04 et sortie : titres, renvoi et codes bien rendus ; texte complet avec poursuite normale de la sortie.",
+      "file": "/tmp/tower-v09-canonical-final/page-51.png",
+      "sha256": "362d718b5fefbaeaeae89a2fea27d1c4ce89069272cb7f94fd405b9700d44e80",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 52,
+      "status": "pass",
+      "notes": "Sortie, extension et validation : tableau Mountain Hole M01–M06 lisible dans ses quatre colonnes, marges et paragraphes propres.",
+      "file": "/tmp/tower-v09-canonical-final/page-52.png",
+      "sha256": "be1f301a90ce24a96da3f48474373664cc4294087adc4bb2d051696cd655efe9",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 53,
+      "status": "pass",
+      "notes": "Assemblage des trente étages, objectifs de production et A30–A28 : chiffres, signes de multiplication, renvois et paragraphes correctement rendus.",
+      "file": "/tmp/tower-v09-canonical-final/page-53.png",
+      "sha256": "b5f44d7633f570e3ce2f69450a02aef7a20caac45e1ea847d34baa12924f58e6",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 54,
+      "status": "pass",
+      "notes": "Assemblages A27–A23 : toutes les dimensions et listes de props sont lisibles, sections complètes, marges respectées.",
+      "file": "/tmp/tower-v09-canonical-final/page-54.png",
+      "sha256": "6cb33cd646283b89260ad607bfe58dbb46da74ba78bd3606317a473e9fbc1ec9",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 55,
+      "status": "pass",
+      "notes": "Assemblages boutiques, cuisines, logistique et résidences : chiffres et corps lisibles, aucune ligne coupée.",
+      "file": "/tmp/tower-v09-canonical-final/page-55.png",
+      "sha256": "badc2b3d4672890027239281eac9d330ed1e47fd2757100d52ee9b8685e24af3",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 56,
+      "status": "pass",
+      "notes": "Assemblages télécommunications à niveau absent : rubriques et paramètres entièrement visibles, aucun débordement des dimensions ou références.",
+      "file": "/tmp/tower-v09-canonical-final/page-56.png",
+      "sha256": "6244b9711a9d6937db7b9026096f5fa38d9b90f07b54d1cda69e1036319b46ce",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 57,
+      "status": "pass",
+      "notes": "Assemblages A12–A08 : contenu entier, dimensions et références E/P lisibles, bas de page sans troncature.",
+      "file": "/tmp/tower-v09-canonical-final/page-57.png",
+      "sha256": "28d75afe3b9bdcd5efc9a3173144ee89f6c38fd81358f43d3ed2b116c9d95d6c",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 58,
+      "status": "pass",
+      "notes": "Assemblages A07–A02 : titres, chiffres et texte correctement rendus, paragraphes distincts et continuation normale du hall.",
+      "file": "/tmp/tower-v09-canonical-final/page-58.png",
+      "sha256": "8d410e52f378e65a020b4945dbb6edb850d08c45e4f846045b84bc840a046cb6",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 59,
+      "status": "pass",
+      "notes": "Fin de l’assemblage A01 et ordre de production : texte intégral, espace libre normal de fin de partie, en-tête et pied propres.",
+      "file": "/tmp/tower-v09-canonical-final/page-59.png",
+      "sha256": "6dcd5dbbc0f597b82d9cf11682215642d69750f24b3d33aca34061f5ff540565",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 60,
+      "status": "pass",
+      "notes": "Ouverture annexe A, périmètre et graphe v0.9 : grands titres, codes des six liaisons et renvois lisibles, aucune troncature.",
+      "file": "/tmp/tower-v09-canonical-final/page-60.png",
+      "sha256": "a8cc2fc0a073d281a708a7bc37cfee7bca7551342223032ae46bf9d58f6c74b2",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 61,
+      "status": "pass",
+      "notes": "Contrat de contenu puis données livrées : signatures techniques lisibles et tableau à trois colonnes complet, aucun code tronqué.",
+      "file": "/tmp/tower-v09-canonical-final/page-61.png",
+      "sha256": "34b4bc4a96a78f1301a1f3431ea63bdfe8978f11e42ad477f0b90886c57c6755",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    },
+    {
+      "page": 62,
+      "status": "pass",
+      "notes": "Fin du schéma et contrat des liaisons verticales : noms de champs, tableau à deux colonnes, renvoi, tolérance ±0,35 m et texte sur les escaliers lisibles.",
+      "file": "/tmp/tower-v09-canonical-final/page-62.png",
+      "sha256": "0843bcd8363809faf0efdb3155736cdd9f51c63ad01703888c25592c8031ecf8",
+      "native_pixels": [
+        1414,
+        2000
+      ],
+      "opened_individually": true,
+      "method": "view_image, native full page PNG, at most two images per call"
+    }
+  ]
+}

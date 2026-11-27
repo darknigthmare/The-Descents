@@ -1,0 +1,41 @@
+name: Materialize v0.2 release binaries
+
+on:
+  push:
+    branches: [feat/live-tower-collapse]
+    paths: ['.publication/v0.2/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: materialize-tower-descent-v02
+  cancel-in-progress: false
+
+jobs:
+  materialize:
+    if: github.ref == 'refs/heads/feat/live-tower-collapse'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the publication branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: feat/live-tower-collapse
+      - name: Reconstruct and verify complete distribution binaries
+        run: python3 tools/materialize_published_binaries.py --clean-pieces
+      - name: Commit verified distribution files on this branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- dist/index.wasm releases/The-Tower-Descent-v0.1-Windows-x64.zip releases/The-Tower-Descent-v0.2-Windows-x64.zip
+          git add -u -- .publication/v0.2/chunks
+          if git diff --cached --quiet; then
+            echo 'Verified distribution already materialized.'
+          else
+            git commit -m 'Materialize verified v0.2 distributions and retain v0.1 archive'
+            git push origin HEAD:refs/heads/feat/live-tower-collapse
+          fi

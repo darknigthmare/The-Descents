@@ -1,0 +1,188 @@
+{
+  "version": "0.12",
+  "renderer": "Blender 4.3.2 Cycles CPU, 40 samples, 750x600",
+  "review": "Each final native image opened individually and visually inspected after the final regeneration. These are asset previews, not Godot/gameplay evidence.",
+  "all_accepted": true,
+  "reviewed_count": 12,
+  "corrections": [
+    "Measured final pivots and bounds on actual mesh vertices, then independently validated transformed exported GLB coordinates.",
+    "Aligned payment-screen and keypad geometry with inclined card-reader casing.",
+    "Darkened oven window.",
+    "Changed TIRER instruction to contrasting ivory."
+  ],
+  "remaining_limits": [
+    "Visible Cycles sample noise in polished steel and transparent glass.",
+    "Godot placement, transparency ordering, collision and hardware performance require game-level verification.",
+    "Static models, no articulated animations, rigs or LODs."
+  ],
+  "images": [
+    {
+      "id": "retail_display_case",
+      "file": "docs/assets/v0.12/previews/commerce_retail_display_case.png",
+      "bytes": 701551,
+      "sha256": "77be9f225e512a611e7db9dcf772efc54a062b1b19e6c17b6ae1d5af3c7eacc0",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Vitrage transparent, coins et tablette lisibles; albedo du bois porté par le matériau de base. Transparence moteur encore à vérifier.",
+      "glb_sha256": "447c6f765db27a323a3316786259b96abc8008f73280e60cc26a5f0fb963c998"
+    },
+    {
+      "id": "cash_register",
+      "file": "docs/assets/v0.12/previews/commerce_cash_register.png",
+      "bytes": 650629,
+      "sha256": "7001f8f33ac8c4ab0bb9a72fac4544366fcd113d875892f6445ea80a1facbc01",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Écran du lecteur reposé sur son boîtier incliné; boutons, tiroir et imprimante lisibles.",
+      "glb_sha256": "a97b65cbf017410140d51d6085c0320e3e3100cfec14b0221c64cca09a2e7e85"
+    },
+    {
+      "id": "shutter_control",
+      "file": "docs/assets/v0.12/previews/commerce_shutter_control.png",
+      "bytes": 615137,
+      "sha256": "18d003aa86b7cb252a6b91fdd661042a60f1654cee87c3f900e64595b5f96b2d",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Trois commandes et clé distinctes; visserie et plaque murale correctement raccordées.",
+      "glb_sha256": "e3f4024998a2eff11bb67ce259af0bed27d56f1555c6b687ad3fa943239956c1"
+    },
+    {
+      "id": "service_trolley",
+      "file": "docs/assets/v0.12/previews/commerce_service_trolley.png",
+      "bytes": 667057,
+      "sha256": "5e4f7633621639e4fc9943d33a813347329de53919d24a167afa0160f17f1819",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Trois plateaux avec rebords, poignées et roues; aucune intersection gênante visible.",
+      "glb_sha256": "3cdbd92281d39e8b99b88ca8e700f5aedf81171be585ee941939920c9678a512"
+    },
+    {
+      "id": "industrial_sink",
+      "file": "docs/assets/v0.12/previews/commerce_industrial_sink.png",
+      "bytes": 668540,
+      "sha256": "1aecc6bf23712b74e5fb9e6b40cbdc56365f7a1dbe8b43997a014fdc31b0bcf4",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Cuve ouverte et siphon distincts, égouttoir/robinet/pieds lisibles.",
+      "glb_sha256": "36e3ecf1b3439af8e65b231e52efb46c6f281ed59d038df51c7f88f8a252247b"
+    },
+    {
+      "id": "kitchen_stove",
+      "file": "docs/assets/v0.12/previews/commerce_kitchen_stove.png",
+      "bytes": 698761,
+      "sha256": "a5e7031e5e2af3d5e42d04cbe1bb8c928b02375a5224b33a9c51f457e80d53ab",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Quatre foyers et cinq boutons, vitre de four assombrie; poignée et grille identifiables.",
+      "glb_sha256": "8ed80e7735ff44db3665111f6a8d518adb18178e186fb858edfb574d2016d93b"
+    },
+    {
+      "id": "extraction_hood",
+      "file": "docs/assets/v0.12/previews/commerce_extraction_hood.png",
+      "bytes": 477099,
+      "sha256": "298cafe952e5b8bf6bb4a3fea09eb8045276700fd3a7b5785eaf09e7c260e37c",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Dessous cadré exprès: filtres à chicanes, poignées, conduit et pourtour visibles.",
+      "glb_sha256": "9700b550cd473c5a285f4d8ce860a71f83a12030a6380764f782fd150a274769"
+    },
+    {
+      "id": "utility_cutoff_panel",
+      "file": "docs/assets/v0.12/previews/commerce_utility_cutoff_panel.png",
+      "bytes": 660943,
+      "sha256": "4eae23551e1b21d78c1b8bf49fa6eca5c226dd386c6470e85738f1118e036a48",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Poignée rouge, texte ISOLER/CUISINES A21, joint, lampe et charnières lisibles.",
+      "glb_sha256": "53c6323cfa8863d66b5f9bb1dc634ffe220193579cb7bf16b9846c786be659d8"
+    },
+    {
+      "id": "fire_blanket_cabinet",
+      "file": "docs/assets/v0.12/previews/commerce_fire_blanket_cabinet.png",
+      "bytes": 692316,
+      "sha256": "dcc77b258700857b34f7f07f84983ad79b9fa7baadaf58a258484377cdf466c7",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "COUVERTURE ANTI-FEU et TIRER lisibles; languettes visibles au bas du coffret.",
+      "glb_sha256": "e8d40d074187db6627f8e02d75b8d1716e726e034bcaa5556881756aebf239fc"
+    },
+    {
+      "id": "folding_cot",
+      "file": "docs/assets/v0.12/previews/commerce_folding_cot.png",
+      "bytes": 667902,
+      "sha256": "7e52ced720f5906ed4f770d1510b937a24be16536f393f8a47157adeaf1f5c71",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Pieds croisés, toile légèrement fléchie, oreiller et couverture identifiables.",
+      "glb_sha256": "d629083a64292111d4eaf0a4bafe34a3577c1010bf7ba30d592e86f669cef876"
+    },
+    {
+      "id": "water_canister",
+      "file": "docs/assets/v0.12/previews/commerce_water_canister.png",
+      "bytes": 643756,
+      "sha256": "9e5df8972b59aef7b9e59f601fd9acd7d963645c6e888cd89f6ecb5b2b028dcc",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Poignée ajourée, bouchon nervuré, robinet et EAU/10 L lisibles.",
+      "glb_sha256": "875dae9f5ca861ce85b436d3c9360d44c0d60d22367ce010bfc2ba8e9c6ecc81"
+    },
+    {
+      "id": "privacy_screen",
+      "file": "docs/assets/v0.12/previews/commerce_privacy_screen.png",
+      "bytes": 653093,
+      "sha256": "7df336e2ef9ee1b54b8d5a1bf5194dc69178d172fd12187d7b1d6753e7f5125c",
+      "dimensions_px": [
+        750,
+        600
+      ],
+      "reviewed_individually": true,
+      "accepted": true,
+      "note": "Trois panneaux, plis, anneaux, charnières et six roulettes visibles.",
+      "glb_sha256": "4c7845c904d217c240f95b2cfd15f20438d6c08084fe445ea803aeb37d81f985"
+    }
+  ]
+}

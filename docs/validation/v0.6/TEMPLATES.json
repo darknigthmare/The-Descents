@@ -1,0 +1,28 @@
+{
+  "version": "0.6.0",
+  "engine_version": "4.7.2.stable",
+  "source_provenance": "docs/EXPORT_TEMPLATE_PROVENANCE.json",
+  "source_provenance_sha256": "a3b8f224beb58e847bc5230254b5ba1b28a04bf90b2fc10ade182f38ce58ea05",
+  "files": [
+    {
+      "name": "version.txt",
+      "size": 13,
+      "crc32": "44969cbd",
+      "sha256": "38885c88f75abbc797a1db7559719800279a00cfb9fa8b2e2868a7f6f84bad2e"
+    },
+    {
+      "name": "web_nothreads_release.zip",
+      "size": 10245903,
+      "crc32": "795d38e9",
+      "sha256": "d3ee2f08cef0cf3cf6678a6355a92a8db48ccdd35cbd2e8bfd5f0e8a0b4032a0"
+    },
+    {
+      "name": "windows_release_x86_64.exe",
+      "size": 109268480,
+      "crc32": "1ee85628",
+      "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+    }
+  ],
+  "template_file_sha256_verified": true,
+  "complete_archive_sha256_verified": false
+}

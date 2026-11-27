@@ -1,0 +1,34 @@
+Prepared canonical PDF retained byte-for-byte; no CI LibreOffice conversion was performed.
+{
+  "manifest": {
+    "file": ".review/v0.9/canonical-document.json",
+    "bytes": 5629,
+    "sha256": "0e94cef22af7929f31f27f2f6a8f917fb3ddf4f3568e45c9ab33eb181f4c004d"
+  },
+  "renderer": {
+    "method": "Fresh repository DOCX matched against every prepared package member; canonical PDF retained unchanged; CI Poppler PNG rendering at 2000 px.",
+    "pdf_preparation": "prepared_canonical_document",
+    "libreoffice": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+    "canonical_renderer": {
+      "script": "/home/agent/.codex/skills/builtins/documents/render_docx.py",
+      "script_sha256": "876d5993324e2faaaa96a68a4f7504642e9a07e6df265b385b2baa03b231369e",
+      "libreoffice": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+      "method": "Primary document runtime DOCX build and canonical render_docx.py --emit_pdf; complete PDF prepared locally and retained unchanged for CI page rendering and independent visual approval."
+    },
+    "canonical_source_provenance": {
+      "created_utc": "2026-11-25T14:14:09.575407+00:00",
+      "build_bible_sha256": "0b90555d098cbb9ae85a5e7818d64e760118c6ce852a13ce30603dcfcdd31f80",
+      "origin": {
+        "source_commit": "afa4e21ccea7e876930200fcd85d7a3d929244fa",
+        "word_sha256": "d10ea97019bfd8dc3290e43621c4d87ad841fff761fa3d36f857121aeabe8bb8",
+        "render_log_sha256": "b9f2b52a2e6d879b450e867df1f679072c5ef033d454054101f24f3b0bfd8e7f",
+        "content_guard_sha256": "88bf3b1a9494d96df9a4f8795fc7d7b2f83d01d14171e9f49805648cbe170398"
+      },
+      "reason": "LibreOffice 24.2.7.2 on CI omitted table 16 rows 3-7 in both conversion attempts. The canonical renderer preserves the complete ordered content; CI must verify source and DOCX-member identity, rerun the same full content guard and render this exact PDF for page-by-page review. No visual approval is implied by this input manifest."
+    },
+    "rasterizer": "CI Poppler pdftoppm -png -scale-to 2000",
+    "requested_body_font": "Arial",
+    "font_report": "docs/validation/v0.9/document-fonts.txt",
+    "canonical_local_skill_renderer_used": true
+  }
+}

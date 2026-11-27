@@ -1,0 +1,450 @@
+{
+  "format": 1,
+  "version": "0.11.0",
+  "decision": "revision_required",
+  "source_commit": "28db3e7654b9b7b523369b6990035b159babae34",
+  "method": "Revue initiale répartie entre quatre agents assistants ; chacune des 71 images a été ouverte individuellement. Les défauts constatés empêchent toute approbation de ce candidat.",
+  "counts": {
+    "pass": 54,
+    "needs_revision": 5,
+    "fail": 12
+  },
+  "captures": [
+    {
+      "file": "docs/captures/v0.11/baseline/01_menu_arrivee.png",
+      "sha256": "eed565055904c550ffc3962dbb9bae15c8bb048b21acfef3c604443908021d98",
+      "status": "pass",
+      "observation": "Menu lisible, boutons distincts à gauche, deux tours et hélicoptères visibles dans le décor ; version 0.11.0 affichée sans débordement."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/02_options.png",
+      "sha256": "d65fc18ebe9374c9b2227ed3ad001fab4852b5fce31431be4d24c460359c7806",
+      "status": "pass",
+      "observation": "Panneau Options et confort lisible, curseurs et valeurs alignés, cadre de focus visible ; la zone des réglages défile sans recouvrir les commandes de retour."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/03_nouvelle_intervention.png",
+      "sha256": "840d69aaa00bfcb51bbf03d00b48d7714239f39e55c0ca8ac6953562eab811c6",
+      "status": "pass",
+      "observation": "Brief de déploiement et numéro de disposition lisibles ; boutons Déployer Alpha et Retour entièrement visibles."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/04_signature_studio.png",
+      "sha256": "31631edc95a43198d27f963a2bd0d10f5f076d30441cf405c85c3f87d95fec6f",
+      "status": "pass",
+      "observation": "Couronne, nom du studio et Productions centrés sur le fond des tours ; barre de progression et commande Passer lisibles dans la bande inférieure."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/05_titre.png",
+      "sha256": "4e8eed514c5793c7206bf55da773e37aa4c4e53f125b0a61daacf65a317882f3",
+      "status": "pass",
+      "observation": "Titre principal et accroche centrés, silhouette des deux tours conservée ; absence de chevauchement avec les contrôles de la cinématique."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/06_approche_03.png",
+      "sha256": "7a6eb615551cab1703907f3cf24204ea0c7e2695e9751fe2d4d3cbb3c8b7d07c",
+      "status": "pass",
+      "observation": "Plan large des deux tours dans la brume et deux hélicoptères distincts ; carton Île de Nacre et sous-titre radio entièrement lisibles."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/06_approche_10.png",
+      "sha256": "231b118cf5989b3f4034873aa34389753b3bbc08e01136b250906c8225c2fd6d",
+      "status": "pass",
+      "observation": "Approche des toits avec hélicoptères et ombres perceptibles ; cartouche Les Tours Orphée et transmission de Varga non tronqués."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/06_approche_17.png",
+      "sha256": "9aa61a747a8080afe3a205cb6d7913f7400e2b0899334c029dc52a920d0aca0e",
+      "status": "pass",
+      "observation": "Deux équipes et deux toits identifiables ; enseigne Orphée correctement lisible depuis cette vue extérieure, texte radio sous les tours."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/06_approche_25.png",
+      "sha256": "d65d51546fb9bbc75441cf8419fe17d2b658a477ff085ef20867f683beb7beb8",
+      "status": "pass",
+      "observation": "Poste de commandement, treuil, abri médical et équipe visibles ; sous-titre de Varga lisible, outils et casque partiellement visibles au bord du comptoir."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/07_pause_intro.png",
+      "sha256": "8ff23c7e1c7f09714695f2b0b7691f1aa5b99da59f0c2ae8a16d8271a4b861b4",
+      "status": "pass",
+      "observation": "Menu de pause centré, état visuel assombri, boutons et réglages confort lisibles sans chevauchement avec les consignes de sauvegarde."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/08_menu_archives.png",
+      "sha256": "67850444f6f7d7d21b08a5b0dee8f94bb3d638485c6b16bf9c6ca196e11324ae",
+      "status": "pass",
+      "observation": "Menu de reprise lisible sur les archives, dernier point sûr étage 28 et vie sauvée cohérents ; cloison occultant une partie du grand label de décor, sans gêner le menu."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/09_dossier_apres.png",
+      "sha256": "ae1f77da971943975e831ace528949737209a27ff0f0f711f052641f3a439f97",
+      "status": "pass",
+      "observation": "Situation après impact, équipe et parcours lisibles dans une zone à défilement ; boutons Commandes et matériel et Retour accessibles. La suite de la liste est sous le bord de défilement."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/10_menu_refuge.png",
+      "sha256": "b75ca617606066ace498b24e5fe1a41f740d46ed755d3458ae3d6ce7de4eaff0",
+      "status": "pass",
+      "observation": "Menu de consultation terminé, point sûr 25 et trois vies sauvées lisibles ; scène du refuge éclairée avec secouriste. Le label de décor est partiellement occulté par le mobilier."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/11_inspection_toit.png",
+      "sha256": "58eb08aea321ddb9a1eb1afe879f02237e364e0e62ef03e67928a8cb223307db",
+      "status": "needs_revision",
+      "observation": "Registre médical et commandes de fermeture lisibles dans le panneau défilant. Le HUD en arrière-plan annonce encore outil prêt pendant la pause d’inspection : synchronisation de fixture à corriger avant approbation."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/12_inspection_archives.png",
+      "status": "pass",
+      "observation": "Le dossier de maintenance avant le choc est entièrement lisible, avec hiérarchie claire entre fonction, constat et suite ; aucune ligne tronquée, commande de fermeture visible et fond suffisamment assombri.",
+      "sha256": "5bf85fdc8c77b07ab6f08b59f92fd0c29e82948966886f9aa7f13379c9ee138b"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/13_inspection_apres.png",
+      "status": "pass",
+      "observation": "La variante après le choc distingue clairement la voie Est coupée et le contournement intérieur au nord ; titre, paragraphes et commandes restent lisibles sans chevauchement ni troncature.",
+      "sha256": "e739493bdd0fc3a29527329d50c256c7dcd3d95e0c7d72a448840c6b3419e727"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/14_toit_equipe.png",
+      "status": "pass",
+      "observation": "La vue d’ensemble du toit distingue l’hélicoptère, le puits balisé, les équipes, l’abri médical et le comptoir équipé ; les accès de secours restent visibles et le panneau ORPHÉE est lisible depuis ce côté.",
+      "sha256": "28a7e3c9ec24dd221aa61ba8e95886bfb28d26b3979e4c12cce6c80aca7482a7"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/15_portage.png",
+      "status": "pass",
+      "observation": "Ana portée apparaît au premier plan, l’outil est rangé et le HUD indique les mains réservées au secours ; la balise de treuil, les garde-corps et le chemin central restent visibles. Objectif et consigne de retour à la balise sont lisibles.",
+      "sha256": "a9bafe46880240e6b7c8e13ec62a92359119cafaf24a67d62ff91acb5f6d8da3"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/16_treuillage.png",
+      "status": "pass",
+      "observation": "La personne et son siège de treuil sont visibles sous l’ouverture, avec câble raccordé vers le toit ; la progression de remontée à 36 % et l’attente de réception sont lisibles. Le compteur reste à 0/3 pendant l’opération et l’outil est rangé.",
+      "sha256": "a0bc3a7d90b1c4e26a935ca6800e40496d20b8f449fe3b7ed1a0ac6dd48d072f"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/17_reception.png",
+      "status": "pass",
+      "observation": "La réception sur brancard est clairement visible entre les deux secouristes, à l’écart du puits protégé ; l’abri médical, l’hélicoptère et le brancard supplémentaire restent distincts. Aucun nouvel outil ne masque l’opération de secours.",
+      "sha256": "f1d8f3c8975c02de21638849a3b6d87dfc932cb3b6e3b9df60fe37b1b7497b27"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/18_meteo_toit.png",
+      "status": "pass",
+      "observation": "Les deux toits, les équipes et l’hélicoptère se distinguent sous le ciel sombre et la brume ; les balises lumineuses restent repérables et le nouveau comptoir ne perturbe pas la lecture spatiale entre les tours.",
+      "sha256": "1a5f760170a077aeab76af1d4c5abf4da6b938801cbdb00e089d477fbf4d8a31"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/19_options_pause.png",
+      "status": "pass",
+      "observation": "Le panneau Options et confort présente des libellés, valeurs et curseurs lisibles, avec focus clavier visible, ascenseur distinct et boutons Commandes, Réinitialiser et Retour accessibles. Le fond de jeu est suffisamment atténué.",
+      "sha256": "1ac171d6e5db2feee069951df3ee3d96ba7c2d88abbd97cad95aeddbc519d363"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/20_journal_situation.png",
+      "status": "pass",
+      "observation": "L’onglet Situation affiche clairement 1/3 personne à l’abri, 1/3 indice et la position au 28 ; priorité, état après impact et liste des rescapés sont lisibles. La zone longue possède son défilement et la fermeture reste visible.",
+      "sha256": "55234d0bf79e8aeebe03ac51b4eaad7101e46be188db5fc2edeaad2b3c8a290f"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/21_journal_rescapes.png",
+      "status": "pass",
+      "observation": "La liste des rescapés distingue Ana reçue au poste d’Aube et Samuel encore à secourir, avec étages et états lisibles ; les onglets, le compteur et le défilement restent cohérents et utilisables visuellement.",
+      "sha256": "24db0a49795f63774b7228ec5f306bfe6a9e161dd877faf9abb1359a4c0804b4"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/22_journal_indices.png",
+      "status": "pass",
+      "observation": "L’indice du 29 est clairement identifié comme récupéré, tandis que les pièces du 27 et du 26 restent non récupérées et masquées ; contenu, états et navigation sont lisibles sans révélation visuelle des documents manquants.",
+      "sha256": "bbe5e01d866be7e6c5683b20c42d7a801e40d2b109b745444a737e2342dd86b7"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/23_journal_transmissions.png",
+      "status": "pass",
+      "observation": "Les transmissions affichent clairement horodatages, émetteurs et messages, avec séparation suffisante entre échanges ; l’onglet actif et le bouton de fermeture restent visibles, sans texte coupé dans cette vue.",
+      "sha256": "94a519e83245316a04443bc389a0a366dae4f8ac8478bf5b27edf1300be66647"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/24_epilogue_02.png",
+      "status": "pass",
+      "observation": "L’épilogue montre les trois personnes au poste médical, avec secouristes et supports distincts ; titre, sous-titre et commande pour voir le bilan sont lisibles. Les personnages et couvertures restent volontairement géométriques dans ce prototype.",
+      "sha256": "aa925dd7c87e312798d7f66f6a368d66943ae6b17fa74b47bc188115d4668fcc"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/24_epilogue_07.png",
+      "status": "pass",
+      "observation": "Le relais lumineux, le secouriste et l’escalier du refuge restent clairement séparés ; titre, fragment radio et commande de bilan sont lisibles. Le nouveau matériel en arrière-plan ne masque ni le relais ni son accès.",
+      "sha256": "516dd2fe261c5392448eec9323ed4c04e9668b92e00b315f08c56599edad5fb7"
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/24_epilogue_12.png",
+      "sha256": "b7e02391bc4208b0b1f454ccfc2b46fa5331924ffb1b12393b4f479bd6978da1",
+      "status": "pass",
+      "observation": "Le titre, l’origine incertaine du signal, le sous-titre du relais et la commande de bilan sont lisibles ; le plan extérieur reste dégagé de l’interface et des outils de marche."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/25_bilan_refuge.png",
+      "sha256": "86b9eb0ce4ea9d3db55aa837ce1271cb7f256a4eba253d2dbe2d0e0193b04fdd",
+      "status": "pass",
+      "observation": "Les trois personnes nommées, les compteurs 3/3 et 2/3, le texte du relais et les quatre boutons sont lisibles ; « Poursuivre au congrès » reste entièrement accessible à droite."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/26_suites_presence.png",
+      "sha256": "c084dc0bcaa5a653d2b1ac194954d34318a8424acaf6445a1ca995dbdd7c8ae3",
+      "status": "needs_revision",
+      "observation": "La présence translucide, le repère de rappel 29–28 et les garde-corps sont visibles, mais le HUD annonce « HACHE DE SECOURS · outil prêt » alors qu’aucune hache tenue n’est visible ; seule la lampe apparaît."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/27_archives_traces.png",
+      "sha256": "ea5bbdd02995e545edee291c3de8d74d2f0bdb7fb1e1c0cb0954e76c8c6678a0",
+      "status": "needs_revision",
+      "observation": "Les huit traces humides se détachent de la moquette et l’étage 28 est indiqué ; le HUD annonce toutefois la hache prête sans modèle de hache visible, en contradiction avec l’état présenté."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/28_spa_remanence.png",
+      "sha256": "5185da22312e996bbfc4a2efe0ffd241ef74d62e0bc65373171702a09e4f3301",
+      "status": "needs_revision",
+      "observation": "La rémanence translucide et le bassin restent distincts dans l’éclairage du spa ; des labels du décor se superposent au fond, et surtout la hache annoncée prête est absente du premier plan."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/29_station_rappel_toit.png",
+      "sha256": "7f53eb38a5b8808eb198ef150e49dd2627d286d3783a0b4655132f9e8212b112",
+      "status": "needs_revision",
+      "observation": "Le repère bleu de rappel, le treuil orange, les garde-corps et l’invite E sont distinguables ; la hache est annoncée prête mais ne figure pas dans cette vue de marche."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/30_rappel_descente.png",
+      "sha256": "d776c15b15fdf823e80cb26879a9a4300f9d92222913bb31c86ff5162a8eebaf",
+      "status": "pass",
+      "observation": "La descente contrôlée affiche 2,8 m/s, 3,0 m au palier bas et 4,7/7,8 m de corde ; les mains et le descendeur sont visibles, les outils de coupe absents et le HUD indique le matériel rangé."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/31_rappel_verrouille.png",
+      "sha256": "5455bb75e772002c543f22f7beabfa5586d929b8b041069ef70fbd57a25f4e67",
+      "status": "pass",
+      "observation": "Le verrouillage se traduit par 0,0 m/s, le libellé « DESCENDEUR VERROUILLÉ » et le témoin vert du descendeur ; les consignes restent lisibles et aucun outil de coupe n’occupe la main."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/32_escalier_30_29.png",
+      "sha256": "aa716ea7e356acfc72e664e135626f26a3d43342e935d5141d443676cbc72fce",
+      "status": "pass",
+      "observation": "Les nez de marche jaunes, les deux volées, le palier et les garde-corps rendent le trajet 30–29 clair ; le panneau confirme le retour possible et le HUD indique le matériel rangé."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/33_escalier_palier.png",
+      "sha256": "652f6217c5edfcd3fff194097ad7096ea1fafa843f95bb39489c109be7e0a5de",
+      "status": "pass",
+      "observation": "La vue depuis le palier montre la volée montante et les niveaux voisins ; l’interface conserve l’état de liaison 30–29 et le matériel rangé, sans masquer la progression visible."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/34_rappel_remontee.png",
+      "sha256": "c6ed7915ee9db4e21230a216f70f731ccd7b2cf4e7b459c2442221e281b3dd38",
+      "status": "pass",
+      "observation": "La remontée affiche 1,6 m/s et une endurance à 90 %, avec câble, ancrage et descendeur visibles ; les consignes de corde et le rangement des outils concordent avec cet état."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/35_aide_deplacements.png",
+      "sha256": "8ab8c28ced9ac2caf4cd4451644bcaf7f2927cc787ff8b4006c1729f35889407",
+      "status": "pass",
+      "observation": "Les sections Mission, Itinéraire local, À pied et Sur la corde sont lisibles ; la barre de défilement indique la suite du texte et le bouton Compris reste dégagé sous la zone défilante."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/36_escalier_28_27.png",
+      "sha256": "60c395153d6e31f39e3e458583fc3f6c93bedee6cc488534d0c1eb9125b96e9b",
+      "status": "pass",
+      "observation": "La première volée, le palier de retour et les nez de marche jaunes sont nettement éclairés ; le HUD identifie correctement la liaison 28–27 et indique le rangement des outils."
+    },
+    {
+      "file": "docs/captures/v0.11/baseline/37_escalier_26_25.png",
+      "sha256": "2643386dc9d73f611150f3c38051fe9ab70b78a1771e347eb9ca574a4071688f",
+      "status": "pass",
+      "observation": "Le cheminement vers le refuge est lisible entre les garde-corps, avec marches contrastées et liaison 26–25 correctement nommée ; la carte latérale est plus pâle sur le carrelage clair mais reste lisible."
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/01_bilan_poursuite.png",
+      "status": "pass",
+      "observation": "Le bilan affiche nettement les trois personnes à l’abri, le refuge 25 et le relais à origine non confirmée. Les quatre boutons tiennent dans la largeur, dont « Poursuivre au congrès » ; le texte long dispose d’un ascenseur sans chevauchement des cartes nominatives.",
+      "sha256": "179be5506e65311ce5f9175e8df9d78a402e2127e8671a2399e474a78001f162"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/02_escalier_25_24.png",
+      "status": "fail",
+      "observation": "L’ouverture de dalle, la volée descendante et les garde-corps sont visibles avec les repères cyan et jaunes. Le HUD annonce bien le départ du refuge vers Léa et Idris au 24 ; compteurs, état physique et commandes restent séparés du passage. Défaut de cohérence v0.11 : le HUD annonce la hache prête, mais l’outil porté à droite est absent ; la fixture fige la mission sans resynchroniser l’équipement après la pose préparée.",
+      "sha256": "cb00b65a73f55ae078ed57f0aa81cc07b9cb4e7c1ab51e5b17688c9a73aacd84"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/03_congres_auditorium.png",
+      "status": "fail",
+      "observation": "Le panneau Pelagos, les rangées de sièges et le passage latéral sont visibles sous l’éclairage froid. Les panneaux du HUD identifient le 24 et l’objectif du duo, sans recouvrir le centre du trajet ; les petits libellés de décor restent secondaires. Défaut de cohérence v0.11 : le HUD annonce la hache prête, mais l’outil porté à droite est absent ; la fixture fige la mission sans resynchroniser l’équipement après la pose préparée.",
+      "sha256": "2d29761f93b7eb3c39ab186aa6d6e65c81f9bb7b41757f8ed96d22435106c043"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/04_cabine_signes.png",
+      "status": "fail",
+      "observation": "Léa Mercier et Idris Kaci sont entièrement visibles dans la cabine, avec vêtements distincts, noms lisibles et consigne de signe visible au centre. L’éclairage permet de lire les personnages et le bois derrière eux ; l’objectif et les compteurs restent dégagés. Défaut de cohérence v0.11 : le HUD annonce la hache prête, mais l’outil porté à droite est absent ; la fixture fige la mission sans resynchroniser l’équipement après la pose préparée.",
+      "sha256": "f3ed80c1b15f9869826d1a282b5fcd4a3e3191dbaa96eff5b71657a3709b3bd2"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/05_escorte_escalier.png",
+      "status": "pass",
+      "observation": "Léa est visible sur les marches bordées de jaune et le HUD explique la liaison locale 25–24 ainsi que l’accompagnement vers le refuge. La signalétique 3D du fond est dense et le second membre du duo est occulté dans cet axe ; les marches et les commandes de progression restent lisibles.",
+      "sha256": "3d61d937b67db78271b1275c5efb68b7d6280377874b9978588380b42742d067"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/06_reception_refuge.png",
+      "status": "fail",
+      "observation": "Les deux personnes sont distinctes sur leurs emplacements verts au refuge, avec noms visibles. Le compteur passe à REFUGE 2/2 et l’objectif demande les deux examens du 23 ; notification de point sûr, état physique et texte central ne se chevauchent pas. Défaut de cohérence v0.11 : le HUD annonce la hache prête, mais l’outil porté à droite est absent ; la fixture fige la mission sans resynchroniser l’équipement après la pose préparée.",
+      "sha256": "b939db44cc0f1d664676dbc22d18bcbb06007b61e04fd8e1d5fab417cce79dfd"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/07_rappel_24_23.png",
+      "status": "pass",
+      "observation": "La corde, le descendeur et les garde-corps encadrent clairement la ligne 24–23. Le panneau de rappel indique frein automatique, vitesse nulle et distance au palier ; les commandes centrales sont lisibles sur la vue plongeante et l’objectif conserve les deux réceptions.",
+      "sha256": "884a7229885f6de2044dc3261c662567f426f216e5c6d75bbbd4c0a6143f9264"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/08_maquette_souterrains.png",
+      "status": "fail",
+      "observation": "Les deux volumes des tours et leur liaison claire sont bien cadrés sur le socle. La consigne « Relever · Maquette des souterrains de Nacre » est lisible au centre, sans superposition avec les compteurs ; le titre de décor supérieur est partiellement derrière le HUD. Défaut de cohérence v0.11 : le HUD annonce la hache prête, mais l’outil porté à droite est absent ; la fixture fige la mission sans resynchroniser l’équipement après la pose préparée.",
+      "sha256": "b208b0506f6565634a49d2d415b96e7167386e5ed7d70fb8e94046de34f8a7a2"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/09_archive_bains.png",
+      "status": "fail",
+      "observation": "Le panneau procédural des anciens bains, sa porte centrale sombre et sa légende de 1964 sont identifiables ; la consigne de relevé est nette. Une bande d’ombre dentelée traverse l’image de décor, mais ne masque ni la forme principale ni l’action demandée. Défaut de cohérence v0.11 : le HUD annonce la hache prête, mais l’outil porté à droite est absent ; la fixture fige la mission sans resynchroniser l’équipement après la pose préparée.",
+      "sha256": "a9cc18e3b6c187433377a4508734246111e168d171ab895e9e2e8cb0b8cd9659"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/10_remanence_exposition.png",
+      "status": "fail",
+      "observation": "La silhouette de rémanence se détache du sol clair près du panneau de bois, avec un espace de circulation libre autour. Le HUD reste consacré à l’examen des preuves et ne présente ni attaque ni alerte qui masquerait la scène. Défaut de cohérence v0.11 : le HUD annonce la hache prête, mais l’outil porté à droite est absent ; la fixture fige la mission sans resynchroniser l’équipement après la pose préparée.",
+      "sha256": "f98447db3de37085442372058cc338d6d4468c778a47ee32adcca370704c9b58"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/11_dossier_nacre.png",
+      "status": "pass",
+      "observation": "Le journal affiche 5/5 personnes et 5/5 indices au 23. Les paragraphes de la maquette et de la photographie se lisent intégralement dans la position de défilement choisie ; onglets, ascenseur et bouton de fermeture sont séparés sans chevauchement.",
+      "sha256": "9caf0edbe7076c48cfe42eb32e9a7e19a2a8de90490532f368dfa7e3c221162d"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/12_bilan_reconnaissance.png",
+      "status": "pass",
+      "observation": "Le bilan final présente distinctement Léa et Idris au refuge ainsi que les trois réceptions initiales au toit. Le total 5/5, les deux constats du 23, la fermeture de la descente vers le 22 et les deux boutons sont lisibles sans texte tronqué.",
+      "sha256": "03f9685676b291c561973d89c1546ffde112978f681cdfe136901fb766ba1c3a"
+    },
+    {
+      "file": "docs/captures/v0.11/continuation/13_menu_exposition.png",
+      "status": "pass",
+      "observation": "L’accueil montre l’exposition au dernier point sûr, la version 0.11.0 et cinq vies sauvées. « Consulter la reconnaissance » et les autres choix restent lisibles sur le voile sombre ; le statut « Reconnaissance terminée » est séparé des commandes.",
+      "sha256": "a32dfd9a2098bae283a690cda48ecbe97483f90e0590b0e2c652b135dfa90ea4"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/01_rack_toit.png",
+      "status": "fail",
+      "observation": "La hache en main, le râtelier et le HUD sont identifiables, mais le grand panneau ORPHÉE / POSTE DE SECOURS est affiché en miroir par son revers et domine le fond derrière le râtelier ; cadrage ou revers du panneau à corriger.",
+      "sha256": "cb2204bf31daed6161450f7a9618196169536c3f8d0ab21cfc138c758b66fd31"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/02_comptoir_toit.png",
+      "status": "fail",
+      "observation": "Le sac de soins, le casque, la radio et la lampe sont visibles sur le comptoir ; le HUD reste lisible. Le grand panneau de secours apparaît toutefois en miroir et coupé sur le bord droit, comme dans la vue du râtelier.",
+      "sha256": "6d4cf7cfe9eb17719a45b27f71123f6e0ed85d84948c969982bfb4dd81becf1b"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/03_hache_29.png",
+      "status": "fail",
+      "observation": "Hache et planches barrées bien visibles, mais le prompt affiche E Caisse de secours alors que le manifeste donne equipment_boards_29 comme action active ; la consigne de maintien et sa progression sont absentes, signe d’une priorité UI de cible incorrecte.",
+      "sha256": "5b9c61c73b17fb17ff94473ac0a5e58372429a4391a73f2c0b08d1d828180748"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/04_extincteur_28_actif.png",
+      "status": "pass",
+      "observation": "Extincteur identifiable en main, jet blanc dirigé vers le foyer visible au centre ; consigne Maintenir E et progression à 33 % lisibles, réserve 3/3 cohérente avec une action encore en cours. Les particules et flammes gardent le style géométrique du prototype.",
+      "sha256": "a60be5b3eb8062b952145a32e15f31b4eb2730d75970f2550463663743a02f5d"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/05_foyer_28_eteint.png",
+      "status": "pass",
+      "observation": "La corbeille est désormais sans flamme ni jet ; le message confirme le foyer éteint tout en distinguant les autres zones enfumées, et la réserve passe à 2/3. Le centre de visée et les informations essentielles restent dégagés.",
+      "sha256": "0a69eac27a574ac20dd57ac6c1f5c96a608cae22ecbf17dd239d61561eaf16ee"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/06_halligan_25.png",
+      "status": "pass",
+      "observation": "Halligan identifiable en main devant l’armoire verte marquée d’une croix ; consigne de déblocage à 23 % et étage 25 cohérents. La visée reste libre, les informations de refuge et l’étiquette SECOURS sont lisibles.",
+      "sha256": "7826b2a53658af2e0081335dc531486e543b7d4cef2222caba2144bb760fa245"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/07_coupe_boulon_24.png",
+      "status": "fail",
+      "observation": "Le coupe-boulon et le message de chaîne coupée sont lisibles, mais le poste d’intervention est coincé au milieu des sièges de l’auditorium : porte ouverte et chaîne croisent visuellement les sièges, tandis que le projecteur est masqué par le siège droit. Le matériel libéré et son effet lumineux ne sont pas suffisamment examinables.",
+      "sha256": "ef24b19209735dcb2d19cf4dd15df3b94197d67f789543bdcb2c7fa21a79afe6"
+    },
+    {
+      "file": "docs/captures/v0.11/equipment/08_inventaire_refuge25.png",
+      "status": "fail",
+      "observation": "Brancard, bouteille, armoire ouverte et Halligan sont reconnaissables et le HUD est lisible ; cependant le sac de soins rouge flotte nettement au-dessus du brancard, devant les casiers, au lieu de reposer sur un support.",
+      "sha256": "2c47d100927c345bc49e44188296f3f0004776f0e97c91750a1c5c7cc1ffff0b"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_compat/01_roof_rescue.png",
+      "status": "pass",
+      "observation": "Le même poste est plus clair en Compatibility, avec ombres plus franches et texture du béton visible. Treuil, marquage jaune et intervenants restent distincts, sans disparition de géométrie ni zone de passage masquée.",
+      "sha256": "96abd3c2e9ebf0623285cd64a50ed498f18d41fbaa55b72839230657fbd7e846"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_compat/02_restaurant_materials.png",
+      "status": "pass",
+      "observation": "Le restaurant est plus uniformément éclairé, avec bar en bois, sièges rouges et garde-corps orange lisibles. Les ombres des poteaux restent présentes et le sol conserve ses détails ; l’occultation partielle de l’enseigne est la même que dans le cadrage Forward+.",
+      "sha256": "e8a343b4224e9ec81c44c6665c477d1b7a014ac694e1847a6ce25f323ffbd3b3"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_compat/03_congress_lighting.png",
+      "status": "pass",
+      "observation": "La moquette turquoise, les sièges bleus et leurs ombres sont lisibles dans le même cadrage. Le panneau incliné et le passage latéral sont distincts ; la bordure claire reste localisée et ne dégrade pas la lecture de la rambarde.",
+      "sha256": "cf2d6324c1481f942902840d6a35859a558c8006e89bf26126f16ab1bf5827cc"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_compat/04_archive_after_impact.png",
+      "status": "pass",
+      "observation": "La cloison, le plafond et le balisage cyan sont plus uniformément lisibles qu’en Forward+, sans halo saturé ni surface manquante. Le même cadrage occulte une partie du personnage et coupe le texte de décor à gauche ; ces limites de vue n’affectent pas une interface de mission.",
+      "sha256": "f0e715733198378e0fe8a65cb4c166b1008743c56b387a631fc46a853bfb9eff"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_forward/01_roof_rescue.png",
+      "status": "pass",
+      "observation": "Le béton reste lisible sous l’exposition sombre ; treuil orange, hélicoptère et intervenants se détachent du ciel. Les ombres adoucies au premier plan et le voile atmosphérique préservent la lecture du poste de secours.",
+      "sha256": "8633e94af9405eaaff1aa710a0afbb93e253e71ba221b628e85d35b1c0389c62"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_forward/02_restaurant_materials.png",
+      "status": "pass",
+      "observation": "La pierre sombre, le bois du bar et le béton des poteaux restent différenciés ; le luminaire chaud et la lueur au sol préservent le passage vers le garde-corps orange. Les ombres sont profondes mais ne ferment pas le trajet ; un poteau occulte partiellement l’enseigne dans ce cadrage de revue.",
+      "sha256": "43cd56c2a942432e7c1effd4719d2746087e5a66fc9744e774889df8b893ab31"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_forward/03_congress_lighting.png",
+      "status": "pass",
+      "observation": "Les rangées de sièges, la moquette et la scène se distinguent sous la lumière froide ; le bord lumineux du passage et la rambarde restent nets. Le panneau Pelagos est lisible malgré un contraste faible, sans brouillard qui efface le trajet.",
+      "sha256": "79d4aa5a5090bd2cce1003a2d00348cb7b7eb25a972563f6a5d6278604f0e25f"
+    },
+    {
+      "file": "docs/captures/v0.11/lighting_forward/04_archive_after_impact.png",
+      "status": "pass",
+      "observation": "La face bétonnée au centre conserve ses détails et une nuance chaude ; le balisage cyan au sol reste lisible dans les ombres et la lueur orange reste localisée. Le cadrage est dominé par la cloison, masque une partie du personnage et ne montre pas directement Hespérie : il valide surtout l’état lumineux et la matière visibles.",
+      "sha256": "96f2dc37d2647b183cbc204f9986ae44690d4a1890a7b4f4ad7044061087bded"
+    }
+  ],
+  "superseded_by_source_commit": "edd0d935204b276e9671270b9993d87373534b34",
+  "corrections": [
+    "Priorité du site réellement visé et maintien du pourcentage de travail ; secours immédiats conservés.",
+    "Revers des enseignes du toit et du congrès masqué, face extérieure conservée.",
+    "Meuble et projecteur du 24 déplacés hors des sièges, avec contrôle de capsule et de parcours.",
+    "Sac médical posé à hauteur de la toile centrale du brancard.",
+    "Fixtures baseline et continuation resynchronisées avec les conditions réelles des outils avant capture.",
+    "Fixture équipement passée par la sélection et le routage E réels."
+  ],
+  "resolution": "Nouvelles captures contrôlées dans VISUAL_REVIEW.json ; aucun statut initial ne vaut approbation de la version finale."
+}

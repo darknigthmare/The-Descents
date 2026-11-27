@@ -1,0 +1,486 @@
+{
+  "schema_version": 1,
+  "library": "The Tower Descent commerce/kitchen/refuge v0.12",
+  "generator": "tools/generate_commerce_models.py",
+  "blender_version": "4.3.2",
+  "units": "metres",
+  "source_axes": {
+    "up": "+Z",
+    "front": "+Y",
+    "right": "+X"
+  },
+  "runtime_axes": {
+    "up": "+Y",
+    "front": "-Z",
+    "right": "+X"
+  },
+  "source": {
+    "path": "docs/assets/v0.12/commerce_equipment.blend",
+    "bytes": 2148209,
+    "sha256": "405271bf6b504cf582dcd3b17bc78e46b2ebcfc5a05f68778b634d05c41c66c3"
+  },
+  "authoring": "Original deterministic editable Blender geometry; shared v0.11 geometry/export helpers; no external models.",
+  "uv_convention": "Smart projection per source mesh; tiling shared albedos use object coordinates in Godot.",
+  "limitations": [
+    "Static meshes: no rig, LOD or articulated animation.",
+    "Collisions and gameplay interactions are authored by scene integration, not embedded.",
+    "Display-case glazing uses alpha blending; shadows/reflections vary by renderer.",
+    "Material roughness and metalness are authored scalar settings, not measured material scans."
+  ],
+  "assets": [
+    {
+      "id": "retail_display_case",
+      "label_fr": "Vitrine de boutique",
+      "path": "res://assets/models/commerce_v012/retail_display_case.glb",
+      "sha256": "447c6f765db27a323a3316786259b96abc8008f73280e60cc26a5f0fb963c998",
+      "bytes": 335108,
+      "dimensions_m": {
+        "x": 1.41,
+        "y": 1.1925,
+        "z": 0.6705
+      },
+      "source_dimensions_m": {
+        "x": 1.41,
+        "y": 0.6705,
+        "z": 1.1925
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.6,
+        0.00325
+      ],
+      "triangles": 9152,
+      "mesh_parts": 48,
+      "source_mesh_parts": 48,
+      "runtime_meshes": 1,
+      "materials": [
+        "champagne_brass",
+        "fabric_pillow",
+        "fabric_teal",
+        "glass_shop_smoke",
+        "polymer_anthracite",
+        "steel_dark",
+        "walnut_dark"
+      ],
+      "uv": "Smart-projected UVs per named source mesh; material textures use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "cash_register",
+      "label_fr": "Caisse et terminal de paiement",
+      "path": "res://assets/models/commerce_v012/cash_register.glb",
+      "sha256": "a97b65cbf017410140d51d6085c0320e3e3100cfec14b0221c64cca09a2e7e85",
+      "bytes": 255684,
+      "dimensions_m": {
+        "x": 0.44,
+        "y": 0.490769,
+        "z": 0.3725
+      },
+      "source_dimensions_m": {
+        "x": 0.44,
+        "y": 0.3725,
+        "z": 0.490769
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.005,
+        0.15,
+        0.01125
+      ],
+      "triangles": 6636,
+      "mesh_parts": 30,
+      "source_mesh_parts": 30,
+      "runtime_meshes": 1,
+      "materials": [
+        "ceramic_ivory",
+        "label_ivory",
+        "lens_blue",
+        "paint_rescue_red",
+        "polymer_anthracite",
+        "rubber_black",
+        "screen_teal",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge"
+      ],
+      "uv": "Smart-projected UVs per named source mesh; material textures use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "shutter_control",
+      "label_fr": "Commande de rideau de service",
+      "path": "res://assets/models/commerce_v012/shutter_control.glb",
+      "sha256": "e3f4024998a2eff11bb67ce259af0bed27d56f1555c6b687ad3fa943239956c1",
+      "bytes": 194848,
+      "dimensions_m": {
+        "x": 0.13,
+        "y": 0.325,
+        "z": 0.099
+      },
+      "source_dimensions_m": {
+        "x": 0.13,
+        "y": 0.099,
+        "z": 0.325
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.145,
+        0.0225
+      ],
+      "triangles": 5088,
+      "mesh_parts": 18,
+      "source_mesh_parts": 18,
+      "runtime_meshes": 1,
+      "materials": [
+        "enamel_cream",
+        "label_ivory",
+        "paint_rescue_red",
+        "polymer_anthracite",
+        "rubber_black",
+        "steel_brushed",
+        "steel_edge"
+      ],
+      "uv": "Smart-projected UVs per named source mesh; material textures use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "service_trolley",
+      "label_fr": "Chariot de service inox",
+      "path": "res://assets/models/commerce_v012/service_trolley.glb",
+      "sha256": "3cdbd92281d39e8b99b88ca8e700f5aedf81171be585ee941939920c9678a512",
+      "bytes": 622444,
+      "dimensions_m": {
+        "x": 0.696,
+        "y": 1.001234,
+        "z": 0.563524
+      },
+      "source_dimensions_m": {
+        "x": 0.696,
+        "y": 0.563524,
+        "z": 1.001234
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.96,
+        0.0
+      ],
+      "triangles": 17368,
+      "mesh_parts": 58,
+      "source_mesh_parts": 58,
+      "runtime_meshes": 1,
+      "materials": [
+        "rubber_black",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge",
+        "steel_satin"
+      ],
+      "uv": "Smart-projected UVs per named source mesh; material textures use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "industrial_sink",
+      "label_fr": "Plonge de cuisine et robinet",
+      "path": "res://assets/models/commerce_v012/industrial_sink.glb",
+      "sha256": "36e3ecf1b3439af8e65b231e52efb46c6f281ed59d038df51c7f88f8a252247b",
+      "bytes": 406480,
+      "dimensions_m": {
+        "x": 1.2,
+        "y": 1.313605,
+        "z": 0.699
+      },
+      "source_dimensions_m": {
+        "x": 1.2,
+        "y": 0.699,
+        "z": 1.313605
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.9,
+        0.0
+      ],
+      "triangles": 10608,
+      "mesh_parts": 42,
+      "source_mesh_parts": 42,
+      "runtime_meshes": 1,
+      "materials": [
+        "blue_key",
+        "paint_rescue_red",
+        "rubber_black",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge",
+        "steel_satin"
+      ],
+      "uv": "Smart-projected UVs per named source mesh; material textures use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "kitchen_stove",
+      "label_fr": "Fourneau professionnel",
+      "path": "res://assets/models/commerce_v012/kitchen_stove.glb",
+      "sha256": "8ed80e7735ff44db3665111f6a8d518adb18178e186fb858edfb574d2016d93b",
+      "bytes": 801100,
+      "dimensions_m": {
+        "x": 1.03,
+        "y": 1.135,
+        "z": 0.8805
+      },
+      "source_dimensions_m": {
+        "x": 1.03,
+        "y": 0.8805,
+        "z": 1.135
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.68,
+        0.03775
+      ],
+      "triangles": 22816,
+      "mesh_parts": 68,
+      "source_mesh_parts": 68,
+      "runtime_meshes": 1,
+      "materials": [
+        "label_ivory",
+        "oven_glass",
+        "polymer_anthracite",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge",
+        "steel_satin"
+      ],
+      "uv": "Smart-projected UVs per named source mesh; material textures use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "extraction_hood",
+      "label_fr": "Hotte et filtres d'extraction",
+      "path": "res://assets/models/commerce_v012/extraction_hood.glb",
+      "sha256": "9700b550cd473c5a285f4d8ce860a71f83a12030a6380764f782fd150a274769",
+      "bytes": 315888,
+      "dimensions_m": {
+        "x": 1.455,
+        "y": 0.811158,
+        "z": 0.975
+      },
+      "source_dimensions_m": {
+        "x": 1.455,
+        "y": 0.975,
+        "z": 0.811158
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.071158,
+        0.0
+      ],
+      "triangles": 8678,
+      "mesh_parts": 45,
+      "source_mesh_parts": 45,
+      "runtime_meshes": 1,
+      "materials": [
+        "label_ivory",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge",
+        "steel_satin"
+      ],
+      "uv": "Smart-projected UVs per named source mesh; material textures use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "utility_cutoff_panel",
+      "label_fr": "Coffret de coupure A21",
+      "path": "res://assets/models/commerce_v012/utility_cutoff_panel.glb",
+      "sha256": "53c6323cfa8863d66b5f9bb1dc634ffe220193579cb7bf16b9846c786be659d8",
+      "bytes": 874208,
+      "dimensions_m": {
+        "x": 0.4,
+        "y": 0.58,
+        "z": 0.2305
+      },
+      "source_dimensions_m": {
+        "x": 0.4,
+        "y": 0.2305,
+        "z": 0.58
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.29,
+        0.08075
+      ],
+      "triangles": 27320,
+      "mesh_parts": 22,
+      "source_mesh_parts": 22,
+      "runtime_meshes": 1,
+      "materials": [
+        "beacon_amber",
+        "enamel_cream",
+        "label_ink",
+        "label_ivory",
+        "paint_rescue_red",
+        "paint_safety_yellow",
+        "polymer_anthracite",
+        "rubber_black",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge"
+      ],
+      "uv": "Smart-projected UVs per named source mesh; material textures use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "fire_blanket_cabinet",
+      "label_fr": "Armoire de couverture anti-feu",
+      "path": "res://assets/models/commerce_v012/fire_blanket_cabinet.glb",
+      "sha256": "e8d40d074187db6627f8e02d75b8d1716e726e034bcaa5556881756aebf239fc",
+      "bytes": 756336,
+      "dimensions_m": {
+        "x": 0.29,
+        "y": 0.41,
+        "z": 0.109
+      },
+      "source_dimensions_m": {
+        "x": 0.29,
+        "y": 0.109,
+        "z": 0.41
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.05,
+        0.0095
+      ],
+      "triangles": 24532,
+      "mesh_parts": 14,
+      "source_mesh_parts": 14,
+      "runtime_meshes": 1,
+      "materials": [
+        "label_ivory",
+        "paint_rescue_red",
+        "steel_edge",
+        "webbing_black"
+      ],
+      "uv": "Smart-projected UVs per named source mesh; material textures use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "folding_cot",
+      "label_fr": "Lit pliant de refuge",
+      "path": "res://assets/models/commerce_v012/folding_cot.glb",
+      "sha256": "d629083a64292111d4eaf0a4bafe34a3577c1010bf7ba30d592e86f669cef876",
+      "bytes": 323784,
+      "dimensions_m": {
+        "x": 0.772,
+        "y": 0.5305,
+        "z": 2.0
+      },
+      "source_dimensions_m": {
+        "x": 0.772,
+        "y": 2.0,
+        "z": 0.5305
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.428,
+        0.0
+      ],
+      "triangles": 8636,
+      "mesh_parts": 34,
+      "source_mesh_parts": 34,
+      "runtime_meshes": 1,
+      "materials": [
+        "canvas_refuge",
+        "fabric_pillow",
+        "fabric_teal",
+        "rubber_black",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge",
+        "webbing_black"
+      ],
+      "uv": "Smart-projected UVs per named source mesh; material textures use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "water_canister",
+      "label_fr": "Jerrican d'eau 10 litres",
+      "path": "res://assets/models/commerce_v012/water_canister.glb",
+      "sha256": "875dae9f5ca861ce85b436d3c9360d44c0d60d22367ce010bfc2ba8e9c6ecc81",
+      "bytes": 372252,
+      "dimensions_m": {
+        "x": 0.286,
+        "y": 0.458214,
+        "z": 0.2755
+      },
+      "source_dimensions_m": {
+        "x": 0.286,
+        "y": 0.2755,
+        "z": 0.458214
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        0.4275,
+        0.02525
+      ],
+      "triangles": 11040,
+      "mesh_parts": 29,
+      "source_mesh_parts": 29,
+      "runtime_meshes": 1,
+      "materials": [
+        "blue_key",
+        "ceramic_ivory",
+        "label_ivory",
+        "water_blue"
+      ],
+      "uv": "Smart-projected UVs per named source mesh; material textures use object coordinates.",
+      "embedded_images": 0
+    },
+    {
+      "id": "privacy_screen",
+      "label_fr": "Paravent de secours trois panneaux",
+      "path": "res://assets/models/commerce_v012/privacy_screen.glb",
+      "sha256": "4c7845c904d217c240f95b2cfd15f20438d6c08084fe445ea803aeb37d81f985",
+      "bytes": 895740,
+      "dimensions_m": {
+        "x": 1.858,
+        "y": 1.744,
+        "z": 0.475
+      },
+      "source_dimensions_m": {
+        "x": 1.858,
+        "y": 0.475,
+        "z": 1.744
+      },
+      "pivot": "bottom bounding-box centre",
+      "grip_offset_m": [
+        0.0,
+        1.73,
+        0.0
+      ],
+      "triangles": 24556,
+      "mesh_parts": 77,
+      "source_mesh_parts": 77,
+      "runtime_meshes": 1,
+      "materials": [
+        "curtain_pale",
+        "rubber_black",
+        "steel_brushed",
+        "steel_dark",
+        "steel_edge"
+      ],
+      "uv": "Smart-projected UVs per named source mesh; material textures use object coordinates.",
+      "embedded_images": 0
+    }
+  ],
+  "total_glb_bytes": 6153872,
+  "total_triangles": 176430
+}

@@ -1,0 +1,49 @@
+{
+  "version": "0.4.0",
+  "runtime_freeze_commit": "95a8558",
+  "verified_utc": "2026-11-24T18:31:12.546972+00:00",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "test_script": "../../../prototype/tests/test_exported_pack.gd",
+  "test_script_sha256": "94afc652ee8f6a60e515e96f1a7bbf7b81d9e795c9c7cf8eb15f1daefc3c4dd9",
+  "packs": [
+    {
+      "platform": "windows",
+      "pack": "../../../builds/windows/TheTowerDescent.exe",
+      "pack_bytes": 110341240,
+      "pack_sha256": "454f2e1704a5c37a4a843da0b1bda401059b2916042233905264f25f926ac23b",
+      "pack_unchanged_during_test": true,
+      "execution_directory_was_empty": true,
+      "checks": 18,
+      "returncode": 0,
+      "error_lines": [],
+      "pass": true,
+      "duration_seconds": 0.705,
+      "log": "exported-windows.txt",
+      "log_sha256": "3220f81f3145ddc19a80c4ed52cfd1a0a46add8682d08570647b1c5eaecc9a5c"
+    },
+    {
+      "platform": "web",
+      "pack": "../../../builds/web/index.pck",
+      "pack_bytes": 1072744,
+      "pack_sha256": "0d61c03c728232b1ee74053031f0b3e6bb148629de73d80a1be564a8eafb505d",
+      "pack_unchanged_during_test": true,
+      "execution_directory_was_empty": true,
+      "checks": 18,
+      "returncode": 0,
+      "error_lines": [],
+      "pass": true,
+      "duration_seconds": 0.342,
+      "log": "exported-web.txt",
+      "log_sha256": "3220f81f3145ddc19a80c4ed52cfd1a0a46add8682d08570647b1c5eaecc9a5c"
+    }
+  ],
+  "total_checks": 36,
+  "all_pass": true,
+  "included_in_source_suite_total": false,
+  "method": "From a newly created empty directory, Linux Godot mounts each final export with --main-pack and loads the absolute external test script; all res:// resources resolve through the pack.",
+  "limitations": [
+    "This loads the Windows EXE embedded resource pack in Linux Godot; it does not execute the Windows binary.",
+    "This loads the Web PCK in Linux Godot; it does not launch the WebAssembly runtime or render WebGL in a browser.",
+    "No claim of audible music mix or platform-specific input compatibility is made."
+  ]
+}

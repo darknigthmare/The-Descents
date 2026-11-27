@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS exported pack: 150 checks; mounted v0.10 resources, historical rescue/menu/cinematic/audio/rope checks, schema-4 persistence, real debrief-button continuation, optional eight-route world, physical civilian resources, lower-floor reload and retained exhibition readings. Developer tests remain excluded. Linux headless engine loads the pack; this is not a Windows executable or browser launch or a visual approval.

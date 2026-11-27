@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "project": "The Tower Descent",
+  "asset_pack": "Nacre gallery and service-kitchen albedos",
+  "version": "0.12",
+  "requested_dimensions_px": [
+    2048,
+    2048
+  ],
+  "actual_resolution_note": "The built-in Imagegen tool returned native 1254 × 1254 RGB PNGs. Original pixels and original PNG bytes are preserved; no upsampling or image editing.",
+  "generated_with": "image_gen__imagegen (built-in Imagegen)",
+  "provenance": {
+    "generation_type": "original text-to-image",
+    "provider_tool": "image_gen__imagegen",
+    "model_identifier": "not exposed by the tool",
+    "referenced_images": [],
+    "post_processing": "None on the delivered assets. Exact 2×2 repeats assembled using ImageMagick only as temporary QA previews.",
+    "generated_at_utc_date": "2026-11-25"
+  },
+  "color_usage": {
+    "texture_type": "base_color / albedo",
+    "intended_color_space": "sRGB",
+    "transparency": false,
+    "limitations": "Artist-directed color textures, not measured material reflectance. No normal, roughness, metallic, height, ambient-occlusion or emission maps are supplied."
+  },
+  "tiling": {
+    "intent": "repeat in U and V",
+    "mathematically_seamless_verified": false,
+    "note": "Opposite edges requested to repeat, not equalized. Original images and exact 2×2 repetitions visually reviewed. Mathematical periodicity and physical anti-slip certification are not implied."
+  },
+  "materials": [
+    {
+      "id": "ivory_terrazzo",
+      "file": "prototype/assets/materials/v012/ivory_terrazzo.png",
+      "source_generated_file": "exec-f1eac27d-91bf-4e6f-a056-8d7afe3cbffc.png",
+      "source_unchanged": true,
+      "suggested_uv_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_scale_status": "art-direction recommendation; not measured",
+      "intended_location": "Galerie commerciale du 22 : sols continus et seuils des boutiques.",
+      "suggested_shader_properties": {
+        "metallic": 0,
+        "roughness": 0.64
+      },
+      "prompt": "Use case: photorealistic-natural\nAsset type: one original repeating RGB base-color/albedo game material for The Tower Descent, the Nacre luxury coastal tower shopping gallery at floor 22.\nSubject: a 2 by 2 metre continuous ivory terrazzo floor surface with small irregular pale gray, sand beige and restrained charcoal stone chips set in a warm ivory cement matrix. Premium restrained architectural terrazzo, no brass inlays, no joints, no borders. Very fine believable aggregate density and tiny mineral speckles, gentle pigment variation, slight recent dry dust and tiny sparse wear scratches. No large cracks or damage.\nComposition: exactly one square 2048 by 2048 pixel image, perfectly orthographic top down, surface covering the entire image. Image is a material map, not a sample or a room. All four edges should continue into the opposite edges for tiling, consistent material statistics from center to edges, no unique focal motif.\nLighting: perfectly uniform neutral diffuse intrinsic base color only; no illumination baked in, no cast shadows, no ambient occlusion, no gloss, no reflections, no bright center, no vignette, no perspective.\nAvoid: text, objects, labels, numbers, logos, watermarks, sample spheres, scenery, molding, visible slabs, grout, strong stains, puddles, blood, rubble, large repeating patterns.",
+      "generation_parameters": {
+        "transparent_background": false
+      },
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "bit_depth": 8,
+      "png_color_type": 2,
+      "bytes": 3242454,
+      "sha256": "6c1668d5906e74f2f6bb4e4a524339adb9e900a4667efb7282cc36436835d7ba",
+      "visual_review": {
+        "original_inspected": true,
+        "repeat_2x2_inspected": true,
+        "observation_fr": "Terrazzo ivoire à petits agrégats beige/gris, homogène et sans reflet spéculaire incrusté. Répétition 2×2 inspectée : les taches et les grains se répètent perceptiblement, avec une légère rupture de répartition au raccord ; pas de large bande sombre ou claire.",
+        "repeat_status": "usable_with_minor_visible_pattern_repetition"
+      }
+    },
+    {
+      "id": "kitchen_sage_tile",
+      "file": "prototype/assets/materials/v012/kitchen_sage_tile.png",
+      "source_generated_file": "exec-a4cc2892-3350-4633-9ee6-efd9f3be01d2.png",
+      "source_unchanged": true,
+      "suggested_uv_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_scale_status": "art-direction recommendation; 5×5 nominal 40 cm tiles, not measured",
+      "intended_location": "Cuisines techniques du 21 et seuil de service : sol gris vert mat à grille de petits carreaux.",
+      "suggested_shader_properties": {
+        "metallic": 0,
+        "roughness": 0.88
+      },
+      "prompt": "Use case: photorealistic-natural\nAsset type: one original repeating RGB base-color/albedo game material for The Tower Descent, professional kitchen at floor 21 of Nacre luxury coastal tower.\nSubject: a two by two metre square of restrained muted gray-green anti-slip porcelain kitchen floor tiles, five by five grid of forty-centimetre square tiles. Each tile is fine-grained with extremely subtle small mineral speckles, matte intrinsic pigment around desaturated sage gray. Thin uniform neutral gray hygienic grout, about three millimetres. Tiles have consistent tone, very light dry dust and tiny unobtrusive scuffs. No cracks, no puddles, no objects, no dramatic dirt.\nComposition: one square 2048 by 2048 pixel orthographic top-down material map, edges parallel to image axes, no perspective. Precisely straight uniform grid at 20%, 40%, 60% and 80% of image width and height. Half-width grout at all four outer edges so repetition forms full-width grout. Fine anti-slip ceramic grain is color only, not exaggerated bumps. Every tile is flat, no beveled rim, no raised edges. Pattern repeats across opposite borders.\nLighting: perfectly even neutral diffuse intrinsic base color only. No shadows, no ambient occlusion, no directional illumination, no reflections, no shine, no vignette, no bright center.\nAvoid: text, labels, logos, watermarks, sample spheres, room scenes, perspective, rectangular tiles, diagonal grid, checkerboard colors, dark outlines, geometric relief, props, footprints, blood, cracks, rubble. This is a color texture intended for a game shader, not a rendered floor scene.",
+      "generation_parameters": {
+        "transparent_background": false
+      },
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "bit_depth": 8,
+      "png_color_type": 2,
+      "bytes": 2490847,
+      "sha256": "20972ff73c98035c7e1f23df47b9db91927519735c089a3654a7fd84ca3264dc",
+      "visual_review": {
+        "original_inspected": true,
+        "repeat_2x2_inspected": true,
+        "observation_fr": "Carrelage gris vert, grille 5×5 lisible et grain fin ; absence de reflet directionnel marqué. Répétition 2×2 inspectée : les lignes restent alignées ; l'épaisseur du joint périphérique varie légèrement par rapport aux joints internes. Aucun effet d'éclairage ou de rugosité n'est mesuré par cette image.",
+        "repeat_status": "usable_with_minor_grout_width_variation"
+      }
+    }
+  ],
+  "quality_review": {
+    "original_images_reviewed": 2,
+    "repeat_2x2_previews_reviewed": 2,
+    "review_method": "Original generated images displayed, then exact 2×2 ImageMagick montage previews individually displayed with view_image.",
+    "byte_integrity_method": "Full Pillow pixel decode, native resolution/mode checks and SHA256 of the copied original PNG files.",
+    "engine_review_performed": false,
+    "pending": "In-engine review after integration by the project owner.",
+    "guaranteed_seamless": false
+  }
+}
